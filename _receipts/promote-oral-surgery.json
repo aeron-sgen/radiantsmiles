@@ -57,7 +57,7 @@
     },
     {
       "name": "verify-globals-overlay",
-      "pass": false
+      "pass": true
     },
     {
       "name": "verify-motion-js-linked",
@@ -212,9 +212,9 @@
       "pass": true
     }
   ],
-  "failCount": 1,
+  "failCount": 0,
   "gateCount": 52,
   "noGates": false,
   "filtered": [],
-  "ts": 1787024379702
+  "ts": 1787024723446
 }

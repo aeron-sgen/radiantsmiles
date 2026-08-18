@@ -169,7 +169,7 @@
     },
     {
       "name": "verify-cta-singularity",
-      "pass": false
+      "pass": true
     },
     {
       "name": "verify-selection-rationale",
@@ -212,9 +212,9 @@
       "pass": true
     }
   ],
-  "failCount": 1,
+  "failCount": 0,
   "gateCount": 52,
   "noGates": false,
   "filtered": [],
-  "ts": 1787024381167
+  "ts": 1787025065872
 }
