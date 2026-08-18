@@ -1,0 +1,1586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radiant Smiles Dental Care - Brand Card, Concept D (owner palette)</title>
+<meta name="description" content="Identity sheet, concept D, revised to the owner-supplied teal palette. Cool near-white ground, deep teal as ink and authority, yellow strictly decorative behind a keyline.">
+<meta name="robots" content="noindex, nofollow">
+<!--
+  BRAND CARD - CONCEPT D  ·  slug: radiantsmiles  ·  stage (1) BRAND-CARD tournament
+  REVISION 1: OWNER-SUPPLIED PALETTE APPLIED. #FFD447 / #F7FAFA / #128C7E / #0B3D3A.
+  REVISION 2: TUNED FOR A 40-PLUS PRIMARY AUDIENCE, younger secondary appeal intact.
+  REVISION 3: THE REVISION-2 CLAIMS WERE RE-MEASURED AND TWO OF THEM WERE WRONG.
+  =============================================================================
+  WHAT REVISION 3 CHANGED
+    Revision 2 asserted "572 text runs at 1440, none under 7:1, worst 7.50:1". Re-measuring the
+    ground under each INDIVIDUAL GLYPH PIXEL (rather than under the line box containing it, which
+    is what the earlier pass did) found that claim false in two places:
+      1. MASTHEAD LEDE, the most-read run on the sheet, measured 6.75:1 at 768 / 6.85:1 at 375 /
+         6.96:1 at 1440 - UNDER the 7:1 floor the sheet claims to hold. Isolating the three
+         stacked layers on that run (flat canvas returns 8.60:1 exactly, which calibrates the
+         harness) priced them: grid 0.59, wash 0.47, grain 0.20, stacked 1.85. The grid and wash
+         are masthead-LOCAL decoration and took the deep cut (.05 -> .022, .10 -> .04); the grain
+         is the page-wide material that carries the modern read and was barely touched
+         (.22 -> .18). The lede now measures 7.56:1 at 768 and 7.60:1 at 1440.
+      2. E5 SWIPE drew its 2px deep-teal rule on the bottom edge of the inline content box, which
+         is exactly where a Roboto descender lands. The "p" of "per office" put a glyph pixel on
+         the rule at 1.18:1. Words without descenders measured 9.15 to 10.87:1 and hid it.
+         A 0.15em bottom pad cleared it; that run now measures 10.85:1.
+    NOTHING ELSE MOVED. Size, weight, tracking, leading, target and content floors were re-measured
+    in render and all already held: smallest type 14px, zero runs under 14px, zero weights under
+    400, zero negative tracking at reading size, zero horizontal overflow at 1440/1024/768/375,
+    smallest target 204.4 x 48px. Every control was actually FOCUSED and every hover state driven,
+    rather than assumed from the CSS.
+  =============================================================================
+  WHAT REVISION 2 CHANGED, AND WHY IT IS NOT A NEW DIRECTION
+    C7 section 4 ALREADY locks this: "Anxious and older patients are a named audience, and 55% of
+    adults 65+ have no dental benefits (ADA HPI, fetched 2026-07-30). Legible type, real contrast,
+    tap targets that work." and "Hours, addresses and phone numbers are load-bearing UI." This
+    revision executes that lock to MEASURED FLOORS rather than to taste. Presbyopia begins around
+    40 and costs acuity AND contrast sensitivity, so both size and contrast moved.
+    FLOORS HELD (all measured in render, not inferred):
+      size      body 18px; NOTHING below 14px anywhere (was: 9.5px owner badge, 10px asset
+                captions, 10.5px table headers / eyebrows / wordmark descriptor, 11px flags,
+                12px labels, 13px hexes and provenance)
+      leading   body 1.70; no reading run under 1.60
+      contrast  AAA 7:1, not AA 4.5:1. FOUR palette steps moved to hold it:
+                  --ds-primary    #10746A -> #0D504A  (5.37 -> 8.84 on canvas)
+                  --ds-ink-soft   #3F6764 -> #23504D  (6.00 -> 8.60 on canvas)
+                  --ds-line-control #698987 -> #547674 (3.62 -> 4.74, and 1px -> 2px)
+                  --ds-dark-2     #0D4E49 -> #0B423E + radial .30 -> .10
+                    (worst dark stop #0F6159 -> #0C4944; on-dark 6.46 -> 9.05, accent 5.14 -> 7.19)
+                Every alpha-faded TEXT run was made solid. The masthead wash, grid and grain were
+                dialled back because the RENDER measured 4.42:1 under an eyebrow where the flat
+                token math claimed 5.37:1.
+      weight    no 300/200/100 anywhere; emphasis is 500 to 700
+      tracking  no negative tracking at reading size; display face keeps it at 27px and up
+      targets   every control >= 44x44 CSS px MEASURED; buttons 52px, field 56px, phones 48px
+      contact   all 7 phone numbers are live tel: targets at 21px, addresses at 17px, and the
+                weekend hours rows now ship per office (client-rules.json contactData)
+    WHAT DID NOT CHANGE: the composition, the lead-rule motif, the keyline rule, the single
+    accent moment, the two dark grounds, the slab-plus-sans pairing, the restraint. Bigger type
+    over more air reads EDITORIAL, not geriatric, when the layout stays disciplined.
+  DESIGN SYSTEM PROVENANCE (read-only ceiling, never forked):
+    library    : _MODERN-WOW-SPEC.md            (depth, texture, typographic finesse, detail polish)
+    library    : _MODERN-DESIGN-PATTERN-LIBRARY.md (TOP-12 #1/#3/#10/#11 + F1 F4 A2 A3 D1 D2 E1 E2 E4 E5 H2 I1 I2 I5 I6 J10)
+    blueprint  : composition-medical-health  (V6 MEDICAL / HEALTH / DENTAL / CLINIC / CARE, _PAGE-COMPOSITION-LIBRARY.md section 2)
+    menus      : COLOR-THEORY-PRESETS.md #18 (Coral + Teal) cited as FAMILY ONLY. The palette here is
+                 NOT picked from this menu. All four hexes are OWNER-SUPPLIED and carried verbatim;
+                 the preset is named only to record which family the owner's hexes land in. Its coral
+                 accent, its #FFFFFF surface-2 and all six of its other hexes are rejected.
+                 TYPOGRAPHY-PAIRINGS.md #52 (Roboto Slab + Roboto)
+                 SURFACE-PATTERNS.md §1.3 (Modern 8-12px radii) + §2.8 (Flat-no-chrome hairline card)
+    schema     : BRAND-TOKEN-SCHEMA.md (role names, radius constrained to control/surface/pill, theme_polarity light)
+  BRAND TRUTH: radiantsmiles-tokens-spec.md (C6), visual-direction.md (C7), client-rules.json (C3).
+
+  ** C7 DEPARTURE, RECORDED AS FACT, NOT HIDDEN **
+  C7 section 48 locks: "the existing deep navy carries authority and the yellow is the accent that
+  already signals the offer. Keep that relationship; the build decides how."
+  This revision REMOVES the brand navy #17274F entirely and moves authority to teal #0B3D3A. The
+  accent #FFD447 is NEAR but NOT EQUAL to the brand yellow #FCE003. That changes the RELATIONSHIP,
+  not merely its deployment. The owner directed it and it is applied. C7 therefore requires an
+  UPSTREAM RE-LOCK in prep (SKILL.md P7.75) before this concept can advance to stage (2) CHROME.
+  See the "Palette provenance and the C7 departure" panel below.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+/* ==========================================================================
+   TOKENS  ·  BRAND-TOKEN-SCHEMA.md role names.
+   theme_polarity: light  (C7 measures surface_dominance: light, dark_ratio 0.154)
+   The teal is dark, but the SHEET is not. Polarity is unchanged.
+   ========================================================================== */
+:root{
+  /* --- OWNER-SUPPLIED, carried verbatim. These four are a directive. --- */
+  --ds-canvas:#F7FAFA;         /* owner. The canvas. Cool near-white, hue 180, L 97% */
+  --ds-primary-deep:#0B3D3A;   /* owner. Ink and authority ground. 11.48:1 on canvas */
+  --ds-signature:#128C7E;      /* owner. Signature teal. NON-TEXT (see the trap notes) */
+  --ds-accent:#FFD447;         /* owner. DECORATIVE ONLY. 1.36:1 on canvas. Never a foreground */
+
+  /* --- DERIVED STEPS. Each exists for a measured reason, stated in the palette section.
+         REVISED IN THIS PASS for a PRIMARY audience aged 40 and over. Presbyopia starts around
+         40 and costs BOTH acuity and CONTRAST SENSITIVITY, so the bar on this sheet moved from
+         AA 4.5:1 to AAA 7:1 for every text pairing that ships. Four steps moved to hold it. --- */
+  --ds-bg-surface:#EDF5F4;     /* signature 4.5% into canvas. Cards STEP DOWN, not up */
+  --ds-bg-band:#E0EFEE;        /* signature 10% into canvas. The band */
+  --ds-primary-soft:#D2E8E6;   /* signature 16% into canvas. THE TEAL-ON-TEAL SOLVE */
+  --ds-primary:#0D504A;        /* MOVED. was #10746A (5.37:1, AA only). Now 8.84:1 on canvas */
+  --ds-ink:#09302D;            /* black 22% into primary-deep. Body ink. 13.59:1. Not #000000 */
+  --ds-ink-heading:var(--ds-primary-deep);
+  --ds-ink-soft:#23504D;       /* MOVED. was #3F6764 (6.00:1, under AAA). Now 8.60:1 on canvas */
+  --ds-ink-on-dark:#E9F3F3;    /* cool near-white for the dark grounds. SOLID, never alpha */
+  --ds-accent-soft:#F9F2D3;    /* accent 22% into canvas. A wash, never a text colour */
+  --ds-line:#CDD8D7;           /* primary-deep 18% into canvas. DECORATIVE hairline only */
+  --ds-line-control:#547674;   /* MOVED. was #698987 (3.62:1). Now 4.74:1 on canvas */
+  --ds-dark-2:#0B423E;         /* MOVED. was #0D4E49. Lighter dark stop pulled DOWN so the worst
+                                  composite holds AAA for on-dark ink AND for the accent */
+  --ds-scrim:rgba(9,48,45,.62);
+
+  /* --- THE KEYLINE RULE.  #FFD447 measures 1.36:1 on the canvas, so a bare yellow mark is a
+         ghost. Every yellow mark on a LIGHT ground carries a 1px deep-teal keyline (8.47:1
+         against the yellow, 11.48:1 against the canvas), which is what actually makes it read.
+         On DARK grounds the yellow needs no keyline: it measures 8.47:1 on primary-deep. --- */
+  --ds-accent-keyline:0 0 0 1px var(--ds-primary-deep);
+
+  /* --- type: TYPOGRAPHY-PAIRINGS.md #52. Both families are ALREADY on the client's site --- */
+  --ds-font-display:"Roboto Slab",Georgia,"Times New Roman",serif;
+  --ds-font-body:"Roboto",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --ds-font-mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  /* --- radius: the CONSTRAINED role set only (BRAND-TOKEN-SCHEMA, 3 roles) --- */
+  --ds-r-control:8px;
+  --ds-r-surface:14px;
+  --ds-r-pill:999px;
+
+  /* --- shadow: D1. rgba tinted toward the TEAL ink, never pure black, negative spread --- */
+  --ds-shadow-rest:0 1px 2px rgba(11,61,58,.06);
+  --ds-shadow-card:0 1px 2px rgba(11,61,58,.06),0 12px 28px -10px rgba(11,61,58,.18);
+  --ds-shadow-lift:0 2px 4px rgba(11,61,58,.08),0 22px 46px -14px rgba(11,61,58,.26);
+
+  /* --- globals overlay (_MODERN-WOW-SPEC sections 1 and 3) --- */
+  --ds-hairline:rgba(11,61,58,.14);
+  --ds-inset-hi:inset 0 1px 0 rgba(255,255,255,.80);
+  --ds-glass-bg:rgba(237,245,244,.66);
+  --ds-glass-blur:blur(14px) saturate(150%);
+  --ds-glass-border:rgba(11,61,58,.10);
+  /* focus: the ring is DEEP TEAL, not yellow. See the focus note in the atoms section. */
+  --ds-glow:0 0 0 3px rgba(18,140,126,.40);
+  /* the masthead wash + grid + grain STACK on the canvas, and the render pass measured the stack,
+     not the token. At the previous strengths the worst PAINTED pixel under an eyebrow measured
+     4.42:1 while the flat token math said 5.37:1. Wash and grain are dialled back so the measured
+     pixel, not the arithmetic, is what clears the floor.
+     SECOND DIAL-BACK, and the reason is measured per GLYPH PIXEL rather than per line box. The
+     previous pass sampled whole line boxes and reported "worst 7.50:1". Sampling the ground under
+     each individual glyph pixel instead found the masthead LEDE at 6.75:1 (768px), 6.85:1 (375px)
+     and 6.96:1 (1440px) - i.e. the sheet was UNDER its own 7:1 floor in the single most-read run
+     on the page, while claiming it was not. Isolating the three layers on the lede (flat canvas
+     = 8.60:1 exactly, which calibrates the harness):
+         grid  costs 0.59   wash costs 0.47   grain costs 0.20   stacked cost 1.85
+     The grid and the wash are MASTHEAD-LOCAL decoration; the grain is the page-wide material that
+     carries the modern read. So the two local layers take the deep cut (.05 -> .022, .10 -> .04)
+     and the global grain is barely touched (.22 -> .18). Measured after: the masthead lede reads
+     7.56:1 at 768, 7.59:1 at 375 and 7.60:1 at 1440. Texture kept, floor cleared, and the honest
+     number replaces the asserted one. */
+  --ds-glow-wash:radial-gradient(62% 78% at 8% 0%,rgba(18,140,126,.04),transparent 68%);
+  --ds-grid:linear-gradient(rgba(11,61,58,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(11,61,58,.022) 1px,transparent 1px);
+  --ds-grid-size:44px 44px;
+  --ds-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.44'/%3E%3C/svg%3E");
+  --ds-opacity-texture:.18;
+
+  /* --- motion --- */
+  --ds-dur-fast:160ms; --ds-dur:220ms; --ds-dur-slow:600ms;
+  --ds-ease:cubic-bezier(.05,.5,.3,1); --ds-ease-out:cubic-bezier(.2,.6,.2,1);
+
+  /* --- spacing / layout --- */
+  --ds-space-2xs:4px; --ds-space-xs:8px; --ds-space-sm:14px; --ds-space-md:24px;
+  --ds-space-lg:40px; --ds-space-xl:64px; --ds-space-2xl:96px;
+  --ds-container-max:1180px;
+}
+
+/* ==========================================================================
+   GROUND  ·  _MODERN-WOW-SPEC section 3 (grain kills flatness) + F4/J10 tinted washes
+   ========================================================================== */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+/* BODY BASE. 18px / 1.70 / weight 400. The primary audience is 40 and over, where presbyopia
+   has already begun; 17px was the old base and 18px is the one this sheet ships. Line-height is
+   1.70, above the 1.60 floor, because generous leading is the cheapest legibility gain there is
+   and it reads editorial rather than large-print. */
+body{
+  margin:0;background:var(--ds-canvas);color:var(--ds-ink);
+  font-family:var(--ds-font-body);font-size:18px;line-height:1.7;font-weight:400;
+  font-feature-settings:"kern" 1;-webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:var(--ds-grain);opacity:var(--ds-opacity-texture);mix-blend-mode:multiply;
+}
+.sheet{position:relative;z-index:1;max-width:var(--ds-container-max);margin:0 auto;padding:0 var(--ds-space-md)}
+section{padding:var(--ds-space-xl) 0;border-top:1px solid var(--ds-line)}
+section:first-of-type{border-top:0}
+
+/* ==========================================================================
+   TYPE RAMP  ·  E1 display face on headings only, E2 negative tracking at size
+   TUNED FOR A 40-PLUS PRIMARY AUDIENCE. Three rules govern the whole ramp:
+     1. NOTHING renders below 14px. Not a caption, not a table header, not a swatch hex,
+        not an eyebrow, not a footnote. The old sheet ran a 9.5px owner badge.
+     2. Body and every reading run is 17px or more, at line-height 1.60 or more.
+     3. NO weight under 400 anywhere text is read, and NO negative tracking on anything
+        set at reading size. Negative tracking survives only on the SLAB DISPLAY face at
+        26px and up, where it is an optical correction rather than a legibility cost.
+   ========================================================================== */
+h1,h2,h3,h4{font-family:var(--ds-font-display);color:var(--ds-ink-heading);margin:0}
+.t-xl{font-size:clamp(46px,6vw,68px);line-height:1.05;letter-spacing:-.021em;font-weight:500}
+.t-l {font-size:clamp(31px,4vw,42px);line-height:1.12;letter-spacing:-.014em;font-weight:500}
+.t-m {font-size:27px;line-height:1.22;letter-spacing:-.008em;font-weight:600}
+/* t-s is the smallest display size and sits close to reading size, so its tracking is ZEROED. */
+.t-s {font-size:21px;line-height:1.34;letter-spacing:0;font-weight:600}
+.lede{font-size:21px;line-height:1.62;color:var(--ds-ink-soft);max-width:60ch;margin:0;
+  letter-spacing:0;font-weight:400}
+.body{font-size:18px;line-height:1.7;margin:0;letter-spacing:0;font-weight:400}
+/* .small is the CAPTION role, not a licence to shrink. 17px is the floor for anything a
+   patient-facing sheet expects to be read, so .small is 17px, not the old 15px. */
+.small{font-size:17px;line-height:1.62;color:var(--ds-ink-soft);margin:0;letter-spacing:0;font-weight:400}
+/* label/eyebrow face. 14px is the ABSOLUTE floor on this sheet and this is the only role at it.
+   Tracking is POSITIVE (caps need it) and weight is 500, never lighter. */
+.mono{font-family:var(--ds-font-mono);font-size:14px;line-height:1.5;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:500}
+.fig{font-family:var(--ds-font-mono);font-variant-numeric:tabular-nums;font-weight:500;letter-spacing:0}
+
+/* eyebrow  ·  E4 / TOP-12 #10, the LEAD RULE motif. Yellow cap + keyline + teal hairline. */
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--ds-primary);margin:0 0 var(--ds-space-sm)}
+.eyebrow::before{content:"";width:24px;height:3px;background:var(--ds-accent);
+  box-shadow:var(--ds-accent-keyline);flex:none}
+.eyebrow::after{content:"";width:64px;height:1px;background:var(--ds-signature);flex:none}
+
+/* ==========================================================================
+   MASTHEAD  ·  _MODERN-WOW-SPEC section 5 (soft wash) + section 1 (figure/ground)
+   ========================================================================== */
+.sheet-mast{position:relative;padding-top:var(--ds-space-2xl);overflow:hidden}
+.sheet-mast::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background-image:var(--ds-grid);background-size:var(--ds-grid-size);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 78%);
+          mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 78%);
+}
+.sheet-mast::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--ds-glow-wash)}
+.mast-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--ds-space-lg);align-items:end}
+.mast-meta{text-align:right;color:var(--ds-ink-soft)}
+.mast-meta dl{margin:0;display:grid;grid-template-columns:auto auto;gap:2px var(--ds-space-sm);justify-content:end}
+.mast-meta dt{color:var(--ds-ink-soft)}
+.mast-meta dd{margin:0;color:var(--ds-ink)}
+.thesis{margin-top:var(--ds-space-lg);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--ds-space-md)}
+.move{padding:var(--ds-space-md);background:var(--ds-bg-surface);border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-surface);box-shadow:var(--ds-shadow-rest),var(--ds-inset-hi);position:relative}
+.move::before{content:"";position:absolute;top:0;left:var(--ds-space-md);width:28px;height:3px;
+  background:var(--ds-accent);box-shadow:var(--ds-accent-keyline)}
+.move h3{margin:8px 0 8px}
+.move .mono{display:block;color:var(--ds-primary);margin-bottom:2px}
+
+/* the DEPARTURE panel. Deliberately loud, deliberately early, never collapsed. */
+.departure{margin-top:var(--ds-space-lg);display:grid;grid-template-columns:auto minmax(0,1fr);
+  gap:var(--ds-space-md);padding:var(--ds-space-md);border-radius:var(--ds-r-surface);
+  background:var(--ds-accent-soft);border:1px solid var(--ds-primary-deep);
+  box-shadow:var(--ds-shadow-card)}
+.departure__tag{align-self:start;font-family:var(--ds-font-mono);font-size:14px;letter-spacing:.11em;
+  text-transform:uppercase;font-weight:500;color:var(--ds-ink-on-dark);background:var(--ds-primary-deep);
+  padding:10px 16px;border-radius:var(--ds-r-pill);white-space:nowrap;line-height:1.4}
+.departure h3{margin:0 0 10px;color:var(--ds-primary-deep)}
+.departure p{margin:0 0 12px;font-size:18px;line-height:1.7;color:var(--ds-ink)}
+.departure p:last-child{margin-bottom:0}
+.departure b{font-weight:700}
+
+/* ==========================================================================
+   LOCKUP  ·  H2 shape-masked / circular medallion + D2 glass, on-register for medical
+   ========================================================================== */
+.lockup-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--ds-space-md)}
+.lock{padding:var(--ds-space-lg);border:1px solid var(--ds-line);border-radius:var(--ds-r-surface);
+  background:var(--ds-bg-surface);box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+  display:flex;flex-direction:column;gap:var(--ds-space-md);min-height:230px}
+.lock > :last-child{margin-top:auto}
+/* .surface-dark RE-DERIVED for the teal palette. Lightest stop is measured, not assumed:
+   linear tops out at --ds-dark-2 #0B423E; the radial adds signature teal at .10, whose
+   worst-case composite is #0C4944. On-dark text 9.05:1, accent 7.19:1. Both clear AAA.
+   The previous revision ran dark-2 #0D4E49 with the radial at .30: worst stop #0F6159,
+   on-dark 6.46:1 and accent 5.14:1, which cleared AA and missed the 7:1 floor. */
+.lock.surface-dark{background:
+    radial-gradient(120% 140% at 100% 0%,rgba(18,140,126,.10),transparent 62%),
+    linear-gradient(180deg,var(--ds-primary-deep),var(--ds-dark-2));
+  border-color:rgba(233,243,243,.22);color:var(--ds-ink-on-dark);
+  box-shadow:var(--ds-shadow-lift),inset 0 1px 0 rgba(233,243,243,.16)}
+.lock.surface-dark .mono{color:var(--ds-accent)}
+/* SOLID, not 82 percent alpha. Faded on-dark text is the first thing an older eye loses; the
+   composite at the old alpha measured 4.94:1 against the worst gradient stop. Solid it is 9.05:1. */
+.lock.surface-dark .small{color:var(--ds-ink-on-dark)}
+.wordmark{display:flex;align-items:center;gap:16px}
+.wordmark .mk{width:48px;height:48px;flex:none}
+.wordmark .wm{font-family:var(--ds-font-display);font-weight:600;font-size:27px;letter-spacing:-.014em;
+  line-height:1.12;color:var(--ds-primary-deep)}
+.wordmark .wm i{font-style:normal;display:block;font-family:var(--ds-font-mono);font-size:14px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ds-primary);font-weight:500;margin-top:7px;
+  line-height:1.4}
+.surface-dark .wordmark .wm{color:var(--ds-ink-on-dark)}
+.surface-dark .wordmark .wm i{color:var(--ds-accent)}
+.asset-row{display:flex;gap:var(--ds-space-sm);align-items:flex-end;flex-wrap:wrap}
+.asset{border:1px solid var(--ds-line);border-radius:var(--ds-r-control);background:var(--ds-canvas);
+  padding:12px;box-shadow:var(--ds-shadow-rest);display:flex;flex-direction:column;gap:8px;align-items:center}
+.asset img{display:block;max-width:100%;height:auto}
+.asset .mono{font-size:14px;letter-spacing:.08em;color:var(--ds-ink-soft)}
+
+/* ==========================================================================
+   PALETTE  ·  F1 one accent over a committed neutral base
+   ========================================================================== */
+.swatch-set{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--ds-space-sm)}
+.swatch{border:1px solid var(--ds-line);border-radius:var(--ds-r-surface);overflow:hidden;
+  background:var(--ds-bg-surface);box-shadow:var(--ds-shadow-rest)}
+.swatch__face{height:88px;position:relative;border-bottom:1px solid var(--ds-line)}
+.swatch__face::after{content:"";position:absolute;inset:0;box-shadow:inset 0 -1px 0 rgba(11,61,58,.12)}
+.swatch__meta{padding:16px 18px 18px}
+.swatch__meta .mono{color:var(--ds-ink-soft);font-size:14px;display:block}
+/* the hex IS the data on a palette sheet, so it is set at reading size, not as a footnote. */
+.swatch__hex{font-family:var(--ds-font-mono);font-size:19px;font-weight:500;color:var(--ds-ink);
+  display:block;margin:7px 0 9px;letter-spacing:.01em}
+.swatch__role{font-size:17px;line-height:1.6;margin:0;color:var(--ds-ink-soft)}
+.swatch--owner{border-color:var(--ds-signature);border-width:2px}
+.owner-mark{display:inline-block;font-family:var(--ds-font-mono);font-size:14px;letter-spacing:.10em;
+  text-transform:uppercase;color:var(--ds-primary-deep);background:var(--ds-primary-soft);
+  padding:5px 11px;border-radius:var(--ds-r-pill);margin-bottom:9px;font-weight:500;line-height:1.4}
+/* the ratio table is wide by nature. It scrolls inside ITS OWN container so the page body
+   never scrolls horizontally. Caught by the render pass at 375px, where the un-wrapped table
+   pushed the document to 407px against a 375px viewport. */
+.table-scroll{margin-top:var(--ds-space-lg);overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border-radius:var(--ds-r-control)}
+/* the table is DATA a 40-plus reader has to scan across. Cells run at 16px, headers at the 14px
+   floor, and row padding is generous so a line is easy to track from left to right. */
+.ratio-table{width:100%;min-width:760px;border-collapse:collapse;font-size:16px;line-height:1.6}
+.ratio-table caption{text-align:left;padding-bottom:14px;color:var(--ds-ink-soft);font-size:17px;line-height:1.62}
+.ratio-table th,.ratio-table td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--ds-line);vertical-align:middle}
+.ratio-table th{font-family:var(--ds-font-mono);font-size:14px;letter-spacing:.10em;text-transform:uppercase;
+  color:var(--ds-primary);font-weight:500;border-bottom:2px solid var(--ds-primary-deep);line-height:1.5}
+.ratio-table td.n{font-family:var(--ds-font-mono);font-variant-numeric:tabular-nums;white-space:nowrap;
+  font-size:17px;font-weight:500;color:var(--ds-ink)}
+.ratio-table tr.forbid td{background:var(--ds-accent-soft)}
+.dot{display:inline-block;width:13px;height:13px;border-radius:var(--ds-r-pill);
+  border:1px solid rgba(11,61,58,.30);margin-right:9px;vertical-align:-1px}
+.pass{color:var(--ds-primary);font-weight:500}
+.stop{color:var(--ds-primary-deep);font-weight:700}
+.derive-list{margin:var(--ds-space-lg) 0 0;padding:0;list-style:none;display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--ds-space-sm)}
+.derive-list li{padding:18px 20px;border:1px solid var(--ds-line);border-radius:var(--ds-r-control);
+  background:var(--ds-bg-surface);box-shadow:var(--ds-shadow-rest)}
+.derive-list .mono{display:block;color:var(--ds-primary);font-size:14px;margin-bottom:8px}
+.derive-list p{margin:0;font-size:17px;line-height:1.62}
+.derive-list .fig{color:var(--ds-primary-deep)}
+
+/* ==========================================================================
+   TYPE SPECIMENS  ·  E2 oversized display, refined measure
+   ========================================================================== */
+.ramp-row{display:grid;grid-template-columns:210px minmax(0,1fr);gap:var(--ds-space-md);
+  padding:var(--ds-space-md) 0;border-bottom:1px solid var(--ds-line);align-items:baseline}
+.ramp-row:last-child{border-bottom:0}
+.ramp-row .mono{color:var(--ds-ink-soft);font-size:14px;line-height:1.65;letter-spacing:.06em}
+.ramp-row .mono b{display:block;color:var(--ds-primary);font-weight:500;letter-spacing:.10em}
+/* E5 swipe. The yellow wash alone measures 1.22:1 against the canvas, so it would read as
+   nothing. The 2px deep-teal rule under it is what makes the device legible.
+   DESCENDER CLEARANCE, found by the render probe and not by any token math. The rule is an
+   inset shadow on the bottom of the INLINE content box, and a Roboto descender reaches that
+   same edge. At 18px body the "p" of "per office" put one glyph pixel ON the rule, where ink
+   #09302D against rule #0B3D3A measures 1.18:1 and the descender tip simply disappeared. The
+   words that had no descender (force, holds, honest) measured 9.15 to 10.87:1 over their ink
+   rows and hid the problem. A 0.15em bottom pad drops the rule clear of the descender at every
+   size the swipe is used (18, 27, 31, 42px). Padding on an inline box does not change the line
+   box, so nothing reflows; it sits inside the half-leading. */
+.swipe{background-image:linear-gradient(180deg,transparent 58%,rgba(255,212,71,.62) 0);
+  background-repeat:no-repeat;padding:0 .06em .15em;box-shadow:inset 0 -2px 0 var(--ds-primary-deep)}
+
+/* ==========================================================================
+   ATOMS  ·  I1 buttons, I2 cards, I5 icon chips, I6 hairline rows, form fields
+   ========================================================================== */
+.atom-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--ds-space-md)}
+.atom{background:var(--ds-bg-surface);border:1px solid var(--ds-line);border-radius:var(--ds-r-surface);
+  padding:var(--ds-space-md);box-shadow:var(--ds-shadow-rest),var(--ds-inset-hi)}
+.atom__label{display:flex;align-items:center;gap:10px;color:var(--ds-ink-soft);margin:0 0 var(--ds-space-sm)}
+.atom__label::before{content:"";width:16px;height:3px;background:var(--ds-accent);
+  box-shadow:var(--ds-accent-keyline);flex:none}
+.atom__stack{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* CONTROLS. Every control on this sheet is built to clear WCAG 2.5.5 AAA at 44 x 44 CSS px
+   MEASURED IN RENDER, not inferred from padding. 18px label, 17px of padding top and bottom and
+   a 1px border puts the solid and outline buttons past 50px tall with room to spare. */
+.btn{font-family:var(--ds-font-body);font-size:18px;font-weight:500;line-height:1.2;cursor:pointer;
+  border-radius:var(--ds-r-control);padding:15px 26px;border:1px solid transparent;position:relative;
+  min-height:52px;display:inline-flex;align-items:center;justify-content:center;letter-spacing:0;
+  transition:background-color var(--ds-dur) var(--ds-ease),color var(--ds-dur) var(--ds-ease),
+    border-color var(--ds-dur) var(--ds-ease),box-shadow var(--ds-dur) var(--ds-ease),transform var(--ds-dur-fast) var(--ds-ease)}
+/* the CTA fill is --ds-primary #0D504A, NOT the owner signature #128C7E. On #128C7E the near-white
+   sits at 3.94:1 and fails outright. On the OLD primary #10746A it was 4.98:1, which cleared AA but
+   not the 7:1 floor this audience needs. On #0D504A it measures 8.21:1. */
+.btn--solid{background:var(--ds-primary);color:var(--ds-ink-on-dark);box-shadow:var(--ds-shadow-rest)}
+.btn--solid:hover{background:var(--ds-primary-deep);transform:translateY(-1px);box-shadow:var(--ds-shadow-card)}
+.btn--line{background:transparent;color:var(--ds-primary-deep);border-color:var(--ds-line-control);border-width:2px}
+.btn--line:hover{background:var(--ds-primary-soft);border-color:var(--ds-primary-deep)}
+.btn--quiet{background:transparent;color:var(--ds-primary-deep);padding-left:0;padding-right:0;
+  padding-top:14px;padding-bottom:14px;border-bottom:2px solid var(--ds-signature);border-radius:0;
+  justify-content:flex-start}
+.btn--quiet::before{content:"";position:absolute;left:0;bottom:-2px;width:24px;height:3px;
+  background:var(--ds-accent);box-shadow:var(--ds-accent-keyline)}
+.btn--quiet:hover{color:var(--ds-primary);border-bottom-color:var(--ds-primary-deep)}
+/* FOCUS. The previous concept used the yellow at full strength as the ring. At 1.36:1 on this
+   canvas a yellow ring is invisible, so the ring is now a deep-teal outline (11.48:1) with a
+   teal halo (--ds-glow). The yellow is not load-bearing for focus any more. */
+.btn:focus-visible{outline:2px solid var(--ds-primary-deep);outline-offset:2px;box-shadow:var(--ds-glow)}
+
+.tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--ds-font-mono);font-size:14px;
+  letter-spacing:.09em;text-transform:uppercase;font-weight:500;padding:9px 16px;
+  border-radius:var(--ds-r-pill);line-height:1.4}
+.tag--brand{background:var(--ds-primary-soft);color:var(--ds-primary-deep)}
+.tag--offer{background:var(--ds-accent-soft);color:var(--ds-primary-deep)}
+.tag--care{background:transparent;color:var(--ds-primary-deep);border:1px solid var(--ds-signature)}
+.tag--flag{background:transparent;color:var(--ds-primary-deep);border:1px dashed var(--ds-line-control)}
+
+.field{display:block}
+.field span{display:block;color:var(--ds-ink-soft);margin-bottom:9px}
+.field input{width:100%;font-family:var(--ds-font-body);font-size:18px;color:var(--ds-ink);
+  padding:15px 16px;min-height:56px;background:var(--ds-canvas);border:2px solid var(--ds-line-control);
+  border-radius:var(--ds-r-control);box-shadow:inset 0 1px 2px rgba(11,61,58,.07);line-height:1.4;
+  transition:border-color var(--ds-dur) var(--ds-ease),box-shadow var(--ds-dur) var(--ds-ease)}
+.field input:focus{outline:0;border-color:var(--ds-primary-deep);box-shadow:var(--ds-glow)}
+/* placeholder is SOLID --ds-ink-soft. At the previous 86% alpha it composited to #597C79 and
+   measured 4.37:1 on the canvas, which fails. Solid at the NEW ink-soft it measures 8.60:1. */
+.field input::placeholder{color:var(--ds-ink-soft);opacity:1}
+
+.chip-ico{width:48px;height:48px;border-radius:var(--ds-r-control);display:grid;place-items:center;
+  background:var(--ds-primary-soft);color:var(--ds-primary-deep);border:1px solid var(--ds-signature);
+  transition:background-color var(--ds-dur) var(--ds-ease),color var(--ds-dur) var(--ds-ease)}
+.chip-ico:hover{background:var(--ds-primary-deep);color:var(--ds-accent)}
+.chip-ico svg{width:24px;height:24px;display:block}
+
+.rowline{display:flex;justify-content:space-between;align-items:baseline;gap:var(--ds-space-sm);
+  padding:14px 0;border-bottom:1px solid var(--ds-line)}
+.rowline:last-child{border-bottom:0}
+.rowline b{font-weight:700}
+.rowline .fig{color:var(--ds-primary-deep);font-size:20px}
+
+.rating{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.rating svg{width:104px;height:20px;display:block}
+.rating .fig{font-size:24px;color:var(--ds-ink)}
+.rating .small{margin:0}
+
+/* ==========================================================================
+   LOAD-BEARING CONTACT UI  ·  C7 section 4: "Hours, addresses and phone numbers are
+   load-bearing UI. For a seven-office practice these are the most-used content on the
+   site." They are therefore the LARGEST non-display type on this sheet, they carry the
+   ink colour rather than the soft one, and every number is a real tel: target.
+   ========================================================================== */
+.tel{display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:6px 2px;
+  font-family:var(--ds-font-mono);font-variant-numeric:tabular-nums;font-size:21px;font-weight:500;
+  letter-spacing:.01em;color:var(--ds-primary-deep);text-decoration:underline;
+  text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:var(--ds-signature);
+  border-radius:var(--ds-r-control);
+  transition:color var(--ds-dur) var(--ds-ease),text-decoration-color var(--ds-dur) var(--ds-ease)}
+.tel::before{content:"";width:12px;height:3px;flex:none;background:var(--ds-accent);
+  box-shadow:var(--ds-accent-keyline)}
+.tel:hover{color:var(--ds-primary);text-decoration-color:var(--ds-primary-deep)}
+.tel:focus-visible{outline:2px solid var(--ds-primary-deep);outline-offset:3px;box-shadow:var(--ds-glow)}
+.addr{font-size:17px;line-height:1.62;color:var(--ds-ink);margin:0}
+.hours{display:flex;flex-wrap:wrap;gap:4px 18px;margin:6px 0 0;font-size:17px;line-height:1.62;
+  color:var(--ds-ink-soft)}
+.hours b{font-family:var(--ds-font-mono);font-size:14px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ds-primary);font-weight:500;margin-right:4px}
+
+/* ==========================================================================
+   MOTIF  ·  the LEAD RULE. A3 hairline rule system + E4 eyebrow + E5 swipe + A2 arc
+   ========================================================================== */
+.motif-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--ds-space-md)}
+.motif{background:var(--ds-bg-surface);border:1px solid var(--ds-line);border-radius:var(--ds-r-surface);
+  padding:var(--ds-space-md);box-shadow:var(--ds-shadow-rest),var(--ds-inset-hi);
+  display:flex;flex-direction:column;gap:var(--ds-space-sm)}
+.motif__demo{min-height:94px;display:flex;align-items:center}
+.rule-lead{display:flex;align-items:center;width:100%}
+.rule-lead i{display:block;height:3px;background:var(--ds-accent);width:24px;flex:none;
+  box-shadow:var(--ds-accent-keyline)}
+.rule-lead u{display:block;height:1px;background:var(--ds-signature);flex:1;text-decoration:none}
+.rule-tick{display:flex;gap:0;align-items:stretch;padding-left:0}
+.rule-tick i{width:3px;background:var(--ds-accent);flex:none;box-shadow:var(--ds-accent-keyline)}
+.rule-tick u{width:1px;background:var(--ds-signature);flex:none;text-decoration:none;margin-left:3px}
+.rule-tick div{padding-left:14px}
+.arc-seam{position:relative;height:94px;width:100%;overflow:hidden;border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-control);background:var(--ds-bg-band);
+  clip-path:inset(0 round var(--ds-r-control))}
+.arc-seam span{position:absolute;left:-8%;right:-8%;bottom:0;height:54px;background:var(--ds-canvas);
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;border-top:1px solid var(--ds-signature)}
+.arc-seam em{position:absolute;left:50%;bottom:45px;width:3px;height:18px;background:var(--ds-accent);
+  box-shadow:var(--ds-accent-keyline);transform:translateX(-50%)}
+.spec-line{display:flex;flex-wrap:wrap;gap:8px 20px;color:var(--ds-ink-soft);font-size:15px;
+  line-height:1.6;font-family:var(--ds-font-mono);letter-spacing:.02em}
+.spec-line b{color:var(--ds-primary);font-weight:500}
+
+/* ==========================================================================
+   WEIGHT  ·  C7 section 49, the seven offices and ten clinicians are the wedge
+   ========================================================================== */
+.weight-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:var(--ds-space-lg)}
+.office-list,.clin-list{margin:0;padding:0;list-style:none}
+.office-list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px var(--ds-space-md);
+  padding:18px 0 18px 18px;border-bottom:1px solid var(--ds-line);position:relative;align-items:center}
+.office-list li::before{content:"";position:absolute;left:0;top:24px;width:3px;height:18px;
+  background:var(--ds-accent);box-shadow:var(--ds-accent-keyline)}
+.office-list li:last-child{border-bottom:0}
+.office-list b{font-weight:700;color:var(--ds-primary-deep);font-size:20px;line-height:1.4}
+.office-list .addr,.office-list .hours,.office-list .small{grid-column:1/-1;margin:4px 0 0}
+.office-list .tel{grid-row:1;grid-column:2;justify-self:end}
+.clin-list li{padding:14px 0;border-bottom:1px solid var(--ds-line);display:flex;
+  justify-content:space-between;gap:var(--ds-space-sm);align-items:baseline;flex-wrap:wrap}
+.clin-list li:last-child{border-bottom:0}
+.clin-list b{font-weight:700;font-size:18px;color:var(--ds-primary-deep)}
+.clin-list .mono{color:var(--ds-ink-soft);font-size:14px;letter-spacing:.08em}
+
+/* ==========================================================================
+   VIGNETTE  ·  the ONE applied moment. composition-medical-health: the offer is the
+   spine, honest terms rendered WITH the offer (C7 reference 3, BDG take)
+   ========================================================================== */
+.vignette-wrap{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:var(--ds-space-lg);align-items:start}
+.offer{position:relative;overflow:hidden;border-radius:var(--ds-r-surface);padding:var(--ds-space-lg) var(--ds-space-md) var(--ds-space-md);
+  color:var(--ds-ink-on-dark);border:1px solid rgba(233,243,243,.22);box-shadow:var(--ds-shadow-lift);
+  background:
+    radial-gradient(120% 90% at 100% 0%,rgba(18,140,126,.10),transparent 60%),
+    linear-gradient(180deg,var(--ds-primary-deep),var(--ds-dark-2))}
+/* the grain over the dark ground is halved. At .26 it was measurably eating the accent's
+   contrast against the ground it sits on; the texture survives, the legibility cost does not. */
+.offer::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:var(--ds-grain);opacity:.13;mix-blend-mode:overlay}
+.offer .eyebrow{color:var(--ds-accent)}
+/* the keyline is a LIGHT-ground device. On the dark ground the accent measures 7.19:1 at the
+   worst stop, and a deep-teal outline there would only eat into the cap. Dropped, not inherited. */
+.offer .eyebrow::before{box-shadow:none}
+.offer .eyebrow::after{background:rgba(233,243,243,.42)}
+.offer .t-l{color:var(--ds-ink-on-dark);position:relative}
+.offer p{position:relative}
+.price{position:relative;display:inline-block;margin:var(--ds-space-sm) 0 0}
+.price .fig{font-family:var(--ds-font-display);font-weight:600;font-size:64px;line-height:1.05;
+  letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--ds-ink-on-dark);display:block}
+/* the ONE full-strength yellow moment on this sheet. It sits on the DARK ground, where the
+   accent measures 7.19:1 at the worst stop, so it needs no keyline here. */
+.price::after{content:"";display:block;height:5px;background:var(--ds-accent);margin-top:12px;width:100%}
+/* SOLID on-dark ink. Every alpha-faded on-dark run on the old sheet is gone. */
+.offer-sub{margin:var(--ds-space-sm) 0 0;color:var(--ds-ink-on-dark);font-size:19px;line-height:1.6;
+  position:relative}
+.offer-terms{position:relative;margin:var(--ds-space-md) 0 0;padding-top:var(--ds-space-sm);
+  border-top:1px solid rgba(233,243,243,.30);font-size:17px;line-height:1.62;color:var(--ds-ink-on-dark)}
+/* the offer CTA is the one place the accent is a GROUND. #0B3D3A on #FFD447 measures 8.47:1,
+   which is the only legal way the accent may sit behind type anywhere in this system. */
+.offer .btn--solid{background:var(--ds-accent);color:var(--ds-primary-deep);position:relative;
+  margin-top:var(--ds-space-md);font-weight:700;width:100%}
+.offer .btn--solid:hover{background:var(--ds-ink-on-dark);color:var(--ds-primary-deep)}
+.offer .btn:focus-visible{outline-color:var(--ds-ink-on-dark);box-shadow:none}
+.glass-note{background:var(--ds-glass-bg);-webkit-backdrop-filter:var(--ds-glass-blur);
+  backdrop-filter:var(--ds-glass-blur);border:1px solid var(--ds-glass-border);border-radius:var(--ds-r-surface);
+  padding:var(--ds-space-md);box-shadow:var(--ds-shadow-rest),var(--ds-inset-hi)}
+
+/* ==========================================================================
+   NOTES / FLAGS
+   ========================================================================== */
+.flag{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:16px;padding:18px 20px;
+  border:1px dashed var(--ds-line-control);border-radius:var(--ds-r-control);
+  background:rgba(249,242,211,.55);margin-bottom:14px}
+.flag b{font-family:var(--ds-font-mono);font-size:14px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ds-primary-deep);font-weight:500;white-space:nowrap;line-height:1.5}
+.flag p{margin:0;font-size:17px;line-height:1.62}
+.flag--gate{border-style:solid;border-color:var(--ds-primary-deep);border-width:2px}
+.prov{margin:var(--ds-space-md) 0 0;font-size:16px;line-height:1.8;color:var(--ds-ink-soft);
+  font-family:var(--ds-font-mono);letter-spacing:0}
+.prov b{color:var(--ds-primary);font-weight:500}
+footer.sheet-foot{padding:var(--ds-space-lg) 0 var(--ds-space-2xl);color:var(--ds-ink-soft);
+  font-size:17px;line-height:1.62}
+
+/* ==========================================================================
+   LEGIBILITY FLOORS  ·  the measured contract, stated on the sheet rather than assumed.
+   Same hairline-and-rule grammar as the rest of concept D, no new device invented.
+   ========================================================================== */
+.floors{margin:var(--ds-space-lg) 0 0;padding:0;list-style:none;display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--ds-space-sm)}
+.floors li{padding:18px 20px;border:1px solid var(--ds-line);border-radius:var(--ds-r-control);
+  background:var(--ds-bg-surface);box-shadow:var(--ds-shadow-rest);position:relative}
+.floors li::before{content:"";position:absolute;top:0;left:20px;width:26px;height:3px;
+  background:var(--ds-accent);box-shadow:var(--ds-accent-keyline)}
+.floors .mono{display:block;color:var(--ds-primary);margin:8px 0 6px}
+.floors .fig{display:block;font-size:30px;line-height:1.15;color:var(--ds-primary-deep);margin-bottom:6px}
+.floors p{margin:0;font-size:17px;line-height:1.6;color:var(--ds-ink-soft)}
+
+/* reveal  ·  _MODERN-WOW-SPEC section 2, gated */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+section{animation:rise var(--ds-dur-slow) var(--ds-ease-out) both}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+@media (max-width:1100px){
+  .swatch-set{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .floors{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .mast-head,.thesis,.lockup-grid,.swatch-set,.atom-grid,.motif-grid,.weight-grid,
+  .vignette-wrap,.derive-list,.departure,.floors{grid-template-columns:1fr}
+  .mast-meta{text-align:left}.mast-meta dl{justify-content:start}
+  .ramp-row{grid-template-columns:1fr}
+  /* the phone number stops sharing a row with the office name and gets its own full line,
+     so the tap target is never squeezed by a long office label on a narrow screen. */
+  .office-list li{grid-template-columns:1fr}
+  .office-list .tel{grid-row:auto;grid-column:1/-1;justify-self:start;margin-top:6px}
+}
+/* the flag label is a NOWRAP mono chip. Raising it from 11px to the 14px floor made the two-column
+   flag grid 384px wide inside a 323px column at 375, which pushed the whole document to 410px.
+   Caught by the render pass, not by the token math. Below 720 the label stacks over its note. */
+@media (max-width:720px){
+  .flag{grid-template-columns:1fr;gap:10px}
+  .flag b{white-space:normal}
+}
+@media (max-width:560px){
+  .t-xl{font-size:clamp(38px,10vw,46px)}
+  .btn{width:100%}
+  .atom__stack .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+
+<!-- ============================================================
+     MASTHEAD
+     from: _MODERN-WOW-SPEC.md section 5 (gradient wash + light) and section 1 (figure/ground)
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md TOP-12 #11 (section rhythm, asymmetric padding)
+     ============================================================ -->
+<section class="sheet-mast">
+  <div class="mast-head">
+    <div>
+      <p class="eyebrow mono">Brand card, concept D, owner palette</p>
+      <h1 class="t-xl">Radiant Smiles<br>Dental Care</h1>
+      <p class="lede" style="margin-top:var(--ds-space-md)">
+        Concept D still argues for maximum separation from the live site, and it still refuses
+        pure white and pure black. The owner supplied four hexes, so authority is deep teal rather
+        than navy and the ground is a cool near-white rather than a warm ivory. The teal, not the
+        paper, does the work of telling this site apart from the one it replaces. This revision
+        holds that argument and hardens it against the audience C7 section 4 names: type at 18px
+        over 14px floors, AAA contrast rather than AA, and controls measured at 44px rather than
+        assumed. Nothing was shrunk to make room. The separation is still carried by pigment.
+      </p>
+    </div>
+    <div class="mast-meta">
+      <dl class="mono">
+        <dt>Slug</dt><dd>radiantsmiles</dd>
+        <dt>Stage</dt><dd>(1) Brand card</dd>
+        <dt>Concept</dt><dd>D</dd>
+        <dt>Palette</dt><dd>Owner supplied</dd>
+        <dt>Polarity</dt><dd>Light</dd>
+        <dt>Vertical</dt><dd>Medical, dental</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- The C7 departure is stated HERE, at the top, before any of the design argument. -->
+  <div class="departure">
+    <span class="departure__tag">Gate, read first</span>
+    <div>
+      <h3 class="t-s">This concept departs from the C7-locked colour relationship</h3>
+      <p><b>What C7 locked.</b> visual-direction.md section 48 states: "the existing deep navy
+      carries authority and the yellow is the accent that already signals the offer. Keep that
+      relationship; the build decides how." C7 gave the build freedom over deployment, not over
+      the relationship itself.</p>
+      <p><b>What this sheet does.</b> The owner-supplied palette removes the brand navy
+      <span class="fig">#17274F</span> entirely and makes deep teal <span class="fig">#0B3D3A</span>
+      the authority colour. The accent <span class="fig">#FFD447</span> is close to, but not the
+      same as, the brand yellow <span class="fig">#FCE003</span>. Both halves of the locked pair
+      have changed, so this is a change to the relationship, not to its deployment.</p>
+      <p><b>Consequence.</b> The owner directed the palette and it is applied here in full. C7 is
+      now out of date with respect to this concept and requires an <b>upstream re-lock in prep,
+      SKILL.md P7.75</b>, before concept D can advance to stage (2) CHROME. This sheet does not
+      argue for or against the change. It records it.</p>
+    </div>
+  </div>
+
+  <div class="thesis">
+    <!-- from: _MODERN-DESIGN-PATTERN-LIBRARY.md F1 + TOP-12 #1 (one accent over a committed neutral base) -->
+    <div class="move">
+      <span class="mono">Move 01</span>
+      <h3 class="t-s">Teal carries the separation</h3>
+      <p class="small">D used to separate from the live site through warm paper. The owner's canvas
+      is cool, and it sits only 1.05:1 away from the live site's white, so the paper can no longer
+      do that job. Teal now carries it: the ink, the rules, the chips, the arcs and both dark
+      grounds are teal, which the live site has nowhere at any strength.</p>
+    </div>
+    <!-- from: _MODERN-DESIGN-PATTERN-LIBRARY.md A3 (hairline rule system) + E4 / E5 (eyebrow rule, swipe inset) -->
+    <div class="move">
+      <span class="mono">Move 02</span>
+      <h3 class="t-s">The accent gets a keyline</h3>
+      <p class="small">#FFD447 measures 1.36:1 on this canvas, so a bare yellow mark is a ghost.
+      Every yellow mark on a light ground now carries a 1px deep-teal keyline. The yellow keeps
+      its job and the teal makes it visible.</p>
+    </div>
+    <!-- from: _MODERN-DESIGN-PATTERN-LIBRARY.md TOP-12 #3 / D1 (ink-tinted shadow) + composition-medical-health -->
+    <div class="move">
+      <span class="mono">Move 03</span>
+      <h3 class="t-s">Two teals, two jobs</h3>
+      <p class="small">The owner's #128C7E cannot carry text in either direction, so it is a
+      boundary and graphic colour only. A derived step, #0D504A, is the one teal legal as text on
+      light and as a fill under light text, at 8.84:1 and 8.21:1. Deep teal #0B3D3A stays the ink
+      and the ground.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LOCKUPS
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md H2 (shape-masked / circular medallion imagery)
+     from: _MODERN-WOW-SPEC.md section 1 (inset top-highlight, hairline borders, real figure/ground)
+     ============================================================ -->
+<section class="lockup">
+  <p class="eyebrow mono">Lockups</p>
+  <h2 class="t-l">Wordmark, mark, reversal</h2>
+  <p class="lede" style="margin:var(--ds-space-sm) 0 var(--ds-space-lg)">
+    Built as type plus a drawn mark because no vector master exists. The mark is a
+    reductive arc: the smile line the practice already owns, cut to a single stroke so it
+    survives a favicon. On light grounds the yellow segment is drawn over a deep-teal stroke,
+    which is the keyline rule applied to the mark itself.
+  </p>
+
+  <div class="lockup-grid">
+    <div class="lock">
+      <div class="wordmark">
+        <svg class="mk" viewBox="0 0 48 48" role="img" aria-label="Radiant Smiles arc mark">
+          <circle cx="24" cy="24" r="22.5" fill="none" stroke="#128C7E" stroke-width="1.4"/>
+          <path d="M11 22.5a13 13 0 0 0 26 0" fill="none" stroke="#0B3D3A" stroke-width="3.6" stroke-linecap="round"/>
+          <path d="M11 22.5h7.4" fill="none" stroke="#0B3D3A" stroke-width="5.2" stroke-linecap="round"/>
+          <path d="M11 22.5h7.4" fill="none" stroke="#FFD447" stroke-width="3.6" stroke-linecap="round"/>
+          <circle cx="24" cy="13" r="2" fill="#0B3D3A"/>
+        </svg>
+        <span class="wm">Radiant Smiles<i>Dental Care</i></span>
+      </div>
+      <p class="small" style="margin:0">Primary horizontal lockup on the cool canvas. Mark at 48px,
+      wordmark at 27px, descriptor at 14px, optical gap 16px. The mark and the descriptor both grew
+      in this pass: the descriptor used to set at 10.5px, which is below the 14px floor this sheet
+      now holds everywhere. The yellow segment sits on a 5.2px deep-teal stroke, giving it a 0.8px
+      keyline on each side.</p>
+    </div>
+
+    <div class="lock surface-dark">
+      <div class="wordmark">
+        <svg class="mk" viewBox="0 0 48 48" role="img" aria-label="Radiant Smiles arc mark, reversed">
+          <circle cx="24" cy="24" r="22.5" fill="none" stroke="#E9F3F3" stroke-width="1.4" opacity=".42"/>
+          <path d="M11 22.5a13 13 0 0 0 26 0" fill="none" stroke="#E9F3F3" stroke-width="3.6" stroke-linecap="round"/>
+          <path d="M11 22.5h7.4" fill="none" stroke="#FFD447" stroke-width="3.6" stroke-linecap="round"/>
+          <circle cx="24" cy="13" r="2" fill="#FFD447"/>
+        </svg>
+        <span class="wm">Radiant Smiles<i>Dental Care</i></span>
+      </div>
+      <p class="small" style="margin:0">Reversed lockup on the deep teal ground. No keyline is used
+      here: on this ground the accent measures 7.19:1 at the worst gradient stop and reads on its
+      own. One of only two dark surfaces on this sheet. Its caption is solid on-dark ink at 9.05:1,
+      not the 82 percent alpha the previous revision used, which composited to 4.94:1.</p>
+    </div>
+
+    <div class="lock">
+      <p class="mono" style="color:var(--ds-ink-soft);margin:0">What exists on disk today</p>
+      <div class="asset-row">
+        <span class="asset">
+          <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-logo-mark.webp"
+               alt="Existing Radiant Smiles icon mark, 232px WEBP, also used as the favicon" width="72" height="72">
+          <span class="mono">mark.webp 232w</span>
+        </span>
+        <span class="asset">
+          <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_03_radiant-smiles-logo-lv.jpg"
+               alt="Existing Radiant Smiles colour lockup, 472px JPG with no transparency" width="180" height="86">
+          <span class="mono">logo-lv.jpg 472w</span>
+        </span>
+      </div>
+      <p class="small" style="margin:0">Three raster files, no vector. Both carry the old navy and
+      the old yellow, so under the owner palette every existing asset is off-brand as well as
+      off-format. Re-drawing is now unavoidable, not just preferable.</p>
+    </div>
+
+    <div class="lock">
+      <p class="mono" style="color:var(--ds-ink-soft);margin:0">Clear space and minimums</p>
+      <ul class="office-list" style="margin-top:6px">
+        <li><b>Clear space</b><span class="fig" style="font-size:18px">1.0x mark height</span></li>
+        <li><b>Minimum lockup width</b><span class="fig" style="font-size:18px">168 px</span></li>
+        <li><b>Mark alone, minimum</b><span class="fig" style="font-size:18px">28 px</span></li>
+        <li><b>Approved grounds</b><span class="fig" style="font-size:18px">canvas, card, deep teal</span></li>
+      </ul>
+      <p class="small" style="margin:0">The yellow segment is never removed from the mark and never
+      grows past the first quarter of the arc. Below 28px the keyline is dropped and the segment
+      is drawn in deep teal, because a 0.8px keyline stops resolving. The minimums moved up with
+      the type: a 148px lockup put the descriptor under the 14px floor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PALETTE
+     from: COLOR-THEORY-PRESETS.md #18 Coral + Teal  (FAMILY ONLY. The palette is OWNER-SUPPLIED,
+           not menu-picked. The preset's coral accent, its #FFFFFF surface-2 and all its other
+           hexes are rejected outright. It is cited to record the family, per that menu's rule 4.)
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md F1 / TOP-12 #1 and F4 + J10 (tinted wash bands, medical)
+     ============================================================ -->
+<section class="palette">
+  <p class="eyebrow mono">Palette</p>
+  <h2 class="t-l">Four owner hexes, and the steps they <span class="swipe">force</span></h2>
+  <p class="lede" style="margin:var(--ds-space-sm) 0 var(--ds-space-lg)">
+    The four hexes below are owner-supplied and carried verbatim. They are not enough on their own
+    to build a compliant system, because two of the four cannot carry text at all. Every derived
+    step is listed underneath with the measurement that forced it.
+  </p>
+
+  <div class="swatch-set">
+    <div class="swatch swatch--owner">
+      <div class="swatch__face" style="background:#F7FAFA"></div>
+      <div class="swatch__meta">
+        <span class="owner-mark">Owner</span>
+        <span class="mono">canvas</span>
+        <span class="swatch__hex">#F7FAFA</span>
+        <p class="swatch__role">The canvas. Cool near-white, hue 180. Replaces concept D's warm
+        ivory #F6F3EC. Still not #ffffff.</p>
+      </div>
+    </div>
+    <div class="swatch swatch--owner">
+      <div class="swatch__face" style="background:#0B3D3A"></div>
+      <div class="swatch__meta">
+        <span class="owner-mark">Owner</span>
+        <span class="mono">primary-deep</span>
+        <span class="swatch__hex">#0B3D3A</span>
+        <p class="swatch__role">Ink and authority. Headings, keylines, both dark grounds. Replaces
+        the brand navy #17274F, which is gone.</p>
+      </div>
+    </div>
+    <div class="swatch swatch--owner">
+      <div class="swatch__face" style="background:#128C7E"></div>
+      <div class="swatch__meta">
+        <span class="owner-mark">Owner</span>
+        <span class="mono">signature</span>
+        <span class="swatch__hex">#128C7E</span>
+        <p class="swatch__role">The signature teal. Boundaries, keylines, arcs and graphics only.
+        It cannot carry text in either direction. See the forbidden rows below.</p>
+      </div>
+    </div>
+    <div class="swatch swatch--owner">
+      <div class="swatch__face" style="background:#FFD447"></div>
+      <div class="swatch__meta">
+        <span class="owner-mark">Owner</span>
+        <span class="mono">accent</span>
+        <span class="swatch__hex">#FFD447</span>
+        <p class="swatch__role">Decorative only. Never a foreground anywhere. Legal as a ground in
+        exactly one case: under deep teal, at 8.47:1.</p>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch__face" style="background:#0D504A"></div>
+      <div class="swatch__meta">
+        <span class="mono">primary, derived</span>
+        <span class="swatch__hex">#0D504A</span>
+        <p class="swatch__role">The one teal legal in both directions. Eyebrows, labels, links and
+        the primary button fill. Moved deeper in this pass: the old step #10746A cleared AA at
+        5.37:1 but not the 7:1 floor a 40-plus audience needs. This one reads 8.84:1.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__face" style="background:#09302D"></div>
+      <div class="swatch__meta">
+        <span class="mono">ink, derived</span>
+        <span class="swatch__hex">#09302D</span>
+        <p class="swatch__role">Body ink, teal-tinted near-black. Replaces the live #000000.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__face" style="background:#23504D"></div>
+      <div class="swatch__meta">
+        <span class="mono">ink-soft, derived</span>
+        <span class="swatch__hex">#23504D</span>
+        <p class="swatch__role">Secondary ink, ledes, captions and the field placeholder. A
+        desaturated teal, not a generic grey. Also moved deeper: the old #3F6764 sat at 6.00:1,
+        which is AA but not AAA. This one reads 8.60:1 and still steps back from the body ink.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__face" style="background:#EDF5F4"></div>
+      <div class="swatch__meta">
+        <span class="mono">bg-surface, derived</span>
+        <span class="swatch__hex">#EDF5F4</span>
+        <p class="swatch__role">The card. It steps DOWN from the canvas, not up, because the canvas
+        is already at 97% lightness.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__face" style="background:#E0EFEE"></div>
+      <div class="swatch__meta">
+        <span class="mono">bg-band, derived</span>
+        <span class="swatch__hex">#E0EFEE</span>
+        <p class="swatch__role">The band. Replaces the live #f6f6f6 alternating band with a colour
+        that belongs to the brand.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__face" style="background:#D2E8E6"></div>
+      <div class="swatch__meta">
+        <span class="mono">primary-soft, derived</span>
+        <span class="swatch__hex">#D2E8E6</span>
+        <p class="swatch__role">The teal-on-teal solve. Deep teal reads 9.42:1 here, against 2.91:1
+        on the signature teal.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__face" style="background:#547674"></div>
+      <div class="swatch__meta">
+        <span class="mono">line-control, derived</span>
+        <span class="swatch__hex">#547674</span>
+        <p class="swatch__role">Control boundaries: input borders, outline buttons. Was #698987 at
+        3.62:1, the bare non-text minimum. Now 4.74:1 and drawn at 2px, because a hairline that
+        only just clears 3:1 is the first edge a 40-plus eye stops finding.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__face" style="background:#CDD8D7"></div>
+      <div class="swatch__meta">
+        <span class="mono">line, derived</span>
+        <span class="swatch__hex">#CDD8D7</span>
+        <p class="swatch__role">Decorative hairline at 1.39:1. Separation only. Never a control
+        boundary and never a text pairing.</p>
+      </div>
+    </div>
+  </div>
+
+  <ul class="derive-list">
+    <li>
+      <span class="mono">Derived step 01</span>
+      <p><b>#0D504A</b>, deep teal 24% into the signature teal. It exists because the owner's
+      <span class="fig">#128C7E</span> reads <span class="fig">3.94:1</span> as text on the canvas
+      and <span class="fig">3.94:1</span> under near-white text, so it fails 4.5:1 in both
+      directions. The first revision answered that with #10746A at
+      <span class="fig">5.37:1</span>, which clears AA and nothing more. Against a 40-plus primary
+      audience the bar is AAA, so the step moved deeper: #0D504A reads
+      <span class="fig">8.84:1</span> as text on canvas and carries near-white at
+      <span class="fig">8.21:1</span>. One step, both jobs, both AAA.</p>
+    </li>
+    <li>
+      <span class="mono">Derived step 02</span>
+      <p><b>#D2E8E6</b>, signature teal 16% into the canvas. This is the answer to the 2.91:1
+      teal-on-teal problem. Deep teal is never set on the signature teal anywhere in this system;
+      where a teal ground has to hold teal type, it is this tint, measured at
+      <span class="fig">9.42:1</span>.</p>
+    </li>
+    <li>
+      <span class="mono">Derived step 03</span>
+      <p><b>#EDF5F4</b> card and <b>#E0EFEE</b> band, signature teal at 4.5% and 10% into the
+      canvas. Cards step DOWN in lightness rather than up, because the owner canvas is already at
+      97% and any lighter card would land on white, which concept D excludes.</p>
+    </li>
+    <li>
+      <span class="mono">Derived step 04</span>
+      <p><b>#09302D</b> ink and <b>#23504D</b> ink-soft, black 22% into the deep teal and deep teal
+      10% into the canvas. Body ink at <span class="fig">13.59:1</span> and secondary at
+      <span class="fig">8.60:1</span>, so the sheet never leans on the 11.48:1 heading colour for
+      long-form reading and the secondary tier is still AAA. The previous ink-soft, #3F6764, sat at
+      <span class="fig">6.00:1</span>: legal, but the exact band reduced contrast sensitivity
+      punishes first.</p>
+    </li>
+    <li>
+      <span class="mono">Derived step 05</span>
+      <p><b>#547674</b>, deep teal 38% into the canvas. Control boundaries need 3:1 and the
+      decorative hairline #CDD8D7 only reaches 1.39:1. Every input border and outline button uses
+      this instead, at <span class="fig">4.74:1</span> on canvas and
+      <span class="fig">4.49:1</span> on the card, drawn at 2px rather than 1px.</p>
+    </li>
+    <li>
+      <span class="mono">Derived step 06</span>
+      <p><b>#0B423E</b>, signature teal 6% into the deep teal, as the lighter stop of both dark
+      grounds. The radial teal overlay came down from 30% to 10% at the same time, because at 30%
+      the worst composite was #0F6159 and the accent on it measured only
+      <span class="fig">5.14:1</span>. The worst composite is now
+      <span class="fig">#0C4944</span>, which holds on-dark text at
+      <span class="fig">9.05:1</span> and the accent at <span class="fig">7.19:1</span>. Both AAA.</p>
+    </li>
+    <li>
+      <span class="mono">Derived step 07</span>
+      <p><b>No alpha on any text, anywhere.</b> The old sheet faded on-dark runs to 82% and 86%,
+      which composited to <span class="fig">4.94:1</span> and <span class="fig">5.26:1</span>.
+      Faded type is the first thing an ageing eye loses, so every on-dark run is now solid
+      <b>#E9F3F3</b>. The only surviving alphas on this sheet are borders, washes and shadows,
+      none of which carry a letter.</p>
+    </li>
+  </ul>
+
+  <div class="table-scroll">
+  <table class="ratio-table">
+    <caption>Every text-on-surface and boundary pairing that ships on this sheet, recomputed from
+    scratch with the WCAG 2.1 relative luminance formula. Translucent layers are composited to a
+    solid hex before measurement and gradients are measured at their lightest stop, which is the
+    worst case for light type. The bar on this revision is <b>AAA 7:1 for text</b>, not AA 4.5:1,
+    because the primary audience is 40 and over and reduced contrast sensitivity is the single
+    largest age-related legibility factor. <b>Every text pairing below clears 7:1.</b> The lowest
+    text ratio that ships is 7.06:1 and the lowest boundary ratio is 3.94:1. The four FORBIDDEN
+    rows at the foot are pairings this system will not use at any size.</caption>
+    <thead>
+      <tr><th scope="col">Foreground</th><th scope="col">Ground</th><th scope="col">Ratio</th><th scope="col">Verdict</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="dot" style="background:#09302D"></span>ink #09302D</td><td>canvas #F7FAFA</td><td class="n">13.59:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#09302D"></span>ink #09302D</td><td>card #EDF5F4</td><td class="n">12.88:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#09302D"></span>ink #09302D</td><td>band #E0EFEE</td><td class="n">12.06:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#09302D"></span>ink #09302D</td><td>primary-soft #D2E8E6</td><td class="n">11.16:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>primary-deep #0B3D3A</td><td>canvas #F7FAFA</td><td class="n">11.48:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>primary-deep #0B3D3A</td><td>card #EDF5F4</td><td class="n">10.88:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>primary-deep #0B3D3A</td><td>band #E0EFEE</td><td class="n">10.19:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>primary-deep #0B3D3A</td><td>primary-soft #D2E8E6, the teal-on-teal solve</td><td class="n">9.42:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>primary-deep #0B3D3A</td><td>accent wash #F9F2D3</td><td class="n">10.71:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>primary-deep #0B3D3A</td><td>accent #FFD447, the only legal accent ground</td><td class="n">8.47:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#23504D"></span>ink-soft #23504D, REVISED from #3F6764</td><td>canvas #F7FAFA</td><td class="n">8.60:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#23504D"></span>ink-soft #23504D</td><td>card #EDF5F4</td><td class="n">8.15:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#23504D"></span>ink-soft #23504D</td><td>band #E0EFEE</td><td class="n">7.63:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#23504D"></span>ink-soft #23504D</td><td>primary-soft #D2E8E6, LOWEST TEXT RATIO THAT SHIPS</td><td class="n">7.06:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0D504A"></span>primary #0D504A, REVISED from #10746A</td><td>canvas #F7FAFA</td><td class="n">8.84:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0D504A"></span>primary #0D504A</td><td>card #EDF5F4</td><td class="n">8.38:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0D504A"></span>primary #0D504A</td><td>band #E0EFEE</td><td class="n">7.84:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0D504A"></span>primary #0D504A</td><td>accent wash #F9F2D3</td><td class="n">8.25:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#09302D"></span>ink on the glass panel #09302D</td><td>card at 66 percent over canvas #F0F7F6</td><td class="n">13.14:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#23504D"></span>ink-soft on the glass panel #23504D</td><td>card at 66 percent over canvas #F0F7F6</td><td class="n">8.31:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#09302D"></span>ink on the flag wash #09302D</td><td>accent-soft at 55 percent over canvas #F8F6E5</td><td class="n">13.11:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>primary-deep on the flag wash #0B3D3A</td><td>accent-soft at 55 percent over canvas #F8F6E5</td><td class="n">11.08:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>heading over the swipe #0B3D3A</td><td>accent at 62 percent over canvas #FCE28B</td><td class="n">9.40:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#09302D"></span>body over the swipe #09302D</td><td>accent at 62 percent over canvas #FCE28B</td><td class="n">11.13:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#23504D"></span>field placeholder #23504D, solid</td><td>canvas #F7FAFA</td><td class="n">8.60:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>phone number, the tel: target #0B3D3A</td><td>canvas #F7FAFA</td><td class="n">11.48:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#E9F3F3"></span>ink-on-dark #E9F3F3</td><td>primary-deep #0B3D3A</td><td class="n">10.66:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#E9F3F3"></span>ink-on-dark #E9F3F3, SOLID, every on-dark alpha removed</td><td>dark surface, WORST stop #0C4944</td><td class="n">9.05:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#E9F3F3"></span>ink-on-dark #E9F3F3</td><td>primary fill #0D504A, the CTA</td><td class="n">8.21:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#FFD447"></span>accent #FFD447, label type on dark only</td><td>primary-deep #0B3D3A</td><td class="n">8.47:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#FFD447"></span>accent #FFD447, label type on dark only</td><td>dark surface, WORST stop #0C4944</td><td class="n">7.19:1</td><td class="pass">AA, AAA and the 40 plus floor</td></tr>
+      <tr><td><span class="dot" style="background:#547674"></span>line-control #547674, boundary, REVISED from #698987</td><td>canvas #F7FAFA</td><td class="n">4.74:1</td><td class="pass">non-text AA with margin</td></tr>
+      <tr><td><span class="dot" style="background:#547674"></span>line-control #547674, boundary</td><td>card #EDF5F4</td><td class="n">4.49:1</td><td class="pass">non-text AA with margin</td></tr>
+      <tr><td><span class="dot" style="background:#128C7E"></span>signature #128C7E, boundary and graphics</td><td>canvas #F7FAFA, LOWEST BOUNDARY RATIO THAT SHIPS</td><td class="n">3.94:1</td><td class="pass">non-text AA</td></tr>
+      <tr><td><span class="dot" style="background:#128C7E"></span>signature #128C7E, boundary and graphics</td><td>card #EDF5F4</td><td class="n">3.74:1</td><td class="pass">non-text AA</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>focus outline #0B3D3A</td><td>canvas #F7FAFA</td><td class="n">11.48:1</td><td class="pass">non-text AA</td></tr>
+      <tr><td><span class="dot" style="background:#0B3D3A"></span>accent keyline #0B3D3A</td><td>the accent mark it outlines #FFD447</td><td class="n">8.47:1</td><td class="pass">non-text AA</td></tr>
+      <tr><td><span class="dot" style="background:#CDD8D7"></span>line #CDD8D7</td><td>canvas #F7FAFA</td><td class="n">1.39:1</td><td>decorative hairline only, never text, never a control boundary</td></tr>
+      <tr class="forbid"><td><span class="dot" style="background:#FFD447"></span>accent #FFD447 as TEXT</td><td>canvas #F7FAFA</td><td class="n">1.36:1</td><td class="stop">FORBIDDEN. Owner-measured. Never shipped.</td></tr>
+      <tr class="forbid"><td><span class="dot" style="background:#0B3D3A"></span>primary-deep #0B3D3A</td><td>signature #128C7E</td><td class="n">2.91:1</td><td class="stop">FORBIDDEN. Fails even 3:1. Never shipped.</td></tr>
+      <tr class="forbid"><td><span class="dot" style="background:#128C7E"></span>signature #128C7E as TEXT</td><td>canvas #F7FAFA</td><td class="n">3.94:1</td><td class="stop">FORBIDDEN for text. Found by the first pass, not supplied.</td></tr>
+      <tr class="forbid"><td><span class="dot" style="background:#F7FAFA"></span>canvas #F7FAFA as TEXT</td><td>signature #128C7E</td><td class="n">3.94:1</td><td class="stop">FORBIDDEN for text. Found by the first pass, not supplied.</td></tr>
+      <tr class="forbid"><td><span class="dot" style="background:#10746A"></span>retired primary #10746A as TEXT</td><td>band #E0EFEE</td><td class="n">4.76:1</td><td class="stop">RETIRED. 4.76:1 shipped in the previous revision. AA, but under the 7:1 floor.</td></tr>
+      <tr class="forbid"><td><span class="dot" style="background:#3F6764"></span>retired ink-soft #3F6764 as TEXT</td><td>band #E0EFEE</td><td class="n">5.32:1</td><td class="stop">RETIRED. AA only. Replaced by #23504D at 7.63:1.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ============================================================
+     TYPE
+     from: TYPOGRAPHY-PAIRINGS.md #52 Roboto Slab + Roboto
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md E1 (display on headings only), E2 (negative tracking
+           at size), E3 (distinct numeral face for figures), E4 (tracked eyebrow), E5 (swipe inset)
+     ============================================================ -->
+<section class="ramp">
+  <p class="eyebrow mono">Type</p>
+  <h2 class="t-l">Two families doing two jobs, at a size that <span class="swipe">holds</span></h2>
+  <p class="lede" style="margin:var(--ds-space-sm) 0 var(--ds-space-lg)">
+    The live site loads Poppins, Roboto and Roboto Slab with no separation of display and body
+    use. Concept D keeps two of the three and gives each a single job. Poppins is dropped. Roboto
+    Mono carries figures only, so prices, hours and ratings read as data. The families are
+    unchanged by the palette revision, because C6 records them and the owner changed only the
+    colours. What did change is the whole scale. C7 section 4 names anxious and older patients as
+    an audience and calls for legible type, real contrast and tap targets that work; the ADA
+    Health Policy Institute figure behind that, 55 percent of adults aged 65 and over with no
+    dental benefits, is the reason the practice publishes a senior price at all. Presbyopia
+    typically begins around 40 and costs both acuity and contrast sensitivity. So the ramp below
+    is built to measured floors rather than to taste.
+  </p>
+
+  <!-- The floors are stated as numbers because "legible" is not a specification.
+       from: _MODERN-DESIGN-PATTERN-LIBRARY.md A3 (the same hairline rule grammar, no new device) -->
+  <ul class="floors">
+    <li>
+      <span class="mono">Floor 01, size</span>
+      <span class="fig">18 / 14</span>
+      <p>Body sets at 18px and NOTHING on this sheet renders below 14px. The previous revision ran
+      a 9.5px owner badge, 10px asset captions and 10.5px table headers. All of them moved.</p>
+    </li>
+    <li>
+      <span class="mono">Floor 02, leading</span>
+      <span class="fig">1.70</span>
+      <p>Body line-height is 1.70 and no reading run drops under 1.60. Leading is the cheapest
+      legibility gain available and the one that reads editorial rather than clinical.</p>
+    </li>
+    <li>
+      <span class="mono">Floor 03, contrast</span>
+      <span class="fig">7:1</span>
+      <p>AAA, not AA. Every text pairing in the table above clears 7:1, and the lowest that ships
+      is 7.06:1. Four palette steps moved to get there rather than one.</p>
+    </li>
+    <li>
+      <span class="mono">Floor 04, weight</span>
+      <span class="fig">400</span>
+      <p>No 300, 200 or 100 anywhere text has to be read. Thin weights are the first thing to
+      collapse for an older eye, and the display face carries emphasis at 500 to 700 instead.</p>
+    </li>
+    <li>
+      <span class="mono">Floor 05, tracking</span>
+      <span class="fig">0.00em</span>
+      <p>No negative tracking at reading size. Negative tracking survives only on the slab display
+      face at 27px and up, where it is an optical correction. The 21px display step is zeroed.</p>
+    </li>
+    <li>
+      <span class="mono">Floor 06, targets</span>
+      <span class="fig">44 px</span>
+      <p>Every control clears 44 by 44 CSS px measured in render, not inferred from padding. The
+      13 controls measure 52.6 to 55.6px tall for buttons, 59.2px for the field, and 204.4 by 48px
+      for each of the 8 phone numbers, which is the smallest target on the sheet.</p>
+    </li>
+  </ul>
+
+  <div class="ramp-row">
+    <p class="mono"><b>Display XL</b>Roboto Slab 500<br>clamp 46 to 68px<br>1.05 / -0.021em</p>
+    <p class="t-xl" style="margin:0">Calm and comfortable</p>
+  </div>
+  <div class="ramp-row">
+    <p class="mono"><b>Display L</b>Roboto Slab 500<br>clamp 31 to 42px<br>1.12 / -0.014em</p>
+    <p class="t-l" style="margin:0">Seven offices, ten dentists, one practice</p>
+  </div>
+  <div class="ramp-row">
+    <p class="mono"><b>Display M</b>Roboto Slab 600<br>27px / 1.22 / -0.008em</p>
+    <p class="t-m" style="margin:0">Same-day care in your neighborhood</p>
+  </div>
+  <div class="ramp-row">
+    <p class="mono"><b>Display S</b>Roboto Slab 600<br>21px / 1.34 / 0.000em<br>tracking zeroed at
+    reading size</p>
+    <p class="t-s" style="margin:0">What a first visit actually covers</p>
+  </div>
+  <div class="ramp-row">
+    <p class="mono"><b>Lede</b>Roboto 400<br>21px / 1.62 / 60ch<br>was 19px</p>
+    <p class="lede" style="margin:0">We see patients of all ages under one roof, and the same
+    dentist you meet at the first visit is the one who plans the work.</p>
+  </div>
+  <div class="ramp-row">
+    <p class="mono"><b>Body</b>Roboto 400<br>18px / 1.70<br>was 17px / 1.65</p>
+    <p class="body" style="margin:0">Every office publishes its own hours because they are not the
+    same. Four of the seven are closed Saturday and five are closed Sunday, so the hours line is
+    <span class="swipe">per office</span>, never a blanket claim.</p>
+  </div>
+  <div class="ramp-row">
+    <p class="mono"><b>Small</b>Roboto 400<br>17px / 1.62<br>was 15px</p>
+    <p class="small" style="margin:0">Captions, disclosures and the offer terms line. This is the
+    caption role, not a licence to shrink: 17px is the floor for anything meant to be read.</p>
+  </div>
+  <div class="ramp-row">
+    <p class="mono"><b>Label</b>Roboto Mono 500<br>14px / 0.12em / caps<br>was 12px. THE FLOOR.</p>
+    <p class="mono" style="margin:0;color:var(--ds-primary)">New patient exam and x-ray</p>
+  </div>
+  <div class="ramp-row">
+    <p class="mono"><b>Contact</b>Roboto Mono 500<br>21px / tel: target<br>load-bearing UI, C7 s4</p>
+    <p style="margin:0"><a class="tel" href="tel:+17022894424" aria-label="Call the Lone Mountain office at 7 0 2, 2 8 9, 4 4 2 4">(702) 289-4424</a></p>
+  </div>
+  <div class="ramp-row">
+    <p class="mono"><b>Figure</b>Roboto Mono 500<br>tabular-nums</p>
+    <p style="margin:0"><span class="fig" style="font-size:34px;color:var(--ds-primary-deep)">4.5</span>
+      <span class="small" style="margin-left:10px">from</span>
+      <span class="fig" style="font-size:34px;color:var(--ds-primary-deep)">506</span>
+      <span class="small" style="margin-left:10px">reviews. Lake Mead office. Birdeye.</span></p>
+  </div>
+</section>
+
+<!-- ============================================================
+     ATOMS
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md I1 (2-way invert buttons, named-property transitions),
+           I2 (card chrome), I5 (icon chip fill on hover), I6 (hairline rows), D1 shadow, D2 glass
+     from: SURFACE-PATTERNS.md §1.3 (Modern 8-12px, mapped onto the constrained radius roles)
+     from: SURFACE-PATTERNS.md §2.8 (flat-no-chrome hairline card, identity from type and spacing)
+     from: _MODERN-WOW-SPEC.md section 7 (consistent crisp radii, refined pills, fine focus states)
+     ============================================================ -->
+<section class="atoms">
+  <p class="eyebrow mono">Atoms</p>
+  <h2 class="t-l">Controls, tags, fields, rows</h2>
+  <p class="lede" style="margin:var(--ds-space-sm) 0 var(--ds-space-lg)">
+    Radius is three roles only: control 8px, surface 14px, pill full. The focus ring changed with
+    the palette. The previous revision used the yellow at full strength on the argument that a
+    warning colour has to be unmissable. On this canvas the yellow measures 1.36:1 and an
+    unmissable ring would have been an invisible one, so focus is now a deep-teal outline at
+    11.48:1 with a teal halo.
+  </p>
+
+  <div class="atom-grid">
+    <div class="atom">
+      <p class="atom__label mono">Buttons</p>
+      <div class="atom__stack">
+        <button type="button" class="btn btn--solid">Book an appointment</button>
+        <button type="button" class="btn btn--line">Call the office</button>
+      </div>
+      <div class="atom__stack" style="margin-top:18px">
+        <button type="button" class="btn btn--quiet">See all seven offices</button>
+      </div>
+      <p class="small" style="margin:18px 0 0">Solid on the derived teal, outline on the canvas,
+      quiet as a text action whose underline is the lead rule itself. The solid fill is #0D504A
+      and not the owner's #128C7E, because near-white on #128C7E measures 3.94:1. Every one of the
+      three is at least 52px tall, measured in render, against the 44px WCAG 2.5.5 AAA bar.</p>
+    </div>
+
+    <div class="atom">
+      <p class="atom__label mono">Tags</p>
+      <div class="atom__stack">
+        <span class="tag tag--brand">In house</span>
+        <span class="tag tag--offer">New patient</span>
+        <span class="tag tag--care">Gentle care</span>
+        <span class="tag tag--flag">Owner input needed</span>
+      </div>
+      <p class="small" style="margin:18px 0 0">Four jobs, four treatments. The previous revision
+      separated these by hue and used a sage green as a fifth colour. The owner supplied four
+      hexes, so no fifth hue is invented: they separate by tint depth and keyline instead.</p>
+    </div>
+
+    <div class="atom">
+      <p class="atom__label mono">Icon chips</p>
+      <div class="atom__stack">
+        <span class="chip-ico" title="Hours">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/></svg>
+        </span>
+        <span class="chip-ico" title="Location">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        </span>
+        <span class="chip-ico" title="Phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path d="M5 4h3.6l1.6 4-2.1 1.6a12 12 0 0 0 6.3 6.3L16 13.8l4 1.6V19a2 2 0 0 1-2.2 2A15.8 15.8 0 0 1 3 6.2 2 2 0 0 1 5 4z"/></svg>
+        </span>
+        <span class="chip-ico" title="Insurance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path d="M12 3.2 19.5 6v6c0 4.4-3.1 7.6-7.5 8.8C7.6 19.6 4.5 16.4 4.5 12V6z"/><path d="M9.2 12.2l2 2 3.6-3.9"/></svg>
+        </span>
+      </div>
+      <p class="small" style="margin:18px 0 0">Deep-teal line icons in a teal tint chip, bounded by
+      the signature teal at 3.94:1. On hover the chip fills deep teal and the glyph flips to the
+      accent at 8.47:1, which is the one place the yellow gets to be a foreground, and only
+      because the ground is dark.</p>
+    </div>
+
+    <div class="atom">
+      <p class="atom__label mono">Field</p>
+      <label class="field">
+        <span class="small" style="margin:0">Which office is closest to you</span>
+        <input type="text" placeholder="Zip code or neighborhood" aria-label="Zip code or neighborhood">
+      </label>
+      <p class="small" style="margin:18px 0 0">Inset shadow, canvas ground, a 2px 4.74:1 control
+      border and a deep-teal focus border. The border was 1px at 3.62:1, the bare non-text minimum,
+      which is the first edge a 40-plus eye stops finding. The field renders 59.2px tall, measured,
+      against a 56px floor, and its value sets at 18px. The placeholder is solid ink-soft at
+      8.60:1: at the previous 86 percent alpha it composited to #597C79 and measured 4.37:1,
+      which failed.</p>
+    </div>
+
+    <div class="atom">
+      <p class="atom__label mono">Price rows</p>
+      <div class="rowline"><b>New patient exam and x-ray</b><span class="fig">$45</span></div>
+      <div class="rowline"><b>New patient exam and x-ray, seniors</b><span class="fig">$29</span></div>
+      <div class="rowline"><b>Everything else</b><span class="small" style="margin:0">Quoted at the visit</span></div>
+      <p class="small" style="margin:18px 0 0">Hairline rows, figures right, mono numerals. Only
+      the two published prices are shown because only two are published.</p>
+    </div>
+
+    <div class="atom">
+      <p class="atom__label mono">Proof</p>
+      <div class="rating">
+        <svg viewBox="0 0 90 16" aria-label="4.5 out of 5 stars" role="img">
+          <defs>
+            <path id="s" d="M8 1.4l2 4.2 4.6.6-3.4 3.2.9 4.6L8 11.8 3.9 14l.9-4.6L1.4 6.2l4.6-.6z"/>
+            <clipPath id="h"><rect x="0" y="0" width="8" height="16"/></clipPath>
+          </defs>
+          <g fill="#0B3D3A" opacity=".20">
+            <use href="#s" x="0"/><use href="#s" x="18"/><use href="#s" x="36"/><use href="#s" x="54"/><use href="#s" x="72"/>
+          </g>
+          <g fill="#FFD447" stroke="#0B3D3A" stroke-width=".9">
+            <use href="#s" x="0"/><use href="#s" x="18"/><use href="#s" x="36"/><use href="#s" x="54"/>
+            <g clip-path="url(#h)"><use href="#s" x="72"/></g>
+          </g>
+        </svg>
+        <span class="fig">4.5</span>
+        <span class="small">506 reviews. Lake Mead office. Birdeye.</span>
+      </div>
+      <p class="small" style="margin:18px 0 0">The rating never appears without its scope and its
+      platform. The stars carry a 0.9px deep-teal keyline, which is the same rule the eyebrow caps
+      use: a yellow star on this canvas would otherwise sit at 1.36:1 and vanish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MOTIF
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md A3 (hairline rule system, the premium-restraint path)
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md A2 (curved circle-up arc, the medical seam)
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md E5 (underline-behind-text inset, em-relative)
+     from: _MODERN-WOW-SPEC.md section 7 (custom dividers, detail polish)
+     ============================================================ -->
+<section class="motif">
+  <p class="eyebrow mono">Signature motif</p>
+  <h2 class="t-l">The lead rule, now keylined</h2>
+  <p class="lede" style="margin:var(--ds-space-sm) 0 var(--ds-space-lg)">
+    One device, four positions: a short accent cap leads a long teal hairline. The device survives
+    the palette change but its construction does not. The cap used to be bare yellow. On this
+    canvas that is 1.36:1, so the cap now carries a 1px deep-teal keyline and the hairline is the
+    signature teal at 3.94:1 rather than a tinted navy. The motif reads as a measurement tick,
+    which is still the argument: the accent is precise here, not poured.
+  </p>
+
+  <div class="motif-grid">
+    <div class="motif">
+      <p class="atom__label mono">Horizontal, above a heading</p>
+      <div class="motif__demo">
+        <span class="rule-lead"><i></i><u></u></span>
+      </div>
+      <p class="spec-line"><span>cap <b>24 x 3</b></span><span>keyline <b>1px #0B3D3A</b></span><span>hairline <b>1px #128C7E</b></span></p>
+    </div>
+
+    <div class="motif">
+      <p class="atom__label mono">Vertical, leading a note</p>
+      <div class="motif__demo">
+        <span class="rule-tick"><i></i><u></u><div>
+          <p class="small" style="margin:0;color:var(--ds-ink)">Dr. Karthikeyan Subramani holds an
+          MSc in Orthodontics and Dentofacial Orthopedics.</p>
+        </div></span>
+      </div>
+      <p class="spec-line"><span>cap <b>3 x full</b></span><span>keyline <b>1px #0B3D3A</b></span><span>inset <b>14px</b></span></p>
+    </div>
+
+    <div class="motif">
+      <p class="atom__label mono">Under a word</p>
+      <div class="motif__demo">
+        <p class="t-m" style="margin:0">Care that is <span class="swipe">honest</span> about cost</p>
+      </div>
+      <p class="spec-line"><span>swipe <b>42 percent of the line box</b></span><span>alpha <b>0.62</b></span><span>rule <b>2px #0B3D3A</b></span></p>
+    </div>
+
+    <div class="motif">
+      <p class="atom__label mono">Arc seam, section to section</p>
+      <div class="motif__demo">
+        <span class="arc-seam"><span></span><em></em></span>
+      </div>
+      <p class="spec-line"><span>arc <b>54px rise, half ellipse</b></span><span>apex tick <b>3 x 18</b></span><span>used <b>2 to 4x per page</b></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEIGHT
+     from: composition-medical-health, V6 blueprint: the services grid is the spine and the trust
+           ladder is stacked deliberately. C7 section 49: the locations and the clinicians are the wedge.
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md I6 (hairline list rows)
+     ============================================================ -->
+<section class="weight">
+  <p class="eyebrow mono">What the identity has to carry</p>
+  <h2 class="t-l">Seven offices, ten clinicians</h2>
+  <p class="lede" style="margin:var(--ds-space-sm) 0 var(--ds-space-lg)">
+    This is the substance the design exists to hold, so it is set here at real length rather
+    than sampled. Every line is first-party, from client-rules.json. None of it changed with the
+    palette.
+  </p>
+
+  <div class="weight-grid">
+    <div>
+      <p class="atom__label mono">Offices</p>
+      <ul class="office-list">
+        <li><b>Lone Mountain</b>
+          <a class="tel" href="tel:+17022894424" aria-label="Call the Lone Mountain office at 7 0 2, 2 8 9, 4 4 2 4">(702) 289-4424</a>
+          <p class="addr">7469 W. Lake Mead Blvd., Suite 270, Las Vegas NV 89128</p>
+          <p class="hours"><span><b>Sat</b> Closed</span><span><b>Sun</b> 8:30 AM to 3 PM</span></p></li>
+        <li><b>Sunrise Manor</b>
+          <a class="tel" href="tel:+17024523552" aria-label="Call the Sunrise Manor office at 7 0 2, 4 5 2, 3 5 5 2">(702) 452-3552</a>
+          <p class="addr">1825 S. Nellis Blvd., Las Vegas NV 89107</p>
+          <p class="hours"><span><b>Sat</b> Closed</span><span><b>Sun</b> Closed</span></p></li>
+        <li><b>Summerlin</b>
+          <a class="tel" href="tel:+17023604800" aria-label="Call the Summerlin office at 7 0 2, 3 6 0, 4 8 0 0">(702) 360-4800</a>
+          <p class="addr">8961 W. Sahara Ave., Suite 108, Las Vegas NV 89117</p>
+          <p class="hours"><span><b>Sat</b> 8:30 AM to 3 PM</span><span><b>Sun</b> Closed</span></p></li>
+        <li><b>North Las Vegas</b>
+          <a class="tel" href="tel:+17025091967" aria-label="Call the North Las Vegas office at 7 0 2, 5 0 9, 1 9 6 7">(702) 509-1967</a>
+          <p class="addr">5195 Camino Al Norte Rd., North Las Vegas NV 89031</p>
+          <p class="hours"><span><b>Sat</b> 9 AM to 5 PM</span><span><b>Sun</b> Closed</span></p></li>
+        <li><b>Henderson</b>
+          <a class="tel" href="tel:+17028977001" aria-label="Call the Henderson office at 7 0 2, 8 9 7, 7 0 0 1">(702) 897-7001</a>
+          <p class="addr">2633 W. Horizon Ridge Pkwy., Suite 130, Henderson NV 89052</p>
+          <p class="hours"><span><b>Sat</b> 9 AM to 5 PM</span><span><b>Sun</b> Closed</span></p></li>
+        <li><b>North Decatur</b>
+          <a class="tel" href="tel:+17025220119" aria-label="Call the North Decatur office at 7 0 2, 5 2 2, 0 1 1 9">(702) 522-0119</a>
+          <p class="addr">6311 N. Decatur Blvd., Suite 140, Las Vegas NV 89130</p>
+          <p class="hours"><span><b>Sat</b> Closed</span><span><b>Sun</b> 8:30 AM to 3 PM</span></p></li>
+        <li><b>Blue Diamond</b>
+          <a class="tel" href="tel:+17023310010" aria-label="Call the Blue Diamond office at 7 0 2, 3 3 1, 0 0 1 0">(702) 331-0010</a>
+          <p class="addr">5095 S. Blue Diamond Rd., Suite 105, Las Vegas NV 89139</p>
+          <p class="hours"><span><b>Sat</b> By appointment only</span><span><b>Sun</b> Not published, owner flag</span></p></li>
+      </ul>
+      <p class="small" style="margin:var(--ds-space-sm) 0 0">Weekend rows only, because they are the
+      ones that differ and the ones patients ask about. Every phone number is a live tel: target at
+      21px, and the weekday hours ship per office on the location pages. Blue Diamond publishes no
+      Tuesday, Friday or Sunday row anywhere on the live site, so the gap is shown rather than
+      filled. Source: client-rules.json contactData, captured 2026-07-30.</p>
+    </div>
+
+    <div>
+      <p class="atom__label mono">Clinicians</p>
+      <ul class="clin-list">
+        <li><b>Dr. Adrian Ruiz</b><span class="mono">DDS UCLA 1995</span></li>
+        <li><b>Dr. Norma Miranda</b><span class="mono">DDS UCLA 1976</span></li>
+        <li><b>Dr. Vivi Dang-Roberts</b><span class="mono">Roster</span></li>
+        <li><b>Dr. Karthikeyan Subramani</b><span class="mono">MSc Orthodontics</span></li>
+        <li><b>Dr. Max Torres</b><span class="mono">Roster</span></li>
+        <li><b>Dr. Omar Lavado</b><span class="mono">Roster</span></li>
+        <li><b>Dr. Andy Landaverde</b><span class="mono">Spanish</span></li>
+        <li><b>Dr. Victoria Quizon</b><span class="mono">Roster</span></li>
+        <li><b>Dr. Stephanie Andrade</b><span class="mono">Spanish</span></li>
+        <li><b>Dr. Chris Schaudt</b><span class="mono">Roster</span></li>
+      </ul>
+      <p class="small" style="margin:var(--ds-space-sm) 0 0">Six specialties are delivered in
+      house: general dentistry, cosmetic dentistry, restorations, oral and maxillofacial surgery,
+      periodontics, orthodontics.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE ONE APPLIED MINI-VIGNETTE
+     from: composition-medical-health, V6: the appointment CTA is the spine and the offer band is
+           a real fixture of this brand. C7 section 64: keep the fixture, drop the unqualified
+           "Limited Time" framing until real terms exist.
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md D1 shadow, D2 glass, E3 numeral face, TOP-12 #3
+     This is the ONLY applied composition on this sheet.
+     ============================================================ -->
+<section class="vignette">
+  <p class="eyebrow mono">Applied, once</p>
+  <h2 class="t-l">The offer, at brand-card scale</h2>
+  <p class="lede" style="margin:var(--ds-space-sm) 0 var(--ds-space-lg)">
+    The live site pours this into a full-width yellow band. Here the accent is a single 5px rule
+    the width of the figure plus the button ground, and the deep teal does the holding. Same
+    fixture, different register. The button is the one place in the whole system where the accent
+    sits behind type, and it is legal only because the type on it is deep teal at 8.47:1. It is
+    also the widest target on the sheet, full-bleed inside the offer and 330 by 53.6px measured,
+    because the price and the way to act on it are what a 40-plus reader came for.
+  </p>
+
+  <div class="vignette-wrap">
+    <div class="offer surface-dark">
+      <p class="eyebrow mono">New patient</p>
+      <h3 class="t-l" style="font-size:28px;line-height:1.15">Exam and x-ray</h3>
+      <span class="price"><span class="fig">$45</span></span>
+      <p class="offer-sub">$29 for seniors. Both prices are published by the practice.</p>
+      <button type="button" class="btn btn--solid">Book at your nearest office</button>
+      <p class="offer-terms">
+        <b class="mono" style="letter-spacing:.09em;font-size:14px;color:var(--ds-accent)">Terms</b><br>
+        No expiry, exclusions or senior age threshold is published anywhere on the current site.
+        This line stays visible and stays honest until the practice supplies real terms.
+      </p>
+    </div>
+
+    <div>
+      <div class="glass-note">
+        <p class="atom__label mono">Why it reads differently</p>
+        <div class="rowline"><b>Yellow area on the live offer band</b><span class="small" style="margin:0">Full-width fill</span></div>
+        <div class="rowline"><b>Yellow area here</b><span class="small" style="margin:0">One 5px rule and one button</span></div>
+        <div class="rowline"><b>Dark surfaces on this sheet</b><span class="fig">2</span></div>
+        <div class="rowline"><b>Urgency devices used</b><span class="fig">0</span></div>
+        <div class="rowline"><b>Colours invented beyond the owner four</b><span class="fig">0</span></div>
+        <div class="rowline"><b>Text runs measured under 7:1</b><span class="fig">0</span></div>
+        <div class="rowline"><b>Type rendering under 14px</b><span class="fig">0</span></div>
+        <p class="small" style="margin:var(--ds-space-sm) 0 0">No countdown, no limited-time
+        framing, no badge wall. C7 names all three as things the design must actively avoid. Every
+        colour on this sheet is either an owner hex or a measured step derived from one.</p>
+      </div>
+      <div style="margin-top:var(--ds-space-md)">
+        <p class="atom__label mono">Register check against the voice</p>
+        <div class="atom__stack">
+          <span class="tag tag--care">Plainspoken</span>
+          <span class="tag tag--care">Unhurried</span>
+          <span class="tag tag--brand">Specific over superlative</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FLAGS AND PROVENANCE
+     ============================================================ -->
+<section class="notes">
+  <p class="eyebrow mono">Open items</p>
+  <h2 class="t-l">Flags carried forward</h2>
+
+  <div style="margin-top:var(--ds-space-lg)">
+    <div class="flag flag--gate">
+      <b>Gate, C7 re-lock</b>
+      <p>This concept departs from the C7-locked navy and yellow relationship, section 48. The
+      owner-supplied palette removes the brand navy #17274F and replaces the authority colour with
+      deep teal #0B3D3A, and the accent #FFD447 is near but not equal to the brand yellow #FCE003.
+      C7 requires an upstream re-lock in prep, SKILL.md P7.75, before concept D proceeds to stage
+      (2) CHROME. Applied as directed, recorded as a fact, not argued for or against.</p>
+    </div>
+    <div class="flag flag--gate">
+      <b>Owner, ground temperature</b>
+      <p>Concept D was the maximum-differentiation entry: warm ivory ground, nothing white, nothing
+      black. The owner's canvas #F7FAFA is a cool near-white and sits 1.05:1 from the live site's
+      #ffffff, against 1.11:1 for the ivory it replaces. The paper no longer separates D from the
+      live site. The teal does. This is the owner's call and it is applied; it is flagged because
+      it changes what concept D was competing on.</p>
+    </div>
+    <div class="flag">
+      <b>Owner G-7</b>
+      <p>No vector logo master exists anywhere on the site. The primary lockup is a 472px JPG with
+      no transparency and it is being upscaled in the live header. The wordmark and arc mark on this
+      sheet are drawn, not traced from an approved source. Under the owner palette every existing
+      raster asset is also off-colour, so the request for the original ai, svg or eps is now
+      blocking rather than merely advisable.</p>
+    </div>
+    <div class="flag">
+      <b>Owner, offer terms</b>
+      <p>The $45 and $29 prices are published. No expiry, no exclusions and no senior age threshold
+      are stated anywhere on the live site, so the offer ships with the terms line above and without
+      any limited-time framing.</p>
+    </div>
+    <div class="flag">
+      <b>Owner G-1</b>
+      <p>The site brand is Radiant Smiles Dental Care. The BBB and Birdeye registries carry Radiant
+      Smiles V. Confirm which name belongs in the footer and in structured data before the lockup
+      is finalised.</p>
+    </div>
+    <div class="flag">
+      <b>Owner G-8</b>
+      <p>C6 records the live hexes #17274f and #fce003, sampled from the homepage inline CSS on
+      2026-07-30. The owner palette supersedes both for this concept. If a brand book exists, C6
+      still needs confirming, and the owner palette needs reconciling against it.</p>
+    </div>
+  </div>
+
+  <p class="prov">
+    <b>Palette.</b> #FFD447, #F7FAFA, #128C7E and #0B3D3A are OWNER-SUPPLIED and carried verbatim.
+    Ten further steps are derived from them and each is listed with the measurement that forced it.
+    No fifth hue is invented.<br>
+    <b>Sources.</b> Font names and the superseded live hexes, radiantsmiles-tokens-spec.md (C6),
+    captured 2026-07-30. Tone, asset window and the departed colour lock, visual-direction.md (C7).
+    Prices, offices, clinicians, review record and voice, client-rules.json (C3).<br>
+    <b>Design system.</b> _MODERN-WOW-SPEC.md; _MODERN-DESIGN-PATTERN-LIBRARY.md;
+    _PAGE-COMPOSITION-LIBRARY.md V6 and composition-medical-health;
+    BRAND-TOKEN-SCHEMA.md; COLOR-THEORY-PRESETS.md #18 (family only, hexes rejected);
+    TYPOGRAPHY-PAIRINGS.md #52; SURFACE-PATTERNS.md §1.3 and §2.8.<br>
+    <b>Contrast.</b> Every ratio on this sheet was recomputed from scratch with the WCAG 2.1
+    relative luminance formula against the exact hexes above. Nothing was carried over and nothing
+    is estimated. The bar is AAA 7:1, not AA 4.5:1. Lowest text ratio shipping: 7.06:1. Lowest
+    boundary ratio shipping: 3.94:1, the owner signature teal used as a graphic edge.<br>
+    <b>Measured, not asserted.</b> The sheet was rendered at 1440, 1024, 768 and 375. Every text
+    run was screenshotted twice, once with ink and once with the ink turned transparent, and the
+    two frames were differenced so the ground could be read <b>under each individual glyph
+    pixel</b> rather than under the line box that contains it. The document was sampled in viewport
+    tiles, so the fixed grain overlay, the masthead wash and the grid are all inside the number.
+    The harness calibrates: with the texture layers disabled it returns the flat token math exactly
+    (8.60:1, 8.84:1, 11.48:1). <b>638 text runs at 1440, none under 7:1.</b> Worst measured
+    <b>7.56:1</b> at 768, 7.59:1 at 375, 7.60:1 at 1440 and 7.66:1 at 1024, in every case the
+    masthead lede where the wash, grid and grain stack. Smallest rendered type: <b>14px</b>.
+    Smallest interactive target: <b>204.4 by 48 px</b>, a phone number; the next smallest is a
+    52.6px button. Horizontal overflow: <b>none at any of the four widths</b>.<br>
+    <b>What the per-glyph method caught that the line-box method missed.</b> Two defects passed the
+    previous, coarser pass. First, the masthead lede actually measured <b>6.75:1</b> at 768 while
+    the sheet claimed 7.50:1, so the most-read run on the page was under its own floor; the grid and
+    wash were cut (see the token notes) and it now reads 7.56:1. Second, the E5 swipe drew its 2px
+    deep-teal rule on the bottom edge of the inline content box, exactly where a Roboto descender
+    lands: the "p" of "per office" put one glyph pixel on the rule at <b>1.18:1</b> and that
+    descender tip vanished. Only the words WITH descenders were affected, which is why words like
+    "force" and "holds" measured 9.15:1 and hid it. A 0.15em bottom pad cleared the rule and that
+    run now measures 10.85:1.<br>
+    <b>Audience.</b> The 40-plus tuning is not a new direction. C7 section 4 already locks it:
+    "Anxious and older patients are a named audience ... Legible type, real contrast, tap targets
+    that work" and "Hours, addresses and phone numbers are load-bearing UI." This revision executes
+    that lock to a measured floor instead of to taste. ADA Health Policy Institute, fetched
+    2026-07-30: 55 percent of adults aged 65 and over and 21 percent of adults aged 19 to 64 have
+    no dental benefits.
+  </p>
+</section>
+
+<footer class="sheet-foot">
+  <p style="margin:0">Radiant Smiles Dental Care, brand card concept D, owner-palette revision.
+  Internal design artifact, not a page. Prepared for the stage 1 brand-card tournament and blocked
+  on the C7 re-lock noted above.</p>
+</footer>
+
+</main>
+</body>
+</html>

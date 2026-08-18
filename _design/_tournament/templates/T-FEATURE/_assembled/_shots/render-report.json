@@ -1,0 +1,284 @@
+{
+  "a": {
+    "concept": "a",
+    "consoleErrors": [
+      "[desktop] Failed to load resource: net::ERR_FILE_NOT_FOUND",
+      "[mobile] Failed to load resource: net::ERR_FILE_NOT_FOUND"
+    ],
+    "pageErrors": [],
+    "failedRequests": [
+      "[desktop] net::ERR_FILE_NOT_FOUND /assets/favicon.svg",
+      "[mobile] net::ERR_FILE_NOT_FOUND /assets/favicon.svg"
+    ],
+    "overflow": {
+      "375": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "offenders": [
+          "div.drawer@727",
+          "div.drawer__head@727",
+          "a.foot-word@607",
+          "span.foot-word__name@607",
+          "span.foot-word__lockup@607",
+          "button.drawer__close@703"
+        ]
+      },
+      "768": {
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "offenders": [
+          "div.drawer@1196",
+          "div.drawer__head@1196",
+          "a.foot-word@1002",
+          "span.foot-word__name@1002",
+          "span.foot-word__lockup@1002",
+          "button.drawer__close@1172"
+        ]
+      },
+      "834": {
+        "scrollWidth": 834,
+        "innerWidth": 834,
+        "offenders": [
+          "div.drawer@1262",
+          "div.drawer__head@1262",
+          "a.foot-word@1068",
+          "span.foot-word__name@1068",
+          "span.foot-word__lockup@1068",
+          "button.drawer__close@1238"
+        ]
+      },
+      "1024": {
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "offenders": [
+          "div.drawer@1452",
+          "div.drawer__head@1452",
+          "a.foot-word@1258",
+          "span.foot-word__name@1258",
+          "span.foot-word__lockup@1258",
+          "button.drawer__close@1428"
+        ]
+      },
+      "1200": {
+        "scrollWidth": 1200,
+        "innerWidth": 1200,
+        "offenders": [
+          "div.drawer@1628",
+          "div.drawer__head@1628",
+          "a.foot-word@1434",
+          "span.foot-word__name@1434",
+          "span.foot-word__lockup@1434",
+          "button.drawer__close@1604"
+        ]
+      },
+      "1440": {
+        "scrollWidth": 1440,
+        "innerWidth": 1440,
+        "offenders": [
+          "div.drawer@1868",
+          "div.drawer__head@1868",
+          "a.foot-word@1674",
+          "span.foot-word__name@1674",
+          "span.foot-word__lockup@1674",
+          "button.drawer__close@1844"
+        ]
+      }
+    },
+    "brokenImages": [],
+    "shots": [
+      "/Users/aeroncloydc.malinab/Oso/Code/client-sites/radiantsmiles/_design/_tournament/templates/T-FEATURE/_assembled/_shots/concept-a-hero.png",
+      "/Users/aeroncloydc.malinab/Oso/Code/client-sites/radiantsmiles/_design/_tournament/templates/T-FEATURE/_assembled/_shots/concept-a-desktop.png",
+      "/Users/aeroncloydc.malinab/Oso/Code/client-sites/radiantsmiles/_design/_tournament/templates/T-FEATURE/_assembled/_shots/concept-a-mobile.png"
+    ],
+    "desktopHeight": 9196,
+    "mobileHeight": 13211
+  },
+  "b": {
+    "concept": "b",
+    "consoleErrors": [
+      "[desktop] Failed to load resource: net::ERR_FILE_NOT_FOUND",
+      "[mobile] Failed to load resource: net::ERR_FILE_NOT_FOUND"
+    ],
+    "pageErrors": [],
+    "failedRequests": [
+      "[desktop] net::ERR_FILE_NOT_FOUND /assets/favicon.svg",
+      "[mobile] net::ERR_FILE_NOT_FOUND /assets/favicon.svg"
+    ],
+    "overflow": {
+      "375": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "offenders": [
+          "div.drawer@727",
+          "div.drawer__head@727",
+          "a.foot-word@607",
+          "span.foot-word__name@607",
+          "span.foot-word__lockup@607",
+          "button.drawer__close@703"
+        ]
+      },
+      "768": {
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "offenders": [
+          "div.drawer@1196",
+          "div.drawer__head@1196",
+          "a.foot-word@1002",
+          "span.foot-word__name@1002",
+          "span.foot-word__lockup@1002",
+          "button.drawer__close@1172"
+        ]
+      },
+      "834": {
+        "scrollWidth": 834,
+        "innerWidth": 834,
+        "offenders": [
+          "div.drawer@1262",
+          "div.drawer__head@1262",
+          "a.foot-word@1068",
+          "span.foot-word__name@1068",
+          "span.foot-word__lockup@1068",
+          "button.drawer__close@1238"
+        ]
+      },
+      "1024": {
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "offenders": [
+          "div.drawer@1452",
+          "div.drawer__head@1452",
+          "a.foot-word@1258",
+          "span.foot-word__name@1258",
+          "span.foot-word__lockup@1258",
+          "button.drawer__close@1428"
+        ]
+      },
+      "1200": {
+        "scrollWidth": 1200,
+        "innerWidth": 1200,
+        "offenders": [
+          "div.drawer@1628",
+          "div.drawer__head@1628",
+          "a.foot-word@1434",
+          "span.foot-word__name@1434",
+          "span.foot-word__lockup@1434",
+          "button.drawer__close@1604"
+        ]
+      },
+      "1440": {
+        "scrollWidth": 1440,
+        "innerWidth": 1440,
+        "offenders": [
+          "div.drawer@1868",
+          "div.drawer__head@1868",
+          "a.foot-word@1674",
+          "span.foot-word__name@1674",
+          "span.foot-word__lockup@1674",
+          "button.drawer__close@1844"
+        ]
+      }
+    },
+    "brokenImages": [],
+    "shots": [
+      "/Users/aeroncloydc.malinab/Oso/Code/client-sites/radiantsmiles/_design/_tournament/templates/T-FEATURE/_assembled/_shots/concept-b-hero.png",
+      "/Users/aeroncloydc.malinab/Oso/Code/client-sites/radiantsmiles/_design/_tournament/templates/T-FEATURE/_assembled/_shots/concept-b-desktop.png",
+      "/Users/aeroncloydc.malinab/Oso/Code/client-sites/radiantsmiles/_design/_tournament/templates/T-FEATURE/_assembled/_shots/concept-b-mobile.png"
+    ],
+    "desktopHeight": 8125,
+    "mobileHeight": 11628
+  },
+  "c": {
+    "concept": "c",
+    "consoleErrors": [
+      "[desktop] Failed to load resource: net::ERR_FILE_NOT_FOUND",
+      "[mobile] Failed to load resource: net::ERR_FILE_NOT_FOUND"
+    ],
+    "pageErrors": [],
+    "failedRequests": [
+      "[desktop] net::ERR_FILE_NOT_FOUND /assets/favicon.svg",
+      "[mobile] net::ERR_FILE_NOT_FOUND /assets/favicon.svg"
+    ],
+    "overflow": {
+      "375": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "offenders": [
+          "div.drawer@727",
+          "div.drawer__head@727",
+          "a.foot-word@607",
+          "span.foot-word__name@607",
+          "span.foot-word__lockup@607",
+          "button.drawer__close@703"
+        ]
+      },
+      "768": {
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "offenders": [
+          "div.drawer@1196",
+          "div.drawer__head@1196",
+          "a.foot-word@1002",
+          "span.foot-word__name@1002",
+          "span.foot-word__lockup@1002",
+          "button.drawer__close@1172"
+        ]
+      },
+      "834": {
+        "scrollWidth": 834,
+        "innerWidth": 834,
+        "offenders": [
+          "div.drawer@1262",
+          "div.drawer__head@1262",
+          "a.foot-word@1068",
+          "span.foot-word__name@1068",
+          "span.foot-word__lockup@1068",
+          "button.drawer__close@1238"
+        ]
+      },
+      "1024": {
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "offenders": [
+          "div.drawer@1452",
+          "div.drawer__head@1452",
+          "a.foot-word@1258",
+          "span.foot-word__name@1258",
+          "span.foot-word__lockup@1258",
+          "button.drawer__close@1428"
+        ]
+      },
+      "1200": {
+        "scrollWidth": 1200,
+        "innerWidth": 1200,
+        "offenders": [
+          "div.drawer@1628",
+          "div.drawer__head@1628",
+          "a.foot-word@1434",
+          "span.foot-word__name@1434",
+          "span.foot-word__lockup@1434",
+          "button.drawer__close@1604"
+        ]
+      },
+      "1440": {
+        "scrollWidth": 1440,
+        "innerWidth": 1440,
+        "offenders": [
+          "div.drawer@1868",
+          "div.drawer__head@1868",
+          "a.foot-word@1674",
+          "span.foot-word__name@1674",
+          "span.foot-word__lockup@1674",
+          "button.drawer__close@1844"
+        ]
+      }
+    },
+    "brokenImages": [],
+    "shots": [
+      "/Users/aeroncloydc.malinab/Oso/Code/client-sites/radiantsmiles/_design/_tournament/templates/T-FEATURE/_assembled/_shots/concept-c-hero.png",
+      "/Users/aeroncloydc.malinab/Oso/Code/client-sites/radiantsmiles/_design/_tournament/templates/T-FEATURE/_assembled/_shots/concept-c-desktop.png",
+      "/Users/aeroncloydc.malinab/Oso/Code/client-sites/radiantsmiles/_design/_tournament/templates/T-FEATURE/_assembled/_shots/concept-c-mobile.png"
+    ],
+    "desktopHeight": 8095,
+    "mobileHeight": 11226
+  }
+}

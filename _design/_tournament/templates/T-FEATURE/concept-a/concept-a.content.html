@@ -1,0 +1,649 @@
+<style>
+/* ============================================================================
+   T-FEATURE / CONCEPT A - "THE CLINICAL SPINE"
+   Fragment-local additions ONLY. Everything else is inherited from the locked
+   radiantsmiles-tokens.css + radiantsmiles-structural.css. Zero hex literals:
+   every colour, radius, shadow, duration and space below is a var(--ds-*).
+   Layout is DESKTOP-BASE plus ADDITIVE max-width collapses, per the mobile rule.
+   UTF-8, ASCII only. No em or en dashes.
+   ============================================================================ */
+
+/* --- HERO. The mirror split, media column FIRST in source, so the photograph
+   stacks ABOVE the text on a phone exactly as the pattern specifies, and the
+   frame is height-capped so the promise and both acts stay above the fold. --- */
+.rsx-hero{
+  display:grid;
+  grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);
+  gap:var(--ds-space-xl);
+  align-items:center;
+}
+.rsx-hero__copy{display:flex;flex-direction:column;gap:var(--ds-space-md);align-items:flex-start;}
+.rsx-hero__frame{max-height:600px;}
+
+/* --- THE LIGHT WASH, painted on the SECTION not on a child. The kit's texture
+   span is absolute inside the container, so it stops at the container edge and
+   draws a visible rectangle across a full-bleed band. Two-class specificity so
+   it beats the sheet's own background shorthand without touching the ground. - */
+.rs-sec.rsx-wash{background-image:var(--ds-glow-wash);}
+/* On the dark anchor the ground IS a background-image, so the wash has to be
+   layered OVER it and the ground restated from its own tokens, or overriding
+   background-image would erase the gradient and leave the band transparent. */
+.rs-sec.surface-dark.rsx-wash{
+  background-image:var(--ds-glow-wash),linear-gradient(180deg,var(--ds-canvas),var(--ds-dark-2));
+}
+
+/* --- The kit centres a split's columns at the top. Where a short sidebar sits
+   beside a long prose column, that leaves one tall void under the sidebar. --- */
+.rs-split.rsx-mid{align-items:center;}
+
+/* --- THE PROBLEM PLATE. The gap section's sidebar now carries one of our own
+   corridors ABOVE the cited figures, so the slow loss the copy describes has a
+   real place attached to it before the numbers arrive. Height-capped: a 4:5
+   source run full-bleed down the split's WIDER track would tower over the four
+   short paragraphs beside it and strand the prose column at the top. --------- */
+.rsx-plate{width:100%;max-height:470px;}
+
+/* --- EVIDENCE PANEL. The cited third-party figures sit on the card ground with
+   the signature rule, so a reader can tell sourced data from our own prose. --- */
+.rsx-evidence{
+  background:var(--ds-canvas);
+  border:1px solid var(--ds-hairline);
+  border-left:3px solid var(--ds-signature);
+  border-radius:var(--ds-r-surface);
+  padding:var(--ds-space-md) var(--ds-space-lg);
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+
+/* --- THE RECORD. The one hard number on the page, set at display scale INSIDE
+   its own sentence so the office scope can never be detached from the count. -- */
+.rsx-record{
+  font-family:var(--ds-font-display);
+  font-size:clamp(28px,3.6vw,46px);
+  line-height:1.18;
+  letter-spacing:-.02em;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+  max-width:26ch;
+  font-variant-numeric:tabular-nums;
+}
+
+/* --- THE SPINE. The process timeline rotated to vertical: one continuous rail,
+   a numbered chip per step, media alternating side to side. ----------------- */
+.rsx-spine{display:grid;gap:var(--ds-space-2xl);}
+.rsx-step{
+  display:grid;
+  grid-template-columns:56px minmax(0,1fr);
+  gap:var(--ds-space-lg);
+  align-items:start;
+}
+.rsx-step__rail{display:flex;flex-direction:column;align-items:center;gap:var(--ds-space-sm);align-self:stretch;}
+.rsx-step__n{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:56px;
+  height:56px;
+  flex:none;
+  border-radius:var(--ds-r-surface);
+  background:var(--ds-primary-soft);
+  color:var(--ds-primary-deep);
+  box-shadow:var(--ds-inset-hi);
+  font-family:var(--ds-font-display);
+  font-size:20px;
+  font-weight:600;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.rsx-step__thread{flex:1 1 auto;width:2px;border-radius:var(--ds-r-pill);background:var(--ds-primary-soft);}
+.rsx-step__pair{
+  display:grid;
+  grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+  gap:var(--ds-space-lg);
+  align-items:start;
+}
+.rsx-step--wide .rsx-step__pair{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);}
+.rsx-step--flip .rsx-step__media{order:-1;}
+.rsx-step--solo .rsx-step__pair{grid-template-columns:minmax(0,1fr);}
+.rsx-step__copy{display:flex;flex-direction:column;gap:var(--ds-space-sm);}
+.rsx-frame--3x4{aspect-ratio:3 / 4;}
+/* Each step's plate gets its OWN height, so five steps read as a sequence of
+   different objects rather than five identical tiles. The caps also stop a
+   portrait source from towering over two sentences of copy. */
+/* width:100% is load-bearing. A block box carrying BOTH aspect-ratio and a
+   max-height derives its width from the clamped height and shrinks away from
+   its column, which left a void beside two of the five steps. */
+.rsx-cap-a,.rsx-cap-b,.rsx-cap-c{width:100%;}
+.rsx-cap-a{max-height:400px;}
+.rsx-cap-b{max-height:470px;}
+.rsx-cap-c{max-height:340px;}
+
+/* --- THE ROSTER CARD. One object: the photograph runs to the card edge on the
+   left and stretches to the card's full height, the argument holds the right. - */
+.rsx-bio{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:stretch;flex:1 1 auto;}
+.rsx-bio__media{position:relative;display:flex;}
+.rsx-bio__media .rs-frame{flex:1 1 auto;width:100%;aspect-ratio:auto;min-height:440px;}
+.rsx-bio__body{display:flex;flex-direction:column;gap:var(--ds-space-md);padding:var(--ds-space-lg);}
+
+/* --- INLINE PROSE LINK. The kit's quiet link is a 48px inline-flex control and
+   cannot sit mid-sentence without breaking the line box, so a sentence-level
+   link gets its own underline treatment on the legal teal. ----------------- */
+.rsx-inline{
+  color:var(--ds-primary);
+  font-weight:500;
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:4px;
+}
+.rsx-inline:hover{color:var(--ds-ink-heading);}
+
+/* --- CROSS-LINK RAIL. Two labelled groups, outline pills, no accent. ------- */
+.rsx-rail{display:grid;gap:var(--ds-space-md);}
+.rsx-rail__group{
+  display:grid;
+  grid-template-columns:minmax(0,240px) minmax(0,1fr);
+  gap:var(--ds-space-md);
+  align-items:baseline;
+  padding-block:var(--ds-space-md);
+  border-top:1px solid var(--ds-line);
+}
+.rsx-rail__group:last-child{border-bottom:1px solid var(--ds-line);}
+
+/* --- THE OFFER ANCHOR. The page's SECOND dark beat, which is the one the
+   locked structural sheet reserves by name (line 46: the two anchor beats are
+   the offer and the closing CTA). Nothing is re-composed to get it: the section
+   is RE-GROUNDED by the token class, and the class re-points --rs-card-bg,
+   --rs-card-line, --rs-figure, --rs-rule and --rs-key-accent for the subtree,
+   so the card, its edge and its keyline all follow the ground down.
+   The photograph and the card share one track pair and the frame STRETCHES to
+   the card's height, per the MEDIA + CARDS law in the structural sheet: a
+   height-capped frame beside a single card is the banned arm, because it opens
+   a dead band under the shorter of the two. ------------------------------- */
+.rsx-anchor{
+  display:grid;
+  grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  gap:var(--ds-space-xl);
+  align-items:stretch;
+}
+/* the frame is taken OUT OF FLOW so the CARD alone sets the row height and the
+   photograph is cut to it. Left in flow, a 1024x1536 source at this track width
+   resolves to 630px of picture and the card stretches to match, which opened
+   170px of empty ground above and below three sentences. */
+.rsx-anchor__media{position:relative;display:flex;}
+.rsx-anchor__media .rs-frame{position:absolute;inset:0;}
+.rsx-anchor .rs-spot{display:flex;}
+.rsx-anchor .rs-spot > .rs-card{flex:1 1 auto;}
+
+/* --- OFFER BAND. The card is narrower now that a photograph holds the left
+   track, so the copy and the appointment pair STACK inside it. Side by side at
+   this width the two acts would have had 177px of track each, and the primary
+   label alone measures wider than that at the 18px the audience law fixes. --- */
+.rsx-offer{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  flex:1 1 auto;
+  gap:var(--ds-space-lg);
+}
+.rsx-offer__acts{display:flex;flex-wrap:wrap;gap:var(--ds-space-sm);align-items:stretch;}
+
+/* --- FAQ. Question left, answer right, nothing hidden behind a click. ----- */
+.rsx-qa{display:grid;}
+.rsx-qa__row{
+  display:grid;
+  grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);
+  gap:var(--ds-space-lg);
+  padding-block:var(--ds-space-lg);
+  border-top:1px solid var(--ds-line);
+}
+.rsx-qa__row:last-child{border-bottom:1px solid var(--ds-line);}
+
+/* ---------------- ADDITIVE MOBILE COLLAPSES (max-width only) -------------- */
+@media (max-width:1059px){
+  .rsx-hero{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+  .rsx-step__pair,
+  .rsx-step--wide .rsx-step__pair{grid-template-columns:minmax(0,1fr);}
+  .rsx-step--flip .rsx-step__media{order:0;}
+  .rsx-bio{grid-template-columns:minmax(0,1fr);}
+  .rsx-bio__media .rs-frame{aspect-ratio:16 / 10;min-height:0;max-height:520px;}
+  /* the offer anchor stacks. Its frame comes back INTO flow here, because the
+     card is no longer beside it and there is no height left to be cut to, and
+     it takes a WIDE cap for the same reason the bio card's does: a full-aspect
+     plate across a 976px column is a viewport of photograph standing between
+     the page and its one act. */
+  .rsx-anchor{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+  .rsx-anchor__media .rs-frame{position:static;flex:1 1 auto;width:100%;aspect-ratio:16 / 10;max-height:460px;}
+  .rsx-plate{max-height:400px;}
+  .rsx-spine{gap:var(--ds-space-xl);}
+  /* stacked media re-acquires a WIDE cap: a 4:5 frame across a 976px tablet
+     column is a full viewport of photograph per step, which turns the spine
+     into a scroll. Capped so five steps stay one readable sequence. */
+  .rsx-step__media .rs-frame{aspect-ratio:16 / 10;max-height:520px;}
+}
+@media (max-width:767px){
+  /* measured: at 320px the H1 cleared the fold but the act pair did not once
+     the sticky header is in place. 280px puts both acts back inside 812. */
+  .rsx-hero__frame{max-height:280px;}
+  .rsx-step{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-md);}
+  .rsx-step__rail{flex-direction:row;align-items:center;justify-content:flex-start;align-self:auto;}
+  .rsx-step__thread{width:auto;height:2px;}
+  .rsx-bio__body{padding:var(--ds-space-md);}
+  .rsx-bio__media .rs-frame{aspect-ratio:4 / 3;}
+  .rsx-rail__group{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-sm);}
+  .rsx-qa__row{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-sm);padding-block:var(--ds-space-md);}
+  .rsx-evidence{padding:var(--ds-space-md);}
+}
+</style>
+
+<!-- pick: HERO-COMPOSITIONS.md #2 Split-text-right + photo-left | considered: #5, #9 | why: this page opens on a claim about surgical capability, so the first object a reader meets should be one of our own rooms rather than a sentence about one, which is exactly the mirror's high-trust case, and it is a deliberate inversion of the photo-right classic the foundation specimen already spends. #5 would drop the H1, the sub and both acts onto a scrim over a photograph, and the accent measures 1.36:1 on this canvas, so it can never rescue text over an image for the 40 plus reader this brand names as primary. #9 wants a wide letterbox band, but every real photograph of this practice on disk is portrait, so a 16:5 crop would slice our own operatories into a strip. The frame is capped at 600px, and 320px on a phone, so the promise and both acts stay above the fold. | rigor: heavy -->
+<section class="rs-sec rs-sec--lead rs-sec--band rsx-wash" id="implants-top">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rsx-hero">
+
+          <div class="rsx-hero__media rs-rise" style="--rs-i:0">
+            <div class="rs-frame rs-frame--hero rs-frame--tall rsx-hero__frame">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-72-1-1024x1536.jpg" alt="A clinician seated beside a patient in one of our operatories" width="1024" height="1536" loading="eager" decoding="async">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="rsx-hero__copy rs-rise" style="--rs-i:1">
+            <h1 class="rs-h1">Dental Implants in Las Vegas</h1>
+            <p class="rs-lede">A replacement tooth that stands on its own, with the surgical placement and the restoration both handled by our own team.</p>
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: DIVIDER-PATTERNS.md #2 Wave smooth | considered: #4, #6 | why: composition-medical-health names the circle up arc as this vertical's defining seam, and one soft curve is the only transition that reads as care rather than as software. #4 cuts a 45 degree diagonal, a tech register that fights the large soft radii the token sheet already committed to on every frame and every card on this page. #6 drops a triangular peak into the seam, a geometric spike aimed straight at the anxious reader this brand is written for. Built as a CSS dome carrying the next ground, so it costs no asset, adds no request and cannot break at any width. | rigor: heavy -->
+<section aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-arc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: #6, #8 | why: this section names a slow loss the reader is not feeling yet, and a single big type statement followed by calm body is the one shape that lets the copy's own opening sentence carry that weight without a headline being invented for it. #6 self selects an audience, but a reader on this page already selected themselves, and a qualifier grid here would only filter someone who arrived correctly. #8 asks for a belief statement, and a belief is precisely what a regulated dental page must not offer where a published source exists instead. The ADA figures ride in their own inset panel with a hairline and the signature rule, so cited data reads as evidence rather than as more prose. The sidebar now opens on a real empty corridor of ours above that panel, which is the second beat of imagery on the page and the only one before the spine: the copy here says the loss is slow and unattended, and a lit, unoccupied passage between rooms is the honest picture of that without a word being added. It is also the one receding-perspective frame on a page where every other photograph is frontal, so it breaks the portrait rhythm instead of repeating it. A corridor was chosen over the operatory frames on disk on purpose: step 03 below leaves a named slot unfilled for the review chair, and a chair placed here would invite a reader to settle that gap with the wrong room. | rigor: heavy -->
+<section class="rs-sec" id="what-a-gap-does">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-split rsx-mid">
+
+          <div class="rs-stack rs-rise" style="--rs-i:0">
+            <h2 class="rs-h2">A missing tooth does not stay a single missing tooth.</h2>
+            <p class="rs-copy">The teeth either side lean towards the gap. The tooth above or below it drifts down into the space.</p>
+            <p class="rs-copy">Under the gap, the jawbone stops being loaded when you chew. Bone that is not loaded reduces over time. That is why a gap left alone narrows the options for filling it later.</p>
+            <p class="rs-copy"><span class="rs-strong">None of this is an emergency, and that is exactly the problem.</span> It is slow, so it waits. The waiting is what makes the eventual fix bigger.</p>
+          </div>
+
+          <div class="rs-stack rs-rise" style="--rs-i:1">
+
+            <div class="rs-frame rs-frame--tall rsx-plate">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-19-2-1024x1536.jpg" alt="An empty corridor running between rooms in one of our offices" width="1024" height="1536" loading="lazy" decoding="async">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+            </div>
+
+            <div class="rsx-evidence">
+              <p class="rs-copy">The published coverage numbers belong here as well. The ADA Health Policy Institute reports that 55% of adults aged 65 and older have no dental benefits, fetched 30 July 2026. The same source reports that dental visits track coverage directly. In 2023, 53% of adults with private dental insurance had a dental visit, against 16% of adults with no dental insurance.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CARD-VARIATIONS.md #3 Minimal 3-up icon-top feature | considered: #2, #4 | why: three benefits, one sentence each, and nothing here to click, so the unit has to be the lightest card the system owns or it will promise an action it cannot carry. #2 wants an embedded mini-visual per card, and no photograph on disk depicts chewing, a bridge or a brushed crown, so all three would have to be fabricated. #4 adds an arrow link per card, which on this copy would either point nowhere or invent a destination the sentences never name. The icon chip is the soft teal fill carrying deep teal at 9.49:1, and no yellow appears anywhere in this band because nothing in it is actionable. | rigor: heavy -->
+<section class="rs-sec rs-sec--band" id="why-an-implant">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-grid rs-grid--3">
+
+          <article class="rs-card rs-rise" style="--rs-i:0">
+            <div class="rs-card__body rs-card__body--roomy">
+              <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 4.5c1.4-1.1 3-1.2 3.9-.3.9.9.6 3.4-.3 5.7-.6 1.4-.8 2.9-1.1 4.1-.2.8-1.2.9-1.5.1L7.2 11l-1 3.1c-.3.8-1.3.7-1.5-.1-.3-1.2-.5-2.7-1.1-4.1C2.7 7.6 2.4 5.1 3.3 4.2c.9-.9 2.5-.8 3.9.3Z"/><path d="M16.8 4.5c1.4-1.1 3-1.2 3.9-.3.9.9.6 3.4-.3 5.7-.6 1.4-.8 2.9-1.1 4.1-.2.8-1.2.9-1.5.1L16.8 11l-1 3.1c-.3.8-1.3.7-1.5-.1-.3-1.2-.5-2.7-1.1-4.1-.9-2.3-1.2-4.8-.3-5.7.9-.9 2.5-.8 3.9.3Z"/><path d="M4 19.5h16"/></svg></span>
+              <h3 class="rs-card__title">Chew on both sides again.</h3>
+              <p class="rs-card__text">An implant is anchored in the jaw, so you are not steering food away from one side of your mouth.</p>
+            </div>
+          </article>
+
+          <article class="rs-card rs-rise" style="--rs-i:1">
+            <div class="rs-card__body rs-card__body--roomy">
+              <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8" width="5" height="9" rx="2.2"/><rect x="9.5" y="4" width="5" height="13" rx="2.2"/><rect x="16.5" y="8" width="5" height="9" rx="2.2"/><path d="M12 17v3.5"/></svg></span>
+              <h3 class="rs-card__title">Leave the neighbouring teeth alone.</h3>
+              <p class="rs-card__text">A bridge is carried by the teeth either side of a gap. An implant stands on its own instead.</p>
+            </div>
+          </article>
+
+          <article class="rs-card rs-rise" style="--rs-i:2">
+            <div class="rs-card__body rs-card__body--roomy">
+              <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 3h7v7.5a3.5 3.5 0 0 1-7 0Z"/><path d="M12 14v7"/><path d="M9 6.5h6"/><path d="M9 9h6"/></svg></span>
+              <h3 class="rs-card__title">Clean it like a tooth.</h3>
+              <p class="rs-card__text">The crown on an implant is brushed and flossed where it sits. It does not come out at night.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: TRUST-STATS-SECTIONS.md #4 Stats big-number band | considered: #2, #3 | why: this is the page's one hard number and it is fenced to a single office, so the figure is set at display scale INSIDE its own sentence rather than lifted out as a bare numeral, because the content bible forbids the scope ever being detached from the count. #3 count-up 3-up needs three comparable metrics and exactly one exists, so two thirds of that band could only be invented. #2 is a logo marquee, and the carrier marks on disk carry unconfirmed usage rights, so carriers may be named in text but never shown as a moving wall. It takes the page's only dark anchor and sits BEFORE the process rather than after it, which is where the verified medical spine puts quantified proof. | rigor: heavy -->
+<section class="rs-sec surface-dark rsx-wash" id="the-record">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-split rs-split--flip">
+
+          <div class="rs-stack rs-rise" style="--rs-i:0">
+            <p class="rsx-record">Patients at our Lake Mead office have left 506 reviews on Birdeye, averaging 4.5 stars, fetched 30 July 2026.</p>
+          </div>
+
+          <div class="rs-stack rs-rise" style="--rs-i:1">
+            <p class="rs-quote">That record belongs to that office alone.</p>
+          </div>
+
+        </div>
+        <!-- IMAGE SLOT UNFILLED, deliberately. The copy asks here for a photograph of the
+             actual office and the actual equipment. The 372-file pool does hold real
+             practice interiors, but this band names ONE office by name, and
+             imagery-system.md 4.4 forbids a photograph of a different office standing in
+             for the one named. Any real interior placed beside this sentence would let a
+             reader take it for Lake Mead. NEEDED: a photograph of the Lake Mead office and
+             its equipment. No before and after ships here until a real consented patient
+             case is supplied. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: DIVIDER-PATTERNS.md #2 Wave smooth | considered: #7, #8 | why: the second and final use of the one divider family, spent on the hardest seam on the page, where the dark anchor has to hand back to light without a hard horizontal cutting the page in two. #7 pulls a card up over the boundary, which would float an object on top of the review record and steal the emphasis the whole band exists to give it. #8 is a shadow drop band, a device that needs the two grounds to stay rectangles and simply darkens the join instead of dissolving it. Two uses of one family sits inside the two to four discipline and keeps the seam a signature rather than a habit. | rigor: heavy -->
+<section aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-arc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #28 Process timeline | considered: #27, #29 | why: five steps, each carrying a real photograph and a cited source, cannot survive a horizontal strip, so the timeline is rotated to a vertical spine: one continuous rail, a numbered chip per step, and the media alternating side to side so no two consecutive steps share a shape. #27 packs the same five into equal cards four across, which flattens a treatment that genuinely runs to six months into a row of identical boxes and drops every source line with it. #29 is the obvious transformation pattern for dentistry and is barred outright here: no consented patient photography exists in any source, so a before and after pair could only be fabricated. Step three carries no photograph, because none of our own rooms was ever shot for it, and the empty measure is left standing as the picture of waiting rather than filled with a substitute. | rigor: heavy -->
+<section class="rs-sec" id="how-an-implant-is-placed">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rsx-spine">
+
+          <div class="rsx-step rs-rise" style="--rs-i:0">
+            <div class="rsx-step__rail" aria-hidden="true">
+              <span class="rsx-step__n">01</span>
+              <span class="rsx-step__thread"></span>
+            </div>
+            <div class="rsx-step__pair">
+              <div class="rsx-step__copy">
+                <h3 class="rs-h3">We assess the site first.</h3>
+                <p class="rs-copy">X-rays and impressions are taken to determine the bone, the gum tissue and the spacing available for an implant. You are told what is seen, not handed a plan.</p>
+                <p class="rs-source">Our own bone grafting page publishes that a jawbone that has receded or been significantly damaged cannot support an implant. It publishes that grafting is usually recommended for the restoration, captured 30 July 2026.</p>
+              </div>
+              <div class="rsx-step__media">
+                <div class="rs-frame rs-frame--tall rsx-cap-a">
+                  <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-80-1024x1536.jpg" alt="A member of our team at the touchscreen of the X-ray unit in one of our offices" width="1024" height="1536" loading="lazy" decoding="async">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rsx-step rsx-step--flip rs-rise" style="--rs-i:1">
+            <div class="rsx-step__rail" aria-hidden="true">
+              <span class="rsx-step__n">02</span>
+              <span class="rsx-step__thread"></span>
+            </div>
+            <div class="rsx-step__pair">
+              <div class="rsx-step__copy">
+                <h3 class="rs-h3">We place the post.</h3>
+                <p class="rs-copy">A post, usually titanium, is placed in the jaw while the area is numb. This is surgery, and we describe it to you as surgery.</p>
+              </div>
+              <div class="rsx-step__media">
+                <article class="rs-card rs-card--media">
+                  <div class="rs-frame rsx-frame--3x4 rsx-cap-b">
+                    <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-58-3-1024x1536.jpg" alt="A masked clinician standing beside a patient reclined in the chair in one of our operatories" width="1024" height="1536" loading="lazy" decoding="async">
+                    <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMAGE SLOT UNFILLED for step 03. The copy asks for a real photograph of the
+               review chair where the site is checked between appointments. No such
+               photograph exists in the 372-file pool: the only empty-operatory frames on
+               disk are office-named (Decatur, Henderson) and imagery-system.md 4.4 bars
+               them from standing in as generic practice imagery. NEEDED: a photograph of a
+               review chair in a room we are allowed to name. The step is composed WITHOUT
+               media rather than with a substitute, and the full measure is the waiting. -->
+          <div class="rsx-step rsx-step--solo rs-rise" style="--rs-i:2">
+            <div class="rsx-step__rail" aria-hidden="true">
+              <span class="rsx-step__n">03</span>
+              <span class="rsx-step__thread"></span>
+            </div>
+            <div class="rsx-step__pair">
+              <div class="rsx-step__copy">
+                <h3 class="rs-h3">We wait for it to integrate.</h3>
+                <p class="rs-lede">The post has to join with the bone before it can carry anything.</p>
+                <p class="rs-source">Our own implants page publishes a healing and integration period of up to six months, captured 30 July 2026.</p>
+                <p class="rs-copy">That waiting period is part of the treatment, not a delay in it.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rsx-step rs-rise" style="--rs-i:3">
+            <div class="rsx-step__rail" aria-hidden="true">
+              <span class="rsx-step__n">04</span>
+              <span class="rsx-step__thread"></span>
+            </div>
+            <div class="rsx-step__pair">
+              <div class="rsx-step__copy">
+                <h3 class="rs-h3">We fit the restoration.</h3>
+                <p class="rs-copy">The artificial tooth is made and fitted to the post, our own implants page says. The same practice that placed the post fits the tooth on top.</p>
+              </div>
+              <div class="rsx-step__media">
+                <div class="rs-frame rs-frame--tall rsx-cap-c">
+                  <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-44-1-1024x1536.jpg" alt="A clinician at the chair beside a patient wearing a protective apron, in one of our operatories" width="1024" height="1536" loading="lazy" decoding="async">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rsx-step rsx-step--flip rsx-step--wide rs-rise" style="--rs-i:4">
+            <div class="rsx-step__rail" aria-hidden="true">
+              <span class="rsx-step__n">05</span>
+            </div>
+            <div class="rsx-step__pair">
+              <div class="rsx-step__copy">
+                <h3 class="rs-h3">We review it afterwards.</h3>
+                <p class="rs-copy">An implant is checked at your regular visits like any other tooth. The practice that placed it is the practice that checks it.</p>
+              </div>
+              <div class="rsx-step__media">
+                <div class="rs-frame rs-frame--wide">
+                  <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-2048x1365.jpg" alt="The reception desk and waiting area at one of our offices" width="2048" height="1365" loading="lazy" decoding="async">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- BUILD NOTE, does not render. The copy's fourth section carries a FLAG: the
+             implant system we use is not named in any first-party source. The healing
+             interval and the grafting pathway ARE published on our own pages and are
+             carried above verbatim. Owner to confirm the system before this ships. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CARD-VARIATIONS.md #8 Team bio card | considered: #7, #9 | why: the whole claim is that ONE roster does both halves of the treatment, so the roster photograph and the argument belong inside a single object rather than as an image loosely near some text: the bio card is that object, taken at section scale, with the roster as the subject instead of one named individual. #7 overlays a name on the photograph, and no clinician may be named against this treatment, because per-clinician service assignment is unpublished. #9 would put a patient quote in this slot, and no consented patient testimonial exists in any source. The photograph runs to the card edge and stretches to the card's full height, so the object reads as one designed band and never leaves a void beside the copy. | rigor: heavy -->
+<section class="rs-sec rs-sec--band" id="one-practice">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <article class="rs-card rs-card--media rs-rise" style="--rs-i:0">
+          <div class="rsx-bio">
+
+            <div class="rsx-bio__media">
+              <div class="rs-frame">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Dentists-1024x1536.jpg" alt="Five clinicians from the practice roster, photographed in one of our offices" width="1024" height="1536" loading="lazy" decoding="async">
+                <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+                <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <div class="rsx-bio__body">
+              <h2 class="rs-h2">Where implant treatment is split in two, one practice places the post and another restores it.</h2>
+              <p class="rs-lede">The patient carries the plan between them. We do both, at seven offices across Las Vegas, North Las Vegas and Henderson.</p>
+              <p class="rs-copy">We are one dental group, not a franchise and not a referral network. Where offices are separately owned, a consistent standard between them cannot be promised. Oral surgery and restorative care sit on one clinical roster here.</p>
+              <p class="rs-copy">The clinicians on that roster are named, each with the credentials the practice publishes for them. You can read who they are before you book, on <a class="rsx-inline" href="team.html">our team page</a>.</p>
+            </div>
+
+          </div>
+        </article>
+        <!-- BUILD NOTE, does not render. The copy's sixth section carries an OWNER flag:
+             whether patient records and images are held in one system shared by all seven
+             offices is not verified in any first-party capture. No shared-record claim
+             ships on this page until the owner confirms it, and none is rendered above. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md #2 Outline pill secondary | considered: #6, #7 | why: seven destinations in one band, and not one of them is the appointment, so every target here has to read as clearly subordinate to the single act the whole page is built around. #7 is the multi-CTA cluster, which ranks a primary above a secondary, and ranking two of these seven would assert a preference the copy never states. #6 ghost text links with arrows go too far the other way: at seven items across two labelled groups they collapse into an undifferentiated list and lose the 48px target the 40 plus audience needs. The outline pill keeps a real tap target, takes no accent at all, and lets the two copy labels stand exactly as written. | rigor: heavy -->
+<section class="rs-sec" id="related-care">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rsx-rail">
+
+          <div class="rsx-rail__group rs-rise" style="--rs-i:0">
+            <p class="rs-eyebrow">Related care:</p>
+            <div class="rs-chips">
+              <a class="rs-chip" href="restorations.html">Restorations</a>
+              <a class="rs-chip" href="composite-fillings.html">Composite fillings</a>
+              <a class="rs-chip" href="crowns-caps.html">Crowns and caps</a>
+              <a class="rs-chip" href="fixed-bridges.html">Fixed bridges</a>
+            </div>
+          </div>
+
+          <div class="rsx-rail__group rs-rise" style="--rs-i:1">
+            <p class="rs-eyebrow">Also:</p>
+            <div class="rs-chips">
+              <a class="rs-chip" href="locations.html">all seven offices</a>
+              <a class="rs-chip" href="offer.html">new patient offer</a>
+              <a class="rs-chip" href="contact.html">contact</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: PRICING-SECTIONS.md #5 Plain-deal honesty stance | considered: #2, #4 | why: two published entry prices, four named lenders and an openly missing terms line is a stance, not a tier table, and this is the one pattern in the catalog that treats the honest disclosure as the offer itself. #2 is a comparison table, which would need plans or tiers that do not exist on a page publishing no treatment price, so every row after the first would be fabricated. #4 quote only would bury the two prices that genuinely ARE published, and those are the only concrete thing a new patient can act on today. RE-GROUNDED to surface-dark in this pass, and this is the argument: the spine reads teal is structure and yellow is permission, and until now the page spent its one dark beat on the review record and left the single place where permission is actually granted sitting on the same light band as the cross-link rail above it. The locked structural sheet reserves its dark ground for the offer and the closing CTA by name, so this is the sheet's own intent being spent rather than a new device, and the class re-points the card ground, the card edge and the keyline for the whole subtree, which is why the yellow keyline can drop its light-mode deep-teal outer ring here and read as a foreground at last. The photograph on the left track is a new patient arriving at a front desk, which is the literal first move the sentence beside it asks for, and it stretches to the card's height so the band reads as one object. | rigor: heavy -->
+<section class="rs-sec surface-dark" id="new-patient-offer">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rsx-anchor">
+
+          <div class="rsx-anchor__media rs-rise" style="--rs-i:0">
+            <div class="rs-frame">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-24-2-1024x1536.jpg" alt="Someone at the front desk of one of our offices, with a member of our team behind the counter" width="1024" height="1536" loading="lazy" decoding="async">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="rs-spot rs-rise" style="--rs-i:1">
+            <article class="rs-card rs-card--feature">
+              <div class="rs-card__body rs-card__body--roomy">
+                <div class="rsx-offer">
+
+                  <div class="rs-stack">
+                    <p class="rs-lede"><span class="rs-strong">If you are new to us, start with the $45 exam and X-ray, or $29 if you are a senior.</span></p>
+                    <p class="rs-source">Both prices are published on our own site and were current on 30 July 2026.</p>
+                    <p class="rs-meta">Payment plans are available through Care Credit, Cherry, Sunbit and Lending Club. Terms are set by the lender and are subject to credit approval. They are not terms offered by this practice.</p>
+                  </div>
+
+                  <div class="rsx-offer__acts">
+                    <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+                    <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+                  </div>
+
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+        <!-- BUILD NOTE, does not render. The copy's ninth section carries an OWNER
+             PLACEHOLDER: no expiry, no exclusions and no senior-age threshold is stated
+             anywhere on the live site. One is required before this offer ships. Nothing
+             was invented to fill it, and no urgency framing is used because
+             limited_time_framing_allowed is false. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: FAQ-ACCORDION.md #3 2-col split FAQ | considered: #2, #4 | why: three questions, and all three are the ones a hesitant patient actually arrived with: cost, coverage and pain. Splitting question left and answer right keeps every answer permanently on screen while still reading as a structured list rather than as three more paragraphs of prose. #2 is a plus-icon rounded card, which hides those three answers behind a click at the point the reader is closest to booking, and that is worst for the older audience this brand names as primary. #4 numbered list would work, but its numerals would collide with the numbered spine higher up the page and make two unrelated sequences look like one. Placed last so objection handling is the final beat before the chrome's single closing ask. | rigor: heavy -->
+<section class="rs-sec rs-sec--close" id="implant-questions">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rsx-qa">
+
+          <div class="rsx-qa__row rs-rise" style="--rs-i:0">
+            <h3 class="rs-h4">What does an implant cost?</h3>
+            <p class="rs-copy">We quote after an examination, because the plan depends on the bone, the site and the tooth being replaced. We do not publish treatment prices on this site.</p>
+          </div>
+
+          <div class="rsx-qa__row rs-rise" style="--rs-i:1">
+            <h3 class="rs-h4">Does insurance cover it?</h3>
+            <p class="rs-copy">Coverage depends on your plan. Delta Dental, Cigna, MetLife and the Culinary Health Fund are among the 41 carriers listed on <a class="rsx-inline" href="insurance-financing.html">our insurance and financing page</a>. Network status varies by office and by plan. Contact the office you want with your plan details before you book.</p>
+          </div>
+
+          <div class="rsx-qa__row rs-rise" style="--rs-i:2">
+            <h3 class="rs-h4">Does it hurt?</h3>
+            <p class="rs-copy">The post is placed while the area is numb. The site can feel sore afterwards, and we tell you how to manage that before you leave.</p>
+          </div>
+
+        </div>
+        <!-- BUILD NOTE, does not render. The copy's eighth section carries an OWNER flag on
+             the insurance answer: it names carriers without stating any relationship with
+             them, and it offers no coverage check made on the patient's behalf, because
+             that activity is undefined and blocked. Confirm the per-office network status
+             before this answer ships. -->
+      </div>
+    </div>
+  </div>
+</section>

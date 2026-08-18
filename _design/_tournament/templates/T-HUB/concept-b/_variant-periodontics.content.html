@@ -1,0 +1,480 @@
+<!-- ============================================================================
+     T-HUB CONCEPT B, VARIANT: periodontics.
+
+     This is NOT a fourth concept. It is concept B's own template rendered against
+     the LAST unmeasured page above the density gate's threshold. Built because a
+     validated MODEL predicted it would fail, and a prediction is not a measurement.
+
+     THE MEASURED CURVE this file completes, all at 1440x900 with
+     verify-section-density, on real builds and not on arithmetic:
+
+       rows  page                §1 vh   §1 density   verdict
+        2    cosmetic-dentistry   0.62      241.5      PASS
+        6    services (exemplar)  1.53      388.5      PASS
+        7    locations            1.62      459.0      PASS
+        8    restorations         1.82      296.2      FAIL, TALL+THIN
+        9    periodontics         THIS FILE
+       10    team                 2.23      508.3      PASS
+
+     The gate fails a section only when it is BOTH taller than 1.65 viewports AND
+     under 400 text density. The field crosses 1.65 between seven and eight rows,
+     so from eight rows up the section is carried entirely by how wordy that page's
+     copy happens to be. team survives at ten rows on 1467 characters of clinician
+     biography; restorations fails at eight on 701 characters of terse procedure
+     lines. This page has nine rows and 856 characters, which puts it between them
+     and on the wrong side of the model's estimate, and that is exactly why it is
+     built rather than assumed.
+
+     WHAT IS IDENTICAL TO concept-b.content.html: every class is the same hb-* class,
+     the seven top-level sections are in the same order carrying the same seven picks,
+     and no rule, breakpoint or token is added, removed or changed.
+     *Reworded 2026-08-17. This used to open "the entire style block above is byte
+     identical". There is no style block above any more: at the T-HUB promote it moved,
+     byte identical, into radiantsmiles-structural.css section 8, exactly as concept C's
+     did into section 7. All six T-HUB fragments now inherit those rules from the linked
+     sheet, so they share them BY CONSTRUCTION rather than by duplication, which is a
+     stronger guarantee than the one this sentence used to make.*
+
+     WHAT DIFFERS, and only this:
+       1. the copy, which is this page's own locked copy;
+       2. the hero's second door, which takes the FALLBACK case, because this page
+          carries no escape block. Same case as the cosmetic-dentistry and
+          restorations variants;
+       3. the field, which renders nine rows instead of six;
+       4. the closing band, which carries a SECOND paragraph. This page's section 7
+          is the only one of the ten with two paragraphs in it. The first is the
+          instruction and takes p.hb-book__line, the display-scale close the other
+          nine use. The second is procedural, that a scheduling coordinator
+          confirms the appointment, and it takes p.rs-copy, because setting a
+          logistics sentence at 42px would make it the loudest thing on the page.
+          No CSS is added: .hb-book is already a centred flex column with a gap and
+          both children are already styled by rules that exist.
+
+     IMAGERY: the nine field shots are drawn from the 24 smile-gallery interiors,
+     which imagery-system.md section 2 records as carrying NO office attribution in
+     the source and section 4 rule 5 therefore permits on any page, described as
+     "one of our offices". None of the seven office-own files is used, so rule 4 is
+     not engaged. The practice has no procedure-specific photography, so these nine
+     frames are our own rooms, counters and people, assigned for VARIETY down the
+     list and not as depictions of the nine procedures. No alt string names a
+     procedure, a device or a person. Files are shared with the restorations
+     variant, on a different page and in different slots.
+     ============================================================================ -->
+
+<!-- pick: HERO-COMPOSITIONS.md #3 Split-screen 50/50 different content blocks | considered: #9,#23,#28 | why: a hub is read by someone who does not yet know the clinical name for what is wrong, and this page's own opening sentence says exactly that, so the first move has to be a FORK rather than an answer. On this page the fork is doing more than routing: the copy's own second section says gum problems are quiet and are usually found at a checkup rather than reported, so a large share of this page's readers arrived because somebody else told them to, and do not know which of the nine rows is theirs. #3 is the only hero in the catalog whose whole shape is two content blocks carrying two different offers. The left door holds the H1, the promise, and the two actions. The right door is the FALLBACK the exemplar specifies, because this page carries no escape block: counted from the copy, periodontics ends its section 3 with nine sub-area blocks and nothing after them. WHERE THE FALLBACK COPY COMES FROM, since none of it may be written: the heading is this page's OWN section 6 routing offer, carried verbatim, and the link label is the locked chrome's own label for locations.html. PREVIEW, NOT REPETITION, and checked rather than assumed: the phrase "office nearest you" occurs on this page in section 6 ONLY. Section 7 closes on "call that office directly on the number listed above", a different phrase, so the hero door makes it two sections and the repetition gate passes. ONE COST DECLARED: the fallback door and the left door's secondary action both resolve to locations.html, because the phone policy publishes every number per office and forbids a general line. #9 Cinematic letterbox is rejected on fit: it spends half a viewport on one line of display type, and this page has a question to ask. #23 Comparison hero is rejected because the only oppositional material this page owns is the refer-out passage, which is the argument for staying once you have chosen, and spending it here would leave the why-band with nothing to say. #28 Embedded map hero is rejected because it is written for a single-location business and no map asset exists in assets/. GROUND: the page's first non-light anchor, deliberately the hero. -->
+<section class="rs-sec rs-sec--lead surface-dark hb-band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-fork">
+
+          <div class="hb-fork__ask">
+            <h1 class="rs-h1">Periodontics in Las Vegas</h1>
+            <p class="rs-lede">Care for the gum and bone that hold your teeth in place. Start with the problem you actually have, not the clinical term for it.</p>
+            <!-- CTA-PATTERNS.md #7 multi-CTA cluster, carried verbatim from section 1 of the
+                 copy. The secondary action routes to the offices page because the phone policy
+                 forbids a general line: every direct number is published there, per office. -->
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+          <div class="hb-fork__else">
+            <div class="rs-frame hb-fork__frame">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-13-768x1152.jpg"
+                   width="768" height="1152" decoding="async"
+                   alt="The reception area at one of our offices, seen from the entrance.">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+            <!-- THE SECOND DOOR, CASE B. The literal replacement the exemplar specifies,
+                 unchanged: this page's own section 6 heading, and the locked chrome's own label
+                 for locations.html. Third page to build it, and byte identical to the
+                 cosmetic-dentistry and restorations variants, which is the point. -->
+            <div class="hb-invert hb-fork__panel">
+              <h2 class="hb-fork__t">Find the office nearest you.</h2>
+              <a class="hb-fork__go" href="locations.html">All seven offices</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #6 "Is this for me" qualifier | considered: #9,#27,#45 | why: this is the beat the whole concept is built around, and its job is NOT to display nine procedures, it is to let a reader ELIMINATE eight of them. #6 is the only entry in the catalog whose stated role is self-selection rather than display, and its inline question-and-answer variant is what a person scanning for their own symptom actually uses: one route per row, read top to bottom, each row carrying the plain-language line that tells you whether to stop here. That matters more on this page than on any other in the template, because the copy's own nine names are a MIXTURE OF KINDS: three are symptoms a reader can recognise in the mirror, three are procedures, one is a device, one is a screening and one is routine maintenance. A reader cannot be expected to know which kind they are looking for, so the line under each name is doing all of the work and the name alone would do none of it. Rank is carried by ORDER alone, and the order is the copy's, which runs from the problem you notice to the cleaning you do not think about, so no procedure is scaled larger than another. #9 Services 3-col is rejected because a row of equal columns is exactly the shop window this concept exists to avoid, and at nine entries a three-up grid would produce three tidy rows that read as a catalogue of things to buy rather than a list to eliminate from. #27 Numbered process steps is rejected on honesty: numbering these nine would assert a sequence of treatment, and a reader arrives at exactly one of them. #45 Category chips is rejected because a chip has room for a name and nothing else, and on a list whose names are this heterogeneous, the name alone is close to useless. DEVIATION, deliberate and template-wide: the copy's anchor strip is NOT rendered as a separate chip row. Here the strip is the same nine destinations as the rows below it, so shipping both would print one list twice. The optional field note is omitted, because unlike services this page's copy carries no one-level-down line. ONE DEVICE IS NAMED IN THIS SECTION and it is the only one on the page: the SIROlaser, which content-bible.md section 2 records as one of exactly two verifiable technologies in this build. It is named in the copy and carried verbatim; nothing else is. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="hb-field">
+
+          <li>
+            <a class="hb-route" href="periodontal-disease.html">
+              <span class="rs-frame hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-44-1-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="Someone reclined in a treatment chair at one of our offices, wearing a protective apron, with a member of the practice team standing alongside.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Gum disease.</h2>
+                <p class="hb-route__p">Bleeding, swelling or gums pulling away from the tooth. Find out how far it has gone, and what stops it.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="periodontal-scaling-root-planing.html">
+              <span class="rs-frame hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-80-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A member of the practice team setting the controls on a floor standing unit in a treatment room at one of our offices.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Deep cleaning.</h2>
+                <p class="hb-route__p">Scaling and root planing to clean below the gumline, where a normal cleaning cannot reach.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="gum-recession.html">
+              <span class="rs-frame hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-86-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A member of the practice team in scrubs standing at a worktop in a back room at one of our offices.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Gum recession.</h2>
+                <p class="hb-route__p">When the gum pulls back and the root starts to show or feel sensitive.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="sirolaser.html">
+              <span class="rs-frame hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-53-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A gloved hand loading a small tray into a lit cabinet on a worktop at one of our offices.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Laser treatment.</h2>
+                <p class="hb-route__p">The SIROlaser, used for gum work where it is the right tool.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="crown-lengthening.html">
+              <span class="rs-frame hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-92-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="Someone standing at the reception counter of one of our offices, speaking with the person behind it.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Crown lengthening.</h2>
+                <p class="hb-route__p">Reshaping gum and bone so a crown or filling has enough tooth to hold on to.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="antibiotic-treatment.html">
+              <span class="rs-frame hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-9-3-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="The waiting area at one of our offices, with ring lights overhead, a bench and planting.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Antibiotic treatment.</h2>
+                <p class="hb-route__p">Targeted antibiotic therapy alongside cleaning, where the infection calls for it.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="bruxism.html">
+              <span class="rs-frame hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-82-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="Someone standing with their head positioned in a scanning unit in a treatment room at one of our offices.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Grinding and clenching.</h2>
+                <p class="hb-route__p">Night guards for bruxism, made to your own bite and reviewed over time.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="oral-cancer-exam.html">
+              <span class="rs-frame hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-36-1-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A member of the practice team seated at the front desk of one of our offices, under the practice sign.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Oral cancer screening.</h2>
+                <p class="hb-route__p">A short visual and physical check, done as part of your exam.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="prophylaxis-teeth-cleaning.html">
+              <span class="rs-frame hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-98-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="Someone beside the glass entrance doors of one of our offices, with ring lights overhead.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Routine cleaning.</h2>
+                <p class="hb-route__p">Standard prophylaxis for gums that are healthy and staying that way.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+        <!-- IMAGE SLOTS, all nine FILLED with real first-party photographs, and the honest
+             caveat is recorded here rather than hidden: the practice has no procedure-specific
+             photography, so these nine frames are our own rooms, counters and people, assigned
+             for VARIETY down the list and not as depictions of the nine procedures. No alt
+             string names a procedure, a device or a person. All nine are drawn from the 24
+             smile-gallery interiors, which carry no office attribution in the source. -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #50 Topic columns | considered: #45,#36 | why: this is the escape hatch, placed directly under the field and long before the closing ask, because the reader who matched none of the nine routes should be released at the moment that becomes true rather than carried through three more sections written for somebody who did stay. #50 is the grouped-columns entry, and the copy supplies both group names and both memberships: the sibling areas of care on one side, the offer and the offices and the way to ask on the other. Rendering them as two headed columns of full-width rows keeps the grouping the copy asserts and gives every destination a 52px target. #45 Category chips is rejected because a chip row flattens both groups into one line of equal pills, and this rail's content is that the two groups are NOT the same kind of thing. #36 Sticky-sidebar topic nav is rejected because it is built to be returned to repeatedly across a long document, and this rail is read once. DEVIATION: #50's per-topic article cards are not built, because these are eight internal destinations and not articles. NOTE ON TWO LABELS: the copy names this page's siblings "Restorative" and "Surgical" where the other nine pages name them "Restorations" and "Oral surgery". The copy's own words are carried verbatim, and both route to the same pages the rest of the site routes to. GROUND: the page's quietest beat, on the plain canvas. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-more">
+
+          <div class="hb-more__grp">
+            <p class="hb-more__k">Other areas of care:</p>
+            <a class="hb-more__l" href="general-dentistry.html">General dentistry</a>
+            <a class="hb-more__l" href="cosmetic-dentistry.html">Cosmetic dentistry</a>
+            <a class="hb-more__l" href="restorations.html">Restorative</a>
+            <a class="hb-more__l" href="orthodontics.html">Orthodontics</a>
+            <a class="hb-more__l" href="oral-surgery.html">Surgical</a>
+          </div>
+
+          <div class="hb-more__grp">
+            <p class="hb-more__k">Also:</p>
+            <a class="hb-more__l" href="offer.html">new patient offer</a>
+            <a class="hb-more__l" href="locations.html">all seven offices</a>
+            <a class="hb-more__l" href="contact.html">contact</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: #8,#26 | why: the reader has just chosen a route, and the only question left about that choice is whether it stays here or gets handed on, so this section has to name a cost the reader has already paid somewhere else before the in-house claim means anything. On this page that cost is the most concrete it gets anywhere in the template, because periodontics is the area a general practice most often refers out, and the copy says exactly what that costs: a new practice, a new front desk and a new wait. #7 is the catalog's name-the-pain entry, and its problem-cards variant carries this passage correctly: the copy is a premise, an arrangement and our arrangement, so it is set as two statement cells with the premise spanning ABOVE them. That is the cosmetic-dentistry variant's finding B applied again: the spanning slot takes the page's single UNPAIRED paragraph wherever the copy puts it, and here the unpaired paragraph is the opening premise, that gum problems are quiet and are found at a checkup rather than reported. It has to be read BEFORE the two arrangements because it is the reason a referral happens at all. The treatment does the comparing the words are forbidden to do: the refer-out cell is flat, unlifted and hairline only, ours takes the card ground, the elevation and the keyed signature rule. No column label ships on either cell. #8 Manifesto is rejected because a manifesto states a belief and this passage states an arrangement. #26 Pull-quote section is rejected because it exists to set one passage alone in the page's own voice, and the middle paragraph describes a model this practice does NOT use. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-why">
+
+          <div class="rs-frame hb-why__media">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-10-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="The reception desk at one of our offices, seen past the planting by the entrance.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+          <div class="hb-why__args">
+            <p class="hb-why__cost">Gum problems are quiet. They rarely hurt early, which is why they are usually found at a checkup rather than reported by the patient.</p>
+            <p class="hb-why__was">Where a practice refers out, you are sent somewhere else. You see a general dentist, then a specialist across town, which means a new practice, a new front desk and a new wait.</p>
+            <p class="hb-why__is">We treat this in house, at our own offices, with named clinicians. The person who checks your gums next works in the same practice, not a separate business across town.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: PRICING-SECTIONS.md #4 Quote-only cost-model split | considered: #5,#6 | why: by this point in the route the reader has picked an area and accepted that it stays in house, and the only thing left between them and a booking is not knowing what finding out will cost. #4 is the band written for an offer with NO published price: it argues the MODEL instead of printing a number, which is the only thing this page is permitted to do. Its split shape is used as specified, a copy column beside a capped portrait frame, and its rules list carries one WHOLE sentence per row. THE COPY'S OWN GUARD IS RENDERED AS A RULE RATHER THAN DROPPED: it says the coverage figure is the evidence base for the senior price and NOT a scare statistic, which on a page about a disease that is usually found rather than reported is the sentence stopping a statistic from being turned into pressure. It ships as its own row. GROUND: the look-floor asks for a non-light beat inside the middle band, and of the two sections inside it only this one earns it on content. #5 Plain-deal honesty stance is rejected because it is built to state ONE clear number plainly and this page publishes no number. #6 Quote-configurator ladder is rejected because every choice in its sequence would have to be written. DEVIATIONS, both declared: #4's KPI row of oversized numerals is NOT built, because the only figure this page owns is a third-party coverage percentage that cannot be separated from its attribution and its date, and #4's corner badge card is dropped for the same reason. -->
+<section class="rs-sec surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-cost">
+
+          <div class="hb-cost__copy">
+            <p class="hb-cost__lead">Dental visits track coverage directly.</p>
+            <p class="rs-copy">The ADA Health Policy Institute reports that <span class="hb-fig">55%</span> of adults aged 65 and older have no dental benefits, fetched 30 July 2026.</p>
+            <ul class="hb-rules">
+              <li>That is the evidence base for our senior price, not a scare statistic.</li>
+              <li>Our Lake Mead office is rated 4.5 stars across 506 patient reviews on Birdeye, fetched 30 July 2026.</li>
+            </ul>
+            <!-- OWNER: the rating above is the Lake Mead record only. It is not restated as a
+                 practice-wide figure anywhere on this page, it is not aggregated, and it keeps
+                 its platform, its office scope and its fetch date. Supply the practice-wide
+                 figure and nominate the platform of record, per content-bible.md section 6. -->
+          </div>
+
+          <div class="rs-frame hb-cost__media">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-109-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="Someone seated on the bench at one of our offices with a clipboard, in front of the reception desk.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #51 Locations grid | considered: #52,#53 | why: the route narrows one last time here, from nine procedures to one address, and #51 is the catalog's multi-location entry, the only one built to hold a SET of named places. It is realised as a two-column ledger of seven hairline rows: every office name links to that office's own page, and every address is carried character for character from the copy, which is itself copied from the locked contact data. #51's per-tile photograph is DELIBERATELY NOT SHIPPED, for the exemplar's first reason, which is the one true of every page rather than only of services: a list of rows each carrying a thumbnail and an arrow is this concept's one signature object and it is already spent on section 2. On THIS page that argument is near its strongest, because section 2 here is nine rows, so a seven-tile band underneath would put sixteen thumbnails on one page. The exemplar's px measurements are NOT restated, per the cosmetic-dentistry variant's finding C: they were measured on services and are not true of any other page. What survives unmeasured is the reason about the FILES: North Decatur's only file is 380 by 506 native, and Summerlin at 792 wide and Lone Mountain at 894 fail at 2x for a 518px tile. #52 Map embed is rejected because it is written for a single-location business and no map asset exists in assets/. #53 Hours table is rejected on evidence: per-office hours are not in the locked spec, three of the seven offices carry unresolved hour rows in the sibling copy, and the chrome footer already states that hours vary by office. GROUND: the plain canvas, between the middle anchor and the closing one. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-where">
+
+          <div class="hb-where__head">
+            <h2 class="rs-h2">Find the office nearest you.</h2>
+            <p class="rs-copy">Seven offices across the valley:</p>
+          </div>
+
+          <!-- OWNER: the Sunrise Manor ZIP conflicts on the live site. 89107 is carried here
+               from client-rules.json contactData, pending confirmation against 89104 in the
+               booking block. NAP consistency depends on resolving it. Not rendered as visible
+               copy, because a visitor is not the audience for it. -->
+          <div class="hb-offices">
+            <div class="hb-office">
+              <a class="hb-office__n" href="lone-mountain.html">Lone Mountain</a>
+              <p class="hb-office__a">7469 W. Lake Mead Blvd., Suite 270, Las Vegas 89128</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="sunrise-manor.html">Sunrise Manor</a>
+              <p class="hb-office__a">1825 S. Nellis Blvd., Las Vegas 89107</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="summerlin.html">Summerlin</a>
+              <p class="hb-office__a">8961 W. Sahara Ave., Suite 108, Las Vegas 89117</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="north-las-vegas.html">North Las Vegas</a>
+              <p class="hb-office__a">5195 Camino Al Norte Rd., North Las Vegas 89031</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="henderson.html">Henderson</a>
+              <p class="hb-office__a">2633 W. Horizon Ridge Pkwy., Suite 130, Henderson 89052</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="north-decatur.html">North Decatur</a>
+              <p class="hb-office__a">6311 N. Decatur Blvd., Suite 140, Las Vegas 89130</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="blue-diamond.html">Blue Diamond</a>
+              <p class="hb-office__a">5095 S. Blue Diamond Rd., Suite 105, Las Vegas 89139</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #41 Closing CTA (final action) | considered: #40,#37 | why: the route ends where a route should end, on one instruction and the two actions that carry it out. #41 is the entry whose stated role is exactly the last thing before the footer, and its restraint is the point. THIS PAGE'S SECTION 7 IS THE ONLY ONE OF THE TEN WITH TWO PARAGRAPHS, and both ship, at two different scales rather than one. The first is the instruction and takes the display-scale close the other nine use. The second is procedural, that our booking links and numbers are per office and that a scheduling coordinator confirms the appointment, and it takes the body-copy role: it is the sentence that tells a reader what actually happens after they press the button, which is worth keeping and is not worth 42px. No CSS is added for it. #40 Pre-footer CTA band is rejected because each of its variants adds furniture that would need copy this page does not have. #37 CTA form split is rejected because it would put an intake form on a hub, and because this page's own closing copy says the practice's intake is a coordinator calling back, which a form on this page would contradict. -->
+<section class="rs-sec rs-sec--close surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-book">
+
+          <p class="hb-book__line">Book an appointment at whichever office suits you, or call that office directly on the number listed above.</p>
+          <p class="rs-copy">Our booking links and phone numbers are per office. Our own appointment request page states that a scheduling coordinator contacts you to confirm the appointment.</p>
+
+          <!-- The secondary action resolves to the offices page, never a general line, per
+               routeRules.phone_policy: a hub cannot know which of the seven offices the reader
+               wants, and every office's own direct number is published on that page. -->
+          <div class="rs-acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

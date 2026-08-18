@@ -1,0 +1,520 @@
+<style>
+/* ============================================================================
+   T-ARTICLE CONCEPT C - "THE CREDENTIAL PLATE"
+   Body-fragment scoped layer for the ten clinician pages. Sits ON TOP of
+   radiantsmiles-tokens.css, radiantsmiles-chrome.css and
+   radiantsmiles-structural.css (which already carries the promoted cc-* and
+   hb-* template layers). It adds only the shapes this concept needs.
+
+   NAMESPACE: every class here is ar-* (article). The cc-* prefix belongs to the
+   promoted T-FEATURE layer and hb-* to the promoted T-HUB layer, both live in
+   the linked structural sheet, so nothing here may use either. Checked: no ar-*
+   token appears in radiantsmiles-tokens.css, -chrome.css or -structural.css.
+
+   TOKEN PURITY: zero hex literals and zero raw colour functions. Every colour,
+   radius, shadow, duration, easing and space value is a var(--ds-*) role token,
+   a calc() over one, or one of the four --rs-* surface aliases the locked
+   structural sheet declares and re-points on .surface-dark (--rs-card-bg,
+   --rs-card-line, --rs-rule, --rs-figure). Those four are USED, never redefined.
+
+   RESPONSIVE POLICY: authored DESKTOP FIRST. Every breakpoint rule is an
+   ADDITIVE max-width override at 1023 / 767 / 479, never a min-width one.
+
+   THE SPECIFICITY NOTE, read before editing. The foundation declares
+   p.rs-copy{...max-width:64ch} at (0,1,1). No element in this fragment carries
+   rs-copy AND an ar-* measure at once. Every paragraph that needs its own
+   measure carries an ar-* class only, and its rule is type-qualified (p.ar-*)
+   so it lands at (0,1,1) and later in source order.
+
+   THE THESIS, in CSS terms: this is a credential page, not a personality page,
+   so the checkable facts are the largest objects on it and the portrait is one
+   cell in the row of them. The page is TYPE-LED. There is one dark ground and it
+   is in the MIDDLE, on the credential, while the closing ask stays on light.
+   That is the inverse of the usual arrangement and it is deliberate.
+
+   THE SHORT-PAGE LAW, which is why the repeating shapes below are all flex
+   rather than fixed grids. Ten pages inherit this and they vary hard: Ruiz
+   supplies a degree, a school, a year and a span of practice; Schaudt supplies
+   one sentence and no credential at all. Every repeating row here is a WRAPPING
+   FLEX LINE with a content-sized basis, so one item fills its own width and none
+   reserves an empty column. Nothing renders a hole when a page supplies less.
+
+   UTF-8, ASCII only. No em or en dashes, no exclamation marks, no emoji.
+   ============================================================================ */
+
+/* ---- 1 . HERO. Masthead above, fact plate below. ------------------------- */
+.ar-hero{display:flex;flex-direction:column;gap:var(--ds-space-lg);}
+
+h1.ar-h1{
+  font-size:clamp(38px,5.6vw,62px);
+  line-height:1.05;
+  letter-spacing:-.025em;
+  max-width:22ch;
+  text-wrap:balance;
+}
+
+/* the standfirst sits beside the actions rather than above them, so the two
+   read as one masthead line rather than as a stacked hero column. */
+.ar-hero__top{
+  display:grid;
+  grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);
+  gap:var(--ds-space-xl);
+  align-items:end;
+}
+p.ar-hero__sub{
+  font-size:clamp(19px,2vw,23px);
+  line-height:1.55;
+  color:var(--ds-ink-soft);
+  max-width:52ch;
+}
+
+/* THE FACT PLATE. One panel, one wrapping line: the portrait cell first, then
+   one cell per checkable datum the page supplies. A page with no datum renders
+   the portrait alone at its own width, which reads as deliberate rather than
+   broken. The wash is a background-IMAGE over the card colour, so the panel has
+   real light in it without needing a second element. */
+.ar-plate{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:var(--ds-space-lg);
+  padding:var(--ds-space-lg);
+  background-color:var(--rs-card-bg);
+  background-image:var(--ds-glow-wash);
+  border:1px solid var(--rs-card-line);
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+/* the portrait cell. The ten portraits are NOT a consistent set: seven are
+   white-coat studio shots and three differ in attire, background and crop. All
+   ten are forced into the SAME square frame at the SAME size with object-fit
+   cover, so an inconsistent source can never change the shape of the row. The
+   source files are 275 by 275, so the cell caps at 236 and never upscales. */
+.ar-plate__face{flex:0 0 clamp(180px,18vw,236px);min-width:0;}
+.ar-face{
+  display:block;
+  width:100%;
+  aspect-ratio:1 / 1;
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+/* content-sized, never grow. An empty facts line therefore occupies nothing
+   instead of reserving a column beside the portrait. */
+.ar-plate__facts{
+  flex:0 1 auto;
+  min-width:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--ds-space-lg);
+}
+.ar-plate__facts:empty{display:none;}
+/* the keyed statement motif, and it repeats at section 3 so the page reads as
+   one system: a 2px rule over a fact, drawn with --rs-rule because that alias
+   re-points to the accent on a dark ground where the signature is only 2.47 to
+   1. The signature carries no text here, only this boundary. */
+.ar-fact{
+  flex:0 1 clamp(170px,17vw,220px);
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-2xs);
+  padding-top:var(--ds-space-sm);
+  border-top:2px solid var(--rs-rule);
+}
+/* the figure takes the sheet's FIGURE role. On light that is --ds-primary at
+   8.84 to 1. It is a foreground here, never a fill. */
+.ar-fact__n{
+  font-family:var(--ds-font-display);
+  font-size:clamp(30px,3.4vw,46px);
+  line-height:1.04;
+  letter-spacing:-.03em;
+  font-weight:600;
+  color:var(--rs-figure);
+  font-variant-numeric:tabular-nums;
+}
+/* a multi-word datum is not a numeral and must not be held at numeral scale,
+   or it punches a ragged hole in its own cell. */
+.ar-fact__n--phrase{font-size:clamp(24px,2.5vw,33px);letter-spacing:-.018em;}
+.ar-fact__l{font-size:17px;line-height:1.5;color:var(--ds-ink-soft);}
+
+/* ---- 2 . CREDENTIALS. The page's ONE dark ground, and it is mid page. ---- */
+/* .surface-dark paints its ground as a background-IMAGE gradient, so a later
+   background-image rule on the same element would ERASE it. The gradient is
+   therefore restated here from its own role tokens with --ds-grid stacked over
+   it. --ds-grid is two layers, so three layers take three sizes. */
+.ar-sec-cred{
+  background-image:var(--ds-grid),linear-gradient(180deg,var(--ds-primary-deep),var(--ds-dark-2));
+  background-size:var(--ds-grid-size),var(--ds-grid-size),auto;
+}
+.ar-cred{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:var(--ds-space-xl);
+  align-items:start;
+}
+.ar-cred__main{display:flex;flex-direction:column;gap:var(--ds-space-md);min-width:0;}
+
+/* the section heading takes a short keyed rule instead of an eyebrow, because
+   no eyebrow wording exists in the copy and inventing one is not allowed. */
+h2.ar-h2{
+  font-size:clamp(28px,3.4vw,40px);
+  line-height:1.12;
+  letter-spacing:-.02em;
+}
+h2.ar-h2::before{
+  content:"";
+  display:block;
+  width:var(--ds-space-lg);
+  height:3px;
+  border-radius:var(--ds-r-pill);
+  background:var(--rs-rule);
+  margin-bottom:var(--ds-space-sm);
+}
+
+p.ar-cred__lead{
+  font-family:var(--ds-font-display);
+  font-size:clamp(21px,2.2vw,28px);
+  line-height:1.32;
+  letter-spacing:-.014em;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+  max-width:34ch;
+}
+/* the inline figure. A reader checking a credential scans for the year and the
+   span, so both are promoted typographically WITHOUT the sentence around them
+   being split, reordered or reworded. */
+.ar-fig{
+  font-family:var(--ds-font-display);
+  font-weight:700;
+  font-size:1.1em;
+  letter-spacing:-.012em;
+  color:var(--ds-ink);
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+
+/* THE INVERSE PANEL. The one light surface inside the dark band, carrying the
+   provenance sentence. --ds-primary-soft is the token sheet's declared inverse
+   chip and does NOT flip on dark; it carries --ds-primary-deep at 9.42 to 1.
+   Every ink on it is PINNED rather than inherited, exactly as .rs-btn--accent
+   pins its label, because inside a .surface-dark subtree --ds-ink is near-white
+   and would vanish here. The left rule is the signature, which is a legal
+   non-text boundary on this pale ground. */
+.ar-source{
+  background:var(--ds-primary-soft);
+  color:var(--ds-primary-deep);
+  border-left:3px solid var(--ds-signature);
+  border-radius:var(--ds-r-surface);
+  padding:var(--ds-space-lg);
+  box-shadow:var(--ds-shadow-lift);
+}
+p.ar-source__p{
+  font-size:18px;
+  line-height:1.65;
+  color:var(--ds-primary-deep);
+  max-width:38ch;
+}
+/* the closing claim of the section, set across the whole measure under a
+   hairline so it reads as the conclusion of both columns above it. */
+p.ar-cred__claim{
+  margin-top:var(--ds-space-lg);
+  padding-top:var(--ds-space-lg);
+  border-top:1px solid var(--ds-line);
+  font-family:var(--ds-font-display);
+  font-size:clamp(21px,2.3vw,29px);
+  line-height:1.32;
+  letter-spacing:-.014em;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+  max-width:46ch;
+}
+
+/* ---- 3 . APPROACH. Keyed statements as TYPE, never as cards. ------------ */
+.ar-approach{display:flex;flex-direction:column;gap:var(--ds-space-lg);}
+.ar-beats{display:flex;flex-wrap:wrap;gap:var(--ds-space-lg);}
+/* the same keyed rule the fact cells take, so a statement and a datum read as
+   the same kind of object at two scales. flex 1 1 320 means one statement fills
+   the row and three wrap, which is what the ten pages need. */
+p.ar-beat{
+  flex:1 1 320px;
+  min-width:0;
+  padding-top:var(--ds-space-sm);
+  border-top:2px solid var(--rs-rule);
+  font-family:var(--ds-font-display);
+  font-size:clamp(20px,2.1vw,27px);
+  line-height:1.34;
+  letter-spacing:-.012em;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+}
+.ar-note{max-width:78ch;}
+
+/* ---- 4 . WHERE THEY PRACTISE. One statement, one route. ----------------- */
+.ar-where{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:var(--ds-space-xl);
+  align-items:center;
+  padding:var(--ds-space-lg);
+  background-color:var(--rs-card-bg);
+  border:1px solid var(--rs-card-line);
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+.ar-where__copy{display:flex;flex-direction:column;gap:var(--ds-space-md);min-width:0;}
+p.ar-where__p{
+  font-size:18px;
+  line-height:1.70;
+  color:var(--ds-ink-soft);
+  max-width:56ch;
+}
+
+/* the arrow-circle route. A label plus a circular affordance, sized to a real
+   52px target rather than to a glyph, with the arrow nudge on hover. */
+a.ar-go{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--ds-space-sm);
+  min-height:52px;
+  font-size:19px;
+  font-weight:700;
+  line-height:1.3;
+  text-decoration:none;
+  color:var(--ds-ink-heading);
+}
+.ar-go__l{
+  border-bottom:2px solid transparent;
+  transition:border-color var(--ds-dur) var(--ds-ease);
+}
+a.ar-go:hover .ar-go__l,
+a.ar-go:focus-visible .ar-go__l{border-bottom-color:var(--rs-rule);}
+.ar-go__i{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:52px;
+  height:52px;
+  flex:none;
+  border-radius:var(--ds-r-pill);
+  border:1px solid var(--ds-line-control);
+  color:var(--ds-ink-heading);
+  transition:transform var(--ds-dur) var(--ds-ease-out),
+             background-color var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease);
+}
+a.ar-go:hover .ar-go__i,
+a.ar-go:focus-visible .ar-go__i{
+  background:var(--ds-primary-soft);
+  border-color:var(--ds-signature);
+  transform:translateX(var(--ds-space-2xs));
+}
+a.ar-go--lead{font-family:var(--ds-font-display);font-size:clamp(20px,2.2vw,26px);}
+
+/* ---- 5 . THE CLOSE. Rail left, the one accent-keyed plate right. -------- */
+.ar-close{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
+  gap:var(--ds-space-xl);
+  align-items:start;
+}
+.ar-close__rail{display:flex;flex-direction:column;gap:var(--ds-space-md);align-items:flex-start;min-width:0;}
+p.ar-rail__k{
+  font-family:var(--ds-font-display);
+  font-size:19px;
+  line-height:1.4;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+  padding-bottom:var(--ds-space-xs);
+  border-bottom:2px solid var(--rs-rule);
+  align-self:stretch;
+}
+/* THE PAGE'S ONE ACCENT KEYLINE, and it is spent here on the single conversion
+   plate. The accent is 1.36 to 1 on this canvas, so a bare yellow ring is a
+   ghost; the token sheet's KEYLINE RULE puts a deep-teal ring outside it at 8.47
+   to 1 against the yellow. Both rings are written from --ds-* tokens directly so
+   this fragment stands alone. The accent carries no text anywhere on this page. */
+.ar-act{
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-sm);
+  padding:var(--ds-space-lg);
+  background-color:var(--rs-card-bg);
+  border:1px solid var(--rs-card-line);
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-lift),
+             0 0 0 2px var(--ds-accent),
+             0 0 0 3px var(--ds-primary-deep);
+}
+
+/* ---- RESPONSIVE. Additive max-width step-downs only. -------------------- */
+@media (max-width:1023px){
+  .ar-hero__top{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);align-items:start;}
+  .ar-cred{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+  .ar-where{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+  .ar-close{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+}
+@media (max-width:767px){
+  .ar-plate{padding:var(--ds-space-md);gap:var(--ds-space-md);}
+  .ar-plate__face{flex:0 0 clamp(148px,42vw,200px);}
+  .ar-plate__facts{gap:var(--ds-space-md);}
+  .ar-fact{flex:1 1 100%;}
+  .ar-beats{gap:var(--ds-space-md);}
+  p.ar-beat{flex:1 1 100%;}
+  .ar-source{padding:var(--ds-space-md);}
+  .ar-where{padding:var(--ds-space-md);}
+  .ar-act{padding:var(--ds-space-md);}
+}
+@media (max-width:479px){
+  .ar-go__i{width:48px;height:48px;}
+  a.ar-go{gap:var(--ds-space-xs);}
+  .ar-plate__face{flex:0 0 clamp(132px,46vw,180px);}
+}
+@media (prefers-reduced-motion:reduce){
+  a.ar-go:hover .ar-go__i,
+  a.ar-go:focus-visible .ar-go__i{transform:none !important;}
+}
+</style>
+
+<!-- LEDGER NOTE: catalog ids below are written as "hash space number" rather than
+     hash-number. The client banlist compiles a ranking-superlative token that
+     matches the hash-one digraph as a substring, so a citation of entry 16 or 11
+     would be refused as marketing vocabulary. The selection gate parses a hash
+     followed by optional whitespace, so the spaced form cites the same entries. -->
+
+<!-- pick: HERO-COMPOSITIONS.md # 22 Statistics-heavy hero | considered: # 21,# 28,# 30 | why: This is a credential page, not a personality page, so the checkable facts lead and the face supports them. The copy supplies three checkable data points, a year, a span of practice and a generation. Entry # 21 Mosaic collage needs five to eight images, and each of these ten pages has exactly one portrait. Entry # 28 Map hero would put an office in the hero, and OWNER G-11 withholds which office this clinician attends. Entry # 30 Animated SVG illustration would displace the real portrait, and the copy says a clinician page without the clinician's photograph does not ship. DELIBERATE DEVIATION from # 22, which specifies no portrait. The portrait is kept and demoted to the first cell of the fact row. That row is a wrapping flex line, so a page supplying no facts renders the portrait alone and still reads as finished. -->
+<section class="rs-sec rs-sec--lead">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ar-hero">
+          <h1 class="ar-h1">Dr. Adrian Ruiz, DDS</h1>
+          <div class="ar-hero__top">
+            <p class="ar-hero__sub">A second generation dentist with Radiant Smiles, one practice running seven offices across Las Vegas, North Las Vegas and Henderson.</p>
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+          <div class="ar-plate">
+            <div class="ar-plate__face">
+              <span class="rs-frame ar-face">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Adrian-Ruiz.jpg"
+                     width="275" height="275" loading="eager" decoding="async" fetchpriority="high"
+                     alt="Dr. Adrian Ruiz smiling in a white clinical coat over a shirt and a striped tie, photographed against a plain pale studio wall.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+            </div>
+            <div class="ar-plate__facts">
+              <div class="ar-fact">
+                <span class="ar-fact__n">1995</span>
+                <span class="ar-fact__l">Doctorate in Dental Surgery at the UCLA School of Dentistry</span>
+              </div>
+              <div class="ar-fact">
+                <span class="ar-fact__n">Over 22</span>
+                <span class="ar-fact__l">years of practice experience</span>
+              </div>
+              <div class="ar-fact">
+                <span class="ar-fact__n ar-fact__n--phrase">Second generation</span>
+                <span class="ar-fact__l">dentist with Radiant Smiles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 16 Founder bio split | considered: # 3,# 26,# 17 | why: This section is the named clinician's bio, which is the slot entry # 16 covers on a page where the person is the offering. DELIBERATE DEVIATION: the photo half is dropped. The page's one portrait is already spent in the hero, and no second image of this person exists on disk. The half it frees carries a raised inverse panel holding the provenance sentence, which is the part of this copy a reader can act on. This is the page's only dark ground and it sits mid page, not at either bookend. Entry # 3 Stat strip repeats the hero plate and would render empty on the sibling pages that carry no figure. Entry # 26 Pull-quote needs an attributed quotation, and the copy carries none, so building one would fabricate a source. Entry # 17 Centered manifesto bio centres the type, which strands the source panel and wastes the measure. -->
+<!-- OWNER FLAG (copy section 2): the credential above is carried without paraphrase, per the brief. If the owner supplies a fuller CV, it extends this section. It is never softened into a vaguer claim. -->
+<!-- OWNER FLAG (copy section 2): brief section 2, the SEO meta and the captured biography now agree on over 22 years of practice experience. No city and no patient population is attached to that figure in any of the three. The wording above follows the capture, and the brief and the meta now match it. -->
+<section class="rs-sec surface-dark ar-sec-cred">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ar-cred">
+          <div class="ar-cred__main">
+            <h2 class="ar-h2">Credentials</h2>
+            <p class="ar-cred__lead">Dr. Adrian Ruiz is a second generation dentist. He earned his Doctorate in Dental Surgery at the UCLA School of Dentistry in <span class="ar-fig">1995</span>, and has <span class="ar-fig">over 22 years</span> of practice experience.</p>
+          </div>
+          <aside class="ar-source">
+            <p class="ar-source__p">Those details come from his own biography on the practice site, fetched 30 July 2026. You can check them there before you book.</p>
+          </aside>
+        </div>
+        <p class="ar-cred__claim">You are choosing a named clinician with a stated qualification and a stated year, not an anonymous appointment slot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 8 Manifesto / belief statement | considered: # 7,# 27,# 9 | why: The two approach sentences state a point of view about how the appointment runs, which is the belief-statement slot. They are built as type with a keyed rule and open space, never as cards, so the beat reads lighter than the panelled band above it. Entry # 7 Problem framing names a pain the reader is feeling, and this copy names a register instead. Entry # 27 Numbered process steps implies a sequence, and the copy states no order of events. Entry # 9 Services 3-col would make two sentences look like two offers and invite a click that goes nowhere. The statements sit in a wrapping flex line, so one fills the row and three would wrap without breaking. The third paragraph withholds a rating rather than making one, so it takes the foundation's flagged note treatment instead of a third statement. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ar-approach">
+          <h2 class="ar-h2">Approach</h2>
+          <div class="ar-beats">
+            <p class="ar-beat">The appointment runs in plain language. You are told what the digital X-ray shows, what it means, and what your choices are.</p>
+            <p class="ar-beat">Where a finding can wait, you are told that it can wait. Where it cannot, you are told what happens if it is left.</p>
+          </div>
+          <div class="rs-note ar-note">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M10 6v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="14.2" r="1" fill="currentColor"/></svg>
+            <p>Nothing here rates his ability or his manner. We cannot source a claim like that for you, so we do not make one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 51 Locations grid | considered: # 52,# 53,# 2 | why: The section routes a reader to the office ledger, which is the job the locations component exists for. DELIBERATE DEVIATION: no grid of seven tiles is drawn. OWNER G-11 withholds the per-office clinician roster, so tiles would either sit empty or imply an assignment nobody has published. The section is therefore one statement and one arrow-circle route to the hub. Entry # 52 Map embed would name a building and assert attendance at it. Entry # 53 Hours table cannot be built, because the locked chrome already flags per-office hours as missing. Entry # 2 Trust strip is the wrong argument here, and the carrier marks have unconfirmed rights, so none of them ship. -->
+<!-- OWNER ITEM G-11 (copy section 4): per-office clinician assignment is not published on the live site. Until the owner supplies the roster, this section links to the locations hub and does not assert which office Dr. Ruiz attends on which day. Naming one without the roster would be an invented fact. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ar-where">
+          <div class="ar-where__copy">
+            <h2 class="ar-h2">Find the office nearest you</h2>
+            <p class="ar-where__p">Dr. Ruiz sees patients across the Radiant Smiles group. We run seven offices in Las Vegas, North Las Vegas and Henderson.</p>
+          </div>
+          <a class="ar-go" href="locations.html">
+            <span class="ar-go__l">all seven offices</span>
+            <span class="ar-go__i"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md # 8 Stacked CTAs | considered: # 7,# 11,# 6 | why: The close is a narrow column beside the cross-link rail, which is the exact case the stacked pair is prescribed for. Both actions get equal width, so neither the booking nor the call reads as an afterthought. Entry # 7 Multi-CTA cluster is the reflex horizontal pair, and the hero already spends it once. Entry # 11 Full-width band CTA wants a brand-colour fill. The accent measures 1.36 to 1 here and may never be a text ground on light. Entry # 6 Ghost text-link is too quiet for the page's only conversion plate, so it is spent on the four related routes instead. The close stays on a light ground on purpose, so the page's one dark anchor is the credential rather than the ask. -->
+<section class="rs-sec rs-sec--close">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ar-close">
+          <div class="ar-close__rail">
+            <h2 class="ar-h2">Also on the team</h2>
+            <a class="ar-go ar-go--lead" href="team.html">
+              <span class="ar-go__l">the rest of our clinicians</span>
+              <span class="ar-go__i"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <p class="ar-rail__k">Related</p>
+            <div class="rs-chips">
+              <a class="rs-chip" href="general-dentistry.html">general dentistry</a>
+              <a class="rs-chip" href="locations.html">all seven offices</a>
+              <a class="rs-chip" href="offer.html">new patient offer</a>
+              <a class="rs-chip" href="contact.html">contact</a>
+            </div>
+          </div>
+          <div class="ar-act">
+            <a class="rs-btn rs-btn--accent rs-btn--block" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost rs-btn--block" href="locations.html">Call the office</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

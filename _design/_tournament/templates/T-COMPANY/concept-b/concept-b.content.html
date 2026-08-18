@@ -1,0 +1,627 @@
+<style>
+/* ============================================================================
+   T-COMPANY template tournament, CONCEPT B  "The sourced ledger".
+   Body fragment. The locked chrome shell supplies doctype, head, header, footer.
+
+   NAMESPACE: co-   (cc- and hb- are already taken by promoted templates.)
+   The foundation vocabulary (.rs-sec .rs-wrap .container .row .col .rs-h1 .rs-h2
+   .rs-lede .rs-copy .rs-btn .rs-btn--accent .rs-btn--ghost .rs-btn--block
+   .rs-acts .surface-dark) is USED and never redeclared here.
+
+   AUTHORED DESKTOP FIRST. Every breakpoint below is an ADDITIVE max-width
+   override at 1023 / 767 / 479. There is no min-width query in this sheet.
+
+   TOKEN PURITY: every colour, radius, shadow, duration, easing and spacing
+   value is var(--ds-*) or a calc() over one. No hex, no rgb(), no named colour.
+
+   GROUND RHYTHM, six sections: surface, surface, DARK, band, surface, DARK.
+   The dark anchor at section 3 is deliberately NOT a bookend.
+
+   NOTE ON CITATIONS: every catalog id in this file is written with a space
+   after the hash. The client banned-vocab list bans the ranking claim that
+   reads as hash followed immediately by one, and that ban is a plain substring
+   test, so an unspaced id in the teens or twenties would trip it.
+   ============================================================================ */
+
+/* ---- shared: the accent tick ---------------------------------------------
+   The accent measures 1.36:1 on the light canvas, so on light it carries the
+   deep teal keyline the token sheet defines. On .surface-dark that same token
+   resolves to none, because there the accent is already a foreground. ------ */
+.co-rule{
+  display:block;
+  width:var(--ds-space-lg);
+  height:2px;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-accent);
+  box-shadow:var(--ds-accent-keyline);
+  margin-block-end:var(--ds-space-md);
+}
+
+/* ---- shared: the photograph frame ---------------------------------------
+   width:100% + min-width:0 is the grid-track anchor, so a stretched frame can
+   never blow its column out. Every variant carries an aspect-ratio, which is
+   the height cap; nothing here renders at its intrinsic pixel height. ------ */
+.co-shot{
+  position:relative;
+  width:100%;
+  min-width:0;
+  overflow:hidden;
+  border-radius:var(--ds-r-surface);
+  background:var(--ds-primary-soft);
+  box-shadow:var(--ds-shadow-lift);
+  transition:box-shadow var(--ds-dur) var(--ds-ease);
+}
+.co-shot::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:var(--ds-primary-deep);
+  mix-blend-mode:multiply;
+  opacity:var(--ds-opacity-faint);
+}
+.co-shot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 50%;
+  filter:saturate(.94) contrast(1.04);
+  transition:transform var(--ds-dur-slow) var(--ds-ease-out);
+}
+.co-shot:hover img{transform:scale(1.035);}
+.co-shot--tall{aspect-ratio:3 / 4;height:100%;}
+.co-shot--sq{aspect-ratio:1 / 1;}
+.co-shot--band{aspect-ratio:16 / 6;}
+.co-shot--band img{object-position:50% 40%;}
+.co-shot--why{aspect-ratio:4 / 5;}
+
+/* ==========================================================================
+   1 . HERO. HERO-COMPOSITIONS.md # 18, the "a a b" over "c d b" tile grid.
+   Four unequal tiles: the wide type tile, a tall interior, the booking card,
+   a small square interior.
+   ========================================================================== */
+.co-hero{position:relative;}
+.co-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--ds-glow-wash);
+}
+.co-hero__grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.18fr .64fr .95fr;
+  grid-template-rows:auto auto;
+  grid-template-areas:
+    "say  say  tall"
+    "act  wide tall";
+  gap:var(--ds-space-lg) var(--ds-space-md);
+  align-items:start;
+}
+.co-hero__say{grid-area:say;min-width:0;}
+.co-hero__act{grid-area:act;min-width:0;}
+.co-hero__wide{grid-area:wide;min-width:0;}
+.co-hero__tall{grid-area:tall;min-width:0;align-self:stretch;display:grid;}
+h1.co-hero__h1{margin-block-end:var(--ds-space-md);}
+
+/* the booking card. CTA-PATTERNS.md # 8 stacked pair, because this tile is the
+   narrow one in the grid and a horizontal pair would wrap badly inside it. */
+.co-actcard{
+  display:grid;
+  gap:var(--ds-space-sm);
+  padding:var(--ds-space-md);
+  border-radius:var(--ds-r-surface);
+  border:1px solid var(--ds-line);
+  background:linear-gradient(165deg,var(--ds-canvas),var(--ds-bg-band));
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+  transition:box-shadow var(--ds-dur) var(--ds-ease),transform var(--ds-dur-fast) var(--ds-ease);
+}
+.co-actcard:hover{
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+  transform:translateY(calc(var(--ds-space-2xs) * -0.5));
+}
+
+/* ==========================================================================
+   2 . ORIGIN. COMPANY-SECTIONS.md # 3, a single vertical spine carrying the
+   one dated fact that has a source.
+   ========================================================================== */
+.co-timeline{position:relative;}
+.co-timeline::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--ds-grid);
+  background-size:var(--ds-grid-size);
+}
+p.co-timeline__kicker{
+  font-family:var(--ds-font-mono);
+  font-size:14px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color:var(--ds-ink-soft);
+  max-width:44ch;
+  margin-block-end:var(--ds-space-sm);
+}
+h2.co-timeline__head{
+  font-size:clamp(32px,4.6vw,54px);
+  line-height:1.08;
+  letter-spacing:-.02em;
+  max-width:18ch;
+  margin-block-end:var(--ds-space-xl);
+}
+.co-timeline__spine{
+  position:relative;
+  padding-inline-start:var(--ds-space-lg);
+  max-width:62ch;
+}
+.co-timeline__spine::before{
+  content:"";
+  position:absolute;
+  inset-block:0;
+  inset-inline-start:0;
+  width:2px;
+  border-radius:var(--ds-r-pill);
+  background:linear-gradient(180deg,var(--ds-signature),var(--ds-bg-band));
+}
+.co-timeline__node{position:relative;}
+.co-timeline__node::before{
+  content:"";
+  position:absolute;
+  inset-inline-start:calc(var(--ds-space-lg) * -1);
+  inset-block-start:var(--ds-space-xs);
+  width:var(--ds-space-sm);
+  height:var(--ds-space-sm);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-accent);
+  box-shadow:var(--ds-accent-keyline);
+  transform:translateX(-46%);
+}
+p.co-timeline__entry{
+  font-size:clamp(19px,1.9vw,22px);
+  line-height:1.62;
+  color:var(--ds-ink);
+  max-width:52ch;
+}
+.co-timeline__band{margin-block-start:var(--ds-space-xl);}
+
+/* ==========================================================================
+   3 . THE WHY. SECTION-COMPONENTS.md # 7 problem framing, big type, on the
+   page's non-bookend dark anchor.
+   ========================================================================== */
+.co-why{position:relative;}
+.co-why::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--ds-glow-wash);
+}
+.co-why__grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:var(--ds-space-xl);
+  align-items:center;
+}
+.co-why__say{min-width:0;}
+.co-why__media{min-width:0;}
+h2.co-why__head{
+  font-size:clamp(30px,4.2vw,50px);
+  line-height:1.10;
+  letter-spacing:-.02em;
+  max-width:17ch;
+  margin-block-end:var(--ds-space-md);
+}
+p.co-why__lead{
+  font-family:var(--ds-font-display);
+  font-size:clamp(21px,2.3vw,26px);
+  line-height:1.45;
+  color:var(--ds-ink);
+  max-width:34ch;
+  margin-block-end:var(--ds-space-md);
+}
+p.co-why__arg{
+  font-size:18px;
+  line-height:1.72;
+  color:var(--ds-ink-soft);
+  max-width:46ch;
+}
+.co-why__aside{
+  display:grid;
+  gap:var(--ds-space-md);
+  margin-block-start:var(--ds-space-xl);
+  padding:var(--ds-space-lg);
+  border-radius:var(--ds-r-surface);
+  border:1px solid var(--ds-line-control);
+  background:linear-gradient(150deg,var(--ds-accent-soft),var(--ds-bg-band));
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+p.co-why__alt{
+  font-size:18px;
+  line-height:1.72;
+  color:var(--ds-ink);
+  max-width:66ch;
+}
+
+/* ==========================================================================
+   4 . CREED. COMPANY-SECTIONS.md # 2, oversized type between hairlines. No
+   cards, no icons, no shadow: the catalog is explicit that the contrast with
+   the carded sections is the whole point. The section's depth is the wash
+   layer below, painted on a pseudo element so the foundation ground rule for
+   .rs-sec--band is never overridden.
+   ========================================================================== */
+.co-manifesto{position:relative;}
+.co-manifesto::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--ds-glow-wash);
+}
+.co-manifesto__box{
+  max-width:calc(var(--ds-container-max) - var(--ds-space-2xl) * 3);
+  margin-inline:auto;
+  text-align:center;
+  padding-block:var(--ds-space-lg);
+  border-block:1px solid var(--ds-line);
+}
+.co-manifesto__box .co-rule{margin-inline:auto;}
+h2.co-manifesto__lead{
+  font-family:var(--ds-font-display);
+  font-size:clamp(26px,3.8vw,46px);
+  line-height:1.20;
+  letter-spacing:-.015em;
+  color:var(--ds-ink-heading);
+  max-width:24ch;
+  margin-inline:auto;
+}
+
+/* ==========================================================================
+   5 . THIRD PARTY. COMPANY-SECTIONS.md # 5, the compact coverage strip. Text
+   lockups only: no logo rights are confirmed and the copy carries no source
+   URL, so nothing in this strip links out.
+   ========================================================================== */
+.co-press{position:relative;}
+.co-press::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--ds-grain);
+  opacity:var(--ds-opacity-faint);
+}
+h2.co-press__lead{
+  font-family:var(--ds-font-display);
+  font-size:clamp(23px,2.7vw,34px);
+  line-height:1.28;
+  letter-spacing:-.012em;
+  max-width:30ch;
+  margin-block-end:var(--ds-space-lg);
+}
+.co-press__strip{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:var(--ds-space-md);
+  padding-block:var(--ds-space-lg);
+  border-block:1px solid var(--ds-line);
+}
+.co-press__item{
+  min-width:0;
+  padding:var(--ds-space-md);
+  border-radius:var(--ds-r-surface);
+  border:1px solid var(--ds-line);
+  background:linear-gradient(180deg,var(--ds-canvas),var(--ds-bg-surface));
+  box-shadow:var(--ds-shadow-rest);
+  transition:box-shadow var(--ds-dur) var(--ds-ease),transform var(--ds-dur-fast) var(--ds-ease);
+}
+.co-press__item:hover{box-shadow:var(--ds-shadow-card);transform:translateY(-1px);}
+.co-press__item--flag{
+  border-color:var(--ds-line-control);
+  background:linear-gradient(180deg,var(--ds-accent-soft),var(--ds-canvas));
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+p.co-press__line{
+  font-size:17px;
+  line-height:1.62;
+  font-variant-numeric:tabular-nums;
+  color:var(--ds-ink-soft);
+  max-width:44ch;
+}
+p.co-press__line--flag{
+  color:var(--ds-ink);
+  font-weight:700;
+}
+
+/* ==========================================================================
+   6 . CLOSE. CTA-PATTERNS.md # 11, the section is the ask, on the second dark
+   ground.
+   ========================================================================== */
+.co-close{position:relative;}
+.co-close::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--ds-glow-wash);
+}
+.co-close__band{
+  position:relative;
+  display:grid;
+  gap:var(--ds-space-lg);
+  justify-items:center;
+  text-align:center;
+  padding:var(--ds-space-xl) var(--ds-space-lg);
+  border-radius:var(--ds-r-surface);
+  border:1px solid var(--ds-line-control);
+  background:linear-gradient(160deg,var(--ds-bg-surface),var(--ds-bg-band));
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+}
+h2.co-close__ask{
+  font-family:var(--ds-font-display);
+  font-size:clamp(27px,3.6vw,42px);
+  line-height:1.18;
+  letter-spacing:-.015em;
+  max-width:22ch;
+}
+.co-close__acts{justify-content:center;}
+.co-btn{min-width:calc(var(--ds-space-2xl) * 2);}
+.co-link{
+  color:var(--ds-accent);
+  text-decoration:underline;
+  text-underline-offset:.16em;
+  text-decoration-thickness:2px;
+  transition:color var(--ds-dur) var(--ds-ease);
+}
+.co-link:hover{color:var(--ds-ink-on-dark);}
+
+/* ==========================================================================
+   RESPONSIVE. Additive max-width steps only.
+   ========================================================================== */
+@media (max-width:1023px){
+  .co-hero__grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+      "say  say"
+      "tall tall"
+      "act  wide";
+    gap:var(--ds-space-md);
+  }
+  .co-hero__tall{align-self:auto;}
+  .co-shot--tall{aspect-ratio:16 / 9;height:auto;}
+  .co-shot--band{aspect-ratio:16 / 8;}
+  .co-why__grid{grid-template-columns:1fr;gap:var(--ds-space-lg);}
+  .co-shot--why{aspect-ratio:16 / 9;}
+  .co-why__aside{padding:var(--ds-space-md);}
+  h2.co-timeline__head{max-width:20ch;margin-block-end:var(--ds-space-lg);}
+}
+
+@media (max-width:767px){
+  .co-hero__grid{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "say"
+      "tall"
+      "act"
+      "wide";
+  }
+  .co-shot--sq{aspect-ratio:4 / 3;}
+  .co-timeline__spine{padding-inline-start:var(--ds-space-md);}
+  .co-timeline__node::before{inset-inline-start:calc(var(--ds-space-md) * -1);}
+  .co-timeline__band{margin-block-start:var(--ds-space-lg);}
+  .co-press__strip{grid-template-columns:1fr;}
+  .co-close__band{padding:var(--ds-space-lg) var(--ds-space-md);}
+  .co-close__acts{width:100%;}
+  .co-btn{width:100%;min-height:48px;}
+  .co-manifesto__box{padding-block:var(--ds-space-md);}
+}
+
+@media (max-width:479px){
+  .co-shot--tall{aspect-ratio:4 / 5;}
+  .co-shot--band{aspect-ratio:4 / 3;}
+  .co-shot--why{aspect-ratio:4 / 5;}
+  .co-actcard{padding:var(--ds-space-sm);}
+  .co-why__aside{padding:var(--ds-space-sm);}
+  .co-press__item{padding:var(--ds-space-sm);}
+}
+
+/* Motion is decoration here, never information. Everything above degrades to
+   a static, fully legible page when the reader asks for reduced motion. */
+@media (prefers-reduced-motion:reduce){
+  .co-shot,
+  .co-shot img,
+  .co-actcard,
+  .co-press__item,
+  .co-link{transition:none;}
+  .co-shot:hover img{transform:none;}
+  .co-actcard:hover{transform:none;}
+  .co-press__item:hover{transform:none;}
+}
+</style>
+
+<!-- pick: HERO-COMPOSITIONS.md # 18 Asymmetric grid hero (irregular tiles) | considered: # 11,# 13,# 20 | why: The job above the fold is to say what the practice is, with nothing a reader cannot check. Entry 18 gives four unequal tiles. The H1 and the sub take the wide tile. The booking pair gets its own small card. Two real interiors carry the rest. Entry 11 is wrong here because a service icon grid needs labels and links this copy does not supply. Entry 13 is wrong because a full viewport centered hero with a scroll cue is sparse text in a tall section. Entry 20 is wrong because its middle column wants a headline stat. Every figure on this page is scoped proof that belongs beside its source in section 5. Deliberate deviation: the CTA pair is stacked, not horizontal, because its tile is the narrow one. -->
+<section class="rs-sec rs-sec--lead co-hero">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <!-- OWNER ITEM carried from _copy/about.md section 1, marker WARNING SIGN, OWNER G-5:
+             the live mission statement is held as the captured positioning, but its phrase
+             describing a premium experience does NOT ship. At a $45 entry offer, against a
+             market whose upper pole charges far more, that framing is not supportable and
+             OVERCLAIM forbids it. Nothing in this hero renders that phrase. -->
+        <div class="co-hero__grid">
+
+          <div class="co-hero__say">
+            <span class="co-rule" aria-hidden="true"></span>
+            <h1 class="rs-h1 co-hero__h1">About Radiant Smiles</h1>
+            <p class="rs-lede">A seven location Las Vegas and Henderson dental group delivering general, cosmetic, restorative, orthodontic, periodontic and surgical care in house.</p>
+          </div>
+
+          <div class="co-hero__act">
+            <div class="co-actcard">
+              <a class="rs-btn rs-btn--accent rs-btn--block" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost rs-btn--block" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+          <div class="co-hero__wide">
+            <div class="co-shot co-shot--sq">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-2-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="A waiting area at one of our offices, with ring pendant lights, bench seating and a planted centre island.">
+            </div>
+          </div>
+
+          <div class="co-hero__tall">
+            <div class="co-shot co-shot--tall">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-13-768x1152.jpg"
+                   width="768" height="1152" loading="eager" decoding="async"
+                   alt="The reception desk at one of our offices, with a slatted wood counter, the Radiant Smiles wall sign and a terrazzo floor.">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: COMPANY-SECTIONS.md # 3 Origin timeline, single vertical spine | considered: # 1,# 2,# 4 | why: The only dated company fact in this copy is the BBB record of 23 years, fetched 30 July 2026. Entry 3 is the one shape that puts a date on a spine and admits there is exactly one node. That honesty is the point of the page. Entry 1 is wrong because there is no founder portrait and no signed line in any source. Entry 2 is wrong because the creed belongs to section 4, and using it twice would flatten the page. Entry 4 is wrong because no founder is named anywhere in this copy. Deliberate deviation: the catalog shape carries no media. One wide capped interior sits under the spine to give this L sized section weight. -->
+<section class="rs-sec co-timeline">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <!-- OWNER ITEM carried from _copy/about.md section 2, marker WARNING SIGN, FLAG:
+             the 23 year figure is BBB reported, not first party. It ships attributed to the
+             BBB with its date, exactly as written in the copy. Otherwise the owner confirms
+             the founding year and it is restated as our own. -->
+        <!-- OWNER ITEM carried from _copy/about.md section 2, marker WARNING SIGN, OWNER G-1:
+             the legal entity name needs confirming. The site brand reads Radiant Smiles Dental
+             Care; third party registries carry a different entity string. The site brand is
+             used in copy, and the legal footer and schema carry an OWNER PLACEHOLDER until it
+             is resolved. This body fragment authors no legal name and no schema. -->
+        <p class="co-timeline__kicker">We are Radiant Smiles Dental Care.</p>
+        <h2 class="co-timeline__head">One practice, seven offices, one clinical roster.</h2>
+
+        <div class="co-timeline__spine">
+          <div class="co-timeline__node">
+            <p class="co-timeline__entry">The Better Business Bureau records the practice at 23 years in business, fetched 30 July 2026.</p>
+          </div>
+        </div>
+
+        <div class="co-timeline__band">
+          <div class="co-shot co-shot--band">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-10-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="A view across the lobby of one of our offices toward the reception desk, with a large plant in front.">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 7 Problem framing | considered: # 8,# 15,# 26 | why: Section 3 is the argument this practice can make and a differently structured group cannot. Entry 7 frames the reader's real risk in big type and reads as reasoning, not selling. It also carries the dark anchor this page needs away from the bookends. Entry 15 is wrong because a two column us and them table would render the other model as a fault. The copy says plainly that it is not framing it as one. Entry 8 is wrong because this is not a belief, it is a structural claim with a stated limit. Entry 26 is wrong because there is no quote here and no speaker to attribute one to. Deliberate deviation: the second half of the copy sits in a bordered aside. The limit reads as part of the argument, not as fine print. -->
+<section class="rs-sec surface-dark co-why">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="co-why__grid">
+
+          <div class="co-why__say">
+            <span class="co-rule" aria-hidden="true"></span>
+            <h2 class="co-why__head">Seven offices under one brand, one roster and one domain.</h2>
+            <p class="co-why__lead">That sounds like a detail until you need it.</p>
+            <p class="co-why__arg">You are not handed to a different business when you see someone at a different address. The clinician who checks your work next belongs to the same practice.</p>
+          </div>
+
+          <div class="co-why__media">
+            <div class="co-shot co-shot--why">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-95-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="A person in a dark blazer walking past the reception counter toward an open doorway at one of our offices.">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="co-why__aside">
+          <p class="co-why__alt">The alternative is common here. Groups with the same footprint run their offices as separately owned or separately branded practices, so consistency across them is structurally unpromisable.</p>
+          <p class="co-why__alt">We are not framing that as a fault. It is a different model, and it is the reason we can say something they cannot.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: COMPANY-SECTIONS.md # 2 Manifesto and values creed type-block | considered: # 1,# 4,# 5 | why: There is no values statement in any captured source, and the copy bars inventing one. Entry 2 is the only company shape that is pure type, with no cards and no icons. With one sourced line it renders as a single centered creed and stays visibly unfinished. Entry 1 is wrong because it needs a portrait and a signed credibility line that do not exist. Entry 4 is wrong because named bios belong on the team page, not here. Entry 5 is wrong because a coverage strip claims outside validation this line does not carry. Deliberate deviation: the catalog expects several value rows. Only one row ships, because the rest would be fabricated. -->
+<section class="rs-sec rs-sec--band co-manifesto">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <!-- OWNER ITEM carried from _copy/about.md section 4, marker WARNING SIGN, OWNER PLACEHOLDER:
+             no values statement exists in any captured source. What is missing is a stated set of
+             values in the practice's own words. Rather than invent one, this section ships as a
+             placeholder until the owner supplies it. The line rendered below is the register this
+             rebuild holds, as the practice's words rather than a patient's. -->
+        <!-- OWNER ITEM carried from _copy/about.md section 4, marker WARNING SIGN, FLAG:
+             do not generate a values statement here. A fabricated one would be indistinguishable
+             from a real one to a reader, which is precisely why it is barred. This section renders
+             exactly one line and adds nothing to it. -->
+        <div class="co-manifesto__box">
+          <span class="co-rule" aria-hidden="true"></span>
+          <h2 class="co-manifesto__lead">The practice's own site describes calm and comfortable offices and warm interactions with patients.</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: COMPANY-SECTIONS.md # 5 Press and third-party coverage strip | considered: # 2,# 3,# 4 | why: Every figure in section 5 comes from a third party, and each one ships with its platform, its scope and its fetch date. Entry 5 is the coverage shape, and it is compact, which matches the XS size the copy asks for. The non accreditation item is given the same weight as the rating, which is the whole reason this section exists. Entry 2 is wrong because a creed cannot hold a dated figure. Entry 3 is wrong because these are not milestones on a timeline. Entry 4 is wrong because no person is named. Deliberate deviation: the catalog wants outlet logos and a verify link. No logo rights are confirmed and no source URL exists in the copy, so each item ships as text only. -->
+<section class="rs-sec co-press">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <!-- OWNER ITEM carried from _copy/about.md section 5, marker WARNING SIGN, OWNER:
+             supply the practice wide review figure and nominate the platform of record, or the
+             Birdeye number stays scoped to one office. It is scoped to one office here. -->
+        <!-- BUILD NOTE carried from _copy/about.md section 5. It is builder facing, not visitor
+             facing, so it is not rendered: "That last line stays. Reporting a BBB rating while
+             omitting non accreditation is the kind of selective proof this rebuild exists to
+             remove." The non accreditation line below is that last line, and it stays. -->
+        <span class="co-rule" aria-hidden="true"></span>
+        <h2 class="co-press__lead">Our Lake Mead office is rated 4.5 stars across 506 patient reviews on Birdeye, fetched 30 July 2026.</h2>
+
+        <div class="co-press__strip">
+          <div class="co-press__item">
+            <p class="co-press__line">That figure is scoped to Lake Mead and is not a practice wide rating.</p>
+          </div>
+          <div class="co-press__item">
+            <p class="co-press__line">The Better Business Bureau rates the practice B+ and records 3 complaints filed with 1 unresolved, fetched 30 July 2026.</p>
+          </div>
+          <div class="co-press__item co-press__item--flag">
+            <p class="co-press__line co-press__line--flag">The practice is NOT BBB accredited.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md # 11 Full-width band CTA (section as button) | considered: # 1,# 7,# 8 | why: The close asks for two things at once, meeting the team and booking. The band has to hold a sentence and a pair of buttons. Entry 11 makes the whole section the ask, and the dark ground closes the page against the light proof band above it. Entry 1 alone is wrong because a single solid pill drops the secondary phone path the copy names. Entry 7 is the hero pattern already used above, and repeating it here would flatten the two moments into one. Entry 8 is wrong because a stacked pair reads cramped inside a wide centered band. Deliberate deviation: meet the team is a link inside the heading, so no word is added to the locked copy. -->
+<section class="rs-sec rs-sec--close surface-dark co-close">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="co-close__band">
+          <h2 class="co-close__ask"><a class="co-link" href="team.html">Meet the team</a>, or book an appointment at any of our seven offices.</h2>
+          <div class="rs-acts co-close__acts">
+            <a class="rs-btn rs-btn--accent co-btn" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost co-btn" href="locations.html">Call the office</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

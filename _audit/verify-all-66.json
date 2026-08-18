@@ -1,0 +1,1214 @@
+{
+  "scope": {
+    "G-NODASH": {
+      "inScope": true,
+      "why": "fired exit 2 on the known-bad probe"
+    },
+    "G-BANNED": {
+      "inScope": true,
+      "why": "fired exit 2 on the known-bad probe"
+    },
+    "G-FIDELITY": {
+      "inScope": false,
+      "why": "known-bad probe returned exit 0 (fail-open / out of scope for _copy/*.md)"
+    },
+    "G-OWNER": {
+      "inScope": false,
+      "why": "known-bad probe returned exit 0 (fail-open / out of scope for _copy/*.md)"
+    },
+    "G-SEAM": {
+      "inScope": false,
+      "why": "known-bad probe returned exit 0 (fail-open / out of scope for _copy/*.md)"
+    }
+  },
+  "report": [
+    {
+      "slug": "about",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 7,
+        "missingSections": [],
+        "wantSecCount": 6
+      }
+    },
+    {
+      "slug": "antibiotic-treatment",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "blue-diamond",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "bone-grafting",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "braces-for-adults",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "braces-for-children",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "bruxism",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "composite-fillings",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "contact",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 4,
+        "missingSections": [],
+        "wantSecCount": 4
+      }
+    },
+    {
+      "slug": "cookie-policy",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 4,
+        "missingSections": [],
+        "wantSecCount": 4
+      }
+    },
+    {
+      "slug": "cookie-settings",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 4,
+        "missingSections": [],
+        "wantSecCount": 4
+      }
+    },
+    {
+      "slug": "cosmetic-dentistry",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 8,
+        "missingSections": [],
+        "wantSecCount": 7
+      }
+    },
+    {
+      "slug": "crown-lengthening",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "crowns-caps",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "dental-exams-cleanings",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "dental-implants",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "dentures-partial-dentures",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "digital-x-rays",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "dr-adrian-ruiz",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 6,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "dr-andy-landaverde",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 6,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "dr-chris-schaudt",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 6,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "dr-karthikeyan-subramani",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 6,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "dr-max-torres",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 6,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "dr-norma-miranda",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 6,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "dr-omar-lavado",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 6,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "dr-stephanie-andrade",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 6,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "dr-victoria-quizon",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 6,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "dr-vivi-dang-roberts",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 6,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "faq",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 9,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "fixed-bridges",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "fluoride-treatment",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "general-dentistry",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 8,
+        "missingSections": [],
+        "wantSecCount": 7
+      }
+    },
+    {
+      "slug": "gum-recession",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "henderson",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "index",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 14,
+        "missingSections": [],
+        "wantSecCount": 12
+      }
+    },
+    {
+      "slug": "inlay-restorations",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "insurance-financing",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "invisalign",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "locations",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 8,
+        "missingSections": [],
+        "wantSecCount": 7
+      }
+    },
+    {
+      "slug": "lone-mountain",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "new-patients",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 8,
+        "missingSections": [],
+        "wantSecCount": 7
+      }
+    },
+    {
+      "slug": "north-decatur",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "north-las-vegas",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "offer",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "onlay-restorations",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "oral-cancer-exam",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "oral-surgery",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 8,
+        "missingSections": [],
+        "wantSecCount": 7
+      }
+    },
+    {
+      "slug": "orthodontics",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 8,
+        "missingSections": [],
+        "wantSecCount": 7
+      }
+    },
+    {
+      "slug": "periodontal-disease",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "periodontal-scaling-root-planing",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "periodontics",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 8,
+        "missingSections": [],
+        "wantSecCount": 7
+      }
+    },
+    {
+      "slug": "porcelain-veneers",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "privacy-policy",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 4,
+        "missingSections": [],
+        "wantSecCount": 4
+      }
+    },
+    {
+      "slug": "prophylaxis-teeth-cleaning",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "restorations",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 8,
+        "missingSections": [],
+        "wantSecCount": 7
+      }
+    },
+    {
+      "slug": "reviews",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 5,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "root-canal-therapy",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "sealants",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "services",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 8,
+        "missingSections": [],
+        "wantSecCount": 7
+      }
+    },
+    {
+      "slug": "sirolaser",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "smile-gallery",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 5,
+        "missingSections": [],
+        "wantSecCount": 5
+      }
+    },
+    {
+      "slug": "summerlin",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "sunrise-manor",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "team",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 8,
+        "missingSections": [],
+        "wantSecCount": 7
+      }
+    },
+    {
+      "slug": "teeth-whitening",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    },
+    {
+      "slug": "wisdom-teeth-extractions",
+      "gates": {
+        "G-NODASH": "pass",
+        "G-BANNED": "pass",
+        "G-FIDELITY": "n/a",
+        "G-OWNER": "n/a",
+        "G-SEAM": "n/a"
+      },
+      "content": [],
+      "tokens": [],
+      "briefSections": {
+        "missingIds": [],
+        "briefIdCount": 10,
+        "missingSections": [],
+        "wantSecCount": 9
+      }
+    }
+  ]
+}

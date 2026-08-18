@@ -1,0 +1,968 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap");
+/* ============================================================================
+   RADIANT SMILES DENTAL CARE  ///  (3) FOUNDATION TOURNAMENT, CONCEPT D
+   "THE GUIDED VISIT"  ///  the reusable BODY design language
+   ----------------------------------------------------------------------------
+   Cascade position: radiantsmiles-tokens.css (LOCKED) -> radiantsmiles-chrome.css
+   (LOCKED) -> THIS SHEET. Every class is namespaced .gv-* (guided visit) so
+   nothing here can collide with the sibling concepts (.rs-*) or reach into the
+   locked header / mega / drawer / footer.
+
+   THE READ. Most people who open a dental site are ANXIOUS and are asking ONE
+   question: "what is actually going to happen to me?". Concepts A, B and C
+   present the practice as a CATALOGUE of things it offers. D presents it as a
+   PATH the patient walks: find your office, what we treat, why us, what we can
+   tell you plainly, what it costs, who you will see, what others say, book it.
+   The organising principle is SEQUENCE, not category. For a 40+ patient who has
+   been putting a visit off, sequence is the layout that lowers the barrier.
+
+   THE FIVE RULES THIS SHEET IS BUILT ON
+     1 RHYTHM   a visible spine of PROGRESSION. Sections are numbered STAGES and
+                one continuous vertical connector (.gv-rail) runs between them
+                down the whole page, so the reader always knows where they are.
+                Every stage shares ONE padding token (--gv-pad) and the rail
+                bridges that padding with a negative inset, which is what makes
+                the line continuous ACROSS section boundaries rather than
+                restarting inside each one.
+     2 GEOMETRY horizontal step markers (.gv-steps) in the opener, generous
+                rounded stage tokens (.gv-mark) down the spine, wide comfortable
+                rows. Sequential and DIRECTIONAL, not ambient.
+     3 GROUND   --ds-canvas the whole way down. Stage markers pick up
+                --ds-primary-soft, so the spine is the only strong colour event
+                until the close. .surface-dark is spent EXACTLY ONCE, on the
+                final CTA. --ds-accent appears ONLY on the destination stage
+                marker and the primary CTA, so the eye is always led forward.
+     4 DEPTH    minimal. --ds-shadow-rest carries almost the whole budget; the
+                hierarchy comes from the SPINE, not from elevation. Exactly one
+                glass moment and one lifted frame ship.
+     5 TYPE     the largest, most legible setting of the four concepts. Body is
+                19px at 1.75 on a short 58ch measure. This is the
+                accessibility-first concept. Nothing anywhere is below 14px.
+
+   COLOUR IS TOKEN PURE. Zero hex literals in this sheet (brand hex lives ONLY
+   in the locked tokens sheet). The contrast law is enforced in code:
+     - --ds-accent is DECORATIVE on light (1.36:1 on the canvas). It is a fill or
+       a mark, never text and never a ground for text that is not PINNED to
+       --ds-primary-deep (8.46:1), which is done explicitly at every use site so
+       a label can never inherit --ds-ink inside .surface-dark.
+     - --ds-signature carries NO text in either direction (3.94:1 light, 2.47:1
+       dark). Rules, edges, focus and 26px glyphs only.
+     - body ink is --ds-ink on --ds-canvas (11.48:1); secondary ink is
+       --ds-ink-soft (8.60:1). No low opacity grey body copy anywhere.
+     - the ONE translucent surface (.gv-glass) is stacked over an OPAQUE token
+       base, linear-gradient(--ds-glass-bg,--ds-glass-bg) over --ds-canvas. A
+       bare translucent panel changes contrast with whatever scrolls behind it.
+       That exact defect was caught and fixed at the chrome stage.
+
+   AUDIENCE LAW (presbyopia makes contrast SENSITIVITY, not size alone, the
+   binding constraint): body 19px / 1.75, nothing below 14px, tap targets 48px
+   with real spacing, phone numbers are first class UI at 20px with real tel:
+   links and tabular numerals.
+
+   ON MEASURE. Every ch max-width sits on the element that owns the font it is
+   measuring: body measures are written on p / li selectors carrying
+   --ds-font-body, display measures on h1 / h2 / h3 selectors carrying
+   --ds-font-display. ch resolves against the element's OWN font, so a measure
+   parked on a body-font wrapper computes two to three times too wide.
+
+   ----------------------------------------------------------------------------
+   DESIGN SYSTEM CONSULTED (every citation below was read before it was applied)
+     BLUEPRINT  composition-medical-health section 2, the convergent section
+                order read from six live BeTheme medical demos, and section 4's
+                signature 1 (the appointment CTA is the spine, repeated 3 to 4
+                times per page) which this concept takes literally and makes
+                the page's visible organising device.
+     LIBRARIES  _MODERN-WOW-SPEC (sections 1 depth, 2 motion, 3 texture,
+                4 typographic finesse, 5 colour and light, 6 layout, 7 detail)
+                _MOTION-TOKENS (duration and easing come from --ds-dur* and
+                --ds-ease*, never from a hand written ms value)
+                _MODERN-DESIGN-PATTERN-LIBRARY (the icon chip, the hairline row
+                table, the quiet card, the count free stat band)
+                _COMPOSITION-LAWS (law L1 mobile stack order, law L3 media fits
+                its track), obeyed structurally, see section 10.1
+     MENUS      HERO-COMPOSITIONS.md #1 split text left plus photo right
+                COMPANY-SECTIONS.md #3 origin timeline, single vertical spine,
+                  which is the pattern this whole concept generalises
+                CARD-VARIATIONS.md #4 circle icon service card with arrow link
+                SECTION-COMPONENTS.md #7 problem framing
+                TRUST-STATS-SECTIONS.md #4 stats big number band
+                PRICING-SECTIONS.md #5 plain deal honesty stance
+                TEAM-GALLERY-SECTIONS.md #1 team card grid
+                PROOF-SECTIONS.md #1 testimonials card grid, shipped in the
+                  honest PENDING state because no review text is sourced
+                FORM-LAYOUTS.md #2 two col split form, fields plus office rail
+                CTA-PATTERNS.md #7 multi CTA cluster, #4 phone pill
+                DIVIDER-PATTERNS.md #1 hard edge, colour change only. ONE
+                  divider family per page is the library's discipline, and in
+                  this concept the SPINE is the transition, so a shape divider
+                  on top of it would be a second, competing seam.
+
+   UTF-8, no BOM. ASCII only in code. No em or en dashes anywhere.
+   ============================================================================ */
+
+/* ==========================================================================
+   0 . SCALE TOKENS OWNED BY THE BODY SYSTEM
+   Colour, radius, shadow, duration and spacing are NEVER redefined here: they
+   come from the locked tokens sheet. What lives here is the type scale, the
+   measure, and the four geometry constants the SPINE needs.
+   ========================================================================== */
+:root{
+  /* TYPE. The most legible scale of the four concepts (_MODERN-WOW-SPEC 4:
+     display scale contrast against a calm body). Floor of the whole scale is
+     15px and body is 19px, both above the 14px audience floor. */
+  --gv-fs-display:clamp(38px,5vw,60px);
+  --gv-fs-1:clamp(31px,3.5vw,45px);
+  --gv-fs-2:clamp(25px,2.5vw,33px);
+  --gv-fs-3:23px;
+  --gv-fs-lede:22px;
+  --gv-fs-body:19px;
+  --gv-fs-meta:16px;
+  --gv-fs-eyebrow:15px;
+  --gv-fs-mark:24px;
+  --gv-fs-stat:clamp(46px,5.4vw,70px);
+  --gv-fs-price:clamp(46px,5.4vw,72px);
+
+  /* MEASURE. A SHORT measure is part of the accessibility brief: 58ch at 19px
+     is roughly nine words a line, which is the band a presbyopic reader tracks
+     without losing the line return. */
+  --gv-measure:58ch;
+  --gv-measure-tight:48ch;
+
+  /* THE SPINE. Four constants, everything else derives from them.
+     --gv-pad is shared by EVERY stage section so the rail's negative inset
+     bridges the gap between two stages exactly. Change it in one place and the
+     whole spine stays continuous. */
+  --gv-pad:var(--ds-space-2xl);
+  --gv-mark-size:68px;
+  --gv-rail-w:3px;
+  --gv-node-size:36px;
+}
+
+/* ==========================================================================
+   1 . PAGE GROUND + RESET
+   Present so the BODY sheet renders standalone in the specimen (the locked
+   chrome is not linked there). Every value is the value the locked chrome
+   already sets, so when both sheets load in the real build this block is a
+   no op re assertion, never an override of chrome.
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--ds-canvas);
+  color:var(--ds-ink);
+  font-family:var(--ds-font-body);
+  font-size:var(--gv-fs-body);
+  line-height:1.75;
+  overflow-x:clip;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+button{font:inherit;color:inherit;background:none;border:0;}
+h1,h2,h3,h4{margin:0;font-family:var(--ds-font-display);color:var(--ds-ink-heading);line-height:1.16;font-weight:600;}
+p{margin:0;}
+ul,ol{margin:0;padding:0;list-style:none;}
+
+/* FOCUS. The same halo the locked chrome uses, so a focus ring never changes
+   character between the chrome and the body. The ring is DEEP TEAL on light and
+   flips to near white inside .surface-dark by the token sheet, never by hand. */
+:focus-visible{
+  outline:2px solid var(--ds-line-control);
+  outline-offset:3px;
+  box-shadow:var(--ds-glow);
+  border-radius:var(--ds-r-control);
+}
+
+/* ==========================================================================
+   2 . CONTAINER + SECTION RHYTHM
+   Wide comfortable rows. --gv-pad is the stage rhythm and is deliberately the
+   SAME on every stage, because the spine's continuity depends on it.
+   ========================================================================== */
+.gv-wrap{
+  width:100%;
+  max-width:var(--ds-container-max);
+  margin-inline:auto;
+  padding-inline:var(--ds-space-lg);
+}
+.gv-wrap--narrow{max-width:900px;}
+
+.gv-sec{position:relative;padding-block:var(--gv-pad);}
+/* the opener carries extra air above it and closes flush on --gv-pad so the
+   hero's rail tail meets stage 1's rail with no seam */
+.gv-sec--open{padding-block:calc(var(--gv-pad) + var(--ds-space-lg)) var(--gv-pad);}
+/* the close pads by exactly --gv-pad at the TOP so the arriving rail head, which
+   is inset by -1 * --gv-pad, lands on the section's top edge and the spine
+   crosses the light-to-dark boundary without a jog */
+.gv-sec--close{padding-block:var(--gv-pad) calc(var(--gv-pad) + var(--ds-space-md));overflow:hidden;}
+
+/* GROUNDS. Canvas the whole way down (rule 3). These two exist for the wider
+   site, where a stage occasionally needs to sit on a wash. */
+.gv-sec--band{background:var(--ds-bg-band);}
+.gv-sec--surface{background:var(--ds-bg-surface);}
+
+/* AMBIENT LIGHT (_MODERN-WOW-SPEC 3 and 5), dialled to token strength so it
+   reads as light rather than as a graphic. Both are decorative and both live
+   INSIDE the .col, per the owner locked DOM grammar. */
+.gv-wash{position:absolute;inset:0;pointer-events:none;background:var(--ds-glow-wash);}
+/* THE TEXTURE OVERLAY, and why it carries a mask. The owner locked DOM grammar
+   puts every decorative element INSIDE the .col, so this overlay can only ever
+   be as wide as the container, never as wide as a full bleed band. Unmasked, its
+   own box edge is visible as a lighter rectangle floating inside the section: a
+   seam the eye reads as a mistake. The radial mask fades the noise to nothing
+   before it reaches its own boundary, so the texture has no edge to see. */
+.gv-grain{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:var(--ds-grain);
+  opacity:var(--ds-opacity-texture);
+  -webkit-mask-image:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,1),rgba(0,0,0,0));
+  mask-image:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,1),rgba(0,0,0,0));
+}
+.gv-mesh{position:absolute;inset:0;pointer-events:none;background-image:var(--ds-grid);background-size:var(--ds-grid-size);}
+
+/* ==========================================================================
+   3 . THE SPINE  (the signature move)
+   COMPANY-SECTIONS.md #3 is an ORIGIN TIMELINE on a single vertical spine. This
+   concept generalises that device from one section to the WHOLE page: every
+   stage is a point on one continuous line, so the page reads as a guided path
+   rather than as a stack of offers.
+
+   HOW THE LINE STAYS CONTINUOUS. .gv-rail is absolutely positioned inside
+   .gv-stage__grid (which lives inside the .col, so the owner locked grammar is
+   satisfied for decorative elements too) and is inset by -1 * --gv-pad at both
+   ends. Since every stage section pads by exactly --gv-pad, stage N's rail runs
+   to the section's bottom edge and stage N+1's rail starts at its top edge, so
+   the two meet. No page level absolute element and no fixed pixel guesswork.
+   ========================================================================== */
+/* A STAGE section. Its padding is EXACTLY --gv-pad at both ends, which is the
+   contract the connector depends on: .gv-rail is inset by -1 * --gv-pad, so
+   stage N's line reaches the section's bottom edge at the same instant stage
+   N+1's line reaches its top edge. Restated here rather than left to .gv-sec so
+   the requirement is visible to whoever edits the rhythm next. */
+.gv-stage{padding-block:var(--gv-pad);}
+
+.gv-stage__grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:var(--gv-mark-size) minmax(0,1fr);
+  column-gap:var(--ds-space-lg);
+  align-items:start;
+}
+/* the opener's stepper block rides the same grid as the stages, so the rail is
+   born in the hero on the exact x the whole page will use */
+.gv-stage__grid--lead{margin-top:var(--ds-space-xl);}
+.gv-stage__mark{position:relative;z-index:var(--ds-z-raised);}
+.gv-stage__body{min-width:0;}
+.gv-stage__body > *:first-child{margin-top:0;}
+
+/* THE CONNECTOR. Decorative, so it takes --ds-primary-soft rather than a
+   control weight, and it never carries meaning that is not also in the text. */
+.gv-rail{
+  position:absolute;
+  top:calc(var(--gv-pad) * -1);
+  bottom:calc(var(--gv-pad) * -1);
+  left:calc(var(--gv-mark-size) / 2 - var(--gv-rail-w) / 2);
+  width:var(--gv-rail-w);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-primary-soft);
+  pointer-events:none;
+}
+/* the hero's tail: the line is BORN under the opener's call to action and runs
+   down into stage 1, so the path visibly starts where the reader is told to */
+.gv-rail--tail{
+  top:auto;
+  height:calc(var(--gv-pad) + var(--ds-space-xl));
+  bottom:calc(var(--gv-pad) * -1);
+}
+/* the closing head: the line arrives from stage 8 and TERMINATES at the final
+   marker, which is the only place on the page where the path ends */
+.gv-rail--head{
+  top:calc(var(--gv-pad) * -1);
+  bottom:auto;
+  height:calc(var(--gv-pad) + var(--ds-space-lg));
+}
+
+/* THE STAGE TOKEN. Generous, rounded, opaque, so the rail passes BEHIND it.
+   --ds-primary-deep on --ds-primary-soft is 9.42:1, the teal on teal solve. */
+.gv-mark{
+  display:flex;align-items:center;justify-content:center;
+  width:var(--gv-mark-size);height:var(--gv-mark-size);
+  border-radius:var(--ds-r-surface);
+  background:var(--ds-primary-soft);
+  box-shadow:inset 0 0 0 1px var(--ds-signature);
+  font-family:var(--ds-font-display);
+  font-size:var(--gv-fs-mark);font-weight:600;line-height:1;
+  color:var(--ds-primary-deep);
+  font-variant-numeric:tabular-nums;
+}
+/* THE ONLY ACCENT MARKER ON THE PAGE. The destination stage. Its label is
+   PINNED to --ds-primary-deep (8.46:1 on the yellow) so it cannot inherit
+   --ds-ink, and it carries the token sheet's KEYLINE because a bare yellow mark
+   on this canvas is a 1.36:1 ghost. */
+.gv-mark--now{
+  background:var(--ds-accent);
+  color:var(--ds-primary-deep);
+  box-shadow:var(--ds-accent-keyline);
+}
+.gv-mark svg{width:28px;height:28px;}
+
+/* the small caps stage label that rides above every stage heading */
+.gv-stage__label{
+  display:block;
+  font-size:var(--gv-fs-eyebrow);font-weight:700;line-height:1.4;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+
+/* HORIZONTAL STEP MARKERS. The same sequence read across rather than down, so
+   the opener can show the whole path at a glance before the reader commits to
+   scrolling it. The connector between nodes is the flex ::before dash, which
+   wraps correctly instead of drawing a line through empty space. */
+.gv-steps{display:flex;flex-wrap:wrap;align-items:center;gap:var(--ds-space-xs) var(--ds-space-sm);}
+.gv-step{display:flex;align-items:center;gap:var(--ds-space-xs);min-height:48px;}
+.gv-step + .gv-step::before{
+  content:"";
+  width:16px;height:var(--ds-space-2xs);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-line-control);
+  flex:none;
+}
+.gv-step__n{
+  display:flex;align-items:center;justify-content:center;
+  width:var(--gv-node-size);height:var(--gv-node-size);flex:none;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-primary-soft);
+  color:var(--ds-primary-deep);
+  font-size:var(--gv-fs-meta);font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.gv-step__t{font-size:var(--gv-fs-meta);line-height:1.4;color:var(--ds-ink);}
+
+/* ==========================================================================
+   4 . TYPE SYSTEM
+   ========================================================================== */
+.gv-eyebrow{
+  display:block;
+  font-size:var(--gv-fs-eyebrow);font-weight:700;line-height:1.4;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+/* the eyebrow's rule is the spine in miniature: a short horizontal segment in
+   the same --ds-primary-soft the connector uses, so the motif is one family */
+.gv-eyebrow::after{
+  content:"";display:block;
+  width:56px;height:var(--gv-rail-w);margin-top:var(--ds-space-xs);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-primary-soft);
+}
+.gv-center{text-align:center;}
+.gv-center .gv-eyebrow::after{margin-inline:auto;}
+
+h1.gv-display{
+  margin-top:var(--ds-space-md);
+  font-size:var(--gv-fs-display);
+  line-height:1.06;
+  letter-spacing:-.018em;
+  max-width:15ch;
+}
+h2.gv-title{
+  margin-top:var(--ds-space-xs);
+  font-size:var(--gv-fs-1);
+  line-height:1.12;
+  letter-spacing:-.012em;
+  max-width:20ch;
+}
+h2.gv-title--wide{max-width:28ch;}
+h3.gv-sub{font-size:var(--gv-fs-2);line-height:1.2;max-width:26ch;}
+.gv-h4{font-size:var(--gv-fs-3);font-family:var(--ds-font-display);font-weight:600;line-height:1.3;color:var(--ds-ink-heading);}
+
+p.gv-lede{
+  margin-top:var(--ds-space-md);
+  font-size:var(--gv-fs-lede);line-height:1.65;
+  color:var(--ds-ink);
+  max-width:48ch;
+}
+.gv-prose p{
+  margin-top:var(--ds-space-md);
+  font-size:var(--gv-fs-body);line-height:1.75;
+  color:var(--ds-ink);
+  max-width:58ch;
+}
+.gv-prose p:first-child{margin-top:0;}
+.gv-meta{font-size:var(--gv-fs-meta);line-height:1.6;color:var(--ds-ink-soft);}
+
+/* THE SOURCE LINE that rides under every number on this site. 16px and
+   --ds-ink-soft (8.60:1), never a faint grey, because the positioning is
+   "replace every superlative with a specific" and the receipt has to be read. */
+p.gv-src{margin-top:var(--ds-space-xs);font-size:var(--gv-fs-meta);line-height:1.5;color:var(--ds-ink-soft);max-width:46ch;}
+
+.gv-rule{height:1px;background:var(--ds-line);border:0;margin-block:var(--ds-space-lg);}
+
+/* ==========================================================================
+   5 . SURFACES  (I2, held deliberately flat: rule 4)
+   Cards STEP DOWN onto --ds-bg-surface rather than lifting off the page. The
+   hover grammar is the one the locked chrome uses on its mega ledger, so body
+   and chrome share a single hover language.
+   ========================================================================== */
+.gv-card{
+  position:relative;
+  padding:var(--ds-space-lg);
+  background:var(--ds-bg-surface);
+  border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-rest);
+}
+.gv-card--plain{background:transparent;box-shadow:none;}
+.gv-card--pad-sm{padding:var(--ds-space-md);}
+/* THE LEDGER. A card whose job is DATA (opening hours, a column of phone
+   numbers) sits on the canvas with a stronger boundary rather than on the sunk
+   surface, so a table inside it reads as a record and not as a promotion. */
+.gv-card--ledger{
+  padding:var(--ds-space-md);
+  background:var(--ds-canvas);
+  border-color:var(--ds-line-control);
+}
+/* THE CALL-OUT. A card that answers the panel beside it takes the same leading
+   signature edge the framed imagery uses, so it reads as an aside on the path
+   rather than as one more tile in a grid. */
+.gv-card--edge{
+  border-left:6px solid var(--ds-signature);
+  border-radius:var(--ds-r-control) var(--ds-r-surface) var(--ds-r-surface) var(--ds-r-control);
+}
+
+a.gv-card,button.gv-card{
+  display:block;text-decoration:none;color:inherit;text-align:left;width:100%;
+  box-shadow:inset 0 0 0 0 var(--ds-signature),var(--ds-shadow-rest);
+  transition:background-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease);
+}
+a.gv-card:hover,a.gv-card:focus-visible,button.gv-card:hover,button.gv-card:focus-visible{
+  background:var(--ds-primary-soft);
+  border-color:var(--ds-line-control);
+  box-shadow:inset 4px 0 0 0 var(--ds-signature),var(--ds-shadow-rest);
+}
+
+/* THE ONE GLASS MOMENT. --ds-glass-bg is translucent, so it is stacked over an
+   OPAQUE --ds-canvas base. A bare translucent panel changes contrast with
+   whatever scrolls behind it, which is the exact defect caught and fixed at the
+   chrome stage and is not reintroduced here. */
+.gv-glass{
+  background:linear-gradient(var(--ds-glass-bg),var(--ds-glass-bg)),var(--ds-canvas);
+  backdrop-filter:var(--ds-glass-blur);
+  -webkit-backdrop-filter:var(--ds-glass-blur);
+  border:1px solid var(--ds-glass-border);
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-rest),var(--ds-inset-hi);
+  padding:var(--ds-space-md);
+}
+
+/* the flag panel. --ds-ink on --ds-accent-soft is 12.68:1, so the WASH is a
+   ground that can be read on, unlike the accent itself. */
+.gv-note{
+  display:flex;gap:var(--ds-space-sm);align-items:flex-start;
+  padding:var(--ds-space-md);
+  background:var(--ds-accent-soft);
+  border:1px solid var(--ds-line-control);
+  border-left:4px solid var(--ds-accent);
+  border-radius:var(--ds-r-surface);
+  font-size:var(--gv-fs-body);line-height:1.75;color:var(--ds-ink);
+}
+.gv-note svg{flex:none;margin-top:6px;color:var(--ds-signature);}
+.surface-dark .gv-note{background:var(--ds-accent-soft);color:var(--ds-ink);}
+
+/* THE HONEST EMPTY STATE. A slot whose value is not sourced yet is a DESIGNED
+   state, not a gap, because inventing a review, a rating or a credential is the
+   single most serious defect available on this project. The dashed edge plus
+   the literal NEEDS SOURCE tag make it impossible to mistake for a real claim. */
+.gv-pending{
+  display:grid;gap:var(--ds-space-xs);
+  padding:var(--ds-space-md);
+  border:1px dashed var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  background:var(--ds-bg-surface);
+}
+.gv-pending__tag{
+  display:inline-flex;align-items:center;gap:var(--ds-space-xs);
+  font-size:var(--gv-fs-eyebrow);font-weight:700;line-height:1.4;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+.gv-pending__tag::before{
+  content:"";
+  width:12px;height:12px;flex:none;
+  border-radius:var(--ds-r-pill);
+  border:2px solid var(--ds-line-control);
+}
+p.gv-pending__body{font-size:var(--gv-fs-meta);line-height:1.6;color:var(--ds-ink-soft);max-width:46ch;}
+
+/* ==========================================================================
+   6 . PILLS AND SMALL MARKS
+   ========================================================================== */
+.gv-pill{
+  display:inline-flex;align-items:center;gap:var(--ds-space-xs);
+  min-height:40px;padding:0 var(--ds-space-md);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-canvas);
+  border:1px solid var(--ds-line-control);
+  font-size:var(--gv-fs-meta);font-weight:700;line-height:1.4;
+  color:var(--ds-ink);
+}
+.gv-pill--soft{background:var(--ds-primary-soft);border-color:var(--ds-signature);color:var(--ds-primary-deep);}
+
+/* the round chip that holds a service glyph (I5 fill on hover). The glyph is
+   never a letterform, so --ds-signature never carries type. */
+.gv-chip{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:56px;height:56px;flex:none;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-primary-soft);
+  color:var(--ds-primary-deep);
+  box-shadow:inset 0 0 0 1px var(--ds-signature);
+  transition:background-color var(--ds-dur) var(--ds-ease),color var(--ds-dur) var(--ds-ease);
+}
+.gv-chip svg{width:26px;height:26px;}
+a.gv-card:hover .gv-chip,a.gv-card:focus-visible .gv-chip{
+  background:var(--ds-signature);
+  color:var(--ds-ink-on-dark);
+}
+
+/* ==========================================================================
+   7 . IMAGERY  (_MODERN-WOW-SPEC 3, E masks and framed imagery)
+   Photographs are graded to the palette so they read as brand: a deep teal
+   multiply pulls the whites off blue, a screened signature lifts the mids back,
+   and a scrim is reserved for a bottom third where type may sit. Frames are
+   rounded rectangles, not circles: this concept's geometry is directional, and
+   a circle is an ambient shape.
+   ========================================================================== */
+.gv-frame{position:relative;overflow:hidden;background:var(--ds-bg-surface);border-radius:var(--ds-r-surface);}
+.gv-frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(.22) contrast(1.04) brightness(1.05) saturate(.94);}
+.gv-frame--lift{box-shadow:var(--ds-shadow-card);}
+.gv-frame--hero{aspect-ratio:5/4;}
+.gv-frame--wide{aspect-ratio:16/10;}
+.gv-frame--tall{aspect-ratio:4/5;}
+.gv-frame--square{aspect-ratio:1;}
+/* the leading edge: a 6px signature bar down the left of a framed photo, the
+   same directional device as the spine, so imagery joins the motif family */
+.gv-frame--edge{border-left:6px solid var(--ds-signature);}
+
+.gv-grade{position:absolute;inset:0;pointer-events:none;}
+.gv-grade--multiply{background:var(--ds-primary-deep);mix-blend-mode:multiply;opacity:.24;}
+.gv-grade--screen{background:var(--ds-signature);mix-blend-mode:screen;opacity:.12;}
+.gv-grade--scrim{background:linear-gradient(to top,var(--ds-scrim),transparent 46%);}
+
+.gv-zoom img{transition:transform var(--ds-dur-slow) var(--ds-ease);}
+a:hover .gv-zoom img,a:focus-visible .gv-zoom img{transform:scale(1.03);}
+
+/* the caption that sits under a photo, never on it */
+p.gv-cap{margin-top:var(--ds-space-xs);font-size:var(--gv-fs-meta);line-height:1.5;color:var(--ds-ink-soft);max-width:46ch;}
+
+/* ==========================================================================
+   8 . LIST, TABLE, QUOTE AND PHONE PRIMITIVES
+   ========================================================================== */
+/* the included list. The tick is drawn in CSS so no icon font ships, and it
+   sits in a --ds-primary-soft disc rather than in the accent, because the
+   accent may not act as a ground for a mark that has to be read. */
+.gv-list{display:grid;gap:var(--ds-space-sm);}
+.gv-list li{
+  position:relative;
+  padding-left:calc(var(--ds-space-lg) + var(--ds-space-2xs));
+  font-size:var(--gv-fs-body);line-height:1.75;color:var(--ds-ink);
+}
+.gv-list li::before{
+  content:"";position:absolute;left:0;top:7px;
+  width:28px;height:28px;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-primary-soft);
+}
+.gv-list li::after{
+  content:"";position:absolute;left:10px;top:14px;
+  width:7px;height:13px;
+  border-right:2px solid var(--ds-primary-deep);
+  border-bottom:2px solid var(--ds-primary-deep);
+  transform:rotate(42deg);
+}
+/* the exclusion row: a flat bar instead of a tick, so "we do not do this" reads
+   as a DIFFERENT fact rather than as a quieter version of the same one */
+.gv-list li.gv-list--out::after{
+  left:9px;top:19px;width:10px;height:0;
+  border-right:0;border-bottom:2px solid var(--ds-ink-soft);
+  transform:none;
+}
+
+/* the hairline row table. Used for opening hours and any keyed ledger. */
+.gv-table{width:100%;border-top:1px solid var(--ds-line);}
+.gv-table__row{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:var(--ds-space-md);
+  padding-block:11px;
+  border-bottom:1px solid var(--ds-line);
+  font-size:var(--gv-fs-body);line-height:1.6;
+}
+.gv-table__key{font-weight:700;color:var(--ds-ink);}
+.gv-table__val{color:var(--ds-ink-soft);text-align:right;font-variant-numeric:tabular-nums;}
+
+/* the pull quote. The mark is a --ds-signature rule, not a giant glyph. */
+.gv-quote{padding-left:var(--ds-space-md);border-left:var(--gv-rail-w) solid var(--ds-signature);}
+p.gv-quote__body{
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--gv-fs-2);line-height:1.35;
+  color:var(--ds-ink-heading);
+  max-width:34ch;
+}
+.gv-quote__cite{display:block;margin-top:var(--ds-space-sm);font-size:var(--gv-fs-meta);line-height:1.5;color:var(--ds-ink-soft);font-style:normal;}
+
+/* THE PHONE LINK. First class UI at 20px with a 48px target, per the audience
+   law, and tabular numerals so a column of them aligns down the office rail. */
+.gv-tel{
+  display:inline-flex;align-items:center;gap:10px;
+  min-height:48px;
+  font-size:20px;font-weight:500;line-height:1.4;
+  text-decoration:none;color:var(--ds-primary);
+  font-variant-numeric:tabular-nums;
+}
+.gv-tel svg{flex:none;color:var(--ds-signature);}
+.gv-tel:hover{text-decoration:underline;text-underline-offset:4px;}
+.surface-dark .gv-tel{color:var(--ds-ink);}
+
+/* ==========================================================================
+   9 . CONTROLS
+   ========================================================================== */
+.gv-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:58px;padding:0 var(--ds-space-lg);
+  font-size:var(--gv-fs-body);font-weight:700;line-height:1.3;
+  text-align:center;text-decoration:none;
+  border:1px solid transparent;
+  border-radius:var(--ds-r-pill);
+  background-clip:padding-box;
+  cursor:pointer;
+  transition:background-color var(--ds-dur) var(--ds-ease),
+             color var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease);
+}
+/* THE ONLY LEGAL ACCENT PAIRING. --ds-primary-deep on --ds-accent is 8.46:1.
+   The colour is PINNED rather than inherited so that inside .surface-dark,
+   where --ds-ink flips to near white, this label can never become 1.24:1. The
+   1px deep teal keyline is carried as a real BORDER so it cannot collapse. */
+.gv-btn--accent{
+  background-color:var(--ds-accent);
+  color:var(--ds-primary-deep);
+  border-color:var(--ds-primary-deep);
+  box-shadow:var(--ds-shadow-rest);
+}
+.gv-btn--accent:hover{background-color:var(--ds-accent);box-shadow:var(--ds-shadow-card);}
+.gv-btn--solid{
+  background-color:var(--ds-primary);
+  color:var(--ds-ink-on-dark);
+  border-color:var(--ds-line-control);
+}
+.gv-btn--solid:hover{background-color:var(--ds-primary-deep);}
+.gv-btn--ghost{
+  background-color:transparent;
+  color:var(--ds-ink-heading);
+  border-color:var(--ds-line-control);
+}
+.gv-btn--ghost:hover{background-color:var(--ds-bg-surface);}
+.surface-dark .gv-btn--ghost{color:var(--ds-ink);border-color:var(--ds-line-control);}
+.surface-dark .gv-btn--ghost:hover{background-color:var(--ds-bg-surface);}
+.gv-btn--block{width:100%;}
+
+.gv-acts{display:flex;flex-wrap:wrap;gap:var(--ds-space-sm);margin-top:var(--ds-space-lg);align-items:center;}
+.gv-acts--center{justify-content:center;}
+
+/* the quiet forward link. Its rule GROWS to the right on hover, which is the
+   spine's directionality expressed at the smallest scale in the system. */
+.gv-go{
+  position:relative;display:inline-flex;align-items:center;gap:8px;
+  min-height:48px;
+  font-size:var(--gv-fs-body);font-weight:700;text-decoration:none;
+  color:var(--ds-ink-heading);
+}
+.gv-go::after{
+  content:"";position:absolute;left:0;right:0;bottom:9px;height:2px;
+  background:var(--ds-signature);
+  transform:scaleX(.22);transform-origin:left center;
+  transition:transform var(--ds-dur) var(--ds-ease-out);
+}
+.gv-go:hover::after,.gv-go:focus-visible::after,a.gv-card:hover .gv-go::after{transform:scaleX(1);}
+
+/* ---- form fields ---------------------------------------------------------- */
+.gv-form{display:grid;gap:var(--ds-space-md);}
+.gv-form__row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:var(--ds-space-md);}
+.gv-field{display:grid;gap:var(--ds-space-2xs);position:relative;}
+.gv-field__label{font-size:var(--gv-fs-meta);font-weight:700;line-height:1.4;color:var(--ds-ink);}
+.gv-input,.gv-select,.gv-textarea{
+  width:100%;min-height:58px;
+  padding:15px var(--ds-space-md);
+  font-family:var(--ds-font-body);font-size:var(--gv-fs-body);line-height:1.6;
+  color:var(--ds-ink);
+  background:var(--ds-canvas);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-control);
+  transition:border-color var(--ds-dur) var(--ds-ease),box-shadow var(--ds-dur) var(--ds-ease);
+}
+.gv-textarea{min-height:136px;resize:vertical;}
+.gv-select{appearance:none;-webkit-appearance:none;padding-right:var(--ds-space-xl);}
+.gv-field--select::after{
+  content:"";position:absolute;right:var(--ds-space-md);bottom:23px;
+  width:10px;height:10px;
+  border-right:2px solid var(--ds-ink-soft);
+  border-bottom:2px solid var(--ds-ink-soft);
+  transform:rotate(45deg);
+  pointer-events:none;
+}
+.gv-input:hover,.gv-select:hover,.gv-textarea:hover{border-color:var(--ds-primary);}
+p.gv-hint{font-size:var(--gv-fs-meta);line-height:1.5;color:var(--ds-ink-soft);max-width:46ch;}
+
+/* ==========================================================================
+   10 . COMPOSED BODY MODULES
+   Page ARCHETYPES, reusable across the whole site, not one off page CSS.
+   ========================================================================== */
+
+/* ---- 10.1  SPLIT  (HERO-COMPOSITIONS.md #1) --------------------------------
+   _COMPOSITION-LAWS law L1 is a HARD law with a render gate: when a two column
+   text plus media split stacks, it must read HEADING then MEDIA then BODY then
+   CTA, and there is no media first carve out.
+
+   So this module is built on grid-template-areas rather than on source order
+   tricks. The markup is authored in the MOBILE reading order already:
+       .gv-split__head   eyebrow plus title
+       .gv-split__media  the photograph
+       .gv-split__body   prose, lists, CTAs
+   and the desktop two column composition is assembled by AREAS. Nothing uses
+   display:contents (which would kill the reveal transform on the wrapper) and
+   nothing uses order, so the stacked order IS the source order and the L1 gate
+   is satisfied structurally rather than patched.
+
+   Law L3, media fits its track: the media declares width and min-width so a
+   frame carrying an aspect-ratio can never compute its width from its height
+   and balloon out of its 1fr track. */
+.gv-split{
+  display:grid;
+  grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+  grid-template-areas:
+    "head media"
+    "body media";
+  column-gap:var(--ds-space-xl);
+  row-gap:var(--ds-space-md);
+}
+.gv-split--wide-copy{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);}
+.gv-split--flip{
+  grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);
+  grid-template-areas:
+    "media head"
+    "media body";
+}
+.gv-split__head{grid-area:head;align-self:end;}
+.gv-split__body{grid-area:body;align-self:start;}
+.gv-split__body > *:first-child{margin-top:0;}
+.gv-split__media{grid-area:media;align-self:center;position:relative;width:100%;min-width:0;}
+
+/* the plain two column CONTENT grid: no media, so L1 does not apply and the
+   columns simply stack in source order */
+.gv-duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:var(--ds-space-xl);align-items:start;}
+
+/* ---- 10.2  GRIDS ----------------------------------------------------------
+   THE INDENTED-TRACK RULE, and it is specific to this concept. Every grid in a
+   stage lives INSIDE the stage body column, which the spine has already pushed
+   right by the marker plus the column gap. On a 375px viewport that leaves the
+   body track around 250px, so a bare minmax(290px,1fr) floor is WIDER than the
+   track it sits in and pushes the page into horizontal scroll. Wrapping the
+   floor in min(100%,Npx) caps it at the track's own width, so the floor can
+   never exceed its container: identical at desktop, safe at every width. */
+.gv-grid{display:grid;gap:var(--ds-space-md);}
+.gv-grid--3{grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));}
+.gv-grid--2{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));}
+.gv-grid--gap-lg{gap:var(--ds-space-lg);}
+
+/* ---- 10.3  SERVICE TILE  (CARD-VARIATIONS.md #4) --------------------------
+   Presented as "what you might be here for" rather than as a catalogue entry,
+   which is the whole difference between this concept and its siblings. */
+.gv-svc{display:grid;gap:var(--ds-space-md);min-height:100%;}
+.gv-svc__name{font-family:var(--ds-font-display);font-size:var(--gv-fs-3);font-weight:600;line-height:1.3;color:var(--ds-ink-heading);}
+p.gv-svc__desc{font-size:var(--gv-fs-body);line-height:1.75;color:var(--ds-ink-soft);max-width:38ch;}
+.gv-svc__foot{margin-top:auto;}
+
+/* ---- 10.4  REASON ROW  (SECTION-COMPONENTS.md #7 problem framing) --------- */
+.gv-why{display:grid;gap:var(--ds-space-lg);}
+.gv-why__item{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--ds-space-md);align-items:start;}
+.gv-why__mark{
+  display:flex;align-items:center;justify-content:center;
+  width:52px;height:52px;flex:none;
+  border-radius:var(--ds-r-control);
+  background:var(--ds-canvas);
+  border:1px solid var(--ds-line-control);
+  box-shadow:inset 0 0 0 3px var(--ds-primary-soft);
+  font-family:var(--ds-font-display);font-size:var(--gv-fs-3);font-weight:600;
+  color:var(--ds-primary-deep);
+  font-variant-numeric:tabular-nums;
+}
+p.gv-why__body{font-size:var(--gv-fs-body);line-height:1.75;color:var(--ds-ink-soft);max-width:52ch;margin-top:var(--ds-space-2xs);}
+
+/* ---- 10.5  BIG NUMBER BAND  (TRUST-STATS-SECTIONS.md #4) ------------------
+   No count up. A figure a 40+ reader is trying to read should not be moving,
+   and two of the four figures carry an external source line that must be read
+   WITH the number, not after it has finished animating. */
+.gv-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:var(--ds-space-lg);}
+.gv-fact{display:grid;gap:var(--ds-space-2xs);padding-left:var(--ds-space-md);border-left:1px solid var(--ds-line-control);}
+.gv-fact__num{
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--gv-fs-stat);line-height:1;letter-spacing:-.02em;
+  color:var(--ds-primary-deep);
+  font-variant-numeric:tabular-nums;
+}
+.gv-fact__label{font-size:var(--gv-fs-body);font-weight:700;line-height:1.4;color:var(--ds-ink);}
+p.gv-fact__note{font-size:var(--gv-fs-meta);line-height:1.5;color:var(--ds-ink-soft);max-width:34ch;}
+
+/* ---- 10.6  OFFER  (PRICING-SECTIONS.md #5 plain deal honesty stance) ------ */
+.gv-offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);gap:var(--ds-space-xl);align-items:start;}
+.gv-offer__price{
+  display:flex;align-items:baseline;gap:var(--ds-space-sm);flex-wrap:wrap;
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--gv-fs-price);line-height:1;letter-spacing:-.02em;
+  color:var(--ds-primary-deep);
+  font-variant-numeric:tabular-nums;
+}
+.gv-offer__price small{font-family:var(--ds-font-body);font-size:var(--gv-fs-lede);font-weight:500;letter-spacing:0;color:var(--ds-ink-soft);}
+.gv-offer__second{margin-top:var(--ds-space-sm);font-size:var(--gv-fs-lede);line-height:1.6;color:var(--ds-ink);}
+.gv-offer__terms{margin-top:var(--ds-space-md);}
+
+/* ---- 10.7  OFFICE RAIL  (the seven offices, as points on the path) -------- */
+.gv-offices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:0 var(--ds-space-xl);}
+.gv-office{padding-block:var(--ds-space-sm);border-bottom:1px solid var(--ds-line);}
+.gv-office__name{display:block;font-size:var(--gv-fs-3);font-family:var(--ds-font-display);font-weight:600;line-height:1.3;color:var(--ds-ink-heading);}
+.gv-office__where{display:block;font-size:var(--gv-fs-meta);line-height:1.5;color:var(--ds-ink-soft);}
+
+/* ---- 10.8  ROSTER  (TEAM-GALLERY-SECTIONS.md #1 team card grid) ----------- */
+.gv-roster{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,276px),1fr));gap:var(--ds-space-lg);}
+.gv-person{display:grid;gap:var(--ds-space-sm);}
+.gv-person__name{font-family:var(--ds-font-display);font-size:var(--gv-fs-3);font-weight:600;line-height:1.3;color:var(--ds-ink-heading);}
+p.gv-person__role{font-size:var(--gv-fs-meta);line-height:1.6;color:var(--ds-ink-soft);max-width:34ch;}
+
+/* ---- 10.9  APPOINTMENT  (FORM-LAYOUTS.md #2 fields plus info rail) -------- */
+.gv-appt{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:var(--ds-space-xl);align-items:start;}
+
+/* ---- 10.10  CLOSE  (the single .surface-dark moment) ----------------------
+   The close does NOT centre. It stays on the stage grid, so the spine that has
+   run down the left of every stage terminates at the final marker instead of
+   jogging to the middle of the page for one band. The path ends where the path
+   has been running. */
+.gv-close{position:relative;}
+/* THE ACCENT BLOOM (_MODERN-WOW-SPEC 5, accent glow on the closing moment).
+   Its radii are 50% and its centre is 50% 50% ON PURPOSE: that is the only
+   geometry where the gradient reaches full transparency at EVERY edge of its
+   own box. Anchoring the centre on an edge instead (at 50% 0%, the obvious
+   choice for a band) puts the gradient at full strength exactly where the box
+   stops, which paints a hard bright line across the section. Measured: that
+   version stepped 18.2 luminance at the top edge, this one steps under 1. */
+.gv-close__glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(50% 50% at 50% 50%,var(--ds-accent),transparent 100%);
+  opacity:var(--ds-opacity-faint);
+}
+/* LEFT anchored, not centred. Centring the close would break the one promise the
+   whole layout makes, that the reader always knows where they are on the line:
+   eight stages arrive on the left margin and the close has to arrive there too.
+   The dark ground and the accent destination marker supply the climax instead. */
+.gv-close__inner{position:relative;display:grid;justify-items:start;}
+/* on dark the yellow is a genuine FOREGROUND at 7.19:1 worst case, so the
+   eyebrow can take it, and the keyline that rescues it on light is dropped by
+   the token flip rather than restated here */
+.surface-dark .gv-eyebrow{color:var(--ds-accent);}
+.surface-dark .gv-eyebrow::after{background:var(--ds-accent);}
+.surface-dark .gv-stage__label{color:var(--ds-accent);}
+
+/* ==========================================================================
+   11 . MOTION  (_MODERN-WOW-SPEC 2, _MOTION-TOKENS)
+   Small travel, long settle. Every duration and easing is a --ds-* token.
+
+   THE SAFE REVEAL PATTERN. The hidden state is gated behind .gv-js, which the
+   specimen's script sets on <html> as its FIRST act. With JavaScript off, or
+   before the script runs, or if the script throws, the content is simply
+   VISIBLE. There is no state in which this page can render blank.
+   ========================================================================== */
+.gv-js .gv-rise{
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity var(--ds-dur-slow) var(--ds-ease-out),
+             transform var(--ds-dur-slow) var(--ds-ease-out);
+  transition-delay:calc(var(--gv-i,0) * 70ms);
+}
+.gv-js .gv-rise.is-in{opacity:1;transform:none;}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;transition-delay:0s!important;
+    scroll-behavior:auto!important;
+  }
+  .gv-js .gv-rise{opacity:1!important;transform:none!important;}
+  .gv-zoom img{transform:none!important;}
+  .gv-go::after{transform:scaleX(1)!important;}
+}
+
+/* ==========================================================================
+   12 . BREAKPOINTS
+   The grids above are auto-fit, so the body reflows on its own between these
+   stops; what follows only unpicks the deliberate asymmetries and NARROWS the
+   spine, which stays present at every width because it is the concept.
+   ========================================================================== */
+@media (max-width:1024px){
+  .gv-split,.gv-split--wide-copy,.gv-split--flip{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-areas:
+      "head"
+      "media"
+      "body";
+    row-gap:var(--ds-space-lg);
+  }
+  .gv-split__head,.gv-split__body,.gv-split__media{align-self:start;}
+  .gv-duo,.gv-offer,.gv-appt{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+}
+@media (max-width:767px){
+  :root{
+    --gv-pad:var(--ds-space-xl);
+    --gv-mark-size:52px;
+    --gv-rail-w:2px;
+    --gv-fs-mark:20px;
+  }
+  .gv-stage__grid{column-gap:var(--ds-space-md);}
+  .gv-mark svg{width:22px;height:22px;}
+  .gv-acts{gap:var(--ds-space-xs);}
+  .gv-acts .gv-btn{width:100%;}
+  .gv-facts{gap:var(--ds-space-md);}
+  .gv-offices{grid-template-columns:minmax(0,1fr);}
+}
+@media (max-width:520px){
+  /* the spine COSTS width, and at this stop that cost is what squeezes the stage
+     body column. The connector stays (it is the concept) but the marker and the
+     gutter beside it are pulled in, which hands roughly 16px back to the reading
+     column without the line ever disappearing. */
+  :root{--gv-mark-size:46px;--gv-fs-mark:19px;}
+  .gv-stage__grid{column-gap:var(--ds-space-sm);}
+  .gv-wrap{padding-inline:var(--ds-space-md);}
+  .gv-card{padding:var(--ds-space-md);}
+  .gv-why__item{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-sm);}
+  /* THE MOBILE FLOOR RULE for the big number band: when it goes one up, the
+     vertical hairline becomes a horizontal top rule and the numeral KEEPS its
+     large clamp floor (46px). The figure is the message, so it never shrinks
+     to fit the column. */
+  .gv-fact{padding-left:0;padding-top:var(--ds-space-md);border-left:0;border-top:1px solid var(--ds-line-control);}
+}
+
+/* ==========================================================================
+   13 . OWNER-LOCKED DOM GRAMMAR PRIMITIVES
+   The locked body grammar is  section > .container > .row > .col > OBJECT
+   (verify-dom-structure). This sheet was authored around its own .gv-wrap
+   container, so .gv-wrap carries the .container ROLE and these three are
+   LAYOUT-ONLY pass-throughs, exactly as the gate defines them: structure
+   classes carry layout only, the component skin lives on the OBJECT inside the
+   .col. They are declared HERE rather than in the specimen so every page built
+   from this foundation inherits them.
+   Deliberately inert: no colour, no type, no spacing, so inserting them can
+   never disturb the rhythm the rest of this sheet establishes.
+   ========================================================================== */
+.container{width:100%;}
+.row{display:block;}
+.col{display:block;min-width:0;}

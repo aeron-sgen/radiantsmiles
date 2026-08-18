@@ -1,0 +1,74 @@
+{
+  "schema": "handoff-receipt/v1",
+  "slug": "radiantsmiles",
+  "copied_at": "2026-08-13T05:18:02.879Z",
+  "prep_spec_root": "/Users/aeroncloydc.malinab/Oso/Code/client-site-prep/radiantsmiles/_spec",
+  "spec_manifest_checksum": "150687adf0232385276d3df9a2c86af7de40163d7542684eebac1ce9c090cd18",
+  "decisions_ledger_checksum": "d6b1af08500d9e74b68edfbab1fc3963efda0f45d2dd367660b04438a6d5e327",
+  "client_rules_checksum": "33e914650992d07c5c77c368a6a4a6540fe791cae5887b3bed583fb657125be5",
+  "visual_direction_checksum": "75e612054a76e86c539ad453b6ebabed9977dd2462fdaa7926725410f1ec0c3c",
+  "files": [
+    {
+      "id": "C1",
+      "path": "sitemap.yaml",
+      "sha256": "8947e2eb7f264262eeac37c18d155fd479f70bbc0349cb2daef924c09f942016"
+    },
+    {
+      "id": "C2",
+      "path": "briefs/",
+      "sha256": "070ecd13ce8c00915d3c98083ef872d4075c9635d7d89eda29f548e185b42397"
+    },
+    {
+      "id": "C3",
+      "path": "client-rules.json",
+      "sha256": "33e914650992d07c5c77c368a6a4a6540fe791cae5887b3bed583fb657125be5"
+    },
+    {
+      "id": "C4",
+      "path": "content-bible.md",
+      "sha256": "4cd822a5102e781d9794c6a5d04663865f646a812b9c35b5dd74a685931b0a71"
+    },
+    {
+      "id": "C5",
+      "path": "decisions-ledger.md",
+      "sha256": "d6b1af08500d9e74b68edfbab1fc3963efda0f45d2dd367660b04438a6d5e327"
+    },
+    {
+      "id": "C6",
+      "path": "radiantsmiles-tokens-spec.md",
+      "sha256": "f5d5f2ff0b05427cd7f9a523e92e931b73f4c08245f99e2bc2240159887acbef"
+    },
+    {
+      "id": "C7",
+      "path": "visual-direction.md",
+      "sha256": "75e612054a76e86c539ad453b6ebabed9977dd2462fdaa7926725410f1ec0c3c"
+    },
+    {
+      "id": "C8",
+      "path": "link-funnel-map.md",
+      "sha256": "b7408ec16d589af241e4a5d6c73f9b3515ad888d52ec364a5b04508f4a07c0eb"
+    },
+    {
+      "id": "C9",
+      "path": "selling-asset-manifest.json",
+      "sha256": "9b5917def510cccabb128cff684981fcc0f6624841957b0e9849dbc8c3312694"
+    },
+    {
+      "id": "C10",
+      "path": "seo-manifest.json",
+      "sha256": "814d49542aa93af04e3e03f3d7698a7fe76e6b074e350041a0d171fcd66f8d4d"
+    },
+    {
+      "id": "C11",
+      "path": "seo-enrichment.md",
+      "sha256": "adf4bae711252af05af7f67a3b26a13c3874f5f3689ddd514f4ba1e89dfdf9f9"
+    },
+    {
+      "id": "C12",
+      "path": "fact-registry.json",
+      "sha256": "bf58f0d2374c632b254599d120686d2c5999c96289f8bb34734959c2633c2fd5"
+    }
+  ],
+  "concat_sha256": "070ecd13ce8c00915d3c98083ef872d4075c9635d7d89eda29f548e185b42397",
+  "handoff_kickoff_checksum": null
+}

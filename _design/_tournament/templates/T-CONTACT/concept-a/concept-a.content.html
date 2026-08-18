@@ -1,0 +1,766 @@
+<style>
+/* ==========================================================================
+   T-CONTACT / concept-a / namespace: ct-
+   ----------------------------------------------------------------------------
+   Body fragment only. The locked chrome shell owns html, head, header, footer.
+
+   NAMESPACE. Every class authored here is prefixed ct- . The foundation
+   vocabulary USED and never redeclared: .rs-sec .rs-sec--lead .rs-sec--band
+   .rs-sec--close .container .row .col .rs-h1 .rs-h2 .rs-lede .rs-copy .rs-btn
+   .rs-btn--accent .rs-btn--ghost .rs-acts .rs-strong .surface-dark.
+   Prefixes cc- and hb- belong to promoted templates and appear nowhere below.
+
+   TOKEN PURITY. Every colour, radius, shadow, duration, easing and spacing
+   value is var(--ds-*) or a calc() over one. No hex, no rgb(), no named
+   colour, and no --rs-* foundation alias is borrowed.
+
+   GROUND RHYTHM. The foundation's signature is an INVERTED ground: sections
+   sit on --ds-bg-surface and CARDS step up to --ds-canvas. This fragment obeys
+   that rather than repainting sections, so the four beats are
+     1 hero      bg-surface + wash + grid, canvas routing panel on top
+     2 offices   .surface-dark, the non-light anchor, and NOT a bookend
+     3 form      bg-surface, canvas form card on top
+     4 response  bg-band, the quiet close
+   RESPONSIVE. Authored desktop first. Every breakpoint is an additive
+   max-width override at 1023 / 767 / 479. There is no min-width rule.
+   ========================================================================== */
+
+/* ---- 1 . HERO : the two-route panel ------------------------------------- */
+
+.rs-sec.ct-hero{
+  background-color:var(--ds-bg-surface);
+  background-image:var(--ds-glow-wash),var(--ds-grid);
+  background-repeat:no-repeat,repeat;
+  background-size:auto,var(--ds-grid-size);
+  overflow:hidden;
+  isolation:isolate;
+}
+
+/* the signature is DECORATION here. --ds-accent is reserved for the offer, so
+   the opening rule takes the teal and needs no keyline. */
+.ct-rule{
+  width:calc(var(--ds-space-lg) * 1.5);
+  height:var(--ds-space-2xs);
+  margin-bottom:var(--ds-space-md);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-signature);
+}
+
+.ct-routes{
+  display:grid;
+  grid-template-columns:minmax(0,0.92fr) minmax(0,1.08fr);
+  margin-top:var(--ds-space-xl);
+  border:1px solid var(--ds-hairline);
+  border-radius:var(--ds-r-surface);
+  background:linear-gradient(176deg,var(--ds-canvas),var(--ds-bg-surface));
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+  overflow:hidden;
+}
+
+.ct-route{
+  padding:var(--ds-space-lg);
+  align-content:center;
+}
+
+.ct-route--book{
+  background:linear-gradient(158deg,var(--ds-primary-soft),var(--ds-canvas));
+}
+
+/* the vertical hairline the catalog entry calls for. */
+.ct-route--call{border-left:1px solid var(--ds-line);}
+
+.ct-route-h{
+  margin:0 0 var(--ds-space-md);
+  font-family:var(--ds-font-display);
+  font-size:clamp(21px,2.2vw,27px);
+  line-height:1.2;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+}
+
+/* the seven-office jump index. Each row is a real 48px target. */
+.ct-jump{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:var(--ds-space-md);
+}
+
+.ct-jump a{
+  display:flex;
+  align-items:center;
+  min-height:calc(var(--ds-space-2xl) / 2);
+  padding:0 var(--ds-space-xs);
+  border-bottom:1px solid var(--ds-line);
+  border-radius:var(--ds-r-control);
+  font-family:var(--ds-font-body);
+  font-size:17px;
+  font-weight:600;
+  color:var(--ds-ink);
+  text-decoration:none;
+  transition:color var(--ds-dur-fast) var(--ds-ease),
+             border-color var(--ds-dur-fast) var(--ds-ease),
+             padding-left var(--ds-dur-fast) var(--ds-ease);
+}
+
+.ct-jump a:hover,
+.ct-jump a:focus-visible{
+  color:var(--ds-primary);
+  border-color:var(--ds-line-control);
+  padding-left:var(--ds-space-sm);
+}
+
+.ct-jump a:focus-visible{
+  outline:0;
+  box-shadow:var(--ds-glow);
+}
+
+/* ---- 2 . OFFICE ROUTING : the dark anchor ------------------------------- */
+
+.rs-sec.ct-offices{
+  isolation:isolate;
+  overflow:hidden;
+}
+
+.ct-offices::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:var(--ds-grain);
+  opacity:var(--ds-opacity-texture);
+  pointer-events:none;
+  z-index:var(--ds-z-base);
+}
+
+.ct-offices-inner{
+  position:relative;
+  z-index:var(--ds-z-raised);
+}
+
+p.ct-offices-note{
+  margin:var(--ds-space-sm) 0 var(--ds-space-xl);
+  max-width:56ch;
+  font-family:var(--ds-font-body);
+  font-size:18px;
+  line-height:1.65;
+  color:var(--ds-ink-soft);
+}
+
+.ct-office-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--ds-space-md);
+}
+
+/* DENSITY FIX (G-DENSITY §1 was 1.71vh / d357.1, over the 1.65vh ceiling).
+   The media track was 2x = 192px and it fed the sprawl two ways.
+   1. An auto-height grid area cannot resolve the figure's height:100%, so a
+      portrait asset falls back to its intrinsic ratio. North Las Vegas is
+      768x1152, so at a 192px track it rendered 288px tall and made row 2 the
+      tallest row on the page, overshooting the 240px copy beside it by 48px.
+      1.75x = 168px brings that figure to 252px. It still sets row 2, but the
+      overshoot is 12px rather than 48px, so row 2 falls from 290px to 254px.
+   2. It left the body 312px of content width. The tel pill (218px) plus its
+      14px gap plus the ghost button (222.6px) need 454.6px, so .rs-acts wraps
+      to two lines in every paired tile: 114px rather than 52px.
+   HONEST LIMIT on 2: 168px only widens the body to 336px, so the wrap SURVIVES
+   and is still 114px. Un-wrapping it would need a body over 454.6px, i.e. a
+   media track under about 51px, which is a sliver, not a photograph. The wrap
+   is therefore absorbed by the padding below rather than eliminated.
+   Section measured after the whole fix: 1.56vh / d392.9, gate exit 0. */
+.ct-office{
+  display:grid;
+  grid-template-columns:calc(var(--ds-space-2xl) * 1.75) minmax(0,1fr);
+  overflow:hidden;
+  scroll-margin-block-start:var(--ds-space-xl);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  background:var(--ds-bg-surface);
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+  transition:transform var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease);
+}
+
+.ct-office:hover,
+.ct-office:focus-within{
+  transform:translateY(calc(var(--ds-space-2xs) * -1));
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+}
+
+/* seven is odd, so the last tile takes the full row and a wider photograph
+   rather than leaving a hole in the grid.
+   DENSITY FIX: 4x = 384px made this tile's own photograph set its height.
+   Blue Diamond is 768x512, so the figure resolved to 256px beside a body whose
+   natural height is 177.8px: 78px of dead space next to the copy. 3x = 288px
+   brings the figure to 192px, so the tile falls from 258px to 194px. The
+   figure still sets this row (192 against 177.8), but the slack is now 14px
+   rather than 78px. The photograph stays WIDER than a paired tile's (288px
+   against 168px), which is what the line above claims and what keeps the last
+   row reading as the full-width close. */
+.ct-office--span{
+  grid-column:1 / -1;
+  grid-template-columns:calc(var(--ds-space-2xl) * 3) minmax(0,1fr);
+}
+
+.ct-office-fig{
+  grid-area:1 / 1;
+  margin:0;
+  align-self:stretch;
+  overflow:hidden;
+  background:var(--ds-primary-soft);
+}
+
+.ct-office-fig img{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:calc(var(--ds-space-2xl) * 1.8);
+  object-fit:cover;
+  object-position:50% 50%;
+  filter:saturate(.94) contrast(1.04);
+  transition:transform var(--ds-dur-slow) var(--ds-ease-out);
+}
+
+.ct-office:hover .ct-office-fig img{transform:scale(1.04);}
+
+/* DENSITY FIX: the tile is a routing atom, not a reading surface, so its
+   vertical padding is the cheapest 20px per tile available. Horizontal padding
+   is unchanged at md, because the address measure is what needs the breathing
+   room. 24px to 14px, on three body-driven rows. */
+.ct-office-body{
+  grid-area:1 / 2;
+  padding:var(--ds-space-sm) var(--ds-space-md);
+}
+
+.ct-office-name{
+  margin:0 0 var(--ds-space-xs);
+  font-family:var(--ds-font-display);
+  font-size:21px;
+  line-height:1.25;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+}
+
+p.ct-office-addr{
+  margin:0 0 var(--ds-space-sm);
+  max-width:34ch;
+  font-family:var(--ds-font-body);
+  font-size:16px;
+  line-height:1.55;
+  color:var(--ds-ink-soft);
+}
+
+/* the phone number is the load-bearing atom on this page, so it is first-class
+   UI: 20px, tabular, a real 48px target, never smaller than the body near it. */
+.ct-tel{
+  display:inline-flex;
+  align-items:center;
+  min-height:calc(var(--ds-space-2xl) / 2);
+  padding:0 var(--ds-space-md);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-pill);
+  background-color:var(--ds-canvas);
+  font-family:var(--ds-font-mono);
+  font-size:20px;
+  font-variant-numeric:tabular-nums;
+  color:var(--ds-ink);
+  text-decoration:none;
+  transition:background-color var(--ds-dur-fast) var(--ds-ease),
+             border-color var(--ds-dur-fast) var(--ds-ease);
+}
+
+.ct-tel:hover,
+.ct-tel:focus-visible{
+  background-color:var(--ds-primary);
+  color:var(--ds-ink-on-dark);
+  border-color:var(--ds-line-control);
+}
+
+.ct-tel:focus-visible{
+  outline:0;
+  box-shadow:var(--ds-glow);
+}
+
+/* ---- 3 . APPOINTMENT REQUEST FORM --------------------------------------- */
+
+.ct-form{
+  margin-top:var(--ds-space-lg);
+  padding:var(--ds-space-xl);
+  border:1px solid var(--ds-hairline);
+  border-radius:var(--ds-r-surface);
+  background:var(--ds-canvas);
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi),
+             inset 0 3px 0 0 var(--ds-signature);
+}
+
+.ct-fieldset{
+  margin:0;
+  padding:0;
+  border:0;
+  min-width:0;
+}
+
+.ct-legend{
+  padding:0;
+  margin-bottom:var(--ds-space-xs);
+  font-family:var(--ds-font-body);
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+
+.ct-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--ds-space-md);
+}
+
+.ct-field--wide{grid-column:1 / -1;}
+
+.ct-label{
+  display:block;
+  margin-bottom:var(--ds-space-2xs);
+  font-family:var(--ds-font-body);
+  font-size:16px;
+  font-weight:600;
+  color:var(--ds-ink);
+}
+
+.ct-input,
+.ct-select,
+.ct-textarea{
+  width:100%;
+  min-height:calc(var(--ds-space-2xl) / 2);
+  padding:var(--ds-space-sm) var(--ds-space-md);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-control);
+  background-color:var(--ds-bg-surface);
+  color:var(--ds-ink);
+  font-family:var(--ds-font-body);
+  font-size:17px;
+  line-height:1.45;
+  box-shadow:var(--ds-shadow-rest);
+  transition:border-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease);
+}
+
+.ct-textarea{resize:vertical;}
+
+.ct-input:hover,
+.ct-select:hover,
+.ct-textarea:hover{border-color:var(--ds-primary);}
+
+.ct-input:focus,
+.ct-select:focus,
+.ct-textarea:focus{
+  outline:0;
+  border-color:var(--ds-primary);
+  box-shadow:var(--ds-glow);
+}
+
+/* the consent control. A real checkbox with the notice as its LABEL. */
+.ct-consent{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:var(--ds-space-sm);
+  align-items:start;
+  margin-top:var(--ds-space-lg);
+  padding:var(--ds-space-md);
+  border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-control);
+  background-color:var(--ds-bg-surface);
+  box-shadow:var(--ds-inset-hi);
+}
+
+.ct-consent-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:calc(var(--ds-space-2xl) / 2);
+  min-height:calc(var(--ds-space-2xl) / 2);
+}
+
+.ct-checkbox{
+  width:var(--ds-space-md);
+  height:var(--ds-space-md);
+  accent-color:var(--ds-primary);
+  cursor:pointer;
+}
+
+.ct-checkbox:focus-visible{
+  outline:0;
+  border-radius:var(--ds-r-control);
+  box-shadow:var(--ds-glow);
+}
+
+label.ct-consent-text{
+  display:block;
+  padding:var(--ds-space-2xs) 0;
+  max-width:78ch;
+  font-family:var(--ds-font-body);
+  font-size:15px;
+  line-height:1.65;
+  color:var(--ds-ink-soft);
+  cursor:pointer;
+}
+
+.ct-consent-text a{
+  color:var(--ds-primary);
+  text-decoration:underline;
+  text-underline-offset:var(--ds-space-2xs);
+}
+
+.ct-submit-row{
+  display:flex;
+  align-items:center;
+  margin-top:var(--ds-space-lg);
+}
+
+/* ---- 4 . RESPONSE TIME : an owner slot, visibly unfinished --------------- */
+
+.ct-slot{
+  padding:var(--ds-space-lg);
+  border:1px dashed var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  background-color:var(--ds-canvas);
+  box-shadow:var(--ds-inset-hi),var(--ds-shadow-rest);
+}
+
+p.ct-slot-line{
+  margin:0 0 var(--ds-space-xs);
+  max-width:62ch;
+  font-family:var(--ds-font-body);
+  font-size:18px;
+  line-height:1.65;
+  color:var(--ds-ink);
+}
+
+p.ct-slot-line:last-child{
+  margin-bottom:0;
+  color:var(--ds-ink-soft);
+}
+
+/* ---- BREAKPOINTS : additive, max-width only ----------------------------- */
+
+@media (max-width:1023px){
+  .ct-routes{grid-template-columns:minmax(0,1fr);}
+  .ct-route--call{
+    border-left:0;
+    border-top:1px solid var(--ds-line);
+  }
+  .ct-office,
+  .ct-office--span{grid-template-columns:calc(var(--ds-space-2xl) * 1.5) minmax(0,1fr);}
+  .ct-office-fig img{min-height:calc(var(--ds-space-2xl) * 1.5);}
+  .ct-form{padding:var(--ds-space-lg);}
+}
+
+@media (max-width:767px){
+  .ct-route{padding:var(--ds-space-md);}
+  .ct-jump{grid-template-columns:minmax(0,1fr);}
+  .ct-office-grid{grid-template-columns:minmax(0,1fr);}
+  /* the heading always precedes its photograph once the card stacks. */
+  .ct-office,
+  .ct-office--span{grid-template-columns:minmax(0,1fr);}
+  .ct-office--span{grid-column:auto;}
+  .ct-office-body{grid-area:1 / 1;}
+  .ct-office-fig{grid-area:2 / 1;}
+  .ct-office-fig img{
+    height:auto;
+    min-height:0;
+    aspect-ratio:16 / 10;
+  }
+  .ct-grid{grid-template-columns:minmax(0,1fr);}
+  .ct-submit-row .rs-btn{width:100%;}
+  .ct-tel{width:100%;justify-content:center;}
+}
+
+@media (max-width:479px){
+  .ct-form{padding:var(--ds-space-md);}
+  .ct-slot{padding:var(--ds-space-md);}
+  .ct-office-body{padding:var(--ds-space-sm);}
+  p.ct-office-addr{max-width:none;}
+  .ct-consent{padding:var(--ds-space-sm);}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .ct-office,
+  .ct-office-fig img,
+  .ct-tel,
+  .ct-jump a,
+  .ct-input,
+  .ct-select,
+  .ct-textarea{transition:none;}
+  .ct-office:hover,
+  .ct-office:focus-within{transform:none;}
+  .ct-office:hover .ct-office-fig img{transform:none;}
+}
+</style>
+
+<!-- pick: HERO-COMPOSITIONS.md #3 Split-screen 50/50 different content blocks | considered: #2,#5,#9 | why: this page has exactly two routes into the practice and the copy sub names both of them, book at any of our seven offices, or call the one nearest you directly. A dual-promise hero is the only shape in the mandated entry band that can hold two asks without ranking one above the other, which matters because routeRules.phone_policy forbids a single general line, so the booking route and the calling route are genuinely equal here. #2 is the mirror portrait split, and it would put one photograph above the fold on a page whose subject is seven offices, so one office would stand in for the set. #5 is a full bleed image with overlay text, which has the same one-office problem and adds a scrim over an H1 that must stay legible for a 40 plus audience. #9 is the cinematic letterbox, tempting because the copy marks this hero XS, but it caps the band near half a viewport with oversized display type and leaves no room for a seven item routing index. Deliberate deviations, declared: the split is 0.92fr to 1.08fr rather than a true even split, and the H1 with its sub sits ABOVE the split rather than inside one half, because the H1 belongs to both routes and the call side needs the extra measure for seven office names. The vertical hairline divider the entry calls for is kept. The call side carries no number of its own, only jump links to the seven offices that each carry theirs, which is what the phone policy requires. -->
+<section class="rs-sec rs-sec--lead ct-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- ⚠FLAG: this page consolidates three overlapping surfaces from the current site. There is one live contact route after this build, not three that disagree. -->
+
+        <div class="ct-rule" aria-hidden="true"></div>
+
+        <h1 class="rs-h1">Contact a Las Vegas Dentist</h1>
+        <p class="rs-lede">Book at any of our seven offices in Las Vegas, North Las Vegas and Henderson, or call the one nearest you directly.</p>
+
+        <div class="ct-routes">
+
+          <div class="ct-route ct-route--book">
+            <h2 class="ct-route-h">Book an appointment</h2>
+            <a class="rs-btn rs-btn--accent" href="#request">Book an appointment</a>
+          </div>
+
+          <div class="ct-route ct-route--call">
+            <h2 class="ct-route-h">Call the office</h2>
+            <ul class="ct-jump">
+              <li><a href="#office-lone-mountain">Lone Mountain</a></li>
+              <li><a href="#office-sunrise-manor">Sunrise Manor</a></li>
+              <li><a href="#office-summerlin">Summerlin</a></li>
+              <li><a href="#office-north-las-vegas">North Las Vegas</a></li>
+              <li><a href="#office-henderson">Henderson</a></li>
+              <li><a href="#office-north-decatur">North Decatur</a></li>
+              <li><a href="#office-blue-diamond">Blue Diamond</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #51 Locations grid | considered: #52,#53,#40 | why: the copy states seven offices, each with its own address, its own phone and its own booking link, and this entry describes exactly that, one tile per location carrying name, address and photograph. #52 is a map embed plus contact block, and the entry itself scopes it to single location businesses, so one pin would have to stand for seven. #53 is an hours table, and the copy states outright that office hour ranges are deliberately not carried here because contactData stores them with en dashes that would trip G-NODASH, so the table would have nothing to fill it. #40 is a pre-footer CTA band, which would compress seven load bearing routing atoms into one generic ask, and the copy says a wrong digit here costs a patient. Deliberate deviations, declared, and they are where this concept diverges structurally: this grid is the page's non-light anchor rather than a light grid, because routing is the spine of this page and the dark ground makes it the beat the eye lands on after the hero; and it sits SECOND, ahead of the form, reversing the copy's own section order, because the form asks for a preferred office and a reader cannot choose one before the seven are shown. Every tile NAMES its office, which is the placement imagery-system.md section 4 rule 4 plainly intends for an office's own photograph, so no tile borrows another office's room and no smile-gallery interior is spent here as unnamed scenery. -->
+<section class="rs-sec surface-dark ct-offices" id="offices">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ct-offices-inner">
+
+          <!-- ⚠FLAG: the current call now page body lists only four of the seven numbers; its shared footer carries all seven. Re verified 2026-08-03. All seven appear above. -->
+          <!-- BUILD NOTE, not from the copy: every booking href is the real per office link. Pattern and office_id_map were both read from routeRules.external_booking in `_handoff/client-rules.json` this session: 100 summerlin, 101 sunrise-manor, 102 lone-mountain, 103 henderson, 104 north-las-vegas, 105 blue-diamond, 106 north-decatur. No id is inferred and no URL is guessed. -->
+          <!-- BUILD NOTE, not from the copy: every address, ZIP and phone below was compared digit by digit against contactData in `_handoff/client-rules.json` this session, and against the locked copy. Nothing is retyped from memory. -->
+
+          <h2 class="rs-h2">All seven offices book online.</h2>
+          <p class="ct-offices-note">Each carries its own phone and its own booking link.</p>
+
+          <div class="ct-office-grid">
+
+            <article class="ct-office" id="office-lone-mountain">
+              <div class="ct-office-body">
+                <h3 class="ct-office-name">Lone Mountain</h3>
+                <p class="ct-office-addr">7469 W. Lake Mead Blvd., Suite 270, Las Vegas, NV 89128</p>
+                <div class="rs-acts">
+                  <a class="ct-tel" href="tel:+17022894424">(702) 289-4424</a>
+                  <a class="rs-btn rs-btn--ghost" href="https://www.appointnow.com/?P=4743&amp;O=102&amp;PT=1" rel="noopener" aria-label="Book an appointment at Lone Mountain">Book an appointment</a>
+                </div>
+              </div>
+              <figure class="ct-office-fig">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-lone-mountain-e1713902629576-768x489.png" width="768" height="489" loading="lazy" decoding="async" alt="A cream two storey office building numbered 7469, with cars parked outside and a palm tree at the right edge.">
+              </figure>
+            </article>
+
+            <!-- ⚠OWNER §G-16: the Sunrise Manor ZIP conflicts on the live site. 89107 is carried here from `client-rules.json` contactData, pending confirmation against 89104 in the booking block. NAP consistency depends on resolving it. -->
+            <article class="ct-office" id="office-sunrise-manor">
+              <div class="ct-office-body">
+                <h3 class="ct-office-name">Sunrise Manor</h3>
+                <p class="ct-office-addr">1825 S. Nellis Blvd., Las Vegas, NV 89107</p>
+                <div class="rs-acts">
+                  <a class="ct-tel" href="tel:+17024523552">(702) 452-3552</a>
+                  <a class="rs-btn rs-btn--ghost" href="https://www.appointnow.com/?P=4743&amp;O=101&amp;PT=1" rel="noopener" aria-label="Book an appointment at Sunrise Manor">Book an appointment</a>
+                </div>
+              </div>
+              <figure class="ct-office-fig">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-768x512.jpg" width="768" height="512" loading="lazy" decoding="async" alt="The Sunrise Manor reception desk in slatted wood, with the Radiant Smiles sun sign on the wall behind it.">
+              </figure>
+            </article>
+
+            <article class="ct-office" id="office-summerlin">
+              <div class="ct-office-body">
+                <h3 class="ct-office-name">Summerlin</h3>
+                <p class="ct-office-addr">8961 W. Sahara Ave., Suite 108, Las Vegas, NV 89117</p>
+                <div class="rs-acts">
+                  <a class="ct-tel" href="tel:+17023604800">(702) 360-4800</a>
+                  <a class="rs-btn rs-btn--ghost" href="https://www.appointnow.com/?P=4743&amp;O=100&amp;PT=1" rel="noopener" aria-label="Book an appointment at Summerlin">Book an appointment</a>
+                </div>
+              </div>
+              <figure class="ct-office-fig">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-summerlin-e1713903157892-768x509.png" width="768" height="509" loading="lazy" decoding="async" alt="The Summerlin storefront under a tile roof, with the Radiant Smiles sign above the entry and suite numbers 106 and 108 on the doors.">
+              </figure>
+            </article>
+
+            <article class="ct-office" id="office-north-las-vegas">
+              <div class="ct-office-body">
+                <h3 class="ct-office-name">North Las Vegas</h3>
+                <p class="ct-office-addr">5195 Camino Al Norte Rd., North Las Vegas, NV 89031</p>
+                <div class="rs-acts">
+                  <a class="ct-tel" href="tel:+17025091967">(702) 509-1967</a>
+                  <a class="rs-btn rs-btn--ghost" href="https://www.appointnow.com/?P=4743&amp;O=104&amp;PT=1" rel="noopener" aria-label="Book an appointment at North Las Vegas">Book an appointment</a>
+                </div>
+              </div>
+              <figure class="ct-office-fig">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-24-2-768x1152.jpg" width="768" height="1152" loading="lazy" decoding="async" alt="A visitor walking toward the North Las Vegas reception desk, where a team member stands behind the slatted wood counter.">
+              </figure>
+            </article>
+
+            <!-- ⚠OWNER, raised by THIS BUILD and not carried from the copy. imagery-system.md section 2 names `1-12-1` as Henderson's entry, and this concept deliberately does NOT use it. Opened and examined by eye this session: a framed poster on the back wall of that photograph carries an unsourced ranking accolade, of exactly the kind client-rules.json OVERCLAIM records as UNSOURCED with the instruction to omit it entirely. A claim the build is required to omit cannot be reintroduced photographically, and no alt text can take it back out of the pixels. Henderson's other own photograph, `1-16`, is used instead. It is a genuine first-party Henderson image and carries no such artifact, but it is a group portrait rather than a room, so this is the one tile in the row that shows people instead of a building or a desk. Three ways out, all yours to choose: reshoot the Henderson interior, supply a crop of `1-12-1` that excludes the poster wall, or accept the portrait. Note also that this contradicts imagery-system.md section 2, which should absorb the finding rather than have each page re-decide it. -->
+            <article class="ct-office" id="office-henderson">
+              <div class="ct-office-body">
+                <h3 class="ct-office-name">Henderson</h3>
+                <p class="ct-office-addr">2633 W. Horizon Ridge Pkwy., Suite 130, Henderson, NV 89052</p>
+                <div class="rs-acts">
+                  <a class="ct-tel" href="tel:+17028977001">(702) 897-7001</a>
+                  <a class="rs-btn rs-btn--ghost" href="https://www.appointnow.com/?P=4743&amp;O=103&amp;PT=1" rel="noopener" aria-label="Book an appointment at Henderson">Book an appointment</a>
+                </div>
+              </div>
+              <figure class="ct-office-fig">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-16-scaled-e1737569083485-768x1029.jpg" width="768" height="1029" loading="lazy" decoding="async" alt="Five people in clinical coats standing together in the waiting area at the Henderson office.">
+              </figure>
+            </article>
+
+            <!-- ⚠OWNER: the shared multi office booking selector on the current `/contact-us/`, `/appointment-request/` and `/new-patient-special/` pages offers only booking ids 100 to 105. North Decatur is id 106 and is ABSENT from that selector. Its own location page does carry a live booking link. This page must carry all seven. -->
+            <article class="ct-office" id="office-north-decatur">
+              <div class="ct-office-body">
+                <h3 class="ct-office-name">North Decatur</h3>
+                <p class="ct-office-addr">6311 N. Decatur Blvd., Suite 140, Las Vegas, NV 89130</p>
+                <div class="rs-acts">
+                  <a class="ct-tel" href="tel:+17025220119">(702) 522-0119</a>
+                  <a class="rs-btn rs-btn--ghost" href="https://www.appointnow.com/?P=4743&amp;O=106&amp;PT=1" rel="noopener" aria-label="Book an appointment at North Decatur">Book an appointment</a>
+                </div>
+              </div>
+              <figure class="ct-office-fig">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Decatur-Photo.png" width="380" height="506" loading="lazy" decoding="async" alt="A treatment room at the North Decatur office, with a dental chair, an overhead light and a wall mounted screen.">
+              </figure>
+            </article>
+
+            <article class="ct-office ct-office--span" id="office-blue-diamond">
+              <div class="ct-office-body">
+                <h3 class="ct-office-name">Blue Diamond</h3>
+                <p class="ct-office-addr">5095 S. Blue Diamond Rd., Suite 105, Las Vegas, NV 89139</p>
+                <div class="rs-acts">
+                  <a class="ct-tel" href="tel:+17023310010">(702) 331-0010</a>
+                  <a class="rs-btn rs-btn--ghost" href="https://www.appointnow.com/?P=4743&amp;O=105&amp;PT=1" rel="noopener" aria-label="Book an appointment at Blue Diamond">Book an appointment</a>
+                </div>
+              </div>
+              <figure class="ct-office-fig">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Blue-Diamond-Front-Desk-768x512.jpg" width="768" height="512" loading="lazy" decoding="async" alt="The Blue Diamond front desk in pale veined marble, with the Radiant Smiles sun sign on the wall behind it.">
+              </figure>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: FORM-LAYOUTS.md #3 2-up field rows (denser desktop layout) | considered: #2,#8,#5 | why: this is the entry in the library that puts field labels ABOVE the inputs rather than inside them as placeholder text, which is what verify-form-live needs and what a 40 plus audience needs once a field is filled and an in-field placeholder would otherwise vanish. #2 pairs the fields with a location block on the right, and the seven offices already own a full dark section on this page, so that column would restate them at half the fidelity and split the routing atoms across two places, which is the exact failure the copy's governing rule warns about. #8 is a date and guests booking widget with pickers, which would display slots the practice has published no availability for, and no scheduler is wired up here. #5 is a multi step wizard, which hides the office choice behind a step and adds state to a form of only five fields. The 2-up rows let the copy's contact details field open into email and phone inside one legend, so five copy fields read as four short rows on desktop and one column below 767. Deliberate deviations, declared: the entry puts a solid pill at the bottom left, and this submit goes full width below 767 so the tap target clears 48px; and the consent control sits between the reason for visit field and the submit button exactly as the copy specifies, which the entry does not itself describe. -->
+<section class="rs-sec ct-request" id="request">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- ⚠BUILD: render this as a real checkbox input with the text above as its label. Do not render the text as a standalone paragraph, and do not mark the field required. Rendering it as a line at the submit button would deem every submitter to have consented. That turns an optional opt-in into consent by submission. -->
+        <!-- ⚠OWNER: the notice above is copied character for character from `site-snapshot/contact-us.html`, captured 30 July 2026. In that capture it is the label of a Contact Form 7 acceptance field, `acceptance-710`. The field carries the class `wpcf7-acceptance optional`, and the input has no checked attribute. That is why it is carried here as an optional, unticked opt-in. It is a legal notice, so this build does not rewrite, shorten or reword its words. The phrase "sent by autodialed" reads as truncated in the live source and is carried as found. Confirm with your SMS provider that this is still the notice they require, and whether that phrase needs correcting. Confirm also that the opt-in stays optional. -->
+        <!-- BUILD NOTE, not from the copy: the copy lists one field called contact details. It is rendered as two inputs inside a fieldset whose legend carries that exact term, because a single combined field cannot be typed, validated or autocompleted. The words Email and Phone are field labels, not page copy. -->
+        <!-- BUILD NOTE, not from the copy: the Privacy Policy and Terms link resolves to privacy-policy.html, the flat filename the locked chrome carrier uses for that page in `_design/_chrome-block.html` and the slug `_handoff/sitemap.yaml` records for it. It is not guessed. -->
+
+        <h2 class="rs-h2">Tell us which office suits you and roughly when.</h2>
+        <p class="rs-copy">We will confirm the appointment rather than assume it.</p>
+
+        <form class="ct-form" id="request-form" method="post">
+
+          <div class="ct-grid">
+
+            <div class="ct-field ct-field--wide">
+              <label class="ct-label" for="ct-name">Name</label>
+              <input class="ct-input" id="ct-name" name="name" type="text" autocomplete="name" required>
+            </div>
+
+            <fieldset class="ct-fieldset ct-field--wide">
+              <legend class="ct-legend">Contact details</legend>
+              <div class="ct-grid">
+                <div class="ct-field">
+                  <label class="ct-label" for="ct-email">Email</label>
+                  <input class="ct-input" id="ct-email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="ct-field">
+                  <label class="ct-label" for="ct-phone">Phone</label>
+                  <input class="ct-input" id="ct-phone" name="phone" type="tel" autocomplete="tel">
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="ct-field">
+              <label class="ct-label" for="ct-office">Preferred office</label>
+              <select class="ct-select" id="ct-office" name="preferred-office" required>
+                <option value="">Preferred office</option>
+                <option value="lone-mountain">Lone Mountain</option>
+                <option value="sunrise-manor">Sunrise Manor</option>
+                <option value="summerlin">Summerlin</option>
+                <option value="north-las-vegas">North Las Vegas</option>
+                <option value="henderson">Henderson</option>
+                <option value="north-decatur">North Decatur</option>
+                <option value="blue-diamond">Blue Diamond</option>
+              </select>
+            </div>
+
+            <div class="ct-field">
+              <label class="ct-label" for="ct-when">Preferred days and times</label>
+              <input class="ct-input" id="ct-when" name="preferred-days-and-times" type="text">
+            </div>
+
+            <div class="ct-field ct-field--wide">
+              <label class="ct-label" for="ct-reason">Reason for visit</label>
+              <textarea class="ct-textarea" id="ct-reason" name="reason-for-visit" rows="4"></textarea>
+            </div>
+
+          </div>
+
+          <div class="ct-consent">
+            <span class="ct-consent-box">
+              <input class="ct-checkbox" id="ct-sms" name="acceptance-710" type="checkbox" value="1">
+            </span>
+            <label class="ct-consent-text" for="ct-sms">By submitting this form and signing up for texts, you consent to receive appointment reminder text messages from Radiant Smiles at the number provided, including messages sent by autodialed. Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. <a href="privacy-policy.html">Privacy Policy &amp; Terms</a>.</label>
+          </div>
+
+          <div class="ct-submit-row">
+            <button class="rs-btn rs-btn--accent" type="submit">Book an appointment</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #41 Closing CTA (final action) | considered: #40,#38,#33 | why: this entry says every conversion focused page should end with one primary action, and this is the slot on a terminal page that would hold it. It is cited here for the DELIBERATE DEVIATION, declared plainly: no closing ask ships. The copy's fourth section is an owner placeholder for a response time expectation and states that no service level is published anywhere on the current site. Filling this slot with a response window would be a promise a real patient holds the practice to, and the copy's own flag bars it in terms. #40 is a pre-footer CTA band and #38 is a newsletter band, and each needs a line of persuasive copy that does not exist in the locked copy, so either would force me to write marketing to fill it. #33 is a custom quote driver, and treatment is quote only per pricing.treatment_prices_published false, so a quote invitation here would open a price conversation this page is not permitted to have. What ships instead is a token built slot, dashed and stepped up onto the canvas over the band ground, visibly unfinished to a reviewer, carrying only the copy's own two sentences and no authored word of mine. The conversion ask is not weakened by this, because it already sits twice above, in the hero panel and on the form. -->
+<section class="rs-sec rs-sec--band rs-sec--close ct-response" id="response-time">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- ⚠OWNER PLACEHOLDER: response time expectation. -->
+        <!-- ⚠FLAG: do not fill this with a generic same day or within 24 hours promise. An invented response commitment is a promise a real patient will hold the practice to. -->
+
+        <div class="ct-slot">
+          <p class="ct-slot-line">No service level is published anywhere on the current site.</p>
+          <p class="ct-slot-line">Rather than promise a response window the practice has not committed to, this line ships as a flagged placeholder.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

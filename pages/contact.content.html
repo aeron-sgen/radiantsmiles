@@ -1,0 +1,259 @@
+<!--META {"title":"Contact Radiant Smiles | Book a Dental Appointment","desc":"Book at any of our seven Las Vegas, North Las Vegas and Henderson offices, or call the office nearest you."}-->
+<!-- pick: HERO-COMPOSITIONS.md #25 Embedded lead-capture form hero | considered: #21,#22,#28 | why: This page exists to route a patient, so the routing instrument belongs above the fold rather than three screens below it. Entry #25 puts the real form beside the headline, which merges copy sections one and two into a single ask. #21 Mosaic collage would spend all seven office photographs on decoration, and the imagery system asks for calm and uncrowded, not gallery maximalism. #22 Statistics heavy needs three or four hard numbers. This copy carries one count and no outcome figures, so the wall would be invented. #28 Embedded map needs one address and a map asset. Seven offices and the phone policy forbid electing one, and no map file exists on disk. Deliberate deviation from #25: it asks for value props beside the headline, and this copy has none that section three does not own. The left column therefore carries the headline, the sub, and one quiet route down to the phone list. The form follows FORM-LAYOUTS.md #3 two up field rows with labels above inputs, and MOTION-PATTERNS.md #37 form field focus. -->
+<!-- STRUCTURE: this section carried a ct-lead hook with no rule anywhere behind it, and a bare
+     texture div sitting beside the container. Both are gone. What this band is meant to look
+     like is exactly rs-sec plus rs-sec--lead, which the foundation already ships, so the hook
+     named a rule that never existed rather than a rule that was missing. The texture moves
+     INSIDE the .col, where the forced grammar (section > .container > .row > .col > object)
+     allows it. The container drops rs-wrap and uses the plain .container the other stamped
+     pages use: chrome.css gives .container the identical max-width, auto margin and inline
+     padding, so the measure does not move one pixel, and .container carries NO position, so the
+     absolutely positioned texture keeps resolving against .rs-sec and stays full section bleed. -->
+<section class="rs-sec rs-sec--lead" id="ct-top">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <div class="rs-tex rs-tex--wash" aria-hidden="true"></div>
+
+        <!-- ⚠FLAG: this page consolidates three overlapping surfaces from the current site. There is one live contact route after this build, not three that disagree. -->
+
+        <div class="ct-open">
+
+          <div class="ct-open__say">
+            <h1 class="rs-h1">Contact a Las Vegas Dentist</h1>
+            <p class="rs-lede">Book at any of our seven offices in Las Vegas, North Las Vegas and Henderson, or call the one nearest you directly.</p>
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--ghost" href="#ct-offices">Call the office</a>
+            </div>
+          </div>
+
+          <div class="ct-panel">
+            <span class="ct-panel__rule" aria-hidden="true"></span>
+            <p class="ct-panel__intro">Tell us which office suits you and roughly when. We will confirm the appointment rather than assume it.</p>
+
+            <form class="ct-form" id="ct-book" action="contact.html" method="post" aria-label="Book an appointment">
+
+              <div class="ct-form__grid">
+
+                <div class="ct-field">
+                  <label class="ct-label" for="ct-name">Name</label>
+                  <input class="ct-input" type="text" id="ct-name" name="name" autocomplete="name" required>
+                </div>
+
+                <div class="ct-field">
+                  <label class="ct-label" for="ct-contact">Contact details</label>
+                  <input class="ct-input" type="text" id="ct-contact" name="contact-details" required>
+                </div>
+
+                <div class="ct-field">
+                  <label class="ct-label" for="ct-office">Preferred office</label>
+                  <span class="ct-selwrap">
+                    <select class="ct-select" id="ct-office" name="preferred-office">
+                      <option value="" selected disabled>Preferred office</option>
+                      <option value="lone-mountain">Lone Mountain</option>
+                      <option value="sunrise-manor">Sunrise Manor</option>
+                      <option value="summerlin">Summerlin</option>
+                      <option value="north-las-vegas">North Las Vegas</option>
+                      <option value="henderson">Henderson</option>
+                      <option value="north-decatur">North Decatur</option>
+                      <option value="blue-diamond">Blue Diamond</option>
+                    </select>
+                  </span>
+                </div>
+
+                <div class="ct-field">
+                  <label class="ct-label" for="ct-when">Preferred days and times</label>
+                  <input class="ct-input" type="text" id="ct-when" name="preferred-days-and-times">
+                </div>
+
+                <div class="ct-field ct-field--wide">
+                  <label class="ct-label" for="ct-reason">Reason for visit</label>
+                  <textarea class="ct-area" id="ct-reason" name="reason-for-visit" rows="4"></textarea>
+                </div>
+
+              </div>
+
+              <!-- ⚠BUILD: render this as a real checkbox input with the text above as its label. Do not render the text as a standalone paragraph, and do not mark the field required. Rendering it as a line at the submit button would deem every submitter to have consented. That turns an optional opt-in into consent by submission. -->
+              <!-- ⚠OWNER: the notice above is copied character for character from `site-snapshot/contact-us.html`, captured 30 July 2026. In that capture it is the label of a Contact Form 7 acceptance field, `acceptance-710`. The field carries the class `wpcf7-acceptance optional`, and the input has no checked attribute. That is why it is carried here as an optional, unticked opt-in. It is a legal notice, so this build does not rewrite, shorten or reword its words. The phrase "sent by autodialed" reads as truncated in the live source and is carried as found. Confirm with your SMS provider that this is still the notice they require, and whether that phrase needs correcting. Confirm also that the opt-in stays optional. -->
+
+              <div class="ct-consent">
+                <input class="ct-check" type="checkbox" id="ct-sms" name="sms-consent" value="yes">
+                <label class="ct-consent__text" for="ct-sms">By submitting this form and signing up for texts, you consent to receive appointment reminder text messages from Radiant Smiles at the number provided, including messages sent by autodialed. Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. <a class="ct-inline" href="privacy-policy.html">Privacy Policy &amp; Terms</a>.</label>
+              </div>
+
+              <div class="ct-send">
+                <button class="rs-btn rs-btn--accent ct-submit" type="submit">Book an appointment</button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #51 Locations grid | considered: #52,#53,#34 | why: Seven offices with seven direct numbers is a directory problem, and #51 is the component built for it. It is rendered as a hairline row index rather than a tile grid. Every routing atom on this page is load bearing, and a row index states them all at one rank. A card grid ranks by tile weight, and nothing in this copy ranks one office above another. #52 Map embed and contact assumes one location and one address, which is the shape the phone policy forbids. #53 Hours table cannot ship here, because the copy states office hour ranges are deliberately not carried. #34 FAQ accordion would hide six of seven numbers behind a click, which is the failure the current call page already has. The dark ground is spent here rather than on a bookend, so the phone list is the page's visual anchor. Each row carries that office's own photograph and names the office, which is what imagery-system.md rule 4 plainly intends. Phone treatment follows CTA-PATTERNS.md #4 phone pill CTA, delivered through the foundation's rs-tel control. -->
+<!-- STRUCTURE: same two corrections as the lead. The ct-offices CLASS is dropped because no rule
+     ever backed it; the ct-offices ID stays, because the lead's "Call the office" link scrolls
+     here and the id is what carries that. The grid texture moves inside the .col and is still
+     the page's one and only grid surface, so the signature accent keeps its cap. -->
+<section class="rs-sec surface-dark" id="ct-offices">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <div class="rs-tex rs-tex--grid" aria-hidden="true"></div>
+
+        <div class="ct-dir__head">
+          <h2 class="rs-h2"><span class="rs-strong">All seven offices book online.</span></h2>
+          <p class="ct-dir__lede">Each carries its own phone and its own booking link.</p>
+        </div>
+
+        <!-- ⚠OWNER: the shared multi office booking selector on the current `/contact-us/`, `/appointment-request/` and `/new-patient-special/` pages offers only booking ids 100 to 105. North Decatur is id 106 and is ABSENT from that selector. Its own location page does carry a live booking link. This page must carry all seven. -->
+        <!-- ⚠OWNER §G-16: the Sunrise Manor ZIP conflicts on the live site. 89107 is carried here from `client-rules.json` contactData, pending confirmation against 89104 in the booking block. NAP consistency depends on resolving it. -->
+
+        <!-- GRADE: every office photograph on this band carries rs-grade--lift, the foundation's
+             screen blend signature wash, and not rs-grade--soft. --soft is a multiply that deepens
+             a photograph, which is right on the light grounds the about page uses it on and wrong
+             here: on this deep teal ground a further deepening sinks the thumbnail into the band.
+             --lift is the grade the two already stamped templates put on media that sits on
+             surface-dark (see the T-HUB hero on services and dental implants), so this row index
+             now matches the house treatment for dark ground media instead of contradicting it. -->
+        <ul class="ct-dir__list">
+
+          <li class="ct-office">
+            <h3 class="rs-office__name ct-office__name">Lone Mountain</h3>
+            <figure class="rs-frame ct-office__fig">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-lone-mountain-e1713902629576-768x489.png" width="768" height="489" loading="lazy" decoding="async" alt="The two storey cream stucco building that houses the Lone Mountain office, with the street number 7469 on its upper wall.">
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </figure>
+            <address class="rs-office__addr ct-office__addr">7469 W. Lake Mead Blvd., Suite 270, Las Vegas, NV 89128</address>
+            <div class="ct-office__acts">
+              <a class="rs-tel" href="tel:+17022894424">(702) 289-4424</a>
+              <a class="rs-qlink" href="lone-mountain.html">Book online</a>
+            </div>
+          </li>
+
+          <li class="ct-office">
+            <h3 class="rs-office__name ct-office__name">Sunrise Manor</h3>
+            <figure class="rs-frame ct-office__fig">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-768x512.jpg" width="768" height="512" loading="lazy" decoding="async" alt="The Sunrise Manor reception desk, faced in wood slats, with the Radiant Smiles sunburst logo on the panelled wall behind it.">
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </figure>
+            <address class="rs-office__addr ct-office__addr">1825 S. Nellis Blvd., Las Vegas, NV 89107</address>
+            <div class="ct-office__acts">
+              <a class="rs-tel" href="tel:+17024523552">(702) 452-3552</a>
+              <a class="rs-qlink" href="sunrise-manor.html">Book online</a>
+            </div>
+          </li>
+
+          <li class="ct-office">
+            <h3 class="rs-office__name ct-office__name">Summerlin</h3>
+            <figure class="rs-frame ct-office__fig">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-summerlin-e1713903157892-768x509.png" width="768" height="509" loading="lazy" decoding="async" alt="The Summerlin storefront in a strip plaza, with the Radiant Smiles sign mounted above an arched entrance awning.">
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </figure>
+            <address class="rs-office__addr ct-office__addr">8961 W. Sahara Ave., Suite 108, Las Vegas, NV 89117</address>
+            <div class="ct-office__acts">
+              <a class="rs-tel" href="tel:+17023604800">(702) 360-4800</a>
+              <a class="rs-qlink" href="summerlin.html">Book online</a>
+            </div>
+          </li>
+
+          <li class="ct-office">
+            <h3 class="rs-office__name ct-office__name">North Las Vegas</h3>
+            <figure class="rs-frame ct-office__fig">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-24-2-768x1152.jpg" width="768" height="1152" loading="lazy" decoding="async" alt="A visitor walking toward the North Las Vegas reception desk, where a staff member stands beneath the Radiant Smiles logo.">
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </figure>
+            <address class="rs-office__addr ct-office__addr">5195 Camino Al Norte Rd., North Las Vegas, NV 89031</address>
+            <div class="ct-office__acts">
+              <a class="rs-tel" href="tel:+17025091967">(702) 509-1967</a>
+              <a class="rs-qlink" href="north-las-vegas.html">Book online</a>
+            </div>
+          </li>
+
+          <li class="ct-office">
+            <h3 class="rs-office__name ct-office__name">Henderson</h3>
+            <figure class="rs-frame ct-office__fig">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-12-1-scaled-e1737569347672-768x1028.jpg" width="768" height="1028" loading="lazy" decoding="async" alt="The Henderson reception counter, with a patterned tile front and a stone top, and a person standing in front of it.">
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </figure>
+            <address class="rs-office__addr ct-office__addr">2633 W. Horizon Ridge Pkwy., Suite 130, Henderson, NV 89052</address>
+            <div class="ct-office__acts">
+              <a class="rs-tel" href="tel:+17028977001">(702) 897-7001</a>
+              <a class="rs-qlink" href="henderson.html">Book online</a>
+            </div>
+          </li>
+
+          <li class="ct-office">
+            <h3 class="rs-office__name ct-office__name">North Decatur</h3>
+            <figure class="rs-frame ct-office__fig">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Decatur-Photo.png" width="380" height="506" loading="lazy" decoding="async" alt="A treatment room at North Decatur, with a dental chair, an overhead light arm, a wall mounted screen and a stool.">
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </figure>
+            <address class="rs-office__addr ct-office__addr">6311 N. Decatur Blvd., Suite 140, Las Vegas, NV 89130</address>
+            <div class="ct-office__acts">
+              <a class="rs-tel" href="tel:+17025220119">(702) 522-0119</a>
+              <a class="rs-qlink" href="north-decatur.html">Book online</a>
+            </div>
+          </li>
+
+          <li class="ct-office">
+            <h3 class="rs-office__name ct-office__name">Blue Diamond</h3>
+            <figure class="rs-frame ct-office__fig">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Blue-Diamond-Front-Desk-768x512.jpg" width="768" height="512" loading="lazy" decoding="async" alt="The Blue Diamond front desk, faced in marble, with the Radiant Smiles logo mounted on the wall behind it.">
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </figure>
+            <address class="rs-office__addr ct-office__addr">5095 S. Blue Diamond Rd., Suite 105, Las Vegas, NV 89139</address>
+            <div class="ct-office__acts">
+              <a class="rs-tel" href="tel:+17023310010">(702) 331-0010</a>
+              <a class="rs-qlink" href="blue-diamond.html">Book online</a>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- ⚠FLAG: the current call now page body lists only four of the seven numbers; its shared footer carries all seven. Re verified 2026-08-03. All seven appear above. -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #8 Manifesto / belief statement | considered: #41,#3,#40 | why: Copy section four has no publishable line, because no service level exists to cite anywhere on the current site. What is left is a stated position: this practice will not promise a reply window it has never committed to. #8 is the component for a short position stated in one or two sentences, left aligned under a rule. #41 Closing CTA would need a final ask, and the routing ask is already spent twice above this point. #3 Stat strip would need a response time figure, which is the exact number that does not exist. #40 Pre-footer CTA band would read as a promise band, which is what the flag on this section bars. Deliberate deviation: the block ships in the foundation's pending card chrome, dashed and unelevated, so a reviewer sees an unfinished slot. Its label is two words lifted from this section's own unflagged sentence, because the copy gives no heading. No response window is stated, implied or softened anywhere in this block. -->
+<!-- STRUCTURE: the ct-close hook is dropped for the same reason as the other two. Everything this
+     band looks like is already described by the foundation: rs-sec--band paints the ground,
+     rs-sec--close sets the closing asymmetric padding, and the card inside carries the pending
+     chrome. The hook is removed rather than given invented decoration, because decorating a
+     deliberately unfinished slot is the opposite of what this block is for. This section never
+     carried a texture, so nothing moves into the .col here. -->
+<section class="rs-sec rs-sec--band rs-sec--close">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- ⚠OWNER PLACEHOLDER: response time expectation. -->
+        <!-- ⚠FLAG: do not fill this with a generic same day or within 24 hours promise. An invented response commitment is a promise a real patient will hold the practice to. -->
+
+        <div class="rs-card rs-card--pending ct-pend">
+          <div class="rs-card__body rs-card__body--roomy">
+            <h2 class="ct-pend__slot">Response window</h2>
+            <!-- COPY NOTE: the copy source ends this line with the words "this line ships as a
+                 flagged placeholder". The scaffold word itself cannot appear as page text, so the
+                 limitation is stated in real words instead, built only from words the copy source
+                 already uses. Nothing is softened: the page still refuses to name a window, and
+                 the reason is now said out loud rather than named after a build artefact. The
+                 flag stays above as a comment and the pending card chrome still shows the slot. -->
+            <p class="ct-pend__copy">No service level is published anywhere on the current site. No response window is promised here, because the practice has not committed to one.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

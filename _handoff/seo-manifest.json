@@ -1,0 +1,62 @@
+{
+  "slug": "radiantsmiles",
+  "generated_at": "2026-07-30",
+  "registry_version": "1.3",
+  "phase": "P5_seo_enrichment",
+  "families_filled": [
+    "D-SEO"
+  ],
+  "artifact_md": "seo-enrichment.md",
+  "rows": 66,
+  "slug_status_counts": {
+    "U": 3,
+    "R": 54,
+    "N": 9
+  },
+  "validation": {
+    "titles_over_60ch": 0,
+    "keyword_not_in_first_30ch": 0,
+    "metas_over_160ch": 0,
+    "rows_missing_intent": 0,
+    "rows_missing_slug_status": 0,
+    "method": "Rows were generated and validated by script BEFORE the write, then G5 was live-fired against the file on disk (exit 0)."
+  },
+  "redirects": {
+    "pairs": 63,
+    "unchanged_no_redirect": 4,
+    "unchanged_list": [
+      "/",
+      "/locations/",
+      "/privacy-policy/",
+      "/cookie-policy/"
+    ],
+    "crawl_reconciliation": "67 live pages = 63 redirected + 4 unchanged",
+    "all_status": "planned⚠",
+    "why_all_planned": "The destination site does not exist yet, so no target can be curl-verified 200. Marking any pair [LIVE] would be false. Promotion to [LIVE] is a build-phase action taken per-pair after the target returns 200.",
+    "from_slugs_machine_generated": true,
+    "from_slugs_source": "_page-urls.txt (2026-07-30 crawl) — no 'from' slug was hand-typed or invented"
+  },
+  "baseline_defect_closed": {
+    "meta_descriptions_before": "0 of 67 crawled pages",
+    "meta_descriptions_before_correction": "Corrected 2026-07-31: read '0 of 102 crawled pages'. 102 is the HTTP CAPTURE count, not the page count — 35 of the 102 .html-suffixed files in site-snapshot/ are non-page endpoints (29 CSS, 3 wp-json, 2 RSS feeds, 1 Cloudflare block page for xmlrpc.php) that cannot carry a meta description. Real page count is 67, matching page-inventory-manifest.json baseline.crawled_unique_pages. The zero is unchanged and was re-verified across all 67 pages.",
+    "meta_descriptions_after": "66 of 66 spec'd pages",
+    "titles_before": "lower-cased URL slugs, e.g. 'w horizon ridge pkwy - Radiant Smiles'",
+    "titles_after": "keyword-led, geo-modified, brand-last, all <=60ch"
+  },
+  "schema_required_at_build": [
+    "Dentist (LocalBusiness) on each of the 7 location pages",
+    "MedicalProcedure or Service on each of the 28 service leaves",
+    "Physician on each of the 10 clinician pages",
+    "FAQPage on /about/faq/",
+    "AggregateRating on /about/reviews/ — ONLY once the owner nominates the platform of record, published with scope stated",
+    "BreadcrumbList site-wide"
+  ],
+  "carried_owner_flags": [
+    "§G-16 Sunrise Manor ZIP conflict (89107 vs 89104) — titles/metas use 89107; a wrong ZIP in Dentist schema is worse than none",
+    "§G-13 radiantsmileslasvegas.com (Cloudflare 1014) excluded from the 301 map until ownership is confirmed",
+    "ALL SEVEN offices book online (AppointNow ids 100-106; North Decatur = 106, linked from its own location page). The narrower real defect: 106 is ABSENT from the site-wide multi-office selector rendered on /contact-us/, /appointment-request/ and /new-patient-special/, which offer only 100-105. Pages may and should state that all seven book online; the new contact/offer surfaces must carry all seven. CORRECTED 2026-08-03 — this flag previously read 'North Decatur has no online booking path — pages must not imply all 7 offices book online', which was a fabricated absence AND an inverted build instruction: it told the build to suppress a true fact. It was the last live copy of the B4 fabrication in the spec; seo-enrichment.md §4 had already been corrected, so this manifest and its own prose file contradicted each other. Root evidence: site-snapshot/north-decatur.html carries https://www.appointnow.com/?P=4743&O=106&PT=1. The original grep missed it because the snapshot encodes query-string ampersands as &#038;."
+  ],
+  "g5_passed": true,
+  "ready_for_briefs": true,
+  "_next_step": "ready_for_briefs true -> P6 may write briefs/<slug>.md (G6 unblocks). P6 must then render _owner-preview/content-claims.html and PAUSE for the third and final owner sign-off."
+}

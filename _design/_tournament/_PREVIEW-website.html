@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tournament preview: 5 concepts</title>
+<style>
+  /* This comparison shell is DELIBERATELY neutral: greyscale chrome, system font, no accent.
+     It must not lend any concept a look it did not earn, and it must not be mistaken for
+     one of the concepts. */
+  :root{ --w:1440px; --h:2400px; --scale:.34; --gap:22px; }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:#1a1c1e;color:#e8eaed;font:14px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{position:sticky;top:0;z-index:10;background:#101214;border-bottom:1px solid #2c2f33;padding:14px 20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  h1{font-size:15px;font-weight:600;margin:0;letter-spacing:.02em}
+  .ctrls{display:flex;gap:14px;align-items:center;margin-left:auto;flex-wrap:wrap}
+  label{display:flex;gap:7px;align-items:center;font-size:13px;color:#aab0b6}
+  input[type=range]{width:130px}
+  button{background:#26292d;color:#e8eaed;border:1px solid #3a3e43;border-radius:7px;padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}
+  button:hover{background:#2f3338}
+  button[aria-pressed="true"]{background:#3a4046;border-color:#555b62}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:var(--gap);padding:var(--gap);align-items:start}
+  .cpt{margin:0;background:#0d0f11;border:1px solid #2c2f33;border-radius:10px;overflow:hidden}
+  figcaption{display:flex;gap:10px;align-items:baseline;padding:10px 12px;border-bottom:1px solid #2c2f33;background:#141719}
+  .tag{font-weight:700;font-size:12px;letter-spacing:.09em;background:#2c3136;padding:3px 7px;border-radius:5px}
+  .ttl{font-size:13px;color:#e8eaed}
+  .meta{font-size:12px;color:#7d848b}
+  .open{margin-left:auto;font-size:12px;color:#9fc7ff;text-decoration:none}
+  .open:hover{text-decoration:underline}
+  /* the stage is sized to the SCALED render so the cards tile without dead space */
+  .stage{position:relative;width:100%;overflow:hidden;background:#fff}
+  .stage::before{content:"";display:block;padding-top:calc(var(--h) / var(--w) * 100%)}
+  iframe{position:absolute;top:0;left:0;width:var(--w);height:var(--h);border:0;
+         transform-origin:0 0;background:#fff}
+  body.fit .stage::before{padding-top:calc(var(--h) / var(--w) * 100%)}
+  .note{padding:0 20px 22px;color:#8b9198;font-size:13px;max-width:78ch;line-height:1.65}
+  .note code{background:#26292d;padding:1px 5px;border-radius:4px;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Tournament preview &middot; 5 concepts &middot; assembled.html</h1>
+  <div class="ctrls">
+    <label>width
+      <select id="vw">
+        <option value="1440">1440 desktop</option>
+        <option value="1100">1100 laptop</option>
+        <option value="900">900 tablet</option>
+        <option value="768">768 tablet</option>
+        <option value="390">390 mobile</option>
+        <option value="375">375 mobile</option>
+      </select>
+    </label>
+    <label>height <input id="vh" type="range" min="1200" max="6000" step="200" value="2400"><span id="vhv">2400</span></label>
+    <button id="reload" type="button">reload all</button>
+  </div>
+</header>
+
+<div class="grid" id="grid">
+
+    <figure class="cpt" id="cpt-a">
+      <figcaption>
+        <span class="tag">A</span>
+        <span class="ttl">the calm clinical</span>
+        <span class="meta">82 KB</span>
+        <a class="open" href="_assembled/concept-a/assembled.html" target="_blank" rel="noopener">open full size</a>
+      </figcaption>
+      <div class="stage">
+        <iframe src="_assembled/concept-a/assembled.html" title="the calm clinical" loading="eager"></iframe>
+      </div>
+    </figure>
+
+    <figure class="cpt" id="cpt-b">
+      <figcaption>
+        <span class="tag">B</span>
+        <span class="ttl">the editorial practice</span>
+        <span class="meta">88 KB</span>
+        <a class="open" href="_assembled/concept-b/assembled.html" target="_blank" rel="noopener">open full size</a>
+      </figcaption>
+      <div class="stage">
+        <iframe src="_assembled/concept-b/assembled.html" title="the editorial practice" loading="eager"></iframe>
+      </div>
+    </figure>
+
+    <figure class="cpt" id="cpt-c">
+      <figcaption>
+        <span class="tag">C</span>
+        <span class="ttl">the warm card system</span>
+        <span class="meta">94 KB</span>
+        <a class="open" href="_assembled/concept-c/assembled.html" target="_blank" rel="noopener">open full size</a>
+      </figcaption>
+      <div class="stage">
+        <iframe src="_assembled/concept-c/assembled.html" title="the warm card system" loading="eager"></iframe>
+      </div>
+    </figure>
+
+    <figure class="cpt" id="cpt-d">
+      <figcaption>
+        <span class="tag">D</span>
+        <span class="ttl">the guided visit</span>
+        <span class="meta">89 KB</span>
+        <a class="open" href="_assembled/concept-d/assembled.html" target="_blank" rel="noopener">open full size</a>
+      </figcaption>
+      <div class="stage">
+        <iframe src="_assembled/concept-d/assembled.html" title="the guided visit" loading="eager"></iframe>
+      </div>
+    </figure>
+
+    <figure class="cpt" id="cpt-e">
+      <figcaption>
+        <span class="tag">E</span>
+        <span class="ttl">MERGED DRAFT</span>
+        <span class="meta">88 KB</span>
+        <a class="open" href="_assembled/concept-e/assembled.html" target="_blank" rel="noopener">open full size</a>
+      </figcaption>
+      <div class="stage">
+        <iframe src="_assembled/concept-e/assembled.html" title="MERGED DRAFT" loading="eager"></iframe>
+      </div>
+    </figure>
+</div>
+
+<p class="note">
+  Each panel is a LIVE render of the concept file in an iframe at the chosen viewport width,
+  scaled to fit. Scroll inside a panel to move through that concept. Because these are live
+  renders and not screenshots, a concept whose reveal animation never fires shows up here as a
+  blank or half-blank panel, which is the actual defect rather than a screenshot artifact.
+  Use <code>open full size</code> to judge one concept on its own before picking.
+</p>
+
+<script>
+  var grid = document.getElementById('grid');
+  var vw = document.getElementById('vw');
+  var vh = document.getElementById('vh');
+  var vhv = document.getElementById('vhv');
+
+  function layout() {
+    var w = parseInt(vw.value, 10);
+    var h = parseInt(vh.value, 10);
+    document.documentElement.style.setProperty('--w', w + 'px');
+    document.documentElement.style.setProperty('--h', h + 'px');
+    // scale each iframe so its chosen viewport width fits its card
+    document.querySelectorAll('.cpt').forEach(function (c) {
+      var stage = c.querySelector('.stage');
+      var frame = c.querySelector('iframe');
+      var s = stage.clientWidth / w;
+      frame.style.transform = 'scale(' + s + ')';
+      stage.style.height = (h * s) + 'px';
+      stage.querySelector; // no-op
+    });
+  }
+  // the ::before spacer is replaced by an explicit height once scaled
+  var css = document.createElement('style');
+  css.textContent = '.stage::before{display:none}';
+  document.head.appendChild(css);
+
+  vw.addEventListener('change', layout);
+  vh.addEventListener('input', function () { vhv.textContent = vh.value; layout(); });
+  window.addEventListener('resize', layout);
+  window.addEventListener('load', layout);
+  document.getElementById('reload').addEventListener('click', function () {
+    document.querySelectorAll('iframe').forEach(function (f) { f.src = f.src; });
+    setTimeout(layout, 300);
+  });
+  layout();
+</script>
+</body>
+</html>

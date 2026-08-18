@@ -1,0 +1,129 @@
+site: radiantsmiles
+brand: "Radiant Smiles Dental Care"
+design_system: design-system/
+
+nav:
+  - { label: "Services", page: services }
+  - { label: "Locations", page: locations }
+  - { label: "Our Team", page: team }
+  - { label: "New Patients", page: new-patients }
+  - { label: "About", page: about }
+
+footer:
+  - title: "Services"
+    links:
+      - { label: "General Dentistry", page: general-dentistry }
+      - { label: "Cosmetic Dentistry", page: cosmetic-dentistry }
+      - { label: "Restorations", page: restorations }
+      - { label: "Oral Surgery", page: oral-surgery }
+      - { label: "Periodontics", page: periodontics }
+      - { label: "Orthodontics", page: orthodontics }
+  - title: "Locations"
+    links:
+      - { label: "Lone Mountain", page: lone-mountain }
+      - { label: "Sunrise Manor", page: sunrise-manor }
+      - { label: "Summerlin", page: summerlin }
+      - { label: "North Las Vegas", page: north-las-vegas }
+      - { label: "Henderson", page: henderson }
+      - { label: "North Decatur", page: north-decatur }
+      - { label: "Blue Diamond", page: blue-diamond }
+  - title: "Call an office"
+    links:
+      - { label: "Lone Mountain — (702) 289-4424", href: "tel:+17022894424" }
+      - { label: "Sunrise Manor — (702) 452-3552", href: "tel:+17024523552" }
+      - { label: "Summerlin — (702) 360-4800", href: "tel:+17023604800" }
+      - { label: "North Las Vegas — (702) 509-1967", href: "tel:+17025091967" }
+      - { label: "Henderson — (702) 897-7001", href: "tel:+17028977001" }
+      - { label: "North Decatur — (702) 522-0119", href: "tel:+17025220119" }
+      - { label: "Blue Diamond — (702) 331-0010", href: "tel:+17023310010" }
+  - title: "Patients"
+    links:
+      - { label: "New Patient Offer", page: offer }
+      - { label: "Insurance & Financing", page: insurance-financing }
+      - { label: "FAQ", page: faq }
+  - title: "Practice"
+    links:
+      - { label: "About Radiant Smiles", page: about }
+      - { label: "Our Team", page: team }
+      - { label: "Patient Reviews", page: reviews }
+      - { label: "Smile Gallery", page: smile-gallery }
+      - { label: "Contact", page: contact }
+  - title: "Legal"
+    links:
+      - { label: "Privacy Policy", page: privacy-policy }
+      - { label: "Cookie Policy", page: cookie-policy }
+      - { label: "Cookie Settings", page: cookie-settings }
+
+pages:
+  - { slug: index, type: T-HOME, kind: home, bespoke: true, title: "Dentist in Las Vegas & Henderson | Radiant Smiles" }
+  - { slug: services, type: T-HUB, template: service-1, kind: service, title: "Dental Services in Las Vegas | Radiant Smiles" }
+  - { slug: locations, type: T-HUB, template: service-1, kind: service, title: "7 Dental Offices in Las Vegas & Henderson" }
+  - { slug: team, type: T-HUB, template: about-1, kind: about, parent: about, title: "Meet Our Dentists | Radiant Smiles Las Vegas" }
+  - { slug: new-patients, type: T-HUB, template: service-1, kind: service, title: "New Patients | Radiant Smiles Las Vegas Dentist" }
+  - { slug: about, type: T-COMPANY, template: about-1, kind: about, title: "About Radiant Smiles | Las Vegas Dental Group" }
+  - { slug: general-dentistry, type: T-HUB, template: service-1, kind: service, parent: services, title: "General Dentistry in Las Vegas | Radiant Smiles" }
+  - { slug: cosmetic-dentistry, type: T-HUB, template: service-1, kind: service, parent: services, title: "Cosmetic Dentistry in Las Vegas | Radiant Smiles" }
+  - { slug: restorations, type: T-HUB, template: service-1, kind: service, parent: services, title: "Dental Restorations in Las Vegas | Radiant Smiles" }
+  - { slug: oral-surgery, type: T-HUB, template: service-1, kind: service, parent: services, title: "Oral Surgery in Las Vegas | Radiant Smiles" }
+  - { slug: periodontics, type: T-HUB, template: service-1, kind: service, parent: services, title: "Periodontics in Las Vegas | Gum Disease Treatment" }
+  - { slug: orthodontics, type: T-HUB, template: service-1, kind: service, parent: services, title: "Orthodontics in Las Vegas | Braces & Invisalign" }
+  - { slug: dental-exams-cleanings, type: T-FEATURE, template: service-1, kind: service, parent: general-dentistry, title: "Dental Exams & Cleanings in Las Vegas" }
+  - { slug: digital-x-rays, type: T-FEATURE, template: service-1, kind: service, parent: general-dentistry, title: "Digital Dental X-Rays in Las Vegas" }
+  - { slug: fluoride-treatment, type: T-FEATURE, template: service-1, kind: service, parent: general-dentistry, title: "Fluoride Treatment in Las Vegas | Radiant Smiles" }
+  - { slug: sealants, type: T-FEATURE, template: service-1, kind: service, parent: general-dentistry, title: "Dental Sealants in Las Vegas | Radiant Smiles" }
+  - { slug: porcelain-veneers, type: T-FEATURE, template: service-1, kind: service, parent: cosmetic-dentistry, title: "Porcelain Veneers in Las Vegas | Radiant Smiles" }
+  - { slug: teeth-whitening, type: T-FEATURE, template: service-1, kind: service, parent: cosmetic-dentistry, title: "Teeth Whitening in Las Vegas | Radiant Smiles" }
+  - { slug: dental-implants, type: T-FEATURE, template: service-1, kind: service, parent: restorations, title: "Dental Implants in Las Vegas | Radiant Smiles" }
+  - { slug: composite-fillings, type: T-FEATURE, template: service-1, kind: service, parent: restorations, title: "Composite Fillings in Las Vegas | Radiant Smiles" }
+  - { slug: crowns-caps, type: T-FEATURE, template: service-1, kind: service, parent: restorations, title: "Dental Crowns & Caps in Las Vegas" }
+  - { slug: fixed-bridges, type: T-FEATURE, template: service-1, kind: service, parent: restorations, title: "Fixed Dental Bridges in Las Vegas" }
+  - { slug: inlay-restorations, type: T-FEATURE, template: service-1, kind: service, parent: restorations, title: "Dental Inlays in Las Vegas | Radiant Smiles" }
+  - { slug: onlay-restorations, type: T-FEATURE, template: service-1, kind: service, parent: restorations, title: "Dental Onlays in Las Vegas | Radiant Smiles" }
+  - { slug: dentures-partial-dentures, type: T-FEATURE, template: service-1, kind: service, parent: restorations, title: "Dentures & Partial Dentures in Las Vegas" }
+  - { slug: root-canal-therapy, type: T-FEATURE, template: service-1, kind: service, parent: restorations, title: "Root Canal Therapy in Las Vegas" }
+  - { slug: bone-grafting, type: T-FEATURE, template: service-1, kind: service, parent: oral-surgery, title: "Dental Bone Grafting in Las Vegas" }
+  - { slug: wisdom-teeth-extractions, type: T-FEATURE, template: service-1, kind: service, parent: oral-surgery, title: "Wisdom Teeth Removal in Las Vegas" }
+  - { slug: periodontal-disease, type: T-FEATURE, template: service-1, kind: service, parent: periodontics, title: "Periodontal Disease Treatment in Las Vegas" }
+  - { slug: sirolaser, type: T-FEATURE, template: service-1, kind: service, parent: periodontics, title: "SIROLaser Gum Treatment in Las Vegas" }
+  - { slug: gum-recession, type: T-FEATURE, template: service-1, kind: service, parent: periodontics, title: "Gum Recession Treatment in Las Vegas" }
+  - { slug: antibiotic-treatment, type: T-FEATURE, template: service-1, kind: service, parent: periodontics, title: "Antibiotic Gum Treatment in Las Vegas" }
+  - { slug: crown-lengthening, type: T-FEATURE, template: service-1, kind: service, parent: periodontics, title: "Crown Lengthening in Las Vegas | Radiant Smiles" }
+  - { slug: bruxism, type: T-FEATURE, template: service-1, kind: service, parent: periodontics, title: "Bruxism & Teeth Grinding Treatment Las Vegas" }
+  - { slug: oral-cancer-exam, type: T-FEATURE, template: service-1, kind: service, parent: periodontics, title: "Oral Cancer Screening in Las Vegas" }
+  - { slug: periodontal-scaling-root-planing, type: T-FEATURE, template: service-1, kind: service, parent: periodontics, title: "Scaling & Root Planing in Las Vegas" }
+  - { slug: prophylaxis-teeth-cleaning, type: T-FEATURE, template: service-1, kind: service, parent: periodontics, title: "Prophylaxis Teeth Cleaning in Las Vegas" }
+  - { slug: invisalign, type: T-FEATURE, template: service-1, kind: service, parent: orthodontics, title: "Invisalign in Las Vegas & Henderson" }
+  - { slug: braces-for-children, type: T-FEATURE, template: service-1, kind: service, parent: orthodontics, title: "Braces for Children in Las Vegas" }
+  - { slug: braces-for-adults, type: T-FEATURE, template: service-1, kind: service, parent: orthodontics, title: "Braces for Adults in Las Vegas" }
+  - { slug: lone-mountain, type: T-FEATURE, template: service-1, kind: service, parent: locations, title: "Dentist in Lone Mountain, Las Vegas NV 89128" }
+  - { slug: sunrise-manor, type: T-FEATURE, template: service-1, kind: service, parent: locations, title: "Dentist in Sunrise Manor, Las Vegas NV 89107" }
+  - { slug: summerlin, type: T-FEATURE, template: service-1, kind: service, parent: locations, title: "Dentist in Summerlin, Las Vegas NV 89117" }
+  - { slug: north-las-vegas, type: T-FEATURE, template: service-1, kind: service, parent: locations, title: "Dentist in North Las Vegas, NV 89031" }
+  - { slug: henderson, type: T-FEATURE, template: service-1, kind: service, parent: locations, title: "Dentist in Henderson, NV 89052 | Radiant Smiles" }
+  - { slug: north-decatur, type: T-FEATURE, template: service-1, kind: service, parent: locations, title: "Dentist on N Decatur Blvd, Las Vegas NV 89130" }
+  - { slug: blue-diamond, type: T-FEATURE, template: service-1, kind: service, parent: locations, title: "Dentist on Blue Diamond Rd, Las Vegas NV 89139" }
+  - { slug: dr-adrian-ruiz, type: T-ARTICLE, template: about-1, kind: about, parent: team, title: "Dr. Adrian Ruiz, DDS | Radiant Smiles Las Vegas" }
+  - { slug: dr-norma-miranda, type: T-ARTICLE, template: about-1, kind: about, parent: team, title: "Dr. Norma Miranda, DDS | Radiant Smiles Las Vegas" }
+  - { slug: dr-vivi-dang-roberts, type: T-ARTICLE, template: about-1, kind: about, parent: team, title: "Dr. Vivi Dang-Roberts | Radiant Smiles Las Vegas" }
+  - { slug: dr-max-torres, type: T-ARTICLE, template: about-1, kind: about, parent: team, title: "Dr. Max Torres | Radiant Smiles Las Vegas" }
+  - { slug: dr-victoria-quizon, type: T-ARTICLE, template: about-1, kind: about, parent: team, title: "Dr. Victoria Quizon, DMD | Radiant Smiles Las Vegas" }
+  - { slug: dr-stephanie-andrade, type: T-ARTICLE, template: about-1, kind: about, parent: team, title: "Dr. Stephanie Andrade, DMD | Radiant Smiles" }
+  - { slug: dr-chris-schaudt, type: T-ARTICLE, template: about-1, kind: about, parent: team, title: "Dr. Chris Schaudt | Radiant Smiles Las Vegas" }
+  - { slug: dr-karthikeyan-subramani, type: T-ARTICLE, template: about-1, kind: about, parent: team, title: "Dr. Karthikeyan Subramani | Orthodontist Las Vegas" }
+  - { slug: dr-omar-lavado, type: T-ARTICLE, template: about-1, kind: about, parent: team, title: "Dr. Omar Lavado, DMD | Radiant Smiles Las Vegas" }
+  - { slug: dr-andy-landaverde, type: T-ARTICLE, template: about-1, kind: about, parent: team, title: "Dr. Andy Landaverde | Radiant Smiles Las Vegas" }
+  - { slug: offer, type: T-FEATURE, template: service-1, kind: service, parent: new-patients, title: "New Patient Special: $45 Exam & X-Ray" }
+  - { slug: insurance-financing, type: T-FEATURE, template: service-1, kind: service, parent: new-patients, title: "Dental Insurance & Financing | Radiant Smiles" }
+  - { slug: smile-gallery, type: T-INDEX, template: blog-1, kind: blog, parent: about, title: "Smile Gallery | Radiant Smiles Las Vegas" }
+  - { slug: reviews, type: T-INDEX, template: blog-1, kind: blog, parent: about, title: "Patient Reviews | Radiant Smiles Las Vegas" }
+  - { slug: faq, type: T-FEATURE, template: about-1, kind: about, parent: about, title: "Dental FAQs | Radiant Smiles Las Vegas" }
+  - { slug: contact, type: T-CONTACT, template: about-1, kind: about, title: "Contact Radiant Smiles | Book a Dental Appointment" }
+  - { slug: privacy-policy, type: T-LEGAL, template: about-1, kind: about, title: "Privacy Policy | Radiant Smiles" }
+  - { slug: cookie-policy, type: T-LEGAL, template: about-1, kind: about, title: "Cookie Policy | Radiant Smiles" }
+  - { slug: cookie-settings, type: T-LEGAL, template: about-1, kind: about, title: "Cookie Settings | Radiant Smiles" }
+
+templated: []
+
+funnels: []
+
+platform_pages: []

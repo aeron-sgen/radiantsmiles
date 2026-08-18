@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>T-FEATURE tournament - owner pick - Radiant Smiles</title>
+<style>
+  :root{--ink:#14302b;--mut:#5a6b66;--line:#d8e2df;--bg:#f4f7f6;--card:#fff;--warn:#8a5a00;--warnbg:#fff8e6}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+  header{padding:22px 26px 18px;border-bottom:1px solid var(--line);background:var(--card)}
+  h1{margin:0 0 6px;font-size:19px;letter-spacing:-.01em}
+  .sub{margin:0;color:var(--mut);font-size:13px}
+  .note{margin:14px 0 0;padding:11px 13px;background:var(--warnbg);border-left:3px solid var(--warn);color:var(--warn);font-size:13px;max-width:110ch}
+  .note b{color:#6b4600}
+  .bar{display:flex;gap:8px;align-items:center;padding:12px 26px;border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:5}
+  button{font:inherit;padding:6px 13px;border:1px solid var(--line);background:#fff;border-radius:7px;cursor:pointer}
+  button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:18px 26px 40px;align-items:start}
+  .col{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .hd{padding:14px 16px;border-bottom:1px solid var(--line)}
+  .hd h2{margin:0 0 3px;font-size:16px}
+  .hd .key{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.09em}
+  .hd p{margin:8px 0 0;font-size:13px;color:var(--mut)}
+  .hd a{font-size:12px;color:#0f6d5c}
+  .stage{position:relative;overflow:hidden;background:#fff}
+  .stage iframe{border:0;transform-origin:0 0;display:block}
+  @media (max-width:1100px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>T-FEATURE - three candidate compositions, one locked chrome</h1>
+  <p class="sub">Body: <code>dental-implants</code> copy. Frame: the approved chrome carrier, byte-identical in all three, so the only variable is the composition. Rendered previews, not shipped pages.</p>
+  <p class="note"><b>Read this before you pick.</b> All three chose the same opening: <b>HERO-COMPOSITIONS #2</b> (mirror split, photo left) and <b>SECTION-COMPONENTS #7</b> (problem framing). B and C also use the same hero photograph. Sections 1 and 2 are therefore one option shown three times, and they were <b>deliberately frozen through the repair round</b> so the fix could not quietly become a redesign. The tournament really begins at section 3. The selection gate passed all three because it grades each slot's rigor in isolation and cannot see that the three agreed. If you want a genuinely different opening on the table, say so and the hero slot gets re-run.</p>
+</header>
+
+<div class="bar">
+  <span style="color:var(--mut);font-size:13px">Viewport</span>
+  <button id="bDesk" aria-pressed="true">Desktop 1280</button>
+  <button id="bMob" aria-pressed="false">Phone 390</button>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <div class="hd">
+      <span class="key">Concept A</span>
+      <h2>Clinical Spine</h2>
+      <p>Zero invented microcopy: every heading is a sentence the copy already wrote. A vertical numbered rail carries the five steps, media alternating right/left/none/right/left at four different plate heights. Three dark grounds now: the review record mid-page, and a second anchor carrying the offer on a photograph. Teal is structure, yellow is permission.</p>
+      <a href="concept-a.html" target="_blank" rel="noopener">Open full size &rarr;</a>
+    </div>
+    <div class="stage" data-stage><iframe src="concept-a.html" title="Concept A" scrolling="yes"></iframe></div>
+  </div>
+  <div class="col">
+    <div class="hd">
+      <span class="key">Concept B</span>
+      <h2>Patient's Arc</h2>
+      <p>Opens on the room, not on a claim. A 34em reading column at display scale, one circle-masked focal moment, an arc seam instead of a cut, and the mid-page anchor still carried photographically by the full-bleed reception band. Its second anchor was won by RE-GROUNDING the process section to deep teal rather than adding anything: the page height did not move by a single pixel.</p>
+      <a href="concept-b.html" target="_blank" rel="noopener">Open full size &rarr;</a>
+    </div>
+    <div class="stage" data-stage><iframe src="concept-b.html" title="Concept B" scrolling="yes"></iframe></div>
+  </div>
+  <div class="col">
+    <div class="hd">
+      <span class="key">Concept C</span>
+      <h2>Scannable and Decisive</h2>
+      <p>Built for a reader comparing practices. Display-scale numerals 01 to 05 on deep teal make the process skimmable, the pillars run 2-then-1 beside a media column that stretches to the grid, the ten-face roster answers &quot;who&quot; visually on its own dark ground, and the FAQ is a native accordion so the page ends short. Three dark bands: process, roster, offer.</p>
+      <a href="concept-c.html" target="_blank" rel="noopener">Open full size &rarr;</a>
+    </div>
+    <div class="stage" data-stage><iframe src="concept-c.html" title="Concept C" scrolling="yes"></iframe></div>
+  </div>
+</div>
+
+<script>
+  var W = { desk: 1280, mob: 390 }, mode = 'desk';
+  function layout() {
+    var w = W[mode];
+    document.querySelectorAll('[data-stage]').forEach(function (st) {
+      var f = st.querySelector('iframe');
+      var scale = st.clientWidth / w;
+      var vh = mode === 'desk' ? 900 : 780;
+      f.style.width = w + 'px';
+      f.style.height = vh + 'px';
+      f.style.transform = 'scale(' + scale + ')';
+      st.style.height = Math.round(vh * scale) + 'px';
+    });
+  }
+  document.getElementById('bDesk').addEventListener('click', function () {
+    mode = 'desk'; this.setAttribute('aria-pressed', 'true');
+    document.getElementById('bMob').setAttribute('aria-pressed', 'false'); layout();
+  });
+  document.getElementById('bMob').addEventListener('click', function () {
+    mode = 'mob'; this.setAttribute('aria-pressed', 'true');
+    document.getElementById('bDesk').setAttribute('aria-pressed', 'false'); layout();
+  });
+  window.addEventListener('resize', layout);
+  window.addEventListener('load', layout);
+  layout();
+</script>
+</body>
+</html>

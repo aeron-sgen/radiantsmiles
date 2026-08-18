@@ -1,0 +1,1624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--META {"stage":"BRAND-CARD","concept":"B","revision":"r3-legibility","slug":"radiantsmiles","title":"Warm reassurance","artifact":"brand-card identity sheet (chrome-less)","path":"_design/_tournament/brand-card/brand-card-b/brand-card.html","surface":"light","derived_from":["_handoff/radiantsmiles-tokens-spec.md (C6)","_handoff/visual-direction.md (C7)","_handoff/client-rules.json (C3)"]} -->
+<!--
+  RADIANT SMILES DENTAL CARE - BRAND CARD, CONCEPT B "WARM REASSURANCE"
+  ====================================================================
+  This is a BRAND-CARD IDENTITY SHEET (brand DNA): lockups, palette roles, type
+  specimens, UI atoms, the signature motif, and ONE small applied vignette.
+  It is deliberately NOT a page composition. The composed page/body look belongs
+  to the later FOUNDATION stage.
+
+  SURFACE POLARITY: LIGHT. C7 measured the brand signature deterministically
+  (surface_dominance "light", dark_ratio 0.154, primary_surface "light"), so the
+  canvas is warm paper and the deep navy is used as an ANCHOR, never as the page.
+
+  EVERY value below is derived from:
+    C6  _handoff/radiantsmiles-tokens-spec.md  (colours in use, fonts in use, voice, tagline)
+    C7  _handoff/visual-direction.md           (locked tone, image treatment, dental rules)
+    C3  _handoff/client-rules.json             (offices, phones, hours, prices, banned vocab)
+
+  DESIGN SYSTEM (read-only ceiling, composed FROM, never forked):
+    .claude/design-system-unified/00-globals/specs/_MODERN-WOW-SPEC.md
+    .claude/design-system-unified/00-globals/specs/_MODERN-DESIGN-PATTERN-LIBRARY.md
+    .claude/design-system-unified/00-globals/specs/_PAGE-COMPOSITION-LIBRARY.md (V6 composition-medical-health)
+    .claude/design-system-unified/00-globals/tokens/BRAND-TOKEN-SCHEMA.md
+    COLOR-THEORY-PRESETS.md (the globals colour catalogue)
+
+  -------------------------------------------------------------------------------
+  REVISION r2 - PALETTE ONLY. Concept B's identity is UNCHANGED: light-dominant
+  warm paper, Roboto Slab display over Roboto body, generous control radii, gentle
+  layered elevation. Three measured changes, and nothing else:
+
+    1. THE WARM RAMP IS KEPT. #FBF7EF stays the canvas. What was retired is the
+       last pure value: the raised card was #FFFFFF (the live site's own canvas,
+       36 uses) and is now #FFFDF8, a warm ivory on the same ramp. After r2 the
+       sheet contains NO #000, NO #FFF and NO member of the Elementor neutral ramp
+       (#f6f6f6 / #c4c4c4 / #d6d6d6) as ink, canvas, rule, scrim or shadow. The
+       dark flip's shadows were pure black; they are now navy-black.
+    2. THE YELLOW IS DEMOTED FROM FILL TO PRECISION. The live homepage deploys
+       #fce003 as large flat fill bands. r2 removes the last one on this sheet
+       (the appointment card's yellow offer band) and rebuilds it as a pale accent
+       wash carrying a 3px full-strength yellow edge cap. Yellow now appears only
+       as rules, caps, underlines, focus rings and small marks, plus EXACTLY ONE
+       deliberate full-strength moment: the "Claim this offer" button, which is
+       the one place where yellow IS the message (C7 section 2: yellow signals the
+       offer). The navy moved the same way: its one remaining background band on
+       the applied card became navy INK plus a 3px navy structural cap. Surface
+       polarity is untouched - still LIGHT-dominant, per C7 dark_ratio 0.154.
+    3. #E7B84D IS GONE. It was a gold, i.e. the brand yellow at lower saturation,
+       so it added no relationship the live palette did not already have. It is
+       replaced by SAGE #6E8268, taken from COLOR-THEORY-PRESETS.md entry #1
+       "Warm Cream + Terracotta", whose own bg-surface (#FBF6EE) is one unit from
+       this concept's canvas and whose OPTIONAL THIRD COLOUR is exactly this hex.
+       That is the --ds-signature role in BRAND-TOKEN-SCHEMA.md line 79: "Optional
+       3rd color for personality flourish." Novelty is proven, not asserted - see
+       section 02 on this sheet for the measured CIEDE2000 census.
+
+  -------------------------------------------------------------------------------
+  REVISION r3 - LEGIBILITY AND EMPHASIS. Concept B's identity is UNCHANGED again:
+  same warm paper canvas, same Roboto Slab over Roboto, same three radius roles,
+  same gentle layered lift, same navy / yellow / sage role map, same r2 palette
+  discipline (no #000, no #fff, no Elementor grey, yellow as precision). Nothing
+  was redesigned. What changed is HOW BIG AND HOW DARK the type is, and how hard
+  the contact facts push.
+
+  WHY. C7 section 4 already names the audience: "Anxious and OLDER PATIENTS ARE A
+  NAMED AUDIENCE ... Legible type, real contrast, tap targets that work", and
+  "Hours, addresses and phone numbers are LOAD-BEARING UI." The content bible
+  carries both ADA HPI figures - 55% of adults 65+ and 21% of adults 19-64 have no
+  dental benefits - so the paying reader skews well past 40. Presbyopia starts
+  around 40 and costs BOTH acuity and CONTRAST SENSITIVITY, and the contrast half
+  is the one design usually forgets. r3 executes the locked direction more
+  rigorously. It is not a pivot.
+
+  THE FIVE MEASURED CHANGES:
+    1. NOTHING ON THIS SHEET IS UNDER 14px. Measured in-render before r3, the
+       smallest painted size was 10px (the "Dental Care" wordmark descriptor) and
+       252 of 314 text elements sat under 14px. 14px is now the hard floor, used
+       only for tracked uppercase micro-labels; annotation prose runs 15-16px and
+       the reading column runs 18px.
+    2. BODY IS 18px / 1.65, WEIGHT 400. Was 17px. Measure held at 66ch so the
+       line does not grow with the type.
+    3. AAA, NOT AA. Every text-on-surface pair on the sheet now clears 7:1. Before
+       r3 the floor was 5.53:1 and 193 of 307 measured elements sat under 7:1.
+       Two inks moved to get there: --ds-ink-soft #4C5875 -> #3C465D and
+       --ds-accent-ink #7A5C00 -> #5C4500 (with --ds-accent-deep #5E4600 ->
+       #4D3900 so the gold ramp keeps a real second step). The input placeholder
+       lost its 85% opacity, which was the old 4.80:1 floor.
+    4. EVERY TAP TARGET IS >= 44 x 44 CSS px, measured in-render, not inferred
+       from padding. The text-link control was 127.5 x 20 and is now a 48px-tall
+       control with the accent underline moved onto an inner span.
+    5. CONTACT FACTS GET DELIBERATE WEIGHT. Phone numbers are tel: controls, the
+       address is 17px ink instead of 13px soft, hours rows are 17px on a 3.89:1
+       rule instead of 14px on a 1.29:1 one. A new --ds-line-strong #6A7DA0 gives
+       every input, select and outline control a border that clears the WCAG
+       1.4.11 3:1 non-text bar; the old --ds-line at 1.29:1 stays, demoted to
+       decorative panel edges only.
+
+  WHAT r3 DELIBERATELY DID NOT DO: no pill-rounding everywhere, no pastel wash, no
+  cartoon icons, no "senior" badge, no shrinking of the display scale to make room.
+  The display ramp went UP with the body so the hierarchy ratio is unchanged, and
+  the extra size is paid for with whitespace, not density. Bigger type on a
+  disciplined grid reads editorial, which is what a premium practice should look
+  like to a 45-year-old and a 25-year-old at the same time.
+
+  PATH IS LOAD-BEARING - do not move or rename this file.
+  The stage-(1) gates route on BOTH the parent dir and the basename:
+    verify-stylesheet-linked.mjs:95   exempts /^_design\/_tournament\/brand-card\//
+    verify-design-system-used.mjs     routes kind=brand-card on /_tournament/brand-card/
+    verify-not-flat.mjs:115           requires the BASENAME brand-card.html
+    verify-tournament-fanout.mjs:101  counts concepts inside _design/_tournament/brand-card/
+  A sibling dir (brand-card-b/) or another basename (preview.html) matches NONE of
+  these: every one of those gates exits 0 SILENTLY, which is a no-op, not a pass.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radiant Smiles Dental Care - Brand Card B - Warm Reassurance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- from: TYPOGRAPHY-PAIRINGS.md #52 Roboto Slab + Roboto (the menu entry's own Google Fonts URL, verbatim) -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================================
+   IDENTITY TOKENS - concept B
+   from: BRAND-TOKEN-SCHEMA.md (the --ds-* token API; RADIUS is the CONSTRAINED
+         3-role set --ds-r-control / --ds-r-surface / --ds-r-pill, never chip/sm/md/lg/xl)
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md F1 (one accent over a committed neutral base;
+         tint never pure - no #000 ink, no #fff paper)
+   ============================================================================ */
+:root{
+  /* ---- COLOR - surface (the light canvas C7 measured) -------------------
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md F1 + F4 (tinted-surface wash band system)
+     The whole ramp is warm. There is no neutral grey anywhere in it, because the
+     Elementor ramp on the live site (#f6f6f6 / #c4c4c4 / #d6d6d6) belongs to no brand. */
+  --ds-bg-surface:    #FBF7EF;  /* PAGE CANVAS. Warm paper, never #fff. Warmth pulled from the brand yellow. */
+  --ds-bg-surface-2:  #FFFDF8;  /* RAISED CARD. Warm ivory, NOT #FFFFFF (r2). Same ramp, one step lighter than the canvas. */
+  --ds-bg-warm:       #FAF3E0;  /* WARM WASH BAND. Accent-derived tint, ~6% of #FCE003 over the canvas. */
+
+  /* ---- COLOR - the brand navy --------------------------------------------
+     r2 role narrowing: the navy is INK and STRUCTURE first (headings, hairlines,
+     caps, the primary control) and a background only where the brand card must
+     demonstrate a reversed lockup. It is no longer a filled band on the applied card. */
+  --ds-primary:       #17274F;  /* BRAND / CONTROL SURFACE + STRUCTURAL CAPS. The real dominant hex from C6 (93 uses). */
+  --ds-primary-deep:  #0F1B36;  /* DARK GROUND + HEADING INK. Reversed-lockup ground, footer, heading ink. */
+  --ds-primary-soft:  #EDF1F8;  /* CALM WASH. Navy tint band, the clinical half of the wash pair. */
+  --ds-primary-2:     #1D2F61;  /* SECOND NAVY. The practice's real second hex from C6 (2 uses). Sunk band in the dark flip. */
+
+  /* ---- COLOR - the offer yellow, deployed as PRECISION --------------------
+     C7 section 2 locks the RELATIONSHIP (navy = authority, yellow = the offer signal)
+     and leaves deployment to the build. r2 deploys it as rules, caps, underlines,
+     focus rings and small marks, plus ONE full-strength moment (the offer button). */
+  --ds-accent:        #FCE003;  /* SIGNATURE ACCENT. C6 hex, 36 uses. Rules / caps / marks / focus / the one offer control. */
+  --ds-accent-ink:    #5C4500;  /* ACCENT INK. r3: was #7A5C00 (5.85:1, AA only). Now 8.52:1 on the canvas. */
+  --ds-accent-soft:   #FFF6CE;  /* ACCENT WASH. Palest yellow tint for chips and the offer surface. */
+  --ds-accent-deep:   #4D3900;  /* ACCENT DEEP. r3: was #5E4600. Deepened so the gold ramp keeps a real second
+                                   step once accent-ink moved down to clear AAA. 10.34:1 on the canvas. */
+  --ds-accent-light:  #FFEC5C;  /* ACCENT LIGHT. Offer-control hover. Navy-deep on it reads 14.15:1. */
+
+  /* ---- COLOR - the signature tone (r2: sage replaces the retired gold) ----
+     from: COLOR-THEORY-PRESETS.md #1 Warm Cream + Terracotta - "signature: #6E8268
+           (sage green, optional)". That entry's bg-surface is #FBF6EE, one unit from
+           this concept's canvas, so its optional third colour is the catalogue's own
+           answer for "what personality tone sits on warm cream".
+     from: BRAND-TOKEN-SCHEMA.md line 79 - --ds-signature is the "Optional 3rd color
+           for personality flourish".
+     The -soft and -deep members follow the --ds-accent-soft / --ds-accent-deep
+     precedent the schema already sets. -soft is the catalogue literal from
+     COLOR-THEORY-PRESETS.md #5 Mexican Hacienda ("accent-soft: #DEE6D4 (sage tint)").
+     -deep is a documented TUNE: the base hue held at 106deg, saturation 20%, lightness
+     dropped to 24% so sage can carry small text at 9.10:1 on the canvas.
+     ROLE: sage is the REASSURANCE register - the calm, in-house, unhurried half of the
+     brand voice. It never carries the offer (that is yellow) and never carries authority
+     (that is navy), so the three tones stay separable. */
+  --ds-signature:      #6E8268;  /* SIGNATURE. Sage. Arc-seam rule, medallion ring, icon glyphs. */
+  --ds-signature-soft: #DEE6D4;  /* SIGNATURE WASH. Sage tint. Reassurance chips and one card surface. */
+  --ds-signature-deep: #374931;  /* SIGNATURE INK. Deepened sage for small text. 9.10:1 on the canvas. */
+
+  /* ---- COLOR - ink and line ---------------------------------------------- */
+  --ds-ink:           #16213F;  /* DEFAULT TEXT. Navy-tinted near-black, never #000. 14.84:1 on the canvas. */
+  --ds-ink-heading:   var(--ds-primary-deep); /* HEADING INK. Light polarity, so it equals the dark ground. */
+  --ds-ink-soft:      #3C465D;  /* SECONDARY TEXT. r3: was #4C5875 (6.63:1 canvas, 5.53:1 on the sage wash - AA,
+                                   not AAA). Same hue 222 and same 21% saturation, lightness 37.8% -> 30%, so it is
+                                   the SAME tint one step deeper. 8.83:1 on the canvas, 7.36:1 on its worst ground. */
+  --ds-ink-on-dark:   #FBF7EF;  /* INK ON DARK. Same warm paper, flipped onto the navy anchor. */
+  --ds-line:          #D9E1EF;  /* HAIRLINE, DECORATIVE ONLY. Navy-tinted rule (hue 218, sat 41%), never neutral grey.
+                                   1.29:1 on the card. r3 demoted it: panel and card EDGES only. It is a drawn edge on
+                                   a surface that is already separated by elevation, so no WCAG bar applies to it. */
+  --ds-line-strong:   #6A7DA0;  /* r3 NEW. STRUCTURAL RULE. Same navy hue 218 at 22% saturation, lightness 52%.
+                                   3.89:1 on the canvas and 4.09:1 on the card, so it clears the WCAG 1.4.11 3:1
+                                   non-text bar. Carries every UI-COMPONENT boundary (input, select, outline control)
+                                   and every DATA rule a reader has to track across (the hours rows). The old --ds-line
+                                   at 1.29:1 was invisible in both roles to a reader with reduced contrast sensitivity. */
+  --ds-scrim:         rgba(15,27,54,.55); /* LEGIBILITY SCRIM over photography. Navy, not black. */
+
+  /* ---- TYPE ---------------------------------------------------------------
+     from: TYPOGRAPHY-PAIRINGS.md #52 Roboto Slab + Roboto
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md E1 (display face on headings only) + E3 (distinct numeral face)
+     Both faces are ALREADY self-hosted by the practice (C6 section 4). C6 flags three
+     families with no display/body separation; this concept resolves that by making
+     Roboto Slab the display voice, Roboto the body voice, and retiring Poppins. */
+  --ds-font-display: "Roboto Slab", Georgia, "Times New Roman", serif;
+  --ds-font-body:    "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ds-font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* r3 TYPE SCALE. The whole ramp moved UP together, so the display-to-body ratio is
+     essentially unchanged (was 68/17 = 4.00, now 74/18 = 4.11). This is the discipline that
+     keeps the sheet editorial instead of large-print: you do not get legibility by shrinking
+     the headline to make room for bigger body copy, you get it by moving the whole scale and
+     paying for it in whitespace. The four named steps below 18px exist so that "small" is a
+     DECISION with a floor, not a slide toward 10px. */
+  --ds-fs-display:   clamp(44px, 6.4vw, 74px);  /* was clamp(40px, 6.2vw, 68px) */
+  --ds-fs-h1:        clamp(34px, 4.6vw, 52px);  /* was clamp(32px, 4.4vw, 48px) */
+  --ds-fs-h2:        clamp(27px, 3.1vw, 37px);  /* was clamp(25px, 3vw, 34px)   */
+  --ds-fs-h3:        23px;                      /* was 21px */
+  --ds-fs-lede:      21px;                      /* r3 NEW. Was a hard-coded 19px on the masthead lede. */
+  --ds-fs-body:      18px;                      /* was 17px. THE READING COLUMN. */
+  --ds-fs-secondary: 16px;                      /* r3 NEW. Annotation prose, table cells, footer rules. */
+  --ds-fs-data:      15px;                      /* r3 NEW. Mono hexes, swatch usage notes, the small specimen. */
+  --ds-fs-label:     14px;                      /* r3: renamed from --ds-fs-caption and raised from 12px.
+                                                   THE HARD FLOOR. Tracked uppercase micro-labels ONLY.
+                                                   Nothing on this sheet is permitted to be smaller. */
+  --ds-tracking-disp:  -0.02em;                 /* DISPLAY FACE ONLY. Never applied to body copy. */
+  --ds-tracking-label:  0.12em;                 /* was 0.14em - a 14px label needs less tracking than a 12px one */
+  --ds-lh-tight: 1.08;
+  --ds-lh-body:  1.65;                          /* >= 1.6 floor for every reading measure */
+  --ds-lh-secondary: 1.6;
+
+  /* ---- RADIUS - the CONSTRAINED 3-role set --------------------------------
+     from: SURFACE-PATTERNS.md section 1 #4 Soft 16-24px (editorial-warm content).
+     That entry's sm 12 becomes the CONTROL role; its md 20 becomes the SURFACE role
+     (the schema folds md + lg + xl into one surface radius, so cards and media frames
+     share a single generous curve). Pill stays full-round for chips and avatars.
+     Nothing else in this sheet declares a corner value except the signature motif's
+     elliptical ARC, which is a shape divider (A1), not a member of this scale. */
+  --ds-r-control: 12px;
+  --ds-r-surface: 20px;
+  --ds-r-pill:    9999px;
+
+  /* ---- SHADOW - gentle layered elevation ----------------------------------
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md D1 (ink-tinted, layered, negative spread,
+     never pure black) + SURFACE-PATTERNS.md section 2 #10 Soft-shadow-lift */
+  --ds-shadow-rest: 0 1px 2px rgba(22,33,63,.05);
+  --ds-shadow-card: 0 1px 2px rgba(22,33,63,.06), 0 14px 30px -12px rgba(22,33,63,.16);
+  --ds-shadow-lift: 0 2px 4px rgba(22,33,63,.06), 0 28px 56px -18px rgba(22,33,63,.22);
+  --ds-inset-hi:    inset 0 1px 0 rgba(255,253,246,.80);   /* warm ivory highlight, not pure white */
+  --ds-glow:        0 0 0 1px rgba(252,224,3,.42), 0 14px 34px -14px rgba(252,224,3,.55);
+
+  /* ---- MATERIAL - the tint washes and the soft glow -----------------------
+     from: _MODERN-WOW-SPEC.md section 3 (texture and material) + section 5 (colour and light)
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md J10 (tinted-surface wash bands, medical)
+     r2 tightens the glow: it was a 58% x 62% field at 20% alpha, which is a soft
+     yellow FIELD. It is now a 40% x 46% corner bloom at 14%, so the masthead's yellow
+     reads as light falling on paper rather than as a yellow surface. */
+  --ds-glow-wash: radial-gradient(40% 46% at 88% 2%, rgba(252,224,3,.14), transparent 72%);
+  /* Glass is deliberately NOT part of this concept's material. The medical blueprint permits it,
+     but on a warm light canvas a translucent panel reads as nothing; the identity earns its depth
+     from the two tint washes plus the layered ink-tinted lift instead. One material, not two. */
+
+  /* ---- MOTION -------------------------------------------------------------
+     from: MOTION-PATTERNS.md #10 Lift, #21 Fade-up, #37 Form field focus */
+  --ds-ease:     cubic-bezier(.16,.84,.36,1);
+  --ds-ease-out: cubic-bezier(.22,.61,.36,1);
+  --ds-dur-fast: 160ms;
+  --ds-dur:      240ms;
+  --ds-dur-slow: 600ms;
+
+  color-scheme: light;
+}
+
+/* The navy anchor: the SAME token names, flipped. C7 keeps the light canvas and uses
+   the navy for anchoring bands only, so this class is punctuation, not the page.
+   r2: every pure-black value in this block became navy-black, and the sage tone gets
+   its own on-dark member so the third tone survives the flip. */
+.surface-dark{
+  --ds-bg-surface:   #0F1B36;
+  --ds-bg-surface-2: #17274F;
+  --ds-bg-warm:      var(--ds-primary-2);   /* the practice's real second navy from C6, #1D2F61 */
+  --ds-ink:          #FBF7EF;
+  --ds-ink-heading:  #FBF7EF;
+  --ds-ink-soft:     rgba(251,247,239,.74);     /* r3: was .68, which composited to 7.94:1 on #0F1B36 but only
+                                                   6.79:1 on the #17274F card. .74 composites to #BEBEBF, which
+                                                   is 9.19:1 and 7.85:1 - AAA on BOTH dark grounds. */
+  --ds-ink-on-dark:  #FBF7EF;
+  --ds-accent:       #FCE003;
+  --ds-accent-ink:   #FFEC5C;
+  --ds-accent-soft:  rgba(252,224,3,.14);
+  --ds-signature:      #AAC2A3;                 /* sage lifted for the navy ground: 8.90:1 on #0F1B36 */
+  --ds-signature-soft: rgba(170,194,163,.16);
+  --ds-signature-deep: #DFE9DA;
+  --ds-line:         rgba(251,247,239,.16);     /* warm hairline, not white - decorative edges only */
+  --ds-line-strong:  rgba(251,247,239,.46);     /* r3: the flip's structural rule. Composites to #7C808B on
+                                                   #0F1B36 = 4.32:1 and on #17274F = 3.69:1, so the 1.4.11
+                                                   3:1 non-text bar survives the flip on both dark grounds. */
+  --ds-scrim:        rgba(6,12,26,.66);         /* navy-black scrim, not #000 */
+  --ds-shadow-card:  0 18px 44px -16px rgba(4,9,20,.70);
+  --ds-shadow-lift:  0 30px 70px -20px rgba(4,9,20,.76);
+  --ds-inset-hi:     inset 0 1px 0 rgba(251,247,239,.09);
+  color-scheme: dark;
+}
+
+/* ============================================================================
+   SHEET SHELL (the brand card itself carries no site chrome)
+   ============================================================================ */
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ds-bg-surface);
+  color:var(--ds-ink);
+  font:400 var(--ds-fs-body)/var(--ds-lh-body) var(--ds-font-body);
+  -webkit-font-smoothing:antialiased;
+}
+/* r3: the sheet gutter and the bay rhythm both grew, because the type grew. The extra
+   size is paid for in WHITESPACE, never in density - that is the single move that keeps
+   a bigger scale reading premium-editorial rather than large-print. */
+.rsb-sheet{max-width:1220px;margin:0 auto;padding:clamp(32px,5vw,72px) clamp(20px,4vw,52px) 104px}
+.rsb-bay{margin-top:clamp(56px,6.6vw,96px)}
+.rsb-eyebrow{
+  font:700 var(--ds-fs-label)/1.35 var(--ds-font-body);
+  letter-spacing:var(--ds-tracking-label);
+  text-transform:uppercase;
+  color:var(--ds-accent-ink);
+  display:flex;align-items:center;gap:14px;margin:0 0 18px;
+}
+/* PRECISION, not fill: a 52px accent rule. The label beside it is --ds-accent-ink, which in
+   r3 measures 8.52:1 on the canvas (was 5.85:1), so the meaning is carried by real AAA text
+   and the yellow stays pure emphasis. The rule went 44x2 -> 52x3 so it still holds its own
+   beside a 14px label instead of a 12px one. */
+.rsb-eyebrow::after{content:"";flex:0 0 52px;height:3px;background:var(--ds-accent);border-radius:var(--ds-r-pill)}
+h1,h2,h3{font-family:var(--ds-font-display);color:var(--ds-ink-heading);margin:0 0 .4em;line-height:var(--ds-lh-tight)}
+h2{font-size:var(--ds-fs-h2);letter-spacing:-.01em}
+h3{font-size:var(--ds-fs-h3);font-weight:600;line-height:1.25}
+p{margin:0 0 1em;max-width:66ch}
+/* the sheet's annotation voice. r3: 13px/1.55 over 82ch -> 16px/1.6 over 72ch. Both numbers
+   moved: bigger type on the SAME measure would have made the line too long to track back. */
+.rsb-note{font-size:var(--ds-fs-secondary);line-height:var(--ds-lh-secondary);color:var(--ds-ink-soft);max-width:72ch}
+.rsb-flag{
+  display:inline-block;font:700 var(--ds-fs-label)/1.5 var(--ds-font-body);letter-spacing:.05em;
+  color:var(--ds-accent-deep);background:var(--ds-accent-soft);
+  border:1px solid rgba(77,57,0,.34);border-radius:var(--ds-r-control);
+  padding:5px 11px;
+}
+.rsb-code{font-family:var(--ds-font-mono);font-size:var(--ds-fs-data)}
+
+/* ---- sheet masthead ---- */
+/* from: _MODERN-DESIGN-PATTERN-LIBRARY.md E2 (oversized display, negative tracking) + E4 (kicker rule)
+     from: _MODERN-WOW-SPEC.md section 5 (accent glow / soft gradient wash behind one key moment) */
+.rsb-masthead{
+  position:relative;overflow:hidden;
+  border:1px solid var(--ds-line);border-radius:var(--ds-r-surface);
+  background:var(--ds-bg-surface-2);box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+  padding:clamp(34px,4vw,52px) clamp(26px,4vw,46px) clamp(26px,4vw,46px);
+}
+.rsb-masthead::before{content:"";position:absolute;inset:0;background:var(--ds-glow-wash);pointer-events:none}
+/* the yellow HAIRLINE CAP: a 116px accent bar seated on the top edge, aligned to the
+   content inset. This is the accent's masthead role in r2 - a mark, not a band. */
+.rsb-masthead::after{
+  content:"";position:absolute;top:0;left:clamp(26px,4vw,46px);
+  width:116px;height:3px;background:var(--ds-accent);
+  border-radius:0 0 var(--ds-r-pill) var(--ds-r-pill);
+}
+.rsb-masthead > *{position:relative}
+.rsb-masthead h1{font-size:var(--ds-fs-display);letter-spacing:var(--ds-tracking-disp);font-weight:600;max-width:16ch;font-family:var(--ds-font-display)}
+.rsb-lede{font-size:var(--ds-fs-lede);line-height:1.55;color:var(--ds-ink-soft);max-width:58ch}
+.rsb-meta{display:flex;flex-wrap:wrap;gap:11px;margin-top:26px}
+.rsb-meta span{
+  font:500 var(--ds-fs-label)/1.35 var(--ds-font-mono);letter-spacing:.03em;
+  border:1px solid var(--ds-line);border-radius:var(--ds-r-pill);
+  padding:9px 16px;color:var(--ds-ink-soft);background:var(--ds-bg-surface);
+}
+
+/* ---- generic grid ---- */
+.rsb-grid{display:grid;gap:clamp(14px,2vw,22px)}
+.rsb-g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.rsb-g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.rsb-g4{grid-template-columns:repeat(auto-fit,minmax(178px,1fr))}
+.rsb-span{grid-column:1/-1}
+/* the palette resolves to a clean 4 x 4 rather than leaving an orphan swatch on its own row */
+@media (min-width:980px){ .rsb-pal{grid-template-columns:repeat(4,1fr)} }
+
+/* ---- panel ---- */
+/* from: SURFACE-PATTERNS.md section 2 #10 Soft-shadow-lift + _MODERN-DESIGN-PATTERN-LIBRARY.md I2 (cards) */
+.rsb-panel{
+  background:var(--ds-bg-surface-2);
+  border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+  padding:clamp(18px,2.4vw,26px);
+}
+
+/* ============================================================================
+   1. LOCKUPS
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md E1 (display face carries the wordmark)
+   from: SURFACE-PATTERNS.md section 5 #35 Circular-mask (the round mark medallion)
+   ============================================================================ */
+.rsb-lock{
+  display:flex;flex-direction:column;gap:20px;justify-content:space-between;
+  min-height:208px;
+}
+.rsb-lock__cap{
+  font:700 var(--ds-fs-label)/1.45 var(--ds-font-body);letter-spacing:var(--ds-tracking-label);
+  text-transform:uppercase;color:var(--ds-ink-soft);
+}
+.rsb-wordmark{display:flex;align-items:center;gap:16px}
+.rsb-wordmark__mark{
+  width:52px;height:52px;flex:0 0 52px;border-radius:var(--ds-r-pill);
+  background:var(--ds-primary);color:var(--ds-accent);
+  display:grid;place-items:center;box-shadow:var(--ds-inset-hi);
+}
+.rsb-wordmark__mark svg{width:27px;height:27px;display:block}
+.rsb-wordmark__type{display:flex;flex-direction:column;line-height:1}
+.rsb-wordmark__type b{
+  font:600 26px/1 var(--ds-font-display);letter-spacing:-.015em;color:var(--ds-ink-heading);
+}
+/* r3: THIS WAS THE SMALLEST TYPE ON THE SHEET - 10px, measured in-render, at 0.22em tracking.
+   A tracked 10px descriptor is the classic identity-sheet blind spot: it looks refined at
+   100% zoom to a 25-year-old designer and is simply unreadable at arm's length past 45.
+   It is now 14px with the tracking eased to 0.18em, and the mark grew 46 -> 52px so the
+   lockup's proportions are untouched. */
+.rsb-wordmark__type i{
+  font:500 var(--ds-fs-label)/1.15 var(--ds-font-body);font-style:normal;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ds-accent-ink);margin-top:9px;
+}
+.rsb-lock--stack .rsb-wordmark{flex-direction:column;align-items:flex-start;gap:14px}
+.rsb-lock--stack .rsb-wordmark__type b{font-size:30px}
+.rsb-asset{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--ds-bg-surface);border-radius:var(--ds-r-control);
+  padding:14px;height:112px;
+}
+.rsb-asset img{max-width:100%;max-height:80px;width:auto;height:auto;display:block}
+.rsb-asset--rev{background:var(--ds-primary-deep)}
+.rsb-asset--mark img{max-height:64px}
+
+/* ============================================================================
+   2. PALETTE
+   from: COLOR-THEORY-PRESETS.md #7 Editorial Navy + Ivory (structure only; every VALUE
+         is the practice's own measured hex from C6, never the preset's literals)
+   from: COLOR-THEORY-PRESETS.md #1 Warm Cream + Terracotta (the SIGNATURE slot only:
+         "signature: #6E8268 (sage green, optional)")
+   from: COLOR-THEORY-PRESETS.md #5 Mexican Hacienda ("accent-soft: #DEE6D4 (sage tint)")
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md F1 (one accent + tinted ink + off-white paper)
+   ============================================================================ */
+.rsb-sw{border:1px solid var(--ds-line);border-radius:var(--ds-r-surface);overflow:hidden;background:var(--ds-bg-surface-2);box-shadow:var(--ds-shadow-rest)}
+.rsb-sw__chip{height:96px;border-bottom:1px solid var(--ds-line)}
+.rsb-sw__body{padding:15px 17px 18px}
+.rsb-sw__role{font:700 var(--ds-fs-label)/1.4 var(--ds-font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--ds-ink-heading);display:block}
+.rsb-sw__var{font:400 var(--ds-fs-data)/1.55 var(--ds-font-mono);color:var(--ds-accent-ink);display:block;margin-top:8px;word-break:break-all}
+.rsb-sw__hex{font:500 var(--ds-fs-data)/1.55 var(--ds-font-mono);color:var(--ds-ink);display:block;letter-spacing:.02em}
+.rsb-sw__use{font-size:var(--ds-fs-data);line-height:1.6;color:var(--ds-ink-soft);margin:10px 0 0;display:block}
+
+/* ---- measured-contrast ledger (r2 built it, r3 re-measured every row) ----
+   r3 also gave the ledger a STACKED small-screen form. A 4-column data table that can only be
+   read by dragging it sideways is not legible for anyone, and it is worst for the reader this
+   pass is for. Under 760px each row becomes its own labelled card, so nothing is ever off-screen
+   and nothing scrolls horizontally. */
+.rsb-meas{width:100%;border-collapse:collapse;margin-top:16px;font:400 var(--ds-fs-secondary)/1.55 var(--ds-font-body)}
+.rsb-meas caption{text-align:left;font:700 var(--ds-fs-label)/1.45 var(--ds-font-body);letter-spacing:var(--ds-tracking-label);text-transform:uppercase;color:var(--ds-ink-soft);padding-bottom:12px}
+.rsb-meas th{
+  text-align:left;font:700 var(--ds-fs-label)/1.45 var(--ds-font-body);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ds-ink-soft);border-bottom:2px solid var(--ds-primary);padding:0 16px 10px 0;
+}
+.rsb-meas td{border-bottom:1px solid var(--ds-line-strong);padding:11px 16px 11px 0;color:var(--ds-ink-soft);vertical-align:top}
+.rsb-meas td:first-child{color:var(--ds-ink)}
+.rsb-meas .rsb-meas__n{font-family:var(--ds-font-mono);font-variant-numeric:tabular-nums;color:var(--ds-ink-heading);font-weight:500;white-space:nowrap}
+.rsb-meas .rsb-meas__hex{font-family:var(--ds-font-mono);font-size:var(--ds-fs-data);white-space:nowrap;color:var(--ds-ink)}
+.rsb-meas tr:last-child td{border-bottom:0}
+@media (max-width:760px){
+  .rsb-meas thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .rsb-meas tr{display:block;border-bottom:2px solid var(--ds-line-strong);padding:14px 0}
+  .rsb-meas tr:last-child{border-bottom:0}
+  .rsb-meas td{display:flex;gap:14px;justify-content:space-between;border-bottom:0;padding:4px 0}
+  .rsb-meas td::before{
+    content:attr(data-l);flex:0 0 auto;
+    font:700 var(--ds-fs-label)/1.5 var(--ds-font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--ds-ink-soft);
+  }
+  .rsb-meas td:first-child{display:block;color:var(--ds-ink);padding-bottom:8px}
+  .rsb-meas td:first-child::before{display:block;margin-bottom:4px}
+}
+.rsb-lowest{
+  margin-top:18px;padding:17px 19px;border-radius:var(--ds-r-control);
+  background:var(--ds-signature-soft);color:var(--ds-signature-deep);
+  font:400 17px/1.6 var(--ds-font-body);box-shadow:inset 4px 0 0 var(--ds-signature);
+}
+.rsb-lowest b{font-family:var(--ds-font-mono);font-weight:500}
+
+/* ============================================================================
+   3. TYPE SCALE
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md E1 / E2 / E3 / E4
+   ============================================================================ */
+.rsb-spec{border-bottom:1px solid var(--ds-line);padding:28px 0}
+.rsb-spec:last-child{border-bottom:0}
+.rsb-spec__tag{
+  font:400 var(--ds-fs-label)/1.6 var(--ds-font-mono);color:var(--ds-ink-soft);
+  display:block;margin-bottom:14px;letter-spacing:.02em;
+}
+.rsb-t-display{font:600 var(--ds-fs-display)/1.04 var(--ds-font-display);letter-spacing:var(--ds-tracking-disp);color:var(--ds-ink-heading);margin:0}
+.rsb-t-h1{font:600 var(--ds-fs-h1)/1.1 var(--ds-font-display);letter-spacing:-.015em;color:var(--ds-ink-heading);margin:0}
+.rsb-t-h2{font:600 var(--ds-fs-h2)/1.15 var(--ds-font-display);color:var(--ds-ink-heading);margin:0}
+.rsb-t-h3{font:600 var(--ds-fs-h3)/1.3 var(--ds-font-display);color:var(--ds-ink-heading);margin:0}
+.rsb-t-lede{font:400 22px/1.55 var(--ds-font-body);color:var(--ds-ink-soft);margin:0;max-width:58ch}
+.rsb-t-body{font:400 var(--ds-fs-body)/var(--ds-lh-body) var(--ds-font-body);color:var(--ds-ink);margin:0;max-width:66ch}
+.rsb-t-small{font:400 var(--ds-fs-data)/1.65 var(--ds-font-body);color:var(--ds-ink-soft);margin:0;max-width:68ch}
+.rsb-t-mono{font:500 var(--ds-fs-body)/1.75 var(--ds-font-mono);color:var(--ds-ink);margin:0;font-variant-numeric:tabular-nums}
+.rsb-t-mono b{color:var(--ds-ink-heading)}
+
+/* ---- r3: the legibility contract, expressed as a component ----
+   Two-column figure/label rows. This is the sheet stating its own floors in the same
+   editorial register as the palette ledger, not a warning box. */
+.rsb-floors{display:grid;gap:2px;background:var(--ds-line-strong);border-radius:var(--ds-r-control);overflow:hidden;margin-top:18px}
+@media (min-width:720px){ .rsb-floors{grid-template-columns:1fr 1fr} }
+.rsb-floors div{background:var(--ds-bg-surface-2);padding:16px 18px}
+/* letter-spacing is deliberately NOT negative here. Tight tracking belongs to the display
+   face; a tabular mono figure tracked negatively loses the column alignment that is the only
+   reason to set numerals in mono at all. */
+.rsb-floors b{
+  display:block;font:500 21px/1.2 var(--ds-font-mono);color:var(--ds-ink-heading);
+  font-variant-numeric:tabular-nums;letter-spacing:0;
+}
+.rsb-floors span{display:block;font-size:var(--ds-fs-data);line-height:1.55;color:var(--ds-ink-soft);margin-top:6px}
+
+/* ============================================================================
+   4. UI ATOMS
+   from: SURFACE-PATTERNS.md section 3 #17 Solid-square-precise (primary, on the bundle radius)
+   from: SURFACE-PATTERNS.md section 3 #19 Outline-ghost (secondary)
+   from: SURFACE-PATTERNS.md section 6 #39 Boxed-default (inputs, with the alpha focus ring)
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md I1 (named-property transitions, never transition:all)
+   ============================================================================ */
+/* r3 TAP TARGET CONTRACT: min-height 48px on EVERY control, verified in-render rather than
+   inferred from padding. WCAG 2.5.5 AAA asks 44x44; 48 is used so a 1px border and a
+   sub-pixel line box can never round the measured box under the bar. */
+.rsb-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:48px;min-width:48px;
+  padding:14px 26px;border:1px solid transparent;border-radius:var(--ds-r-control);
+  font:700 16px/1.2 var(--ds-font-body);letter-spacing:.005em;cursor:pointer;text-decoration:none;
+  transition:background-color var(--ds-dur-fast) var(--ds-ease),
+             color var(--ds-dur-fast) var(--ds-ease),
+             border-color var(--ds-dur-fast) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease),
+             transform var(--ds-dur) var(--ds-ease);
+}
+.rsb-btn:focus-visible{outline:3px solid var(--ds-accent);outline-offset:3px}
+.rsb-btn--primary{background:var(--ds-primary);color:var(--ds-ink-on-dark);box-shadow:var(--ds-shadow-card)}
+.rsb-btn--primary:hover{background:var(--ds-primary-deep);box-shadow:var(--ds-shadow-lift);transform:translateY(-2px)}
+/* THE ONE FULL-STRENGTH YELLOW MOMENT on this sheet. Everywhere else the accent is a
+   rule, a cap, an underline, a focus ring or a small mark. */
+.rsb-btn--offer{background:var(--ds-accent);color:var(--ds-primary-deep);box-shadow:var(--ds-glow)}
+.rsb-btn--offer:hover{background:var(--ds-accent-light);transform:translateY(-2px)}
+/* r3: the ghost control's border moved --ds-line (1.29:1) -> --ds-line-strong (3.89:1). A
+   secondary button whose edge is invisible is not a secondary button, it is missing UI. */
+.rsb-btn--ghost{background:transparent;color:var(--ds-ink-heading);border-color:var(--ds-line-strong)}
+.rsb-btn--ghost:hover{border-color:var(--ds-primary);background:var(--ds-primary-soft)}
+/* r3: MEASURED IN-RENDER AT 127.5 x 20px - the only control on the sheet that failed 44x44,
+   and invisible to every text-parse gate. The fix keeps the look exactly: the accent underline
+   moved off the <a> and onto an inner <span> that hugs the text, while the <a> itself carries
+   the 48px target. Nothing about the atom changed visually. */
+.rsb-btn--link{
+  padding:12px 2px;border:0;background:none;color:var(--ds-accent-ink);
+  border-radius:var(--ds-r-control);
+}
+.rsb-btn--link > span{border-bottom:2px solid var(--ds-accent);padding-bottom:3px}
+.rsb-btn--link:hover{color:var(--ds-primary)}
+.rsb-btn svg{width:18px;height:18px;flex:0 0 18px}
+
+.rsb-tags{display:flex;flex-wrap:wrap;gap:10px}
+/* from: _MODERN-DESIGN-PATTERN-LIBRARY.md I5 (chip with tinted fill) */
+.rsb-tag{
+  font:700 var(--ds-fs-label)/1.25 var(--ds-font-body);letter-spacing:.03em;
+  padding:10px 16px;border-radius:var(--ds-r-pill);
+  background:var(--ds-primary-soft);color:var(--ds-primary);border:1px solid transparent;
+}
+/* r3: chip edges went from .20/.22 alpha (effectively undrawn) to .34, so the chip family
+   still reads as three distinct registers when contrast sensitivity is reduced. */
+.rsb-tag--accent{background:var(--ds-accent-soft);color:var(--ds-accent-deep);border-color:rgba(77,57,0,.34)}
+.rsb-tag--care{background:var(--ds-signature-soft);color:var(--ds-signature-deep);border-color:rgba(55,73,49,.34)}
+.rsb-tag--outline{background:transparent;color:var(--ds-ink-soft);border-color:var(--ds-line-strong)}
+.rsb-tag--solid{background:var(--ds-primary);color:var(--ds-ink-on-dark)}
+
+.rsb-field{display:block;margin-bottom:18px}
+.rsb-field > span{
+  display:block;font:700 var(--ds-fs-label)/1.45 var(--ds-font-body);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ds-ink-soft);margin-bottom:9px;
+}
+.rsb-input,.rsb-select{
+  width:100%;min-height:52px;padding:14px 16px;
+  background:var(--ds-bg-surface-2);color:var(--ds-ink);
+  border:1px solid var(--ds-line-strong);border-radius:var(--ds-r-control);
+  font:400 17px/1.45 var(--ds-font-body);
+  transition:border-color var(--ds-dur) var(--ds-ease), box-shadow var(--ds-dur) var(--ds-ease);
+}
+/* r3: the placeholder was --ds-ink-soft at opacity .85, which composited to #677189 = 4.80:1.
+   That was the sheet's whole AA margin and it lived on the one element a nervous patient has
+   to read to know what to type. Opacity is gone; the placeholder is the secondary ink itself
+   at 9.28:1, still clearly lighter than the 15.61:1 value ink once a field is filled. */
+.rsb-input::placeholder{color:var(--ds-ink-soft);opacity:1}
+.rsb-input:focus,.rsb-select:focus{
+  outline:0;border-color:var(--ds-primary);
+  box-shadow:0 0 0 3px rgba(23,39,79,.18);
+}
+.rsb-card{
+  background:var(--ds-bg-surface-2);border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-surface);padding:24px 26px 26px;
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+  transition:box-shadow var(--ds-dur) var(--ds-ease), transform var(--ds-dur) var(--ds-ease);
+}
+.rsb-card:hover{box-shadow:var(--ds-shadow-lift);transform:translateY(-4px)}
+.rsb-card h3{margin-bottom:10px}
+.rsb-card p{font-size:17px;line-height:1.6;color:var(--ds-ink-soft);margin:0}
+.rsb-card__ico{
+  width:48px;height:48px;border-radius:var(--ds-r-control);
+  background:var(--ds-accent-soft);color:var(--ds-accent-deep);
+  display:grid;place-items:center;margin-bottom:16px;
+}
+.rsb-card__ico svg{width:24px;height:24px}
+.rsb-card--warm{background:var(--ds-bg-warm)}
+.rsb-card--warm .rsb-card__ico{background:var(--ds-bg-surface-2)}
+.rsb-card--care{background:var(--ds-signature-soft)}
+.rsb-card--care .rsb-card__ico{background:var(--ds-bg-surface-2);color:var(--ds-signature-deep)}
+
+/* ============================================================================
+   5. SIGNATURE MOTIF - "the warm arc seam"
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md A1 (shape divider; the lightweight CSS
+         border-radius arc alternative, no SVG asset)
+   from: _PAGE-COMPOSITION-LIBRARY.md V6 composition-medical-health (the A2 "circle up"
+         arc is the vertical's defining seam; circle-masked photography is on-register)
+   from: SURFACE-PATTERNS.md section 5 #35 Circular-mask (portraits)
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md H2 (shape-masked imagery) + J10 (tinted wash bands)
+   r2: the arc's edge is drawn in SAGE. That is the seam's own line, and it is the
+   clearest place on the sheet to see that the palette has gained a third tone.
+   ============================================================================ */
+.rsb-motif{
+  position:relative;overflow:hidden;
+  border:1px solid var(--ds-line);border-radius:var(--ds-r-surface);
+  background:var(--ds-bg-surface-2);
+}
+.rsb-motif__wash{
+  background:var(--ds-bg-warm);
+  padding:34px 30px 62px;
+  border-bottom:2px solid var(--ds-signature);
+  border-bottom-left-radius:52% 42px;
+  border-bottom-right-radius:52% 42px;
+}
+.rsb-motif__wash p{margin:0;color:var(--ds-ink-soft);font-size:17px;line-height:1.6;max-width:46ch}
+/* r3, caught only by reading the RENDER: `.rsb-motif__wash p` (0,1,1) was out-specifying
+   `.rsb-eyebrow` (0,1,0), so the one eyebrow inside the motif was painting in the secondary
+   ink instead of the accent ink. The gold is restored, and it measures 8.22:1 on the warm wash. */
+.rsb-motif__wash p.rsb-eyebrow{color:var(--ds-accent-ink);font-size:var(--ds-fs-label);line-height:1.35}
+.rsb-motif__seam{
+  display:flex;align-items:center;gap:18px;
+  padding:0 30px 30px;margin-top:-34px;position:relative;
+}
+.rsb-medallion{
+  width:104px;height:104px;flex:0 0 104px;border-radius:var(--ds-r-pill);
+  overflow:hidden;background:var(--ds-bg-surface);
+  border:4px solid var(--ds-bg-surface-2);
+  box-shadow:0 0 0 2px var(--ds-signature), var(--ds-shadow-card);
+}
+.rsb-medallion img{width:100%;height:100%;object-fit:cover;display:block}
+.rsb-motif__who{padding-top:36px}
+.rsb-motif__who b{display:block;font:600 20px/1.3 var(--ds-font-display);color:var(--ds-ink-heading)}
+.rsb-motif__who span{display:block;font:400 var(--ds-fs-secondary)/1.55 var(--ds-font-mono);color:var(--ds-ink-soft);margin-top:5px}
+.rsb-motif__rule{height:3px;background:var(--ds-accent);border-radius:var(--ds-r-pill);margin:0 30px 26px;width:64px}
+
+/* ============================================================================
+   6. APPLIED MINI-VIGNETTE (exactly one)
+   from: _PAGE-COMPOSITION-LIBRARY.md V6 composition-medical-health (appointment CTA is
+         the spine; hours + address are load-bearing UI, per C7 section 4)
+   from: CARD-VARIATIONS.md #4 Circle-icon service card with arrow link (card family)
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md I3 (rating figure) + F4 (tinted offer surface)
+   r2 - this is where both demotions land:
+     the navy header BAND became a paper header with navy INK plus a 3px navy cap
+     on the card's top edge (navy as structure);
+     the flat yellow offer BAND became the palest accent wash carrying a 3px
+     full-strength yellow edge cap (yellow as precision).
+   ============================================================================ */
+.rsb-vig{
+  max-width:472px;
+  background:var(--ds-bg-surface-2);border:1px solid var(--ds-line);
+  border-top:3px solid var(--ds-primary);
+  border-radius:var(--ds-r-surface);overflow:hidden;
+  box-shadow:var(--ds-shadow-lift);
+}
+.rsb-vig__top{background:var(--ds-bg-surface-2);color:var(--ds-ink);padding:20px 24px 18px;border-bottom:1px solid var(--ds-line)}
+.rsb-vig__top b{display:block;font:600 21px/1.25 var(--ds-font-display);color:var(--ds-ink-heading)}
+/* r3: the ADDRESS. C7 section 4 calls it load-bearing UI, and it was set at 13px in the
+   secondary ink - smaller and lighter than the decorative caption above it. It is now 17px
+   in the primary ink at 15.61:1, which is the emphasis a fact someone has to drive to earns. */
+.rsb-vig__top span{display:block;font:400 17px/1.55 var(--ds-font-mono);color:var(--ds-ink);margin-top:6px}
+.rsb-vig__offer{
+  background:var(--ds-accent-soft);color:var(--ds-accent-deep);
+  box-shadow:inset 4px 0 0 var(--ds-accent);
+  border-bottom:1px solid var(--ds-line);
+  padding:13px 24px;font:700 var(--ds-fs-secondary)/1.45 var(--ds-font-body);letter-spacing:.01em;
+  display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;
+}
+.rsb-vig__offer em{font-style:normal;font-family:var(--ds-font-mono);font-weight:500}
+.rsb-vig__body{padding:22px 24px 24px}
+
+/* ---- r3 NEW: the tap-to-call control ----
+   C7 section 4: "Hours, addresses and phone numbers are load-bearing UI. For a seven-office
+   practice these are the most-used content on the site." The number was previously a 14px
+   value in a hairline list row - not a link, not tappable, not emphasised. It is now the
+   largest single element in the card body and a real tel: control on the warm wash. */
+.rsb-tel{
+  display:inline-flex;align-items:center;gap:12px;
+  min-height:56px;padding:12px 20px;margin:0 0 18px;
+  background:var(--ds-bg-warm);border:1px solid var(--ds-line-strong);
+  border-radius:var(--ds-r-control);text-decoration:none;
+  box-shadow:inset 4px 0 0 var(--ds-signature);
+  transition:background-color var(--ds-dur-fast) var(--ds-ease),
+             border-color var(--ds-dur-fast) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease);
+}
+.rsb-tel:hover{background:var(--ds-bg-surface-2);border-color:var(--ds-primary);box-shadow:inset 4px 0 0 var(--ds-signature),var(--ds-shadow-card)}
+.rsb-tel:focus-visible{outline:3px solid var(--ds-accent);outline-offset:3px}
+.rsb-tel svg{width:22px;height:22px;flex:0 0 22px;color:var(--ds-signature-deep)}
+.rsb-tel span{display:block;font:700 var(--ds-fs-label)/1.3 var(--ds-font-body);letter-spacing:var(--ds-tracking-label);text-transform:uppercase;color:var(--ds-ink-soft)}
+.rsb-tel b{display:block;font:500 22px/1.25 var(--ds-font-mono);color:var(--ds-ink-heading);font-variant-numeric:tabular-nums;letter-spacing:.01em;margin-top:3px}
+
+.rsb-vig__rows{list-style:none;margin:0 0 20px;padding:0}
+/* r3: HOURS. 14px on a 1.29:1 hairline became 17px on a 3.89:1 rule, with the row padding
+   opened so each line is its own 44px-plus band. A reader tracking Tuesday across to 7 PM is
+   exactly the reader whose contrast sensitivity has dropped, and the rule is what carries them. */
+.rsb-vig__rows li{
+  display:flex;justify-content:space-between;gap:16px;align-items:baseline;
+  padding:12px 0;border-bottom:1px solid var(--ds-line-strong);
+  font:400 17px/1.5 var(--ds-font-body);color:var(--ds-ink-soft);
+}
+.rsb-vig__rows li:last-child{border-bottom:0}
+.rsb-vig__rows b{font:500 17px/1.5 var(--ds-font-mono);color:var(--ds-ink);font-variant-numeric:tabular-nums;text-align:right}
+.rsb-vig__rating{
+  display:flex;align-items:center;gap:10px;margin:0 0 16px;flex-wrap:wrap;
+  font:400 var(--ds-fs-secondary)/1.5 var(--ds-font-body);color:var(--ds-ink-soft);
+}
+.rsb-vig__rating b{font:600 20px/1.1 var(--ds-font-display);color:var(--ds-ink-heading)}
+.rsb-vig__stars{color:var(--ds-accent-deep);letter-spacing:2px;font-size:18px}
+.rsb-vig__cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---- honesty footer ---- */
+.rsb-foot{
+  margin-top:clamp(56px,6.6vw,92px);border-top:2px solid var(--ds-primary);
+  padding-top:30px;
+}
+.rsb-foot ul{margin:0;padding-left:22px;max-width:78ch}
+.rsb-foot li{font-size:var(--ds-fs-secondary);line-height:1.7;color:var(--ds-ink-soft);margin-bottom:9px}
+
+/* from: MOTION-PATTERNS.md #21 Fade-up (modern marketing default), gated by reduced-motion */
+@keyframes rsb-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  .rsb-masthead,.rsb-bay{animation:rsb-rise var(--ds-dur-slow) var(--ds-ease-out) both}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+  .rsb-btn:hover,.rsb-card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="rsb-sheet">
+
+  <!-- ==========================================================================
+       MASTHEAD
+       from: _MODERN-DESIGN-PATTERN-LIBRARY.md E2 (oversized display, negative tracking)
+       from: _MODERN-WOW-SPEC.md section 5 (soft accent wash behind one key moment)
+       ========================================================================== -->
+  <header class="rsb-masthead">
+    <p class="rsb-eyebrow">Brand card &middot; concept B &middot; revision r3</p>
+    <h1>Warm reassurance</h1>
+    <p class="rsb-lede">The practice's own deep navy and offer yellow, carried on softly tinted
+      surface washes. A humanist slab display over a clean sans body, generously rounded controls,
+      and a gentle layered lift. Warm and approachable without losing clinical credibility.</p>
+    <div class="rsb-meta">
+      <span>Radiant Smiles Dental Care</span>
+      <span>Surface: light (C7 dark_ratio 0.154)</span>
+      <span>Navy is ink and structure</span>
+      <span>Yellow is precision, once at full strength</span>
+      <span>Third tone: sage #6E8268</span>
+      <span>Body 18px / 1.65</span>
+      <span>Nothing under 14px</span>
+      <span>Every text pair clears AAA 7:1</span>
+      <span>Every control 48px or taller</span>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       1. LOGO AND WORDMARK LOCKUPS
+       from: _MODERN-DESIGN-PATTERN-LIBRARY.md E1 (the display face carries the wordmark)
+       from: SURFACE-PATTERNS.md section 5 #35 Circular-mask (the round mark medallion)
+       Brand facts: C6 section 2 (three marks on disk, no vector master).
+       ========================================================================== -->
+  <section class="rsb-bay">
+    <p class="rsb-eyebrow">01 Lockups</p>
+    <h2>How the name is set</h2>
+    <p class="rsb-note">Four lockups drawn from one construction: the round mark, the name in
+      Roboto Slab at 600, and a tracked sans descriptor. The name is set as type rather than as
+      artwork because C6 section 2 records no vector master anywhere on the site, so the wordmark
+      has to be reproducible at any size today.</p>
+
+    <div class="rsb-grid rsb-g2" style="margin-top:22px">
+
+      <div class="rsb-panel rsb-lock">
+        <span class="rsb-lock__cap">Primary horizontal</span>
+        <div class="rsb-wordmark">
+          <span class="rsb-wordmark__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 9.2c0-2.6 1.9-4.4 4-4.4 1.5 0 2.6.7 4 .7s2.5-.7 4-.7c2.1 0 4 1.8 4 4.4 0 4.4-2.6 10-4.6 10-1.1 0-1.6-1.6-3.4-1.6s-2.3 1.6-3.4 1.6C6.6 19.2 4 13.6 4 9.2Z"/>
+            </svg>
+          </span>
+          <span class="rsb-wordmark__type">
+            <b>Radiant Smiles</b>
+            <i>Dental Care</i>
+          </span>
+        </div>
+        <span class="rsb-lock__cap">Header, letterhead, map listing</span>
+      </div>
+
+      <div class="rsb-panel rsb-lock rsb-lock--stack">
+        <span class="rsb-lock__cap">Stacked</span>
+        <div class="rsb-wordmark">
+          <span class="rsb-wordmark__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 9.2c0-2.6 1.9-4.4 4-4.4 1.5 0 2.6.7 4 .7s2.5-.7 4-.7c2.1 0 4 1.8 4 4.4 0 4.4-2.6 10-4.6 10-1.1 0-1.6-1.6-3.4-1.6s-2.3 1.6-3.4 1.6C6.6 19.2 4 13.6 4 9.2Z"/>
+            </svg>
+          </span>
+          <span class="rsb-wordmark__type">
+            <b>Radiant Smiles</b>
+            <i>Dental Care</i>
+          </span>
+        </div>
+        <span class="rsb-lock__cap">Square avatar, office signage, social profile</span>
+      </div>
+
+      <div class="rsb-panel rsb-lock surface-dark" style="background:var(--ds-bg-surface);border-color:var(--ds-line);color:var(--ds-ink)">
+        <span class="rsb-lock__cap" style="color:var(--ds-ink-soft)">Reversed on the navy anchor</span>
+        <div class="rsb-wordmark">
+          <span class="rsb-wordmark__mark" style="background:var(--ds-accent);color:var(--ds-primary-deep)" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 9.2c0-2.6 1.9-4.4 4-4.4 1.5 0 2.6.7 4 .7s2.5-.7 4-.7c2.1 0 4 1.8 4 4.4 0 4.4-2.6 10-4.6 10-1.1 0-1.6-1.6-3.4-1.6s-2.3 1.6-3.4 1.6C6.6 19.2 4 13.6 4 9.2Z"/>
+            </svg>
+          </span>
+          <span class="rsb-wordmark__type">
+            <b style="color:var(--ds-ink-on-dark)">Radiant Smiles</b>
+            <i style="color:var(--ds-accent)">Dental Care</i>
+          </span>
+        </div>
+        <span class="rsb-lock__cap" style="color:var(--ds-ink-soft)">Offer band, footer, appointment card</span>
+      </div>
+
+      <div class="rsb-panel rsb-lock rsb-span">
+        <span class="rsb-lock__cap">Marks as supplied today</span>
+        <div class="rsb-grid" style="gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+          <div class="rsb-asset">
+            <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_03_radiant-smiles-logo-lv.jpg"
+                 alt="Radiant Smiles Dental Care colour logo lockup as published on radiantsmilesnv.com" width="472" height="225">
+          </div>
+          <div class="rsb-asset rsb-asset--rev">
+            <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_03_radiant-smiles-logo-white.png"
+                 alt="Radiant Smiles Dental Care reversed white logo lockup" width="350" height="232">
+          </div>
+          <div class="rsb-asset rsb-asset--mark">
+            <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-logo-mark.webp"
+                 alt="Radiant Smiles Dental Care icon mark, also used as the site favicon" width="232" height="232">
+          </div>
+        </div>
+        <span class="rsb-flag">OWNER, C6 section 2: no vector master exists. The primary lockup is a
+          472px JPG with no transparency and is upscaled in the live header. Request the .ai, .svg or .eps.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       2. PALETTE WITH ROLES
+       from: COLOR-THEORY-PRESETS.md #7 Editorial Navy + Ivory (family structure only)
+       from: COLOR-THEORY-PRESETS.md #1 Warm Cream + Terracotta (the signature slot)
+       from: COLOR-THEORY-PRESETS.md #5 Mexican Hacienda (the sage tint literal)
+       from: _MODERN-DESIGN-PATTERN-LIBRARY.md F1 (one accent, tinted ink, off-white paper)
+       from: _MODERN-DESIGN-PATTERN-LIBRARY.md F4 + J10 (tinted-surface wash bands, medical)
+       Considered: #10 Modern Family Medical, #53 Pediatric Bright and #54 HIPAA Medical. All
+       three were rejected because each replaces the practice's real navy with a brighter blue
+       and its real yellow with a mint or clinical green, which discards the two colours the
+       brand already owns. Only the SIGNATURE slot was taken from another entry, because the
+       signature slot is the one role the live palette has no member of.
+       ========================================================================== -->
+  <section class="rsb-bay">
+    <p class="rsb-eyebrow">02 Palette and roles</p>
+    <h2>Every colour has one job</h2>
+    <p class="rsb-note">The navy, the second navy and the yellow are the practice's own, sampled
+      from the live homepage on 2026-07-30 and recorded in C6 section 3. What is new here is the
+      role map, and one genuinely new tone. Sixteen swatches carrying seventeen values, four roles:
+      the light ramp that is the page, the navy that is authority, the yellow that is the offer, and
+      the sage that is reassurance. Three of those values moved in r3 and none of them moved for
+      taste: <code class="rsb-code">--ds-ink-soft</code> and <code class="rsb-code">--ds-accent-ink</code>
+      were darkened until every text pair on the sheet cleared AAA 7 to 1, and
+      <code class="rsb-code">--ds-line-strong</code> was added because the existing hairline was
+      1.29 to 1 and was being asked to draw input borders.</p>
+
+    <div class="rsb-grid rsb-g4 rsb-pal" style="margin-top:22px">
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#FBF7EF"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Page canvas</b>
+          <code class="rsb-sw__var">--ds-bg-surface</code>
+          <code class="rsb-sw__hex">#FBF7EF</code>
+          <small class="rsb-sw__use">Warm paper, never pure white. Warmth borrowed from the yellow so the whole sheet reads calm rather than clinical.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#FFFDF8"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Raised card</b>
+          <code class="rsb-sw__var">--ds-bg-surface-2</code>
+          <code class="rsb-sw__hex">#FFFDF8</code>
+          <small class="rsb-sw__use">Warm ivory, one step up the same ramp. It replaced #FFFFFF in r2: pure white was the live site's canvas, and it is now absent from this sheet entirely.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#FAF3E0"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Warm wash band</b>
+          <code class="rsb-sw__var">--ds-bg-warm</code>
+          <code class="rsb-sw__hex">#FAF3E0</code>
+          <small class="rsb-sw__use">About 6 percent of the accent over the canvas. Carries the welcome, hours and reassurance bands.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#EDF1F8"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Calm wash band</b>
+          <code class="rsb-sw__var">--ds-primary-soft</code>
+          <code class="rsb-sw__hex">#EDF1F8</code>
+          <small class="rsb-sw__use">The navy-tinted half of the wash pair. Service and insurance surfaces, where the register turns practical.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#DEE6D4"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Reassurance wash</b>
+          <code class="rsb-sw__var">--ds-signature-soft</code>
+          <code class="rsb-sw__hex">#DEE6D4</code>
+          <small class="rsb-sw__use">The sage tint, taken verbatim from COLOR-THEORY-PRESETS.md #5. The third wash, and the only surface on the sheet the live palette could not produce.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#17274F"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Brand, controls, structural caps</b>
+          <code class="rsb-sw__var">--ds-primary</code>
+          <code class="rsb-sw__hex">#17274F</code>
+          <small class="rsb-sw__use">The practice's dominant hex, 93 uses on the live homepage. Primary buttons, table rules and the 3px cap on the appointment card. Paper on it reads 13.65 to 1.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#0F1B36"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Dark ground and heading ink</b>
+          <code class="rsb-sw__var">--ds-primary-deep</code>
+          <code class="rsb-sw__hex">#0F1B36</code>
+          <small class="rsb-sw__use">The reversed-lockup ground, and the heading ink on light. Paper on it reads 15.97 to 1.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#1D2F61"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Second navy</b>
+          <code class="rsb-sw__var">--ds-primary-2</code>
+          <code class="rsb-sw__hex">#1D2F61</code>
+          <small class="rsb-sw__use">The practice's real second navy from C6, 2 uses. Kept as the sunk band inside the dark flip so the anchor has its own depth.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#FCE003"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Offer signal</b>
+          <code class="rsb-sw__var">--ds-accent</code>
+          <code class="rsb-sw__hex">#FCE003</code>
+          <small class="rsb-sw__use">The offer colour the brand already owns. Rules, edge caps, underlines, focus rings, small marks, and one full-strength control. No flat fill bands.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#FFF6CE"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Offer wash</b>
+          <code class="rsb-sw__var">--ds-accent-soft</code>
+          <code class="rsb-sw__hex">#FFF6CE</code>
+          <small class="rsb-sw__use">Palest yellow tint. This is what the old flat offer band became: a pale surface carrying a 3px full-strength edge cap.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#5C4500"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Offer ink</b>
+          <code class="rsb-sw__var">--ds-accent-ink</code>
+          <code class="rsb-sw__hex">#5C4500</code>
+          <small class="rsb-sw__use">The darkened accent that carries eyebrows and kicker labels. r3 moved it from #7A5C00, which was 5.85 to 1 and therefore AA only; it now reads 8.52 to 1 on the canvas and clears 7 to 1 on every surface on this sheet. Small yellow text is never the raw accent.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#6E8268"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Signature, reassurance</b>
+          <code class="rsb-sw__var">--ds-signature</code>
+          <code class="rsb-sw__hex">#6E8268</code>
+          <small class="rsb-sw__use">Sage. Replaces the retired #E7B84D, which was a gold and therefore the yellow again. The arc seam, the medallion ring and the reassurance marks. 4.09 to 1 against the card as a non-text mark.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#374931"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Signature ink</b>
+          <code class="rsb-sw__var">--ds-signature-deep</code>
+          <code class="rsb-sw__hex">#374931</code>
+          <small class="rsb-sw__use">The deepened sage that lets the third tone carry real text: 9.10 to 1 on the canvas, 7.58 to 1 on its own wash.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#16213F"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Default text</b>
+          <code class="rsb-sw__var">--ds-ink</code>
+          <code class="rsb-sw__hex">#16213F</code>
+          <small class="rsb-sw__use">Navy-tinted near-black, never #000. Reads 14.85 to 1 on the canvas.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:#3C465D"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Secondary text</b>
+          <code class="rsb-sw__var">--ds-ink-soft</code>
+          <code class="rsb-sw__hex">#3C465D</code>
+          <small class="rsb-sw__use">A desaturated tint of the ink rather than a generic grey. r3 moved it from #4C5875, holding hue 222 and saturation 21 percent and dropping lightness 37.8 to 30 percent, so it is the same tint one step deeper. Reads 8.83 to 1 on the canvas and 7.36 to 1 on its worst ground, the reassurance wash, where it used to read 5.53.</small>
+        </div>
+      </div>
+
+      <div class="rsb-sw">
+        <div class="rsb-sw__chip" style="background:linear-gradient(90deg,#D9E1EF 0 50%,#6A7DA0 50% 100%)"></div>
+        <div class="rsb-sw__body">
+          <b class="rsb-sw__role">Hairline and structural rule</b>
+          <code class="rsb-sw__var">--ds-line / --ds-line-strong</code>
+          <code class="rsb-sw__hex">#D9E1EF / #6A7DA0</code>
+          <small class="rsb-sw__use">Navy in structural form, now as a pair. #D9E1EF is 1.29 to 1 and r3 demotes it to decorative panel edges only. #6A7DA0, the same hue 218 at 22 percent saturation, reads 3.89 to 1 on the canvas and carries every UI-component boundary and every data rule a reader tracks across.</small>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ------------------------------------------------------------------
+         MEASURED CONTRAST LEDGER. Every figure below was COMPUTED with the
+         WCAG 2.1 relative-luminance formula, not estimated. Translucent layers
+         were composited to a solid hex first; gradients were measured at both
+         ends and the worse end is the one reported.
+         r3 REBUILT THIS TABLE FROM THE RENDER rather than from the stylesheet.
+         The sheet was loaded headless at 1440 / 1024 / 768 / 375, and every
+         element carrying its own text node was walked with getComputedStyle;
+         each element's ground was resolved by climbing its ancestors and
+         compositing every translucent layer down to the first opaque one. That
+         census returned 336 painted text elements resolving to 21 DISTINCT
+         foreground/ground pairs, and those pairs are the rows below (plus the
+         hover and dark-flip states, which a static census cannot reach). This
+         is why the r2 table listed an input placeholder at 4.82:1 that the
+         recomputation puts at 4.80:1 - r2 composited in floating point and did
+         not round to the 8-bit channel a browser actually paints. The moot
+         point is that the row is gone either way: the opacity that produced it
+         was removed.
+         ------------------------------------------------------------------ -->
+    <div class="rsb-panel rsb-span" style="margin-top:28px;overflow-x:auto">
+      <table class="rsb-meas">
+        <caption>Measured contrast, WCAG 2.1 formula, taken from the rendered paint stack</caption>
+        <thead>
+          <tr><th scope="col">Pair</th><th scope="col">Foreground</th><th scope="col">Ground</th><th scope="col">Ratio</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-l="Pair">Card body copy on the reassurance wash - the lowest text pair on the sheet</td><td data-l="Foreground" class="rsb-meas__hex">#3C465D</td><td data-l="Ground" class="rsb-meas__hex">#DEE6D4</td><td data-l="Ratio" class="rsb-meas__n">7.36 : 1</td></tr>
+          <tr><td data-l="Pair">Reassurance chip and callout text on its own wash</td><td data-l="Foreground" class="rsb-meas__hex">#374931</td><td data-l="Ground" class="rsb-meas__hex">#DEE6D4</td><td data-l="Ratio" class="rsb-meas__n">7.58 : 1</td></tr>
+          <tr><td data-l="Pair">Eyebrow label on the warm wash, inside the motif</td><td data-l="Foreground" class="rsb-meas__hex">#5C4500</td><td data-l="Ground" class="rsb-meas__hex">#FAF3E0</td><td data-l="Ratio" class="rsb-meas__n">8.22 : 1</td></tr>
+          <tr><td data-l="Pair">Secondary text on the calm wash</td><td data-l="Foreground" class="rsb-meas__hex">#3C465D</td><td data-l="Ground" class="rsb-meas__hex">#EDF1F8</td><td data-l="Ratio" class="rsb-meas__n">8.33 : 1</td></tr>
+          <tr><td data-l="Pair">Secondary text on the warm wash</td><td data-l="Foreground" class="rsb-meas__hex">#3C465D</td><td data-l="Ground" class="rsb-meas__hex">#FAF3E0</td><td data-l="Ratio" class="rsb-meas__n">8.52 : 1</td></tr>
+          <tr><td data-l="Pair">Section eyebrow labels on the canvas</td><td data-l="Foreground" class="rsb-meas__hex">#5C4500</td><td data-l="Ground" class="rsb-meas__hex">#FBF7EF</td><td data-l="Ratio" class="rsb-meas__n">8.52 : 1</td></tr>
+          <tr><td data-l="Pair">Secondary text and annotation prose on the canvas</td><td data-l="Foreground" class="rsb-meas__hex">#3C465D</td><td data-l="Ground" class="rsb-meas__hex">#FBF7EF</td><td data-l="Ratio" class="rsb-meas__n">8.83 : 1</td></tr>
+          <tr><td data-l="Pair">Masthead lede over the glow wash at its densest stop</td><td data-l="Foreground" class="rsb-meas__hex">#3C465D</td><td data-l="Ground" class="rsb-meas__hex">#FFF9D6</td><td data-l="Ratio" class="rsb-meas__n">8.88 : 1</td></tr>
+          <tr><td data-l="Pair">Eyebrows, wordmark descriptor and token names on the card</td><td data-l="Foreground" class="rsb-meas__hex">#5C4500</td><td data-l="Ground" class="rsb-meas__hex">#FFFDF8</td><td data-l="Ratio" class="rsb-meas__n">8.96 : 1</td></tr>
+          <tr><td data-l="Pair">Signature ink on the canvas</td><td data-l="Foreground" class="rsb-meas__hex">#374931</td><td data-l="Ground" class="rsb-meas__hex">#FBF7EF</td><td data-l="Ratio" class="rsb-meas__n">9.10 : 1</td></tr>
+          <tr><td data-l="Pair">Reversed lockup caption, paper at 74 percent, composited</td><td data-l="Foreground" class="rsb-meas__hex">#BEBEBF</td><td data-l="Ground" class="rsb-meas__hex">#0F1B36</td><td data-l="Ratio" class="rsb-meas__n">9.19 : 1</td></tr>
+          <tr><td data-l="Pair">Secondary text and the input placeholder on the card</td><td data-l="Foreground" class="rsb-meas__hex">#3C465D</td><td data-l="Ground" class="rsb-meas__hex">#FFFDF8</td><td data-l="Ratio" class="rsb-meas__n">9.28 : 1</td></tr>
+          <tr><td data-l="Pair">Offer chip and owner-flag text on the offer wash</td><td data-l="Foreground" class="rsb-meas__hex">#4D3900</td><td data-l="Ground" class="rsb-meas__hex">#FFF6CE</td><td data-l="Ratio" class="rsb-meas__n">10.17 : 1</td></tr>
+          <tr><td data-l="Pair">Rating glyphs and small offer text on the card</td><td data-l="Foreground" class="rsb-meas__hex">#4D3900</td><td data-l="Ground" class="rsb-meas__hex">#FFFDF8</td><td data-l="Ratio" class="rsb-meas__n">10.87 : 1</td></tr>
+          <tr><td data-l="Pair">Paper on the second navy, dark-flip sunk band</td><td data-l="Foreground" class="rsb-meas__hex">#FBF7EF</td><td data-l="Ground" class="rsb-meas__hex">#1D2F61</td><td data-l="Ratio" class="rsb-meas__n">12.05 : 1</td></tr>
+          <tr><td data-l="Pair">The one full-strength yellow moment: offer button label</td><td data-l="Foreground" class="rsb-meas__hex">#0F1B36</td><td data-l="Ground" class="rsb-meas__hex">#FCE003</td><td data-l="Ratio" class="rsb-meas__n">12.84 : 1</td></tr>
+          <tr><td data-l="Pair">Reversed wordmark descriptor on the dark ground</td><td data-l="Foreground" class="rsb-meas__hex">#FCE003</td><td data-l="Ground" class="rsb-meas__hex">#0F1B36</td><td data-l="Ratio" class="rsb-meas__n">12.84 : 1</td></tr>
+          <tr><td data-l="Pair">Service chip ink on the calm wash</td><td data-l="Foreground" class="rsb-meas__hex">#17274F</td><td data-l="Ground" class="rsb-meas__hex">#EDF1F8</td><td data-l="Ratio" class="rsb-meas__n">12.88 : 1</td></tr>
+          <tr><td data-l="Pair">Card heading on the reassurance wash</td><td data-l="Foreground" class="rsb-meas__hex">#0F1B36</td><td data-l="Ground" class="rsb-meas__hex">#DEE6D4</td><td data-l="Ratio" class="rsb-meas__n">13.31 : 1</td></tr>
+          <tr><td data-l="Pair">Paper on the primary control</td><td data-l="Foreground" class="rsb-meas__hex">#FBF7EF</td><td data-l="Ground" class="rsb-meas__hex">#17274F</td><td data-l="Ratio" class="rsb-meas__n">13.65 : 1</td></tr>
+          <tr><td data-l="Pair">Offer button label on hover</td><td data-l="Foreground" class="rsb-meas__hex">#0F1B36</td><td data-l="Ground" class="rsb-meas__hex">#FFEC5C</td><td data-l="Ratio" class="rsb-meas__n">14.15 : 1</td></tr>
+          <tr><td data-l="Pair">Body text on the canvas</td><td data-l="Foreground" class="rsb-meas__hex">#16213F</td><td data-l="Ground" class="rsb-meas__hex">#FBF7EF</td><td data-l="Ratio" class="rsb-meas__n">14.85 : 1</td></tr>
+          <tr><td data-l="Pair">Card heading on the warm wash</td><td data-l="Foreground" class="rsb-meas__hex">#0F1B36</td><td data-l="Ground" class="rsb-meas__hex">#FAF3E0</td><td data-l="Ratio" class="rsb-meas__n">15.41 : 1</td></tr>
+          <tr><td data-l="Pair">Address, hours values and table data on the card</td><td data-l="Foreground" class="rsb-meas__hex">#16213F</td><td data-l="Ground" class="rsb-meas__hex">#FFFDF8</td><td data-l="Ratio" class="rsb-meas__n">15.61 : 1</td></tr>
+          <tr><td data-l="Pair">Section headings on the canvas</td><td data-l="Foreground" class="rsb-meas__hex">#0F1B36</td><td data-l="Ground" class="rsb-meas__hex">#FBF7EF</td><td data-l="Ratio" class="rsb-meas__n">15.97 : 1</td></tr>
+          <tr><td data-l="Pair">Reversed wordmark on the dark ground</td><td data-l="Foreground" class="rsb-meas__hex">#FBF7EF</td><td data-l="Ground" class="rsb-meas__hex">#0F1B36</td><td data-l="Ratio" class="rsb-meas__n">15.97 : 1</td></tr>
+          <tr><td data-l="Pair">Heading ink on the card</td><td data-l="Foreground" class="rsb-meas__hex">#0F1B36</td><td data-l="Ground" class="rsb-meas__hex">#FFFDF8</td><td data-l="Ratio" class="rsb-meas__n">16.79 : 1</td></tr>
+        </tbody>
+      </table>
+      <p class="rsb-lowest"><b>Lowest text-on-surface ratio anywhere on this sheet: 7.36 : 1</b>, the
+        card body copy sitting on the reassurance wash. That is the AAA bar for small text, not the
+        AA one, and it is the floor rather than the exception: all 27 pairs above clear 7 to 1. The
+        r2 floor was 4.80 : 1 and 193 of 307 painted text elements sat under 7 : 1. Reduced contrast
+        sensitivity, not reduced acuity, is the first thing presbyopia takes, so AAA is the bar this
+        sheet is held to and 2.86 points of the margin above AA is the whole point of the pass.</p>
+      <p class="rsb-note" style="margin-top:16px"><b>Where the yellow rules stand, stated plainly.</b>
+        #FCE003 against the ivory card measures 1.31 : 1 and against the canvas 1.24 : 1. That is the
+        honest reason the live site had to deploy it as huge flat bands: at full strength on paper the
+        yellow is almost as luminous as the paper. Every accent rule, cap and underline on this sheet
+        is therefore DECORATIVE emphasis sitting beside text that carries the meaning on its own,
+        which is why WCAG 1.4.11 does not apply to them. The one place the yellow is load-bearing is
+        the offer control, and there it is a fill with 12.84 : 1 navy-deep type on it. The sage marks
+        are held to the 3 : 1 non-text bar instead and clear it: the arc seam reads 3.75 : 1 on the
+        warm wash and 4.09 : 1 on the card.</p>
+      <p class="rsb-note" style="margin-top:12px"><b>Where the LINES stand, which r3 had to separate.</b>
+        The two roles were being served by one token and the weaker of them was failing. A decorative
+        panel edge sits on a surface already separated by elevation, so #D9E1EF at 1.29 : 1 is a legitimate
+        drawn hairline and keeps that job. A UI-component boundary is different: WCAG 1.4.11 puts a hard
+        3 : 1 bar on the edge of an input, a select or an outline control, because that edge is the only
+        thing telling a user where the control is. #D9E1EF was drawing those too. The new
+        <code class="rsb-code">--ds-line-strong</code> #6A7DA0 measures 3.89 : 1 on the canvas, 4.09 : 1 on
+        the card, 3.75 : 1 on the warm wash and 3.67 : 1 on the calm wash, and in the dark flip it
+        composites to #7C808B for 4.32 : 1. It also carries the hours rows, which are not a WCAG obligation
+        but are the rule an eye with reduced contrast sensitivity actually tracks a Tuesday along.</p>
+    </div>
+
+    <!-- ------------------------------------------------------------------
+         NOVELTY PROOF for the signature tone. Empirical, not asserted.
+         ------------------------------------------------------------------ -->
+    <div class="rsb-panel rsb-span" style="margin-top:22px">
+      <span class="rsb-lock__cap" style="display:block;margin-bottom:12px">Why sage, and the proof that it is new</span>
+      <p class="rsb-note">Every distinct colour in the live homepage snapshot was extracted, in all three
+        notations it uses (six-digit hex, three-digit hex and rgb / rgba). Fifty-five distinct colours
+        were found. #6E8268 is not one of them, and its nearest neighbour by CIEDE2000 among all
+        fifty-five is #7A7A7A, a pure neutral grey, at a distance of 14.8. The just-noticeable
+        difference for CIEDE2000 is about 2.3, so nothing in the live palette is even close.</p>
+      <p class="rsb-note" style="margin-top:10px">The same-family test against the colours that are
+        actually the brand: sage sits 117 degrees of hue and 42.3 CIEDE2000 from the navy #17274F,
+        118 degrees and 41.9 from the second navy #1D2F61, and 53 degrees and 38.6 from the yellow
+        #FCE003. The tone it replaces, #E7B84D, sat only 11 degrees of hue from that yellow, which is
+        why it was worth replacing: it was the accent again at lower saturation, not a relationship.</p>
+      <p class="rsb-note" style="margin-top:10px">The live markup does contain four greens and teals,
+        <code class="rsb-code">#7bdcb5</code>, <code class="rsb-code">#00d084</code>,
+        <code class="rsb-code">#009688</code> and <code class="rsb-code">#61ce70</code>, appearing once
+        each. They are the WordPress block-editor default swatches, present in the stylesheet and used
+        by nothing on the page. Sage is not in their family either: all four are 53 to 100 percent
+        saturated at hues 128 to 174, while sage is 11 percent saturated at hue 106. The closest of
+        them, #009688, is 16.5 CIEDE2000 away.</p>
+      <p class="rsb-note" style="margin-top:10px">And the reason it is sage rather than any other novel
+        hue: COLOR-THEORY-PRESETS.md entry #1 "Warm Cream + Terracotta" is the catalogue's warm-cream
+        family, its <code class="rsb-code">bg-surface</code> is #FBF6EE, one unit from this concept's
+        canvas, and its optional third colour is #6E8268 exactly. BRAND-TOKEN-SCHEMA.md defines
+        <code class="rsb-code">--ds-signature</code> as the "Optional 3rd color for personality
+        flourish". The catalogue's own answer for what sits on warm cream is the answer this sheet
+        took, and the role it took it into is the role the schema names.</p>
+    </div>
+
+    <p class="rsb-note" style="margin-top:18px">Retired from the record: <code class="rsb-code">#000000</code>,
+      <code class="rsb-code">#ffffff</code>, <code class="rsb-code">#f6f6f6</code>,
+      <code class="rsb-code">#c4c4c4</code>, <code class="rsb-code">#d6d6d6</code> and the concept's own
+      <code class="rsb-code">#E7B84D</code>. Pure black and pure white are gone as ink, canvas, rule,
+      scrim and shadow. The three Elementor greys are replaced by the navy-tinted ink and hairline
+      above, per the tint-never-pure rule in the pattern library; the hairline #D9E1EF sits 7.0
+      CIEDE2000 from #d6d6d6, the nearest of the three, at hue 218 and 41 percent saturation against
+      their 0 percent. #E7B84D is replaced by the sage above.</p>
+  </section>
+
+  <!-- ==========================================================================
+       3. TYPE SCALE
+       from: TYPOGRAPHY-PAIRINGS.md #52 Roboto Slab + Roboto
+       from: _MODERN-DESIGN-PATTERN-LIBRARY.md E1 / E2 / E3 / E4
+       Considered: #51 Lora + Montserrat and #16 Bitter + Karla (both the same warm slab or
+       serif shape, but neither face is on the practice's disk) and #41 DM Sans + Inter (the
+       canonical family-medical pair, but all sans, so it offers no display voice at all).
+       #52 wins because both faces are ALREADY self-hosted by the practice, and choosing them
+       resolves the C6 section 4 flag of three families with no display or body separation.
+       ========================================================================== -->
+  <section class="rsb-bay">
+    <p class="rsb-eyebrow">03 Type</p>
+    <h2>Roboto Slab for warmth, Roboto for clarity</h2>
+    <p class="rsb-note">Both families are already self-hosted on the live site. This concept gives
+      them the separation C6 section 4 says is missing: the slab carries every heading, the sans
+      carries every sentence, and Poppins is retired. Numerals move to a tabular mono face so
+      phone numbers, hours and prices read as data, not prose.</p>
+
+    <p class="rsb-note" style="margin-top:12px">The whole ramp moved up one step in r3, together.
+      Display went from a 68px cap to 74px at the same time body went 17px to 18px, so the
+      display-to-body ratio is 4.11 where it was 4.00 and the hierarchy a reader navigates by is
+      untouched. That is the difference between a legible sheet and a large-print one: the large-print
+      version raises body copy and leaves the headline alone, which flattens the page and makes it
+      read as an accommodation. Raising the whole scale and paying for it in whitespace reads as
+      editorial confidence instead, which is what a 25-year-old and a 55-year-old both want to see
+      from a dental practice.</p>
+
+    <div class="rsb-panel" style="margin-top:24px">
+
+      <div class="rsb-spec">
+        <code class="rsb-spec__tag">Display &middot; Roboto Slab 600 &middot; clamp(44px, 6.4vw, 74px) &middot; tracking -0.02em &middot; display face only</code>
+        <p class="rsb-t-display">All That Is Good, Begins With A Smile</p>
+        <p class="rsb-note" style="margin-top:12px"><span class="rsb-flag">C6 section 5</span>
+          This line appears on the live site as a homepage section heading only. It is not in the
+          header, the lockup, the page title or any meta description, so it is shown here as a
+          display specimen and not yet as a deployed strapline.</p>
+      </div>
+
+      <div class="rsb-spec">
+        <code class="rsb-spec__tag">H1 &middot; Roboto Slab 600 &middot; clamp(34px, 4.6vw, 52px)</code>
+        <p class="rsb-t-h1">Dental care for patients of all ages</p>
+      </div>
+
+      <div class="rsb-spec">
+        <code class="rsb-spec__tag">H2 &middot; Roboto Slab 600 &middot; clamp(27px, 3.1vw, 37px)</code>
+        <p class="rsb-t-h2">Seven offices across the Las Vegas valley</p>
+      </div>
+
+      <div class="rsb-spec">
+        <code class="rsb-spec__tag">H3 &middot; Roboto Slab 600 &middot; 23px</code>
+        <p class="rsb-t-h3">New patient special</p>
+      </div>
+
+      <div class="rsb-spec">
+        <code class="rsb-spec__tag">Lede &middot; Roboto 400 &middot; 22px / 1.55 &middot; measure 58ch</code>
+        <p class="rsb-t-lede">Radiant Smiles Dental Care is a group practice. Care is delivered
+          in-house by licensed dentists at seven offices in Las Vegas, North Las Vegas and Henderson.</p>
+      </div>
+
+      <div class="rsb-spec">
+        <code class="rsb-spec__tag">Body &middot; Roboto 400 &middot; 18px / 1.65 &middot; measure 66ch &middot; tracking 0</code>
+        <p class="rsb-t-body">Six specialties are handled under one roof: general dentistry,
+          cosmetic dentistry, restorations, oral and maxillofacial surgery, periodontics and
+          orthodontics. Ten dentists practise across the seven offices. Every phone number, address
+          and set of opening hours on this site belongs to a specific office, so a patient always
+          reaches the neighbourhood they are booking into.</p>
+      </div>
+
+      <div class="rsb-spec">
+        <code class="rsb-spec__tag">Secondary &middot; Roboto 400 &middot; 16px / 1.6 &middot; measure 72ch</code>
+        <p class="rsb-note" style="margin:0">The annotation voice, and the one carrying most of the
+          words on this sheet. It was 13px over an 82ch measure. Both numbers had to move: setting
+          the same measure in bigger type produces a line too long to track back to, so 16px is
+          paired with 72ch.</p>
+      </div>
+
+      <div class="rsb-spec">
+        <code class="rsb-spec__tag">Small &middot; Roboto 400 &middot; 15px / 1.65 &middot; the floor is 14px</code>
+        <p class="rsb-t-small">Used for disclosures, swatch usage notes, insurance carrier names and
+          any line that carries a condition. The absolute floor on this sheet is 14px, and it is
+          reserved for tracked uppercase micro-labels that are scanned rather than read. Everything
+          a person actually reads sits at 15px or above. Measured in-render before r3, the smallest
+          painted size on this sheet was 10px and 252 of 314 text elements sat under 14px.</p>
+      </div>
+
+      <div class="rsb-spec">
+        <code class="rsb-spec__tag">Numerals &middot; mono 500 &middot; 18px &middot; tabular-nums &middot; phone is a tel: control</code>
+        <p class="rsb-t-mono"><a class="rsb-btn rsb-btn--link" href="tel:+17022894424" style="font-family:var(--ds-font-mono);font-size:20px;font-weight:500"><span>(702) 289-4424</span></a>
+          &middot; 7469 W. Lake Mead Blvd., Suite 270<br>
+          <b>Sunday</b> 8:30 AM to 3 PM &middot; <b>$45</b> exam and X-ray &middot; <b>89128</b></p>
+        <p class="rsb-note" style="margin:14px 0 0">Numerals are the one place the mono face earns its
+          keep. C7 section 4 makes hours, addresses and phone numbers load-bearing UI for a
+          seven-office practice, so every phone number on this sheet is a <code class="rsb-code">tel:</code>
+          control sized as a control, not a string of digits sitting inside a sentence.</p>
+      </div>
+
+    </div>
+
+    <!-- ------------------------------------------------------------------
+         r3: THE LEGIBILITY CONTRACT. Every figure here was measured on the
+         RENDERED sheet with getComputedStyle and getBoundingClientRect, not
+         read off the stylesheet. It is stated as part of the identity because
+         it is part of the identity: C7 section 4 makes it a hard rule.
+         ------------------------------------------------------------------ -->
+    <div class="rsb-panel" style="margin-top:24px">
+      <span class="rsb-lock__cap" style="display:block;margin-bottom:6px">The legibility contract, measured in-render</span>
+      <p class="rsb-note" style="margin:0">Presbyopia typically begins around 40 and costs both acuity
+        and contrast sensitivity. The contrast half is the half design usually forgets, which is why
+        the AAA line below matters more than the size line. C7 section 4 names anxious and older
+        patients as an audience and the content bible carries the two ADA HPI figures that say who is
+        paying: 55 percent of adults 65 and over, and 21 percent of adults 19 to 64, have no dental
+        benefits at all.</p>
+      <div class="rsb-floors">
+        <div><b>18px / 1.65</b><span>Body, weight 400, zero tracking. Was 17px. Negative tracking exists on the display face only.</span></div>
+        <div><b>14px</b><span>The hard floor, for tracked uppercase micro-labels only. The smallest size painted anywhere on this sheet. Was 10px.</span></div>
+        <div><b>7:1 and above</b><span>Every text-on-surface pair on the sheet, AAA rather than AA. The floor was 5.53 to 1 before r3.</span></div>
+        <div><b>48px minimum</b><span>Every control's rendered box, measured with getBoundingClientRect. WCAG 2.5.5 AAA asks 44. The link control measured 20px tall before r3.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. UI ATOMS
+       from: SURFACE-PATTERNS.md section 1 #4 Soft 16-24px (radius language)
+       from: SURFACE-PATTERNS.md section 3 #17 Solid-square-precise (primary on bundle radius)
+       from: SURFACE-PATTERNS.md section 3 #19 Outline-ghost (secondary)
+       from: SURFACE-PATTERNS.md section 6 #39 Boxed-default (input with alpha focus ring)
+       from: SURFACE-PATTERNS.md section 2 #10 Soft-shadow-lift (card chrome)
+       from: _MODERN-DESIGN-PATTERN-LIBRARY.md I1 / I2 / I5, MOTION-PATTERNS.md #10 Lift
+       Considered for radius: section 1 #3 Modern 8-12px (reads SaaS, too tight for this register)
+       and section 1 #5 Pillowed 28-36px (its own entry warns never to pair with serif type, and
+       this concept is serif-led). Considered for card chrome: section 2 #8 Flat-no-chrome
+       (engineering-cold for a practice selling calm) and section 2 #11 Deep-shadow-floating
+       (consumer-loud, reads as a pressure sale, which C7 section 2 explicitly forbids).
+       ========================================================================== -->
+  <section class="rsb-bay">
+    <p class="rsb-eyebrow">04 Interface atoms</p>
+    <h2>Controls, cards, tags and fields</h2>
+    <p class="rsb-note">One radius language throughout: 12px on anything you click or type into,
+      20px on anything that holds content, full round only for chips and avatars. Every action label
+      is the routed CTA wording from C3, not invented copy.</p>
+
+    <div class="rsb-grid rsb-g2" style="margin-top:22px">
+
+      <div class="rsb-panel">
+        <span class="rsb-lock__cap" style="display:block;margin-bottom:16px">Buttons</span>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+          <a class="rsb-btn rsb-btn--primary" href="#">Book an appointment
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="rsb-btn rsb-btn--ghost" href="tel:+17022894424">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 4h3l1.5 3.7-2 1.3a11 11 0 0 0 5.9 5.9l1.3-2 3.7 1.5v3a1.8 1.8 0 0 1-2 1.8A15.5 15.5 0 0 1 4.8 6a1.8 1.8 0 0 1 1.8-2Z"/></svg>
+            Call (702) 289-4424
+          </a>
+          <a class="rsb-btn rsb-btn--offer" href="#">Claim this offer</a>
+          <a class="rsb-btn rsb-btn--link" href="#"><span>See our locations</span></a>
+        </div>
+        <p class="rsb-note" style="margin-top:18px">The yellow control is the ONE place on this sheet
+          where the accent runs at full strength across a surface, because it is the one place where
+          the colour is the message. Every other yellow is 2 to 3px: the eyebrow rule, the link
+          underline, the motif rule, the offer card's edge cap and the focus ring. Hover and focus
+          move named properties only, never <code class="rsb-code">all</code>.</p>
+        <p class="rsb-note" style="margin-top:12px">Both r3 changes here were invisible until the sheet
+          was rendered and measured. The text link was 127.5 by 20 CSS pixels, failing WCAG 2.5.5 by
+          more than half its height; the underline moved onto an inner span so the control can carry a
+          48px box without the rule drifting off the words. And the secondary control now names the
+          office line as a real <code class="rsb-code">tel:</code> target.</p>
+      </div>
+
+      <div class="rsb-panel">
+        <span class="rsb-lock__cap" style="display:block;margin-bottom:16px">Tags and chips</span>
+        <div class="rsb-tags">
+          <span class="rsb-tag">General dentistry</span>
+          <span class="rsb-tag">Cosmetic dentistry</span>
+          <span class="rsb-tag">Restorations</span>
+          <span class="rsb-tag">Orthodontics</span>
+          <span class="rsb-tag">Periodontics</span>
+          <span class="rsb-tag">Oral and maxillofacial surgery</span>
+        </div>
+        <div class="rsb-tags" style="margin-top:14px">
+          <span class="rsb-tag rsb-tag--accent">New patient special</span>
+          <span class="rsb-tag rsb-tag--care">Care under one roof</span>
+          <span class="rsb-tag rsb-tag--solid">Open Sunday</span>
+          <span class="rsb-tag rsb-tag--outline">Booking online</span>
+        </div>
+        <p class="rsb-note" style="margin-top:16px">The six service chips are the six specialties
+          recorded in C3 productModel. Three registers, three tones: yellow only when the chip names
+          the published offer, sage when it names the reassurance the practice actually sells (C3
+          delivery: in-house clinical care by employed licensed clinicians), navy when it states a
+          plain fact of access.</p>
+      </div>
+
+      <div class="rsb-panel">
+        <span class="rsb-lock__cap" style="display:block;margin-bottom:16px">Fields</span>
+        <label class="rsb-field">
+          <span>Full name</span>
+          <input class="rsb-input" type="text" placeholder="First and last name">
+        </label>
+        <label class="rsb-field">
+          <span>Which office</span>
+          <select class="rsb-select">
+            <option>Lone Mountain, W. Lake Mead Blvd.</option>
+            <option>Summerlin, W. Sahara Ave.</option>
+            <option>Sunrise Manor, S. Nellis Blvd.</option>
+            <option>North Las Vegas, Camino Al Norte Rd.</option>
+            <option>Henderson, W. Horizon Ridge Pkwy.</option>
+            <option>North Decatur, N. Decatur Blvd.</option>
+            <option>Blue Diamond, S. Blue Diamond Rd.</option>
+          </select>
+        </label>
+        <label class="rsb-field" style="margin-bottom:0">
+          <span>Phone</span>
+          <input class="rsb-input" type="tel" placeholder="(702) 000-0000" style="font-family:var(--ds-font-mono)">
+        </label>
+        <p class="rsb-note" style="margin-top:18px">The office list is all seven real offices from
+          C3 contactData. Focus paints a 3px navy ring at 18 percent rather than moving the border
+          weight, so nothing shifts under the cursor. Two r3 fixes live in this panel: the field
+          borders moved off the 1.29 to 1 hairline onto <code class="rsb-code">--ds-line-strong</code>
+          at 3.89 to 1, which is the WCAG 1.4.11 bar for a UI-component boundary and the difference
+          between seeing a box and guessing at one; and the placeholder lost its 85 percent opacity,
+          which was compositing to #677189 and 4.80 to 1. That placeholder was the lowest-contrast
+          text anywhere on the sheet, on the one element a nervous patient has to read to know what
+          to type. It now reads 9.28 to 1.</p>
+      </div>
+
+      <div class="rsb-panel rsb-span" style="background:transparent;border:0;box-shadow:none;padding:0">
+        <span class="rsb-lock__cap" style="display:block;margin-bottom:16px">Cards</span>
+        <div class="rsb-grid" style="gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+          <article class="rsb-card">
+            <span class="rsb-card__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10Z"/></svg>
+            </span>
+            <h3>Care under one roof</h3>
+            <p>Six specialties handled in-house, so a referral is the exception rather than the
+              routine step.</p>
+          </article>
+          <article class="rsb-card rsb-card--warm">
+            <span class="rsb-card__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5-6.5-9.5a6.5 6.5 0 0 1 13 0C18.5 16 12 21 12 21Z"/><circle cx="12" cy="11" r="2.4"/></svg>
+            </span>
+            <h3>In your neighbourhood</h3>
+            <p>Seven offices across Las Vegas, North Las Vegas and Henderson, each with its own
+              number and its own hours.</p>
+          </article>
+          <article class="rsb-card rsb-card--care">
+            <span class="rsb-card__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5a4.2 4.2 0 0 1 4.2 4.2v1.6M12 4.5a4.2 4.2 0 0 0-4.2 4.2v1.6"/><path d="M6.2 10.3h11.6a1.7 1.7 0 0 1 1.7 1.9l-.6 5.1a2.6 2.6 0 0 1-2.6 2.2H7.7a2.6 2.6 0 0 1-2.6-2.2l-.6-5.1a1.7 1.7 0 0 1 1.7-1.9Z"/></svg>
+            </span>
+            <h3>An unhurried appointment</h3>
+            <p>Anxious and older patients are a named audience, so nothing is set under 14px, every
+              text pair clears AAA 7 to 1, and every control is at least 48px tall. C7 section 4.</p>
+          </article>
+        </div>
+        <p class="rsb-note" style="margin-top:14px">Three surfaces, one card chrome: the ivory card,
+          the warm wash, and the sage reassurance wash. Resting lift is two ink-tinted layers. Hover
+          deepens the second layer and raises the card 4px, which is the only motion a card gets.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. SIGNATURE MOTIF - "the warm arc seam"
+       from: _MODERN-DESIGN-PATTERN-LIBRARY.md A1 (shape divider; the CSS border-radius arc
+             alternative rather than an SVG asset)
+       from: _PAGE-COMPOSITION-LIBRARY.md V6 composition-medical-health ("close with A2 circle up
+             arc"; H2/H5 circle-masked photos; glass and tinted-surface washes are on-register)
+       from: SURFACE-PATTERNS.md section 5 #35 Circular-mask + _MODERN-DESIGN-PATTERN-LIBRARY.md H2
+       Considered: DIVIDER-PATTERNS.md #5 Slant gentle (reads techy, wrong mood for a clinic) and
+       DIVIDER-PATTERNS.md #7 Pulled-up card overlap (a layout device, not an identity mark).
+       ========================================================================== -->
+  <section class="rsb-bay">
+    <p class="rsb-eyebrow">05 Signature motif</p>
+    <h2>The warm arc seam</h2>
+    <p class="rsb-note">One repeatable identity move: a tinted wash band whose lower edge curves
+      up and is drawn in sage, with a circle-masked portrait straddling the curve. It is pure CSS,
+      so it costs nothing and never renders as a stray graphic. Used two to four times per page and
+      never mixed with a second divider family.</p>
+
+    <!-- align-items:start - r3. The rules list went 14.5px -> 17px, which made the right card taller
+         than the motif and left the stretched motif card carrying ~150px of dead space under the
+         portrait. Letting each card take its own height is the correct answer; padding the motif to
+         match would have been decoration standing in for structure. -->
+    <div class="rsb-grid rsb-g2" style="margin-top:24px;align-items:start">
+
+      <div class="rsb-motif">
+        <div class="rsb-motif__wash">
+          <p class="rsb-eyebrow" style="margin-bottom:10px">Meet your dentist</p>
+          <p>The seam carries the portrait out of the wash and onto the paper, which is the whole
+            reassurance move: a person, not a procedure.</p>
+        </div>
+        <div class="rsb-motif__seam">
+          <span class="rsb-medallion">
+            <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Norma-Miranda.jpg"
+                 alt="Dr. Norma Miranda, dentist at Radiant Smiles Dental Care" width="275" height="275" loading="lazy">
+          </span>
+          <span class="rsb-motif__who">
+            <b>Dr. Norma Miranda</b>
+            <span>DDS, UCLA 1976</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="rsb-panel">
+        <span class="rsb-lock__cap" style="display:block;margin-bottom:14px">Motif rules</span>
+        <ul style="margin:0;padding-left:20px">
+          <li style="font-size:17px;line-height:1.6;color:var(--ds-ink-soft);margin-bottom:8px">
+            The arc is an elliptical bottom radius on the wash band, and its line is the sage at 2px.
+            That elliptical value is the signature SHAPE, not a fourth entry in the radius scale.
+            Two to four uses per page, one family only.</li>
+          <li style="font-size:17px;line-height:1.6;color:var(--ds-ink-soft);margin-bottom:8px">
+            The medallion is always a real photograph of a named clinician, ringed in the card
+            surface with a 1px sage line so it reads as lifted off the seam.</li>
+          <li style="font-size:17px;line-height:1.6;color:var(--ds-ink-soft);margin-bottom:8px">
+            Where no consented photograph exists the block ships a flagged placeholder, never a
+            stock substitute. C7 section 3.</li>
+          <li style="font-size:17px;line-height:1.6;color:var(--ds-ink-soft);margin-bottom:0">
+            The 64px accent rule below is the seam's quiet form, used where a portrait would be too
+            heavy. It is the yellow's only appearance inside the motif.</li>
+        </ul>
+        <div class="rsb-motif__rule" style="margin:22px 0 0"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. APPLIED MINI-VIGNETTE (exactly one)
+       from: _PAGE-COMPOSITION-LIBRARY.md V6 composition-medical-health (the appointment CTA is
+             the spine; hours and addresses are load-bearing UI, C7 section 4)
+       from: CARD-VARIATIONS.md #4 Circle-icon service card with arrow link (card family)
+       from: _MODERN-DESIGN-PATTERN-LIBRARY.md I3 (the rating figure) + I6 (hairline list rows)
+       Every figure below is sourced: office data from C3 contactData "lone-mountain"; the price
+       from C3 pricing.published_prices; the rating from C3 proofPolicy.verified_proof_available
+       (Birdeye, Lake Mead office, fetched 2026-07-30).
+       ========================================================================== -->
+  <section class="rsb-bay">
+    <p class="rsb-eyebrow">06 One applied moment</p>
+    <h2>The identity doing a job</h2>
+    <p class="rsb-note">A single office card. It is the smallest surface where the palette, the type
+      pairing, the radius language and the offer treatment all have to work together at once, and it
+      is where both demotions are easiest to see: the navy that used to fill the header is now a 3px
+      cap and a heading, and the yellow that used to fill the offer band is now a 3px edge on a pale
+      wash.</p>
+    <p class="rsb-note" style="margin-top:12px">It is also where r3 pushes hardest, because this is
+      the card made of the three things C7 section 4 calls load-bearing UI. The phone number was a
+      14px value in a hairline list row, indistinguishable from the opening hours and not tappable at
+      all; it is now the largest element in the card body and a real <code class="rsb-code">tel:</code>
+      control with a 56px box. The address went from 13px secondary ink to 17px primary ink at 15.61
+      to 1. The hours rows went from 14px on a 1.29 to 1 hairline to 17px on a 3.89 to 1 rule, which
+      is what lets an eye track Tuesday across to 7 PM without re-reading the row. The card is the
+      same card; it simply stopped whispering the facts a patient came for.</p>
+
+    <div class="rsb-vig" style="margin-top:22px">
+      <div class="rsb-vig__top">
+        <b>Lone Mountain</b>
+        <span>7469 W. Lake Mead Blvd., Suite 270, Las Vegas, NV 89128</span>
+      </div>
+      <div class="rsb-vig__offer">
+        New patient special <em>$45 exam and X-ray</em> <em>$29 for seniors</em>
+      </div>
+      <div class="rsb-vig__body">
+        <div class="rsb-vig__rating">
+          <span class="rsb-vig__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          <b>4.5</b>
+          <span>from 506 reviews on Birdeye for this office</span>
+        </div>
+        <div class="rsb-tags" style="margin-bottom:18px">
+          <span class="rsb-tag rsb-tag--care">Open Sunday</span>
+        </div>
+        <a class="rsb-tel" href="tel:+17022894424">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 4h3l1.5 3.7-2 1.3a11 11 0 0 0 5.9 5.9l1.3-2 3.7 1.5v3a1.8 1.8 0 0 1-2 1.8A15.5 15.5 0 0 1 4.8 6a1.8 1.8 0 0 1 1.8-2Z"/></svg>
+          <span style="text-align:left">Call this office
+            <b>(702) 289-4424</b>
+          </span>
+        </a>
+        <ul class="rsb-vig__rows">
+          <li>Monday <b>10 AM to 6 PM</b></li>
+          <li>Tuesday <b>8:30 AM to 7 PM</b></li>
+          <li>Saturday <b>Closed</b></li>
+          <li>Sunday <b>8:30 AM to 3 PM</b></li>
+        </ul>
+        <div class="rsb-vig__cta">
+          <a class="rsb-btn rsb-btn--primary" href="#">Book an appointment</a>
+          <a class="rsb-btn rsb-btn--ghost" href="#">Get directions</a>
+        </div>
+      </div>
+    </div>
+    <p class="rsb-note" style="margin-top:14px"><span class="rsb-flag">OWNER, C3 pricing</span>
+      The offer ships with no expiry, exclusions or senior-age threshold anywhere on the live site,
+      so the "Limited Time" framing is withheld until real terms are supplied. The price and the
+      rating are shown exactly as sourced and scoped to the office they belong to. The sage chip
+      claims nothing the card does not already prove: the Sunday hours are two rows below it.</p>
+  </section>
+
+  <!-- ==========================================================================
+       HONESTY FOOTER - what this concept commits to and what it still needs
+       from: _handoff/visual-direction.md sections 2, 3, 4 and 6
+       ========================================================================== -->
+  <footer class="rsb-foot">
+    <p class="rsb-eyebrow">Standing rules this concept carries</p>
+    <ul>
+      <li>Light canvas, navy anchor. The dark ground is punctuation, matching the measured
+        dark_ratio of 0.154, not a tone pivot.</li>
+      <li>Navy is ink and structure first: headings, hairlines, table rules, edge caps and the
+        primary control. It fills a background only where a reversed lockup has to be shown.</li>
+      <li>One accent. Yellow means the published offer and nothing else, which is how it already
+        behaves on the live site, and it is deployed as rules, caps and marks with exactly one
+        full-strength moment. No flat yellow band appears anywhere on this sheet.</li>
+      <li>One third tone. Sage carries reassurance, never the offer and never authority, so the
+        three registers stay separable at a glance.</li>
+      <li>No pure black and no pure white survive as ink, canvas, rule, scrim or shadow, and none
+        of the three Elementor greys survives at all.</li>
+      <li>Every superlative is replaced by a specific: a named credential, a real review count, a
+        stated opening hour. Nothing on this sheet is invented.</li>
+      <li>No countdown timers, no artificial urgency, no badge walls, no stock smile close-ups.
+        C7 section 2.</li>
+      <li>Legibility is a floor, not a preference, because anxious and older patients are a named
+        audience and presbyopia costs contrast sensitivity as much as acuity. C7 section 4. Body is
+        18px at 1.65 in weight 400 with zero tracking; nothing anywhere on the sheet is set below
+        14px; every text-on-surface pair clears AAA 7 to 1, not merely AA; every control's rendered
+        box is at least 48px against the WCAG 2.5.5 bar of 44; and negative tracking exists on the
+        display face alone.</li>
+      <li>Hours, addresses and phone numbers are treated as the load-bearing UI C7 section 4 says
+        they are: every phone number is a tel: control sized as a control, the address is set in the
+        primary ink, and the hours rows sit on a rule that clears 3 to 1 rather than a hairline that
+        does not.</li>
+      <li>None of that was bought by shrinking the design. The display ramp rose with the body ramp,
+        the extra size is paid for in whitespace rather than density, and the composition, the arc
+        seam motif, the restrained motion and the slab-over-sans pairing are untouched.</li>
+      <li>Open owner items visible here: no vector logo master (C6 section 2), and no published
+        offer terms (C3 pricing).</li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>

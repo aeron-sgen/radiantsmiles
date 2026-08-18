@@ -1,0 +1,512 @@
+{
+  "schema": "client-rules/v1",
+  "slug": "radiantsmiles",
+  "generated_at": "2026-07-30",
+  "phase_written": "P0",
+  "_purpose": "C3 — the externalized per-client build doctrine (E-1). revision-rules.mjs, build.mjs lint() and block-banned-content.mjs all LOAD this file; no doctrine is hard-coded in a gate. Every value here traces to the P0 intake-brief or the P0.0 existing-a-model audit. Values marked agent_derived:true are prep-generated working defaults pending owner confirmation.",
+  "brand": {
+    "name": "Radiant Smiles Dental Care",
+    "legal_name": "⚠OWNER PLACEHOLDER — site brand is 'Radiant Smiles Dental Care'; BBB/Birdeye registries carry 'Radiant Smiles V'. Confirm before footer/schema.",
+    "domain": "radiantsmilesnv.com",
+    "tagline_existing": "All That Is Good, Begins With A Smile",
+    "tagline_deployed": false,
+    "_tagline_note": "Present as a homepage SECTION HEADING only — never used in the header, logo lockup, <title> or meta on the live site."
+  },
+  "productModel": {
+    "type": "multi-location group dental practice",
+    "delivery": "in-house clinical care by employed licensed clinicians",
+    "locations_count": 7,
+    "markets": [
+      "Las Vegas, NV",
+      "North Las Vegas, NV",
+      "Henderson, NV"
+    ],
+    "specialties_in_house": [
+      "general dentistry",
+      "cosmetic dentistry",
+      "restorations",
+      "oral and maxillofacial surgery",
+      "periodontics",
+      "orthodontics"
+    ],
+    "_honesty_fence": "THE ONE STRUCTURAL TRUTH THAT MAY NEVER BE RESTATED AS ANYTHING ELSE: this is a group practice delivering care in-house across six specialties at seven physical offices. Do not describe it as a network, a referral service, a franchise, a marketplace, an insurance product, or a single office."
+  },
+  "pricing": {
+    "model": "quote-only for all treatment, fronted by one published entry offer",
+    "published_prices": [
+      {
+        "id": "new-patient-special",
+        "amount": 45,
+        "currency": "USD",
+        "includes": "Exam & X-Ray",
+        "source": "https://radiantsmilesnv.com/new-patient-special/",
+        "fetched": "2026-07-30"
+      },
+      {
+        "id": "new-patient-special-senior",
+        "amount": 29,
+        "currency": "USD",
+        "includes": "Exam & X-Ray",
+        "audience": "seniors",
+        "source": "https://radiantsmilesnv.com/new-patient-special/",
+        "fetched": "2026-07-30"
+      }
+    ],
+    "treatment_prices_published": false,
+    "invented_prices_allowed": false,
+    "offer_terms": "⚠OWNER PLACEHOLDER — no expiry, exclusions or senior-age threshold stated anywhere on the live site.",
+    "limited_time_framing_allowed": false,
+    "_limited_time_note": "The live site labels this a 'Limited Time Offer' with no end date. That framing MUST NOT ship until the owner supplies a real expiry (intake §G-3).",
+    "financing_partners": [
+      "Care Credit",
+      "Cherry",
+      "Sunbit",
+      "Lending Club"
+    ],
+    "financing_terms_verbatim": [
+      "0% interest",
+      "No down payment",
+      "No annual fees",
+      "Extended payment plans"
+    ],
+    "financing_disclosure_required": true,
+    "_financing_note": "These are THIRD-PARTY LENDER terms subject to credit approval. Any page stating them must attribute them to the lender and note approval is required — the live site presents them as the practice's own with no disclosure.",
+    "insurance_carriers_named": [
+      "Aetna",
+      "Access Dental",
+      "Allegiance",
+      "Amerigroup",
+      "AmeriPlan",
+      "Ameritas",
+      "Anthem",
+      "Assurant Dental",
+      "Boon-Chapman",
+      "Careington",
+      "Cigna",
+      "Connection Dental",
+      "Culinary Health Fund",
+      "Delta Dental",
+      "DentaMax",
+      "Diversified Dental",
+      "EBMS",
+      "GEHA",
+      "Guardian",
+      "Health Plan of Nevada",
+      "Hometown Health",
+      "Humana",
+      "Liberty Dental",
+      "Loomis",
+      "MetLife",
+      "Nevada Medicaid",
+      "Nevada Pacific Dental",
+      "Premier Access",
+      "PrimeCare Administrators",
+      "Principal",
+      "Regence / Reliance",
+      "Secure Dental",
+      "Sierra Health & Life",
+      "Southpoint",
+      "Standard",
+      "Teachers Health Trust",
+      "Teamsters",
+      "UFCW",
+      "UMR",
+      "United Concordia",
+      "United Healthcare"
+    ],
+    "insurance_network_claim_scope": "per-location, unconfirmed",
+    "_insurance_note": "'In network with most insurances' is stated globally on the live site. Network status varies by office and plan (intake §G-12) — do not state a blanket network guarantee.",
+    "insurance_carrier_count": 41,
+    "_insurance_correction": "CORRECTED 2026-07-30 at P-late. The first pass logged 7 carriers, read from the visible TEXT of /patient-information/. The page actually renders ~41 carrier logos as IMAGES WITH NO ALT TEXT, so text extraction missed them. Recovered by parsing the image references in the snapshot. This materially changes the insurance page and surfaces a real local differentiator.",
+    "local_plans_of_note": [
+      "Culinary Health Fund — the Las Vegas hospitality workers' plan",
+      "Teachers Health Trust",
+      "Teamsters",
+      "UFCW",
+      "Nevada Medicaid",
+      "Health Plan of Nevada",
+      "Sierra Health & Life",
+      "Southpoint"
+    ],
+    "_local_plans_note": "These are Las Vegas-specific union and public plans. Naming them is a concrete, checkable specific that replaces a superlative, which is exactly the voice rule. Naming is not accepting: network status varies by office and plan, so name these plans without a network guarantee (see _insurance_note and OVERCLAIM.global). CORRECTED 2026-08-13: this note previously read 'Accepting them is a concrete, checkable access claim that none of the four captured competitors surfaces.' Both halves were wrong. It asserted acceptance, the exact claim OVERCLAIM.global logs as UNCONFIRMED; and Absolute Dental, one of the four captured competitors, names Teachers Health Trust, Health Plan of Nevada and Medicaid in its own 'We Accept Most Dental Insurance' list on two captured pages. The uncontested set, absent from all 21 competitor captures, is Culinary Health Fund, Teamsters, UFCW, Sierra Health & Life and Southpoint."
+  },
+  "bannedVocab": [
+    "top-rated",
+    "top rated",
+    "award-winning",
+    "award winning",
+    "America's Best Dentist",
+    "National Consumer Advisory Board",
+    "industry recognitions",
+    "best dentist",
+    "the best",
+    "#1",
+    "number one",
+    "most trusted",
+    "one of the most trusted",
+    "most advanced",
+    "latest equipment",
+    "state-of-the-art",
+    "cutting-edge",
+    "world-class",
+    "luxury",
+    "unwavering",
+    "numerous rave reviews",
+    "we help patients acquire real dental insurance"
+  ],
+  "_bannedVocab_note": "Every entry is banned UNTIL SOURCED, not banned permanently. Each traces to a ⚠FLAG-UNVERIFIABLE claim catalogued in existing-a-model §5. If the owner supplies proof (an award certificate + year, a ranking body, a named technology), the matching term is unbanned via a dated OVERRIDE block in decisions-ledger.md and this list is regenerated.",
+  "bannedPunctuation": {
+    "exclamation_points": "disallowed",
+    "emoji": "disallowed",
+    "_note": "Healthcare register. The live site is already near-compliant; the single exception is Dr. Schaudt's bio."
+  },
+  "OVERCLAIM": {
+    "_purpose": "Claims that MUST NOT appear on any built page unless the named evidence is supplied first. The build's content-honesty gate reads this.",
+    "global": [
+      {
+        "claim": "any ranking or superiority superlative",
+        "requires": "a named ranking body + metric + date",
+        "status": "UNSOURCED",
+        "fallback": "state the real, citable review record instead"
+      },
+      {
+        "claim": "America's Best Dentist Award / National Consumer Advisory Board",
+        "requires": "award year + certificate",
+        "status": "UNSOURCED — independent corroboration not found 2026-07-30",
+        "fallback": "omit entirely"
+      },
+      {
+        "claim": "open on weekends and late into the evenings (as a blanket statement)",
+        "requires": "per-location hours",
+        "status": "CONTRADICTED — 4 of 7 offices closed Saturday, 5 of 7 closed Sunday (Lone Mountain AND North Decatur open Sunday)",
+        "fallback": "state hours per location only"
+      },
+      {
+        "claim": "latest / most advanced technology",
+        "requires": "the actual equipment named",
+        "status": "SUPERLATIVE UNSOURCED — the equipment actually named is 'Digital X-rays', 'SIROlaser', 'Panoramic X-rays' (wisdom teeth extractions, bone grafting) and a 'CAT scan' (bone grafting, may be recommended); each may be named only on the pages that publish it",
+        "fallback": "name only what is verified"
+      },
+      {
+        "claim": "0% interest / no down payment / no annual fees (as the practice's own offer)",
+        "requires": "lender attribution + approval disclosure",
+        "status": "MISATTRIBUTED",
+        "fallback": "attribute to the named lender, state approval required"
+      },
+      {
+        "claim": "in network with most insurances (site-wide)",
+        "requires": "per-office network confirmation",
+        "status": "UNCONFIRMED",
+        "fallback": "name carriers without a network guarantee"
+      },
+      {
+        "claim": "we help patients acquire real dental insurance",
+        "requires": "owner definition of what this activity actually is",
+        "status": "AMBIGUOUS + POTENTIALLY REGULATED",
+        "fallback": "the phrase does not ship in any form"
+      },
+      {
+        "claim": "any patient outcome, metric, quote or testimonial",
+        "requires": "a real, cited, consented source",
+        "status": "REAL-ONLY — fabrication forbidden (§F2)",
+        "fallback": "cite the real aggregate review record"
+      }
+    ]
+  },
+  "DEPTH_REQUIRED": {
+    "_purpose": "Pages the audit found EMPTY or THIN on the live site. The build must not ship these at their current depth.",
+    "smile-gallery": "LIVE BUT UNUSABLE AS PROOF — a real Elementor image-gallery widget with 30 lightbox-enabled images, but all 30 ship with an empty alt attribute and nothing in the capture identifies any of them as a consented before/after pair. Still the highest-value rebuild for a practice selling veneers/whitening/implants/Invisalign.",
+    "faqs": "LIVE BUT OFF-TOPIC — 11 visible questions with answers (9 also carried in FAQPage schema), covering general oral health and cosmetic dentistry only; nothing on cost, insurance, first visits or emergencies. Still a rebuild: retarget to the questions patients actually arrive with, and keep the existing FAQPage schema.",
+    "payment-plans": "THIN — one sentence plus a logo row. No terms, APR or qualifying criteria.",
+    "meet-the-team": "THIN — two names ('Tina, Director', 'Jana, Dental Hygienist'), no roles, no bios.",
+    "locations": "THIN INDEX — bare card grid, no H1, no copy.",
+    "location-detail": "DUPLICATED — all 7 pages share one H1 and near-identical body; no LocalBusiness schema anywhere on the site.",
+    "call-now": "INCOMPLETE — lists 4 of 7 office phone numbers."
+  },
+  "competitorFraming": {
+    "policy": "name-in-balance-or-not-at-all",
+    "rules": [
+      "Never single out one named rival on the homepage.",
+      "The wedge is against the market's MODEL (single-office practices that refer out; deferred care), never against a named practice.",
+      "State only competitor facts verified first-party this run with a URL + fetch date; anything unverified is ⚠FLAG, never asserted.",
+      "Never state or imply a competitor's price without a dated first-party capture.",
+      "Do not claim a price advantage — the P1 probe shows the market's new-patient offer runs $0 (BDG) to $279 (Stunning Smiles), with Radiant Smiles' $45 undercut by the two largest multi-location groups. Price is not an available wedge."
+    ],
+    "named_competitors_on_site": false,
+    "_note": "The live site names no competitor across 67 pages. The P1 research set is prep-identified (intake §A.1) and superseded if the owner names their real rivals."
+  },
+  "proofPolicy": {
+    "strategy": "mixed",
+    "real_only_for": [
+      "testimonials",
+      "reviews",
+      "star ratings",
+      "review counts",
+      "clinician credentials",
+      "awards",
+      "years in business",
+      "patient outcomes",
+      "clinical results"
+    ],
+    "fabrication_allowed_for": [
+      "illustrative before/after imagery",
+      "illustrative office/team imagery"
+    ],
+    "fabrication_requirements": [
+      "⚠OWNER PLACEHOLDER marker in-file",
+      "noindex until swapped",
+      "tracked in the build's fabrication manifest"
+    ],
+    "verified_proof_available": [
+      {
+        "fact": "4.5 stars, 506 reviews",
+        "scope": "Lake Mead office",
+        "source": "https://reviews.birdeye.com/radiant-smiles-v-155333130420099",
+        "fetched": "2026-07-30"
+      },
+      {
+        "fact": "BBB rating B+, NOT BBB accredited, 23 years in business, 3 complaints filed / 1 unresolved",
+        "source": "https://www.bbb.org/us/nv/las-vegas/profile/dentist/radiant-smiles-1086-90018877",
+        "fetched": "2026-07-30"
+      },
+      {
+        "fact": "Milo Hellman Award (AAO, 2019) + Andre Schroeder Research Prize (Straumann, 2006), Dr. Karthikeyan Subramani",
+        "source": "https://radiantsmilesnv.com/meet-the-doctors/",
+        "fetched": "2026-07-30"
+      },
+      {
+        "fact": "Dr. Adrian Ruiz DDS UCLA 1995, 22+ years; Dr. Norma Miranda DDS UCLA 1976, 41+ years",
+        "source": "https://radiantsmilesnv.com/meet-the-doctors/",
+        "fetched": "2026-07-30"
+      }
+    ],
+    "_note": "This practice has real proof it never cites. The live site ships ONE unattributed quote ('Debra R') repeated across 60+ pages. Fabricating proof here would be both dishonest and unnecessary."
+  },
+  "tiers": {
+    "bespoke": [
+      "index"
+    ],
+    "_bespoke_note": "Homepage only. The location page is high-leverage but used 7×, so it must be a consistent typed template rather than a bespoke one-off.",
+    "standard": [
+      "all other pages"
+    ]
+  },
+  "routeRules": {
+    "cta_primary": "Book an appointment",
+    "cta_secondary": "Call the office",
+    "cta_offer": "Claim this offer",
+    "cta_location": "Get directions",
+    "cta_routing": "See our locations",
+    "cta_low_commitment": "Ask a question",
+    "phone_policy": "Every phone CTA resolves to the SPECIFIC office's number, never a generic line.",
+    "external_booking": {
+      "provider": "appointnow.com",
+      "pattern": "https://www.appointnow.com/?P=4743&O=<officeId>&PT=1",
+      "office_ids_observed": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106
+      ],
+      "office_id_map": {
+        "100": "summerlin (live /locations/w-sahara-ave/)",
+        "101": "sunrise-manor (live /locations/s-nellis-blvd/)",
+        "102": "lone-mountain (live /locations/w-lake-mead-blvd/)",
+        "103": "henderson (live /locations/w-horizon-ridge-pkwy/)",
+        "104": "north-las-vegas (live /locations/camino-al-norte/)",
+        "105": "blue-diamond (live /blue-diamond/)",
+        "106": "north-decatur (live /north-decatur/)"
+      },
+      "coverage": "7 of 7 offices",
+      "gap": "North Decatur books online from its OWN page but is MISSING from the site-wide multi-office booking selector. Offices 100-105 appear together on /contact-us/, /appointment-request/ and /new-patient-special/; 106 appears on /north-decatur/ only. So the defect is discoverability, not capability.",
+      "_CORRECTED_2026_07_31": "This block previously read 'coverage: 6 of 7' with 'gap: North Decatur has no online booking path — phone only.' That was FALSE and was a fabricated absence — the THIRD on this same office, after the Sunday-hours fabrication (B2). site-snapshot/north-decatur.html carries its own AppointNow link, https://www.appointnow.com/?P=4743&O=106&PT=1&campaignID=, inside an Elementor button widget with the anchor text 'Book Online (North Decatur)'. Verified 2026-07-31 by an entity-tolerant scan of all 12 snapshots that reference appointnow; the office_id_map above is the full census. The original check missed it because the live markup encodes the ampersand as &#038;, so a naive grep for '&O=' matched nothing.",
+      "_note": "⚠OWNER — North Decatur DOES book online; ask instead whether it should be ADDED to the multi-office selector on /contact/, which today offers only offices 100-105."
+    }
+  },
+  "contactData": {
+    "_note": "Captured first-party 2026-07-30. The Sunrise Manor ZIP conflicts on the live site (89107 site-wide footer vs 89104 in the booking block) — 89107 carried forward pending owner confirmation (intake §G-16). NAP consistency depends on resolving this.",
+    "locations": [
+      {
+        "id": "lone-mountain",
+        "label": "Lone Mountain",
+        "address": "7469 W. Lake Mead Blvd., Suite 270",
+        "city": "Las Vegas",
+        "state": "NV",
+        "zip": "89128",
+        "phone": "(702) 289-4424",
+        "hours": {
+          "mon": "10 AM–6 PM",
+          "tue": "8:30 AM–7 PM",
+          "wed": "10 AM–5 PM",
+          "thu": "8:45 AM–4 PM",
+          "fri": "8:45 AM–4 PM",
+          "sat": "Closed",
+          "sun": "8:30 AM–3 PM"
+        },
+        "booking": true
+      },
+      {
+        "id": "sunrise-manor",
+        "label": "Sunrise Manor",
+        "address": "1825 S. Nellis Blvd.",
+        "city": "Las Vegas",
+        "state": "NV",
+        "zip": "89107",
+        "zip_conflict": "89104",
+        "phone": "(702) 452-3552",
+        "hours": {
+          "mon": "9 AM–5 PM",
+          "tue": "11 AM–7 PM",
+          "wed": "9 AM–5 PM",
+          "thu": "11 AM–7 PM",
+          "fri": "9 AM–5 PM",
+          "sat": "Closed",
+          "sun": "Closed"
+        },
+        "booking": true
+      },
+      {
+        "id": "summerlin",
+        "label": "Summerlin",
+        "address": "8961 W. Sahara Ave., Suite 108",
+        "city": "Las Vegas",
+        "state": "NV",
+        "zip": "89117",
+        "phone": "(702) 360-4800",
+        "hours": {
+          "mon": "8:30 AM–4:30 PM",
+          "tue": "8:30 AM–4 PM",
+          "wed": "8:30 AM–7 PM",
+          "thu": "9 AM–6 PM",
+          "fri": "8:30 AM–4 PM",
+          "sat": "8:30 AM–3 PM",
+          "sun": "Closed"
+        },
+        "booking": true
+      },
+      {
+        "id": "north-las-vegas",
+        "label": "North Las Vegas",
+        "address": "5195 Camino Al Norte Rd.",
+        "city": "North Las Vegas",
+        "state": "NV",
+        "zip": "89031",
+        "phone": "(702) 509-1967",
+        "hours": {
+          "mon": "9 AM–5 PM",
+          "tue": "9 AM–7 PM",
+          "wed": "9 AM–5 PM",
+          "thu": "9 AM–7 PM",
+          "fri": "9 AM–5 PM",
+          "sat": "9 AM–5 PM",
+          "sun": "Closed"
+        },
+        "booking": true
+      },
+      {
+        "id": "henderson",
+        "label": "Henderson",
+        "address": "2633 W. Horizon Ridge Pkwy., Suite 130",
+        "city": "Henderson",
+        "state": "NV",
+        "zip": "89052",
+        "phone": "(702) 897-7001",
+        "hours": {
+          "mon": "9 AM–5 PM",
+          "tue": "9 AM–7 PM",
+          "wed": "9 AM–5 PM",
+          "thu": "9 AM–7 PM",
+          "fri": "9 AM–5 PM",
+          "sat": "9 AM–5 PM",
+          "sun": "Closed"
+        },
+        "booking": true
+      },
+      {
+        "id": "north-decatur",
+        "label": "North Decatur",
+        "address": "6311 N. Decatur Blvd., Suite 140",
+        "city": "Las Vegas",
+        "state": "NV",
+        "zip": "89130",
+        "phone": "(702) 522-0119",
+        "hours": {
+          "mon": "10 AM–6 PM",
+          "tue": "8:30 AM–7 PM",
+          "wed": "10 AM–5 PM",
+          "thu": "8:45 AM–4 PM",
+          "fri": "8:45 AM–4 PM",
+          "sat": "Closed",
+          "sun": "8:30 AM–3 PM"
+        },
+        "booking": true,
+        "booking_office_id": 106,
+        "_booking_note": "CORRECTED 2026-07-31: was false. This office has its own AppointNow link (O=106) and a 'Book Online (North Decatur)' button on its live page. It is absent only from the site-wide multi-office selector, which offers 100-105.",
+        "_hours_note": "⚠FLAG — this office's hours are BYTE-IDENTICAL to Lone Mountain's on the live site (all 7 rows). Confirm these are genuinely North Decatur's. CORRECTION 2026-07-30: an earlier pass recorded Sunday as 'not listed on the live site' — that was FALSE. site-snapshot/north-decatur.html publishes all seven days including Sunday 8:30 AM–3 PM. Saturday is Closed, so Sunday is this office's ONLY weekend availability and must not be suppressed."
+      },
+      {
+        "id": "blue-diamond",
+        "label": "Blue Diamond",
+        "address": "5095 S. Blue Diamond Rd., Suite 105",
+        "city": "Las Vegas",
+        "state": "NV",
+        "zip": "89139",
+        "phone": "(702) 331-0010",
+        "hours": {
+          "mon": "9 AM–5 PM",
+          "tue": "⚠OWNER — not listed",
+          "wed": "9 AM–5 PM",
+          "thu": "11 AM–7 PM",
+          "fri": "⚠OWNER — not listed",
+          "sat": "By appointment only",
+          "sun": "⚠OWNER — not listed"
+        },
+        "booking": true,
+        "_hours_note": "⚠FLAG — Tue, Fri and Sun rows are entirely absent from the live site."
+      }
+    ]
+  },
+  "voice": {
+    "register": "plainspoken",
+    "justification": "Hold the practice's real warmth; replace every superlative with a specific — a named credential, a real review count, a stated hour.",
+    "mirror": [
+      "calm and comfortable",
+      "warm interactions",
+      "gentle",
+      "compassionate",
+      "patients of all ages",
+      "under one roof",
+      "same-day",
+      "in your neighborhood",
+      "comfortable, stress-free, and personalized",
+      "honest care"
+    ],
+    "avoid": [
+      "top-rated",
+      "award-winning",
+      "best",
+      "#1",
+      "most advanced",
+      "state-of-the-art",
+      "cutting-edge",
+      "luxury",
+      "world-class",
+      "unwavering"
+    ]
+  },
+  "agent_derived_fields": [
+    "brand.legal_name (placeholder)",
+    "pricing.offer_terms (placeholder)",
+    "bannedVocab (derived from the 14 flagged claims in existing-a-model §5)",
+    "OVERCLAIM.global",
+    "proofPolicy.strategy",
+    "tiers.bespoke",
+    "routeRules.cta_*",
+    "voice.register + justification + avoid",
+    "competitorFraming.rules"
+  ],
+  "_agent_derived_note": "No owner interview has occurred. These are prep-generated working defaults per the skill's D2 discipline. Each is re-surfaced at the P2/P4/P6 owner previews and listed in the P7 shopping list as [OWNER-DECISION]. Owner answers supersede and re-run the affected phase."
+}

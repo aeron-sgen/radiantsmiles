@@ -1,0 +1,838 @@
+/* ============================================================================
+   RADIANT SMILES DENTAL CARE  ///  (3) FOUNDATION TOURNAMENT, CONCEPT A
+   "THE CALM CLINICAL"  ///  the reusable BODY design language
+   ----------------------------------------------------------------------------
+   Cascade position: radiantsmiles-tokens.css (LOCKED) -> radiantsmiles-chrome.css
+   (LOCKED) -> THIS SHEET. Every class is namespaced .rs-* so nothing here can
+   ever reach into the locked header / mega / drawer / footer.
+
+   THE READ. Unhurried, hygienic, reassuring. This is the body language that
+   lowers a nervous patient's heart rate. The calm comes from SPACE and
+   ALIGNMENT, not from elevation: hairlines and --ds-shadow-rest carry the whole
+   depth budget, and exactly one frame in the sheet is allowed --ds-shadow-card.
+
+   THE FOUR RULES THIS SHEET IS BUILT ON
+     1 RHYTHM   --ds-space-2xl is the default section gap, --ds-space-lg the page
+                gutter, and prose is capped at a 62ch measure so 18px/1.70 body
+                copy is genuinely readable for the 40+ primary audience.
+     2 GEOMETRY soft and rounded everywhere. No hard rectangle ships. Imagery is
+                DOME topped (H5 large radius) or CIRCLE masked (H2); the hero
+                closes on an A2 "circle up" arc; icon chips and marks are round.
+     3 GROUND   mostly --ds-canvas, with quiet --ds-bg-band washes marking the
+                intro band and the trust band (J10 / F4). .surface-dark is spent
+                EXACTLY ONCE, on the final CTA, so it lands.
+     4 COLOUR   token pure. Zero raw hex in this sheet (all brand hex lives in
+                the locked tokens sheet). The contrast law is enforced in code:
+                  - --ds-accent is DECORATIVE on light (1.36:1). It is a fill, a
+                    mark or a rule. Text ON an accent fill is PINNED to
+                    --ds-primary-deep (8.46:1) so it can never inherit --ds-ink
+                    inside .surface-dark.
+                  - --ds-signature carries NO text in either direction (3.94:1
+                    light, 2.47:1 dark). It is used for rules, focus, fills and
+                    icon glyphs at 26px only.
+                  - body ink is --ds-ink on --ds-canvas (11.48:1); secondary ink
+                    is --ds-ink-soft (8.60:1). No low opacity grey body copy.
+                  - any translucent surface sits over an OPAQUE token base:
+                    linear-gradient(--ds-glass-bg,--ds-glass-bg),--ds-canvas.
+
+   AUDIENCE LAW (presbyopia makes contrast sensitivity the binding constraint):
+   body 18px / 1.70 minimum, nothing below 14px anywhere, tap targets 48px with
+   real spacing, phone numbers are first class UI at 20px with real tel: links.
+
+   ON MEASURE. Every ch max-width in this sheet sits on the element that owns
+   the font it is measuring: body measures are written on p / li selectors that
+   carry --ds-font-body, display measures are written on h1 / h2 selectors that
+   carry --ds-font-display. ch resolves against the element's OWN font, so a
+   measure parked on a wrapper computes two to three times too wide.
+
+   ----------------------------------------------------------------------------
+   DESIGN SYSTEM CONSULTED (every citation below was read before it was applied)
+     BLUEPRINT  composition-medical-health.md section 2, the convergent section
+                order read from six live BeTheme medical demos, plus section 4's
+                medical signature: circle masked imagery and the arc seam.
+     LIBRARIES  _MODERN-WOW-SPEC (depth, motion, texture, type, light)
+                _MODERN-DESIGN-PATTERN-LIBRARY (TOP-12, A2, F4, G1, G4, H2, H5,
+                I2, I3, I5, I6, J10, C1, C3, C8)
+                _COMPOSITION-LAWS (law L1 mobile stack order, law L3 media fits
+                track), obeyed structurally, see section 10.1
+     MENUS      HERO-COMPOSITIONS.md #1 split text left plus photo right
+                SECTION-COMPONENTS.md #9 services 3 col, #11 pillars 2 col with
+                  image, #3 stat strip, #18 team grid 3 col, #41 closing CTA
+                CARD-VARIATIONS.md #4 circle icon service card with arrow link
+                DIVIDER-PATTERNS.md #2 wave smooth, a single gentle curve in the
+                  DESTINATION section's colour, which is the arc built here
+                TRUST-STATS-SECTIONS.md #4 big number band, hairline divided
+                TEAM-GALLERY-SECTIONS.md #2 team circular roster
+                FORM-LAYOUTS.md #2 two col split form, fields plus contact rail
+                CTA-PATTERNS.md #7 multi CTA cluster, #4 phone pill
+
+   UTF-8, no BOM. ASCII only in code. No em or en dashes anywhere.
+   ============================================================================ */
+
+/* ==========================================================================
+   0 . SCALE TOKENS OWNED BY THE BODY SYSTEM
+   Colour, radius, shadow, duration and spacing are NEVER redefined here: they
+   come from the locked sheet. What lives here is the type scale, the measure
+   and the two geometry constants the arc motif needs.
+   ========================================================================== */
+:root{
+  /* TYPE. Display scale contrast against a calm body (_MODERN-WOW-SPEC 4). The
+     floor of the whole scale is 14px and body is 18px, per the audience law. */
+  --rs-fs-display:clamp(38px,5.1vw,62px);
+  --rs-fs-1:clamp(30px,3.4vw,44px);
+  --rs-fs-2:clamp(24px,2.4vw,32px);
+  --rs-fs-3:22px;
+  --rs-fs-lede:20px;
+  --rs-fs-body:18px;
+  --rs-fs-meta:16px;
+  --rs-fs-eyebrow:14px;
+  --rs-fs-stat:clamp(46px,5.6vw,74px);
+  --rs-fs-price:clamp(44px,5.2vw,68px);
+
+  /* MEASURE. 62ch at 18px is roughly nine to eleven words a line: the
+     comfortable reading band, and the reason this concept runs the narrowest
+     prose column of the three. */
+  --rs-measure:62ch;
+  --rs-measure-tight:52ch;
+
+  /* GEOMETRY. The arc height and the ring weight of the circular motif. */
+  --rs-arc-h:clamp(40px,5vw,90px);
+  --rs-ring:6px;
+}
+
+/* ==========================================================================
+   1 . PAGE GROUND + RESET
+   Present so the BODY sheet renders standalone in the specimen (the locked
+   chrome is not linked there). Every value is the same value the locked chrome
+   already sets, so when both sheets load in the real build this block is a
+   no op re assertion, never an override of chrome.
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--ds-canvas);
+  color:var(--ds-ink);
+  font-family:var(--ds-font-body);
+  font-size:var(--rs-fs-body);
+  line-height:1.70;
+  overflow-x:clip;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+button{font:inherit;color:inherit;background:none;border:0;}
+h1,h2,h3,h4{margin:0;font-family:var(--ds-font-display);color:var(--ds-ink-heading);line-height:1.18;font-weight:600;}
+p{margin:0;}
+ul,ol{margin:0;padding:0;list-style:none;}
+
+/* focus: the same halo the locked chrome uses, so a focus ring never changes
+   character between the chrome and the body. */
+:focus-visible{
+  outline:2px solid var(--ds-line-control);
+  outline-offset:3px;
+  box-shadow:var(--ds-glow);
+  border-radius:var(--ds-r-control);
+}
+
+/* ==========================================================================
+   2 . CONTAINER + SECTION RHYTHM  (G1 / G5 / TOP-12 #11)
+   The most generous vertical rhythm of the three concepts: --ds-space-2xl is
+   the DEFAULT, not the exception, and the gutter is --ds-space-lg rather than
+   the chrome's --ds-space-md so the body column sits further inside the frame.
+   ========================================================================== */
+.rs-wrap{
+  width:100%;
+  max-width:var(--ds-container-max);
+  margin-inline:auto;
+  padding-inline:var(--ds-space-lg);
+}
+.rs-wrap--narrow{max-width:860px;}
+
+.rs-sec{position:relative;padding-block:var(--ds-space-2xl);}
+/* top and bottom differ on purpose where a section opens or closes a movement */
+.rs-sec--open{padding-block:calc(var(--ds-space-2xl) + var(--ds-space-lg)) var(--ds-space-2xl);}
+.rs-sec--lead{padding-block:var(--ds-space-2xl) var(--ds-space-xl);}
+.rs-sec--tight{padding-block:var(--ds-space-xl);}
+
+/* GROUNDS. Alternation is quiet: canvas is the page, bg-band is the wash that
+   marks the two reassurance movements (intro, trust). Nothing else is tinted. */
+.rs-sec--band{background:var(--ds-bg-band);}
+.rs-sec--surface{background:var(--ds-bg-surface);}
+
+/* the ambient wash behind an opening section (_MODERN-WOW-SPEC 3 and 5, dialled
+   to token strength so it reads as light, never as a graphic) */
+.rs-glow{position:absolute;inset:0;z-index:var(--ds-z-below);pointer-events:none;background:var(--ds-glow-wash);}
+
+/* ==========================================================================
+   3 . THE ARC  (A2 "circle up", the medical signature seam)
+   A repeated circular motif is this concept's signature move. The arc is used
+   THREE times on a page, never more: closing the hero, opening the trust band,
+   opening the closing CTA. One divider family, per the library's discipline.
+   The border-radius here is a SHAPE (a half ellipse), not a spacing value, so
+   it is expressed in percentages rather than in a radius token.
+   ========================================================================== */
+.rs-arc{position:relative;height:var(--rs-arc-h);overflow:hidden;pointer-events:none;}
+.rs-arc__shape{
+  position:absolute;left:50%;bottom:-1px;
+  width:210%;height:100%;
+  transform:translateX(-50%);
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;
+  background:var(--ds-canvas);
+}
+/* the arc is filled with the ground of the section it is ENTERING */
+.rs-arc--band .rs-arc__shape{background:var(--ds-bg-band);}
+/* --ds-primary-deep does NOT flip across surfaces, and it is exactly the top
+   stop of the .surface-dark ground gradient, so this arc meets the dark band
+   with no seam and needs no hand written dark colour. */
+.rs-arc--dark .rs-arc__shape{background:var(--ds-primary-deep);}
+/* the floating variant rides the bottom edge of a media hero */
+.rs-arc--float{position:absolute;left:0;right:0;bottom:0;z-index:var(--ds-z-raised);}
+
+/* ==========================================================================
+   4 . TYPE SYSTEM
+   ========================================================================== */
+.rs-eyebrow{
+  display:block;
+  font-size:var(--rs-fs-eyebrow);font-weight:700;line-height:1.4;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+/* TOP-12 #10: the eyebrow carries a short accent rule. On light the yellow is
+   1.36:1, so the mark takes the token sheet's KEYLINE so it can be seen. */
+.rs-eyebrow::after{
+  content:"";display:block;
+  width:44px;height:3px;margin-top:var(--ds-space-xs);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-accent);
+  box-shadow:var(--ds-accent-keyline);
+}
+.rs-eyebrow--center{text-align:center;}
+.rs-eyebrow--center::after{margin-inline:auto;}
+
+h1.rs-display{
+  margin-top:var(--ds-space-md);
+  font-size:var(--rs-fs-display);
+  line-height:1.08;
+  letter-spacing:-.018em;
+  max-width:15ch;
+}
+h2.rs-title{
+  margin-top:var(--ds-space-md);
+  font-size:var(--rs-fs-1);
+  line-height:1.14;
+  letter-spacing:-.012em;
+  max-width:19ch;
+}
+h2.rs-title--wide{max-width:26ch;}
+h3.rs-sub{font-size:var(--rs-fs-2);line-height:1.2;max-width:24ch;}
+.rs-h4{font-size:var(--rs-fs-3);font-family:var(--ds-font-display);font-weight:600;line-height:1.3;color:var(--ds-ink-heading);}
+
+p.rs-lede{
+  margin-top:var(--ds-space-md);
+  font-size:var(--rs-fs-lede);line-height:1.70;
+  color:var(--ds-ink);
+  max-width:var(--rs-measure-tight);
+}
+.rs-prose p{
+  margin-top:var(--ds-space-md);
+  font-size:var(--rs-fs-body);line-height:1.70;
+  color:var(--ds-ink);
+  max-width:var(--rs-measure);
+}
+.rs-prose p:first-child{margin-top:0;}
+.rs-meta{font-size:var(--rs-fs-meta);line-height:1.6;color:var(--ds-ink-soft);}
+.rs-center{text-align:center;}
+.rs-center .rs-eyebrow{text-align:center;}
+.rs-center h2.rs-title,.rs-center p.rs-lede{margin-inline:auto;}
+
+/* the source line that rides under every number on this site. It is 16px and
+   --ds-ink-soft (8.60:1), never a faint grey, because the whole positioning is
+   "replace every superlative with a specific" and the receipt has to be read. */
+p.rs-src{margin-top:var(--ds-space-xs);font-size:var(--rs-fs-meta);line-height:1.5;color:var(--ds-ink-soft);max-width:46ch;}
+
+.rs-rule{height:1px;background:var(--ds-line);border:0;margin-block:var(--ds-space-lg);}
+
+/* ==========================================================================
+   5 . SURFACES  (I2, held deliberately flat)
+   Cards STEP DOWN onto --ds-bg-surface rather than lifting off the page. The
+   resting state is a hairline plus --ds-shadow-rest; the hover state is a wash
+   plus a --ds-signature inset rule, exactly the move the locked chrome uses on
+   its mega ledger, so body and chrome share one hover grammar.
+   ========================================================================== */
+.rs-card{
+  position:relative;
+  padding:var(--ds-space-lg);
+  background:var(--ds-bg-surface);
+  border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-rest);
+}
+.rs-card--plain{background:transparent;box-shadow:none;}
+.rs-card--pad-sm{padding:var(--ds-space-md);}
+
+a.rs-card,button.rs-card{
+  display:block;text-decoration:none;color:inherit;text-align:left;width:100%;
+  box-shadow:inset 0 0 0 0 var(--ds-signature),var(--ds-shadow-rest);
+  transition:background-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease);
+}
+a.rs-card:hover,a.rs-card:focus-visible,button.rs-card:hover,button.rs-card:focus-visible{
+  background:var(--ds-primary-soft);
+  border-color:var(--ds-line-control);
+  box-shadow:inset 3px 0 0 0 var(--ds-signature),var(--ds-shadow-rest);
+}
+
+/* the ONE glass moment in the sheet. --ds-glass-bg is translucent, so it is
+   stacked over an OPAQUE --ds-canvas base: a bare translucent panel would
+   change contrast with whatever scrolls behind it, which is the exact defect
+   caught and fixed at the chrome stage. */
+.rs-glass{
+  background:linear-gradient(var(--ds-glass-bg),var(--ds-glass-bg)),var(--ds-canvas);
+  backdrop-filter:var(--ds-glass-blur);
+  -webkit-backdrop-filter:var(--ds-glass-blur);
+  border:1px solid var(--ds-glass-border);
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-rest),var(--ds-inset-hi);
+}
+
+/* the flag panel: an accent left rule over the accent wash. --ds-ink on
+   --ds-accent-soft measures 12.68:1, so the wash is a ground that can be read
+   on, unlike the accent itself. */
+.rs-note{
+  display:flex;gap:var(--ds-space-sm);align-items:flex-start;
+  padding:var(--ds-space-md);
+  background:var(--ds-accent-soft);
+  border:1px solid var(--ds-line-control);
+  border-left:3px solid var(--ds-accent);
+  border-radius:var(--ds-r-surface);
+  font-size:var(--rs-fs-body);line-height:1.70;color:var(--ds-ink);
+}
+.rs-note svg{flex:none;margin-top:5px;color:var(--ds-signature);}
+
+/* ==========================================================================
+   6 . CIRCULAR PRIMITIVES  (the signature motif)
+   ========================================================================== */
+/* the round chip that holds an icon (I5, fill on hover). Resting state is the
+   calm teal on teal solve, --ds-primary-deep on --ds-primary-soft at 9.42:1.
+   Hover fills with --ds-signature and flips the glyph to --ds-ink-on-dark at
+   3.66:1, which clears the 3:1 non text bar for a 26px graphic. The glyph is
+   never a letterform, so the signature never carries type. */
+.rs-chip{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:64px;height:64px;flex:none;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-primary-soft);
+  color:var(--ds-primary-deep);
+  box-shadow:inset 0 0 0 1px var(--ds-signature);
+  transition:background-color var(--ds-dur) var(--ds-ease),color var(--ds-dur) var(--ds-ease);
+}
+.rs-chip svg{width:26px;height:26px;}
+.rs-chip--sm{width:48px;height:48px;}
+.rs-chip--sm svg{width:24px;height:24px;}
+a.rs-card:hover .rs-chip,a.rs-card:focus-visible .rs-chip{
+  background:var(--ds-signature);
+  color:var(--ds-ink-on-dark);
+}
+
+/* the numbered medallion used by the differentiator rows */
+.rs-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:52px;height:52px;flex:none;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-canvas);
+  border:1px solid var(--ds-line-control);
+  box-shadow:inset 0 0 0 3px var(--ds-primary-soft);
+  font-family:var(--ds-font-display);font-size:var(--rs-fs-3);font-weight:600;
+  color:var(--ds-primary-deep);
+  font-variant-numeric:tabular-nums;
+}
+
+/* the decorative accent dot. On light it always carries the keyline, because a
+   bare yellow mark on this canvas is a ghost at 1.36:1. */
+.rs-dot{
+  display:inline-block;width:11px;height:11px;flex:none;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-accent);
+  box-shadow:var(--ds-accent-keyline);
+}
+
+.rs-pill{
+  display:inline-flex;align-items:center;gap:var(--ds-space-xs);
+  min-height:38px;padding:0 var(--ds-space-md);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-canvas);
+  border:1px solid var(--ds-line-control);
+  font-size:var(--rs-fs-meta);font-weight:700;line-height:1.4;
+  color:var(--ds-ink);
+}
+
+/* ==========================================================================
+   7 . IMAGERY  (H2 circle mask / H5 dome and large radius, never a rectangle)
+   Every photograph is graded to the palette so it reads as brand: a deep teal
+   multiply pulls the whites off blue, a screened signature lifts the mids back,
+   and a scrim is reserved for the bottom third where type may sit.
+   ========================================================================== */
+.rs-frame{position:relative;overflow:hidden;background:var(--ds-bg-surface);}
+.rs-frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(.24) contrast(1.04) brightness(1.05) saturate(.94);}
+
+/* the DOME: the top corners run to the pill radius so the frame arches, the
+   bottom keeps the surface radius. This is the concept's rectangle killer. */
+.rs-dome{
+  border-radius:var(--ds-r-pill) var(--ds-r-pill) var(--ds-r-surface) var(--ds-r-surface);
+  aspect-ratio:4/5;
+  box-shadow:var(--ds-shadow-card);
+}
+.rs-dome--wide{aspect-ratio:5/4;}
+
+/* the true circle (H2 mask) */
+.rs-round{
+  border-radius:var(--ds-r-pill);
+  aspect-ratio:1;
+  box-shadow:inset 0 0 0 var(--rs-ring) var(--ds-primary-soft);
+}
+.rs-round--ring{box-shadow:inset 0 0 0 var(--rs-ring) var(--ds-primary-soft),0 0 0 1px var(--ds-line);}
+
+.rs-grade{position:absolute;inset:0;pointer-events:none;}
+.rs-grade--multiply{background:var(--ds-primary-deep);mix-blend-mode:multiply;opacity:.26;}
+.rs-grade--screen{background:var(--ds-signature);mix-blend-mode:screen;opacity:.12;}
+.rs-grade--scrim{background:linear-gradient(to top,var(--ds-scrim),transparent 44%);}
+
+/* TOP-12 #7, dialled to the calm register: the zoom is 1.03, not 1.06. */
+.rs-zoom img{transition:transform var(--ds-dur-slow) var(--ds-ease);}
+a:hover .rs-zoom img,a:focus-visible .rs-zoom img{transform:scale(1.03);}
+
+/* ==========================================================================
+   8 . LIST, TABLE AND QUOTE PRIMITIVES
+   ========================================================================== */
+/* the included list. The tick is drawn in CSS so no icon font ships, and it
+   sits in a --ds-primary-soft disc rather than in the accent, because the
+   accent may not act as a ground for a mark that has to be read. */
+.rs-list{display:grid;gap:var(--ds-space-sm);}
+.rs-list li{
+  position:relative;
+  padding-left:calc(var(--ds-space-lg) - var(--ds-space-2xs));
+  font-size:var(--rs-fs-body);line-height:1.70;color:var(--ds-ink);
+}
+.rs-list li::before{
+  content:"";position:absolute;left:0;top:6px;
+  width:26px;height:26px;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-primary-soft);
+}
+.rs-list li::after{
+  content:"";position:absolute;left:9px;top:13px;
+  width:7px;height:12px;
+  border-right:2px solid var(--ds-primary-deep);
+  border-bottom:2px solid var(--ds-primary-deep);
+  transform:rotate(42deg);
+}
+/* the exclusion row: a flat bar instead of a tick, so "not included" reads as
+   a different fact rather than as a quieter version of the same one. */
+.rs-list li.rs-list--out::after{
+  left:8px;top:17px;width:10px;height:0;
+  border-right:0;border-bottom:2px solid var(--ds-ink-soft);
+  transform:none;
+}
+
+/* the hairline row table (I6). Used for opening hours and the office ledger. */
+.rs-table{width:100%;border-top:1px solid var(--ds-line);}
+.rs-table__row{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:var(--ds-space-md);
+  padding-block:10px;
+  border-bottom:1px solid var(--ds-line);
+  font-size:var(--rs-fs-body);line-height:1.6;
+}
+.rs-table__key{font-weight:700;color:var(--ds-ink);}
+.rs-table__val{color:var(--ds-ink-soft);text-align:right;font-variant-numeric:tabular-nums;}
+
+/* the pull quote. The mark is a --ds-signature rule, not a giant glyph: this
+   concept does not shout. */
+.rs-quote{
+  padding-left:var(--ds-space-md);
+  border-left:3px solid var(--ds-signature);
+}
+p.rs-quote__body{
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--rs-fs-2);line-height:1.35;
+  color:var(--ds-ink-heading);
+  max-width:34ch;
+}
+.rs-quote__cite{display:block;margin-top:var(--ds-space-sm);font-size:var(--rs-fs-meta);line-height:1.5;color:var(--ds-ink-soft);font-style:normal;}
+
+/* the phone link. First class UI at 20px with a 48px target, per the audience
+   law, and tabular numerals so a column of them aligns. */
+.rs-tel{
+  display:inline-flex;align-items:center;gap:10px;
+  min-height:48px;
+  font-size:20px;font-weight:500;line-height:1.4;
+  text-decoration:none;color:var(--ds-primary);
+  font-variant-numeric:tabular-nums;
+}
+.rs-tel svg{flex:none;color:var(--ds-signature);}
+.rs-tel:hover{text-decoration:underline;text-underline-offset:4px;}
+.surface-dark .rs-tel{color:var(--ds-ink);}
+
+/* ==========================================================================
+   9 . CONTROLS
+   ========================================================================== */
+.rs-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:56px;padding:0 var(--ds-space-md);
+  font-size:var(--rs-fs-body);font-weight:700;line-height:1.3;
+  text-align:center;text-decoration:none;
+  border:1px solid transparent;
+  border-radius:var(--ds-r-pill);
+  cursor:pointer;
+  transition:background-color var(--ds-dur) var(--ds-ease),
+             color var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease);
+}
+/* THE ONLY LEGAL ACCENT PAIRING. --ds-primary-deep on --ds-accent is 8.46:1.
+   The colour is PINNED rather than inherited so that inside .surface-dark,
+   where --ds-ink flips to near white, this label cannot become 1.24:1. The 1px
+   deep teal keyline is the token sheet's KEYLINE RULE, carried as a real
+   border so it can never collapse. */
+.rs-btn--accent{
+  background-color:var(--ds-accent);
+  color:var(--ds-primary-deep);
+  border-color:var(--ds-primary-deep);
+  box-shadow:var(--ds-shadow-rest);
+}
+.rs-btn--accent:hover{background-color:var(--ds-accent);box-shadow:var(--ds-shadow-card);}
+.rs-btn--solid{
+  background-color:var(--ds-primary);
+  color:var(--ds-ink-on-dark);
+  border-color:var(--ds-line-control);
+}
+.rs-btn--solid:hover{background-color:var(--ds-primary-deep);}
+.rs-btn--ghost{
+  background-color:transparent;
+  color:var(--ds-ink-heading);
+  border-color:var(--ds-line-control);
+}
+.rs-btn--ghost:hover{background-color:var(--ds-bg-surface);}
+.surface-dark .rs-btn--ghost{color:var(--ds-ink);border-color:var(--ds-line-control);}
+.surface-dark .rs-btn--ghost:hover{background-color:var(--ds-bg-surface);}
+.rs-btn--block{width:100%;}
+
+.rs-acts{display:flex;flex-wrap:wrap;gap:var(--ds-space-sm);margin-top:var(--ds-space-lg);}
+.rs-acts--center{justify-content:center;}
+
+/* the quiet text link with the growing rule, matched to the chrome's grammar */
+.rs-go{
+  position:relative;display:inline-flex;align-items:center;gap:8px;
+  min-height:48px;
+  font-size:var(--rs-fs-body);font-weight:700;text-decoration:none;
+  color:var(--ds-ink-heading);
+}
+.rs-go::after{
+  content:"";position:absolute;left:0;right:0;bottom:8px;height:2px;
+  background:var(--ds-signature);
+  transform:scaleX(.24);transform-origin:left center;
+  transition:transform var(--ds-dur) var(--ds-ease-out);
+}
+.rs-go:hover::after,.rs-go:focus-visible::after,a.rs-card:hover .rs-go::after{transform:scaleX(1);}
+
+/* ---- form fields ---------------------------------------------------------- */
+.rs-form{display:grid;gap:var(--ds-space-md);}
+.rs-form__row{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--ds-space-md);}
+.rs-field{display:grid;gap:var(--ds-space-2xs);position:relative;}
+.rs-field__label{font-size:var(--rs-fs-meta);font-weight:700;line-height:1.4;color:var(--ds-ink);}
+.rs-input,.rs-select,.rs-textarea{
+  width:100%;min-height:56px;
+  padding:14px var(--ds-space-md);
+  font-family:var(--ds-font-body);font-size:var(--rs-fs-body);line-height:1.6;
+  color:var(--ds-ink);
+  background:var(--ds-canvas);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-control);
+  transition:border-color var(--ds-dur) var(--ds-ease),box-shadow var(--ds-dur) var(--ds-ease);
+}
+.rs-textarea{min-height:132px;resize:vertical;}
+.rs-select{appearance:none;-webkit-appearance:none;padding-right:var(--ds-space-xl);}
+.rs-field--select::after{
+  content:"";position:absolute;right:var(--ds-space-md);bottom:22px;
+  width:10px;height:10px;
+  border-right:2px solid var(--ds-ink-soft);
+  border-bottom:2px solid var(--ds-ink-soft);
+  transform:rotate(45deg);
+  pointer-events:none;
+}
+.rs-input:hover,.rs-select:hover,.rs-textarea:hover{border-color:var(--ds-primary);}
+p.rs-hint{font-size:var(--rs-fs-meta);line-height:1.5;color:var(--ds-ink-soft);max-width:46ch;}
+
+/* ==========================================================================
+   10 . COMPOSED BODY MODULES
+   These are page ARCHETYPES, reusable across the site, not one off page CSS.
+   ========================================================================== */
+
+/* ---- 10.1  SPLIT  (HERO-COMPOSITIONS.md #1, SECTION-COMPONENTS.md #11, G2) --
+   _COMPOSITION-LAWS law L1 is a HARD law with a render gate: when a two column
+   text plus media split stacks, it must read HEADING then MEDIA then BODY then
+   CTA, and there is no order:-1 media first carve out.
+
+   So this module is built on grid-template-areas rather than on source order
+   tricks. The markup is authored in the MOBILE reading order already:
+       .rs-split__head   eyebrow plus title
+       .rs-split__media  the photograph
+       .rs-split__body   prose, lists, CTAs
+   and the desktop two column composition is assembled by AREAS. Nothing uses
+   display:contents (which would kill the reveal transform on the wrapper) and
+   nothing uses order, so the stacked order is simply the source order and the
+   L1 gate is satisfied structurally rather than patched.
+
+   The flip variant swaps the COLUMNS, never the source order.
+   L3 media fits track: the media declares width and min-width so a frame with
+   an aspect-ratio can never compute its width from its height and balloon out
+   of its 1fr track. */
+.rs-split{
+  display:grid;
+  grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+  grid-template-areas:
+    "head media"
+    "body media";
+  column-gap:var(--ds-space-xl);
+  row-gap:var(--ds-space-md);
+}
+.rs-split--wide-copy{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);}
+.rs-split--flip{
+  grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);
+  grid-template-areas:
+    "media head"
+    "media body";
+}
+.rs-split__head{grid-area:head;align-self:end;}
+.rs-split__body{grid-area:body;align-self:start;}
+.rs-split__body > *:first-child{margin-top:0;}
+.rs-split__media{
+  grid-area:media;align-self:center;
+  position:relative;
+  width:100%;min-width:0;
+}
+
+/* the plain two column CONTENT grid: no media, so L1 does not apply and the
+   columns simply stack in source order */
+.rs-duo{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,.9fr);
+  gap:var(--ds-space-xl);
+  align-items:start;
+}
+
+/* the hero stage. Ground is canvas with the ambient wash; the arc closes it. */
+.rs-stage{position:relative;padding-block:calc(var(--ds-space-2xl) + var(--ds-space-lg)) calc(var(--ds-space-2xl) + var(--rs-arc-h));}
+/* the circular badge that overlaps the dome. A round mark, a round frame and a
+   round arc are the three beats of the motif in the first screen. */
+.rs-stage__badge{
+  position:absolute;left:calc(var(--ds-space-lg) * -1);bottom:var(--ds-space-xl);
+  z-index:var(--ds-z-raised);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;
+  width:168px;height:168px;
+  padding:var(--ds-space-sm);
+  border-radius:var(--ds-r-pill);
+  text-align:center;
+}
+.rs-stage__badge b{font-family:var(--ds-font-display);font-size:var(--rs-fs-3);line-height:1.15;color:var(--ds-primary-deep);}
+.rs-stage__badge span{font-size:var(--rs-fs-meta);line-height:1.4;color:var(--ds-ink-soft);}
+
+/* ---- 10.2  GRIDS ---------------------------------------------------------- */
+.rs-grid{display:grid;gap:var(--ds-space-md);}
+.rs-grid--3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.rs-grid--2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr));}
+.rs-grid--gap-lg{gap:var(--ds-space-lg);}
+
+/* ---- 10.3  SERVICE TILE  (G4 + I5) ---------------------------------------- */
+.rs-svc{display:grid;gap:var(--ds-space-md);min-height:100%;}
+.rs-svc__name{font-family:var(--ds-font-display);font-size:var(--rs-fs-3);font-weight:600;line-height:1.3;color:var(--ds-ink-heading);}
+p.rs-svc__desc{font-size:var(--rs-fs-body);line-height:1.70;color:var(--ds-ink-soft);max-width:36ch;}
+.rs-svc__foot{margin-top:auto;}
+
+/* ---- 10.4  DIFFERENTIATOR ROW --------------------------------------------- */
+.rs-why{display:grid;gap:var(--ds-space-lg);}
+.rs-why__item{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--ds-space-md);align-items:start;}
+p.rs-why__body{font-size:var(--rs-fs-body);line-height:1.70;color:var(--ds-ink-soft);max-width:52ch;margin-top:var(--ds-space-2xs);}
+
+/* ---- 10.5  QUICK FACTS  (I3 / C3, count up on reveal) --------------------- */
+.rs-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--ds-space-lg);}
+.rs-fact{
+  display:grid;gap:var(--ds-space-2xs);
+  padding-left:var(--ds-space-md);
+  border-left:1px solid var(--ds-line-control);
+}
+.rs-fact__num{
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--rs-fs-stat);line-height:1;letter-spacing:-.02em;
+  color:var(--ds-primary-deep);
+  font-variant-numeric:tabular-nums;
+}
+.rs-fact__label{font-size:var(--rs-fs-body);font-weight:700;line-height:1.4;color:var(--ds-ink);}
+p.rs-fact__note{font-size:var(--rs-fs-meta);line-height:1.5;color:var(--ds-ink-soft);max-width:32ch;}
+
+/* ---- 10.6  OFFER  (the conversion mechanism) ------------------------------ */
+.rs-offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:var(--ds-space-xl);align-items:start;}
+.rs-offer__price{
+  display:flex;align-items:baseline;gap:var(--ds-space-sm);flex-wrap:wrap;
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--rs-fs-price);line-height:1;letter-spacing:-.02em;
+  color:var(--ds-primary-deep);
+  font-variant-numeric:tabular-nums;
+}
+.rs-offer__price small{font-family:var(--ds-font-body);font-size:var(--rs-fs-lede);font-weight:500;letter-spacing:0;color:var(--ds-ink-soft);}
+.rs-offer__second{margin-top:var(--ds-space-sm);font-size:var(--rs-fs-lede);line-height:1.6;color:var(--ds-ink);}
+.rs-offer__terms{margin-top:var(--ds-space-md);}
+
+/* ---- 10.7  ROSTER  (H5 circular portraits, I2 quiet cards) ---------------- */
+.rs-roster{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:var(--ds-space-lg);}
+.rs-person{display:grid;justify-items:center;gap:var(--ds-space-sm);text-align:center;}
+.rs-person__frame{width:100%;max-width:236px;}
+.rs-person__name{font-family:var(--ds-font-display);font-size:var(--rs-fs-3);font-weight:600;line-height:1.3;color:var(--ds-ink-heading);}
+p.rs-person__cred{font-size:var(--rs-fs-body);line-height:1.70;color:var(--ds-ink-soft);max-width:36ch;}
+
+/* ---- 10.8  RATING  (the review record, scope always attached) ------------- */
+.rs-rating{display:flex;align-items:center;gap:var(--ds-space-lg);flex-wrap:wrap;}
+.rs-rating__score{
+  display:flex;align-items:center;justify-content:center;
+  width:136px;height:136px;flex:none;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-canvas);
+  border:1px solid var(--ds-line);
+  box-shadow:inset 0 0 0 var(--rs-ring) var(--ds-primary-soft);
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--rs-fs-1);line-height:1;
+  color:var(--ds-primary-deep);
+  font-variant-numeric:tabular-nums;
+}
+.rs-rating__body{min-width:min(100%,34ch);}
+.rs-stars{display:inline-flex;gap:5px;color:var(--ds-signature);}
+.rs-stars svg{width:26px;height:26px;}
+
+/* the honest empty state: a review slot with no imported review yet. It is a
+   DESIGNED state, not a gap, because inventing a testimonial is the single
+   most serious defect available on this project. */
+.rs-pending{
+  display:grid;gap:var(--ds-space-xs);
+  padding:var(--ds-space-md);
+  border:1px dashed var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  background:var(--ds-bg-surface);
+}
+.rs-pending__tag{
+  display:inline-flex;align-items:center;gap:var(--ds-space-xs);
+  font-size:var(--rs-fs-meta);font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+
+/* ---- 10.9  APPOINTMENT BAND ----------------------------------------------- */
+.rs-appt{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:var(--ds-space-xl);align-items:start;}
+.rs-offices{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0 var(--ds-space-lg);}
+.rs-office{padding-block:var(--ds-space-xs);border-bottom:1px solid var(--ds-line);}
+.rs-office__name{display:block;font-size:var(--rs-fs-body);font-weight:700;line-height:1.4;color:var(--ds-ink-heading);}
+.rs-office__where{display:block;font-size:var(--rs-fs-meta);line-height:1.5;color:var(--ds-ink-soft);}
+
+/* ---- 10.10  CLOSING CTA  (the single .surface-dark moment) ---------------- */
+.rs-close{position:relative;overflow:hidden;padding-block:calc(var(--ds-space-2xl) + var(--ds-space-md));}
+.rs-close__glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(56% 72% at 14% 4%,var(--ds-accent),transparent 62%);
+  opacity:.12;
+}
+.rs-close__wash{position:absolute;inset:0;pointer-events:none;background:var(--ds-glow-wash);}
+.rs-close__inner{position:relative;text-align:center;display:grid;justify-items:center;}
+/* on dark the yellow is a genuine FOREGROUND at 7.19:1 worst case, so the
+   eyebrow can take it, and the keyline that rescues it on light is dropped by
+   the token flip rather than restated here. */
+.surface-dark .rs-eyebrow{color:var(--ds-accent);}
+.surface-dark .rs-note{background:var(--ds-accent-soft);color:var(--ds-ink);}
+
+/* ==========================================================================
+   11 . MOTION  (C1 scroll reveal, C3 count up)
+   Small travel, long settle. Everything here is decoration and every bit of it
+   is switched off under prefers-reduced-motion.
+   ========================================================================== */
+.rs-rise{
+  --rs-i:0;
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity var(--ds-dur-slow) var(--ds-ease-out),transform var(--ds-dur-slow) var(--ds-ease-out);
+  transition-delay:calc(var(--rs-i) * 70ms);
+}
+.rs-rise.is-in{opacity:1;transform:none;}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;transition-delay:0s!important;
+    scroll-behavior:auto!important;
+  }
+  .rs-rise{opacity:1!important;transform:none!important;}
+  .rs-zoom img{transform:none!important;}
+  .rs-go::after{transform:scaleX(1)!important;}
+}
+
+/* ==========================================================================
+   12 . BREAKPOINTS
+   The grids above are auto-fit, so the body reflows on its own between these
+   stops; what follows only unpicks the deliberate asymmetries.
+   ========================================================================== */
+/* L1 names the two stack widths, 1024 and 767, so the split collapses at 1024.
+   The single column areas restate the authored order explicitly, so the stacked
+   page reads HEADING then MEDIA then BODY at every width below this stop. */
+@media (max-width:1024px){
+  .rs-split,.rs-split--wide-copy,.rs-split--flip{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-areas:
+      "head"
+      "media"
+      "body";
+    row-gap:var(--ds-space-lg);
+  }
+  .rs-split__head,.rs-split__body,.rs-split__media{align-self:start;}
+  .rs-duo,.rs-offer,.rs-appt{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+  .rs-stage{padding-block:var(--ds-space-xl) calc(var(--ds-space-xl) + var(--rs-arc-h));}
+  .rs-stage__badge{position:static;width:auto;height:auto;flex-direction:row;gap:var(--ds-space-sm);margin-top:var(--ds-space-md);padding:var(--ds-space-sm) var(--ds-space-md);}
+  .rs-person__frame{max-width:212px;}
+}
+/* CTA-PATTERNS.md #7: the primary plus secondary pair stacks vertically with
+   both pills full width at 767, primary on top. */
+@media (max-width:767px){
+  .rs-sec,.rs-sec--band,.rs-sec--surface{padding-block:var(--ds-space-xl);}
+  .rs-sec--open,.rs-sec--lead{padding-block:var(--ds-space-xl);}
+  .rs-close{padding-block:var(--ds-space-xl);}
+  .rs-acts{gap:var(--ds-space-xs);}
+  .rs-acts .rs-btn{width:100%;}
+  .rs-facts{gap:var(--ds-space-md);}
+  .rs-rating{gap:var(--ds-space-md);}
+  .rs-rating__score{width:108px;height:108px;font-size:var(--rs-fs-2);}
+}
+@media (max-width:520px){
+  .rs-wrap{padding-inline:var(--ds-space-md);}
+  .rs-card{padding:var(--ds-space-md);}
+  .rs-why__item{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-sm);}
+  .rs-offices{grid-template-columns:minmax(0,1fr);}
+  /* TRUST-STATS-SECTIONS.md #4 MOBILE FLOOR RULE: when the stat band goes one
+     up, the vertical hairline dividers become horizontal top rules, and the
+     numeral keeps its large clamp floor (46px here, well above the 34px bar).
+     The figure is the message, so it never shrinks to fit the column. */
+  .rs-fact{
+    padding-left:0;padding-top:var(--ds-space-md);
+    border-left:0;border-top:1px solid var(--ds-line-control);
+  }
+}
+
+/* ---- 11  OWNER-LOCKED DOM GRAMMAR PRIMITIVES ------------------------------
+   The locked body grammar is  section > .container > .row > .col > OBJECT
+   (verify-dom-structure.mjs). This sheet was authored around its own .rs-wrap
+   container, so .rs-wrap carries the .container ROLE and these three are
+   LAYOUT-ONLY pass-throughs, exactly as the gate defines them: structure
+   classes carry layout only, the component skin lives on the OBJECT inside
+   the .col. They are declared here rather than in the specimen so every page
+   built from this foundation inherits them.
+   Deliberately inert: no colour, no type, no spacing, so inserting them can
+   never disturb the rhythm the rest of this sheet establishes. */
+.container{width:100%;}
+.row{display:block;}
+.col{display:block;min-width:0;}

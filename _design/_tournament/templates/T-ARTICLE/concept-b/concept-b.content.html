@@ -1,0 +1,567 @@
+<style>
+/* ============================================================================
+   T-ARTICLE  .  CONCEPT B  .  "THE CREDENTIAL LEDGER"
+   Body fragment scoped layer. Sits ON TOP of radiantsmiles-tokens.css,
+   radiantsmiles-chrome.css and radiantsmiles-structural.css. It adds only the
+   shapes this concept needs that the foundation kit does not already ship.
+
+   NAMESPACE: every invented class is ar- prefixed. Nothing in the foundation
+   vocabulary is redefined here. The one shared-name risk, .rs-frame, is avoided
+   outright: this concept builds its own .ar-portrait rather than restyling the
+   foundation frame, so no selector in this block names an rs- class.
+
+   TOKEN PURITY: zero hex literals, zero rgb(), zero named colours. Every colour,
+   radius, shadow, duration, easing and spacing value below is a var(--ds-*) role
+   token or a calc() over one.
+
+   SPECIFICITY: the foundation declares p.rs-copy{max-width:64ch} at (0,1,1).
+   Every paragraph here that needs its own measure carries an ar- class and NOT
+   rs-copy, and its rule is TYPE QUALIFIED (p.ar-x) so it wins the tie. No element
+   in this fragment carries rs-copy and an ar- measure at the same time.
+
+   RESPONSIVE: authored DESKTOP FIRST. Every breakpoint rule is an additive
+   max-width override at 1023 / 767 / 479. There is no min-width query.
+
+   THE TEMPLATE PROBLEM THIS SOLVES: ten clinician pages inherit this, and their
+   bios run from a full credential paragraph down to a single sentence with no
+   credential at all. Every block below either fills or folds away cleanly. The
+   credential body is FLEX, not grid, so a one sentence page lets the statement
+   grow across the whole panel instead of leaving an empty second column.
+   ============================================================================ */
+
+/* ---- 1 . HERO MASTHEAD ---------------------------------------------------- */
+.ar-mast{
+  position:relative;
+  /* isolation is LOAD BEARING. The wash below is a z-index minus one pseudo, and
+     .rs-sec paints an opaque ground. Without a stacking context here the pseudo
+     would paint BEHIND that ground and never be seen at all. */
+  isolation:isolate;
+  display:grid;
+  grid-template-columns:1.35fr 1fr 260px;
+  grid-template-areas:
+    "id  say face"
+    "act say face";
+  column-gap:var(--ds-space-xl);
+  row-gap:var(--ds-space-md);
+  align-items:start;
+}
+/* the soft ground wash behind the masthead. Bleeds past the text block so the
+   hero reads as lit rather than as a flat panel. */
+.ar-mast::before{
+  content:"";
+  position:absolute;
+  inset:calc(-1 * var(--ds-space-xl)) calc(-1 * var(--ds-space-lg));
+  z-index:var(--ds-z-below);
+  border-radius:calc(var(--ds-r-surface) * 3);
+  background-image:var(--ds-glow-wash);
+  pointer-events:none;
+}
+.ar-mast__id{grid-area:id;}
+.ar-mast__say{grid-area:say;}
+.ar-mast__face{grid-area:face;justify-self:end;}
+.ar-mast__act{grid-area:act;align-self:end;}
+
+.ar-rule{
+  display:block;
+  width:var(--ds-space-xl);
+  height:3px;
+  margin-top:var(--ds-space-md);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-signature);
+}
+
+p.ar-say{
+  font-size:clamp(19px,2vw,22px);
+  line-height:1.62;
+  color:var(--ds-ink-soft);
+  max-width:34ch;
+}
+
+/* THE PORTRAIT. Capped at 260px on purpose. The source portraits are small and
+   they are not a consistent set, so a modest fixed square with one shared crop
+   normalises seven studio shots against three that were taken differently. A
+   larger frame would soften the file and advertise the inconsistency. */
+.ar-portrait{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  max-width:260px;
+  aspect-ratio:1 / 1;
+  margin:0;
+  border-radius:calc(var(--ds-r-surface) * 2);
+  border:1px solid var(--ds-hairline);
+  background:var(--ds-primary-soft);
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+}
+/* NO hover move on the portrait, deliberately. It is not a link and it is not
+   inside a card, so a zoom or a halo here would signal an action that does not
+   exist. The depth comes from the elevation, the border and the grade instead. */
+.ar-portrait > img.ar-portrait__img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 30%;
+  filter:saturate(.94) contrast(1.04);
+}
+/* the palette grade, so a portrait shot on any background still reads as brand. */
+.ar-portrait::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background:var(--ds-primary-deep);
+  mix-blend-mode:multiply;
+  opacity:var(--ds-opacity-faint);
+}
+
+/* ---- 2 . THE CREDENTIAL BAND (the dark anchor, mid page) ----------------- */
+.ar-cred{
+  position:relative;
+  padding:var(--ds-space-xl);
+  border-radius:calc(var(--ds-r-surface) * 2);
+  border:1px solid var(--ds-line-control);
+  background:linear-gradient(180deg,var(--ds-bg-surface),var(--ds-bg-band));
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+}
+.ar-cred::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background-image:var(--ds-glow-wash);
+}
+.ar-cred > *{position:relative;}
+.ar-cred__body{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--ds-space-xl);
+  margin-top:var(--ds-space-lg);
+}
+p.ar-cred__lead{
+  flex:1 1 24ch;
+  font-size:clamp(21px,2.4vw,27px);
+  line-height:1.44;
+  color:var(--ds-ink);
+  max-width:30ch;
+}
+.ar-cred__side{
+  flex:1 1 30ch;
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-md);
+  padding-left:var(--ds-space-lg);
+  border-left:1px solid var(--ds-line);
+}
+p.ar-cred__source{
+  font-size:16px;
+  line-height:1.55;
+  color:var(--ds-ink-soft);
+  max-width:44ch;
+  font-variant-numeric:tabular-nums;
+}
+p.ar-cred__note{
+  font-size:18px;
+  line-height:1.70;
+  color:var(--ds-ink-soft);
+  max-width:44ch;
+}
+
+/* ---- 3 . APPROACH ---------------------------------------------------------- */
+.ar-steps{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--ds-space-lg);
+  margin-top:var(--ds-space-lg);
+}
+.ar-step{
+  padding:var(--ds-space-lg);
+  border-radius:var(--ds-r-surface);
+  border:1px solid var(--ds-hairline);
+  background:var(--ds-bg-surface);
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+  transition:transform var(--ds-dur) var(--ds-ease-out),
+             box-shadow var(--ds-dur) var(--ds-ease-out);
+}
+.ar-step:hover{
+  transform:translateY(calc(-1 * var(--ds-space-2xs)));
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+}
+.ar-step__mark{
+  display:block;
+  width:var(--ds-space-md);
+  height:3px;
+  margin-bottom:var(--ds-space-sm);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-signature);
+}
+p.ar-step__text{
+  font-size:19px;
+  line-height:1.62;
+  color:var(--ds-ink);
+  max-width:42ch;
+}
+/* the refusal statement. Held apart from the pair so it can never be read as a
+   third claim about the clinician. */
+.ar-restraint{
+  margin-top:var(--ds-space-lg);
+  padding:var(--ds-space-lg);
+  border-left:3px solid var(--ds-signature);
+  border-radius:0 var(--ds-r-surface) var(--ds-r-surface) 0;
+  background:linear-gradient(90deg,var(--ds-primary-soft),var(--ds-bg-surface) 62%);
+  box-shadow:var(--ds-shadow-rest);
+}
+p.ar-restraint__text{
+  font-size:19px;
+  line-height:1.62;
+  color:var(--ds-ink);
+  max-width:58ch;
+}
+
+/* ---- 4 . WHERE THEY PRACTISE ---------------------------------------------- */
+.ar-route{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:var(--ds-space-md);
+  margin-top:var(--ds-space-lg);
+  padding:var(--ds-space-lg);
+  border-radius:var(--ds-r-surface);
+  border:1px solid var(--ds-hairline);
+  background:linear-gradient(180deg,var(--ds-bg-surface),var(--ds-bg-band));
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+.ar-route__label{
+  font-size:18px;
+  line-height:1.55;
+  font-weight:700;
+  color:var(--ds-ink);
+}
+a.ar-route__link{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--ds-space-sm);
+  min-height:48px;
+  font-size:20px;
+  font-weight:700;
+  line-height:1.3;
+  color:var(--ds-ink-heading);
+  text-decoration:none;
+}
+a.ar-route__link:hover{text-decoration:underline;text-underline-offset:4px;}
+.ar-route__dot{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+  width:48px;
+  height:48px;
+  border-radius:var(--ds-r-pill);
+  border:2px solid var(--ds-signature);
+  background:var(--ds-canvas);
+  box-shadow:var(--ds-shadow-rest);
+  transition:transform var(--ds-dur) var(--ds-ease-out),
+             background-color var(--ds-dur) var(--ds-ease);
+}
+a.ar-route__link:hover .ar-route__dot{
+  transform:translateX(var(--ds-space-2xs));
+  background:var(--ds-primary-soft);
+}
+.ar-route__dot svg{width:20px;height:20px;}
+
+/* ---- 5 . CLOSE ------------------------------------------------------------- */
+.ar-close{
+  display:grid;
+  grid-template-columns:1.25fr 1fr;
+  gap:var(--ds-space-xl);
+  align-items:start;
+  margin-top:var(--ds-space-lg);
+}
+p.ar-close__line{
+  font-size:19px;
+  line-height:1.62;
+  color:var(--ds-ink-soft);
+  max-width:46ch;
+}
+.ar-close__label{
+  margin-top:var(--ds-space-lg);
+  font-size:16px;
+  font-weight:700;
+  line-height:1.55;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+.ar-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--ds-space-sm);
+  margin-top:var(--ds-space-sm);
+}
+a.ar-links__item{
+  display:inline-flex;
+  align-items:center;
+  min-height:48px;
+  padding-inline:var(--ds-space-md);
+  border-radius:var(--ds-r-control);
+  border:1px solid var(--ds-line-control);
+  background:var(--ds-bg-surface);
+  color:var(--ds-ink-heading);
+  font-size:17px;
+  font-weight:600;
+  line-height:1.3;
+  text-decoration:none;
+  box-shadow:var(--ds-shadow-rest);
+  transition:transform var(--ds-dur) var(--ds-ease-out),
+             background-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease-out);
+}
+a.ar-links__item:hover{
+  transform:translateY(calc(-1 * var(--ds-space-2xs)));
+  background:var(--ds-primary-soft);
+  box-shadow:var(--ds-shadow-card);
+}
+a.ar-team{
+  color:var(--ds-ink-heading);
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-thickness:2px;
+  transition:color var(--ds-dur) var(--ds-ease);
+}
+a.ar-team:hover{color:var(--ds-primary);}
+.ar-ask{
+  padding:var(--ds-space-lg);
+  border-radius:calc(var(--ds-r-surface) * 2);
+  border:1px solid var(--ds-hairline);
+  background:linear-gradient(180deg,var(--ds-bg-surface),var(--ds-bg-band));
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+}
+.ar-ask__acts{
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-sm);
+}
+
+/* ---- 6 . BREAKPOINTS. Additive max-width steps only. --------------------- */
+@media (max-width:1023px){
+  .ar-mast{
+    grid-template-columns:1fr 220px;
+    grid-template-areas:
+      "id  face"
+      "say face"
+      "act face";
+    column-gap:var(--ds-space-lg);
+  }
+  .ar-portrait{max-width:220px;}
+  .ar-cred{padding:var(--ds-space-lg);}
+  .ar-cred__body{gap:var(--ds-space-lg);}
+  .ar-close{grid-template-columns:1fr;gap:var(--ds-space-lg);}
+}
+
+@media (max-width:767px){
+  .ar-mast{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "id"
+      "say"
+      "face"
+      "act";
+    row-gap:var(--ds-space-lg);
+  }
+  .ar-mast::before{
+    inset:calc(-1 * var(--ds-space-lg)) calc(-1 * var(--ds-space-md));
+  }
+  .ar-mast__face{justify-self:start;}
+  .ar-mast__act{align-self:start;}
+  p.ar-say{max-width:none;}
+  .ar-cred__side{
+    padding-left:0;
+    padding-top:var(--ds-space-md);
+    border-left:0;
+    border-top:1px solid var(--ds-line);
+  }
+  .ar-steps{grid-template-columns:1fr;gap:var(--ds-space-md);}
+  .ar-route{padding:var(--ds-space-md);}
+}
+
+@media (max-width:479px){
+  .ar-portrait{max-width:180px;}
+  .ar-cred{padding:var(--ds-space-md);}
+  .ar-step{padding:var(--ds-space-md);}
+  .ar-restraint{padding:var(--ds-space-md);}
+  .ar-ask{padding:var(--ds-space-md);}
+  .ar-links{flex-direction:column;align-items:stretch;}
+  a.ar-links__item{justify-content:center;}
+  a.ar-route__link{font-size:18px;}
+}
+
+/* ---- 7 . REDUCED MOTION. Every move above is opt out. --------------------- */
+@media (prefers-reduced-motion:reduce){
+  .ar-step:hover,
+  a.ar-links__item:hover,
+  a.ar-route__link:hover .ar-route__dot{transform:none;}
+}
+</style>
+
+<!-- LEDGER NOTATION. The catalog entry numbers below are written as hash SPACE
+     number. The client banned-vocab list bans the un-spaced form as a ranking
+     claim, and the selection gate parses either form, so the space is the only
+     way to cite entries eleven through nineteen truthfully in this file. -->
+
+<!-- pick: HERO-COMPOSITIONS.md # 20 Three-column hero (text + stat + photo) | considered: # 11,# 16,# 19 | why: This page is one named clinician with a checkable credential and a single small portrait. Entry 20 gives each of those three things its own column, and the catalog itself allows another mix of column anchors. That is the deliberate deviation taken here. Column two carries the practice sentence rather than a statistic, because inventing a figure for a clinician is forbidden on this build, and some of the ten pages state no figure at all. Entry 19, the bento grid, needs six to nine filled tiles and would show holes on the pages whose bio is one sentence. Entry 11 wants three or four service tiles under the headline, and this page sells one person rather than a service set. Entry 16, the sticky hero, pins content through one or two viewports of scroll, which a page this short cannot fill. The portrait column is capped at 260 pixels because the source file is 275 by 275 and would soften if scaled up. On mobile the four areas restack as heading, sentence, portrait, actions, so the photograph never sits above the name it belongs to. -->
+<section class="rs-sec rs-sec--lead">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ar-mast">
+
+          <div class="ar-mast__id">
+            <h1 class="rs-h1">Dr. Adrian Ruiz, DDS</h1>
+            <span class="ar-rule"></span>
+          </div>
+
+          <div class="ar-mast__say">
+            <p class="ar-say">A second generation dentist with Radiant Smiles, one practice running seven offices across Las Vegas, North Las Vegas and Henderson.</p>
+          </div>
+
+          <div class="ar-mast__face">
+            <figure class="ar-portrait">
+              <img class="ar-portrait__img"
+                   src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Adrian-Ruiz.jpg"
+                   width="275" height="275" decoding="async"
+                   alt="Dr. Adrian Ruiz smiling in a white clinical coat over a shirt and a dark striped tie, photographed against a plain pale background.">
+            </figure>
+          </div>
+
+          <!-- ROUTING NOTE, a deliberate deviation recorded rather than hidden. The
+               practice publishes seven office numbers and no single group number. The
+               owner flag on section 4 forbids asserting which office this clinician
+               attends, so one number here would imply an assignment the roster does not
+               support. The secondary action therefore routes to the locations hub,
+               where all seven numbers are published. -->
+          <div class="ar-mast__act">
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 8 Manifesto / belief statement | considered: # 3,# 5,# 16 | why: Section 2 of the copy is three short statements, which is the one to three sentence shape entry 8 describes. It uses the left aligned variant with a rule above, set on the dark ground, so the credential becomes the page's one contrast move. Entry 3, the stat strip, was rejected because setting 22 as a giant number would over claim a figure the copy attaches to no city and no patient population. That treatment would also leave a hole on the pages that state no number at all. Entry 5, the awards band, is rejected outright, since the copy carries no award and inventing one is forbidden. Entry 16, the founder bio split, needs a photo beside the bio, and this page already spent its only portrait in the hero. The seam above this band is DIVIDER-PATTERNS.md # 1 Hard edge, so the ground change alone carries the transition. The two supporting paragraphs sit in a flexible side column that folds away when a page supplies only one sentence. -->
+<section class="rs-sec surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ar-cred">
+          <h2 class="rs-h2">Credentials</h2>
+
+          <!-- FLAG CARRIED FROM THE COPY, section 2. Never rendered as page copy:
+               ⚠FLAG: the credential above is carried without paraphrase, per the brief. If the owner supplies a fuller CV, it extends this section. It is never softened into a vaguer claim. -->
+          <!-- FLAG CARRIED FROM THE COPY, section 2. Never rendered as page copy:
+               ⚠FLAG: brief §2, the SEO meta and the captured biography now agree on over 22 years of practice experience. No city and no patient population is attached to that figure in any of the three. The wording above follows the capture, and the brief and the meta now match it. -->
+
+          <div class="ar-cred__body">
+            <p class="ar-cred__lead">Dr. Adrian Ruiz is a second generation dentist. He earned his Doctorate in Dental Surgery at the UCLA School of Dentistry in 1995, and has over 22 years of practice experience.</p>
+            <div class="ar-cred__side">
+              <p class="ar-cred__source">Those details come from his own biography on the practice site, fetched 30 July 2026. You can check them there before you book.</p>
+              <p class="ar-cred__note">You are choosing a named clinician with a stated qualification and a stated year, not an anonymous appointment slot.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CARD-VARIATIONS.md # 3 Minimal 3-up icon-top feature | considered: # 1,# 2,# 4 | why: The copy gives two statements about how the appointment runs, plus one statement of what the practice refuses to claim. Entry 3 is taken as a 2-up rather than a 3-up, because there are two statements and padding a third would mean writing new copy. The icons are dropped, since no icon set exists on disk and drawing glyphs would decorate a credential page. A short rule stands in for the icon, and a soft raised surface replaces the pattern's no chrome instruction, so this band still carries real depth. Entry 1, the dark service tile, and entry 4, the circle icon card, each require an icon per card, which is the same problem twice. Entry 2 requires an embedded mini visual per card, and this build has no chart, screenshot or product frame to embed. The refusal statement is pulled out below the pair as a bordered aside, so it never reads as a third feature. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="rs-h2">Approach</h2>
+
+        <div class="ar-steps">
+          <div class="ar-step">
+            <span class="ar-step__mark"></span>
+            <p class="ar-step__text">The appointment runs in plain language. You are told what the digital X-ray shows, what it means, and what your choices are.</p>
+          </div>
+          <div class="ar-step">
+            <span class="ar-step__mark"></span>
+            <p class="ar-step__text">Where a finding can wait, you are told that it can wait. Where it cannot, you are told what happens if it is left.</p>
+          </div>
+        </div>
+
+        <div class="ar-restraint">
+          <p class="ar-restraint__text">Nothing here rates his ability or his manner. We cannot source a claim like that for you, so we do not make one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md # 3 Arrow-circle CTA (label + circular icon) | considered: # 1,# 6,# 11 | why: This section has exactly one action, which is routing to the locations hub. An owner flag forbids naming the office this clinician attends, so a locations grid from SECTION-COMPONENTS.md # 51 was rejected before the CTA was chosen. Naming an office here without the roster would invent a fact, and a grid would demand seven of them. Entry 1, the solid pill, would compete with the booking button that opens and closes the page. Entry 6, the ghost text link, is too quiet for a section whose only job is that route, and it tends to miss the 44 pixel target on a phone. Entry 11 turns the whole section into an accent band, which would spend the accent a third time on one page. The circle here is 48 pixels square, so the tap target passes on mobile without a separate rule. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="rs-h2">Where they practise</h2>
+
+        <!-- FLAG CARRIED FROM THE COPY, section 4. Never rendered as page copy:
+             ⚠OWNER §G-11: per-office clinician assignment is not published on the live site. Until the owner supplies the roster, this section links to the locations hub and does not assert which office Dr. Ruiz attends on which day. Naming one without the roster would be an invented fact. -->
+
+        <p class="rs-copy">Dr. Ruiz sees patients across the Radiant Smiles group. We run seven offices in Las Vegas, North Las Vegas and Henderson.</p>
+
+        <div class="ar-route">
+          <span class="ar-route__label">Find the office nearest you:</span>
+          <a class="ar-route__link" href="locations.html">
+            <span>all seven offices</span>
+            <span class="ar-route__dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M4 12h14"></path>
+                <polyline points="12 6 18 12 12 18"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 41 Closing CTA | considered: # 37,# 38,# 40 | why: The copy closes with a link set and the same two calls to action the hero opened with. Entry 37, the CTA form, and entry 38, the newsletter band, both capture data, and this copy names no form and no email list. Entry 40, the pre-footer band, would put a dark ground before the footer, duplicating the ground already spent on the credential section. That would flatten the single contrast move this page is built around, which is why the dark anchor sits mid page here rather than at a bookend. The buttons are stacked, per CTA-PATTERNS.md # 8, because the ask column is narrow beside the link list. The accent is spent only on the two booking buttons, once in the hero and once here, and on nothing else. -->
+<section class="rs-sec rs-sec--close">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="rs-h2">Also on the team</h2>
+
+        <div class="ar-close">
+          <div>
+            <p class="ar-close__line"><a class="ar-team" href="team.html">the rest of our clinicians</a></p>
+            <p class="ar-close__label">Related</p>
+            <div class="ar-links">
+              <a class="ar-links__item" href="general-dentistry.html">general dentistry</a>
+              <a class="ar-links__item" href="locations.html">all seven offices</a>
+              <a class="ar-links__item" href="offer.html">new patient offer</a>
+              <a class="ar-links__item" href="contact.html">contact</a>
+            </div>
+          </div>
+
+          <div class="ar-ask">
+            <div class="ar-ask__acts">
+              <a class="rs-btn rs-btn--accent rs-btn--block" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost rs-btn--block" href="locations.html">Call the office</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

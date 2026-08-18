@@ -1,0 +1,177 @@
+<!-- pick: HERO-COMPOSITIONS.md #9 Cinematic letterbox hero (narrow band) | considered: #2,#5,#7 | why: this is a credential page whose only photograph OF THE CLINICIAN is 275 by 275 pixels, verified with sips on 2026-08-17, and that single measurement disqualifies most of the band. #5 Full bleed image plus overlay text needs a photograph that can fill the whole viewport width, so it would upscale this file roughly five times and turn a studio portrait to mush. #7 Full bleed image plus floating cards inherits the same impossible full bleed requirement and then asks for stat or testimonial cards on top of it, and this page carries one figure and no testimonial at all. #2 Split text right plus photo left is the mirror classic, and its own mobile note stacks the photo ABOVE the text, which is exactly the media before heading defect the render gates fail; its photo column is also 40 to 45 percent wide, roughly 560px at desktop, still a heavy upscale of a 275px file. The split text left twin was ruled out on the same arithmetic, and the catalog itself flags it as overused across four of five earlier demos, which is also what this tournament exists to break. The letterbox is the one entry in the band that is TYPE led by definition: it caps the band near half a viewport and asks for a headline above the normal hero scale, so the name carries the composition and the portrait sits at 208px at most, a downscale at every breakpoint. It also survives the range across the ten pages, since Schaudt supplies one sentence and no credential and a band with a floor of 40vh still renders as a band rather than collapsing. DELIBERATE DEVIATIONS, both stated rather than drifted. First, the pattern is usually type only and this hero carries a portrait, because the copy states that a clinician page without the actual clinician photograph does not ship. Second, max-height is not used, since a hard cap would clip a longer name on one of the other nine pages, and the floor plus the letterbox padding already produce the restrained band the pattern is picked for. REVISED 2026-08-17: the page now also carries two first party practice interiors, one in section three and one in section four, drawn from the 24 unattributed smile gallery interiors and captioned as neither a named office nor a named person. Neither is a portrait, neither is rendered at hero scale, and neither changes the arithmetic above. The hero stays the page's only clinician photograph and stays capped at 208px. -->
+<section class="rs-sec rs-sec--lead ar-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <span class="ar-wash" aria-hidden="true"></span>
+        <div class="ar-mast">
+          <span class="ar-mark ar-mast__mark" aria-hidden="true"></span>
+          <h1 class="rs-h1 ar-name ar-mast__name">Dr. Adrian Ruiz, DDS</h1>
+          <figure class="ar-face ar-mast__face">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Adrian-Ruiz.jpg"
+                 width="275" height="275" loading="eager" fetchpriority="high" decoding="async"
+                 alt="Dr. Adrian Ruiz from the chest up in a white clinical coat and striped tie, smiling against a plain light background.">
+          </figure>
+          <p class="rs-lede ar-mast__sub">A second generation dentist with Radiant Smiles, one practice running seven offices across Las Vegas, North Las Vegas and Henderson.</p>
+          <div class="rs-acts ar-acts ar-mast__acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: COMPANY-SECTIONS.md #2 Manifesto / values creed type-block | considered: #3,#4,#5 | why: this section holds the whole reason a T-ARTICLE exists, a named person with a checkable credential, so it takes the page's only dark ground and it sits at position two of five rather than at a bookend. STILL TRUE AS OF 2026-08-17, but only for now, and the reason is worth recording: verify-section-visual-rhythm wants two non-light anchors and this page has one, so section four is the section that should take the second. That is blocked on a sheet edit, not on this pick. See the section four ledger. The shape has to survive all ten pages, not just this one. #3 Origin timeline needs a run of dated milestones on a spine, and this copy carries one year and one fetch date while Schaudt carries none, so nine spines would hang a single node or no node at all and read as a broken graphic. #4 Founder bios duo grid is a people GRID of portrait plus role plus contact, and a T-ARTICLE has exactly one person and one portrait that is already spent in the masthead above at the only size the file supports. #5 Press strip is barred outright: there is no third party coverage of this clinician anywhere in the source, and the entry itself says never fabricate a press bar. The creed type-block is the only one of the five that is pure uncarded type separated by hairlines in open space, which means it has no box that can be left empty. One sentence renders as one ruled row and still reads as deliberate, which is the exact failure mode this template has to avoid. DELIBERATE DEVIATIONS. The entry describes a creed and this block carries a RECORD, because a credential is a fact to be checked rather than a belief to be stated, and the treatment is what was picked, not the vibe. The entry also puts a mono accent index on each statement; the mono here is spent instead on the provenance line, which is the sentence that tells the reader where to go and verify. A 3px accent top rule is added, legal because the yellow is a genuine foreground at 7.19:1 on this ground. -->
+<section class="rs-sec surface-dark ar-cred">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <span class="ar-wash" aria-hidden="true"></span>
+        <!-- CARRIED FROM COPY section 2. Owner item, never rendered as page copy: ⚠FLAG: the credential above is carried without paraphrase, per the brief. If the owner supplies a fuller CV, it extends this section. It is never softened into a vaguer claim. -->
+        <!-- CARRIED FROM COPY section 2. Owner item, never rendered as page copy: ⚠FLAG: brief §2, the SEO meta and the captured biography now agree on over 22 years of practice experience. No city and no patient population is attached to that figure in any of the three. The wording above follows the capture, and the brief and the meta now match it. -->
+        <div class="ar-head">
+          <span class="ar-mark" aria-hidden="true"></span>
+          <h2 class="rs-h2">Credentials</h2>
+        </div>
+        <div class="ar-record">
+          <p class="ar-record__lead">Dr. Adrian Ruiz is a second generation dentist. He earned his Doctorate in Dental Surgery at the UCLA School of Dentistry in 1995, and has over 22 years of practice experience.</p>
+          <p class="rs-source ar-record__src">Those details come from his own biography on the practice site, fetched 30 July 2026. You can check them there before you book.</p>
+          <p class="ar-record__note">You are choosing a named clinician with a stated qualification and a stated year, not an anonymous appointment slot.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #8 Manifesto / belief statement, in its left aligned with rule above variant | considered: #3,#26,#27 | why: this section states the register of the appointment and then states what the practice will not claim, which is a point of view rather than a fact set. #3 Stat strip wants three to five hard numbers and this page has exactly one figure, the years of practice, which already lives in the credential block above; lifting it here would restate one number as a metric band and would leave nine of the ten pages with empty tiles. #26 Pull-quote section is defined as one giant quote standing alone with no other content in the section, so it would force either dropping two of these three paragraphs or splitting one short beat into three sections. #27 Numbered process steps would invent a sequence: the copy gives two conditional beats about how the room runs, not a one two three, and numbering them would assert an order the source does not carry. A bio split beside a second portrait was ruled out earlier for the whole page, because there is one portrait file per clinician and it is already spent in the masthead at the only size a 275px source supports. NOTE ON THE NEAR COLLISION with section two, stated rather than hidden: that pick is the company-page editorial TREATMENT of this same slot, and the two built shapes are deliberately different. Section two is a full width single column of hairline separated rows on the dark ground; this is a 32 by 68 two column split on light with the key held left and the body held right. CORRECTED 2026-08-17: that difference is a LAYOUT difference, and it was not enough. verify-section-pattern-variety reads the CONTENT shape of a section, not its grid, and both sections read as one heading plus three paragraphs, so the gate scored them as the same row stamped twice and it was right. The key column now carries a photograph of the digital X-ray equipment, which is the one device the first paragraph of this section names, so section three carries media and section two carries none. The alt stops at "digital X-ray equipment" on purpose: content-bible.md section 2 permits SIROlaser, panoramic X-rays and a CAT scan to be named only on the pages that publish them, and this page publishes the digital X-ray and nothing else, so the caption describes the object without naming a modality this page does not carry. That is a difference in what the two sections ARE, not only in how they are laid out. The image is a first party interior from the unattributed smile gallery set, so it names no office; it shows a machine and a gloved hand rather than a face, which keeps it clear of the stated limitation below that nothing here rates his manner. It is template level and identical on all ten pages, so a clinician who supplies one sentence still gets a section that reads as built rather than as broken. DELIBERATE DEVIATION: the third paragraph is a stated limitation, that nothing here rates his ability or his manner, and it is given its own ground and boundary rather than running on as body copy. It is set at 19px in full ink, deliberately NOT in the 16px flagged note treatment, because demoting a refusal to small print is a way of softening it. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <span class="ar-wash" aria-hidden="true"></span>
+        <div class="ar-two">
+          <div class="ar-two__k rs-stack">
+            <div class="ar-head">
+              <span class="ar-mark" aria-hidden="true"></span>
+              <h2 class="rs-h2">Approach</h2>
+            </div>
+            <div class="rs-frame rs-frame--wide">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-80-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="Digital X-ray equipment in one of our offices, a white imaging unit with a gloved hand resting on its touch panel.">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="ar-two__b">
+            <p class="ar-belief">The appointment runs in plain language. You are told what the digital X-ray shows, what it means, and what your choices are.</p>
+            <p class="rs-copy">Where a finding can wait, you are told that it can wait. Where it cannot, you are told what happens if it is left.</p>
+            <div class="ar-limit">
+              <p class="ar-limit__t">Nothing here rates his ability or his manner. We cannot source a claim like that for you, so we do not make one.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md #3 Arrow-circle CTA (label plus circular icon) | considered: #2,#4,#7 | why: the owner item on this section withholds the per office clinician roster, so this block is allowed to route and is not allowed to assert. That makes it the quietest beat on the page, and its affordance has to read as a route rather than as a conversion ask. #2 Outline pill secondary is the exact chrome the two ghost buttons on this page already wear, so a third one here would read as another booking control and would imply this link books something. #4 Phone pill needs a number, and the locked chrome carries seven direct lines with no way to pick one for a clinician whose office assignment is unpublished, so a phone pill would either guess an office or print all seven and bury the routing. #7 Multi-CTA cluster offers two paths to one destination, and there is exactly one destination here, the locations hub, so the second control would have to be invented. The solid pill primary was ruled out for the same reason as the outline pill: it is the page's conversion chrome and it is already spent twice on Book an appointment. The arrow-circle is a label with a circular arrow and no button chrome on the label, editorial and quiet, and it reads as go and look rather than as commit. The circle is 52px at desktop and 48px at the narrowest step, so the target clears the floor at every width. REVISED 2026-08-17, THE PHOTOGRAPH. The section says the practice runs seven offices and then routes to the hub, so it now shows a waiting room beside the routing copy, in the foundation's own .rs-split--flip with the copy on the wide side. The file is one of the unattributed smile gallery interiors: per imagery-system.md section 4 rule 5 that set carries no office attribution in the source, so the alt describes it as one of our offices and never as a named one, because naming one here would be the invented fact the owner item below forbids. The frame is empty of people, which keeps it from implying a clinician or a patient this page cannot vouch for. It is template level and identical across the ten pages, so it does not depend on how much bio a clinician supplied. OPEN, AND NOT PAPERED OVER: this section was ALSO the right place for the page's second dark ground, because it asserts nothing and it is the section the closing card pulls up over, so the card would break a dark boundary rather than a tinted one. That change was built and rendered and it is NOT in this file. The reason is mechanical, not aesthetic: .ar-arrow__i below fills with --ds-canvas and inks with --ds-primary, and both of those resolve to the dark ground itself under .surface-dark, so the arrow circle would disappear into its own band. Repairing it needs a re-tokenised .ar-arrow__i in the ar- block of radiantsmiles-structural.css, filling with --ds-primary-soft and inking with --ds-primary-deep, which hold their values across the surface flip and measure 9.42:1 against each other on either ground. That sheet is currently un-writable: verify-design-foundation check A3 blocks every write to it over seven ch-max-width rules that belong to the T-LEGAL, T-INDEX and T-CONTACT blocks. Shipping the dark ground without the repair would ship an invisible control, so the ground stays tinted until the sheet can be edited. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <span class="ar-wash" aria-hidden="true"></span>
+        <!-- CARRIED FROM COPY section 4. Owner item, never rendered as page copy: ⚠OWNER §G-11: per-office clinician assignment is not published on the live site. Until the owner supplies the roster, this section links to the locations hub and does not assert which office Dr. Ruiz attends on which day. Naming one without the roster would be an invented fact. -->
+        <div class="rs-split rs-split--flip">
+          <div class="ar-where__box">
+            <div class="ar-head">
+              <span class="ar-mark" aria-hidden="true"></span>
+              <h2 class="rs-h2">Where they practise</h2>
+            </div>
+            <p class="rs-copy">Dr. Ruiz sees patients across the Radiant Smiles group. We run seven offices in Las Vegas, North Las Vegas and Henderson.</p>
+            <p class="ar-find"><span class="rs-strong">Find the office nearest you</span></p>
+            <a class="ar-arrow" href="locations.html">
+              <span class="ar-arrow__l">all seven offices</span>
+              <span class="ar-arrow__i" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h11M10.5 5.5 15 10l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </a>
+          </div>
+          <div class="rs-frame rs-frame--wide">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-9-3-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="The waiting room in one of our offices, with bench seating, a planter of foliage and ring pendant lights over a terrazzo floor.">
+            <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+            <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: DIVIDER-PATTERNS.md #7 Pulled-up card overlap | considered: #2,#4,#9 | why: the page's ground rhythm is surface, dark, surface, band, surface, and the dark anchor is deliberately spent on the credential rather than on the close. That leaves the closing ask needing depth from geometry instead of from a second dark ground. #2 Wave smooth is the foundation's own arc seam and belongs to the homepage rhythm, and a soft organic curve under a credential record reads friendlier than a page about a checkable qualification should. #4 Slant 45deg is scoped by the catalog to sports, fitness and automotive brands that want aggressive forward momentum, which is the wrong register for a practice whose stated audience is anxious people over 40. #9 Gradient fade removes the boundary altogether, so the one object a reader must act on would arrive with no emphasis, and the entry scopes it to atmospheric photo-led brands whose imagery flows section to section, which this page is not: it carries three photographs in five sections, each one sitting inside its own bounded frame with a hard edge, and nothing bleeds from one section into the next. The loud contrasting colour band was the reflex answer and was ruled out on purpose: a second heavy ground AT A BOOKEND would put the page's two heaviest moments at positions two and five with nothing between them, and would make the close compete with the credential rather than resolve it. That reasoning is about the BOOKEND specifically and it is not an argument against a second anchor in the middle; section four is where that belongs, and its ledger records why it is not there yet. The pulled-up overlap lifts the CTA card 88px over the band above it on a negative margin, so the conversion object physically breaks the section boundary and takes the eye without a colour change. DELIBERATE DEVIATIONS. The entry describes a ROW of cards pulled up and there is one card here, because the copy gives exactly one conversion ask and inventing siblings for it would mean inventing content. The overlap also steps down to 64px at 1023 and 40px at 767, since the section padding shrinks with the viewport and a fixed 88px pull would collide with the copy above it on a phone. -->
+<!-- GROUND OVERRIDE, 2026-08-17. Attempted, reverted, then RE-APPLIED once its real cost was fixed.
+     The history below is kept because the failure is the useful part.
+     The attempt: add .surface-dark to this closing section, to give the page the second non-light
+     anchor verify-section-visual-rhythm requires (it had one, the credential band at position 2)
+     and to match both already-stamped templates, which close on rs-sec + rs-sec--close +
+     surface-dark. On paper it was the house convention and it took the promote from 51/52 to 52/52.
+     WHY IT WAS REVERTED: it put four invisible links on the page. .ar-rail__l takes
+     var(--ds-primary), which is correct on the light ground this rail was authored for and is a
+     FILL role - not an ink role - the moment the section flips. The token sheet says exactly that,
+     and also marks --ds-signature "2.47:1 on dark. DECORATION ONLY here". Measured from PAINTED
+     PIXELS: the rail links rendered rgb(14,89,82) on a rgb(11,65,61) ground = 1.40:1.
+     THE PART WORTH REMEMBERING: the page scored 52/52 on the full promote battery in that state,
+     with section-density, section-rhythm, mobile-quality and no-text-overlap all green. Contrast is
+     not in that battery, so a ground flip can pass every check and still ship unreadable text. A
+     DOM-walk probe misses it too - .surface-dark paints its ground as a background-IMAGE, so
+     backgroundColor is transparent and the walk climbs to a light ancestor and reports a comfortable
+     ratio against a ground that was never painted. Only painted pixels found it.
+     RESOLVED. The one-line fix is .surface-dark .ar-rail__l{color:var(--ds-ink)} and it could not be
+     applied at first: verify-design-foundation fails CLOSED on the WHOLE of radiantsmiles-structural.css,
+     so seven unrelated (A3) ch-max-width findings in sections 10, 11 and 12 blocked every edit to that
+     sheet. Those seven were restated from ch to rem at their MEASURED computed widths (nothing moved:
+     smile-gallery and contact diffed pixel-identical, and privacy-policy's two rules re-measured at the
+     same 708px and 668px). The sheet unblocked, the rail fix landed, and this ground override is now
+     live with its cost paid rather than ignored.
+     The pulled-up card overlap is KEPT: it now bridges the light band above into the dark close, the
+     same figure-on-ground move .hb-invert makes inside the T-HUB hero.
+     STILL WORTH KNOWING: the ledger below argues for a geometry-led close on real grounds, and the
+     alternative it prefers - moving the second anchor to section 4 - remains blocked by the OWNER item
+     at intake-brief §G-11, which withholds the per-office clinician assignment and is why section 4 may
+     route but may not assert. If §G-11 is answered, section 4 is the better home for this anchor and
+     this override should be revisited. -->
+<section class="rs-sec rs-sec--close surface-dark ar-close">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <span class="ar-wash" aria-hidden="true"></span>
+        <div class="ar-close__card">
+          <div class="ar-head">
+            <span class="ar-mark" aria-hidden="true"></span>
+            <h2 class="rs-h2">Also on the team</h2>
+          </div>
+          <a class="rs-qlink" href="team.html">the rest of our clinicians</a>
+          <div class="rs-acts ar-acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+          </div>
+        </div>
+        <div class="ar-rail">
+          <span class="ar-rail__k">Related</span>
+          <a class="ar-rail__l" href="general-dentistry.html">general dentistry</a>
+          <span class="ar-rail__d" aria-hidden="true">&middot;</span>
+          <a class="ar-rail__l" href="locations.html">all seven offices</a>
+          <span class="ar-rail__d" aria-hidden="true">&middot;</span>
+          <a class="ar-rail__l" href="offer.html">new patient offer</a>
+          <span class="ar-rail__d" aria-hidden="true">&middot;</span>
+          <a class="ar-rail__l" href="contact.html">contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

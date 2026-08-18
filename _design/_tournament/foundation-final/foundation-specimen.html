@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radiant Smiles Dental Care: (3) FOUNDATION concept C, "The Warm Card System"</title>
+<meta name="description" content="Foundation tournament concept C. The warm card system body design language for Radiant Smiles Dental Care, a seven-office dental group in Las Vegas and Henderson NV.">
+<link rel="stylesheet" href="../../radiantsmiles-tokens.css">
+<link rel="stylesheet" href="radiantsmiles-structural.css">
+
+<!--
+  ============================================================================
+  RADIANT SMILES DENTAL CARE  ///  (3) FOUNDATION TOURNAMENT, CONCEPT C
+  "THE WARM CARD SYSTEM"  ///  the reusable BODY design language, rendered
+  ----------------------------------------------------------------------------
+  This specimen renders the BODY language only. The header, mega, drawer and
+  footer are the LOCKED chrome and are deliberately absent, so what the owner
+  judges here is the body: rhythm, geometry, ground, colour and honesty.
+
+  THE READ. Friendly, modular, immediately scannable. Every offer is a tangible
+  object you could tap. One card grammar repeated at different scales, with
+  bento variation in span so a services menu never reads as a table of equal
+  boxes. Real shadow at rest, lifting on hover, inset highlights so a card feels
+  physical rather than printed. Exactly TWO elevation levels, never three.
+
+  THE SIGNATURE, and no sibling concept has it: THE GROUND IS INVERTED. The page
+  ground is the tinted surface and the CARD is the light canvas, so the cards
+  come FORWARD out of the page instead of sinking into it.
+
+  ZERO CSS IS AUTHORED HERE. Every class this file references is already defined
+  in radiantsmiles-structural.css (the concept sheet) or radiantsmiles-tokens.css
+  (the LOCKED dual-surface SSOT). If a treatment is not in the sheets, it is not
+  on this page. Zero raw hex, zero inline style except the --rs-i stagger index
+  the sheet's own selector is guarded on.
+
+  DESIGN-SYSTEM PROVENANCE, resolvable by name rather than by shorthand:
+    LIBRARY    _MODERN-WOW-SPEC                1 depth, 2 motion, 3 texture,
+                                               5 light, 6 layout, 7 detail
+    LIBRARY    _MODERN-DESIGN-PATTERN-LIBRARY  layered shadow, staggered reveal,
+                                               image zoom in frame, eyebrow rule,
+                                               section rhythm, radial wash
+    LIBRARY    _MOTION-TOKENS                  duration + easing discipline and
+                                               the reduced-motion opt-out
+    BLUEPRINT  composition-medical-health      section 2, the convergent medical
+                                               homepage sequence, run top to
+                                               bottom in order, plus its A2
+                                               "circle up" arc seam
+    MENUS      cited per section in the pick ledgers inside main
+
+  THE SECTION SEQUENCE, in the blueprint's convergent order:
+    1 hero  2 welcome  3 services  4 why-us  5 quick facts  6 conversion
+    7 team  8 patient voice  9 appointments  10 final CTA
+
+  GROUND RHYTHM, top to bottom:
+    band / arc / surface / band / surface / band / DARK / surface / band /
+    surface / DARK
+  Three grounds, one card colour. The two DARK beats are spent deliberately, on
+  the offer and on the close, and nowhere else.
+
+  CONTRAST, as measured in the locked token sheet:
+    body        --ds-ink #09302D on --ds-canvas #F7FAFA is 11.48:1
+    accent      #FFD447 is 1.36:1 on the canvas, so it is DECORATIVE ONLY on
+                light. Every accent fill that carries a label pins that label to
+                --ds-primary-deep (8.46:1) through .rs-btn--accent, so it cannot
+                inherit --ds-ink inside a .surface-dark subtree.
+    signature   #128C7E carries NO text in either direction. It appears here only
+                as a rule, an icon-chip fill under a 26px glyph, and a focus ring.
+    glass       .rs-float paints --ds-glass-bg over an OPAQUE token base, so its
+                contrast cannot drift with whatever scrolls behind it.
+
+  AUDIENCE LAW. 40+ primary. Body 18px / 1.70, nothing under 14px anywhere,
+  every interactive target at least 48px on its short side, and phone numbers
+  are first-class UI at 20px with tabular figures and real tel: links.
+
+  THE REVEAL. The sheet gates the hidden state behind .rs-js, so the content is
+  VISIBLE BY DEFAULT and is hidden only once the script marks the document. The
+  no-script path is therefore already correct. The script still ships three
+  guards: it refuses to mark the document when IntersectionObserver is missing,
+  refuses under prefers-reduced-motion, and carries a 1500ms reveal-all backstop
+  so nothing can be stranded hidden by a missed callback.
+
+  FABRICATION. Every fact here is first-party captured or cited to a named
+  source. The slots with no source are RENDERED and FLAGGED in the sheet's
+  .rs-card--pending treatment rather than filled: star average, review count,
+  review text, per-clinician credentials, years in practice, patient counts,
+  awards, and the exact terms of the new-patient offer.
+
+  NOTE ON THE APPOINTMENT FORM. The blueprint's slot 10 allows a form OR the
+  contact-only variant. This foundation sheet deliberately defines NO form-field
+  primitive, so the band is built phone-first from primitives that exist.
+  Inventing a field skin here would propagate an unowned primitive into every
+  page type built from this foundation.
+
+  UTF-8, no BOM. ASCII only. No em or en dashes.
+  ============================================================================
+-->
+</head>
+<body>
+
+<main>
+
+<!-- pick: HERO-COMPOSITIONS.md #1 Split-text-left+photo-right | considered: #5 Full-bleed image+overlay, #7 Full-bleed+floating cards | why: the appointment promise has to carry a price, a live phone number and a location count above the fold, and #5 would drop all of that onto a scrim over a photograph, which is the first pairing a 40+ presbyopic reader loses. #7 keeps the photo but pushes its floating cards under the fold on a phone, which is where this practice is actually read. The split keeps every word on an opaque token ground at 11.48:1 and still opens with the card grammar, because #7's floating card is borrowed and hung on the photo edge as .rs-float. | rigor: heavy -->
+<section class="rs-sec rs-sec--lead rs-sec--band rs-hero" id="top">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <span class="rs-tex rs-tex--wash" aria-hidden="true"></span>
+        <span class="rs-tex rs-tex--grain" aria-hidden="true"></span>
+
+        <div class="rs-hero__inner">
+
+          <div class="rs-hero__copy rs-rise" style="--rs-i:0">
+            <p class="rs-eyebrow">Seven offices, Las Vegas and Henderson</p>
+            <h1 class="rs-h1">Comprehensive care, close to home, that takes your insurance.</h1>
+            <p class="rs-lede">One practice. One clinical team. Seven of our own offices across Las Vegas, North Las Vegas and Henderson, with general, cosmetic, restorative, surgical, periodontic and orthodontic care delivered in house.</p>
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="#book">Book the $45 new patient exam</a>
+              <a class="rs-btn rs-btn--ghost" href="#offices">See all seven offices</a>
+            </div>
+            <a class="rs-tel" href="tel:+17022894424"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 289-4424</a>
+            <p class="rs-meta">That is Lone Mountain, our Las Vegas 89128 office. Every office has its own number, and all seven are listed further down this page.</p>
+          </div>
+
+          <div class="rs-hero__art rs-rise" style="--rs-i:1">
+            <div class="rs-frame rs-frame--hero rs-frame--wide">
+              <img src="../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-2048x1365.jpg" alt="A Radiant Smiles treatment room with the chair and overhead light set for a patient" width="2048" height="1365" loading="eager" decoding="async">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+            <div class="rs-medallion rs-hero__medal">
+              <img src="../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_IMG_9391-1-2.jpg" alt="Dr. Victoria Quizon of Radiant Smiles Dental Care" width="1130" height="1177" loading="eager" decoding="async">
+            </div>
+            <div class="rs-float">
+              <p class="rs-eyebrow">New patient offer</p>
+              <h2 class="rs-h4">$45 exam and X-ray</h2>
+              <p class="rs-copy">$29 if you are 65 or older.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: DIVIDER-PATTERNS.md #2 Wave smooth | considered: #1 Hard edge, #4 Slant 45 | why: composition-medical-health names the A2 circle-up arc as this vertical's defining seam, and a single smooth curve is the only divider family that reads as care rather than as software. #1 leaves the two tinted grounds butting in a hard rectangle, which is precisely the stacked-boxes fingerprint the wow spec exists to kill. #4 is a 45 degree cut, a SaaS register that fights the soft radius language the token sheet already committed to on every card and every frame. Built CSS-only as a border-radius dome carrying the next ground, no SVG asset, so it costs nothing and cannot break at any width. | rigor: heavy -->
+<section aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-arc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: COMPANY-SECTIONS.md #2 Manifesto/values creed type-block | considered: #1 Founder editorial hero, #3 Origin timeline single vertical spine | why: the welcome band has to say what kind of thing this practice IS before anything is sold, and this brand's position is a structural fact rather than a personality, so a creed type-block carries it in one honest sentence set at display scale. #1 would put a single founder's face on a practice that employs a named team across seven offices, contradicting the one-practice-one-team claim the rest of the page rests on. #3 needs a founding year and a dated milestone chain, and neither is sourced, so a timeline here could only be invented. The blueprint's practical stub, real hours and a real number, rides alongside as a card, because reassurance comes before the sell in this vertical. | rigor: heavy -->
+<section class="rs-sec">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-split">
+
+          <div class="rs-stack rs-rise" style="--rs-i:0">
+            <p class="rs-eyebrow">Welcome</p>
+            <h2 class="rs-h2">Here is exactly what we are.</h2>
+            <p class="rs-quote">Radiant Smiles is a single dental practice that operates seven of its own offices, employing named licensed clinicians who deliver care in house across six specialties.</p>
+            <p class="rs-copy">Not a network. Not a referral service. Not a franchise. That distinction is the whole point. When your care needs a periodontist, a surgeon or an orthodontist, it stays inside the same practice and the same clinical team.</p>
+            <ul class="rs-list">
+              <li>One practice, one clinical team, at every location.</li>
+              <li>General, cosmetic, restorative, surgical, periodontic and orthodontic care in house.</li>
+              <li>Same day and emergency appointments available.</li>
+            </ul>
+          </div>
+
+          <article class="rs-card rs-rise" style="--rs-i:1">
+            <div class="rs-card__body rs-card__body--roomy">
+              <p class="rs-eyebrow">Lone Mountain hours</p>
+              <h3 class="rs-card__title">Las Vegas, NV 89128</h3>
+              <ul class="rs-rows">
+                <li class="rs-row"><span class="rs-row__k">Monday</span><span class="rs-row__v">10 AM to 6 PM</span></li>
+                <li class="rs-row"><span class="rs-row__k">Tuesday</span><span class="rs-row__v">8:30 AM to 7 PM</span></li>
+                <li class="rs-row"><span class="rs-row__k">Wednesday</span><span class="rs-row__v">10 AM to 5 PM</span></li>
+                <li class="rs-row"><span class="rs-row__k">Thursday</span><span class="rs-row__v">8:45 AM to 4 PM</span></li>
+                <li class="rs-row"><span class="rs-row__k">Friday</span><span class="rs-row__v">8:45 AM to 4 PM</span></li>
+                <li class="rs-row"><span class="rs-row__k">Saturday</span><span class="rs-row__v">Closed</span></li>
+                <li class="rs-row"><span class="rs-row__k">Sunday</span><span class="rs-row__v">8:30 AM to 3 PM</span></li>
+              </ul>
+              <div class="rs-card__foot">
+                <a class="rs-tel" href="tel:+17022894424"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 289-4424</a>
+                <a class="rs-qlink" href="#offices">All seven offices</a>
+              </div>
+              <p class="rs-source">Hours are per office and are not the same anywhere else. First-party captured from the practice, 2026-07-30.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CARD-VARIATIONS.md #4 Circle-icon service card with arrow | considered: #1 Dark service tile, #3 Minimal 3-up icon-top | why: the services grid is the spine of a medical page, and this concept's whole read is that every offer is a tangible object you could tap, so the unit that carries an icon chip, a title, one line of plain copy and a named next step is exactly the object that argument needs. #1 is a dark tile, and six dark tiles would invert the inversion that makes this concept distinct, sinking the cards into the ground instead of lifting them off it. #3 is too thin for a service a patient is anxious about: three words and no next step leaves a 40+ reader with nothing to act on. Laid into the six-track bento at spans 3 3 2 2 2 4 2 so the menu never reads as a table of identical boxes. | rigor: heavy -->
+<section class="rs-sec rs-sec--band" id="services">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <span class="rs-tex rs-tex--wash" aria-hidden="true"></span>
+
+        <div class="rs-head rs-head--split">
+          <div class="rs-stack">
+            <p class="rs-eyebrow">What we treat</p>
+            <h2 class="rs-h2">Six kinds of care, all of it in house.</h2>
+          </div>
+          <div class="rs-head__act">
+            <a class="rs-qlink" href="#book">Start with the $45 exam</a>
+          </div>
+        </div>
+
+        <div class="rs-bento">
+
+            <article class="rs-card rs-span-3 rs-rise" style="--rs-i:0">
+              <div class="rs-card__body rs-card__body--roomy">
+                <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c2-1.6 4.4-1.8 5.8-.4 1.7 1.7 1.3 5-.4 8.4-1 2-1.3 4.2-1.7 6-.3 1.2-1.8 1.3-2.2.1L12 15.6l-1.5 4c-.4 1.2-1.9 1.1-2.2-.1-.4-1.8-.7-4-1.7-6C4.9 10.1 4.5 6.8 6.2 5.1c1.4-1.4 3.8-1.2 5.8.4Z"/></svg></span>
+                <h3 class="rs-card__title">General Dentistry</h3>
+                <p class="rs-card__text">The routine care that keeps a small problem small. This is where a new patient starts, and it is the appointment the $45 offer buys.</p>
+                <div class="rs-card__foot">
+                  <a class="rs-card__link" href="#book">Start here<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="rs-card rs-span-3 rs-rise" style="--rs-i:1">
+              <div class="rs-card__body rs-card__body--roomy">
+                <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 4.3 4.6.5-3.4 3.2.9 4.6L12 13.4 8 15.6l.9-4.6-3.4-3.2 4.6-.5Z"/><path d="M6 20h12"/></svg></span>
+                <h3 class="rs-card__title">Cosmetic Dentistry</h3>
+                <p class="rs-card__text">Care aimed at how your smile looks, planned around the one thing you actually want changed rather than a package someone sold you.</p>
+                <div class="rs-card__foot">
+                  <a class="rs-card__link" href="#book">Talk about options<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="rs-card rs-rise" style="--rs-i:2">
+              <div class="rs-card__body">
+                <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16v3a8 8 0 0 1-8 8 8 8 0 0 1-8-8Z"/><path d="M7 9V6a5 5 0 0 1 10 0v3"/></svg></span>
+                <h3 class="rs-card__title">Restorations</h3>
+                <p class="rs-card__text">Rebuilding a tooth that has broken down or been lost.</p>
+                <div class="rs-card__foot">
+                  <a class="rs-card__link" href="#book">Ask about restorations<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="rs-card rs-rise" style="--rs-i:3">
+              <div class="rs-card__body">
+                <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 20 6.5-6.5"/><path d="M14 3l7 7-5.5 5.5a2 2 0 0 1-2.8 0l-4.2-4.2a2 2 0 0 1 0-2.8Z"/></svg></span>
+                <h3 class="rs-card__title">Oral Surgery</h3>
+                <p class="rs-card__text">Surgical treatment handled by our own clinicians, in our own offices.</p>
+                <div class="rs-card__foot">
+                  <a class="rs-card__link" href="#book">Ask about surgery<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="rs-card rs-rise" style="--rs-i:4">
+              <div class="rs-card__body">
+                <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13c3-1 6-1 9 0s6 1 9 0"/><path d="M5 13V9a7 7 0 0 1 14 0v4"/><path d="M8 17.5h8"/></svg></span>
+                <h3 class="rs-card__title">Periodontics</h3>
+                <p class="rs-card__text">Care for the gum and bone that hold your teeth in place.</p>
+                <div class="rs-card__foot">
+                  <a class="rs-card__link" href="#book">Ask about gum care<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="rs-card rs-span-4 rs-rise" style="--rs-i:5">
+              <div class="rs-card__body rs-card__body--roomy">
+                <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18"/><path d="M3 16h18"/><path d="M7.5 8v8"/><path d="M12 8v8"/><path d="M16.5 8v8"/></svg></span>
+                <h3 class="rs-card__title">Orthodontics</h3>
+                <p class="rs-card__text">Straightening treatment planned inside the same practice that handles your general care, so the plan and the chart never have to travel between offices that do not share them.</p>
+                <div class="rs-card__foot">
+                  <a class="rs-card__link" href="#book">Ask about straightening<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="rs-card rs-rise" style="--rs-i:6">
+              <div class="rs-card__body">
+                <h3 class="rs-card__title">Not sure which one you need?</h3>
+                <p class="rs-card__text">That is what the exam is for. Call and describe it in plain words.</p>
+                <div class="rs-card__foot">
+                  <a class="rs-tel" href="tel:+17023604800"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 360-4800</a>
+                </div>
+              </div>
+            </article>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: #6 Is this for me qualifier, #2 Trust strip | why: this practice's differentiator is structural rather than emotional, so the honest move is to name the thing that goes wrong in this market, being handed between separately owned offices, and then show the ways this practice is built not to do it. #6 qualifies a visitor out, which is wrong for general dentistry where nearly every reader qualifies and the real question is whether to trust the place. #2 is a logo row, and the only asset a logo row could carry here, insurance carrier marks, has unconfirmed trademark usage rights, so it would ship as an empty band or as a rights problem. Built on the sheet's media-plus-cards law so the photograph stretches to the card grid's height instead of leaving a dead strip beside a vertical stack. | rigor: heavy -->
+<section class="rs-sec">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <span class="rs-tex rs-tex--grid" aria-hidden="true"></span>
+
+        <div class="rs-head">
+          <p class="rs-eyebrow">Why this practice</p>
+          <h2 class="rs-h2">The handoff is where dental care usually breaks.</h2>
+          <p class="rs-lede">You get referred out, your chart does not follow, and the next office starts from nothing. This is a single practice that owns all seven of its offices, so there is nobody to hand you to.</p>
+        </div>
+
+        <div class="rs-media-grid">
+
+          <div class="rs-media-grid__media rs-rise" style="--rs-i:0">
+            <article class="rs-card rs-card--media">
+              <div class="rs-frame rs-frame--tall">
+                <img src="../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Blue-Diamond-Front-Desk-2048x1365.jpg" alt="The front desk at the Radiant Smiles Blue Diamond office" width="2048" height="1365" loading="eager" decoding="async">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </article>
+          </div>
+
+          <div class="rs-media-grid__cards">
+
+            <article class="rs-card rs-rise" style="--rs-i:1">
+              <div class="rs-card__body">
+                <h3 class="rs-card__title">One practice, seven offices</h3>
+                <p class="rs-card__text">You are not moving between separately owned practices. It is one practice, one clinical team, at every location.</p>
+              </div>
+            </article>
+
+            <article class="rs-card rs-rise" style="--rs-i:2">
+              <div class="rs-card__body">
+                <h3 class="rs-card__title">Six specialties in house</h3>
+                <p class="rs-card__text">General, cosmetic, restorative, surgical, periodontic and orthodontic care is delivered by our own clinicians.</p>
+              </div>
+            </article>
+
+            <article class="rs-card rs-rise" style="--rs-i:3">
+              <div class="rs-card__body">
+                <h3 class="rs-card__title">Same day and emergencies</h3>
+                <p class="rs-card__text">Same day and emergency appointments are available. Call the office nearest you and say what happened.</p>
+              </div>
+            </article>
+
+            <article class="rs-card rs-rise" style="--rs-i:4">
+              <div class="rs-card__body">
+                <h3 class="rs-card__title">Real hours, stated per office</h3>
+                <p class="rs-card__text">Evening appointments to 7 PM at selected offices. Saturday at three offices. Sunday at Lone Mountain only. We do not claim weekends site wide, because it is not true site wide.</p>
+              </div>
+            </article>
+
+            <article class="rs-card rs-wide rs-rise" style="--rs-i:5">
+              <div class="rs-card__body">
+                <h3 class="rs-card__title">Insurance and financing, named</h3>
+                <p class="rs-card__text">Aetna, Anthem, Cigna, Delta Dental, Guardian, Humana and MetLife are accepted. Financing is available through Care Credit, Cherry, Sunbit and Lending Club, subject to approval.</p>
+                <p class="rs-note"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg><span class="rs-copy">Network status varies by office and by plan. Ask us to check your specific plan against the office you want, before you book.</span></p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: TRUST-STATS-SECTIONS.md #4 Stats big-number band | considered: #3 Stats count-up 3-up, #1 Trust bar mono logo row | why: the four numbers this practice can actually prove are static facts, seven offices, six specialties, two prices, so a band that states them at display scale and cites the capture date underneath is the honest form for them. #3 animates a number upward, a device that rewards a big soft figure like patients treated, and every figure of that shape here is unsourced, so the count-up would be dressing up the exact number we refuse to publish. #1 needs third-party marks, and the carrier trademark rights are unconfirmed. The oversized numeral answers the wow spec's typographic-finesse note without a single invented claim behind it. | rigor: heavy -->
+<section class="rs-sec rs-sec--band">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+
+        <div class="rs-head">
+          <p class="rs-eyebrow">Quick facts</p>
+          <h2 class="rs-h2">Four numbers, each one first-party captured.</h2>
+        </div>
+
+        <div class="rs-stack">
+
+        <div class="rs-grid rs-grid--4">
+
+          <article class="rs-card rs-rise" style="--rs-i:0">
+            <div class="rs-card__body rs-card__body--roomy">
+              <div class="rs-stat">
+                <p class="rs-stat__n">7</p>
+                <p class="rs-stat__l">offices, across Las Vegas, North Las Vegas and Henderson</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="rs-card rs-rise" style="--rs-i:1">
+            <div class="rs-card__body rs-card__body--roomy">
+              <div class="rs-stat">
+                <p class="rs-stat__n">6</p>
+                <p class="rs-stat__l">specialties delivered in house by our own clinicians</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="rs-card rs-rise" style="--rs-i:2">
+            <div class="rs-card__body rs-card__body--roomy">
+              <div class="rs-stat">
+                <p class="rs-stat__n">$45</p>
+                <p class="rs-stat__l">new patient exam and X-ray</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="rs-card rs-rise" style="--rs-i:3">
+            <div class="rs-card__body rs-card__body--roomy">
+              <div class="rs-stat">
+                <p class="rs-stat__n">$29</p>
+                <p class="rs-stat__l">the same exam and X-ray, age 65 and over</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="rs-note"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg><span class="rs-copy">Why the senior price exists: 55 percent of adults aged 65 and older have no dental benefits. Source: ADA Health Policy Institute, Coverage Access and Outcomes, fetched 2026-07-30.</span></p>
+        <p class="rs-source">Office count and both prices first-party captured from the practice, 2026-07-30. No patient count, no years in practice and no award appears on this page, because none of them is sourced.</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: PRICING-SECTIONS.md #5 Plain-deal honesty stance | considered: #1 Three-tier cards, #2 Comparison table | why: this practice publishes exactly one price and quotes everything else, so the only truthful conversion mechanism is the stance that says so out loud and then hands you the phone. #1 would require inventing a good-better-best ladder out of a single $45 offer, which is the fabrication this whole build exists to prevent. #2 needs a competitor column, and naming or implying a rival's price is a hard prohibition on this brand, quite apart from the fact that this practice is undercut by the two largest groups so any price comparison loses. Spent as one of the two dark anchor beats, and the page's single .rs-card--feature accent keyline lands here, on the one card the whole section exists to serve. | rigor: heavy -->
+<section class="rs-sec surface-dark" id="book">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <span class="rs-tex rs-tex--grid" aria-hidden="true"></span>
+
+        <div class="rs-split">
+
+          <div class="rs-stack rs-rise" style="--rs-i:0">
+            <p class="rs-eyebrow">The offer</p>
+            <h2 class="rs-h2">One published price. Everything else is quoted.</h2>
+            <p class="rs-lede">We publish the entry price because we can stand behind it. We do not publish treatment prices, because a real price needs a real exam first, and a number invented before that is not a price at all.</p>
+            <ul class="rs-list">
+              <li>No countdown and no expiry theatre. The exam offer stands.</li>
+              <li>No treatment price is published anywhere on this site.</li>
+              <li>Financing through Care Credit, Cherry, Sunbit and Lending Club, subject to approval.</li>
+            </ul>
+          </div>
+
+          <div class="rs-stack">
+
+            <article class="rs-card rs-card--feature rs-rise" style="--rs-i:1">
+              <div class="rs-card__body rs-card__body--roomy">
+                <p class="rs-eyebrow">The one published price</p>
+                <h3 class="rs-card__title">New patient exam and X-ray</h3>
+                <ul class="rs-rows">
+                  <li class="rs-row"><span class="rs-row__k">New patient exam and X-ray</span><span class="rs-row__v">$45</span></li>
+                  <li class="rs-row"><span class="rs-row__k">The same, age 65 and over</span><span class="rs-row__v">$29</span></li>
+                  <li class="rs-row"><span class="rs-row__k">Any treatment after the exam</span><span class="rs-row__v">Quoted, not published</span></li>
+                </ul>
+                <div class="rs-card__foot">
+                  <a class="rs-btn rs-btn--accent" href="#offices">Book at your nearest office</a>
+                  <a class="rs-tel" href="tel:+17028977001"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 897-7001</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="rs-card rs-card--pending rs-rise" style="--rs-i:2">
+              <div class="rs-card__body rs-card__body--tight">
+                <p class="rs-eyebrow">Needs source</p>
+                <h3 class="rs-card__title">Offer terms and restrictions</h3>
+                <p class="rs-card__text">The exact terms of the new patient offer are not written here yet. This block fills from the practice, not from us, and stays empty until it does.</p>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: TEAM-GALLERY-SECTIONS.md #1 Team card grid | considered: #2 Team circular roster, #5 Gallery hover-zoom | why: three clinicians have real photographs on disk and four more have real names with no photograph, so the grid is the only shape that carries both without either faking a headshot or hiding four named people. #2 crops every face into a circle, and this sheet spends its one circular mask on the hero medallion by design, so a circular roster here would repeat the signature and flatten it. #5 is a gallery pattern that treats people as images, the wrong register for the section whose job is to make a practice feel accountable. Credentials render as a flagged gap rather than as copy, because the roster itself is still being confirmed with the practice. | rigor: heavy -->
+<section class="rs-sec" id="team">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+
+        <div class="rs-head rs-head--split">
+          <div class="rs-stack">
+            <p class="rs-eyebrow">The clinical team</p>
+            <h2 class="rs-h2">Named people, employed by one practice.</h2>
+          </div>
+          <div class="rs-head__act">
+            <a class="rs-qlink" href="#offices">Find them by office</a>
+          </div>
+        </div>
+
+        <div class="rs-media-grid">
+
+          <div class="rs-media-grid__media rs-rise" style="--rs-i:0">
+            <article class="rs-card rs-card--media">
+              <div class="rs-frame rs-frame--tall">
+                <img src="../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Dentists-scaled.jpg" alt="Dentists of Radiant Smiles Dental Care together at one of the practice offices" width="1707" height="2560" loading="eager" decoding="async">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </article>
+          </div>
+
+          <div class="rs-media-grid__cards">
+
+            <article class="rs-card rs-card--media rs-rise" style="--rs-i:1">
+              <div class="rs-frame rs-frame--portrait rs-frame--face">
+                <img src="../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_07_IMG_4337.jpg" alt="Dr. Stephanie Andrade" width="827" height="1191" loading="eager" decoding="async">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+              <div class="rs-card__body rs-card__body--tight">
+                <h3 class="rs-card__title">Dr. Stephanie Andrade</h3>
+                <p class="rs-meta">Radiant Smiles clinical team</p>
+              </div>
+            </article>
+
+            <article class="rs-card rs-card--media rs-rise" style="--rs-i:2">
+              <div class="rs-frame rs-frame--portrait rs-frame--face">
+                <img src="../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_IMG_1387-1-scaled.jpg" alt="Dr. Chris Schaudt" width="2560" height="2438" loading="eager" decoding="async">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+              <div class="rs-card__body rs-card__body--tight">
+                <h3 class="rs-card__title">Dr. Chris Schaudt</h3>
+                <p class="rs-meta">Radiant Smiles clinical team</p>
+              </div>
+            </article>
+
+            <article class="rs-card rs-wide rs-rise" style="--rs-i:3">
+              <div class="rs-card__body">
+                <h3 class="rs-card__title">Also on the clinical team</h3>
+                <div class="rs-chips">
+                  <span class="rs-chip">Dr. Victoria Quizon</span>
+                  <span class="rs-chip">Dr. Max Torres</span>
+                  <span class="rs-chip">Dr. Karthikeyan Subramani</span>
+                  <span class="rs-chip">Dr. Omar Lavado</span>
+                  <span class="rs-chip">Dr. Andy Landaverde</span>
+                </div>
+                <p class="rs-note"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg><span class="rs-copy">Degrees, credentials, languages and years in practice are not stated for any clinician on this page. The current roster is being confirmed with the practice, and nothing is listed until it is.</span></p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: PROOF-SECTIONS.md #1 Testimonials cards grid | considered: #2 single big pull-quote, #4 Case-study metric card | why: the practice has a real review record that nobody has yet nominated as its system of record, so the grid renders the SHAPE of the proof and names the three things missing from it, one card each, in the sheet's dashed pending treatment. #2 would need one cleared verbatim quote and there is not one, so the largest type on the page would be its least sourced sentence. #4 needs a measured outcome, and inventing a clinical outcome is a hard prohibition in this vertical. An empty slot that says what it is waiting for is worth more here than a filled one that is not true, and it is the most on-brand thing this page does. | rigor: heavy -->
+<section class="rs-sec rs-sec--band">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+
+        <div class="rs-head">
+          <p class="rs-eyebrow">Patient voice</p>
+          <h2 class="rs-h2">We will not write a review for you.</h2>
+          <p class="rs-lede">Real patients have written real reviews. Until the practice names the one platform that counts as its record, this page states no rating, no count and no quote.</p>
+        </div>
+
+        <div class="rs-stack">
+
+        <div class="rs-grid rs-grid--3">
+
+          <article class="rs-card rs-card--pending rs-rise" style="--rs-i:0">
+            <div class="rs-card__body rs-card__body--roomy">
+              <p class="rs-eyebrow">Needs source</p>
+              <h3 class="rs-card__title">Star average</h3>
+              <p class="rs-card__text">No star average appears until it comes from one named platform, with its scope stated and its date attached.</p>
+            </div>
+          </article>
+
+          <article class="rs-card rs-card--pending rs-rise" style="--rs-i:1">
+            <div class="rs-card__body rs-card__body--roomy">
+              <p class="rs-eyebrow">Needs source</p>
+              <h3 class="rs-card__title">Review count</h3>
+              <p class="rs-card__text">No count appears until it can be counted, at one named office or across all seven, and the page says which of the two it is.</p>
+            </div>
+          </article>
+
+          <article class="rs-card rs-card--pending rs-rise" style="--rs-i:2">
+            <div class="rs-card__body rs-card__body--roomy">
+              <p class="rs-eyebrow">Needs source</p>
+              <h3 class="rs-card__title">A patient in their own words</h3>
+              <p class="rs-card__text">No review text appears here. We do not compose one, we do not paraphrase one, and we do not trim one to make it read better.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="rs-source">Three slots, three flags. The practice holds the receipts, and this page holds the space until they arrive.</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md #4 Phone-pill | considered: #1 Solid pill, #3 Arrow-circle | why: for a seven-office practice the booking action is location specific, so the conversion unit has to be the office's own number rather than one generic button that still has to ask which office you meant. #1 collapses seven distinct destinations into a single label and throws away the only information the visitor came here for. #3 is an icon affordance with no readable target, the wrong choice for a 40+ audience where the phone number itself is the interface. Every number is a real tel: link at 20px with tabular figures and a 48px target, and the seven cards run through the bento so the directory never reads as a spreadsheet. | rigor: heavy -->
+<section class="rs-sec" id="offices">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <span class="rs-tex rs-tex--wash" aria-hidden="true"></span>
+
+        <div class="rs-head rs-head--split">
+          <div class="rs-stack">
+            <p class="rs-eyebrow">Appointments</p>
+            <h2 class="rs-h2">Call the office closest to you.</h2>
+          </div>
+          <div class="rs-head__act">
+            <a class="rs-qlink" href="#book">See what the exam costs</a>
+          </div>
+        </div>
+
+        <div class="rs-stack">
+
+        <div class="rs-bento">
+
+          <article class="rs-card rs-span-3 rs-rise" style="--rs-i:0">
+            <div class="rs-card__body rs-office">
+              <h3 class="rs-office__name">Lone Mountain</h3>
+              <address class="rs-office__addr">Las Vegas, NV 89128</address>
+              <a class="rs-tel" href="tel:+17022894424"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 289-4424</a>
+              <p class="rs-meta">Open Sunday, 8:30 AM to 3 PM. Full hours are listed further up this page.</p>
+            </div>
+          </article>
+
+          <article class="rs-card rs-span-3 rs-rise" style="--rs-i:1">
+            <div class="rs-card__body rs-office">
+              <h3 class="rs-office__name">Henderson</h3>
+              <address class="rs-office__addr">Henderson, NV 89052</address>
+              <a class="rs-tel" href="tel:+17028977001"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 897-7001</a>
+              <p class="rs-meta">The one Henderson office. The other six are in the Las Vegas valley.</p>
+            </div>
+          </article>
+
+          <article class="rs-card rs-rise" style="--rs-i:2">
+            <div class="rs-card__body rs-office">
+              <h3 class="rs-office__name">Summerlin</h3>
+              <address class="rs-office__addr">Las Vegas, NV 89117</address>
+              <a class="rs-tel" href="tel:+17023604800"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 360-4800</a>
+            </div>
+          </article>
+
+          <article class="rs-card rs-rise" style="--rs-i:3">
+            <div class="rs-card__body rs-office">
+              <h3 class="rs-office__name">Sunrise Manor</h3>
+              <address class="rs-office__addr">Las Vegas, NV 89107</address>
+              <a class="rs-tel" href="tel:+17024523552"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 452-3552</a>
+            </div>
+          </article>
+
+          <article class="rs-card rs-rise" style="--rs-i:4">
+            <div class="rs-card__body rs-office">
+              <h3 class="rs-office__name">North Las Vegas</h3>
+              <address class="rs-office__addr">North Las Vegas, NV 89031</address>
+              <a class="rs-tel" href="tel:+17025091967"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 509-1967</a>
+            </div>
+          </article>
+
+          <article class="rs-card rs-span-3 rs-rise" style="--rs-i:5">
+            <div class="rs-card__body rs-office">
+              <h3 class="rs-office__name">North Decatur</h3>
+              <address class="rs-office__addr">Las Vegas, NV 89130</address>
+              <a class="rs-tel" href="tel:+17025220119"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 522-0119</a>
+              <p class="rs-meta">With Lone Mountain, one of the only two offices open on Sunday.</p>
+            </div>
+          </article>
+
+          <article class="rs-card rs-span-3 rs-rise" style="--rs-i:6">
+            <div class="rs-card__body rs-office">
+              <h3 class="rs-office__name">Blue Diamond</h3>
+              <address class="rs-office__addr">Las Vegas, NV 89139</address>
+              <a class="rs-tel" href="tel:+17023310010"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 331-0010</a>
+              <p class="rs-meta">The office in the front-desk photograph further up this page.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="rs-note"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg><span class="rs-copy">Hours differ at every office. Four of the seven are closed Saturday and five are closed Sunday. Lone Mountain and North Decatur are the two that open on Sunday.</span></p>
+        <p class="rs-source">All seven addresses and phone numbers first-party captured from the practice, 2026-07-30.</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md #7 Multi-CTA cluster | considered: #6 Ghost text-link, #5 Icon-button circular | why: the closing band is the last chance to serve three genuinely different readers, the one ready to book, the one who still wants to compare offices, and the one who would rather just dial, so a cluster that carries all three at full size is the honest close rather than a funnel that pretends they are one person. #6 is a quiet text link and would end a seven-office practice's page on the softest affordance available. #5 hides its label inside an icon, failing the same 40+ readability floor the whole sheet is built to. Spent as the second and last dark anchor beat, on the sheet's closing rhythm so the page ends deliberately instead of just stopping. | rigor: heavy -->
+<section class="rs-sec rs-sec--close surface-dark">
+  <div class="rs-wrap rs-wrap--narrow container">
+    <div class="row">
+      <div class="col">
+        <span class="rs-tex rs-tex--wash" aria-hidden="true"></span>
+
+        <div class="rs-stack rs-rise" style="--rs-i:0">
+          <p class="rs-eyebrow">Ready when you are</p>
+          <h2 class="rs-h2">Book the exam. We will tell you the rest in person.</h2>
+          <p class="rs-lede">$45 for the new patient exam and X-ray, $29 if you are 65 or older. Seven offices, one clinical team, and a real person on the other end of every number on this page.</p>
+          <div class="rs-acts">
+            <a class="rs-btn rs-btn--accent" href="#book">Book the $45 new patient exam</a>
+            <a class="rs-btn rs-btn--ghost" href="#offices">See all seven offices</a>
+            <a class="rs-tel" href="tel:+17023310010"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(702) 331-0010</a>
+          </div>
+          <p class="rs-source">That number is Blue Diamond, Las Vegas 89139. Every other office is listed above, with its own line.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+/* MOTION. The sheet gates the hidden state behind .rs-js, so this page renders
+   fully visible with the script removed. The script only opts IN to the
+   entrance, and refuses in the two cases where opting in would be wrong. A
+   1500ms backstop reveals everything regardless, so no element can be stranded
+   at opacity 0 by a missed observer callback. */
+(function () {
+  var doc = document;
+  var root = doc.documentElement;
+  var items = Array.prototype.slice.call(doc.querySelectorAll('.rs-rise'));
+  if (!items.length) return;
+
+  var reduced = false;
+  try {
+    reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  } catch (e) { reduced = false; }
+
+  /* GUARD 1: no usable IntersectionObserver.  GUARD 2: reduced motion.
+     In both cases the document is never marked, .rs-js never applies, and the
+     content stays at its default VISIBLE state. The test is a FUNCTION test,
+     not an 'in' test, because a property that exists but is not constructible
+     would pass 'in' and then throw at the constructor. */
+  var IO = window.IntersectionObserver;
+  if (reduced || typeof IO !== 'function') return;
+
+  function showAll() {
+    for (var a = 0; a < items.length; a++) items[a].classList.add('is-in');
+  }
+
+  root.className = root.className ? root.className + ' rs-js' : 'rs-js';
+
+  /* GUARD 3: the backstop is ARMED FIRST, before anything that can throw. The
+     ordering is the whole point: the moment .rs-js is on the document the
+     content is hidden, so the guaranteed reveal has to already be scheduled.
+     Registering it after the observer would strand every element at opacity 0
+     on any constructor failure. */
+  window.setTimeout(showAll, 1500);
+
+  try {
+    var io = new IO(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) {
+          entries[i].target.classList.add('is-in');
+          io.unobserve(entries[i].target);
+        }
+      }
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.04 });
+
+    for (var k = 0; k < items.length; k++) io.observe(items[k]);
+  } catch (err) {
+    /* GUARD 4: any observer failure reveals immediately rather than waiting
+       out the backstop. */
+    showAll();
+  }
+}());
+
+/* THE POINTER-TRACKED WARMTH. The sheet defaults --rs-mx / --rs-my in CSS so it
+   stands alone; this only refines them so the accent glow follows the hand
+   across the card it is over. Progressive enhancement, dies with the script,
+   and the sheet kills the glow outright under prefers-reduced-motion. */
+(function () {
+  var reduced = false;
+  try {
+    reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  } catch (e) { reduced = false; }
+  if (reduced) return;
+
+  document.addEventListener('pointermove', function (ev) {
+    var card = ev.target && ev.target.closest ? ev.target.closest('.rs-card') : null;
+    if (!card) return;
+    var box = card.getBoundingClientRect();
+    if (!box.width || !box.height) return;
+    card.style.setProperty('--rs-mx', ((ev.clientX - box.left) / box.width * 100).toFixed(1) + '%');
+    card.style.setProperty('--rs-my', ((ev.clientY - box.top) / box.height * 100).toFixed(1) + '%');
+  }, { passive: true });
+}());
+</script>
+
+</body>
+</html>

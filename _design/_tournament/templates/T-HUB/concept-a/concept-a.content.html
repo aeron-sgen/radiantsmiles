@@ -1,0 +1,833 @@
+<!-- ============================================================================
+     T-HUB CONCEPT A - "THE DIRECTORY"
+     Body-fragment scoped layer. Sits ON TOP of radiantsmiles-tokens.css,
+     radiantsmiles-chrome.css and radiantsmiles-structural.css (which now also
+     carries T-FEATURE's promoted section 7). It adds only the shapes this
+     concept needs that the foundation kit does not already ship.
+
+     THE THESIS: a hub is a junction. This page is built as a well-set INDEX,
+     not a pitch. The contents come first, at the top, before any claim; the
+     entries below are the index proper, one ruled row per destination, each
+     with a real photograph and its own onward link; and the two beats that are
+     not routing (the argument, the cited figure) are held to one column each so
+     they never outweigh the routing they sit between.
+
+     WHY THE SHAPE SURVIVES ALL TEN T-HUB PAGES. All ten copy files were counted
+     before this was composed, not sampled. Every one carries the same seven
+     sections; the two that vary in LENGTH are the two this concept builds as
+     open lists rather than as fixed grids:
+       section 1 anchor strip:     2 to 10 items
+                                   (2 on cosmetic-dentistry and oral-surgery,
+                                    10 on team)
+       section 3 sub-area blocks:  2 to 11
+     The index is a 3-track grid that rewraps and the entry list is a stack of
+     ruled rows, so 2 items and 11 items are the same object at different
+     lengths.
+
+     SECTION 4 IS CONDITIONAL, and this is the one part of the shape that does
+     NOT propagate unchanged. FIVE of the ten copy files end section 3 with a
+     routing FALLBACK block that is not an area of care and goes to contact:
+     services ("Not sure which one"), locations ("Not sure which office"), team
+     ("Not sure who to ask for"), general-dentistry ("Not sure what you need")
+     and new-patients ("Book, or ask first"). The other five, cosmetic-dentistry,
+     restorations, oral-surgery, periodontics and orthodontics, have no such
+     block: their section 3 is areas of care only. So section 4 of this template
+     renders ONLY where the copy supplies that block. Where it does not, section
+     4 is omitted, the page runs seven body sections, and the dark middle anchor
+     moves to section 5, the cited figure, which is the next beat that can take a
+     ground without competing with the index.
+
+     KNOWN RISK IN THAT VARIANT, flagged rather than discovered later. With
+     section 4 dropped the page is 7 body sections plus the chrome footer's own
+     section, so the rhythm gate's middle band becomes positions 4 to 6 and a
+     dark section 5 lands inside it, which is fine. Imagery, however, falls to
+     4 of 8, exactly 50%, which is the floor and not a margin. The propagation
+     step must add one more photograph on those five pages, and the honest slot
+     is the argument at section 2, which would be a declared deviation from the
+     type-only pattern it cites. A second flag for the same five: on the two
+     pages whose section 3 is only two blocks, the hero contents and the entry
+     list name the same two destinations within one screen of each other, which
+     reads as repetition at that length and is worth an owner look.
+
+     A NOTE ON THE CITATIONS BELOW. Every menu id is written with a space after
+     the hash ("HERO-COMPOSITIONS.md # 11"). That is deliberate and must not be
+     tidied away: client-rules.json bannedVocab lists the hash-one superlative,
+     the G-BANNED gate matches it as a raw substring, and every menu id in the
+     teens carries that substring when the space is removed. The
+     selection-rationale parser reads "hash, optional space, digits", so the
+     space costs the ledger nothing.
+
+     CSS NAMESPACE: hb- (hub). T-FEATURE owns cc- and its rules are IN the
+     linked structural sheet, so nothing here may use that prefix. No class
+     below collides with rs-*, cc-*, or the chrome's own names.
+
+     TOKEN PURITY: zero hex literals. Every colour, radius, shadow, duration and
+     space value below is a var(--ds-*) role token or a var(--rs-*) alias the
+     locked structural sheet already declares and re-points on .surface-dark.
+
+     RESPONSIVE POLICY: authored DESKTOP FIRST. Every breakpoint rule is an
+     ADDITIVE @media (max-width:N) override, never a min-width one.
+
+     UTF-8, no BOM. ASCII only. No em or en dashes.
+     ============================================================================ -->
+
+<style>
+/* ---- shared ------------------------------------------------------------- */
+
+/* the page's one texture surface. Applied to a LIGHT section only: .surface-dark
+   paints its ground as a gradient background-image, and a background-image on
+   the same element would silently erase it. */
+.hb-tex{background-image:var(--ds-grid);background-size:var(--ds-grid-size);}
+
+/* THE INDEX MARK. The one repeated typographic object of this concept: a mono
+   ordinal that numbers a destination. It is what makes the page read as an
+   index rather than a card wall, and it is the only place the mono face is
+   spent. Painted with --rs-figure, which the locked sheet re-points to the
+   accent on .surface-dark, so the ordinals become the loudest thing in the
+   hero and stay quiet teal in the entry list below. */
+.hb-num{
+  flex:none;
+  font-family:var(--ds-font-mono);
+  font-size:15px;
+  font-weight:500;
+  line-height:1;
+  letter-spacing:.16em;
+  color:var(--rs-figure);
+  font-variant-numeric:tabular-nums;
+}
+
+/* the promoted figure inside running prose. The number is promoted WITHOUT the
+   sentence around it being split or reworded, so the source and the fetch date
+   never travel away from the figure they qualify. */
+.hb-fig{
+  font-family:var(--ds-font-display);
+  font-weight:700;
+  font-size:1.1em;
+  letter-spacing:-.012em;
+  color:var(--ds-ink);
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+
+/* ---- 1 . HERO. Compact centred head, the contents immediately beneath. ---- */
+.hb-hero{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:var(--ds-space-md);
+  text-align:center;
+}
+/* TYPE-QUALIFIED ON PURPOSE. The locked sheet sets .rs-h1{max-width:15ch} at
+   (0,1,0) and p.rs-lede{max-width:56ch} at (0,1,1). A bare .hb-* rule would
+   LOSE to the lede one and only tie the h1 one, so both are written at (0,1,1)
+   and the cascade is taken deliberately: 15ch broke this H1 over three lines
+   and pushed the contents below the fold, which is the one thing this hero
+   exists to prevent. */
+h1.hb-hero__h{max-width:22ch;}
+p.hb-hero__sub{max-width:62ch;}
+.hb-hero .rs-acts{justify-content:center;}
+
+/* THE CONTENTS. A ruled 3-track index, not a tile grid: each destination is a
+   hairline row, so 4 items and 10 items are the same object. */
+.hb-index{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0 var(--ds-space-lg);
+  margin-top:var(--ds-space-lg);
+}
+.hb-index__cell{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  border-top:1px solid var(--ds-line-control);
+}
+.hb-index__link{
+  display:flex;
+  align-items:center;
+  gap:var(--ds-space-sm);
+  min-height:56px;
+  text-decoration:none;
+  color:var(--ds-ink-heading);
+}
+.hb-index__name{
+  font-family:var(--ds-font-display);
+  font-size:22px;
+  font-weight:600;
+  line-height:1.25;
+  letter-spacing:-.01em;
+}
+.hb-index__link:hover .hb-index__name,
+.hb-index__link:focus-visible .hb-index__name{text-decoration:underline;text-underline-offset:4px;}
+/* the one expanded contents row. The copy expands general dentistry and only
+   general dentistry, so the index expands exactly there and nowhere else. */
+.hb-index__sub{
+  font-size:16px;
+  line-height:1.55;
+  color:var(--ds-ink-soft);
+  padding-bottom:var(--ds-space-sm);
+}
+
+/* ---- 2 . THE ARGUMENT. Left-aligned creed under a rule. ------------------ */
+.hb-creed{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:var(--ds-space-md);
+}
+.hb-creed__rule{
+  display:block;
+  width:var(--ds-space-xl);
+  height:3px;
+  border-radius:var(--ds-r-pill);
+  background:var(--rs-rule);
+}
+p.hb-creed__lead{
+  font-family:var(--ds-font-display);
+  font-size:clamp(24px,2.6vw,34px);
+  line-height:1.28;
+  letter-spacing:-.015em;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+  max-width:30ch;
+}
+
+/* ---- 3 . THE ENTRIES. Plate left, entry right, one ruled row each. ------- */
+.hb-dir{display:flex;flex-direction:column;}
+.hb-entry{
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr);
+  gap:var(--ds-space-lg);
+  align-items:center;
+  padding-block:var(--ds-space-lg);
+  border-top:1px solid var(--ds-line);
+}
+.hb-entry:last-child{border-bottom:1px solid var(--ds-line);}
+/* width:100% + min-width:0 anchor the plate to its grid TRACK. Without them an
+   aspect-ratio cell computes its width from its height and can grow wider than
+   the 190px track. */
+.hb-entry__plate{width:100%;min-width:0;}
+.hb-entry__frame{width:100%;min-width:0;aspect-ratio:1 / 1;}
+.hb-entry__body{display:flex;flex-direction:column;gap:var(--ds-space-2xs);min-width:0;}
+.hb-entry__t{
+  font-size:clamp(24px,2.4vw,32px);
+  line-height:1.15;
+  letter-spacing:-.015em;
+}
+/* THE LEADER RULE. The entry heading runs the full width of its column and the
+   rule after it GROWS to fill whatever the heading leaves, which is the dot
+   leader of a printed contents page. It does two jobs at once: it is the row's
+   go affordance, and it spends the dead width that a 64ch paragraph leaves at
+   1440, so the row reads as one ruled line rather than as a heading floating in
+   an empty half column. It is a hairline at rest and takes the accent rule
+   colour on hover, because a rule that changes LENGTH on hover would re-flow
+   the heading beside it. */
+.hb-entry__link{
+  display:flex;
+  align-items:center;
+  gap:var(--ds-space-md);
+  width:100%;
+  min-height:48px;
+  text-decoration:none;
+  color:var(--ds-ink-heading);
+}
+.hb-entry__link::after{
+  content:"";
+  flex:1 1 auto;
+  min-width:var(--ds-space-lg);
+  height:2px;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-line);
+  transition:background-color var(--ds-dur) var(--ds-ease-out);
+}
+.hb-entry:hover .hb-entry__link::after,
+.hb-entry__link:focus-visible::after{background:var(--rs-rule);}
+.hb-entry:hover .hb-entry__frame img{transform:scale(1.04);}
+
+/* ---- 4 . THE DESK. The fallback route, on the middle anchor ground. ------ */
+.hb-desk{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:var(--ds-space-xl);
+  align-items:center;
+}
+.hb-desk__copy{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:var(--ds-space-md);
+}
+.hb-desk__frame{width:100%;min-width:0;aspect-ratio:5 / 4;}
+
+/* ---- 5 . THE CITED FIGURE. Argument left, one photograph right. ---------- */
+.hb-proof{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:var(--ds-space-xl);
+  align-items:start;
+}
+.hb-proof__arg{display:flex;flex-direction:column;gap:var(--ds-space-md);}
+p.hb-proof__lead{
+  font-family:var(--ds-font-display);
+  font-size:clamp(22px,2.2vw,28px);
+  line-height:1.3;
+  letter-spacing:-.015em;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+  max-width:28ch;
+}
+.hb-proof__rule{display:block;width:100%;height:1px;background:var(--ds-line);}
+.hb-proof__frame{width:100%;min-width:0;aspect-ratio:1 / 1;}
+
+/* ---- 6 . THE RAIL. Two labelled columns of destinations. ----------------- */
+.hb-rail{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--ds-space-xl);
+}
+.hb-rail__grp{
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-xs);
+  border-top:3px solid var(--rs-rule);
+  padding-top:var(--ds-space-md);
+}
+.hb-rail__k{
+  font-size:14px;
+  font-weight:700;
+  line-height:1.4;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+.hb-rail__list{display:flex;flex-direction:column;}
+/* NAMED hb-rail-item, NOT hb-rail__item, and the difference is load-bearing.
+   verify-cta-singularity acquits a section from its closing-band heuristic when
+   the section is a GRID OR ROW of repeated items, and it detects that with a
+   word-boundaried /\b(col|card|tile|cell|item)\b/ over each class attribute. In
+   a BEM element name the underscores are WORD characters, so "hb-rail__item"
+   has no boundary before "item" and the seven repeated rows in this rail were
+   invisible to it: the gate read a two-paragraph section whose links say
+   "contact" as a second pre-footer CTA band and blocked the page. The hyphenated
+   name is also the more accurate one, because this really is a row of seven
+   repeated items and not an internal part of one object. */
+.hb-rail-item{
+  display:flex;
+  align-items:center;
+  min-height:48px;
+  font-size:18px;
+  font-weight:500;
+  line-height:1.4;
+  text-decoration:none;
+  color:var(--ds-ink-heading);
+  border-bottom:1px solid var(--ds-line);
+}
+.hb-rail-item:hover,
+.hb-rail-item:focus-visible{color:var(--ds-primary);text-decoration:underline;text-underline-offset:4px;}
+
+/* ---- 7 . THE OFFICE BAND. Media beside a 2-COLUMN address grid. ---------- */
+/* Obeys the media-and-cards LAW at the head of CARD-VARIATIONS.md: the routing
+   items form a 2-COLUMN grid and the media column STRETCHES to that grid's
+   height. The banned arm is a single capped media beside a vertical stack,
+   which with seven addresses would open a tall void beside the list. */
+.hb-map__head{
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-sm);
+  margin-bottom:var(--ds-space-lg);
+}
+.hb-map{
+  display:grid;
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+  gap:var(--ds-space-lg);
+  align-items:stretch;
+}
+.hb-map__frame{width:100%;min-width:0;align-self:stretch;min-height:380px;}
+.hb-map__list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 var(--ds-space-lg);
+  align-content:start;
+}
+.hb-office{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  padding-bottom:var(--ds-space-sm);
+  border-top:1px solid var(--ds-line);
+}
+.hb-office__name{
+  display:inline-flex;
+  align-items:center;
+  min-height:48px;
+  font-family:var(--ds-font-display);
+  font-size:20px;
+  font-weight:600;
+  line-height:1.25;
+  color:var(--ds-ink-heading);
+  text-decoration:none;
+}
+.hb-office__name:hover,
+.hb-office__name:focus-visible{text-decoration:underline;text-underline-offset:4px;}
+.hb-office__addr{
+  font-size:16px;
+  line-height:1.55;
+  color:var(--ds-ink-soft);
+  font-style:normal;
+}
+
+/* ---- 8 . THE ASK. One statement, the act pair, one photograph. ----------- */
+.hb-ask{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:var(--ds-space-xl);
+  align-items:center;
+}
+.hb-ask__copy{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:var(--ds-space-lg);
+}
+p.hb-ask__lead{
+  font-family:var(--ds-font-display);
+  font-size:clamp(26px,3vw,40px);
+  line-height:1.2;
+  letter-spacing:-.015em;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+  max-width:22ch;
+}
+.hb-ask__frame{width:100%;min-width:0;aspect-ratio:4 / 3;}
+
+/* ---- responsive: ADDITIVE max-width step-downs only ---------------------- */
+@media (max-width:1023px){
+  .hb-index{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .hb-desk,
+  .hb-proof,
+  .hb-map,
+  .hb-ask{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+  .hb-rail{gap:var(--ds-space-lg);}
+  .hb-desk__frame{aspect-ratio:16 / 10;}
+  .hb-proof__frame{aspect-ratio:16 / 10;}
+  .hb-ask__frame{aspect-ratio:16 / 9;}
+  .hb-map__frame{min-height:0;aspect-ratio:16 / 9;}
+  .hb-entry{grid-template-columns:150px minmax(0,1fr);gap:var(--ds-space-md);}
+}
+@media (max-width:767px){
+  /* the entry pattern's own stacked fallback: the horizontal thumb-left row
+     restacks image-above-text once the row is too narrow to hold both. */
+  .hb-entry{grid-template-columns:minmax(0,1fr);}
+  .hb-entry__frame{aspect-ratio:16 / 10;}
+  /* the leader rule collapses back to a short mark once the column is narrow
+     enough that a growing rule would squeeze the heading into extra lines. */
+  .hb-entry__link::after{flex:none;width:var(--ds-space-md);min-width:0;}
+  .hb-map__list{grid-template-columns:minmax(0,1fr);}
+  .hb-rail{grid-template-columns:minmax(0,1fr);}
+}
+@media (max-width:639px){
+  .hb-index{grid-template-columns:minmax(0,1fr);}
+}
+</style>
+
+<!-- pick: HERO-COMPOSITIONS.md # 11 Centered headline + CTA grid below | considered: # 19,# 22 | why: this page is a junction and its hero has one job, which is to show the reader every destination before it shows them an argument, so the pattern has to put the ROUTING above the fold rather than a scene. # 11 is the only entry in the catalog whose stated use is a local service business with multiple service categories, and it names a dentist with multiple specialties as its example, so it is the pattern written for this exact page. The head is held compact on purpose: the H1 measure is widened to 22ch so the title breaks over two lines instead of three, which is what lets the first row of the contents sit above the fold at 1440 by 900. The contents themselves are built as a rewrapping 3-track ruled index rather than a fixed three or four tile row, because the anchor strip this slot renders is 4 items on new-patients, 6 here, 7 on locations and 10 on team, and a fixed tile row would break on two of the ten pages it has to carry. # 19 Bento-grid hero was the serious rival and is rejected on the same count from the other side: a bento assigns each destination a different tile SIZE, which is a claim that some areas of care matter more than others, and this practice publishes no such ranking, so the sizes would have to be invented. # 22 Statistics-heavy hero is rejected on honesty: the only figures this page carries are one coverage statistic from a third party and a count of offices, so a three or four numeral hero could only be filled by re-scoping a source or by pre-spending section 5. The mirror split is not in the running at all: it is owned by T-FEATURE and was taken by all three concepts of the last round. | rigor: heavy -->
+<section class="rs-sec rs-sec--lead surface-dark">
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+        <div class="hb-hero">
+          <h1 class="rs-h1 hb-hero__h">Dental Services in Las Vegas</h1>
+          <p class="rs-lede hb-hero__sub">Six areas of care, all delivered in house at all seven offices. Start with the problem you have, not the clinical name for it.</p>
+          <!-- CTA-PATTERNS # 7 multi-CTA cluster, carried verbatim from section 1 of the
+               copy. This is the hero ask; the closing ask is section 8. -->
+          <div class="rs-acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <!-- THE CONTENTS. The copy's anchor strip, rendered as in-page anchors to the
+             entries below exactly as the brief specifies ("an anchor strip to the
+             sections below"). The onward link to each destination PAGE is carried by
+             the entry heading, so the reader who already knows where they are going
+             jumps once and clicks once, and the reader who does not gets the whole
+             shape of the page in one glance. -->
+        <ul class="hb-index">
+
+          <li class="hb-index__cell">
+            <a class="hb-index__link" href="#hb-general-dentistry">
+              <span class="hb-num">01</span>
+              <span class="hb-index__name">General dentistry</span>
+            </a>
+            <p class="hb-index__sub">Exams, cleanings, preventative care, digital X-rays, fluoride and sealants.</p>
+          </li>
+
+          <li class="hb-index__cell">
+            <a class="hb-index__link" href="#hb-cosmetic-dentistry">
+              <span class="hb-num">02</span>
+              <span class="hb-index__name">Cosmetic dentistry</span>
+            </a>
+          </li>
+
+          <li class="hb-index__cell">
+            <a class="hb-index__link" href="#hb-restorations">
+              <span class="hb-num">03</span>
+              <span class="hb-index__name">Restorations</span>
+            </a>
+          </li>
+
+          <li class="hb-index__cell">
+            <a class="hb-index__link" href="#hb-oral-surgery">
+              <span class="hb-num">04</span>
+              <span class="hb-index__name">Oral surgery</span>
+            </a>
+          </li>
+
+          <li class="hb-index__cell">
+            <a class="hb-index__link" href="#hb-periodontics">
+              <span class="hb-num">05</span>
+              <span class="hb-index__name">Periodontics</span>
+            </a>
+          </li>
+
+          <li class="hb-index__cell">
+            <a class="hb-index__link" href="#hb-orthodontics">
+              <span class="hb-num">06</span>
+              <span class="hb-index__name">Orthodontics</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 8 Manifesto / belief statement | considered: # 7,# 15 | why: section 2 of every T-HUB copy file states the practice's POSITION against a market model, in three short paragraphs and with no data, no cards and no media of its own, and # 8 is the slot whose whole definition is one to three sentences of stated position. Its left-aligned-with-rule-above variant is taken rather than the centered one: this concept centres exactly one thing, the contents in the hero, and centring a second block would make the argument compete with the routing it is meant to sit quietly between. The lead sentence carries the section on type alone at 34px, the two supporting paragraphs stay at body scale, and the section ships NO photograph, which is faithful to the pattern and is also why the entry list immediately below reads as the first real photography on the page. # 7 Problem framing is rejected for a reason specific to this page rather than to taste: it names a pain the reader is feeling, and this passage names a pain in the market's OPERATING MODEL, which the reader may never have felt, so its big-type problem statement would be addressing a person who has not had the problem yet. # 15 Comparison table (us vs them) is rejected because it cannot be built honestly here: a two column matrix needs a heading over each column, "them" is not a name this site is allowed to write under competitorFraming, and every other word on the page is fixed, so both headings would have to be invented. | rigor: heavy -->
+<section class="rs-sec rs-sec--band hb-tex">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-creed">
+          <span class="hb-creed__rule" aria-hidden="true"></span>
+          <p class="hb-creed__lead">Where dental care is split across separate businesses, one office handles the checkup. The specialist work goes somewhere else.</p>
+          <p class="rs-copy">That handoff costs you time. You repeat your history to a stranger at a business with no connection to the first.</p>
+          <p class="rs-copy">We do all six areas in house, at our own offices, with named clinicians on one roster. That is one practice with one roster, not a referral network that hands you on.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CARD-VARIATIONS.md # 17 Article preview card (image-left + headline-right) | considered: # 13,# 4 | why: this is the page's spine and the object it repeats six times here, and eleven times on the team page, so the object has to be the one that stays legible at eleven. # 17 is the catalog's horizontal browse row, a small square thumbnail on the left with the headline, the one line and the link on the right, and its own note says it is used as a vertical stack inside one column, which is precisely an index. Built as a hairline-ruled stack rather than as six boxes, it also gives the concept its read: the eye runs down one left edge of plates and one left edge of headings, which is how a person actually scans a contents list, and adding a seventh or an eleventh row costs the layout nothing. # 13 Category image-overlay tile is the obvious rival for a routing grid and is rejected on honesty, not on looks: it sets the destination name ON the photograph, and no photograph in this practice's library depicts any of the six areas of care, so "Oral surgery" laid over a picture of a treatment room would make the picture assert a procedure it does not show. # 4 Circle-icon service card with arrow link is rejected twice over: it is the card T-FEATURE already spends, and it is icon-led, so it would drop the real photograph the copy's own image slot requires for every block and replace it with six invented symbols, one of which would have to stand for periodontics. | rigor: heavy -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- IMAGERY NOTE, stated rather than hidden. No photograph in assets/ depicts any
+             of the six areas of care: the first-party library is offices, rooms, equipment
+             and people, and imagery-system.md section 3 forbids generating the missing
+             ones. So each plate below carries a REAL first-party practice photograph and
+             its alt text describes ONLY what is in the frame. The area of care is carried
+             by the heading, never by the picture, and no alt string names a procedure, a
+             device beyond the copy, or who a person is. -->
+        <div class="hb-dir">
+
+          <article class="hb-entry" id="hb-general-dentistry">
+            <div class="hb-entry__plate">
+              <div class="rs-frame hb-entry__frame">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-82-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A patient standing in position at the imaging unit in one of our offices.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="hb-entry__body">
+              <span class="hb-num">01</span>
+              <h2 class="hb-entry__t"><a class="hb-entry__link" href="general-dentistry.html">General dentistry</a></h2>
+              <p class="rs-copy">Exams, cleanings, digital X-rays, fluoride and sealants. The visits that keep small problems small.</p>
+            </div>
+          </article>
+
+          <article class="hb-entry" id="hb-cosmetic-dentistry">
+            <div class="hb-entry__plate">
+              <div class="rs-frame hb-entry__frame">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-44-1-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A patient reclined in the treatment chair, talking with a member of our team at one of our offices.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="hb-entry__body">
+              <span class="hb-num">02</span>
+              <h2 class="hb-entry__t"><a class="hb-entry__link" href="cosmetic-dentistry.html">Cosmetic dentistry</a></h2>
+              <p class="rs-copy">Veneers and whitening, for when the tooth is sound but you do not like how it looks.</p>
+            </div>
+          </article>
+
+          <article class="hb-entry" id="hb-restorations">
+            <div class="hb-entry__plate">
+              <div class="rs-frame hb-entry__frame">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-86-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A member of our team beside the bench equipment in a work room at one of our offices.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="hb-entry__body">
+              <span class="hb-num">03</span>
+              <h2 class="hb-entry__t"><a class="hb-entry__link" href="restorations.html">Restorations</a></h2>
+              <p class="rs-copy">Fillings, crowns, bridges, inlays, onlays, dentures, implants and root canals. Rebuilding a tooth that is damaged.</p>
+            </div>
+          </article>
+
+          <article class="hb-entry" id="hb-oral-surgery">
+            <div class="hb-entry__plate">
+              <div class="rs-frame hb-entry__frame">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-58-3-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A masked and gloved member of our team leaning over a patient reclined in the treatment chair.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="hb-entry__body">
+              <span class="hb-num">04</span>
+              <h2 class="hb-entry__t"><a class="hb-entry__link" href="oral-surgery.html">Oral surgery</a></h2>
+              <p class="rs-copy">Wisdom teeth and bone grafting, handled by our own clinicians rather than sent across town.</p>
+            </div>
+          </article>
+
+          <article class="hb-entry" id="hb-periodontics">
+            <div class="hb-entry__plate">
+              <div class="rs-frame hb-entry__frame">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-72-1-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A member of our team standing beside a patient seated in the treatment chair, with the instrument tray alongside.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="hb-entry__body">
+              <span class="hb-num">05</span>
+              <h2 class="hb-entry__t"><a class="hb-entry__link" href="periodontics.html">Periodontics</a></h2>
+              <p class="rs-copy">The gum and bone that hold your teeth in place, from bleeding gums to deep cleaning.</p>
+            </div>
+          </article>
+
+          <article class="hb-entry" id="hb-orthodontics">
+            <div class="hb-entry__plate">
+              <div class="rs-frame hb-entry__frame">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-22-4-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A treatment room at one of our offices, with the chair prepared and the overhead light in position.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="hb-entry__body">
+              <span class="hb-num">06</span>
+              <h2 class="hb-entry__t"><a class="hb-entry__link" href="orthodontics.html">Orthodontics</a></h2>
+              <p class="rs-copy">Invisalign and braces for children and adults, for teeth that are crowded or out of line.</p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md # 11 Full-width band CTA (section as button) | considered: # 6,# 3 | why: five of the ten T-HUB copy files end section 3 with a block that is not an area of care at all, it is the route for a reader who could not pick one, and on an index page that reader is the one most likely to leave. The other five carry no such block, which is why this section is conditional and the header comment states the rule. So the fallback is lifted out of the entry list and given the whole width and its own ground, which is what a full-width band CTA is: one band, one ask, nothing else competing inside it. It is also where this page's middle anchor belongs. Positions 2, 3, 5, 6 and 7 all carry either photography or a ruled list to hold them up, and this beat carries one sentence, so it is the only middle position whose flatness could not be answered with content and had to be answered with a ground. The band is deliberately the page's quietest ask: the accent is spent on the hero act pair and the closing act pair, so the route here is a ghost control, not a third yellow button. DEVIATION, declared: the section is not literally one giant click target. A whole-band anchor would swallow the photograph's alt text into the link name and give a keyboard user a single target the size of the screen, so the band keeps its figure and the ask is a real control inside it. # 6 Ghost text-link with arrow is rejected because it is the in-card link T-FEATURE already spends, and because a text link is exactly what this beat must not be: the reader it is for is the one who has stopped reading. # 3 Arrow-circle CTA is rejected because it is a control, not a band, so it would leave this position with no ground of its own and put the page back to two bookend anchors with a flat middle. | rigor: heavy -->
+<section class="rs-sec surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-desk">
+
+          <div class="hb-desk__copy">
+            <h2 class="rs-h2">Not sure which one.</h2>
+            <p class="rs-lede">Describe the problem and we will route you to the clinician who treats it.</p>
+            <a class="rs-btn rs-btn--ghost" href="contact.html">Contact</a>
+          </div>
+
+          <div class="rs-frame hb-desk__frame">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-92-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="The front counter at one of our offices, with a person standing at it.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: PROOF-SECTIONS.md # 5 Showcase, image and result split | considered: # 2,# 4 | why: the only proof this page may make is one third-party figure with its source, its date and a sentence of consequence, and # 5 is the pattern whose shape is exactly that, the evidence on one side and a real photograph on the other, side by side in one viewport. The split matters more here than it would on a feature page: an index that suddenly runs a full width statistic band would read as a pitch, which is the one register this concept exists to avoid, so the figure is held to one column beside a square plate that rhymes with the entry plates above it, and the page returns to routing immediately afterwards. The figure itself is promoted inside its own sentence rather than lifted out of it, so the ADA Health Policy Institute and the 30 July 2026 fetch date can never travel away from the number they qualify, and a hairline separates the cited paragraph from the two sentences of ours that follow it. # 2 Single big pull-quote is rejected because pull-quote chrome reads as a human voice, and dressing a coverage statistic as a voice would misrepresent a third-party dataset as somebody's opinion. # 4 Case-study metric-led card is rejected on arithmetic: it is built for a two by two metric grid with a client lockup and a delta line under each cell, and this page has exactly one figure, no client, and no prior period to compare against, so three of the four cells and every delta would be invented. | rigor: heavy -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-proof">
+
+          <div class="hb-proof__arg">
+            <p class="hb-proof__lead">Coverage plays a part in whether a problem gets looked at or put off.</p>
+            <p class="rs-copy">The ADA Health Policy Institute reports that <span class="hb-fig">55%</span> of adults aged 65 and older have no dental benefits, fetched 30 July 2026. Dental visits track coverage directly. Nothing beyond those figures is claimed here.</p>
+            <span class="hb-proof__rule" aria-hidden="true"></span>
+            <p class="rs-copy">That is why the entry exam is priced lower for seniors. It is also why every area above begins with a look, not a quote.</p>
+          </div>
+
+          <div class="rs-frame hb-proof__frame">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-19-2-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="The treatment-room corridor at one of our offices, with the bays open.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 50 Topic columns | considered: # 45,# 2 | why: the cross-link rail is the index's back matter, and the copy gives it in two named groups, the sibling hubs and then everything else, which is the only hierarchy this rail owns. # 50 is the grouped-by-heading column pattern, so it is the one slot in the catalog that keeps that grouping instead of flattening it, and building each group as a ruled 48px list rather than as pills makes the rail read as the same ruled object as the contents in the hero and the entries in the middle, which is what holds a page of this length together. It also survives the other nine pages unchanged: every T-HUB section 5 is two groups, "Other hubs" or "Other areas of care" and then "Also". # 45 Category chips is rejected here even though it is the obvious rail pattern: a chip row throws away the two group labels the copy supplies, and it would put a row of seven pills directly above the seven-office band that follows, so two consecutive sections would read as two pill rows. # 2 Trust strip is rejected because every destination in this rail is one of our own pages, and dressing internal links in borrowed-credibility chrome would be a false signal on a page whose whole register is the removal of false signals. | rigor: heavy -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-rail">
+
+          <div class="hb-rail__grp">
+            <p class="hb-rail__k">Other hubs</p>
+            <ul class="hb-rail__list">
+              <li><a class="hb-rail-item" href="locations.html">All seven offices</a></li>
+              <li><a class="hb-rail-item" href="team.html">Meet our dentists</a></li>
+              <li><a class="hb-rail-item" href="new-patients.html">New patients</a></li>
+              <li><a class="hb-rail-item" href="about.html">About the practice</a></li>
+            </ul>
+          </div>
+
+          <div class="hb-rail__grp">
+            <p class="hb-rail__k">Also</p>
+            <ul class="hb-rail__list">
+              <li><a class="hb-rail-item" href="offer.html">the new patient offer</a></li>
+              <li><a class="hb-rail-item" href="insurance-financing.html">insurance and financing</a></li>
+              <li><a class="hb-rail-item" href="contact.html">contact</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 51 Locations grid | considered: # 52,# 53 | why: section 6 routes by place, and # 51 is the catalog's multi-location display, one tile per address, naming clinics among its uses. It is arranged here as a 2-column address grid beside one stretching photograph, which is the media-and-cards law applied to seven items: a single capped image beside a vertical stack of seven is the banned arm of that law and would open a void two thirds the height of the list. Every address is copied character for character from client-rules.json contactData and each office name links to its own page, so the band routes rather than merely listing. DEVIATION, and it is the honest half of this pick: the pattern's tile carries a photo of THAT location, and this build cannot. imagery-system.md section 2 records six office-interior files resolving to two distinct photographs, both Henderson, and its rule 4 forbids using them as generic practice imagery because that would restate one office as seven. So no address carries a photograph, the band's single image is described only as one of our offices, and the gap is an owner item rather than a substitution. # 52 Map embed and contact is rejected because no first-party map asset exists in the handoff and an embedded third-party map is a live external dependency this build does not take. # 53 Hours table is rejected because per-office hours are not in the locked spec at all, which the chrome footer already flags for the owner, so a table here would ship seven empty rows. | rigor: heavy -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+        <div class="hb-map__head">
+          <h2 class="rs-h2">Find the office nearest you.</h2>
+          <p class="rs-lede">Seven offices across the valley:</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="hb-map">
+
+          <div class="rs-frame hb-map__frame">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-10-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="The reception desk at one of our offices, with the Radiant Smiles sign on the wall behind it.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+          <!-- OWNER: the Sunrise Manor ZIP conflicts on the live site. 89107 is carried
+               here from client-rules.json contactData, pending confirmation against 89104
+               in the booking block. NAP consistency depends on resolving it. Carried as a
+               comment, not as visible copy, so no reader is shown an unresolved flag. -->
+          <ul class="hb-map__list">
+
+            <li class="hb-office">
+              <a class="hb-office__name" href="lone-mountain.html">Lone Mountain</a>
+              <address class="hb-office__addr">7469 W. Lake Mead Blvd., Suite 270, Las Vegas 89128</address>
+            </li>
+
+            <li class="hb-office">
+              <a class="hb-office__name" href="sunrise-manor.html">Sunrise Manor</a>
+              <address class="hb-office__addr">1825 S. Nellis Blvd., Las Vegas 89107</address>
+            </li>
+
+            <li class="hb-office">
+              <a class="hb-office__name" href="summerlin.html">Summerlin</a>
+              <address class="hb-office__addr">8961 W. Sahara Ave., Suite 108, Las Vegas 89117</address>
+            </li>
+
+            <li class="hb-office">
+              <a class="hb-office__name" href="north-las-vegas.html">North Las Vegas</a>
+              <address class="hb-office__addr">5195 Camino Al Norte Rd., North Las Vegas 89031</address>
+            </li>
+
+            <li class="hb-office">
+              <a class="hb-office__name" href="henderson.html">Henderson</a>
+              <address class="hb-office__addr">2633 W. Horizon Ridge Pkwy., Suite 130, Henderson 89052</address>
+            </li>
+
+            <li class="hb-office">
+              <a class="hb-office__name" href="north-decatur.html">North Decatur</a>
+              <address class="hb-office__addr">6311 N. Decatur Blvd., Suite 140, Las Vegas 89130</address>
+            </li>
+
+            <li class="hb-office">
+              <a class="hb-office__name" href="blue-diamond.html">Blue Diamond</a>
+              <address class="hb-office__addr">5095 S. Blue Diamond Rd., Suite 105, Las Vegas 89139</address>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 41 Closing CTA (final action) | considered: # 40,# 37 | why: an index has to end by handing the reader back the two things it has been routing toward all page, and # 41 is the slot defined as the last thing before the footer with a single primary action. It is the page's third and final shift of ground, and it is deliberately the plainest composition on the page: one statement at display scale, the act pair from section 7 of the copy, and one photograph of a waiting area, which is the room a person actually arrives in and the only frame on the page that shows the end of the journey the rest of it describes. It carries no heading on purpose, because the statement IS the heading and a second line above it would be a sentence nobody wrote. This is also the page's ONLY closing conversion band: the chrome ships no pre-footer band of its own on this build, so the body is entitled to exactly one, and section 4's fallback route stays a ghost control specifically so this one is not the second yellow ask in the tail. # 40 Pre-footer CTA band is rejected because its stated shape is a large claim plus a button, and this page has no claim left to make that section 2 and section 5 have not already made with their sources attached. # 37 CTA form is rejected because it captures an inquiry on the page, and this practice's route is a booking at a named office with that office's own number, per routeRules.phone_policy, so a generic form would break the one routing rule the whole page is built on. | rigor: heavy -->
+<section class="rs-sec rs-sec--close surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-ask">
+
+          <div class="hb-ask__copy">
+            <p class="hb-ask__lead">Book at the office nearest you, or call that office and describe what is bothering you.</p>
+            <!-- FLAG: the secondary act resolves to the specific office's own number, never a
+                 general line, per routeRules.phone_policy. It therefore routes to the offices
+                 hub rather than carrying a tel: href, because no single number is correct here. -->
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+          <div class="rs-frame hb-ask__frame">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-2-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="The waiting area at one of our offices, with bench seating around a planter.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,702 @@
+<style>
+/* ============================================================================
+   T-LEGAL  .  CONCEPT B  .  "THE FILED DOCUMENT"
+   Body-fragment scoped layer for radiantsmiles. Sits ON TOP of
+   radiantsmiles-tokens.css, radiantsmiles-chrome.css and
+   radiantsmiles-structural.css. It adds only the shapes a legal DOCUMENT needs
+   that the foundation kit does not already ship.
+
+   THE THESIS, in CSS terms: this page is a filed instrument, not a landing
+   page. It is TYPE LED, never card led. Rank is carried by measure, by hanging
+   numerals in the margin and by one raised paper plane, never by ornament,
+   never by a photograph and never by a button. The page ships ZERO conversion
+   furniture: no .rs-btn, no .rs-acts, no offer, no price, no proof stat, no
+   review figure, no cross sell. The one instrument the reader actually needs,
+   the nine entry index, is lifted onto the page's single dark ground so it
+   reads as apparatus rather than as prose.
+
+   DIVERGENCE NOTE (tournament): concept B takes its hero from the # 11 to # 20
+   band, is type led rather than card led, seats its dark ground in the
+   INTERIOR of the page (the index) rather than on a bookend, and puts no
+   conversion ask anywhere because the page type forbids one.
+
+   THE TWO CLASS FAMILIES, and why there are two.
+     bw-*  is NOT invented here. It is the brand agnostic LEGAL-SECTIONS
+           reference skin (.bw-legal prose measure, .bw-toc jump index) that
+           G-LEGAL-DOC requires a T-LEGAL page to carry, and that this concept
+           supplies a radiantsmiles skin for. It styles RAW flowing children,
+           which is the entry's own instruction.
+     lg-*  is this concept's own namespace: the masthead, the paper plane, the
+           hanging numeral, the contact table, the close.
+
+   TOKEN PURITY: zero hex literals, zero rgb(), zero named colours. Every
+   colour, radius, shadow, duration, easing and spacing value below is a
+   var(--ds-*) role token or a calc() over one.
+
+   RESPONSIVE POLICY: authored DESKTOP FIRST. Every breakpoint rule is an
+   ADDITIVE @media (max-width:N) override, never a min-width one. Steps at
+   1023 / 767 / 479.
+
+   COLOUR ROLES OBSERVED: --ds-signature is 3.94:1 and is NON TEXT in both
+   directions, so it appears here only as a rule, a marker and a seam, never as
+   a numeral and never as a label. --ds-accent is 1.36:1 on the light canvas
+   and is spent exactly ONCE on this page, as the rule on the dark index, where
+   it measures 7.19:1 against the worst dark stop. Numerals take --ds-primary
+   on light (8.84:1) and --ds-ink-soft on dark (7.15:1).
+   ============================================================================ */
+
+/* ---- shared -------------------------------------------------------------- */
+.lg-rule{
+  display:block;
+  width:var(--ds-space-lg);
+  height:3px;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-signature);
+}
+/* on the dark ground the signature drops to 2.47:1 and stops reading, so the
+   rule hands over to the accent exactly the way the foundation's own --rs-rule
+   alias does. This is the page's single accent spend. */
+.surface-dark .lg-rule{background:var(--ds-accent);}
+
+/* the light section's atmosphere layer. Under the content, never interactive. */
+.lg-tex{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--ds-glow-wash);
+}
+.lg-plane{position:relative;}
+
+/* ---- 1 . MASTHEAD. The filing header, tuned down from the hero pick. ------ */
+/* the masthead owns its own stacking context, so the atmosphere layer behind it
+   can never paint over the content it sits behind. */
+.lg-mast{isolation:isolate;}
+.lg-mast__grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.44fr) minmax(0,.56fr);
+  grid-template-areas:
+    "title meta"
+    "title source";
+  column-gap:var(--ds-space-xl);
+  row-gap:var(--ds-space-md);
+  align-items:start;
+}
+.lg-mast__title{grid-area:title;align-self:center;}
+.lg-mast__meta{grid-area:meta;}
+.lg-mast__source{grid-area:source;}
+
+/* the metadata tile. The only raised object above the fold, and it carries the
+   one fact a reader of a policy checks first: which version this is. */
+.lg-mast__meta{
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-xs);
+  margin:0;
+  padding:var(--ds-space-md);
+  border:1px solid var(--ds-hairline);
+  border-radius:var(--ds-r-surface);
+  background-color:var(--ds-canvas);
+  background-image:linear-gradient(180deg,var(--ds-canvas),var(--ds-bg-surface));
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+.lg-mast__k{
+  margin:0;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.4;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+.lg-mast__v{
+  margin:0;
+  font-family:var(--ds-font-display);
+  font-size:20px;
+  line-height:1.3;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+  font-variant-numeric:tabular-nums;
+}
+.lg-mast__source{
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-sm);
+  padding-left:var(--ds-space-md);
+  border-left:1px solid var(--ds-line);
+}
+p.lg-mast__note{
+  margin:0;
+  max-width:46ch;
+  font-size:16px;
+  line-height:1.6;
+  color:var(--ds-ink-soft);
+}
+/* the closing seam of the header block. A real two token gradient, densest at
+   the signature end, so the rule reads as drawn rather than as a border. */
+.lg-mast__seam{
+  height:2px;
+  margin-top:var(--ds-space-lg);
+  border-radius:var(--ds-r-pill);
+  background-image:linear-gradient(90deg,var(--ds-signature),var(--ds-line));
+}
+
+/* ---- 2 . THE INDEX. The LEGAL-SECTIONS .bw-toc, on the one dark ground. --- */
+/* the index is a compact instrument, not a band of argument, so it takes a
+   tighter vertical rhythm than the foundation's default section band. The
+   document below takes the same tighter rhythm, so the index and the instrument
+   it indexes sit on one cadence rather than two. */
+.lg-index{padding-block:var(--ds-space-xl);}
+.bw-toc{
+  display:block;
+  padding:var(--ds-space-xl);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  background-color:var(--ds-bg-surface);
+  background-image:var(--ds-glow-wash),
+                   linear-gradient(180deg,var(--ds-bg-surface),var(--ds-canvas));
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+.lg-index__head{
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-sm);
+  margin-bottom:var(--ds-space-lg);
+}
+h2.bw-toc__title{
+  margin:0;
+  font-size:clamp(24px,3vw,34px);
+  line-height:1.14;
+  letter-spacing:-.015em;
+  color:var(--ds-ink-heading);
+}
+.bw-toc__list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:var(--ds-space-lg);
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.bw-toc__item{border-bottom:1px solid var(--ds-line);}
+.bw-toc__link{
+  display:flex;
+  align-items:baseline;
+  gap:var(--ds-space-sm);
+  min-height:48px;
+  padding-block:var(--ds-space-sm);
+  padding-inline:var(--ds-space-xs);
+  border-radius:var(--ds-r-control);
+  font-size:17px;
+  line-height:1.45;
+  color:var(--ds-ink);
+  text-decoration:none;
+  transition:background-color var(--ds-dur) var(--ds-ease),
+             transform var(--ds-dur) var(--ds-ease),
+             color var(--ds-dur) var(--ds-ease);
+}
+.lg-toc__n{
+  flex:none;
+  min-width:var(--ds-space-md);
+  font-family:var(--ds-font-mono);
+  font-size:15px;
+  color:var(--ds-ink-soft);
+  font-variant-numeric:tabular-nums;
+}
+.bw-toc__link:hover{
+  background-color:var(--ds-primary);
+  transform:translateX(var(--ds-space-2xs));
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.bw-toc__link:hover .lg-toc__n{color:var(--ds-ink-on-dark);}
+.bw-toc__link:focus-visible{outline:none;box-shadow:var(--ds-glow);}
+
+/* ---- 3 . THE DOCUMENT. The LEGAL-SECTIONS .bw-legal on a paper plane. ----- */
+/* the paper plane is the concept's material contribution: the document sits on
+   a lifted sheet rather than on the page ground, so a reader can see where the
+   instrument starts and stops. The wash is painted only across the top of the
+   sheet, at a fixed height, so a very long document does not become a gradient. */
+/* the document opens straight out of the index above it, so its padding closes
+   up off the foundation's default band: the index and the instrument it indexes
+   read as one unit, on the same tighter rhythm.
+   G-CADENCE FIX: this was padding-TOP only, which left the bottom edge on
+   --rs-sec-pad, and that token is clamp(64px,8vw,96px). Below 1024 it resolves
+   to 64px, so the section looked symmetric there and the one-sided override went
+   unseen. At 1440 it resolves to 96px, so the section measured 64px leading vs
+   96px trailing (delta 32, over the 8px tolerance). Setting the shorthand pins
+   BOTH edges to the same token at every width. Measured section 2 at 1440:
+   before 64/96, after 64/64. Unchanged at 768 and 375, which were already 64/64. */
+.lg-doc{padding-block:var(--ds-space-xl);}
+.lg-paper{
+  position:relative;
+  padding:var(--ds-space-2xl);
+  border:1px solid var(--ds-hairline);
+  border-radius:var(--ds-r-surface);
+  background-color:var(--ds-canvas);
+  background-image:linear-gradient(180deg,var(--ds-bg-band),var(--ds-canvas));
+  background-repeat:no-repeat;
+  background-size:100% var(--ds-space-2xl);
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+}
+
+/* the single reading measure. Styles RAW flowing children, per the catalog
+   entry: no per node class on an ordinary paragraph, list or list item. */
+.bw-legal{
+  max-width:calc(70ch + var(--ds-space-2xl) * 2);
+  margin-inline:auto;
+  font-size:18px;
+}
+.bw-legal p{
+  margin:0;
+  font-size:18px;
+  line-height:1.75;
+  color:var(--ds-ink);
+  overflow-wrap:break-word;
+}
+.bw-legal ul{
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-sm);
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.bw-legal ul > li{
+  position:relative;
+  padding-left:var(--ds-space-md);
+  font-size:18px;
+  line-height:1.7;
+  color:var(--ds-ink);
+  overflow-wrap:break-word;
+}
+/* the list marker is a DRAWN mark, not a typed character, so no punctuation
+   glyph is introduced into a verbatim legal body. */
+.bw-legal ul > li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:calc(var(--ds-space-sm) - 1px);
+  width:var(--ds-space-xs);
+  height:2px;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-signature);
+}
+/* a document link. Underlined at rest, because in a legal instrument a link
+   that only reveals itself on hover is a link the reader will not find. */
+.bw-legal a,
+.lg-link{
+  color:var(--ds-primary);
+  text-decoration:underline;
+  text-underline-offset:3px;
+  text-decoration-thickness:1px;
+  overflow-wrap:anywhere;
+  transition:color var(--ds-dur-fast) var(--ds-ease),
+             text-decoration-thickness var(--ds-dur-fast) var(--ds-ease);
+}
+.bw-legal a:hover,
+.lg-link:hover{color:var(--ds-primary-deep);text-decoration-thickness:2px;}
+.bw-legal a:focus-visible,
+.lg-link:focus-visible{outline:none;border-radius:var(--ds-r-control);box-shadow:var(--ds-glow);}
+
+.lg-doc__head{
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-xs);
+  padding-bottom:var(--ds-space-md);
+  margin-bottom:var(--ds-space-lg);
+  border-bottom:1px solid var(--ds-line);
+}
+.bw-legal h2.lg-doc__title{
+  margin:0;
+  max-width:24ch;
+  font-size:clamp(24px,3vw,34px);
+  line-height:1.16;
+  letter-spacing:-.015em;
+  color:var(--ds-ink-heading);
+}
+.bw-legal p.lg-doc__date{font-size:17px;line-height:1.5;font-variant-numeric:tabular-nums;}
+.bw-legal p.lg-lead{font-size:20px;line-height:1.7;}
+
+.lg-art + .lg-art{margin-top:var(--ds-space-xl);}
+.lg-art > * + *{margin-top:var(--ds-space-md);}
+
+/* the statute head. The numeral hangs OUT of the measure into the paper plane's
+   own padding, which is what makes a long instrument scannable without adding a
+   single decorative element. It is real text inside the heading, never an
+   ::before, so the accessible name still carries the section number. */
+.bw-legal h3.lg-art__h{
+  display:flex;
+  align-items:baseline;
+  gap:var(--ds-space-sm);
+  margin:0 0 0 calc(-1 * (var(--ds-space-lg) + var(--ds-space-sm)));
+  font-size:clamp(21px,2.3vw,26px);
+  line-height:1.22;
+  letter-spacing:-.01em;
+  color:var(--ds-ink-heading);
+}
+.lg-art__n{
+  flex:none;
+  width:var(--ds-space-lg);
+  text-align:right;
+  font-size:.78em;
+  color:var(--ds-primary);
+  font-variant-numeric:tabular-nums;
+}
+
+/* the contact table in Section 9. A two column reading grid, not a card grid,
+   and it opts out of the prose marker because it is a table of record. */
+.bw-legal ul.lg-contact{
+  gap:0;
+  border-top:1px solid var(--ds-line);
+}
+.bw-legal ul.lg-contact > li{
+  display:grid;
+  grid-template-columns:minmax(0,16ch) minmax(0,1fr);
+  column-gap:var(--ds-space-md);
+  align-items:baseline;
+  padding-left:0;
+  padding-block:var(--ds-space-sm);
+  border-bottom:1px solid var(--ds-line);
+  line-height:1.6;
+}
+.bw-legal ul.lg-contact > li::before{content:none;}
+.lg-contact__k{color:var(--ds-ink-soft);font-weight:700;}
+.lg-contact__v{font-variant-numeric:tabular-nums;}
+.lg-contact__sep{color:var(--ds-ink-soft);padding-inline:var(--ds-space-2xs);}
+
+/* ---- 4 . THE CLOSE. A colophon block, and deliberately not a CTA band. ----- */
+/* one hairline where the ground steps. The rule is what states that the
+   practice's own instrument has ended and the build's note has begun. */
+.lg-close{border-top:1px solid var(--ds-line);}
+.lg-close__panel{
+  max-width:72ch;
+  margin-inline:auto;
+  padding:var(--ds-space-xl);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  background-color:var(--ds-canvas);
+  background-image:linear-gradient(180deg,var(--ds-canvas),var(--ds-bg-surface));
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+.lg-close__head{
+  display:flex;
+  flex-direction:column;
+  gap:var(--ds-space-sm);
+  margin-bottom:var(--ds-space-md);
+}
+h2.lg-close__h{
+  margin:0;
+  max-width:26ch;
+  font-size:clamp(24px,3vw,34px);
+  line-height:1.14;
+  letter-spacing:-.015em;
+  color:var(--ds-ink-heading);
+}
+p.lg-close__id{
+  margin:0 0 var(--ds-space-md);
+  font-size:20px;
+  line-height:1.5;
+  color:var(--ds-ink);
+  overflow-wrap:break-word;
+}
+p.lg-close__note{
+  margin:0;
+  font-size:18px;
+  line-height:1.7;
+  color:var(--ds-ink);
+  overflow-wrap:break-word;
+}
+
+/* ---- BREAKPOINTS. Additive max-width steps only. ------------------------- */
+@media (max-width:1023px){
+  .lg-mast__grid{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-areas:
+      "title"
+      "meta"
+      "source";
+    row-gap:var(--ds-space-lg);
+  }
+  .lg-mast__source{
+    padding-left:0;
+    border-left:0;
+    padding-top:var(--ds-space-sm);
+    border-top:1px solid var(--ds-line);
+  }
+  p.lg-mast__note{max-width:none;}
+  .bw-toc{padding:var(--ds-space-lg);}
+  .bw-toc__list{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--ds-space-md);}
+  .lg-paper{padding:var(--ds-space-lg);}
+  .bw-legal{max-width:none;}
+  /* the hanging numeral has nowhere left to hang once the plane's padding
+     drops, so it returns inline rather than overflowing the sheet. */
+  .bw-legal h3.lg-art__h{margin-left:0;}
+  .lg-art__n{width:auto;text-align:left;}
+  .lg-close__panel{padding:var(--ds-space-lg);max-width:none;}
+}
+
+@media (max-width:767px){
+  .bw-toc__list{grid-template-columns:minmax(0,1fr);}
+  .bw-toc__link{min-height:52px;}
+  /* 44 minimum, 48 preferred: 18px at 1.75 is 31.5, plus 8 and 8 is 47.5. */
+  .bw-legal a,
+  .lg-link{display:inline-block;padding-block:var(--ds-space-xs);}
+  .bw-legal ul.lg-contact > li{min-height:48px;padding-block:var(--ds-space-xs);}
+  .bw-legal p.lg-lead{font-size:19px;}
+  p.lg-close__id{font-size:19px;}
+}
+
+@media (max-width:479px){
+  .bw-toc{padding:var(--ds-space-md);}
+  .lg-paper{padding:var(--ds-space-md);border-radius:var(--ds-r-control);}
+  .lg-close__panel{padding:var(--ds-space-md);border-radius:var(--ds-r-control);}
+  .bw-legal ul.lg-contact > li{grid-template-columns:minmax(0,1fr);row-gap:var(--ds-space-2xs);}
+  .lg-mast__meta{padding:var(--ds-space-sm);}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .bw-toc__link:hover{transform:none;}
+}
+</style>
+
+<!-- pick: HERO-COMPOSITIONS.md # 18 Asymmetric grid hero | considered: # 11,# 13,# 20 | why: T-LEGAL is the one page type whose opener has to identify a DOCUMENT rather than sell a practice, so the brief for this band is a filing header: what instrument is this, which version is it, and where did it come from. Entry # 18 is the only one in the # 11 to # 20 band whose structure, a CSS grid with deliberately non uniform cells, maps onto that without importing a sales shape. The large cell takes the H1, a small raised cell takes the effective date, and a third small cell takes the provenance line, which is exactly the three part masthead a filed policy carries. Entry # 11 Centered headline plus CTA grid is rejected outright: its whole payload is a row of service tiles with CTAs, the conversion furniture verify-legal-is-document exists to keep off this page. Entry # 13 Centered plus scroll cue asks for a full viewport hero holding one short headline, which on a nine section policy is a tall sparse band that pushes the index below the fold and trips the sparse height rule. Entry # 20 Three column hero was the closest runner up and was rejected on honesty rather than on shape: its third column wants a stat or a photo, and this copy carries neither a figure nor an image, so filling that column would mean inventing one. DELIBERATE DEVIATION from the catalog entry: its stated vibe is editorial and creative confident, and its example tiles include a testimonial snippet and a CTA card. Both are dropped. The irregular grid is used only to separate document identity from document metadata, there is no photograph anywhere on this page, and the tile count is three rather than four. -->
+<section class="rs-sec rs-sec--lead lg-mast">
+  <div class="lg-tex" aria-hidden="true"></div>
+  <div class="container lg-plane">
+    <div class="row">
+      <div class="col">
+
+        <div class="lg-mast__grid">
+
+          <h1 class="rs-h1 lg-mast__title">Privacy Policy</h1>
+
+          <!-- OWNER: confirm this is the date the current policy took effect, and not merely the date the generator last rewrote the file. -->
+          <dl class="lg-mast__meta">
+            <dt class="lg-mast__k">Effective date</dt>
+            <dd class="lg-mast__v">Last Updated: July 14, 2026</dd>
+          </dl>
+
+          <div class="lg-mast__source">
+            <span class="lg-rule" aria-hidden="true"></span>
+            <p class="lg-mast__note">Carried from the practice's own privacy page, captured 30 July 2026.</p>
+          </div>
+
+        </div>
+
+        <div class="lg-mast__seam" aria-hidden="true"></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: LEGAL-SECTIONS.md # 2 Inline anchored table-of-contents | considered: # 1,# 3 | why: this document is nine numbered parts and the reader almost never arrives wanting to read it end to end. They arrive wanting Section 7 or Section 9, so the page needs a jump index, and the copy's own section 2 exists to supply one. Entry # 2 is written for exactly that: a bordered jump link card placed ABOVE the prose, each item a same page anchor into a heading id, described by the catalog as an in document index rather than site navigation. Entry # 1 Prose document container alone was rejected here because it assumes a document short enough to read top to bottom, and a policy carrying SMS terms, Nevada NRS rights and California CCPA plus CPRA plus CIPA rights is not that document. Entry # 3 Sticky side rail was the real contender and lost on two counts: a rail riding beside 3800 words of legal prose is a persistent piece of chrome competing with the practice's actual locked chrome, and below 1023 the rail degrades to precisely this inline band anyway, so the band is the honest primitive to author. DELIBERATE DEVIATIONS: the index takes the page's SINGLE dark ground rather than sitting as another light card, which is where this concept's divergence work is done, the instrument is on a different surface from the instrument's subject, and that dark ground sits in the page INTERIOR rather than on a bookend. The catalog's auto numbering counter is replaced by literal numerals in the markup, because the nine numbers belong to the policy's own headings and must survive with the text rather than being generated by CSS. -->
+<section class="rs-sec surface-dark lg-index">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- FLAG: INTERNAL BUILD NOTE. Not patient facing prose, and not rendered. This list is built from the nine numbered H2 headings of the verbatim body in section 3, in document order. Nothing is authored here. Each anchor target must be the id the build gives the matching heading in section 3. -->
+        <nav class="bw-toc" aria-label="Contents of this policy">
+
+          <div class="lg-index__head">
+            <span class="lg-rule" aria-hidden="true"></span>
+            <h2 class="bw-toc__title">Contents</h2>
+          </div>
+
+          <ol class="bw-toc__list">
+            <li class="bw-toc__item"><a class="bw-toc__link" href="#information-we-collect"><span class="lg-toc__n">1. </span><span>Information We Collect</span></a></li>
+            <li class="bw-toc__item"><a class="bw-toc__link" href="#how-we-use-your-information"><span class="lg-toc__n">2. </span><span>How We Use Your Information</span></a></li>
+            <li class="bw-toc__item"><a class="bw-toc__link" href="#cookies-and-tracking-technologies"><span class="lg-toc__n">3. </span><span>Cookies and Tracking Technologies</span></a></li>
+            <li class="bw-toc__item"><a class="bw-toc__link" href="#sms-text-messaging-terms-and-conditions"><span class="lg-toc__n">4. </span><span>SMS/Text Messaging Terms &amp; Conditions</span></a></li>
+            <li class="bw-toc__item"><a class="bw-toc__link" href="#how-we-share-your-information"><span class="lg-toc__n">5. </span><span>How We Share Your Information</span></a></li>
+            <li class="bw-toc__item"><a class="bw-toc__link" href="#how-we-protect-your-information"><span class="lg-toc__n">6. </span><span>How We Protect Your Information</span></a></li>
+            <li class="bw-toc__item"><a class="bw-toc__link" href="#your-privacy-rights"><span class="lg-toc__n">7. </span><span>Your Privacy Rights</span></a></li>
+            <li class="bw-toc__item"><a class="bw-toc__link" href="#accessibility-of-this-privacy-policy"><span class="lg-toc__n">8. </span><span>Accessibility of This Privacy Policy</span></a></li>
+            <li class="bw-toc__item"><a class="bw-toc__link" href="#contact-us"><span class="lg-toc__n">9. </span><span>Contact Us</span></a></li>
+          </ol>
+
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: LEGAL-SECTIONS.md # 1 Prose-document container | considered: # 2,# 3 | why: this is the section the whole page exists to carry, and the catalog is unambiguous that a legal body is one calm reading measure of flowing prose whose rhythm IS the design. Entry # 1 gives that: a single measure styling raw children, stepped headings with scroll margin so an anchor jump from the index lands clear of the locked sticky chrome, list markers and underlined links, and no card surface anywhere. Entry # 2 was rejected for this section because its payload is the jump index, which the section above already carries, and repeating it here would print the nine entries twice on one page. Entry # 3 was rejected because a sticky rail beside the prose would put a second persistent navigation object on a page that already has a locked chrome header, and because it needs a two column arrangement that this concept spends on the masthead instead. DELIBERATE DEVIATIONS, both stated rather than quiet. First, the catalog says the measure has no surfaces and no shadows; this concept lifts the measure onto one raised paper plane, because a page that also carries a masthead and a dark index needs a visible boundary showing where the practice's own instrument starts and stops, and because a completely flat white body is what CWB-064 rejects. The plane carries the depth; the prose inside it stays chrome free. Second, the catalog asks for a representative text honesty callout, and this page must NOT carry one: this body is the practice's own published policy carried verbatim from the capture of 30 July 2026, not a representative draft, so a callout saying otherwise would be a false statement on a legal page. The provenance is stated in the masthead instead. The nine parts render at h3 under the document's own h2 title rather than as flat siblings, so the outline states that they belong to the policy. -->
+<section class="rs-sec lg-doc">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- FLAG: INTERNAL BUILD NOTE. Not patient facing prose, and not rendered. The body below is the practice's own published policy, carried verbatim from the capture of 30 July 2026. It is not authored, paraphrased, summarised, shortened or reordered here. Two mechanical substitutions were applied and no word was altered. The two em dash characters in the third party booking list became hyphens, per G-NODASH. The decorative emoji that prefixed the "Cookie Settings" label and the nine contact lines were removed, per bannedPunctuation. Spacing left behind by stripped HTML tags was closed up around brackets and full stops. In Section 9, "Contact Form" links to the contact route. "All Office Locations" links to the locations route, as in the capture. -->
+        <!-- FLAG: this section must not be filled by generation. Any future revision comes from the owner's counsel, not from this pipeline. A generated privacy policy would state obligations the practice has not agreed to. -->
+        <div class="lg-paper">
+          <div class="bw-legal">
+
+            <div class="lg-doc__head">
+              <h2 class="lg-doc__title">Privacy Policy for Radiant Smiles Dental</h2>
+              <p class="lg-doc__date"><strong class="rs-strong">Last Updated: July 14, 2026</strong></p>
+            </div>
+
+            <p class="lg-lead">Radiant Smiles Dental (“we,” “us,” or “our”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website radiantsmilesnv.com or contact our offices. Please read this policy carefully. If you disagree with its terms, please discontinue use of the site.</p>
+
+            <div class="lg-art">
+              <h3 class="lg-art__h" id="information-we-collect"><span class="lg-art__n">1.</span> Information We Collect</h3>
+              <p>We may collect the following types of personal information:</p>
+              <ul>
+                <li>Name, email address, phone number, mailing address, and date of birth.</li>
+                <li>Insurance information, payment information, and treatment history.</li>
+                <li>Information you provide through forms, appointment requests, or direct communication with our team.</li>
+                <li>Information related to SMS/text messaging consent and preferences.</li>
+                <li>Technical information collected automatically, including IP address, browser type, device identifiers, pages visited, time spent on pages, and referring URLs, collected through cookies and similar tracking technologies.</li>
+              </ul>
+            </div>
+
+            <div class="lg-art">
+              <h3 class="lg-art__h" id="how-we-use-your-information"><span class="lg-art__n">2.</span> How We Use Your Information</h3>
+              <p>We use your information to:</p>
+              <ul>
+                <li>Schedule and confirm appointments.</li>
+                <li>Send reminders, treatment updates, and important service-related communications.</li>
+                <li>Process payments and insurance claims.</li>
+                <li>Improve our services and provide a better patient experience.</li>
+                <li>Communicate promotional offers and updates (only if you have provided explicit consent).</li>
+                <li>Analyze website usage and performance through analytics tools.</li>
+                <li>Comply with applicable legal obligations.</li>
+              </ul>
+            </div>
+
+            <div class="lg-art">
+              <h3 class="lg-art__h" id="cookies-and-tracking-technologies"><span class="lg-art__n">3.</span> Cookies and Tracking Technologies</h3>
+              <p>Our website uses cookies and similar tracking technologies to enhance your experience and collect usage data. No analytics or marketing tracking fires until you provide explicit consent through our cookie consent banner.</p>
+              <p><strong class="rs-strong">What are cookies?</strong> Cookies are small text files stored on your device when you visit our website. They help us understand how visitors use our site and allow certain features to function.</p>
+              <p><strong class="rs-strong">Types of cookies we use:</strong></p>
+              <ul>
+                <li><strong class="rs-strong">Essential cookies:</strong> Necessary for the website to function properly. Always active.</li>
+                <li><strong class="rs-strong">Analytics cookies:</strong> We use Google Analytics (via Google Tag Manager) to collect anonymous data about how visitors interact with our website. These only activate with your consent.</li>
+                <li><strong class="rs-strong">Marketing and advertising cookies:</strong> We may use third-party advertising and remarketing tools loaded through Google Tag Manager. These only activate with your consent.</li>
+                <li><strong class="rs-strong">Functional cookies:</strong> Used to remember your preferences and improve your experience.</li>
+              </ul>
+              <p><strong class="rs-strong">Third-party tracking and services:</strong> Our website uses Google Tag Manager (container ID: GTM-PZBGX4Z8), which may load additional third-party scripts including analytics and advertising tags upon your consent. Our website host (GoDaddy) may also collect technical usage data through their platform. We also use the following third-party booking platforms, which have their own privacy policies and may collect data independently:</p>
+              <ul>
+                <li><strong class="rs-strong">AppointNow</strong> (appointnow.com) - online appointment booking platform</li>
+                <li><strong class="rs-strong">ZocDoc</strong> (zocdoc.com) - online appointment booking platform</li>
+              </ul>
+              <p>We encourage you to review the privacy policies of these third-party services directly.</p>
+              <p><strong class="rs-strong">Managing cookies:</strong> You may manage your cookie preferences at any time using the “Cookie Settings” button on our website, or through your browser settings. You may also opt out of Google Analytics tracking by visiting <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">https://tools.google.com/dlpage/gaoptout</a>. For full details, see our Cookie Policy.</p>
+            </div>
+
+            <div class="lg-art">
+              <h3 class="lg-art__h" id="sms-text-messaging-terms-and-conditions"><span class="lg-art__n">4.</span> SMS/Text Messaging Terms &amp; Conditions</h3>
+              <p>By providing your mobile number and opting in, you consent to receive SMS/text messages from Radiant Smiles Dental.</p>
+              <ul>
+                <li>Types of messages you may receive: appointment reminders, treatment updates, billing notifications, and limited promotional offers.</li>
+                <li>Message frequency: varies depending on your treatment schedule and communication preferences.</li>
+                <li>Message &amp; Data rates may apply.</li>
+                <li>You may opt-out at any time by replying STOP. For help, reply HELP or contact us directly.</li>
+                <li>Consent to receive messages is not required as a condition of receiving treatment.</li>
+              </ul>
+            </div>
+
+            <div class="lg-art">
+              <h3 class="lg-art__h" id="how-we-share-your-information"><span class="lg-art__n">5.</span> How We Share Your Information</h3>
+              <ul>
+                <li>We do not sell or rent your personal information to third parties.</li>
+                <li>We may share your information with trusted service providers (such as insurance companies, billing processors, and HIPAA-compliant vendors) to perform necessary business functions.</li>
+                <li>We may share your information with analytics and technology service providers (such as Google) for the purpose of website analytics and performance measurement, subject to your consent.</li>
+                <li>We use AppointNow and ZocDoc as third-party booking platforms. These services may independently collect information you provide during the booking process, subject to their own privacy policies.</li>
+                <li>We may share your information if required by law or to comply with Nevada state, California state, or federal regulations.</li>
+                <li>No mobile opt-in message consent will be shared with third parties or affiliates for marketing purposes.</li>
+              </ul>
+            </div>
+
+            <div class="lg-art">
+              <h3 class="lg-art__h" id="how-we-protect-your-information"><span class="lg-art__n">6.</span> How We Protect Your Information</h3>
+              <p>Radiant Smiles Dental follows Nevada Revised Statutes (NRS 603A) for the protection of personal information.</p>
+              <ul>
+                <li>We implement administrative, technical, and physical safeguards to secure patient data.</li>
+                <li>Access to personal information is restricted to authorized personnel only.</li>
+                <li>In the event of a security breach, we will notify affected individuals as required under Nevada law.</li>
+                <li>Contact form submissions collected through our website are stored securely and used only for the purpose of responding to your inquiry.</li>
+              </ul>
+            </div>
+
+            <div class="lg-art">
+              <h3 class="lg-art__h" id="your-privacy-rights"><span class="lg-art__n">7.</span> Your Privacy Rights</h3>
+              <p><strong class="rs-strong">Nevada Residents (NRS 597.970):</strong> Nevada residents have the right to:</p>
+              <ul>
+                <li>Know what personal information we collect and how it is used.</li>
+                <li>Opt out of the sale of personal information (we do not sell personal information).</li>
+                <li>Request that we delete your personal information, subject to legal and medical record retention requirements.</li>
+              </ul>
+              <p><strong class="rs-strong">California Residents (CCPA/CPRA and CIPA):</strong> If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA), the California Privacy Rights Act (CPRA), and the California Invasion of Privacy Act (CIPA), including:</p>
+              <ul>
+                <li>The right to know what personal information is collected, used, shared, or sold.</li>
+                <li>The right to delete personal information we have collected from you.</li>
+                <li>The right to opt out of the sale or sharing of your personal information.</li>
+                <li>The right to non-discrimination for exercising your privacy rights.</li>
+                <li>The right to correct inaccurate personal information.</li>
+                <li>The right to limit the use and disclosure of sensitive personal information.</li>
+                <li>Under CIPA, the right to be informed of and consent to electronic tracking and interception of electronic communications.</li>
+              </ul>
+              <p>To exercise any of these rights, please contact us directly using the information in Section 9 below.</p>
+              <p><strong class="rs-strong">Do Not Track:</strong> Some browsers transmit “Do Not Track” signals. Our website does not currently respond to these signals, but you may manage tracking preferences through our Cookie Settings button or by contacting us.</p>
+            </div>
+
+            <div class="lg-art">
+              <h3 class="lg-art__h" id="accessibility-of-this-privacy-policy"><span class="lg-art__n">8.</span> Accessibility of This Privacy Policy</h3>
+              <p>We make this Privacy Policy easily accessible. A link to this policy is available in the footer of every page of our website. Our Cookie Policy is also linked in the footer. If you need this policy in an alternative format for accessibility purposes, please contact us using the information below.</p>
+            </div>
+
+            <!-- OWNER: Section 9 lists an office as "Centennial", and client-rules.json contactData names that same number North Decatur. The number itself matches contactData exactly. Confirm with counsel which label the policy should carry, since a legal document is not relabelled here. -->
+            <div class="lg-art">
+              <h3 class="lg-art__h" id="contact-us"><span class="lg-art__n">9.</span> Contact Us</h3>
+              <p>If you have any questions about this Privacy Policy, wish to exercise your privacy rights, or need to make a privacy-related request, please contact us directly:</p>
+              <p><strong class="rs-strong">Radiant Smiles Dental</strong></p>
+              <ul class="lg-contact">
+                <li><span class="lg-contact__k">Email:</span> <span><a href="mailto:info@radiantsmilesnv.com">info@radiantsmilesnv.com</a></span></li>
+                <li><span class="lg-contact__k">Henderson:</span> <span class="lg-contact__v">(702) 897-7001</span></li>
+                <li><span class="lg-contact__k">Summerlin:</span> <span class="lg-contact__v">(702) 360-4800</span></li>
+                <li><span class="lg-contact__k">North Las Vegas:</span> <span class="lg-contact__v">(702) 509-1967</span></li>
+                <li><span class="lg-contact__k">Sunrise Manor:</span> <span class="lg-contact__v">(702) 452-3552</span></li>
+                <li><span class="lg-contact__k">Lone Mountain:</span> <span class="lg-contact__v">(702) 289-4424</span></li>
+                <li><span class="lg-contact__k">Blue Diamond:</span> <span class="lg-contact__v">(702) 331-0010</span></li>
+                <li><span class="lg-contact__k">Centennial:</span> <span class="lg-contact__v">(702) 522-0119</span></li>
+                <li><span class="lg-contact__k">Website:</span> <span><a href="contact.html">Contact Form</a> <span class="lg-contact__sep">|</span> <a href="locations.html">All Office Locations</a></span></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 8 Manifesto / belief statement | considered: # 41,# 37,# 52 | why: the page still has to end somewhere, and on every other page type that slot is a conversion band. Here it carries one thing: the mailbox a data request goes to, and the sentence stating where that mailbox came from. Entry # 8 is cited for its SHAPE, specifically its left aligned with rule above variant: a short standalone type block, two or three sentences, a rule above it, no card grid, no action. That is exactly a colophon, and it is the only structure in the section vocabulary that ends a page without asking the reader for anything. Entry # 41 Closing CTA is the default for this slot and is rejected outright: a single primary action at the foot of a privacy policy is the marketing shape verify-legal-is-document exists to catch, and the copy carries no offer to put in it. Entry # 37 CTA form is rejected for the same reason plus a worse one: putting a capture form on the page that explains how the practice handles personal data would collect the very data the page is describing. Entry # 52 Map embed plus contact was considered because this block IS a contact, and rejected because its payload is a map embed and a street address, neither of which appears in this copy, and an embedded third party map on a privacy page would load a tracker the policy above says fires only on consent. DELIBERATE DEVIATIONS: the entry's payload is a belief statement and this block carries a stated contact of record instead, because a legal page has no belief to state; and the block is given a bordered panel rather than bare type, so a reader can see at a glance that it is NOT part of the verbatim policy above it. -->
+<section class="rs-sec rs-sec--band rs-sec--close lg-close">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- OWNER: confirm with counsel that info@radiantsmilesnv.com is the correct mailbox for data requests. It is carried as captured, not invented, and no replacement address is asserted here. -->
+        <!-- BUILD NOTE: the copy sets this line as "How to raise a data request:" with a trailing colon, which is a markdown lead in to the contact that follows it. The colon is dropped in the heading only. No word is changed. -->
+        <div class="lg-close__panel">
+
+          <div class="lg-close__head">
+            <span class="lg-rule" aria-hidden="true"></span>
+            <h2 class="lg-close__h">How to raise a data request</h2>
+          </div>
+
+          <p class="lg-close__id"><strong class="rs-strong">Radiant Smiles Dental, Email: <a class="lg-link" href="mailto:info@radiantsmilesnv.com">info@radiantsmilesnv.com</a></strong></p>
+
+          <p class="lg-close__note">This is the contact published in Section 9 of the practice's own privacy policy, captured 30 July 2026. Section 9 also lists the seven office phone numbers, and Section 7 routes rights requests to that same section.</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

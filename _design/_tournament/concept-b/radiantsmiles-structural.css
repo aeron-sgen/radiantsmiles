@@ -1,0 +1,857 @@
+/* ============================================================================
+   radiantsmiles-structural.css
+   (3) FOUNDATION tournament, CONCEPT B: "THE EDITORIAL PRACTICE"
+   ----------------------------------------------------------------------------
+   WHAT THIS SHEET IS. The reusable BODY design language for every page of the
+   radiantsmiles build: section rhythm, container, ruled grid, heading scale,
+   surfaces, image treatments, list/table/quote primitives, controls, focus and
+   motion. It is NOT one page's CSS. The chrome (header / mega / drawer / footer)
+   is LOCKED in radiantsmiles-chrome.css and is deliberately untouched here; this
+   sheet never defines .site-header, .mega, .nav, .site-footer or .btn.
+
+   CASCADE. radiantsmiles-tokens.css -> radiantsmiles-chrome.css -> THIS SHEET.
+   In the tournament specimen the chrome is not linked, so section 0 carries a
+   minimal base that is byte-compatible with the chrome's reset (same body font,
+   same 18px/1.70, same heading family). Re-declaring identical values after the
+   chrome is idempotent; it does not fight the locked sheet.
+
+   THE READ. A confident practice that has been here for years and has something
+   to say. Magazine structure applied to healthcare: a strict typographic scale,
+   ruled columns, asymmetric composition, real hierarchy. The 40+ patient reads
+   it as substance; the younger one reads it as design-led.
+
+   THE SIGNATURE MOVE, AND ITS CONTINUITY WITH THE LOCKED CHROME. A hairline RULE
+   SYSTEM runs through every section: under every eyebrow, between every column,
+   across the stat band, down the office directory. The locked chrome already
+   speaks this language: .hdr-row--nav, .cat-grid, .loc-grid, .ledger and
+   .directory are all 1px var(--ds-line) rows and column rules, and the chrome's
+   own comments call that the "institutional ledger". Concept B takes the ledger
+   OUT of the chrome and makes it the body's structural grammar, so header, body
+   and footer read as one continuous ruled document rather than three sheets that
+   happen to share a palette. That continuity is the whole argument of this
+   concept and it is deliberate, not incidental.
+
+   GEOMETRY. Rectilinear. Small radii only (--ds-r-control 8px). No pills, no
+   circle masks, no blobs. --ds-r-pill is intentionally never referenced.
+
+   GROUND. A deliberate stripe: canvas / bg-surface / canvas / bg-band, with two
+   surface-dark anchors (the quick-facts band and the final CTA). Scrolling has a
+   measured cadence rather than one undifferentiated field.
+
+   ---------------------------------------------------------------------------
+   THE CONTRAST LAW THIS SHEET IS BUILT TO (measured, non-negotiable)
+     #FFD447 --ds-accent on #F7FAFA canvas = 1.36:1 -> DECORATIVE ONLY on light.
+       It never carries text and never grounds text on light. Every accent mark
+       on a light ground carries the token sheet's KEYLINE, box-shadow:
+       var(--ds-accent-keyline), which is 0 0 0 1px #0B3D3A: 8.46:1 against the
+       yellow, 11.48:1 against the canvas. That keyline is what makes it read.
+       On .surface-dark the token sheet sets --ds-accent-keyline:none, because
+       the yellow is 7.19:1 on the worst dark stop and needs no rescue there.
+     TEXT ON AN ACCENT FILL is pinned to --ds-primary-deep (#0B3D3A on #FFD447 =
+       8.46:1) at every use site, EXPLICITLY, so it can never inherit --ds-ink
+       inside .surface-dark (where --ds-ink flips to near-white = 1.24:1 on the
+       yellow, the exact trap the token sheet documents).
+     #128C7E --ds-signature carries NO body text in either direction (3.94:1 on
+       light, 2.47:1 on dark). It is used here ONLY as: hairline accents, icon
+       colour at >=24px, the qlink underline, and inset rules. Never type.
+     #0B3D3A on #128C7E = 2.91:1 -> FORBIDDEN. That pairing appears nowhere.
+     Body pairing: --ds-ink #09302D on --ds-canvas #F7FAFA = 11.48:1.
+     --ds-primary #0D504A is a FILL whose label is pinned to --ds-ink-on-dark
+       (8.21:1 light / 7.23:1 dark). It is never used as a text colour on a dark
+       ground, because on .surface-dark it flips to #0E5952 and would be mud.
+       Phone numbers therefore take --ds-ink-heading, which is primary-deep on
+       light (11.48:1) and near-white on dark (9.05:1 worst stop). Both legal.
+     GLASS: any translucent surface sits over an OPAQUE token base, e.g.
+       background:linear-gradient(var(--ds-glass-bg),var(--ds-glass-bg)),var(--ds-canvas);
+       A bare translucent panel changes contrast with whatever scrolls behind it.
+       That exact defect was caught and fixed at the chrome stage (the mega
+       panel) and is not reintroduced here.
+
+   THE AUDIENCE LAW: 40+ PRIMARY. Presbyopia makes contrast sensitivity, not size
+   alone, the binding constraint. Body 18px minimum at line-height 1.70. Nothing
+   in this sheet is below 14px. Tap targets are 48x48 minimum with real spacing.
+   Phone numbers are first-class UI at 20px. No hairline weights on body copy, no
+   low-opacity grey text, no long all-caps runs (eyebrows are 3 words maximum).
+
+   ---------------------------------------------------------------------------
+   DESIGN-SYSTEM PROVENANCE (what this concept was built FROM, not invented)
+     BLUEPRINT  composition-medical-health.md section 2, the convergent section
+                sequence read from six live medical demos, and section 4, the
+                signature moves. Slot-by-slot citations sit in the specimen.
+     LIBRARIES  _MODERN-WOW-SPEC sections 1 (layered shadow, hairline borders,
+                inset highlight, real figure/ground between sections), 2 (scroll
+                reveal, card hover, image zoom, animated link rule, count-up,
+                all reduced-motion gated), 3 (cohesive brand image grade,
+                gradient wash), 4 (display-scale contrast, oversized numerals,
+                refined measure) and 6 (intentional asymmetry, one element
+                overlapping a section boundary).
+                _MODERN-DESIGN-PATTERN-LIBRARY B3 split hero, E2 oversized
+                negative-tracked display, E3 distinct numeral face, F4 tinted
+                surface bands, G2 asymmetric overlapping columns, G4 service
+                grid, G5 constrained band, H1 image-zoom-in-frame, I1 buttons,
+                I3 stat counters, I5 icon boxes, I6 hairline rows, J10 wash
+                bands. A2 arc dividers and H2/H5 masks are deliberately DECLINED
+                (see section 5 below for the argument).
+     MENUS      TYPOGRAPHY-PAIRINGS.md #52 Roboto Slab + Roboto, the pairing the
+                locked token sheet already carries.
+                SURFACE-PATTERNS.md #3 Modern 8-12px radius (--ds-r-control 8px
+                is the only radius this concept uses), #9 Hairline-outline
+                card chrome, #15 Underline-only-card (the ruled cell), #17
+                Solid-square-precise button, #19 Outline-ghost secondary button,
+                #27 Hairline-full-width section divider, #28 Hairline-with-
+                eyebrow-label (numbered), which IS the section-opener masthead,
+                #33 Sharp-rectangle editorial imagery (softened to 8px, not 0,
+                so a photograph is not the only hard corner on the page), #37
+                Duotone-mask editorial photo treatment.
+                MOTION-PATTERNS.md #3 and #17 Underline-grow, #12 Image-zoom,
+                #13 Outline-emerge card hover, #21 Fade-up, #22 and #29
+                Stagger-grid on-view sequence.
+                SECTION-COMPONENTS.md #3 stat strip, #9 services 3-col, #11
+                service pillars 2-col with image, #18 team grid 3-col, #26
+                pull-quote section. HERO-COMPOSITIONS.md #1 split-text-left.
+
+   TOKEN PURITY. Every colour, radius, shadow, duration and spacing value is a
+   var(--ds-*). Zero hex literals outside these comments. The only local custom
+   properties are the --rs-* TYPE SCALE and rule weights below, which are the
+   editorial system this concept adds; each is composed from tokens where a token
+   exists for the role.
+   UTF-8, no BOM. ASCII only. No em or en dashes anywhere (project-wide ban).
+   ============================================================================ */
+
+/* ==========================================================================
+   0 - BASE. Minimal and chrome-compatible. See the cascade note above.
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--ds-canvas);
+  color:var(--ds-ink);
+  font-family:var(--ds-font-body);
+  font-size:var(--rs-fs-body);
+  line-height:var(--rs-lh-body);
+  overflow-x:clip;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+button{font:inherit;color:inherit;background:none;border:0;}
+p{margin:0;}
+ul,ol{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+  font-family:var(--ds-font-display);
+  color:var(--ds-ink-heading);
+  font-weight:600;
+  line-height:var(--rs-lh-display);
+  letter-spacing:var(--rs-track-display);
+}
+
+/* ==========================================================================
+   1 - THE EDITORIAL SYSTEM. Type scale + rule weights + measures.
+   These are the only local custom properties in the sheet. Colour, radius,
+   shadow, duration and spacing all stay on --ds-* tokens.
+   ========================================================================== */
+:root{
+  /* TYPE SCALE. The concept's engine: a very large display step against a calm
+     18px body, so the CONTRAST between heading and body carries the hierarchy
+     rather than decoration. clamp() so it is fluid from 375 to 1440 with no
+     max-width-only lock. Roboto Slab at 600 is the display face throughout. */
+  --rs-fs-display:clamp(40px,7.4vw,76px);   /* page opener / hero h1 */
+  --rs-fs-h2:clamp(31px,4.4vw,52px);        /* section opener */
+  --rs-fs-h3:clamp(22px,2.2vw,27px);        /* block heading */
+  --rs-fs-h4:20px;                          /* card / row heading */
+  --rs-fs-lede:clamp(20px,1.7vw,23px);      /* standfirst under a display line */
+  --rs-fs-body:18px;                        /* THE FLOOR for running copy */
+  --rs-fs-meta:16px;                        /* captions, credits, secondary rows */
+  --rs-fs-eyebrow:14px;                     /* the absolute floor. 3 words max */
+  --rs-fs-stat:clamp(46px,6vw,78px);        /* quick-facts numerals */
+  --rs-fs-folio:14px;                       /* the running head / seam folio */
+
+  --rs-lh-display:1.06;
+  --rs-lh-h3:1.22;
+  --rs-lh-body:1.70;
+  --rs-track-display:-.02em;
+  --rs-track-eyebrow:.16em;
+  --rs-track-folio:.20em;
+
+  /* RULE WEIGHTS. The signature. One hairline, one emphasis rule, one marker. */
+  --rs-rule:1px;
+  --rs-rule-emph:3px;
+  --rs-mark-w:44px;
+  --rs-mark-h:6px;
+
+  /* MEASURES. Reading measure in rem (never ch: a ch resolves against the
+     element's own font and mis-computes the moment a wrapper owns it). */
+  --rs-measure:34rem;
+  --rs-measure-tight:26rem;
+  --rs-measure-wide:46rem;
+
+  /* SECTION RHYTHM. Tighter than a generous editorial default on purpose: this
+     concept buys its air back through type contrast, not through padding. */
+  --rs-y:var(--ds-space-xl);
+  --rs-y-tight:var(--ds-space-lg);
+
+  /* MOTION. Composed from the motion tokens; no bare durations anywhere. */
+  --rs-reveal-step:var(--ds-dur-fast);
+}
+
+/* ==========================================================================
+   2 - SECTION RHYTHM + THE ALTERNATING GROUND
+   Every section opens on a hairline, so the page reads as one continuous ruled
+   document from the chrome's nav rule to the footer's directory rule.
+   ========================================================================== */
+.rs-section{
+  position:relative;
+  padding-block:var(--rs-y);
+  border-top:var(--rs-rule) solid var(--ds-line);
+}
+.rs-section--tight{padding-block:var(--rs-y-tight);}
+.rs-section--flush{border-top:0;}
+
+/* the deliberate stripe. --ds-canvas is the default ground and is not restated. */
+.rs-section--surface{background:var(--ds-bg-surface);}
+.rs-section--band{background:var(--ds-bg-band);}
+/* .rs-section--dark carries NO background: class="surface-dark" from the token
+   sheet paints the ground gradient and flips every token. Setting a background
+   here would win on cascade order and defeat the flip. */
+.rs-section--dark{border-top-color:var(--ds-line);}
+
+/* ---- the column-rule overlay: the concept's signature, one hairline per
+   sixth of the container, running the full height of the section behind the
+   content. Decorative only, pointer-events none, and it uses --ds-line, which
+   flips to a light-tinted rgba on .surface-dark so it survives the dark ground. */
+.rs-ruled::before{
+  content:"";position:absolute;inset-block:0;left:50%;
+  transform:translateX(-50%);
+  width:min(100% - (2 * var(--ds-space-md)),var(--ds-container-max));
+  pointer-events:none;
+  background-image:repeating-linear-gradient(90deg,
+    var(--ds-line) 0 var(--rs-rule),
+    transparent var(--rs-rule) calc(100% / 6));
+  opacity:var(--ds-opacity-muted);
+}
+/* the ledger grid substrate, borrowed straight from the locked header's
+   .site-header::before so body and chrome share one texture. */
+.rs-gridwash::after{
+  content:"";position:absolute;inset:0;z-index:var(--ds-z-below);
+  pointer-events:none;
+  background-image:var(--ds-grid);
+  background-size:var(--ds-grid-size);
+}
+/* the corner wash the chrome uses on its mega column, reused as a section light */
+.rs-wash::after{
+  content:"";position:absolute;inset:0;z-index:var(--ds-z-below);
+  pointer-events:none;
+  background-image:var(--ds-glow-wash);
+}
+
+/* ==========================================================================
+   3 - CONTAINER + THE RULED ASYMMETRIC GRID
+   Nothing is centred by default. The 7/5 and 5/7 splits are the house
+   composition; the 6/6 split exists only for the directory.
+   ========================================================================== */
+.rs-wrap{
+  position:relative;
+  width:100%;max-width:var(--ds-container-max);
+  margin-inline:auto;
+  padding-inline:var(--ds-space-md);
+}
+.rs-wrap--narrow{max-width:var(--rs-measure-wide);margin-inline:0;}
+
+.rs-cols{display:grid;gap:var(--ds-space-lg);align-items:start;}
+.rs-cols--tight{gap:var(--ds-space-md);}
+.rs-cols--baseline{align-items:baseline;}
+.rs-cols--end{align-items:end;}
+
+/* ---- the ruled cell grid: cells divided by hairlines, not by gaps. This is
+   the editorial answer to a card grid, and it is the same construction the
+   locked chrome uses for .cat-grid and .loc-grid. ---- */
+.rs-ledger{
+  display:grid;gap:0;
+  border-top:var(--rs-rule) solid var(--ds-line);
+}
+.rs-ledger__cell{
+  position:relative;
+  display:flex;flex-direction:column;
+  padding-block:var(--ds-space-md);
+  border-bottom:var(--rs-rule) solid var(--ds-line);
+  box-shadow:inset 0 0 0 0 var(--ds-signature);
+  transition:background-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease);
+}
+/* the hover is the chrome's move exactly: a background wash plus a signature
+   inset rule. No lift, no shadow pop. The document does not bounce. */
+.rs-ledger__cell:hover,
+.rs-ledger__cell:focus-within{
+  background:var(--ds-bg-surface);
+  box-shadow:inset var(--rs-rule-emph) 0 0 0 var(--ds-signature);
+}
+.rs-section--surface .rs-ledger__cell:hover,
+.rs-section--surface .rs-ledger__cell:focus-within{background:var(--ds-canvas);}
+
+/* ==========================================================================
+   4 - SECTION OPENERS. Eyebrow + accent marker + rule, then the display line.
+   This block is the page's masthead grammar and repeats verbatim per section.
+   ========================================================================== */
+.rs-open{margin-bottom:var(--ds-space-lg);}
+.rs-open__top{
+  display:flex;align-items:center;gap:var(--ds-space-sm);
+  padding-bottom:var(--ds-space-xs);
+  border-bottom:var(--rs-rule) solid var(--ds-line);
+}
+/* the accent marker. On light it is 1.36:1 and would be a ghost, so it carries
+   the token sheet's keyline. On .surface-dark the token flips the keyline to
+   none and the bar reads on its own at 7.19:1. One declaration, both surfaces. */
+.rs-mark{
+  flex:none;
+  width:var(--rs-mark-w);height:var(--rs-mark-h);
+  background:var(--ds-accent);
+  border-radius:var(--ds-r-control);
+  box-shadow:var(--ds-accent-keyline);
+}
+.rs-eyebrow{
+  font-size:var(--rs-fs-eyebrow);font-weight:700;line-height:1.4;
+  letter-spacing:var(--rs-track-eyebrow);text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+.rs-open__num{
+  margin-left:auto;
+  font-family:var(--ds-font-mono);
+  font-size:var(--rs-fs-eyebrow);font-weight:500;
+  letter-spacing:var(--rs-track-folio);
+  color:var(--ds-ink-soft);
+  font-variant-numeric:tabular-nums;
+}
+
+.rs-h1{font-size:var(--rs-fs-display);max-width:16em;}
+.rs-h2{font-size:var(--rs-fs-h2);margin-top:var(--ds-space-md);max-width:18em;}
+.rs-h3{font-size:var(--rs-fs-h3);line-height:var(--rs-lh-h3);}
+.rs-h4{font-size:var(--rs-fs-h4);line-height:var(--rs-lh-h3);}
+
+.rs-lede{
+  margin-top:var(--ds-space-md);
+  max-width:var(--rs-measure);
+  font-size:var(--rs-fs-lede);line-height:1.62;
+  color:var(--ds-ink);
+}
+.rs-body{
+  margin-top:var(--ds-space-sm);
+  max-width:var(--rs-measure);
+  font-size:var(--rs-fs-body);line-height:var(--rs-lh-body);
+  color:var(--ds-ink);
+}
+.rs-body--soft{color:var(--ds-ink-soft);}
+.rs-body--tight{max-width:var(--rs-measure-tight);}
+.rs-meta{
+  font-size:var(--rs-fs-meta);line-height:1.55;
+  color:var(--ds-ink-soft);
+}
+.rs-meta strong{color:var(--ds-ink);font-weight:700;}
+
+/* the source line. Every number on this site carries its receipt, per the
+   content bible, so the citation is a first-class primitive and not fine print.
+   16px, never smaller, and it takes ink-soft (8.60:1) rather than a grey. */
+.rs-cite{
+  margin-top:var(--ds-space-xs);
+  font-family:var(--ds-font-mono);
+  font-size:var(--rs-fs-meta);line-height:1.5;
+  color:var(--ds-ink-soft);
+}
+
+/* ==========================================================================
+   5 - THE SEAM. This concept's answer to the medical A2 "circle up" arc.
+   ----------------------------------------------------------------------------
+   THE BLUEPRINT ASKS FOR AN ARC, AND THIS CONCEPT DELIBERATELY ARGUES OTHERWISE.
+   composition-medical-health.md section 4 names the A2 arc divider and H2/H5
+   circle-masked hero imagery as the vertical's signature seam. Concept B is a
+   rectilinear, ruled, typographic system: an organic arc dropped into it would
+   read as a borrowed gesture, and a circle-masked hero photograph would fight
+   every other edge on the page. The seam here is instead a RULED FOLIO: a full
+   hairline across the container carrying a running head, exactly the way a
+   magazine closes a spread. It does the arc's job (it stops the hero butting
+   flat into the next band) in this concept's own vocabulary, and it extends the
+   chrome's ledger rule rather than interrupting it. The hero plate keeps a
+   --ds-r-control radius, so it is not a hard rectangle either.
+   The A2 arc is available to any sibling concept; it is not available to this
+   one without breaking its geometry.
+   ========================================================================== */
+.rs-seam{
+  display:flex;flex-wrap:wrap;align-items:center;
+  gap:var(--ds-space-xs) var(--ds-space-lg);
+  margin-top:var(--ds-space-lg);
+  padding-top:var(--ds-space-sm);
+  border-top:var(--rs-rule) solid var(--ds-line-control);
+}
+.rs-seam__item{
+  font-family:var(--ds-font-mono);
+  font-size:var(--rs-fs-folio);font-weight:500;
+  letter-spacing:var(--rs-track-folio);text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+
+/* ==========================================================================
+   6 - SURFACES. Two only: the ruled cell (section 3) and the panel.
+   Cards STEP DOWN into --ds-bg-surface rather than floating up in white, per
+   the token sheet's derivation note.
+   ========================================================================== */
+.rs-panel{
+  padding:var(--ds-space-md);
+  background:var(--ds-bg-surface);
+  border:var(--rs-rule) solid var(--ds-line);
+  border-radius:var(--ds-r-control);
+  box-shadow:var(--ds-shadow-rest),var(--ds-inset-hi);
+}
+.rs-panel--accent{
+  border-left:var(--rs-rule-emph) solid var(--ds-accent);
+  background:var(--ds-accent-soft);
+}
+.rs-panel--keyed{border:var(--rs-rule) solid var(--ds-line-control);}
+
+/* GLASS, over an OPAQUE token base. A bare translucent panel changes contrast
+   with whatever scrolls behind it; that defect was caught and fixed in the
+   chrome's mega panel and is not reintroduced. The gradient stacks the glass
+   tint over --ds-canvas, which flips to the dark ground on .surface-dark. */
+.rs-glass{
+  padding:var(--ds-space-md);
+  background:linear-gradient(var(--ds-glass-bg),var(--ds-glass-bg)),var(--ds-canvas);
+  backdrop-filter:var(--ds-glass-blur);
+  -webkit-backdrop-filter:var(--ds-glass-blur);
+  border:var(--rs-rule) solid var(--ds-glass-border);
+  border-radius:var(--ds-r-control);
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+
+/* ==========================================================================
+   7 - IMAGE TREATMENT. Rectilinear plates with a --ds-r-control radius and a
+   brand grade, so a raw JPEG of a reception desk reads as this brand's picture.
+   ========================================================================== */
+.rs-plate{
+  position:relative;overflow:hidden;
+  border-radius:var(--ds-r-control);
+  background:var(--ds-bg-surface);
+  box-shadow:var(--ds-shadow-card);
+}
+.rs-plate img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.34) contrast(1.05) brightness(1.04) saturate(.92);
+  transform:scale(1.001);
+  transition:transform var(--ds-dur-slow) var(--ds-ease-out),
+             filter var(--ds-dur-slow) var(--ds-ease-out);
+}
+.rs-plate:hover img{transform:scale(1.035);filter:grayscale(.14) contrast(1.05) brightness(1.05) saturate(1);}
+
+/* the keyline frame, lifted verbatim from the locked chrome's .feat__frame so a
+   featured body image and a featured chrome image are the same object: a 2px
+   yellow ring that reads only because a 1px deep-teal ring sits outside it. */
+.rs-plate--keyed{
+  box-shadow:0 0 0 2px var(--ds-accent),
+             0 0 0 3px var(--ds-primary-deep),
+             var(--ds-shadow-card);
+}
+.rs-plate--tall{aspect-ratio:4 / 5;}
+.rs-plate--wide{aspect-ratio:16 / 10;}
+.rs-plate--portrait{aspect-ratio:3 / 4;}
+
+/* THE GRADE. A brand grade, not a dimmer: multiply the deep teal in, lift the
+   mids back with a screened signature, hold a scrim on the lower third so a
+   bright reception photograph still reads as a room. Same three layers the
+   chrome uses, same strengths. */
+.rs-grade{position:absolute;inset:0;pointer-events:none;}
+.rs-grade--multiply{background:var(--ds-primary-deep);mix-blend-mode:multiply;opacity:.30;}
+.rs-grade--screen{background:var(--ds-signature);mix-blend-mode:screen;opacity:.12;}
+.rs-grade--scrim{background:linear-gradient(to top,var(--ds-scrim),transparent 52%);}
+
+/* the caption sits ON the rule under the plate, magazine style */
+.rs-caption{
+  margin-top:var(--ds-space-xs);
+  padding-top:var(--ds-space-2xs);
+  border-top:var(--rs-rule) solid var(--ds-line);
+  font-size:var(--rs-fs-meta);line-height:1.5;
+  color:var(--ds-ink-soft);
+}
+
+/* ==========================================================================
+   8 - PRIMITIVES: ruled lists, ledger rows, the hanging pull-quote, data rows.
+   ========================================================================== */
+
+/* ---- ruled list. Rows divided by hairlines with a signature tick. ---- */
+.rs-list{border-top:var(--rs-rule) solid var(--ds-line);}
+.rs-list__item{
+  display:flex;align-items:flex-start;gap:var(--ds-space-sm);
+  padding-block:var(--ds-space-sm);
+  border-bottom:var(--rs-rule) solid var(--ds-line);
+  font-size:var(--rs-fs-body);line-height:var(--rs-lh-body);
+}
+.rs-list__tick{flex:none;margin-top:6px;color:var(--ds-signature);}
+
+/* ---- the ledger row: label left, value right, hairline between. This is the
+   I6 hairline-row primitive, and it is what renders hours, offices and the
+   itemised offer. Every row is at least 48px tall so a phone number inside one
+   is a real target. ---- */
+.rs-rows{border-top:var(--rs-rule) solid var(--ds-line);}
+.rs-row{
+  display:flex;flex-wrap:wrap;align-items:baseline;
+  justify-content:space-between;gap:var(--ds-space-xs) var(--ds-space-md);
+  min-height:48px;padding-block:var(--ds-space-xs);
+  border-bottom:var(--rs-rule) solid var(--ds-line);
+  transition:background-color var(--ds-dur) var(--ds-ease);
+}
+.rs-row:hover{background:var(--ds-bg-surface);}
+.rs-section--surface .rs-row:hover{background:var(--ds-canvas);}
+.rs-row__label{font-size:var(--rs-fs-body);font-weight:700;color:var(--ds-ink-heading);}
+.rs-row__value{
+  font-size:var(--rs-fs-body);color:var(--ds-ink);
+  font-variant-numeric:tabular-nums;
+}
+.rs-row__value--soft{color:var(--ds-ink-soft);}
+.rs-row--head{
+  border-bottom-color:var(--ds-line-control);
+}
+.rs-row--head .rs-row__label,
+.rs-row--head .rs-row__value{
+  font-family:var(--ds-font-mono);
+  font-size:var(--rs-fs-eyebrow);font-weight:500;
+  letter-spacing:var(--rs-track-folio);text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+
+/* ---- the directory row: three columns, the footer ledger's construction
+   reused for the body's appointment band. ---- */
+.rs-dir{border-top:var(--rs-rule) solid var(--ds-line);}
+.rs-dir__row{
+  display:grid;gap:var(--ds-space-2xs) var(--ds-space-md);
+  padding-block:var(--ds-space-sm);
+  border-bottom:var(--rs-rule) solid var(--ds-line);
+  box-shadow:inset 0 0 0 0 var(--ds-signature);
+  transition:background-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease);
+}
+.rs-dir__row:hover,
+.rs-dir__row:focus-within{
+  background:var(--ds-bg-surface);
+  box-shadow:inset var(--rs-rule-emph) 0 0 0 var(--ds-signature);
+}
+.rs-section--surface .rs-dir__row:hover,
+.rs-section--surface .rs-dir__row:focus-within{background:var(--ds-canvas);}
+.rs-dir__office{
+  display:flex;align-items:center;min-height:48px;
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--rs-fs-h4);line-height:var(--rs-lh-h3);
+  color:var(--ds-ink-heading);text-decoration:none;
+}
+.rs-dir__office:hover{text-decoration:underline;text-underline-offset:4px;}
+.rs-dir__where{font-size:var(--rs-fs-meta);line-height:1.5;color:var(--ds-ink-soft);}
+
+/* ---- the hanging pull-quote. At >=1180 it hangs into the left margin, which is
+   the magazine move the concept is named for. Below that it stays in the
+   column, so the layout never strands. ---- */
+.rs-pull{
+  margin-block:var(--ds-space-lg);
+  padding-left:var(--ds-space-md);
+  border-left:var(--rs-rule-emph) solid var(--ds-signature);
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--rs-fs-h3);line-height:1.32;
+  letter-spacing:var(--rs-track-display);
+  color:var(--ds-ink-heading);
+  max-width:var(--rs-measure);
+}
+.rs-pull__cite{
+  display:block;margin-top:var(--ds-space-xs);
+  font-family:var(--ds-font-mono);font-weight:500;
+  font-size:var(--rs-fs-meta);letter-spacing:normal;
+  color:var(--ds-ink-soft);
+}
+
+/* ---- quick-facts band. Numerals in the display face, tabular, with vertical
+   hairlines between cells: the rule system crossing the widest band on the
+   page. ---- */
+.rs-stats{
+  display:grid;gap:0;
+  border-top:var(--rs-rule) solid var(--ds-line);
+  border-bottom:var(--rs-rule) solid var(--ds-line);
+}
+.rs-stat{
+  padding-block:var(--ds-space-md);
+  border-bottom:var(--rs-rule) solid var(--ds-line);
+}
+.rs-stat:last-child{border-bottom:0;}
+.rs-stat__fig{
+  display:block;
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--rs-fs-stat);line-height:1;
+  letter-spacing:var(--rs-track-display);
+  color:var(--ds-ink-heading);
+  font-variant-numeric:tabular-nums;
+}
+/* on the dark anchor the figure takes the accent, which is a genuine FOREGROUND
+   there at 7.19:1 on the worst stop. It is never given this role on light. */
+.surface-dark .rs-stat__fig{color:var(--ds-accent);}
+.rs-stat__label{
+  display:block;margin-top:var(--ds-space-xs);
+  font-size:var(--rs-fs-body);line-height:1.5;
+  color:var(--ds-ink);
+}
+.rs-stat__sub{
+  display:block;margin-top:var(--ds-space-2xs);
+  font-size:var(--rs-fs-meta);line-height:1.5;
+  color:var(--ds-ink-soft);
+}
+
+/* ---- the price figure. Same numeral treatment as a stat, smaller step. ---- */
+.rs-price{
+  font-family:var(--ds-font-display);font-weight:600;
+  font-size:var(--rs-fs-h2);line-height:1;
+  letter-spacing:var(--rs-track-display);
+  color:var(--ds-ink-heading);
+  font-variant-numeric:tabular-nums;
+}
+
+/* ---- the flag. Anything awaiting an owner receipt is VISIBLE, not hidden.
+   The content bible makes an unsourced number a shipping defect, so the design
+   has to have somewhere honest to put "we do not have this yet". ---- */
+.rs-flag{
+  display:flex;gap:var(--ds-space-sm);align-items:flex-start;
+  padding:var(--ds-space-sm) var(--ds-space-md);
+  border:var(--rs-rule) solid var(--ds-line-control);
+  border-left:var(--rs-rule-emph) solid var(--ds-accent);
+  border-radius:var(--ds-r-control);
+  background:var(--ds-accent-soft);
+  font-size:var(--rs-fs-body);line-height:var(--rs-lh-body);
+  /* pinned: on .surface-dark --ds-ink flips near-white and --ds-accent-soft is a
+     10% yellow wash over the dark ground, which carries ink-on-dark at 7.37:1.
+     On light the wash is #F9F2D3 and carries --ds-ink at 10.9:1. Inheriting is
+     correct on BOTH surfaces here, so this one is deliberately not pinned to a
+     single value; the token flip does the work. */
+  color:var(--ds-ink);
+}
+.rs-flag svg{flex:none;margin-top:4px;color:var(--ds-signature);}
+
+/* ==========================================================================
+   9 - CONTROLS. Small radius, never pills. 52px tall, 18px labels.
+   ========================================================================== */
+.rs-acts{display:flex;flex-wrap:wrap;gap:var(--ds-space-sm);margin-top:var(--ds-space-md);}
+.rs-act{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding-inline:var(--ds-space-md);
+  font-size:var(--rs-fs-body);font-weight:700;line-height:1.3;
+  text-decoration:none;
+  border:var(--rs-rule) solid transparent;
+  border-radius:var(--ds-r-control);
+  background-color:var(--ds-bg-surface);
+  background-clip:padding-box;
+  cursor:pointer;
+  transition:background-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease);
+}
+/* THE ONLY LEGAL ACCENT PAIRING. The label is PINNED to --ds-primary-deep so it
+   can never inherit --ds-ink inside .surface-dark, where --ds-ink is near-white
+   and would land at 1.24:1 on the yellow. 8.46:1 both surfaces. */
+.rs-act--accent{
+  background-color:var(--ds-accent);
+  color:var(--ds-primary-deep);
+  border-color:var(--ds-primary-deep);
+  box-shadow:var(--ds-shadow-rest);
+}
+.rs-act--accent:hover{box-shadow:var(--ds-shadow-card);}
+/* the solid fill carries --ds-ink-on-dark at 8.21:1 light / 7.23:1 dark. On dark
+   the fill-to-ground separation is only 1.25:1 by geometry, so it takes its edge
+   from --ds-line-control rather than from its own ground. */
+.rs-act--solid{
+  background-color:var(--ds-primary);
+  color:var(--ds-ink-on-dark);
+  border-color:var(--ds-primary);
+  box-shadow:var(--ds-shadow-rest);
+}
+.surface-dark .rs-act--solid{border-color:var(--ds-line-control);}
+.rs-act--solid:hover{box-shadow:var(--ds-shadow-card);}
+.rs-act--ghost{
+  background-color:transparent;
+  color:var(--ds-ink-heading);
+  border-color:var(--ds-line-control);
+}
+.rs-act--ghost:hover{background-color:var(--ds-bg-surface);}
+.surface-dark .rs-act--ghost:hover{background-color:var(--ds-bg-surface);}
+.rs-act--wide{width:100%;}
+
+/* quiet text link with the chrome's animated rule, so a body link and a chrome
+   link behave identically. The rule is --ds-signature, which is graphics-only. */
+.rs-link{
+  position:relative;display:inline-block;
+  min-height:48px;padding-top:12px;padding-bottom:8px;
+  font-size:var(--rs-fs-body);font-weight:700;
+  text-decoration:none;color:var(--ds-ink-heading);
+}
+.rs-link::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:var(--ds-signature);
+  transform:scaleX(.26);transform-origin:left center;
+  transition:transform var(--ds-dur) var(--ds-ease-out);
+}
+.rs-link:hover::after,.rs-link:focus-visible::after{transform:scaleX(1);}
+
+/* the phone number. First-class UI: 20px, tabular, a real 48px target, and
+   --ds-ink-heading so it is primary-deep on light (11.48:1) and near-white on
+   dark (9.05:1). It is deliberately NOT --ds-primary, which is a fill role and
+   flips to #0E5952 on dark. */
+.rs-tel{
+  display:inline-flex;align-items:center;gap:10px;
+  min-height:48px;
+  font-size:20px;font-weight:500;
+  text-decoration:none;color:var(--ds-ink-heading);
+  font-variant-numeric:tabular-nums;
+}
+.rs-tel:hover{text-decoration:underline;text-underline-offset:4px;}
+.rs-tel svg{flex:none;color:var(--ds-signature);}
+
+/* ---- focus. Identical to the chrome's, so focus behaves the same everywhere:
+   a solid control-weight ring plus the token halo, which survives both grounds
+   (--ds-glow flips from a teal halo on light to a near-white one on dark). ---- */
+:focus-visible{
+  outline:2px solid var(--ds-line-control);
+  outline-offset:3px;
+  box-shadow:var(--ds-glow);
+  border-radius:var(--ds-r-control);
+}
+
+/* ==========================================================================
+   10 - MOTION. Restrained: the page is a document, not a slideshow.
+   The reveal is opt-in via a .rs-js class that the runtime adds to <html>, so
+   with JavaScript off nothing is ever left invisible.
+   ========================================================================== */
+.rs-js .rs-rise{
+  opacity:0;transform:translateY(14px);
+  transition:opacity var(--ds-dur-slow) var(--ds-ease-out),
+             transform var(--ds-dur-slow) var(--ds-ease-out);
+}
+.rs-js .rs-rise.is-in{opacity:1;transform:translateY(0);}
+/* stagger index, set inline on the element; the attribute guard makes the
+   dependency explicit and keeps the value a runtime concern. */
+.rs-js .rs-rise[style*="--rs-i"]{transition-delay:calc(var(--rs-i) * var(--rs-reveal-step));}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:1ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:1ms !important;
+    transition-delay:0ms !important;
+    scroll-behavior:auto !important;
+  }
+  .rs-js .rs-rise{opacity:1 !important;transform:none !important;}
+  .rs-plate img,.rs-plate:hover img{transform:none !important;}
+  .rs-link::after{transform:scaleX(1) !important;}
+}
+
+/* ==========================================================================
+   11 - RESPONSIVE. Mobile-first. Every rule below is a min-width UPGRADE, so
+   the small layout is the base and no breakpoint can strand the desktop.
+   ========================================================================== */
+/* TWO UP. Both the 2-cell and the 3-cell ledger pass through this step, so a
+   six-cell service grid reads 1 up / 2 up / 3 up as the viewport grows. Every
+   edge rule below is written with a matched-specificity nth-child selector, so
+   the 900px step can re-cut the same edges rather than fighting them. */
+@media (min-width:600px){
+  .rs-ledger--2,.rs-ledger--3{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .rs-ledger--2 .rs-ledger__cell:nth-child(2n+1),
+  .rs-ledger--3 .rs-ledger__cell:nth-child(2n+1){padding-right:var(--ds-space-md);}
+  .rs-ledger--2 .rs-ledger__cell:nth-child(2n),
+  .rs-ledger--3 .rs-ledger__cell:nth-child(2n){
+    padding-left:var(--ds-space-md);
+    border-left:var(--rs-rule) solid var(--ds-line);
+  }
+
+  .rs-stats--2,.rs-stats--4{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .rs-stats--2 .rs-stat:nth-child(2n+1),
+  .rs-stats--4 .rs-stat:nth-child(2n+1){padding-right:var(--ds-space-md);}
+  .rs-stats--2 .rs-stat:nth-child(2n),
+  .rs-stats--4 .rs-stat:nth-child(2n){
+    padding-left:var(--ds-space-md);
+    border-left:var(--rs-rule) solid var(--ds-line);
+  }
+  .rs-stats--2 .rs-stat:nth-last-child(-n+2),
+  .rs-stats--4 .rs-stat:nth-last-child(-n+2){border-bottom:0;}
+}
+
+@media (min-width:900px){
+  :root{
+    --rs-y:var(--ds-space-2xl);
+    --rs-y-tight:var(--ds-space-xl);
+  }
+  .rs-cols--7-5{grid-template-columns:minmax(0,7fr) minmax(0,5fr);}
+  .rs-cols--5-7{grid-template-columns:minmax(0,5fr) minmax(0,7fr);}
+  .rs-cols--8-4{grid-template-columns:minmax(0,8fr) minmax(0,4fr);}
+  .rs-cols--4-8{grid-template-columns:minmax(0,4fr) minmax(0,8fr);}
+  .rs-cols--2{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .rs-cols--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+
+  /* the ruled column gutters: a hairline in the gap, not a gap alone */
+  .rs-cols--ruled{gap:var(--ds-space-xl);}
+  .rs-cols--ruled > * + *{
+    padding-left:var(--ds-space-xl);
+    margin-left:calc(-1 * var(--ds-space-xl) / 2);
+    border-left:var(--rs-rule) solid var(--ds-line);
+  }
+
+  /* THREE UP. The two-up edge rules above are re-cut here at the SAME
+     specificity, in source order, so nothing is left over from the 600 step. */
+  .rs-ledger--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .rs-ledger--3 .rs-ledger__cell:nth-child(2n+1),
+  .rs-ledger--3 .rs-ledger__cell:nth-child(2n){
+    padding-inline:var(--ds-space-md);
+    border-left:0;
+  }
+  .rs-ledger--3 .rs-ledger__cell:nth-child(3n+1){padding-left:0;}
+  .rs-ledger--3 .rs-ledger__cell:nth-child(3n){padding-right:0;}
+  .rs-ledger--3 .rs-ledger__cell:not(:nth-child(3n+1)){
+    border-left:var(--rs-rule) solid var(--ds-line);
+  }
+
+  .rs-stats--4{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .rs-stats--4 .rs-stat:nth-child(2n+1),
+  .rs-stats--4 .rs-stat:nth-child(2n){
+    padding-inline:var(--ds-space-md);
+    border-left:0;border-bottom:0;
+  }
+  .rs-stats--4 .rs-stat:first-child{padding-left:0;}
+  .rs-stats--4 .rs-stat:last-child{padding-right:0;}
+  .rs-stats--4 .rs-stat:not(:first-child){border-left:var(--rs-rule) solid var(--ds-line);}
+
+  .rs-dir__row{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto;align-items:center;}
+
+  /* the composition move: an image breaking its column edge. G2 asymmetric
+     overlapping columns, held to a single edge so it reads deliberate. */
+  /* The bleed is only legal where the page gutter can ABSORB it. --ds-space-xl is 64px, and
+     below roughly 1200px the gutter is narrower than that, so the plate pushed the document
+     40px wide at 900 and 1100 (measured: scrollWidth 940 vs 900, 1140 vs 1100). Gate the
+     negative margin on the width where the gutter exists; below it the plate sits flush,
+     which is the correct editorial behaviour anyway since there is no margin to bleed into. */
+  .rs-plate--bleed-e{margin-right:0;}
+  @media (min-width:1200px){
+    .rs-plate--bleed-e{margin-right:calc(-1 * var(--ds-space-xl));}
+  }
+  .rs-plate--bleed-w{margin-left:calc(-1 * var(--ds-space-xl));}
+  .rs-plate--drop{margin-top:var(--ds-space-xl);}
+  .rs-plate--rise{margin-top:calc(-1 * var(--ds-space-xl));}
+
+  .rs-wrap--narrow{padding-left:0;}
+}
+
+@media (min-width:1180px){
+  /* the pull-quote hangs into the margin. Only at the widest step, where there
+     is a margin to hang into. */
+  .rs-pull--hang{margin-left:calc(-1 * var(--ds-space-xl));}
+  .rs-h1{max-width:14em;}
+}
+
+/* ---- OWNER-LOCKED DOM GRAMMAR PRIMITIVES ----------------------------------
+   The locked body grammar is  section > .container > .row > .col > OBJECT
+   (verify-dom-structure.mjs). This sheet was authored around its own wrap
+   container, so that wrap carries the .container ROLE and these three are
+   LAYOUT-ONLY pass-throughs, exactly as the gate defines them: structure
+   classes carry layout only, the component skin lives on the OBJECT inside
+   the .col. Declared here so every page built from this foundation inherits
+   them. Deliberately inert: no colour, no type, no spacing, so inserting them
+   cannot disturb this sheet's ruled column rhythm. */
+.container{width:100%;}
+.row{display:block;}
+.col{display:block;min-width:0;}

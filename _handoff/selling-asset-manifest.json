@@ -1,0 +1,237 @@
+{
+  "schema": "selling-asset-manifest/v1",
+  "slug": "radiantsmiles",
+  "generated_at": "2026-07-30",
+  "intake_provided_proof": true,
+  "sources_provided": [
+    "assets"
+  ],
+  "gate_rules": {
+    "proof_pages": [
+      "index",
+      "about",
+      "about/reviews",
+      "about/team",
+      "about/smile-gallery",
+      "locations",
+      "new-patients/offer",
+      "new-patients/insurance-financing"
+    ],
+    "required_one_of_proof": [
+      "clinician_portraits",
+      "credentials",
+      "review_record"
+    ],
+    "_why_these_pages": "The eight surfaces where this brand's real proof has to appear: the homepage, the About and team pages (10 named clinicians with dated credentials — wedge M§1.2), the reviews page (the 506-review Birdeye record), the smile gallery (the one absent category that matters), the locations hub (the seven-office footprint — wedge M§1.6), and the two money pages the paid traffic lands on.",
+    "_KNOWN_LIMITATION_needs_owner_decision": "These rules are recorded for correctness, but they CANNOT currently be satisfied. verify-selling-assets-surfaced.mjs (client-site-build/scripts) implements required_one_of_proof as a hard-coded if/else over exactly three MediMarketing keys — solv_scans, results_dashboards, fcp_proof. Any other category name falls through every branch without pushing to proofHits, so the check errors with 'no hard proof category surfaced' no matter what a dental brand configures. Setting the list to [] does not help either: [] is truthy, so the default is not substituted, the loop simply does not run, and the same error fires. The only configuration that avoids a false block is proof_pages:[] — i.e. disabling the gate for this brand — which was NOT done here, because silently disabling a proof gate is worse than a visible, escalated block.",
+    "_current_blast_radius": "NONE TODAY. verify-selling-assets-surfaced.mjs is a DEAD gate: it is registered in no settings.json anywhere under .claude (re-verified 2026-07-31, zero matches; independently recorded in memory-template/seed-notes/feedback_selling_asset_gates.md as of 2026-06-22, and listed as DEAD in Code/client-website-builder/_design/_BUILD-FLOW-REORDER.md:75). It never fires, so neither this limitation nor the findManifest defect below can block the radiantsmiles build. Both become live the moment the gate is re-wired.",
+    "_findManifest_reads_the_PREP_tree": "Second defect in the same script. findManifest() walks up from the page for <dir>/_spec/selling-asset-manifest.json, then falls back to mapping client-sites/<brand>/ onto client-site-prep/<brand>/_spec/. Neither branch looks in _handoff/. So a re-wired gate would validate against the UNSEALED prep copy of C9 rather than the checksummed handoff copy — and doing so would itself violate HANDOFF-PREP-TO-BUILD.md §6 (PATH-EXCLUSION, decision D-B: the build reads binding inputs only from its own _handoff/, the single permitted exception being verify-handoff-current hashing four decision files). Mitigation in force meanwhile: the prep and _handoff copies of this file are kept byte-identical, so the wrong-source read is currently harmless.",
+    "_owner_decision_required": "Patch verify-selling-assets-surfaced.mjs to (a) honour brand-defined proof categories in required_one_of_proof instead of the three hard-coded MediMarketing keys, and (b) resolve the manifest from _handoff/ first, per §6. Both are edits to a SHARED skill asset used by every client including medimarketing, so they are not being made unilaterally (.claude/rules/04-code-modification.md). Same bucket as the gen-fact-registry.mjs must_convey guard."
+  },
+  "_sources_note": "No owner selling kit was delivered — _inbox/ holds ONLY the owner intake brief (radiantsmiles-intake.md), verified 2026-07-31: no deck, no flyers, no transcripts, no scan files. The proof material catalogued here was RECOVERED from the client's own live site during the P0.0 crawl: 372 files downloaded to Code/client-site-prep/radiantsmiles/assets/, of which 372 are REAL IMAGES (303 JPEG + 66 PNG + 3 WEBP) after the 2026-07-31 re-fetch repair — magic-byte census re-run 2026-07-31, zero dead files. Every 'present' row below points at a real file on disk or a first-party-fetched third-party record with a URL and date. Corrected 2026-07-31: this note previously read '_inbox/ is empty' (it is not — it holds the intake brief; the parenthetical was doing the real work) and '372 FILES downloaded (190 real images + 182 dead Cloudflare challenge pages — see totals._CORRECTED_2026_07_31)'. The 190/182 split was TRUE when written that morning and is now SUPERSEDED by the repair; the history of that defect is preserved verbatim in totals._CORRECTED_2026_07_31.",
+  "proof_categories": {
+    "brand_marks": {
+      "status": "present",
+      "count": 3,
+      "assets": [
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_03_radiant-smiles-logo-lv.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_03_radiant-smiles-logo-white.png",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-logo-mark.webp"
+      ],
+      "caveat": "No vector master exists anywhere on the site. The primary lockup is a 472px JPG with no transparency, upscaled in the live header. ⚠OWNER §G-7.",
+      "used_by": [
+        "every page — header and footer lockup"
+      ]
+    },
+    "clinician_portraits": {
+      "status": "present",
+      "count": 12,
+      "_CORRECTION_2026_08_03_FABRICATED_ABSENCE_REVERSED": "status was present_caveat, count 9, count_clinicians_covered 7, and MISSING_clinicians named Quizon / Andrade / Schaudt. ALL OF THAT WAS FALSE and is reversed here. Coverage is 10 of 10. The three 'missing' portraits were on disk the whole time: IMG_9391-1-2.jpg (1130x1177), IMG_4337.jpg (827x1191) and IMG_1387-1-scaled.jpg (2560x2438) — all three magic-byte verified as JPEG on 2026-08-03, all three md5-distinct from each other and from every other file in the 372-file pool (no duplicate group). THE DEFECT WAS THE INSTRUMENT, NOT THE DATA: the absence was asserted on a case-insensitive FILENAME search of assets/ for 'quizon', 'andrade', 'schaudt'. This practice stores its newer portraits under camera-generated names, so that search was structurally incapable of returning a hit and its null result carried no information whatsoever. It was recorded as evidence of absence anyway. The correct pairing was recovered from STRUCTURE and confirmed by TWO independent sources: (1) site-snapshot/meet-the-doctors.html, where each Elementor image-box binds exactly one figure image to one title inside a single elementor-image-box-wrapper — a rule that reproduces all seven independently-known pairs exactly (Ruiz, Miranda, Dang-Roberts, Torres, Subramani, Lavado, Landaverde, whose files already carry their own names), which is what licenses trusting it on the three camera-named ones; and (2) each clinician's own dedicated snapshot page, which carries the same image stem as their roster card. GENERAL LESSON, and it is the fourth instance on this spec: a search that cannot express the thing being searched for produces a null result that is not evidence. Absence must be established by an instrument capable of detecting presence.",
+      "_count_semantics": "count = distinct portrait FILES on disk (12, was 9 before the 2026-08-03 reversal above). It is NOT the number of clinicians covered. *Corrected 2026-07-31: this sentence read 'count = distinct portrait FILES on disk (9), matching the file-count meaning of `count` used by every other category in this manifest.' The trailing clause was FALSE and is struck. `count` does NOT mean files in every other category — this same file falsifies it three times over: credentials is count:10 with an EMPTY assets[] (10 people, zero files), location_data is count:7 with a single client-rules.json pointer (7 offices, zero image files), and carrier_marks is count:41 with one descriptive string (41 carriers named, no path enumerated). The real per-category semantics are now stated in totals._count_semantics_manifest_wide; this note should never have generalised beyond its own category.* Clinicians covered = 7 of 10 (see count_clinicians_covered / covers_clinicians). The two numbers differ because Dr. Subramani and Dr. Torres each have TWO distinct portrait files — different crops of the same sitting, not thumbnail derivatives, measured 2026-07-31: Subramani -photo-sm.jpg is 1221x1346 and -photo-1.jpg is 1221x1583 (same width, taller frame); Torres -sm.jpg is 1170x1093 and -e1716864176440.jpeg is 1168x942 (near-identical width, shorter frame). Note the '-sm' suffix does NOT reliably mean 'smaller': it is the taller frame for Torres and the shorter one for Subramani, so neither file can be assumed to be 'the original' — the build should pick per page on visual fit, not on filename. So 12 files map onto 10 people: the 9 originals covering 7 clinicians (2 of whom have two files each), plus one file each for Quizon, Andrade and Schaudt restored on 2026-08-03.",
+      "count_portrait_files_distinct": 12,
+      "count_clinicians_covered": 10,
+      "count_clinicians_total": 10,
+      "assets": [
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Adrian-Ruiz.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Norma-Miranda.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Vivi-Dang-Roberts.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_05_Dr.-Karthikeyan-Subramani-photo-sm.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_05_Dr.-Karthikeyan-Subramani-photo-1.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_05_dr-max-torres-sm.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_05_dr-max-torres-e1716864176440.jpeg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2025_01_Dr.-Omar-Lavado-1.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2025_11_Dr-Andy-Landaverde1.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2026_05_IMG_9391-1-2.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2026_07_IMG_4337.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2026_05_IMG_1387-1-scaled.jpg"
+      ],
+      "_assets_pairing_2026_08_03": {
+        "dr-victoria-quizon": "assets/radiantsmilesnv.com_wp-content_uploads_2026_05_IMG_9391-1-2.jpg",
+        "dr-stephanie-andrade": "assets/radiantsmilesnv.com_wp-content_uploads_2026_07_IMG_4337.jpg",
+        "dr-chris-schaudt": "assets/radiantsmilesnv.com_wp-content_uploads_2026_05_IMG_1387-1-scaled.jpg",
+        "_method": "Elementor image-box wrapper binding in site-snapshot/meet-the-doctors.html, cross-confirmed against each clinician's own dedicated snapshot page. The other seven clinicians' files carry their own names and were used to validate the rule before it was trusted here."
+      },
+      "caveat": "NONE — status is 'present'. Coverage is 10 of 10 clinicians over 12 md5-distinct portrait files, every one magic-byte verified as a real JPEG (the 9 originals on 2026-07-31 at 10,010 / 10,372 / 13,962 / 244,220 / 203,777 / 108,001 / 67,562 / 123,827 / 163,426 bytes in listed order; the 3 restored on 2026-08-03 at 1130x1177, 827x1191 and 2560x2438). No clinician page ships a placeholder portrait and clinician photography is OFF the owner shopping list. *This field previously read 'STATUS IS present_caveat FOR ONE REASON ONLY: 3 of the 10 clinicians — Dr. Victoria Quizon, Dr. Stephanie Andrade, Dr. Chris Schaudt — have NO portrait anywhere in the 372-file pool.' That was false; see _CORRECTION_2026_08_03_FABRICATED_ABSENCE_REVERSED above for the instrument defect that produced it.*",
+      "_history_B3_and_repair_2026_07_31": "HISTORY, PRESERVED. (1) ORIGINAL: status:present, count:10, over an assets[] of 10 paths. (2) CORRECTED 2026-07-31 morning (BLOCKER B3) to status:present_caveat, count:7, assets[] of 7 — because a magic-byte census showed two of those paths were Cloudflare bot-challenge HTML pages saved with image extensions (Dr.-Karthikeyan-Subramani-photo-1.jpg 5,901 B and dr-max-torres-e1716864176440.jpeg 5,867 B) and two were byte-identical copies of one portrait (Dr.-Adrian-Ruiz.jpg / Dr.-Adrian-Ruiz-1.jpg, md5 e5f2fda8e1eda4c67a141a835525861e). (3) CORRECTED AGAIN 2026-07-31 after the asset re-fetch: the root cause was the P0.0 crawler sending no browser User-Agent, so the originals were never lost — only badly downloaded. Both files were re-fetched with a browser UA + Referer and verified by magic bytes before replacing: Dr.-Karthikeyan-Subramani-photo-1.jpg is now a 203,777 B JPEG (was 5,901 B HTML) and dr-max-torres-e1716864176440.jpeg is now a 67,562 B JPEG (was 5,867 B HTML). Both are therefore RESTORED to assets[] and count rises 7 -> 9 FILES. The count:7 written this morning was correct-for-its-moment but is superseded. (4) STILL EXCLUDED, deliberately: Dr.-Adrian-Ruiz-1.jpg. It is not corrupt — it is a real 10,010 B JPEG — but it is byte-identical to Dr.-Adrian-Ruiz.jpg (verified 2026-07-31, both md5 e5f2fda8e1eda4c67a141a835525861e), so listing it would count one portrait twice. It is the only remaining defect in the originally-curated 13 ASSET-INTAKE paths, which now resolve to 13 real images but only 12 DISTINCT ones. (5) UNCHANGED THROUGHOUT: clinician coverage. It was 7 of 10 before the repair and it is 7 of 10 after it. The repair recovered two extra FILES of clinicians who were already covered; it recovered NO new person. MISSING_clinicians is untouched. *(SUPERSEDED 2026-08-03 as to clause (5) ONLY — clauses (1)-(4) stand as accurate history. Coverage was never 7 of 10; it was 10 of 10 throughout, including at every timestamp recorded above. The three 'missing' clinicians' files were in the pool under camera-generated names the entire time, and the filename search used to declare them missing could not have found them. Clause (5) is retained verbatim as the audit trail of the error, not as a statement of fact.)*",
+      "used_by": [
+        "10 T-ARTICLE clinician pages",
+        "team hub",
+        "homepage team teaser"
+      ],
+      "covers_clinicians": [
+        "dr-adrian-ruiz",
+        "dr-norma-miranda",
+        "dr-vivi-dang-roberts",
+        "dr-karthikeyan-subramani",
+        "dr-max-torres",
+        "dr-omar-lavado",
+        "dr-andy-landaverde",
+        "dr-victoria-quizon",
+        "dr-stephanie-andrade",
+        "dr-chris-schaudt"
+      ],
+      "MISSING_clinicians": [],
+      "_MISSING_clinicians_CORRECTION_2026_08_03": "This array listed dr-victoria-quizon, dr-stephanie-andrade and dr-chris-schaudt. It is now EMPTY: all three have real, md5-distinct, magic-byte-verified portraits on disk and have been moved into covers_clinicians. Any downstream reader that branched on a non-empty MISSING_clinicians — the three clinician briefs, SELLING-ASSET-CATALOG.md, visual-direction.md, readiness-verdict.md and spec-manifest.json owner_shopping_list rank 15 — was propagating a fabricated absence and has been corrected in the same pass."
+    },
+    "credentials": {
+      "status": "present",
+      "count": 10,
+      "assets": [],
+      "provenance_not_a_read_path": [
+        "site-snapshot/meet-the-doctors.html"
+      ],
+      "detail": "Real, specific, checkable credentials captured verbatim — most notably Dr. Karthikeyan Subramani: MSc Orthodontics and Dentofacial Orthopedics (2015), Fellowship in Orthodontics and Craniofacial Research, University of Kentucky (2012), the American Association of Orthodontists Milo Hellman Award (2019) and the Andre Schroeder Research Prize from Straumann (2006). Plus Dr. Ruiz (DDS UCLA 1995, 22+ years) and Dr. Miranda (DDS UCLA 1976, 41+ years).",
+      "caveat": "This is the strongest proof asset the practice owns and it is currently buried on a scrolling index page.",
+      "used_by": [
+        "10 clinician pages",
+        "team hub",
+        "about",
+        "orthodontics hub"
+      ],
+      "_why_moved_2026_07_31": "This sat in assets[] but is an HTML snapshot in the PREP tree, not a shippable asset. The seam copies images only, so it does not exist inside the build's read scope, and HANDOFF-PREP-TO-BUILD.md §6 (PATH-EXCLUSION, decision D-B) forbids the build reading the prep tree regardless. It is the AUDIT SOURCE for the credentials below, which are already transcribed verbatim into detail and into the ten per-clinician briefs the build does read — so nothing is lost by making the distinction explicit.",
+      "_RETRACTION_2026_07_31": "The note above previously ended: 'Every path remaining in an assets[] array in this manifest was re-tested 2026-07-31 against the build root: 13 of 13 resolve.' THAT CLAIM IS RETRACTED. It was an fs.existsSync check that never opened a file. Two of the thirteen were Cloudflare bot-challenge HTML pages and two were the same file byte-for-byte. See BLOCKER B3 in spec-manifest.json. Re-tested by MAGIC BYTES 2026-07-31: the corrected 10-file curated set is 10/10 real, distinct images.",
+      "_POST_REPAIR_ADDENDUM_2026_07_31": "Corrected 2026-07-31 (later the same day): the retraction's closing sentence — 'the corrected 10-file curated set is 10/10 real, distinct images' — was true of the 10-path set as it stood that morning, but that set no longer exists. After the asset re-fetch repair the two quarantined Cloudflare pages were replaced with the genuine JPEGs and returned to clinician_portraits.assets[], so the curated set is now 12 paths (3 brand marks + 9 clinician portraits), 12/12 real and 12/12 distinct, magic-byte + md5 verified. Counting all 13 ORIGINALLY-curated ASSET-INTAKE paths, all 13 are now real images but only 12 are distinct, because Dr.-Adrian-Ruiz-1.jpg remains byte-identical to Dr.-Adrian-Ruiz.jpg and is deliberately left out of assets[]. The retraction itself stands unaltered: existsSync is still not a content check, and no gate in the bundle sniffs magic bytes."
+    },
+    "review_record": {
+      "status": "present_caveat",
+      "count": 1,
+      "assets": [
+        "https://reviews.birdeye.com/radiant-smiles-v-155333130420099"
+      ],
+      "detail": "4.5 stars from 506 reviews, Birdeye, Lake Mead office, fetched 2026-07-30. Plus BBB: B+ rating, 23 years in business, NOT accredited, 3 complaints / 1 unresolved (fetched 2026-07-30). Plus Yelp listings showing 108 / 66 / 52 review counts.",
+      "caveat": "SCOPE-LIMITED — 506 reviews is ONE office's Birdeye record, not a practice-wide total. Per content-bible §6 the scope is never dropped and figures are never aggregated across offices. Yelp star ratings were NOT first-party fetched (Yelp blocks automated retrieval) so only counts are recorded. ⚠OWNER — nominate the platform of record and supply the practice-wide figure.",
+      "used_by": [
+        "reviews page",
+        "homepage proof strip",
+        "every location page",
+        "about"
+      ]
+    },
+    "carrier_marks": {
+      "status": "present_caveat",
+      "count": 41,
+      "assets": [
+        "assets/ (41 carrier logo files, see client-rules.json insurance_carriers_named)"
+      ],
+      "detail": "41 insurance carriers and plans, recovered by parsing image references on /patient-information/ — they carry NO alt text so text extraction missed them entirely. Includes the Las Vegas-specific union and public plans: Culinary Health Fund, Teachers Health Trust, Teamsters, UFCW, Nevada Medicaid, Health Plan of Nevada, Sierra Health & Life, Southpoint.",
+      "caveat": "⚠FLAG §G-18 — THIRD-PARTY TRADEMARKS, usage rights unconfirmed. Name the carriers in text; ship the marks only on owner confirmation. Also: all 41 currently ship with no alt text, an accessibility defect the rebuild must fix.",
+      "used_by": [
+        "insurance-financing",
+        "new-patients hub",
+        "every location page FAQ"
+      ]
+    },
+    "financing_marks": {
+      "status": "present_caveat",
+      "count": 4,
+      "_count_semantics": "count = 4 financing PARTNERS, which for this category also equals 4 image files on disk (one per partner) — the two coincide here, but that is a fact about this category, not a manifest-wide rule. See totals._count_semantics_manifest_wide.",
+      "count_partners": 4,
+      "count_image_files_on_disk": 4,
+      "count_first_party_hosted": 3,
+      "count_hot_linked_third_party": 1,
+      "count_standalone_logo_marks": 1,
+      "assets": [
+        "assets/www.carecredit.com_sites_pc_image_carecredit_button_applypay_prequal_350x213_bluegreen_v1.jpg",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_04_cherry.png",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_04_LC-300x104-1.webp",
+        "assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dntl_FB-Post_1080x1080-1.png"
+      ],
+      "detail": "FOUR partners, FOUR real image files, but they are four DIFFERENT kinds of thing and only one is a clean logo. Verified 2026-07-31 by opening every file and reading the raw <a>/<img> markup in site-snapshot/. (1) CARE CREDIT — www.carecredit.com_sites_pc_image_carecredit_button_applypay_prequal_350x213_bluegreen_v1.jpg, 19,421 B JPEG. NOT first-party: the live pages hot-link it straight from https://www.carecredit.com/sites/pc/image/... and it exists on disk only because the P0.0 crawler followed that third-party URL. It is a CareCredit-supplied promotional BUTTON — card art plus 'Special financing options available*', 'See if you prequalify / Apply / Pay' and a 'Get Started' CTA — not a bare logo. Link target is an affiliate-coded URL (/go/279XQC/?dtc=DS7X&sitecode=CCCAPDS7X). (2) CHERRY — radiantsmilesnv.com_wp-content_uploads_2024_04_cherry.png, 6,268 B PNG, first-party hosted. A promo banner reading 'Cherry PAYMENT PLANS' over 'QUALIFY FOR UP TO $10,000 IN 60 SECONDS' — the dollar figure and the 60-second claim are Cherry's terms baked into the pixels, so it cannot be shipped as a neutral logo. A 300x158 derivative (cherry-300x158.png) also exists. (3) LENDING CLUB — radiantsmilesnv.com_wp-content_uploads_2024_04_LC-300x104-1.webp, 9,288 B WEBP, first-party hosted. The ONLY clean standalone wordmark of the four. (4) SUNBIT — radiantsmilesnv.com_wp-content_uploads_2024_04_Dntl_FB-Post_1080x1080-1.png, 575,436 B PNG, first-party hosted, wrapped in <a href=\"https://sunbit.com/\"> on 9 pages. NO file on disk and no markup attribute anywhere contains the string 'sunbit' in a FILENAME; the mark lives INSIDE this generically-named 1080x1080 social-post creative, which carries the 'Powered by sunbit' logo lockup plus 'Smile now, Pay-over-time.', 'Over 85% get approved' and 'Loans are made by TAB Bank.' All four appear on the same 9 pages (payment-plans, patient-information, and the 7 location pages).",
+      "caveat": "⚠FLAG — third-party trademarks, rights unconfirmed. Critically, the 0% interest / no down payment / no annual fee terms are the LENDERS' terms subject to approval, and the live site presents them as the practice's own with no disclosure. Any use must attribute. THREE FURTHER CONSTRAINTS, each verified on disk 2026-07-31 and each one a reason the build cannot simply drop these four in as a logo row: (a) NO STANDALONE SUNBIT LOGO EXISTS. Sunbit's mark is only available embedded in a lender-terms creative that also asserts 'Over 85% get approved' and 'Loans are made by TAB Bank' — shipping it ships those claims too. If the build wants a plain Sunbit mark it is ⚠OWNER, or name Sunbit in text only. (b) THE CARE CREDIT ASSET IS HOT-LINKED FROM CARECREDIT.COM, not served first-party. Reusing the on-disk copy re-hosts a third party's promotional button; reusing the live markup keeps a runtime dependency on carecredit.com. Either way it is a rights question, not just a file question. (c) TWO OF THE FOUR (Cherry, Sunbit) HAVE LENDER TERMS BAKED INTO THE IMAGE, so they cannot be used as neutral marks and the disclosure obligation is not dischargeable by adjacent body copy alone. Only Lending Club is a clean wordmark.",
+      "_CORRECTED_2026_07_31_count_CHALLENGED_AND_UPHELD": "HISTORY, PRESERVED. An independent audit pass on 2026-07-31 reported this category as OVERSTATED — that count:4 should be 3, that visual-direction.md:76's '4 financing partner marks' was wrong, and that 'Sunbit appears as TEXT only'. Its evidence was two greps: `ls assets | grep -ic sunbit` = 0, and `<img>` tags referencing sunbit across site-snapshot/ = 0. BOTH GREPS RE-RAN TRUE. THE CONCLUSION DRAWN FROM THEM IS FALSE, and count:4 is UPHELD unchanged. Both greps are NAME-based: they prove only that no filename and no img attribute contains the literal string 'sunbit'. They cannot see a mark that is filed under a name carrying no brand string. Re-derived by reading the raw markup instead of grepping for the brand: every financing block contains <a href=\"https://sunbit.com/\"> WRAPPING an <img src=\"…/Dntl_FB-Post_1080x1080-1-300x300.png\">, on 9 pages. That PNG was then OPENED, not inferred from its filename, and it is unambiguously a Sunbit asset — the 'Powered by sunbit' logo lockup, 'Smile now, Pay-over-time.', 'Over 85% get approved', 'Loans are made by TAB Bank.' So a Sunbit mark DOES exist on disk, first-party hosted, and 'text only' is wrong. This is the same failure class as the earlier existsSync-instead-of-magic-bytes retraction (see proof_categories.credentials._RETRACTION_2026_07_31) and the &#038; entity miss: a cheap string test standing in for opening the artifact. WHAT THE AUDIT DID GET RIGHT, and what is corrected here: the old assets[] was a single vague string, 'assets/ (Care Credit, Cherry, Sunbit, Lending Club logo files)', which enumerated no path, implied four first-party 'logo files', and was therefore uncheckable — it is replaced above with the four real paths plus a per-partner detail of what each file actually is. Corroborating counts, re-derived 2026-07-31: client-rules.json pricing.financing_partners lists exactly these 4; a search for any fifth lender (Alphaeon, GreenSky, Proceed, Affirm, Klarna, Afterpay, LendingPoint, iCare, Springstone, Wells Fargo Health) across site-snapshot/ returned ZERO; and the only external financing hrefs in the whole snapshot are sunbit.com, carecredit.com, pay.withcherry.com and lendingclub.com."
+    },
+    "location_data": {
+      "status": "present_caveat",
+      "count": 7,
+      "assets": [
+        "client-rules.json contactData"
+      ],
+      "detail": "7 real offices with addresses, direct phone numbers and hours, captured first-party.",
+      "caveat": "Blue Diamond is missing Tue/Fri/Sun hours entirely; North Decatur's hours are byte-identical to Lone Mountain's (suspect copy-paste); Sunrise Manor has two conflicting ZIPs live (89107 vs 89104). All three are on the shopping list.",
+      "used_by": [
+        "7 location pages",
+        "locations hub",
+        "contact",
+        "footer",
+        "LocalBusiness schema"
+      ]
+    },
+    "before_after_gallery": {
+      "status": "absent",
+      "count": 0,
+      "assets": [],
+      "caveat": "⚠OWNER §G-9 — NEEDS-OWNER, and it is the single highest-value missing asset. No consented before/after photography exists in ANY captured source, while /smile-gallery/ ships live and populated on a practice selling veneers, whitening, implants and Invisalign: 30 photographs, every one with empty alt text, none identified anywhere on the page as a consented before/after pair, so the page is unusable as proof. Ships as ⚠OWNER PLACEHOLDER + noindex until supplied. No fabricated patient, quote, metric or outcome is permitted (ledger D5/D19).",
+      "used_by": [
+        "smile-gallery",
+        "cosmetic-dentistry hub",
+        "porcelain-veneers",
+        "teeth-whitening"
+      ]
+    },
+    "office_photography": {
+      "status": "absent",
+      "count": 0,
+      "assets": [],
+      "caveat": "⚠OWNER — NEEDS-OWNER. Interior/exterior photography per office is not separable from stock imagery in the current site. Location pages need a real photograph of THAT office to carry the neighbourhood claim.",
+      "used_by": [
+        "7 location pages"
+      ]
+    },
+    "press_coverage": {
+      "status": "absent",
+      "count": 0,
+      "assets": [],
+      "caveat": "⚠FLAG — no earned media or third-party press coverage of the practice was located on 2026-07-30. The 'America's Best Dentist Award' claim on the live site could not be independently corroborated and is retired by owner decision (ledger D16). Recorded as a genuine absence; nothing invented.",
+      "used_by": []
+    },
+    "social_profiles": {
+      "status": "absent",
+      "count": 0,
+      "assets": [],
+      "caveat": "⚠OWNER §G-14 — a full grep across all 102 captures (67 pages + 35 non-page endpoints) found ZERO social profile links of any kind, despite a social-icons widget being loaded. Confirm whether profiles exist and were never linked, or do not exist.",
+      "used_by": [
+        "footer"
+      ]
+    }
+  },
+  "totals": {
+    "categories": 11,
+    "present": 3,
+    "present_caveat": 4,
+    "absent": 4,
+    "_status_totals_CORRECTION_2026_08_03": "Was present 2 / present_caveat 5 / absent 4. clinician_portraits moved present_caveat -> present when its fabricated absence was reversed (see that category's _CORRECTION_2026_08_03 key), so present rises 2 -> 3 and present_caveat falls 5 -> 4. absent is unchanged. These three numbers were re-derived by counting the status field across proof_categories on 2026-08-03, not by incrementing the old values — the census returns 3 / 4 / 4 and matches. real_first_party_images_usable rises 12 -> 15 (3 brand marks + 12 portrait files; it excludes the 41 carrier and 4 financing marks, which are real files but rights-unconfirmed, so it remains a CLEARANCE count and not a disk census).",
+    "real_assets_on_disk": 372,
+    "real_first_party_images_usable": 15,
+    "files_on_disk": 372,
+    "real_images_on_disk": 372,
+    "dead_cloudflare_challenge_pages": 0,
+    "distinct_images_on_disk": 370,
+    "duplicate_image_groups": 2,
+    "_count_semantics_manifest_wide": "READ THIS BEFORE TRUSTING ANY `count` IN proof_categories. `count` is NOT uniform across categories and never was — it counts THE THING EACH CATEGORY IS ABOUT, which is a file in only three of the eleven. Added 2026-07-31 to replace a false uniformity claim that had been sitting inside clinician_portraits._count_semantics (see the correction there). Per category, re-derived from this file on 2026-07-31 — FILES: brand_marks count:3 = 3 enumerated paths; clinician_portraits count:9 = 9 enumerated paths (9 files over 7 of 10 people); financing_marks count:4 = 4 enumerated paths (also 4 partners — they coincide). PEOPLE: credentials count:10 = 10 clinicians whose credentials are transcribed verbatim into `detail` and into the ten per-clinician briefs; assets[] is EMPTY and there is no credential file of any kind on disk. RECORDS: review_record count:1 = one first-party-fetched Birdeye record; assets[] holds a URL, not a path — length coincides with count but the entry is not a file. CARRIERS: carrier_marks count:41 = 41 insurance carriers and plans; this matches client-rules.json pricing.insurance_carriers_named, which holds exactly 41 entries (verified 2026-07-31). assets[] holds ONE descriptive string, not 41 paths — so the claim of '41 carrier logo files' in assets/ is ASSERTED BUT UNENUMERATED AND UNVERIFIED-BY-FILE in this pass, and should be treated as a carrier count, not a proven file count, until someone enumerates them. OFFICES: location_data count:7 = 7 physical offices; assets[] is a single pointer to client-rules.json contactData; zero image files. ABSENCES: before_after_gallery, office_photography, press_coverage and social_profiles are all count:0 with empty assets[] — a genuine nothing. NET RULE: `assets[].length === count` holds ONLY for brand_marks, clinician_portraits and financing_marks. For credentials, carrier_marks and location_data it does not, and no gate checks it — verify-selling-assets-catalogued only requires >=3 categories marked present/present_caveat and never reconciles counts against assets[] or against disk.",
+    "_census_method": "Re-derived on disk 2026-07-31 against Code/client-site-prep/radiantsmiles/assets/ — `file --mime-type` over every file (303 image/jpeg + 66 image/png + 3 image/webp = 372, no text/html), a head-512-byte scan for '<html' / '<!DOCTYPE' / 'Just a moment' returning zero hits, and `md5` over all 372 giving 370 unique digests across 2 duplicate groups (Dr.-Adrian-Ruiz.jpg = Dr.-Adrian-Ruiz-1.jpg, and their two 150x150 thumbnails).",
+    "_CORRECTED_2026_07_31": "TWO corrections, both preserved. (A) THE DEFECT, found 2026-07-31 morning: real_assets_on_disk read 372 and real_first_party_images_usable read 13, and both were FALSE. A magic-byte census found 372 files = 126 JPEG + 61 PNG + 3 WEBP = only 190 real images, plus 182 Cloudflare bot-challenge HTML pages saved under .jpg/.jpeg/.png/.webp names, each carrying \"<title>Just a moment...\" — 48.9% of the pool dead. The fields were corrected to real_assets_on_disk/real_images_on_disk 190, dead_cloudflare_challenge_pages 182, real_first_party_images_usable 10. (B) THE REMEDIATION, later the same day: root cause was the P0.0 crawler sending NO browser User-Agent, so Cloudflare served a challenge page and the crawler saved it under the image's filename. The originals were never lost — only badly downloaded. All 182 were re-fetched with a browser User-Agent + Referer, each verified BY MAGIC BYTES BEFORE it was allowed to replace anything, and the 182 corrupt originals were quarantined (not deleted) to Code/client-site-prep/radiantsmiles/_assets-quarantine-2026-07-31/, which holds 182 files, re-counted 2026-07-31. The pool is now 372 files = 303 JPEG + 66 PNG + 3 WEBP = 372 REAL IMAGES, ZERO dead, 370 distinct across 2 duplicate groups. So the (A) values 190 / 182 / 10 are SUPERSEDED and now read 372 / 0 / 12. real_first_party_images_usable is 12, not 13, because Dr.-Adrian-Ruiz-1.jpg is a real but byte-identical copy of Dr.-Adrian-Ruiz.jpg — all 13 originally-curated ASSET-INTAKE paths are now real images, but only 12 are DISTINCT. WHAT THE REPAIR DID NOT FIX, stated plainly: (1) clinician coverage is unchanged at 7 of 10 — Quizon, Andrade and Schaudt still have ZERO portrait files, re-confirmed by filename search 2026-07-31; the repair recovered two more files of already-covered clinicians, not one new person. (2) The BUILD tree Code/client-sites/radiantsmiles/assets/ STILL holds the 182 corrupted copies — censused read-only 2026-07-31 as 182 text/html + 126 JPEG + 61 PNG + 3 WEBP — because the seam ran before the repair. The seam must be re-run; that is a separate owner and is not touched here. (3) NO GATE VALIDATES ASSET BYTES: verify-selling-assets-catalogued counts filenames, verify-visual-direction-grounded parses the ASSET-INTAKE JSON without stat-ing files, and the seam copies without sniffing. That hole is what let (A) happen and it is still open. The earlier claim \"13/13 resolve\" was an fs.existsSync check that never opened a file — RETRACTED, see proof_categories.credentials.",
+    "_CORRECTED_status_tally_2026_07_31": "present read 3 and present_caveat read 4. Both were STALE, not merely superseded: when BLOCKER B3 downgraded clinician_portraits from 'present' to 'present_caveat' earlier on 2026-07-31, this tally was not re-derived. Recomputed from proof_categories on 2026-07-31 — 11 categories = 2 present (brand_marks, credentials) + 5 present_caveat (clinician_portraits, review_record, carrier_marks, financing_marks, location_data) + 4 absent (before_after_gallery, office_photography, press_coverage, social_profiles). The repair did NOT change any status: clinician_portraits stays present_caveat because 3 of 10 clinicians remain uncovered."
+  },
+  "companion_catalog": "SELLING-ASSET-CATALOG.md",
+  "_honesty_note": "Nothing in this manifest is aspirational. A category is 'present' only when a real file sits on disk or a first-party-fetched record exists with a URL and date; 'present_caveat' when it exists but carries a rights, scope or accuracy limitation; 'absent' when it genuinely does not exist, in which case the affected briefs ship a flagged placeholder rather than a substitute."
+}

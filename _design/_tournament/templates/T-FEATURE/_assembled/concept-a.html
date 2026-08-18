@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T-FEATURE concept A - Radiant Smiles Dental Care</title>
+<meta name="description" content="Tournament preview. Not a shipped page.">
+<meta name="robots" content="noindex,nofollow">
+<!-- FAVICON: brand-neutral default so every build satisfies the publish launch-floor (P-Q). Each site
+     ships its own assets/favicon.svg; pages emit from pages/ so the ref is ../../../../../assets/ (rewritten to
+     assets/ at publish). derive-shell preserves this line verbatim as part of the tokenized head. -->
+<link rel="icon" type="image/svg+xml" href="../../../../../assets/favicon.svg">
+<!-- FONTS: hardcoded in the head (SSOT model — the chrome head carries NO font TOKEN; only the head
+     slots TITLE/META_DESC/NOINDEX/DESIGN_CSS_LINKS/SIGNATURE_LINKS + CONTENT are dynamic; see the
+     derive-shell ALLOWED set). A per-site shell (the locked _build/_template.html from the CHROME
+     stage) SWAPS these three lines for the brand's chosen families — exactly as the passing builds do
+     (batchworks: Oswald/Poppins/Space Grotesk; harborline-proof: Roboto Slab/Inter/IBM Plex Mono).
+     These canonical defaults are slug-/brand-NEUTRAL placeholders; never a brand literal. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../../../radiantsmiles-tokens.css">
+<link rel="stylesheet" href="../../../../radiantsmiles-structural.css">
+<link rel="stylesheet" href="../../../../radiantsmiles-chrome.css">
+
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============================================================================
+     HEADER: NAV-PATTERNS.md #7 Centered logo + below-it mega-nav with dropdowns
+     Row 1: quiet utility left  ·  wordmark centred and alone  ·  utility + CTA right
+     Row 2: the grouped mega-nav, beneath the ledger hairline
+     ============================================================================ -->
+<header class="site-header" id="site-header">
+  <div class="container">
+
+    <div class="hdr-row hdr-row--identity">
+      <p class="hdr-utility hdr-utility--left">Seven offices &middot; Las&nbsp;Vegas &amp; Henderson</p>
+
+      <!-- OWNER FLAG G-7: wordmark set in --ds-font-display, NOT the navy-and-yellow JPG.
+           Swap to the vector master the moment one exists. -->
+      <a class="wordmark" href="index.html" aria-label="Radiant Smiles Dental Care, home">
+        <span class="wordmark__name">Radiant Smiles</span>
+        <span class="wordmark__lockup">Dental Care</span>
+      </a>
+
+      <div class="hdr-utility hdr-utility--right">
+        <a class="hdr-link" href="locations.html">Call an office</a>
+        <a class="btn btn--accent" href="contact.html">Book Appointment</a>
+      </div>
+
+      <!-- G13 CANONICAL INTERACTIVITY CONTRACT: exact selectors, emitted verbatim -->
+      <button class="site-header__hamburger" type="button"
+              aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <path d="M3 7h20M3 13h20M3 19h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="hdr-row hdr-row--nav" aria-label="Primary">
+      <ul class="nav">
+
+        <!-- ---------- SERVICES : mega ---------- -->
+        <li class="nav__group" data-nav-group>
+          <button class="nav__trigger" type="button"
+                  aria-haspopup="true" aria-expanded="false" aria-controls="mega-services">Services
+            <svg class="caret" width="13" height="8" viewBox="0 0 13 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="mega" id="mega-services">
+            <div class="container">
+              <div class="mega__inner">
+                <div class="mega__cols">
+                  <div class="mega__head">
+                    <p class="eyebrow">Areas of care</p>
+                    <p class="mega__note">Six areas, ten dentists, seven offices.</p>
+                  </div>
+                  <div class="cat-grid">
+
+                    <a class="cat" href="general-dentistry.html">
+                      <svg class="cat__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                        <path d="M6 6.5c2-2.2 4-1.4 7-1.4s5-.8 7 1.4c2.1 2.3 1 6.6-.4 9.6-1 2.2-1.3 5.4-2.8 5.4-1.6 0-1.4-4.6-3.8-4.6s-2.2 4.6-3.8 4.6c-1.5 0-1.8-3.2-2.8-5.4C4 13.1 3.9 8.8 6 6.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                      </svg>
+                      <span>
+                        <span class="cat__label">General Dentistry</span>
+                        <span class="cat__desc">Exams, cleanings, x-rays, sealants</span>
+                      </span>
+                    </a>
+
+                    <a class="cat" href="cosmetic-dentistry.html">
+                      <svg class="cat__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                        <path d="M13 3.5 15.3 9.7 21.5 12 15.3 14.3 13 20.5 10.7 14.3 4.5 12l6.2-2.3L13 3.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                        <path d="M20 18.5 21 21l2.5 1L21 23l-1 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      <span>
+                        <span class="cat__label">Cosmetic Dentistry</span>
+                        <span class="cat__desc">Veneers and teeth whitening</span>
+                      </span>
+                    </a>
+
+                    <a class="cat" href="restorations.html">
+                      <svg class="cat__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                        <path d="M4.5 9.5 13 4.5l8.5 5-8.5 5-8.5-5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                        <path d="M4.5 14.5 13 19.5l8.5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      <span>
+                        <span class="cat__label">Restorations</span>
+                        <span class="cat__desc">Implants, crowns, bridges, dentures</span>
+                      </span>
+                    </a>
+
+                    <a class="cat" href="oral-surgery.html">
+                      <svg class="cat__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                        <path d="M13 3.5 21.5 7v6.2c0 5-3.6 8-8.5 9.3-4.9-1.3-8.5-4.3-8.5-9.3V7L13 3.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                        <path d="M13 9.5v7M9.5 13h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                      <span>
+                        <span class="cat__label">Oral Surgery</span>
+                        <span class="cat__desc">Wisdom teeth and bone grafting</span>
+                      </span>
+                    </a>
+
+                    <a class="cat" href="periodontics.html">
+                      <svg class="cat__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                        <path d="M3.5 15.5c0-5.5 4.3-9.5 9.5-9.5s9.5 4 9.5 9.5c0 2.4-2.1 3.4-3.6 2.1-1.2-1-2.2-2.3-3.4-2.3-1.3 0-1.6 1.4-2.5 1.4s-1.2-1.4-2.5-1.4c-1.2 0-2.2 1.3-3.4 2.3-1.5 1.3-3.6.3-3.6-2.1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                        <path d="M13 19.5v2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                      <span>
+                        <span class="cat__label">Periodontics</span>
+                        <span class="cat__desc">Gum treatment, laser, screening</span>
+                      </span>
+                    </a>
+
+                    <a class="cat" href="orthodontics.html">
+                      <svg class="cat__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                        <rect x="3.5" y="8.5" width="19" height="9" rx="2.5" stroke="currentColor" stroke-width="1.7"/>
+                        <path d="M9 8.5v9M13 8.5v9M17 8.5v9" stroke="currentColor" stroke-width="1.7"/>
+                      </svg>
+                      <span>
+                        <span class="cat__label">Orthodontics</span>
+                        <span class="cat__desc">Invisalign and braces, all ages</span>
+                      </span>
+                    </a>
+
+                  </div>
+
+                  <!-- the ledger's closing rule, PINNED to the foot of the panel -->
+                  <div class="mega__foot">
+                    <a href="services.html">All services</a>
+                    <a href="offer.html">New Patient Offer</a>
+                    <a href="insurance-financing.html">Insurance &amp; Financing</a>
+                  </div>
+                </div>
+
+                <!-- FEATURED ZONE: right, portrait crop, accent keyline frame -->
+                <div class="feat">
+                  <p class="eyebrow">Our practice</p>
+                  <div class="feat__frame">
+                    <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-2048x1365.jpg"
+                         alt="A treatment room at a Radiant Smiles office, chair and operatory light ready for a patient."
+                         width="2048" height="1365" loading="eager" decoding="sync">
+                    <span class="grade grade--multiply" aria-hidden="true"></span>
+                    <span class="grade grade--screen" aria-hidden="true"></span>
+                    <span class="grade grade--scrim" aria-hidden="true"></span>
+                  </div>
+                  <p class="feat__line">Six areas of care inside one practice, not six referrals.</p>
+                  <a class="qlink" href="services.html">See all services</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ---------- LOCATIONS : mega, all seven offices, real tel: links ---------- -->
+        <li class="nav__group" data-nav-group>
+          <button class="nav__trigger" type="button"
+                  aria-haspopup="true" aria-expanded="false" aria-controls="mega-locations">Locations
+            <svg class="caret" width="13" height="8" viewBox="0 0 13 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="mega" id="mega-locations">
+            <div class="container">
+              <div class="mega__inner">
+                <div class="mega__cols">
+                  <div class="mega__head">
+                    <p class="eyebrow">Seven offices</p>
+                    <p class="mega__note">Call the office nearest you, directly.</p>
+                  </div>
+                  <div class="loc-grid">
+
+                    <div class="loc">
+                      <a class="loc__name" href="lone-mountain.html">Lone Mountain</a>
+                      <p class="loc__where">Las Vegas, NV 89128</p>
+                      <a class="loc__tel" href="tel:+17022894424">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        (702) 289-4424
+                      </a>
+                    </div>
+
+                    <div class="loc">
+                      <a class="loc__name" href="sunrise-manor.html">Sunrise Manor</a>
+                      <p class="loc__where">Las Vegas, NV 89107</p>
+                      <a class="loc__tel" href="tel:+17024523552">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        (702) 452-3552
+                      </a>
+                    </div>
+
+                    <div class="loc">
+                      <a class="loc__name" href="summerlin.html">Summerlin</a>
+                      <p class="loc__where">Las Vegas, NV 89117</p>
+                      <a class="loc__tel" href="tel:+17023604800">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        (702) 360-4800
+                      </a>
+                    </div>
+
+                    <div class="loc">
+                      <a class="loc__name" href="north-las-vegas.html">North Las Vegas</a>
+                      <p class="loc__where">North Las Vegas, NV 89031</p>
+                      <a class="loc__tel" href="tel:+17025091967">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        (702) 509-1967
+                      </a>
+                    </div>
+
+                    <div class="loc">
+                      <a class="loc__name" href="henderson.html">Henderson</a>
+                      <p class="loc__where">Henderson, NV 89052</p>
+                      <a class="loc__tel" href="tel:+17028977001">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        (702) 897-7001
+                      </a>
+                    </div>
+
+                    <div class="loc">
+                      <a class="loc__name" href="north-decatur.html">North Decatur</a>
+                      <p class="loc__where">Las Vegas, NV 89130</p>
+                      <a class="loc__tel" href="tel:+17025220119">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        (702) 522-0119
+                      </a>
+                    </div>
+
+                    <div class="loc">
+                      <a class="loc__name" href="blue-diamond.html">Blue Diamond</a>
+                      <p class="loc__where">Las Vegas, NV 89139</p>
+                      <a class="loc__tel" href="tel:+17023310010">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        (702) 331-0010
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <!-- the ledger's closing rule, PINNED to the foot of the panel -->
+                  <div class="mega__foot">
+                    <a href="locations.html">All seven offices</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="offer.html">New Patient Offer</a>
+                  </div>
+                </div>
+
+                <!-- FEATURED ZONE: right, portrait crop, accent keyline frame -->
+                <div class="feat">
+                  <p class="eyebrow">Our practice</p>
+                  <div class="feat__frame">
+                    <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Blue-Diamond-Front-Desk-2048x1365.jpg"
+                         alt="The front desk at the Radiant Smiles Blue Diamond office."
+                         width="2048" height="1365" loading="eager" decoding="sync">
+                    <span class="grade grade--multiply" aria-hidden="true"></span>
+                    <span class="grade grade--screen" aria-hidden="true"></span>
+                    <span class="grade grade--scrim" aria-hidden="true"></span>
+                  </div>
+                  <p class="feat__line">Seven neighbourhood offices. One practice, not seven brands.</p>
+                  <a class="qlink" href="locations.html">Compare all seven</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ---------- OUR TEAM : direct link ---------- -->
+        <li class="nav__group">
+          <a class="nav__link" href="team.html">Our Team</a>
+        </li>
+
+        <!-- ---------- NEW PATIENTS : caret dropdown ---------- -->
+        <li class="nav__group nav__group--drop" data-nav-group>
+          <button class="nav__trigger" type="button"
+                  aria-haspopup="true" aria-expanded="false" aria-controls="drop-new-patients">New Patients
+            <svg class="caret" width="13" height="8" viewBox="0 0 13 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="drop-panel drop-panel--simple" id="drop-new-patients">
+            <a class="drop-link" href="new-patients.html">New Patients</a>
+            <a class="drop-link" href="offer.html"><span class="dot" aria-hidden="true"></span>New Patient Offer</a>
+            <a class="drop-link" href="insurance-financing.html">Insurance &amp; Financing</a>
+            <a class="drop-link" href="faq.html">FAQ</a>
+          </div>
+        </li>
+
+        <!-- ---------- ABOUT : caret dropdown, with the real dentists ---------- -->
+        <li class="nav__group nav__group--drop" data-nav-group>
+          <button class="nav__trigger" type="button"
+                  aria-haspopup="true" aria-expanded="false" aria-controls="drop-about">About
+            <svg class="caret" width="13" height="8" viewBox="0 0 13 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="drop-panel drop-panel--wide" id="drop-about">
+            <div>
+              <a class="drop-link" href="about.html">About Radiant Smiles</a>
+              <a class="drop-link" href="team.html">Our Team</a>
+              <a class="drop-link" href="reviews.html">Patient Reviews</a>
+              <a class="drop-link" href="smile-gallery.html">Smile Gallery</a>
+              <a class="drop-link" href="contact.html">Contact</a>
+            </div>
+            <div>
+              <p class="eyebrow">Our dentists</p>
+              <div class="drop-feat__frame">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Dentists-scaled.jpg"
+                     alt="The Radiant Smiles dentists photographed together."
+                     width="1707" height="2560" loading="eager" decoding="sync">
+                <span class="grade grade--multiply" aria-hidden="true"></span>
+                <span class="grade grade--screen" aria-hidden="true"></span>
+                <span class="grade grade--scrim" aria-hidden="true"></span>
+              </div>
+              <a class="qlink" href="team.html">Meet the ten</a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ============================================================================
+     FILLER MAIN: scaffold, not design. Present only so the header's condense
+     transition is demonstrable and the footer sits below a real fold.
+     ============================================================================ -->
+<main id="main">
+<style>
+/* ============================================================================
+   T-FEATURE / CONCEPT A - "THE CLINICAL SPINE"
+   Fragment-local additions ONLY. Everything else is inherited from the locked
+   radiantsmiles-tokens.css + radiantsmiles-structural.css. Zero hex literals:
+   every colour, radius, shadow, duration and space below is a var(--ds-*).
+   Layout is DESKTOP-BASE plus ADDITIVE max-width collapses, per the mobile rule.
+   UTF-8, ASCII only. No em or en dashes.
+   ============================================================================ */
+
+/* --- HERO. The mirror split, media column FIRST in source, so the photograph
+   stacks ABOVE the text on a phone exactly as the pattern specifies, and the
+   frame is height-capped so the promise and both acts stay above the fold. --- */
+.rsx-hero{
+  display:grid;
+  grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);
+  gap:var(--ds-space-xl);
+  align-items:center;
+}
+.rsx-hero__copy{display:flex;flex-direction:column;gap:var(--ds-space-md);align-items:flex-start;}
+.rsx-hero__frame{max-height:600px;}
+
+/* --- THE LIGHT WASH, painted on the SECTION not on a child. The kit's texture
+   span is absolute inside the container, so it stops at the container edge and
+   draws a visible rectangle across a full-bleed band. Two-class specificity so
+   it beats the sheet's own background shorthand without touching the ground. - */
+.rs-sec.rsx-wash{background-image:var(--ds-glow-wash);}
+/* On the dark anchor the ground IS a background-image, so the wash has to be
+   layered OVER it and the ground restated from its own tokens, or overriding
+   background-image would erase the gradient and leave the band transparent. */
+.rs-sec.surface-dark.rsx-wash{
+  background-image:var(--ds-glow-wash),linear-gradient(180deg,var(--ds-canvas),var(--ds-dark-2));
+}
+
+/* --- The kit centres a split's columns at the top. Where a short sidebar sits
+   beside a long prose column, that leaves one tall void under the sidebar. --- */
+.rs-split.rsx-mid{align-items:center;}
+
+/* --- THE PROBLEM PLATE. The gap section's sidebar now carries one of our own
+   corridors ABOVE the cited figures, so the slow loss the copy describes has a
+   real place attached to it before the numbers arrive. Height-capped: a 4:5
+   source run full-bleed down the split's WIDER track would tower over the four
+   short paragraphs beside it and strand the prose column at the top. --------- */
+.rsx-plate{width:100%;max-height:470px;}
+
+/* --- EVIDENCE PANEL. The cited third-party figures sit on the card ground with
+   the signature rule, so a reader can tell sourced data from our own prose. --- */
+.rsx-evidence{
+  background:var(--ds-canvas);
+  border:1px solid var(--ds-hairline);
+  border-left:3px solid var(--ds-signature);
+  border-radius:var(--ds-r-surface);
+  padding:var(--ds-space-md) var(--ds-space-lg);
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+
+/* --- THE RECORD. The one hard number on the page, set at display scale INSIDE
+   its own sentence so the office scope can never be detached from the count. -- */
+.rsx-record{
+  font-family:var(--ds-font-display);
+  font-size:clamp(28px,3.6vw,46px);
+  line-height:1.18;
+  letter-spacing:-.02em;
+  font-weight:600;
+  color:var(--ds-ink-heading);
+  max-width:26ch;
+  font-variant-numeric:tabular-nums;
+}
+
+/* --- THE SPINE. The process timeline rotated to vertical: one continuous rail,
+   a numbered chip per step, media alternating side to side. ----------------- */
+.rsx-spine{display:grid;gap:var(--ds-space-2xl);}
+.rsx-step{
+  display:grid;
+  grid-template-columns:56px minmax(0,1fr);
+  gap:var(--ds-space-lg);
+  align-items:start;
+}
+.rsx-step__rail{display:flex;flex-direction:column;align-items:center;gap:var(--ds-space-sm);align-self:stretch;}
+.rsx-step__n{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:56px;
+  height:56px;
+  flex:none;
+  border-radius:var(--ds-r-surface);
+  background:var(--ds-primary-soft);
+  color:var(--ds-primary-deep);
+  box-shadow:var(--ds-inset-hi);
+  font-family:var(--ds-font-display);
+  font-size:20px;
+  font-weight:600;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.rsx-step__thread{flex:1 1 auto;width:2px;border-radius:var(--ds-r-pill);background:var(--ds-primary-soft);}
+.rsx-step__pair{
+  display:grid;
+  grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+  gap:var(--ds-space-lg);
+  align-items:start;
+}
+.rsx-step--wide .rsx-step__pair{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);}
+.rsx-step--flip .rsx-step__media{order:-1;}
+.rsx-step--solo .rsx-step__pair{grid-template-columns:minmax(0,1fr);}
+.rsx-step__copy{display:flex;flex-direction:column;gap:var(--ds-space-sm);}
+.rsx-frame--3x4{aspect-ratio:3 / 4;}
+/* Each step's plate gets its OWN height, so five steps read as a sequence of
+   different objects rather than five identical tiles. The caps also stop a
+   portrait source from towering over two sentences of copy. */
+/* width:100% is load-bearing. A block box carrying BOTH aspect-ratio and a
+   max-height derives its width from the clamped height and shrinks away from
+   its column, which left a void beside two of the five steps. */
+.rsx-cap-a,.rsx-cap-b,.rsx-cap-c{width:100%;}
+.rsx-cap-a{max-height:400px;}
+.rsx-cap-b{max-height:470px;}
+.rsx-cap-c{max-height:340px;}
+
+/* --- THE ROSTER CARD. One object: the photograph runs to the card edge on the
+   left and stretches to the card's full height, the argument holds the right. - */
+.rsx-bio{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:stretch;flex:1 1 auto;}
+.rsx-bio__media{position:relative;display:flex;}
+.rsx-bio__media .rs-frame{flex:1 1 auto;width:100%;aspect-ratio:auto;min-height:440px;}
+.rsx-bio__body{display:flex;flex-direction:column;gap:var(--ds-space-md);padding:var(--ds-space-lg);}
+
+/* --- INLINE PROSE LINK. The kit's quiet link is a 48px inline-flex control and
+   cannot sit mid-sentence without breaking the line box, so a sentence-level
+   link gets its own underline treatment on the legal teal. ----------------- */
+.rsx-inline{
+  color:var(--ds-primary);
+  font-weight:500;
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:4px;
+}
+.rsx-inline:hover{color:var(--ds-ink-heading);}
+
+/* --- CROSS-LINK RAIL. Two labelled groups, outline pills, no accent. ------- */
+.rsx-rail{display:grid;gap:var(--ds-space-md);}
+.rsx-rail__group{
+  display:grid;
+  grid-template-columns:minmax(0,240px) minmax(0,1fr);
+  gap:var(--ds-space-md);
+  align-items:baseline;
+  padding-block:var(--ds-space-md);
+  border-top:1px solid var(--ds-line);
+}
+.rsx-rail__group:last-child{border-bottom:1px solid var(--ds-line);}
+
+/* --- THE OFFER ANCHOR. The page's SECOND dark beat, which is the one the
+   locked structural sheet reserves by name (line 46: the two anchor beats are
+   the offer and the closing CTA). Nothing is re-composed to get it: the section
+   is RE-GROUNDED by the token class, and the class re-points --rs-card-bg,
+   --rs-card-line, --rs-figure, --rs-rule and --rs-key-accent for the subtree,
+   so the card, its edge and its keyline all follow the ground down.
+   The photograph and the card share one track pair and the frame STRETCHES to
+   the card's height, per the MEDIA + CARDS law in the structural sheet: a
+   height-capped frame beside a single card is the banned arm, because it opens
+   a dead band under the shorter of the two. ------------------------------- */
+.rsx-anchor{
+  display:grid;
+  grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  gap:var(--ds-space-xl);
+  align-items:stretch;
+}
+/* the frame is taken OUT OF FLOW so the CARD alone sets the row height and the
+   photograph is cut to it. Left in flow, a 1024x1536 source at this track width
+   resolves to 630px of picture and the card stretches to match, which opened
+   170px of empty ground above and below three sentences. */
+.rsx-anchor__media{position:relative;display:flex;}
+.rsx-anchor__media .rs-frame{position:absolute;inset:0;}
+.rsx-anchor .rs-spot{display:flex;}
+.rsx-anchor .rs-spot > .rs-card{flex:1 1 auto;}
+
+/* --- OFFER BAND. The card is narrower now that a photograph holds the left
+   track, so the copy and the appointment pair STACK inside it. Side by side at
+   this width the two acts would have had 177px of track each, and the primary
+   label alone measures wider than that at the 18px the audience law fixes. --- */
+.rsx-offer{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  flex:1 1 auto;
+  gap:var(--ds-space-lg);
+}
+.rsx-offer__acts{display:flex;flex-wrap:wrap;gap:var(--ds-space-sm);align-items:stretch;}
+
+/* --- FAQ. Question left, answer right, nothing hidden behind a click. ----- */
+.rsx-qa{display:grid;}
+.rsx-qa__row{
+  display:grid;
+  grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);
+  gap:var(--ds-space-lg);
+  padding-block:var(--ds-space-lg);
+  border-top:1px solid var(--ds-line);
+}
+.rsx-qa__row:last-child{border-bottom:1px solid var(--ds-line);}
+
+/* ---------------- ADDITIVE MOBILE COLLAPSES (max-width only) -------------- */
+@media (max-width:1059px){
+  .rsx-hero{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+  .rsx-step__pair,
+  .rsx-step--wide .rsx-step__pair{grid-template-columns:minmax(0,1fr);}
+  .rsx-step--flip .rsx-step__media{order:0;}
+  .rsx-bio{grid-template-columns:minmax(0,1fr);}
+  .rsx-bio__media .rs-frame{aspect-ratio:16 / 10;min-height:0;max-height:520px;}
+  /* the offer anchor stacks. Its frame comes back INTO flow here, because the
+     card is no longer beside it and there is no height left to be cut to, and
+     it takes a WIDE cap for the same reason the bio card's does: a full-aspect
+     plate across a 976px column is a viewport of photograph standing between
+     the page and its one act. */
+  .rsx-anchor{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+  .rsx-anchor__media .rs-frame{position:static;flex:1 1 auto;width:100%;aspect-ratio:16 / 10;max-height:460px;}
+  .rsx-plate{max-height:400px;}
+  .rsx-spine{gap:var(--ds-space-xl);}
+  /* stacked media re-acquires a WIDE cap: a 4:5 frame across a 976px tablet
+     column is a full viewport of photograph per step, which turns the spine
+     into a scroll. Capped so five steps stay one readable sequence. */
+  .rsx-step__media .rs-frame{aspect-ratio:16 / 10;max-height:520px;}
+}
+@media (max-width:767px){
+  /* measured: at 320px the H1 cleared the fold but the act pair did not once
+     the sticky header is in place. 280px puts both acts back inside 812. */
+  .rsx-hero__frame{max-height:280px;}
+  .rsx-step{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-md);}
+  .rsx-step__rail{flex-direction:row;align-items:center;justify-content:flex-start;align-self:auto;}
+  .rsx-step__thread{width:auto;height:2px;}
+  .rsx-bio__body{padding:var(--ds-space-md);}
+  .rsx-bio__media .rs-frame{aspect-ratio:4 / 3;}
+  .rsx-rail__group{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-sm);}
+  .rsx-qa__row{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-sm);padding-block:var(--ds-space-md);}
+  .rsx-evidence{padding:var(--ds-space-md);}
+}
+</style>
+
+<!-- pick: HERO-COMPOSITIONS.md #2 Split-text-right + photo-left | considered: #5, #9 | why: this page opens on a claim about surgical capability, so the first object a reader meets should be one of our own rooms rather than a sentence about one, which is exactly the mirror's high-trust case, and it is a deliberate inversion of the photo-right classic the foundation specimen already spends. #5 would drop the H1, the sub and both acts onto a scrim over a photograph, and the accent measures 1.36:1 on this canvas, so it can never rescue text over an image for the 40 plus reader this brand names as primary. #9 wants a wide letterbox band, but every real photograph of this practice on disk is portrait, so a 16:5 crop would slice our own operatories into a strip. The frame is capped at 600px, and 320px on a phone, so the promise and both acts stay above the fold. | rigor: heavy -->
+<section class="rs-sec rs-sec--lead rs-sec--band rsx-wash" id="implants-top">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rsx-hero">
+
+          <div class="rsx-hero__media rs-rise" style="--rs-i:0">
+            <div class="rs-frame rs-frame--hero rs-frame--tall rsx-hero__frame">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-72-1-1024x1536.jpg" alt="A clinician seated beside a patient in one of our operatories" width="1024" height="1536" loading="eager" decoding="async">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="rsx-hero__copy rs-rise" style="--rs-i:1">
+            <h1 class="rs-h1">Dental Implants in Las Vegas</h1>
+            <p class="rs-lede">A replacement tooth that stands on its own, with the surgical placement and the restoration both handled by our own team.</p>
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: DIVIDER-PATTERNS.md #2 Wave smooth | considered: #4, #6 | why: composition-medical-health names the circle up arc as this vertical's defining seam, and one soft curve is the only transition that reads as care rather than as software. #4 cuts a 45 degree diagonal, a tech register that fights the large soft radii the token sheet already committed to on every frame and every card on this page. #6 drops a triangular peak into the seam, a geometric spike aimed straight at the anxious reader this brand is written for. Built as a CSS dome carrying the next ground, so it costs no asset, adds no request and cannot break at any width. | rigor: heavy -->
+<section aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-arc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: #6, #8 | why: this section names a slow loss the reader is not feeling yet, and a single big type statement followed by calm body is the one shape that lets the copy's own opening sentence carry that weight without a headline being invented for it. #6 self selects an audience, but a reader on this page already selected themselves, and a qualifier grid here would only filter someone who arrived correctly. #8 asks for a belief statement, and a belief is precisely what a regulated dental page must not offer where a published source exists instead. The ADA figures ride in their own inset panel with a hairline and the signature rule, so cited data reads as evidence rather than as more prose. The sidebar now opens on a real empty corridor of ours above that panel, which is the second beat of imagery on the page and the only one before the spine: the copy here says the loss is slow and unattended, and a lit, unoccupied passage between rooms is the honest picture of that without a word being added. It is also the one receding-perspective frame on a page where every other photograph is frontal, so it breaks the portrait rhythm instead of repeating it. A corridor was chosen over the operatory frames on disk on purpose: step 03 below leaves a named slot unfilled for the review chair, and a chair placed here would invite a reader to settle that gap with the wrong room. | rigor: heavy -->
+<section class="rs-sec" id="what-a-gap-does">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-split rsx-mid">
+
+          <div class="rs-stack rs-rise" style="--rs-i:0">
+            <h2 class="rs-h2">A missing tooth does not stay a single missing tooth.</h2>
+            <p class="rs-copy">The teeth either side lean towards the gap. The tooth above or below it drifts down into the space.</p>
+            <p class="rs-copy">Under the gap, the jawbone stops being loaded when you chew. Bone that is not loaded reduces over time. That is why a gap left alone narrows the options for filling it later.</p>
+            <p class="rs-copy"><span class="rs-strong">None of this is an emergency, and that is exactly the problem.</span> It is slow, so it waits. The waiting is what makes the eventual fix bigger.</p>
+          </div>
+
+          <div class="rs-stack rs-rise" style="--rs-i:1">
+
+            <div class="rs-frame rs-frame--tall rsx-plate">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-19-2-1024x1536.jpg" alt="An empty corridor running between rooms in one of our offices" width="1024" height="1536" loading="lazy" decoding="async">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+            </div>
+
+            <div class="rsx-evidence">
+              <p class="rs-copy">The published coverage numbers belong here as well. The ADA Health Policy Institute reports that 55% of adults aged 65 and older have no dental benefits, fetched 30 July 2026. The same source reports that dental visits track coverage directly. In 2023, 53% of adults with private dental insurance had a dental visit, against 16% of adults with no dental insurance.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CARD-VARIATIONS.md #3 Minimal 3-up icon-top feature | considered: #2, #4 | why: three benefits, one sentence each, and nothing here to click, so the unit has to be the lightest card the system owns or it will promise an action it cannot carry. #2 wants an embedded mini-visual per card, and no photograph on disk depicts chewing, a bridge or a brushed crown, so all three would have to be fabricated. #4 adds an arrow link per card, which on this copy would either point nowhere or invent a destination the sentences never name. The icon chip is the soft teal fill carrying deep teal at 9.49:1, and no yellow appears anywhere in this band because nothing in it is actionable. | rigor: heavy -->
+<section class="rs-sec rs-sec--band" id="why-an-implant">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-grid rs-grid--3">
+
+          <article class="rs-card rs-rise" style="--rs-i:0">
+            <div class="rs-card__body rs-card__body--roomy">
+              <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 4.5c1.4-1.1 3-1.2 3.9-.3.9.9.6 3.4-.3 5.7-.6 1.4-.8 2.9-1.1 4.1-.2.8-1.2.9-1.5.1L7.2 11l-1 3.1c-.3.8-1.3.7-1.5-.1-.3-1.2-.5-2.7-1.1-4.1C2.7 7.6 2.4 5.1 3.3 4.2c.9-.9 2.5-.8 3.9.3Z"/><path d="M16.8 4.5c1.4-1.1 3-1.2 3.9-.3.9.9.6 3.4-.3 5.7-.6 1.4-.8 2.9-1.1 4.1-.2.8-1.2.9-1.5.1L16.8 11l-1 3.1c-.3.8-1.3.7-1.5-.1-.3-1.2-.5-2.7-1.1-4.1-.9-2.3-1.2-4.8-.3-5.7.9-.9 2.5-.8 3.9.3Z"/><path d="M4 19.5h16"/></svg></span>
+              <h3 class="rs-card__title">Chew on both sides again.</h3>
+              <p class="rs-card__text">An implant is anchored in the jaw, so you are not steering food away from one side of your mouth.</p>
+            </div>
+          </article>
+
+          <article class="rs-card rs-rise" style="--rs-i:1">
+            <div class="rs-card__body rs-card__body--roomy">
+              <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8" width="5" height="9" rx="2.2"/><rect x="9.5" y="4" width="5" height="13" rx="2.2"/><rect x="16.5" y="8" width="5" height="9" rx="2.2"/><path d="M12 17v3.5"/></svg></span>
+              <h3 class="rs-card__title">Leave the neighbouring teeth alone.</h3>
+              <p class="rs-card__text">A bridge is carried by the teeth either side of a gap. An implant stands on its own instead.</p>
+            </div>
+          </article>
+
+          <article class="rs-card rs-rise" style="--rs-i:2">
+            <div class="rs-card__body rs-card__body--roomy">
+              <span class="rs-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 3h7v7.5a3.5 3.5 0 0 1-7 0Z"/><path d="M12 14v7"/><path d="M9 6.5h6"/><path d="M9 9h6"/></svg></span>
+              <h3 class="rs-card__title">Clean it like a tooth.</h3>
+              <p class="rs-card__text">The crown on an implant is brushed and flossed where it sits. It does not come out at night.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: TRUST-STATS-SECTIONS.md #4 Stats big-number band | considered: #2, #3 | why: this is the page's one hard number and it is fenced to a single office, so the figure is set at display scale INSIDE its own sentence rather than lifted out as a bare numeral, because the content bible forbids the scope ever being detached from the count. #3 count-up 3-up needs three comparable metrics and exactly one exists, so two thirds of that band could only be invented. #2 is a logo marquee, and the carrier marks on disk carry unconfirmed usage rights, so carriers may be named in text but never shown as a moving wall. It takes the page's only dark anchor and sits BEFORE the process rather than after it, which is where the verified medical spine puts quantified proof. | rigor: heavy -->
+<section class="rs-sec surface-dark rsx-wash" id="the-record">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-split rs-split--flip">
+
+          <div class="rs-stack rs-rise" style="--rs-i:0">
+            <p class="rsx-record">Patients at our Lake Mead office have left 506 reviews on Birdeye, averaging 4.5 stars, fetched 30 July 2026.</p>
+          </div>
+
+          <div class="rs-stack rs-rise" style="--rs-i:1">
+            <p class="rs-quote">That record belongs to that office alone.</p>
+          </div>
+
+        </div>
+        <!-- IMAGE SLOT UNFILLED, deliberately. The copy asks here for a photograph of the
+             actual office and the actual equipment. The 372-file pool does hold real
+             practice interiors, but this band names ONE office by name, and
+             imagery-system.md 4.4 forbids a photograph of a different office standing in
+             for the one named. Any real interior placed beside this sentence would let a
+             reader take it for Lake Mead. NEEDED: a photograph of the Lake Mead office and
+             its equipment. No before and after ships here until a real consented patient
+             case is supplied. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: DIVIDER-PATTERNS.md #2 Wave smooth | considered: #7, #8 | why: the second and final use of the one divider family, spent on the hardest seam on the page, where the dark anchor has to hand back to light without a hard horizontal cutting the page in two. #7 pulls a card up over the boundary, which would float an object on top of the review record and steal the emphasis the whole band exists to give it. #8 is a shadow drop band, a device that needs the two grounds to stay rectangles and simply darkens the join instead of dissolving it. Two uses of one family sits inside the two to four discipline and keeps the seam a signature rather than a habit. | rigor: heavy -->
+<section aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-arc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #28 Process timeline | considered: #27, #29 | why: five steps, each carrying a real photograph and a cited source, cannot survive a horizontal strip, so the timeline is rotated to a vertical spine: one continuous rail, a numbered chip per step, and the media alternating side to side so no two consecutive steps share a shape. #27 packs the same five into equal cards four across, which flattens a treatment that genuinely runs to six months into a row of identical boxes and drops every source line with it. #29 is the obvious transformation pattern for dentistry and is barred outright here: no consented patient photography exists in any source, so a before and after pair could only be fabricated. Step three carries no photograph, because none of our own rooms was ever shot for it, and the empty measure is left standing as the picture of waiting rather than filled with a substitute. | rigor: heavy -->
+<section class="rs-sec" id="how-an-implant-is-placed">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rsx-spine">
+
+          <div class="rsx-step rs-rise" style="--rs-i:0">
+            <div class="rsx-step__rail" aria-hidden="true">
+              <span class="rsx-step__n">01</span>
+              <span class="rsx-step__thread"></span>
+            </div>
+            <div class="rsx-step__pair">
+              <div class="rsx-step__copy">
+                <h3 class="rs-h3">We assess the site first.</h3>
+                <p class="rs-copy">X-rays and impressions are taken to determine the bone, the gum tissue and the spacing available for an implant. You are told what is seen, not handed a plan.</p>
+                <p class="rs-source">Our own bone grafting page publishes that a jawbone that has receded or been significantly damaged cannot support an implant. It publishes that grafting is usually recommended for the restoration, captured 30 July 2026.</p>
+              </div>
+              <div class="rsx-step__media">
+                <div class="rs-frame rs-frame--tall rsx-cap-a">
+                  <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-80-1024x1536.jpg" alt="A member of our team at the touchscreen of the X-ray unit in one of our offices" width="1024" height="1536" loading="lazy" decoding="async">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rsx-step rsx-step--flip rs-rise" style="--rs-i:1">
+            <div class="rsx-step__rail" aria-hidden="true">
+              <span class="rsx-step__n">02</span>
+              <span class="rsx-step__thread"></span>
+            </div>
+            <div class="rsx-step__pair">
+              <div class="rsx-step__copy">
+                <h3 class="rs-h3">We place the post.</h3>
+                <p class="rs-copy">A post, usually titanium, is placed in the jaw while the area is numb. This is surgery, and we describe it to you as surgery.</p>
+              </div>
+              <div class="rsx-step__media">
+                <article class="rs-card rs-card--media">
+                  <div class="rs-frame rsx-frame--3x4 rsx-cap-b">
+                    <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-58-3-1024x1536.jpg" alt="A masked clinician standing beside a patient reclined in the chair in one of our operatories" width="1024" height="1536" loading="lazy" decoding="async">
+                    <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMAGE SLOT UNFILLED for step 03. The copy asks for a real photograph of the
+               review chair where the site is checked between appointments. No such
+               photograph exists in the 372-file pool: the only empty-operatory frames on
+               disk are office-named (Decatur, Henderson) and imagery-system.md 4.4 bars
+               them from standing in as generic practice imagery. NEEDED: a photograph of a
+               review chair in a room we are allowed to name. The step is composed WITHOUT
+               media rather than with a substitute, and the full measure is the waiting. -->
+          <div class="rsx-step rsx-step--solo rs-rise" style="--rs-i:2">
+            <div class="rsx-step__rail" aria-hidden="true">
+              <span class="rsx-step__n">03</span>
+              <span class="rsx-step__thread"></span>
+            </div>
+            <div class="rsx-step__pair">
+              <div class="rsx-step__copy">
+                <h3 class="rs-h3">We wait for it to integrate.</h3>
+                <p class="rs-lede">The post has to join with the bone before it can carry anything.</p>
+                <p class="rs-source">Our own implants page publishes a healing and integration period of up to six months, captured 30 July 2026.</p>
+                <p class="rs-copy">That waiting period is part of the treatment, not a delay in it.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rsx-step rs-rise" style="--rs-i:3">
+            <div class="rsx-step__rail" aria-hidden="true">
+              <span class="rsx-step__n">04</span>
+              <span class="rsx-step__thread"></span>
+            </div>
+            <div class="rsx-step__pair">
+              <div class="rsx-step__copy">
+                <h3 class="rs-h3">We fit the restoration.</h3>
+                <p class="rs-copy">The artificial tooth is made and fitted to the post, our own implants page says. The same practice that placed the post fits the tooth on top.</p>
+              </div>
+              <div class="rsx-step__media">
+                <div class="rs-frame rs-frame--tall rsx-cap-c">
+                  <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-44-1-1024x1536.jpg" alt="A clinician at the chair beside a patient wearing a protective apron, in one of our operatories" width="1024" height="1536" loading="lazy" decoding="async">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rsx-step rsx-step--flip rsx-step--wide rs-rise" style="--rs-i:4">
+            <div class="rsx-step__rail" aria-hidden="true">
+              <span class="rsx-step__n">05</span>
+            </div>
+            <div class="rsx-step__pair">
+              <div class="rsx-step__copy">
+                <h3 class="rs-h3">We review it afterwards.</h3>
+                <p class="rs-copy">An implant is checked at your regular visits like any other tooth. The practice that placed it is the practice that checks it.</p>
+              </div>
+              <div class="rsx-step__media">
+                <div class="rs-frame rs-frame--wide">
+                  <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-2048x1365.jpg" alt="The reception desk and waiting area at one of our offices" width="2048" height="1365" loading="lazy" decoding="async">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- BUILD NOTE, does not render. The copy's fourth section carries a FLAG: the
+             implant system we use is not named in any first-party source. The healing
+             interval and the grafting pathway ARE published on our own pages and are
+             carried above verbatim. Owner to confirm the system before this ships. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CARD-VARIATIONS.md #8 Team bio card | considered: #7, #9 | why: the whole claim is that ONE roster does both halves of the treatment, so the roster photograph and the argument belong inside a single object rather than as an image loosely near some text: the bio card is that object, taken at section scale, with the roster as the subject instead of one named individual. #7 overlays a name on the photograph, and no clinician may be named against this treatment, because per-clinician service assignment is unpublished. #9 would put a patient quote in this slot, and no consented patient testimonial exists in any source. The photograph runs to the card edge and stretches to the card's full height, so the object reads as one designed band and never leaves a void beside the copy. | rigor: heavy -->
+<section class="rs-sec rs-sec--band" id="one-practice">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <article class="rs-card rs-card--media rs-rise" style="--rs-i:0">
+          <div class="rsx-bio">
+
+            <div class="rsx-bio__media">
+              <div class="rs-frame">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Dentists-1024x1536.jpg" alt="Five clinicians from the practice roster, photographed in one of our offices" width="1024" height="1536" loading="lazy" decoding="async">
+                <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+                <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <div class="rsx-bio__body">
+              <h2 class="rs-h2">Where implant treatment is split in two, one practice places the post and another restores it.</h2>
+              <p class="rs-lede">The patient carries the plan between them. We do both, at seven offices across Las Vegas, North Las Vegas and Henderson.</p>
+              <p class="rs-copy">We are one dental group, not a franchise and not a referral network. Where offices are separately owned, a consistent standard between them cannot be promised. Oral surgery and restorative care sit on one clinical roster here.</p>
+              <p class="rs-copy">The clinicians on that roster are named, each with the credentials the practice publishes for them. You can read who they are before you book, on <a class="rsx-inline" href="team.html">our team page</a>.</p>
+            </div>
+
+          </div>
+        </article>
+        <!-- BUILD NOTE, does not render. The copy's sixth section carries an OWNER flag:
+             whether patient records and images are held in one system shared by all seven
+             offices is not verified in any first-party capture. No shared-record claim
+             ships on this page until the owner confirms it, and none is rendered above. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md #2 Outline pill secondary | considered: #6, #7 | why: seven destinations in one band, and not one of them is the appointment, so every target here has to read as clearly subordinate to the single act the whole page is built around. #7 is the multi-CTA cluster, which ranks a primary above a secondary, and ranking two of these seven would assert a preference the copy never states. #6 ghost text links with arrows go too far the other way: at seven items across two labelled groups they collapse into an undifferentiated list and lose the 48px target the 40 plus audience needs. The outline pill keeps a real tap target, takes no accent at all, and lets the two copy labels stand exactly as written. | rigor: heavy -->
+<section class="rs-sec" id="related-care">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rsx-rail">
+
+          <div class="rsx-rail__group rs-rise" style="--rs-i:0">
+            <p class="rs-eyebrow">Related care:</p>
+            <div class="rs-chips">
+              <a class="rs-chip" href="restorations.html">Restorations</a>
+              <a class="rs-chip" href="composite-fillings.html">Composite fillings</a>
+              <a class="rs-chip" href="crowns-caps.html">Crowns and caps</a>
+              <a class="rs-chip" href="fixed-bridges.html">Fixed bridges</a>
+            </div>
+          </div>
+
+          <div class="rsx-rail__group rs-rise" style="--rs-i:1">
+            <p class="rs-eyebrow">Also:</p>
+            <div class="rs-chips">
+              <a class="rs-chip" href="locations.html">all seven offices</a>
+              <a class="rs-chip" href="offer.html">new patient offer</a>
+              <a class="rs-chip" href="contact.html">contact</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: PRICING-SECTIONS.md #5 Plain-deal honesty stance | considered: #2, #4 | why: two published entry prices, four named lenders and an openly missing terms line is a stance, not a tier table, and this is the one pattern in the catalog that treats the honest disclosure as the offer itself. #2 is a comparison table, which would need plans or tiers that do not exist on a page publishing no treatment price, so every row after the first would be fabricated. #4 quote only would bury the two prices that genuinely ARE published, and those are the only concrete thing a new patient can act on today. RE-GROUNDED to surface-dark in this pass, and this is the argument: the spine reads teal is structure and yellow is permission, and until now the page spent its one dark beat on the review record and left the single place where permission is actually granted sitting on the same light band as the cross-link rail above it. The locked structural sheet reserves its dark ground for the offer and the closing CTA by name, so this is the sheet's own intent being spent rather than a new device, and the class re-points the card ground, the card edge and the keyline for the whole subtree, which is why the yellow keyline can drop its light-mode deep-teal outer ring here and read as a foreground at last. The photograph on the left track is a new patient arriving at a front desk, which is the literal first move the sentence beside it asks for, and it stretches to the card's height so the band reads as one object. | rigor: heavy -->
+<section class="rs-sec surface-dark" id="new-patient-offer">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rsx-anchor">
+
+          <div class="rsx-anchor__media rs-rise" style="--rs-i:0">
+            <div class="rs-frame">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-24-2-1024x1536.jpg" alt="Someone at the front desk of one of our offices, with a member of our team behind the counter" width="1024" height="1536" loading="lazy" decoding="async">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="rs-spot rs-rise" style="--rs-i:1">
+            <article class="rs-card rs-card--feature">
+              <div class="rs-card__body rs-card__body--roomy">
+                <div class="rsx-offer">
+
+                  <div class="rs-stack">
+                    <p class="rs-lede"><span class="rs-strong">If you are new to us, start with the $45 exam and X-ray, or $29 if you are a senior.</span></p>
+                    <p class="rs-source">Both prices are published on our own site and were current on 30 July 2026.</p>
+                    <p class="rs-meta">Payment plans are available through Care Credit, Cherry, Sunbit and Lending Club. Terms are set by the lender and are subject to credit approval. They are not terms offered by this practice.</p>
+                  </div>
+
+                  <div class="rsx-offer__acts">
+                    <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+                    <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+                  </div>
+
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+        <!-- BUILD NOTE, does not render. The copy's ninth section carries an OWNER
+             PLACEHOLDER: no expiry, no exclusions and no senior-age threshold is stated
+             anywhere on the live site. One is required before this offer ships. Nothing
+             was invented to fill it, and no urgency framing is used because
+             limited_time_framing_allowed is false. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: FAQ-ACCORDION.md #3 2-col split FAQ | considered: #2, #4 | why: three questions, and all three are the ones a hesitant patient actually arrived with: cost, coverage and pain. Splitting question left and answer right keeps every answer permanently on screen while still reading as a structured list rather than as three more paragraphs of prose. #2 is a plus-icon rounded card, which hides those three answers behind a click at the point the reader is closest to booking, and that is worst for the older audience this brand names as primary. #4 numbered list would work, but its numerals would collide with the numbered spine higher up the page and make two unrelated sequences look like one. Placed last so objection handling is the final beat before the chrome's single closing ask. | rigor: heavy -->
+<section class="rs-sec rs-sec--close" id="implant-questions">
+  <div class="rs-wrap container">
+    <div class="row">
+      <div class="col">
+        <div class="rsx-qa">
+
+          <div class="rsx-qa__row rs-rise" style="--rs-i:0">
+            <h3 class="rs-h4">What does an implant cost?</h3>
+            <p class="rs-copy">We quote after an examination, because the plan depends on the bone, the site and the tooth being replaced. We do not publish treatment prices on this site.</p>
+          </div>
+
+          <div class="rsx-qa__row rs-rise" style="--rs-i:1">
+            <h3 class="rs-h4">Does insurance cover it?</h3>
+            <p class="rs-copy">Coverage depends on your plan. Delta Dental, Cigna, MetLife and the Culinary Health Fund are among the 41 carriers listed on <a class="rsx-inline" href="insurance-financing.html">our insurance and financing page</a>. Network status varies by office and by plan. Contact the office you want with your plan details before you book.</p>
+          </div>
+
+          <div class="rsx-qa__row rs-rise" style="--rs-i:2">
+            <h3 class="rs-h4">Does it hurt?</h3>
+            <p class="rs-copy">The post is placed while the area is numb. The site can feel sore afterwards, and we tell you how to manage that before you leave.</p>
+          </div>
+
+        </div>
+        <!-- BUILD NOTE, does not render. The copy's eighth section carries an OWNER flag on
+             the insurance answer: it names carriers without stating any relationship with
+             them, and it offers no coverage check made on the patient's behalf, because
+             that activity is undefined and blocked. Confirm the per-office network status
+             before this answer ships. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================================
+     FOOTER: FOOTER-STYLES.md #14 Hours-and-contact prominent.
+     Contact / hours / act across the top, then the seven-office ledger. This is a
+     seven-office practice: the footer's real job is "which office, what number".
+     ============================================================================ -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="foot-top">
+      <div>
+        <a class="foot-word" href="index.html" aria-label="Radiant Smiles Dental Care, home">
+          <span class="foot-word__name">Radiant Smiles</span>
+          <span class="foot-word__lockup">Dental Care</span>
+        </a>
+        <p class="foot-blurb">One dental practice with seven offices across Las Vegas and Henderson, Nevada, and ten dentists between them.</p>
+      </div>
+
+      <div>
+        <h2 class="foot-h">Hours &amp; contact</h2>
+        <!-- OWNER FLAG: per-office opening hours are NOT in the locked spec and are NOT
+             invented here. Supply them and each one drops into its ledger row below. -->
+        <p class="foot-hours"><strong>Hours vary by office.</strong> Call the office nearest you and its front desk will book you directly. Every direct line is in the ledger below.</p>
+      </div>
+
+      <div class="foot-acts">
+        <a class="btn btn--accent" href="contact.html">Book Appointment</a>
+        <a class="btn btn--ghost" href="offer.html">New Patient Offer</a>
+      </div>
+    </div>
+
+    <section class="directory" aria-labelledby="directory-h">
+      <div class="directory__head">
+        <h2 class="directory__h" id="directory-h">Seven offices, seven direct lines</h2>
+        <p class="eyebrow">Las Vegas &amp; Henderson</p>
+      </div>
+
+      <div class="ledger">
+        <div class="ledger__row">
+          <a class="ledger__office" href="lone-mountain.html">Lone Mountain</a>
+          <a class="ledger__tel" href="tel:+17022894424"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 289-4424</a>
+          <a class="ledger__go" href="lone-mountain.html">Office page</a>
+        </div>
+        <div class="ledger__row">
+          <a class="ledger__office" href="sunrise-manor.html">Sunrise Manor</a>
+          <a class="ledger__tel" href="tel:+17024523552"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 452-3552</a>
+          <a class="ledger__go" href="sunrise-manor.html">Office page</a>
+        </div>
+        <div class="ledger__row">
+          <a class="ledger__office" href="summerlin.html">Summerlin</a>
+          <a class="ledger__tel" href="tel:+17023604800"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 360-4800</a>
+          <a class="ledger__go" href="summerlin.html">Office page</a>
+        </div>
+        <div class="ledger__row">
+          <a class="ledger__office" href="north-las-vegas.html">North Las Vegas</a>
+          <a class="ledger__tel" href="tel:+17025091967"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 509-1967</a>
+          <a class="ledger__go" href="north-las-vegas.html">Office page</a>
+        </div>
+        <div class="ledger__row">
+          <a class="ledger__office" href="henderson.html">Henderson</a>
+          <a class="ledger__tel" href="tel:+17028977001"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 897-7001</a>
+          <a class="ledger__go" href="henderson.html">Office page</a>
+        </div>
+        <div class="ledger__row">
+          <a class="ledger__office" href="north-decatur.html">North Decatur</a>
+          <a class="ledger__tel" href="tel:+17025220119"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 522-0119</a>
+          <a class="ledger__go" href="north-decatur.html">Office page</a>
+        </div>
+        <div class="ledger__row">
+          <a class="ledger__office" href="blue-diamond.html">Blue Diamond</a>
+          <a class="ledger__tel" href="tel:+17023310010"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 331-0010</a>
+          <a class="ledger__go" href="blue-diamond.html">Office page</a>
+        </div>
+      </div>
+    </section>
+
+    <nav class="foot-links" aria-label="Footer">
+      <div>
+        <h3>Care</h3>
+        <ul>
+          <li><a href="general-dentistry.html">General Dentistry</a></li>
+          <li><a href="cosmetic-dentistry.html">Cosmetic Dentistry</a></li>
+          <li><a href="restorations.html">Restorations</a></li>
+          <li><a href="oral-surgery.html">Oral Surgery</a></li>
+          <li><a href="periodontics.html">Periodontics</a></li>
+          <li><a href="orthodontics.html">Orthodontics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Patients</h3>
+        <ul>
+          <li><a href="offer.html">New Patient Offer</a></li>
+          <li><a href="insurance-financing.html">Insurance &amp; Financing</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Practice</h3>
+        <ul>
+          <li><a href="about.html">About Radiant Smiles</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="reviews.html">Patient Reviews</a></li>
+          <li><a href="smile-gallery.html">Smile Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="foot-legal">
+      <p>&copy; 2026 Radiant Smiles Dental Care. Las Vegas &amp; Henderson, Nevada.</p>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        <li><a href="cookie-settings.html">Cookie Settings</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ============================================================================
+     MOBILE DRAWER. G13 contract: id="mobile-drawer", aria-hidden flips to "false".
+     T3: the SAME five top-level items as desktop, same order, same labels.
+     ============================================================================ -->
+<div class="drawer-scrim" id="drawer-scrim" hidden></div>
+
+<div class="drawer" id="mobile-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="drawer__head">
+    <a class="foot-word" href="index.html" aria-label="Radiant Smiles Dental Care, home">
+      <span class="foot-word__name">Radiant Smiles</span>
+      <span class="foot-word__lockup">Dental Care</span>
+    </a>
+    <button class="drawer__close" type="button" id="drawer-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5 19 19M19 5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="drawer__scroll">
+    <nav aria-label="Mobile primary">
+
+      <!-- 1 · SERVICES -->
+      <div class="acc">
+        <button class="acc__trigger" type="button" aria-expanded="false">Services
+          <svg class="caret" width="14" height="9" viewBox="0 0 13 8" fill="none" aria-hidden="true"><path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="acc__body">
+          <a class="acc__link" href="general-dentistry.html">General Dentistry</a>
+          <a class="acc__link" href="cosmetic-dentistry.html">Cosmetic Dentistry</a>
+          <a class="acc__link" href="restorations.html">Restorations</a>
+          <a class="acc__link" href="oral-surgery.html">Oral Surgery</a>
+          <a class="acc__link" href="periodontics.html">Periodontics</a>
+          <a class="acc__link" href="orthodontics.html">Orthodontics</a>
+          <a class="acc__link" href="services.html">All services</a>
+        </div>
+      </div>
+
+      <!-- 2 · LOCATIONS -->
+      <div class="acc">
+        <button class="acc__trigger" type="button" aria-expanded="false">Locations
+          <svg class="caret" width="14" height="9" viewBox="0 0 13 8" fill="none" aria-hidden="true"><path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="acc__body">
+          <div class="acc__office"><a class="loc__name" href="lone-mountain.html">Lone Mountain</a>
+                      <p class="loc__where">Las Vegas, NV 89128</p><a class="loc__tel" href="tel:+17022894424"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 289-4424</a></div>
+          <div class="acc__office"><a class="loc__name" href="sunrise-manor.html">Sunrise Manor</a>
+                      <p class="loc__where">Las Vegas, NV 89107</p><a class="loc__tel" href="tel:+17024523552"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 452-3552</a></div>
+          <div class="acc__office"><a class="loc__name" href="summerlin.html">Summerlin</a>
+                      <p class="loc__where">Las Vegas, NV 89117</p><a class="loc__tel" href="tel:+17023604800"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 360-4800</a></div>
+          <div class="acc__office"><a class="loc__name" href="north-las-vegas.html">North Las Vegas</a>
+                      <p class="loc__where">North Las Vegas, NV 89031</p><a class="loc__tel" href="tel:+17025091967"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 509-1967</a></div>
+          <div class="acc__office"><a class="loc__name" href="henderson.html">Henderson</a>
+                      <p class="loc__where">Henderson, NV 89052</p><a class="loc__tel" href="tel:+17028977001"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 897-7001</a></div>
+          <div class="acc__office"><a class="loc__name" href="north-decatur.html">North Decatur</a>
+                      <p class="loc__where">Las Vegas, NV 89130</p><a class="loc__tel" href="tel:+17025220119"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 522-0119</a></div>
+          <div class="acc__office"><a class="loc__name" href="blue-diamond.html">Blue Diamond</a>
+                      <p class="loc__where">Las Vegas, NV 89139</p><a class="loc__tel" href="tel:+17023310010"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(702) 331-0010</a></div>
+          <a class="acc__link" href="locations.html">All seven offices</a>
+        </div>
+      </div>
+
+      <!-- 3 · OUR TEAM (direct, mirrors the desktop bar) -->
+      <div class="acc">
+        <a class="nav__link" href="team.html">Our Team</a>
+      </div>
+
+      <!-- 4 · NEW PATIENTS -->
+      <div class="acc">
+        <button class="acc__trigger" type="button" aria-expanded="false">New Patients
+          <svg class="caret" width="14" height="9" viewBox="0 0 13 8" fill="none" aria-hidden="true"><path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="acc__body">
+          <a class="acc__link" href="new-patients.html">New Patients</a>
+          <a class="acc__link" href="offer.html">New Patient Offer</a>
+          <a class="acc__link" href="insurance-financing.html">Insurance &amp; Financing</a>
+          <a class="acc__link" href="faq.html">FAQ</a>
+        </div>
+      </div>
+
+      <!-- 5 · ABOUT -->
+      <div class="acc">
+        <button class="acc__trigger" type="button" aria-expanded="false">About
+          <svg class="caret" width="14" height="9" viewBox="0 0 13 8" fill="none" aria-hidden="true"><path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="acc__body">
+          <a class="acc__link" href="about.html">About Radiant Smiles</a>
+          <a class="acc__link" href="team.html">Our Team</a>
+          <a class="acc__link" href="reviews.html">Patient Reviews</a>
+          <a class="acc__link" href="smile-gallery.html">Smile Gallery</a>
+          <a class="acc__link" href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div class="acc">
+        <a class="nav__link" href="privacy-policy.html">Privacy Policy</a>
+      </div>
+      <div class="acc">
+        <a class="nav__link" href="cookie-settings.html">Cookie Settings</a>
+      </div>
+
+    </nav>
+  </div>
+
+  <div class="drawer__foot">
+    <a class="btn btn--accent" href="contact.html"><span class="lbl-full">Book Appointment</span><span class="lbl-short">Book</span></a>
+    <a class="btn btn--ghost" href="locations.html">Call an office</a>
+  </div>
+</div>
+
+<!-- STICKY CTA BAR (mobile): "Book" + "Call nearest office" -->
+<div class="sticky-cta" id="cta-bar" aria-label="Quick actions">
+  <a class="btn btn--accent" href="contact.html"><span class="lbl-full">Book Appointment</span><span class="lbl-short">Book</span></a>
+  <a class="btn btn--ghost" href="locations.html">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.4 2.5 7 5.6 5.5 7.2c.8 1.8 2.5 3.5 4.3 4.3l1.6-1.5 3.1 1.6-.4 2.6c-.2 1-1.1 1.6-2.1 1.4C7.6 15.1 2.9 10.4 2 5c-.2-1 .4-1.9 1.4-2.1l2-.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    Call nearest office
+  </a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ------------------------------------------------------------------
+     SCROLL CONDENSE. The institution does not fade in, it tightens up.
+     ------------------------------------------------------------------ */
+  var header = document.getElementById('site-header');
+  function onScroll() { header.classList.toggle('is-condensed', window.scrollY > 48); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ------------------------------------------------------------------
+     HOVER-INTENT, all three ways together:
+       (a) group scope: CSS :hover / :focus-within on the shared <li>
+       (b) zero dead-gap: trigger stretches to the header edge; ::before bridge
+       (c) close-delay: 240ms on mouseleave, CLEARED on re-enter
+     ------------------------------------------------------------------ */
+  var CLOSE_DELAY = 240;
+  var groups = [].slice.call(document.querySelectorAll('[data-nav-group]'));
+
+  function panelOf(g) { return g.querySelector('.mega, .drop-panel'); }
+  function trigOf(g)  { return g.querySelector('.nav__trigger'); }
+
+  function openGroup(g) {
+    groups.forEach(function (o) { if (o !== g) closeGroup(o); });
+    g.classList.add('is-open');
+    var t = trigOf(g); if (t) t.setAttribute('aria-expanded', 'true');
+  }
+  function closeGroup(g) {
+    g.classList.remove('is-open');
+    var t = trigOf(g); if (t) t.setAttribute('aria-expanded', 'false');
+  }
+
+  groups.forEach(function (g) {
+    var timer = null;
+    g.addEventListener('mouseenter', function () { clearTimeout(timer); openGroup(g); });
+    g.addEventListener('mouseleave', function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () { closeGroup(g); }, CLOSE_DELAY);
+    });
+    /* the panel is a DOM child of the group, so re-entering it clears the timer too */
+    var p = panelOf(g);
+    if (p) { p.addEventListener('mouseenter', function () { clearTimeout(timer); openGroup(g); }); }
+    var t = trigOf(g);
+    if (t) {
+      t.addEventListener('click', function (e) {
+        e.preventDefault();
+        clearTimeout(timer);
+        if (g.classList.contains('is-open')) { closeGroup(g); t.blur(); }
+        else { openGroup(g); }
+      });
+      t.addEventListener('focus', function () { clearTimeout(timer); openGroup(g); });
+    }
+  });
+
+  /* ------------------------------------------------------------------
+     MOBILE DRAWER. G13 canonical contract:
+       toggle: .site-header__hamburger + aria-controls="mobile-drawer" + aria-expanded
+       drawer: id="mobile-drawer" + aria-hidden, flipped to "false" on OPEN
+     ------------------------------------------------------------------ */
+  var burger = document.querySelector('.site-header__hamburger');
+  var drawer = document.getElementById('mobile-drawer');
+  var scrim  = document.getElementById('drawer-scrim');
+  var closeBtn = document.getElementById('drawer-close');
+  var lastFocus = null;
+
+  function focusables() {
+    return [].slice.call(drawer.querySelectorAll('a[href], button:not([disabled])'))
+             .filter(function (el) { return el.offsetParent !== null; });
+  }
+
+  function openDrawer() {
+    lastFocus = document.activeElement;
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    scrim.hidden = false;
+    requestAnimationFrame(function () { scrim.classList.add('is-open'); });
+    document.body.style.overflow = 'hidden';
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    scrim.classList.remove('is-open');
+    document.body.style.overflow = '';
+    window.setTimeout(function () { if (!drawer.classList.contains('is-open')) scrim.hidden = true; }, 260);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  if (burger) burger.addEventListener('click', function () {
+    if (drawer.classList.contains('is-open')) closeDrawer(); else openDrawer();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (scrim) scrim.addEventListener('click', closeDrawer);
+
+  /* drawer accordions */
+  [].slice.call(drawer.querySelectorAll('.acc__trigger')).forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     MOBILE STICKY CTA: reveal past the HERO'S PRIMARY ACTION, then HIDE AT THE
+     CLOSING CTA / FOOTER.
+     TWO IntersectionObservers. The second one is the fix for the doubling-up
+     bug: the moment the real closing CTA (.rs-sec--close / .cta-band) or the
+     .site-footer enters the viewport, the sticky bar is toggled OFF; scroll back
+     up and it returns.
+
+     WHY THIS WAS DEAD SITE-WIDE (fixed here, at the carrier):
+     the reveal anchored on `#main .band` — a section vocabulary this build does
+     NOT emit. Pages here are assembled from `.rs-sec` (`.rs-sec--lead` is the
+     hero, `.rs-sec--close` is the closing CTA), and there is no #scroll-sentinel,
+     so the query returned NULL. `updatePastHero()` then early-returned and
+     observer #1 was never constructed, leaving `pastHero` false forever — so
+     `is-revealed` was never added on ANY page and the bar stayed parked
+     off-screen at translateY(118%). The `.cta-band` end-target was stale in the
+     same way, which is why `.rs-sec--close` is added below: without it the
+     now-working bar would double up over the real closing CTA — the very bug
+     observer #2 exists to prevent.
+
+     The anchor is now resolved through an ordered candidate list covering BOTH
+     vocabularies, and when nothing matches it degrades to a SCROLL-DISTANCE
+     predicate (the header's own `window.scrollY` idiom) so a future vocabulary
+     change makes the bar reveal EARLY rather than silently die again.
+     ------------------------------------------------------------------ */
+  var stickyBar = document.getElementById('cta-bar');
+  var endTargets = [].slice.call(document.querySelectorAll('.rs-sec--close, .cta-band, .site-footer'));
+  var pastHero = false, atEnd = false;
+
+  function syncSticky() {
+    if (stickyBar) stickyBar.classList.toggle('is-revealed', pastHero && !atEnd);
+  }
+
+  /* The reveal anchor. Prefer the HERO'S PRIMARY ACTION — the sticky bar exists to
+     replace that button once it scrolls away — then the hero section, then the
+     legacy `.band` vocabulary, so older pages keep working unchanged. */
+  function resolveHeroAnchor() {
+    var sels = [
+      '#scroll-sentinel',
+      '#main .rs-sec--lead .rs-btn--accent',
+      '#main .rs-sec--lead .btn--accent',
+      '#main .band .btn--accent',
+      '#main .rs-sec--lead',
+      '#main .band',
+      '#main > section'
+    ];
+    for (var i = 0; i < sels.length; i++) {
+      var el = document.querySelector(sels[i]);
+      /* must be a real laid-out box, and never the sticky bar's own buttons */
+      if (el && !(stickyBar && stickyBar.contains(el)) && el.getBoundingClientRect().height > 0) return el;
+    }
+    return null;
+  }
+  var heroBlock = resolveHeroAnchor();
+
+  /* The reveal predicate, computed directly from the rect. An IntersectionObserver
+     alone is not enough here: an INSTANT jump (window.scrollTo, or the verification
+     probe) can move a small anchor from below the fold to above it without it ever
+     intersecting, so no callback fires. The observers below are the declared
+     mechanism; this handler is the belt that makes it correct under jump-scrolling
+     too. Both now route through THIS function, so there is exactly ONE predicate —
+     observer #1 no longer computes a second, divergent one that could disagree with
+     the scroll handler over the anchor's own height. */
+  function updatePastHero() {
+    pastHero = heroBlock
+      ? heroBlock.getBoundingClientRect().bottom <= 0
+      /* nothing resolved: fail VISIBLE on distance, never fail dead */
+      : window.scrollY > Math.round(window.innerHeight * 0.8);
+    syncSticky();
+  }
+  window.addEventListener('scroll', updatePastHero, { passive: true });
+
+  if ('IntersectionObserver' in window) {
+    /* observer #1: has the reader moved past the hero's primary action? */
+    if (heroBlock) {
+      new IntersectionObserver(function () { updatePastHero(); }, { threshold: 0 }).observe(heroBlock);
+    }
+    /* observer #2: hide at the real closing CTA / footer */
+    if (endTargets.length) {
+      var endSeen = endTargets.map(function () { return false; });
+      var endObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          var i = endTargets.indexOf(en.target);
+          if (i > -1) endSeen[i] = en.isIntersecting;
+        });
+        atEnd = endSeen.some(function (v) { return v; });
+        syncSticky();
+      }, { threshold: 0.01 });
+      endTargets.forEach(function (el) { endObs.observe(el); });
+    }
+  } else if (stickyBar) {
+    stickyBar.classList.add('is-revealed');   /* no IO support: fail visible */
+  }
+  updatePastHero();
+
+  /* ------------------------------------------------------------------
+     KEYBOARD. Esc closes everything; Tab is trapped inside the open drawer.
+     ------------------------------------------------------------------ */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      if (drawer.classList.contains('is-open')) { closeDrawer(); return; }
+      var open = document.querySelector('[data-nav-group].is-open');
+      if (open) { closeGroup(open); var t = trigOf(open); if (t) t.focus(); }
+      return;
+    }
+    if (e.key === 'Tab' && drawer.classList.contains('is-open')) {
+      var f = focusables();
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      else if (!drawer.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* close any open nav group when focus leaves the header entirely */
+  document.addEventListener('focusin', function (e) {
+    if (header.contains(e.target)) return;
+    var open = document.querySelector('[data-nav-group].is-open');
+    if (open) closeGroup(open);
+  });
+
+  /* if the viewport crosses the 1100px collapse line while the drawer is open, close it */
+  var mq = window.matchMedia('(min-width:1101px)');
+  var onMQ = function () { if (mq.matches && drawer.classList.contains('is-open')) closeDrawer(); };
+  if (mq.addEventListener) mq.addEventListener('change', onMQ); else if (mq.addListener) mq.addListener(onMQ);
+})();
+</script>
+
+</body>
+</html>

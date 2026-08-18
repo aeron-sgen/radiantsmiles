@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radiant Smiles P9 CHROME concept C · The Confident Edge</title>
+
+<!-- ==========================================================================
+     P9 ② CHROME TOURNAMENT · radiantsmiles · CONCEPT C "THE CONFIDENT EDGE"
+
+     NAV ARCHETYPE ....... NAV-PATTERNS.md #1 Floating pill, centered
+     FOOTER PATTERN ...... FOOTER-STYLES.md #10 Bento-grid footer
+     FIGURE/GROUND ....... TRANSPARENT-OVER-HERO to SOLID-ON-SCROLL
+     SECTOR BLUEPRINT .... composition-medical-health.md §2.1 (header: glass,
+                           sticky, pinned appointment CTA, phone as load-bearing UI)
+     QUALITY BAR ......... _MODERN-WOW-SPEC.md §1 depth, §2 motion, §3 material,
+                           §5 colour+light, §6 asymmetry/overlap, §7 detail
+
+     TOKENS: linked from the LOCKED sheet (../../../radiantsmiles-tokens.css).
+     NO *-chrome.css is written here (CHROME LOCK is owner-gated); concept CSS
+     is inline below. ZERO raw hex in this file: every colour is a var(--ds-*).
+
+     ---------------------------------------------------------------------------
+     ★ THE CONTRAST FLIP, PROVEN (this is the trap that already cost this build)
+     ---------------------------------------------------------------------------
+     The pill lives in two grounds and the nav text is legible in BOTH, because
+     the surface, not the text rule, is what changes:
+
+       STATE "top"    the pill carries class="surface-dark" and floats on
+                      --ds-glass-bg rgba(11,66,62,.62) over the dark hero
+                      (#0B3D3A). Inside the flip --ds-ink is #E9F3F3.
+                      PAIRING: #E9F3F3 on #0B3D3A = 9.05:1 worst stop,
+                      10.66:1 top stop. (AAA)
+
+       STATE "solid"  JS REMOVES class="surface-dark". The pill grounds on
+                      --ds-canvas #F7FAFA and --ds-ink reverts to #09302D.
+                      PAIRING: #09302D on #F7FAFA = 11.48:1. (AAA)
+
+     Nothing in the nav hard-codes a colour, so the flip cannot strand a run at
+     low contrast. The ONE place inheritance is deliberately BROKEN is the accent
+     CTA: .btn--accent PINS its label to var(--ds-primary-deep).
+     PAIRING: #0B3D3A on #FFD447 = 8.46:1. That is the only legal accent-button
+     pairing. Letting the label inherit --ds-ink inside .surface-dark would paint
+     #E9F3F3 on #FFD447 at 1.26:1, which is exactly the failure this build
+     already shipped once. It cannot happen here because the rule is explicit.
+
+     #FFD447 is used ONLY as fill, rule, dot or glow: never as text, never as a
+     ground for light text. #128C7E is used ONLY for 24px+ icons, rules and
+     boundaries: never for text in either direction.
+     ---------------------------------------------------------------------------
+
+     ★ LOGO: the client's primary lockup is a navy-and-yellow JPG and would be
+     the only navy object on teal chrome. Per ⚠OWNER §G-7 no vector master
+     exists yet, so the wordmark is SET IN TYPE (--ds-font-display), token-pure.
+     Swap to the vector master the moment the owner supplies it.
+     ========================================================================== -->
+
+<link rel="stylesheet" href="../../../radiantsmiles-tokens.css">
+
+<style>
+/* ==========================================================================
+   0 · RESET + PAGE GROUND
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ds-canvas);
+  color:var(--ds-ink);
+  font-family:var(--ds-font-body);
+  font-size:18px;                 /* AUDIENCE LAW: 18px floor, 40+ primary */
+  line-height:1.70;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--ds-font-display);color:var(--ds-ink-heading);margin:0;line-height:1.14;letter-spacing:-.012em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+:focus-visible{outline:none;box-shadow:var(--ds-glow);border-radius:var(--ds-r-control)}
+
+.eyebrow{
+  font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ds-ink-soft);margin:0 0 var(--ds-space-xs);line-height:1.4;
+}
+.container{width:100%;max-width:var(--ds-container-max);margin-inline:auto;padding-inline:var(--ds-space-md)}
+
+/* ---- SKIP LINK (first focusable, visible on focus) ---------------------- */
+.skip-link{
+  position:fixed;top:var(--ds-space-sm);left:var(--ds-space-sm);
+  transform:translateY(-160%);
+  z-index:var(--ds-z-toast);
+  display:inline-flex;align-items:center;min-height:48px;
+  padding:0 var(--ds-space-md);
+  background:var(--ds-primary-deep);color:var(--ds-ink-on-dark);
+  font-size:18px;font-weight:600;text-decoration:none;
+  border-radius:var(--ds-r-control);
+  transition:transform var(--ds-dur) var(--ds-ease-out);
+}
+.skip-link:focus{transform:translateY(0)}
+
+/* ==========================================================================
+   1 · BUTTONS (the accent-label rule is load-bearing, see head comment)
+   ========================================================================== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--ds-space-xs);
+  min-height:48px;padding:0 var(--ds-space-md);
+  font-size:18px;font-weight:700;line-height:1.2;text-decoration:none;
+  border-radius:var(--ds-r-pill);
+  transition:background var(--ds-dur) var(--ds-ease),color var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease);
+}
+/* ★ label PINNED to --ds-primary-deep. #0B3D3A on #FFD447 = 8.46:1.
+   NEVER let this inherit --ds-ink: inside .surface-dark that is 1.26:1. */
+.btn--accent{
+  background:var(--ds-accent);
+  color:var(--ds-primary-deep);
+  box-shadow:var(--ds-accent-keyline);   /* standalone: the token is `none` on dark */
+  position:relative;overflow:hidden;
+}
+.btn--accent > span{position:relative;z-index:1}
+.btn--accent::after{            /* specular sweep. --ds-primary-soft does NOT flip */
+  content:"";position:absolute;inset:-30% -10%;
+  background:linear-gradient(100deg,transparent 34%,var(--ds-primary-soft) 50%,transparent 66%);
+  opacity:.45;pointer-events:none;
+  animation:sweep 5.2s var(--ds-ease-out) infinite;
+}
+@keyframes sweep{0%,10%{transform:translateX(-135%)}60%,100%{transform:translateX(135%)}}
+.btn-lift{                       /* depth lives on the wrapper so the keyline stays standalone */
+  display:inline-block;border-radius:var(--ds-r-pill);
+  box-shadow:var(--ds-shadow-card);
+  transition:box-shadow var(--ds-dur) var(--ds-ease),transform var(--ds-dur) var(--ds-ease);
+}
+.btn-lift:hover{box-shadow:var(--ds-shadow-lift);transform:translateY(-2px)}
+.btn--ghost{
+  border:1px solid var(--ds-line-control);color:var(--ds-ink);
+}
+.btn--ghost:hover{border-color:var(--ds-signature);background:var(--ds-bg-surface)}
+
+/* ==========================================================================
+   2 · HEADER: NAV-PATTERNS.md #1 "Floating pill, centered"
+   Genuinely floating: fixed, inset margin, page content passes under and around.
+   ========================================================================== */
+.hdr{
+  position:fixed;inset:0 0 auto 0;
+  z-index:var(--ds-z-sticky);
+  /* geometry vars drive BOTH the pill and the detached slab's top offset */
+  --pill-mt:22px;
+  --pill-h:68px;
+  --pill-inset:24px;
+  --pill-pad:calc((var(--pill-h) - 48px) / 2);
+  --slab-gap:14px;
+  --slab-top:calc(var(--pill-mt) + var(--pill-h) + var(--slab-gap));
+  --pill-radius:var(--ds-r-pill);
+  --pill-maxw:1080px;
+}
+.hdr[data-state="solid"]{
+  --pill-mt:0px;
+  --pill-h:64px;
+  --pill-inset:0px;
+  --slab-gap:8px;
+  --pill-radius:0px;
+  --pill-maxw:100%;
+}
+/* the --ds-glow-wash spotlight the pill floats in */
+.hdr__glow{
+  position:absolute;left:0;right:0;top:-40px;height:230px;
+  background:var(--ds-glow-wash),
+             radial-gradient(46% 120% at 50% 0%,var(--ds-accent),transparent 68%);
+  opacity:.16;pointer-events:none;
+  transition:opacity var(--ds-dur-slow) var(--ds-ease);
+}
+.hdr[data-state="solid"] .hdr__glow{opacity:0}
+
+.hdr__inner{
+  position:relative;
+  width:calc(100% - 2 * var(--pill-inset));
+  max-width:var(--pill-maxw);
+  height:var(--pill-h);
+  margin:var(--pill-mt) auto 0;
+  padding-inline:var(--ds-space-md);
+  display:flex;align-items:center;gap:var(--ds-space-md);
+  border-radius:var(--pill-radius);
+  transition:width var(--ds-dur-slow) var(--ds-ease),
+             max-width var(--ds-dur-slow) var(--ds-ease),
+             height var(--ds-dur) var(--ds-ease),
+             margin var(--ds-dur-slow) var(--ds-ease),
+             border-radius var(--ds-dur-slow) var(--ds-ease),
+             padding var(--ds-dur-slow) var(--ds-ease);
+}
+/* .surface-dark paints a gradient ground; the pill is GLASS, so override it.
+   Specificity (0,2,0) beats .surface-dark (0,1,0). */
+.hdr .hdr__inner{background:transparent}
+/* The glass material lives on ::before so NO backdrop-filter sits on an
+   ancestor of the mega slab. A backdrop-filter would make .hdr__inner a
+   containing block and break the slab's position:fixed viewport centering. */
+.hdr__inner::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  border-radius:inherit;
+  background:var(--ds-glass-bg);
+  -webkit-backdrop-filter:var(--ds-glass-blur);
+  backdrop-filter:var(--ds-glass-blur);
+  border:1px solid var(--ds-glass-border);
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+  transition:background var(--ds-dur-slow) var(--ds-ease),
+             box-shadow var(--ds-dur-slow) var(--ds-ease),
+             border-color var(--ds-dur-slow) var(--ds-ease);
+}
+.hdr[data-state="solid"] .hdr__inner::before{
+  background:var(--ds-canvas);
+  border-color:var(--ds-line);
+  box-shadow:var(--ds-shadow-card);
+}
+.hdr__inner > *{position:relative;z-index:1}
+
+/* ---- brand (TYPE wordmark, see ⚠OWNER §G-7 in the head comment) --------- */
+/* min-height 48 so the wordmark link itself clears the AUDIENCE LAW tap floor */
+.brand{display:flex;align-items:center;min-height:48px;gap:var(--ds-space-xs);text-decoration:none;flex:0 0 auto}
+.brand__dot{
+  width:12px;height:12px;border-radius:var(--ds-r-pill);
+  background:var(--ds-accent);box-shadow:var(--ds-accent-keyline);flex:0 0 auto;
+}
+.brand__type{display:flex;flex-direction:column;justify-content:center}
+.brand__name{
+  font-family:var(--ds-font-display);font-size:21px;font-weight:700;
+  line-height:1.05;letter-spacing:-.02em;color:var(--ds-ink);white-space:nowrap;
+}
+.brand__lock{
+  font-size:14px;font-weight:600;letter-spacing:.20em;text-transform:uppercase;
+  color:var(--ds-ink-soft);line-height:1.3;white-space:nowrap;
+}
+
+/* ---- the nav row -------------------------------------------------------- */
+.nav{flex:1 1 auto;display:flex;justify-content:center}
+.nav__list{position:relative;display:flex;align-items:stretch;gap:var(--ds-space-2xs)}
+/* the accent glow that TRACKS the hovered item (decorative fill + keyline) */
+.nav-glow{
+  position:absolute;bottom:2px;height:3px;left:0;width:0;opacity:0;
+  background:var(--ds-accent);border-radius:var(--ds-r-pill);
+  box-shadow:var(--ds-accent-keyline);
+  transition:left var(--ds-dur) var(--ds-ease-out),width var(--ds-dur) var(--ds-ease-out),
+             opacity var(--ds-dur-fast) var(--ds-ease);
+  pointer-events:none;z-index:0;
+}
+.nav-glow::after{
+  content:"";position:absolute;left:-14px;right:-14px;top:-13px;bottom:-13px;
+  background:radial-gradient(closest-side,var(--ds-accent),transparent 78%);
+  opacity:.42;filter:blur(5px);
+}
+.nav-item{position:relative;display:flex;align-items:stretch;z-index:1}
+.nav-trigger,.nav-link{
+  display:inline-flex;align-items:center;gap:6px;
+  min-height:48px;padding:0 var(--ds-space-sm);
+  font-size:18px;font-weight:600;line-height:1.4;color:var(--ds-ink);
+  text-decoration:none;border-radius:var(--ds-r-control);
+  transition:color var(--ds-dur-fast) var(--ds-ease),background var(--ds-dur-fast) var(--ds-ease);
+  white-space:nowrap;
+}
+.nav-trigger:hover,.nav-link:hover,
+.nav-item.is-open > .nav-trigger{color:var(--ds-ink-heading)}
+.caret{
+  width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg) translate(-2px,-2px);opacity:.72;
+  transition:transform var(--ds-dur) var(--ds-ease);
+}
+.nav-item.is-open .caret{transform:rotate(-135deg) translate(-3px,-3px)}
+
+/* ---- hover-intent (b): the INVISIBLE BRIDGE across the float gap ---------
+   The pill is detached from the slab by --pill-pad + --slab-gap of dead air.
+   This span covers that seam, is a DOM DESCENDANT of the same <li> the trigger
+   is in, and overlaps the slab's top edge by 12px, so the pointer never leaves
+   the hover scope on the way down. */
+.hover-bridge{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  width:360px;height:calc(var(--pill-pad) + var(--slab-gap) + 12px);
+  display:none;
+}
+.nav-item.is-open > .hover-bridge,
+.nav-item:hover > .hover-bridge,
+.nav-item:focus-within > .hover-bridge{display:block}
+
+/* ---- header right-hand actions ------------------------------------------ */
+.hdr__actions{display:flex;align-items:center;gap:var(--ds-space-xs);flex:0 0 auto}
+.hdr__phone{
+  display:inline-flex;align-items:center;gap:8px;
+  min-height:48px;padding:0 var(--ds-space-sm);
+  font-size:18px;font-weight:700;color:var(--ds-ink);text-decoration:none;
+  border-radius:var(--ds-r-pill);border:1px solid var(--ds-line-control);
+  white-space:nowrap;
+  transition:border-color var(--ds-dur) var(--ds-ease),background var(--ds-dur) var(--ds-ease);
+}
+.hdr__phone:hover{border-color:var(--ds-signature);background:var(--ds-bg-surface)}
+.hdr__phone svg{width:20px;height:20px;flex:0 0 auto;color:var(--ds-signature)}
+
+/* ---- hamburger: G13 CANONICAL SELECTOR (site-header__hamburger) ---------- */
+.site-header__hamburger{
+  display:none;
+  width:48px;height:48px;flex:0 0 auto;
+  align-items:center;justify-content:center;
+  border-radius:var(--ds-r-control);
+  border:1px solid var(--ds-line-control);
+  margin-left:auto;                       /* T4: hamburger is the RIGHTMOST element */
+}
+.site-header__hamburger span{
+  position:relative;display:block;width:22px;height:2px;background:currentColor;
+  transition:transform var(--ds-dur) var(--ds-ease),opacity var(--ds-dur-fast) var(--ds-ease);
+}
+.site-header__hamburger span::before,
+.site-header__hamburger span::after{
+  content:"";position:absolute;left:0;width:22px;height:2px;background:currentColor;
+  transition:transform var(--ds-dur) var(--ds-ease);
+}
+.site-header__hamburger span::before{top:-7px}
+.site-header__hamburger span::after{top:7px}
+.site-header__hamburger[aria-expanded="true"] span{background:transparent}
+.site-header__hamburger[aria-expanded="true"] span::before{transform:translateY(7px) rotate(45deg)}
+.site-header__hamburger[aria-expanded="true"] span::after{transform:translateY(-7px) rotate(-45deg)}
+
+/* ==========================================================================
+   3 · THE DETACHED MEGA SLAB (differs from A and B: it is its OWN floating
+   object, not a panel hanging off the bar. Own shadow-lift, own glass, own
+   glow, and a featured image card that BREAKS ITS BOX.)
+   position:fixed resolves to the viewport because no ancestor carries
+   transform / filter / backdrop-filter. Verified by construction above.
+   ========================================================================== */
+.mm-panel{
+  position:fixed;
+  top:var(--slab-top);
+  left:50%;
+  width:min(1140px,calc(100vw - 96px));
+  transform:translateX(-50%) translateY(-10px) scale(.985);
+  transform-origin:50% 0;
+  z-index:var(--ds-z-overlay);
+  padding:var(--ds-space-md) var(--ds-space-lg);
+  border-radius:var(--ds-r-surface);
+  border:1px solid var(--ds-glass-border);
+  -webkit-backdrop-filter:var(--ds-glass-blur);
+  backdrop-filter:var(--ds-glass-blur);
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity var(--ds-dur) var(--ds-ease-out),
+             transform var(--ds-dur) var(--ds-ease-out),
+             visibility 0s linear var(--ds-dur),
+             top var(--ds-dur-slow) var(--ds-ease);
+}
+.hdr .mm-panel{background:var(--ds-glass-bg)}   /* beat .surface-dark's gradient */
+.nav-item.is-open > .mm-panel,
+.nav-item:focus-within > .mm-panel{
+  opacity:1;visibility:visible;pointer-events:auto;
+  transform:translateX(-50%) translateY(0) scale(1);
+  transition-delay:0s;
+}
+.mm-slabglow{
+  position:absolute;inset:-1px;border-radius:inherit;overflow:hidden;pointer-events:none;
+}
+.mm-slabglow::before{
+  content:"";position:absolute;inset:0;
+  background:var(--ds-glow-wash),
+             radial-gradient(38% 90% at 78% 0%,var(--ds-accent),transparent 70%);
+  opacity:.16;
+}
+/* stretch: the featured card fills the slab's full height, so it reads as ONE
+   large image object rather than a thumbnail with dead space under it. */
+.mm-inner{position:relative;display:grid;grid-template-columns:340px 1fr;gap:var(--ds-space-lg);align-items:stretch}
+
+/* ---- FEATURED ZONE: a LARGE bleeding image card that breaks the box ------ */
+.mm-feat{
+  position:relative;
+  display:flex;flex-direction:column;
+  margin-left:calc(var(--ds-space-lg) * -1 - 12px);   /* bleeds past the slab's LEFT edge */
+  margin-bottom:-42px;                                /* and past its BOTTOM edge */
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-lift);
+  overflow:hidden;
+  isolation:isolate;
+}
+.mm-feat__media{position:relative;flex:1 1 auto;min-height:300px;overflow:hidden;background:var(--ds-primary-deep)}
+.mm-feat__media img{width:100%;height:100%;object-fit:cover;transition:transform var(--ds-dur-slow) var(--ds-ease)}
+.mm-feat:hover .mm-feat__media img{transform:scale(1.045)}
+/* GRADE: teal duotone multiply so a stock photo reads as brand. Kept light
+   enough that the real room is still recognisable. */
+.mm-feat__grade{position:absolute;inset:0;background:var(--ds-signature);mix-blend-mode:multiply;opacity:.30}
+.mm-feat__wash{position:absolute;inset:0;background:var(--ds-glow-wash);opacity:.45}
+/* The scrim reaches FULL --ds-scrim by 52%, above where the copy block starts,
+   so the overlaid line has a COMPUTED worst case rather than a hopeful one:
+   a pure-white source pixel, graded (multiply #128C7E at .30) then scrimmed
+   (rgba(6,32,30,.74)) composites to rgb(52,81,78); --ds-ink-on-dark #E9F3F3
+   on that is 7.56:1. Every darker source pixel is better. */
+.mm-feat__scrim{position:absolute;inset:0;background:linear-gradient(180deg,transparent 18%,var(--ds-scrim) 52%,var(--ds-scrim) 100%)}
+.mm-feat__copy{position:absolute;left:0;right:0;bottom:0;padding:var(--ds-space-md)}
+.mm-feat__copy .eyebrow{color:var(--ds-ink-on-dark);opacity:.92}
+.mm-feat__line{
+  font-family:var(--ds-font-display);font-size:23px;line-height:1.24;letter-spacing:-.015em;
+  color:var(--ds-ink-on-dark);margin-bottom:var(--ds-space-sm);
+}
+.mm-feat__link{
+  display:inline-flex;align-items:center;gap:8px;min-height:48px;
+  font-size:18px;font-weight:700;color:var(--ds-ink-on-dark);text-decoration:none;
+  border-bottom:2px solid var(--ds-accent);
+}
+.mm-feat__link span{transition:transform var(--ds-dur) var(--ds-ease-out)}
+.mm-feat__link:hover span{transform:translateX(5px)}
+
+/* ---- category cards: STAGGERED, not a plain grid ------------------------- */
+.mm-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--ds-space-sm);padding-bottom:22px}
+.mm-card{
+  --stagger:0px;
+  position:relative;display:block;text-decoration:none;
+  padding:var(--ds-space-sm) var(--ds-space-md) var(--ds-space-sm) var(--ds-space-sm);
+  min-height:48px;
+  background:var(--ds-bg-surface);
+  border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-control);
+  box-shadow:var(--ds-shadow-rest);
+  transform:translateY(var(--stagger));
+  transition:transform var(--ds-dur) var(--ds-ease-out),box-shadow var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease),background var(--ds-dur) var(--ds-ease);
+}
+.mm-cards .mm-card:nth-child(even){--stagger:20px}
+.mm-card:hover{
+  transform:translateY(calc(var(--stagger) - 5px));
+  box-shadow:var(--ds-shadow-card);
+  border-color:var(--ds-signature);
+}
+.mm-card__top{display:flex;align-items:center;gap:10px}
+.mm-card__icon{width:26px;height:26px;flex:0 0 auto;color:var(--ds-signature)}
+.mm-card__icon svg{width:26px;height:26px;display:block}
+.mm-card__title{font-family:var(--ds-font-display);font-size:19px;font-weight:700;color:var(--ds-ink-heading);line-height:1.25}
+.mm-card__desc{font-size:18px;line-height:1.5;color:var(--ds-ink-soft);margin-top:4px}
+/* the accent dot that SCALES IN on hover */
+.mm-card__dot{
+  position:absolute;top:14px;right:14px;width:10px;height:10px;border-radius:var(--ds-r-pill);
+  background:var(--ds-accent);box-shadow:var(--ds-accent-keyline);
+  transform:scale(0);transition:transform var(--ds-dur) var(--ds-ease-out);
+}
+.mm-card:hover .mm-card__dot,.mm-card:focus-visible .mm-card__dot{transform:scale(1)}
+
+/* ---- office cards (Locations slab): name link + REAL tel: link ----------- */
+.mm-office{
+  --stagger:0px;
+  position:relative;
+  padding:10px var(--ds-space-sm);
+  background:var(--ds-bg-surface);
+  border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-control);
+  box-shadow:var(--ds-shadow-rest);
+  transform:translateY(var(--stagger));
+  transition:transform var(--ds-dur) var(--ds-ease-out),box-shadow var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease);
+}
+.mm-cards--offices .mm-office:nth-child(even){--stagger:20px}
+.mm-office:hover{transform:translateY(calc(var(--stagger) - 5px));box-shadow:var(--ds-shadow-card);border-color:var(--ds-signature)}
+.mm-office__name{
+  display:inline-flex;align-items:center;min-height:34px;
+  font-family:var(--ds-font-display);font-size:19px;font-weight:700;
+  color:var(--ds-ink-heading);text-decoration:none;line-height:1.25;
+}
+.mm-office__name:hover{text-decoration:underline;text-underline-offset:4px}
+.mm-office__meta{font-size:17px;color:var(--ds-ink-soft);line-height:1.45}
+.mm-office__tel{
+  display:inline-flex;align-items:center;gap:8px;min-height:48px;
+  font-size:18px;font-weight:700;color:var(--ds-ink);text-decoration:none;
+}
+.mm-office__tel svg{width:20px;height:20px;color:var(--ds-signature);flex:0 0 auto}
+.mm-office__tel:hover{color:var(--ds-ink-heading);text-decoration:underline;text-underline-offset:4px}
+.mm-office__dot{
+  position:absolute;top:12px;right:12px;width:9px;height:9px;border-radius:var(--ds-r-pill);
+  background:var(--ds-accent);box-shadow:var(--ds-accent-keyline);
+  transform:scale(0);transition:transform var(--ds-dur) var(--ds-ease-out);
+}
+.mm-office:hover .mm-office__dot{transform:scale(1)}
+
+/* ==========================================================================
+   4 · CARET DROPDOWNS (New Patients, About)
+   ========================================================================== */
+.mm-drop-panel{
+  position:absolute;top:calc(100% + var(--pill-pad) + var(--slab-gap));
+  right:0;
+  min-width:300px;
+  padding:var(--ds-space-sm);
+  border-radius:var(--ds-r-surface);
+  border:1px solid var(--ds-glass-border);
+  -webkit-backdrop-filter:var(--ds-glass-blur);
+  backdrop-filter:var(--ds-glass-blur);
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(-8px);
+  transition:opacity var(--ds-dur) var(--ds-ease-out),transform var(--ds-dur) var(--ds-ease-out),
+             visibility 0s linear var(--ds-dur);
+  z-index:var(--ds-z-overlay);
+}
+.hdr .mm-drop-panel{background:var(--ds-glass-bg)}
+.nav-item.is-open > .mm-drop-panel,
+.nav-item:focus-within > .mm-drop-panel{
+  opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);transition-delay:0s;
+}
+.mm-drop--wide{width:470px;display:grid;grid-template-columns:150px 1fr;gap:var(--ds-space-sm)}
+.mm-dropfig{position:relative;border-radius:var(--ds-r-control);overflow:hidden;box-shadow:var(--ds-shadow-card)}
+.mm-dropfig img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.mm-dropfig .mm-feat__grade{opacity:.40}
+.mm-dropfig__cap{
+  position:absolute;left:0;right:0;bottom:0;padding:10px;
+  background:linear-gradient(180deg,transparent,var(--ds-scrim));
+  color:var(--ds-ink-on-dark);font-size:14px;font-weight:700;letter-spacing:.10em;
+  text-transform:uppercase;line-height:1.35;
+}
+.mm-droplink{
+  display:flex;align-items:center;gap:10px;
+  min-height:48px;padding:0 var(--ds-space-sm);
+  font-size:18px;font-weight:600;color:var(--ds-ink);text-decoration:none;
+  border-radius:var(--ds-r-control);
+  transition:background var(--ds-dur-fast) var(--ds-ease),color var(--ds-dur-fast) var(--ds-ease);
+}
+.mm-droplink::before{
+  content:"";width:7px;height:7px;border-radius:var(--ds-r-pill);flex:0 0 auto;
+  background:var(--ds-accent);box-shadow:var(--ds-accent-keyline);
+  transform:scale(0);transition:transform var(--ds-dur-fast) var(--ds-ease-out);
+}
+.mm-droplink:hover{background:var(--ds-bg-surface);color:var(--ds-ink-heading)}
+.mm-droplink:hover::before{transform:scale(1)}
+
+/* ==========================================================================
+   5 · MAIN SCAFFOLD (~1600px so the scroll morph and a real fold are provable.
+   This is SCAFFOLD, deliberately quiet. The chrome is the subject.)
+   ========================================================================== */
+.hero{
+  position:relative;min-height:560px;display:flex;align-items:flex-end;
+  padding:172px 0 var(--ds-space-2xl);
+  overflow:hidden;
+}
+.hero__tex{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:var(--ds-grid);background-size:var(--ds-grid-size);
+  opacity:.9;
+}
+.hero__wash{
+  position:absolute;inset:0;pointer-events:none;
+  background:var(--ds-glow-wash),radial-gradient(52% 80% at 88% 6%,var(--ds-accent),transparent 66%);
+  opacity:.20;
+}
+.hero__grain{position:absolute;inset:0;pointer-events:none;background-image:var(--ds-grain);opacity:var(--ds-opacity-texture);mix-blend-mode:overlay}
+.hero .container{position:relative}
+.hero h1{font-size:clamp(38px,5.4vw,62px);max-width:17ch;margin-bottom:var(--ds-space-md)}
+.hero p{font-size:20px;line-height:1.65;max-width:56ch;color:var(--ds-ink);margin-bottom:var(--ds-space-lg)}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:var(--ds-space-sm);align-items:center}
+
+.band{padding:var(--ds-space-2xl) 0;position:relative}
+.band--surface{background:var(--ds-bg-band)}
+.band h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:var(--ds-space-md);max-width:22ch}
+.band p{max-width:64ch;color:var(--ds-ink-soft)}
+.scaffold-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--ds-space-md);margin-top:var(--ds-space-lg)}
+.scaffold-card{
+  min-height:190px;padding:var(--ds-space-md);
+  background:var(--ds-bg-surface);border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-surface);box-shadow:var(--ds-shadow-rest);
+}
+.scaffold-card h3{font-size:20px;margin-bottom:8px}
+.scaffold-card p{font-size:17px;color:var(--ds-ink-soft)}
+.scaffold-note{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ds-ink-soft);font-weight:700}
+
+/* ==========================================================================
+   6 · PRE-FOOTER / CLOSING CTA: a designed moment, not a thin band
+   ========================================================================== */
+.precta{position:relative;overflow:hidden;padding:var(--ds-space-2xl) 0}
+.precta__tex{position:absolute;inset:0;pointer-events:none;background-image:var(--ds-grid);background-size:var(--ds-grid-size)}
+.precta__spot{
+  position:absolute;left:50%;top:-30%;width:min(1100px,120vw);height:120%;
+  transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(50% 50% at 50% 50%,var(--ds-accent),transparent 66%);
+  opacity:.17;filter:blur(6px);
+}
+.precta__grain{position:absolute;inset:0;pointer-events:none;background-image:var(--ds-grain);opacity:var(--ds-opacity-texture);mix-blend-mode:overlay}
+.precta .container{position:relative;text-align:center}
+.precta h2{font-size:clamp(34px,5.6vw,64px);max-width:18ch;margin:0 auto var(--ds-space-md)}
+.precta__sub{font-size:20px;line-height:1.7;max-width:56ch;margin:0 auto var(--ds-space-lg);color:var(--ds-ink)}
+.precta__guarantee{
+  display:flex;align-items:flex-start;gap:12px;text-align:left;
+  max-width:640px;margin:0 auto var(--ds-space-lg);
+  padding:var(--ds-space-sm) var(--ds-space-md);
+  background:var(--ds-accent-soft);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-inset-hi);
+}
+.precta__guarantee svg{width:26px;height:26px;flex:0 0 auto;color:var(--ds-accent);margin-top:4px}
+.precta__guarantee p{font-size:18px;line-height:1.6;color:var(--ds-ink)}
+.precta__ctas{display:flex;flex-wrap:wrap;gap:var(--ds-space-sm);justify-content:center;align-items:center}
+
+/* ==========================================================================
+   7 · FOOTER: FOOTER-STYLES.md #10 "Bento-grid footer"
+   Genuinely varied spans: an oversized brand/CTA cell, a TALL seven-office
+   cell spanning 3 rows, a 2-row services cell, two short cells, a legal strip.
+   ========================================================================== */
+.site-footer{padding:var(--ds-space-xl) 0 var(--ds-space-lg);position:relative;overflow:hidden}
+.ftr__wash{position:absolute;inset:0;pointer-events:none;background:var(--ds-glow-wash);opacity:.9}
+.site-footer .container{position:relative}
+.bento{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:minmax(0,auto);
+  gap:var(--ds-space-sm);
+}
+.cell{
+  display:flex;flex-direction:column;
+  padding:var(--ds-space-md);
+  background:var(--ds-bg-surface);
+  border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-surface);
+  box-shadow:var(--ds-shadow-card);
+  transition:box-shadow var(--ds-dur) var(--ds-ease),border-color var(--ds-dur) var(--ds-ease),
+             transform var(--ds-dur) var(--ds-ease-out);
+}
+/* a tall bento cell must not read as half-empty: the "more" link is pushed to
+   the cell's floor so the taller spans resolve into a deliberate baseline. */
+.f-more{
+  margin-top:auto;align-self:flex-start;
+  display:inline-flex;align-items:center;gap:8px;min-height:48px;
+  padding-top:var(--ds-space-sm);
+  font-size:18px;font-weight:700;color:var(--ds-ink);text-decoration:none;
+  border-bottom:2px solid var(--ds-accent);
+  transition:color var(--ds-dur-fast) var(--ds-ease);
+}
+.f-more span{transition:transform var(--ds-dur) var(--ds-ease-out)}
+.f-more:hover{color:var(--ds-ink-heading)}
+.f-more:hover span{transform:translateX(5px)}
+.cell:hover{box-shadow:var(--ds-shadow-lift);border-color:var(--ds-line-control);transform:translateY(-3px)}
+.cell h3{
+  font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ds-ink-soft);margin-bottom:var(--ds-space-sm);font-family:var(--ds-font-body);
+}
+.cell--brand{grid-column:1 / 8;grid-row:1;position:relative;overflow:hidden}
+.cell--offices{grid-column:8 / 13;grid-row:1 / 4}
+.cell--services{grid-column:1 / 5;grid-row:2 / 4}
+.cell--patients{grid-column:5 / 8;grid-row:2}
+.cell--practice{grid-column:5 / 8;grid-row:3}
+.cell--legal{grid-column:1 / 13;grid-row:4;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--ds-space-sm)}
+
+.cell--brand .btn-lift{align-self:flex-start}
+.cell--brand .brand__name{font-size:clamp(28px,3.2vw,40px)}
+.cell--brand .brand__lock{font-size:14px}
+.cell--brand__line{font-size:18px;line-height:1.7;color:var(--ds-ink-soft);max-width:44ch;margin:var(--ds-space-sm) 0 var(--ds-space-md)}
+.cell--brand__glow{
+  position:absolute;right:-60px;top:-70px;width:280px;height:280px;pointer-events:none;
+  background:radial-gradient(closest-side,var(--ds-accent),transparent 70%);opacity:.14;
+}
+.f-link{
+  display:flex;align-items:center;min-height:48px;
+  font-size:18px;color:var(--ds-ink);text-decoration:none;
+  border-bottom:1px solid var(--ds-line);
+  transition:color var(--ds-dur-fast) var(--ds-ease),padding-left var(--ds-dur-fast) var(--ds-ease);
+}
+.f-link:last-child{border-bottom:0}
+.f-link:hover{color:var(--ds-ink-heading);padding-left:6px;text-decoration:underline;text-underline-offset:4px}
+.f-office{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid var(--ds-line)}
+.f-office:last-of-type{border-bottom:0}
+.f-office__name{display:inline-flex;align-items:center;min-height:44px;font-size:18px;font-weight:700;color:var(--ds-ink);text-decoration:none}
+.f-office__name:hover{text-decoration:underline;text-underline-offset:4px}
+.f-office__tel{
+  display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 12px;
+  font-size:18px;font-weight:700;color:var(--ds-ink);text-decoration:none;
+  border:1px solid var(--ds-line-control);border-radius:var(--ds-r-pill);
+  transition:border-color var(--ds-dur) var(--ds-ease),background var(--ds-dur) var(--ds-ease);
+}
+.f-office__tel svg{width:18px;height:18px;color:var(--ds-signature)}
+.f-office__tel:hover{border-color:var(--ds-signature);background:var(--ds-bg-band)}
+.legal__links{display:flex;flex-wrap:wrap;gap:var(--ds-space-md)}
+.legal__links a{display:inline-flex;align-items:center;min-height:48px;font-size:17px;color:var(--ds-ink);text-decoration:none}
+.legal__links a:hover{text-decoration:underline;text-underline-offset:4px}
+/* AUDIENCE LAW: legal / copyright is NOT fine print here. 17px, full ink. */
+.legal__copy{font-size:17px;color:var(--ds-ink-soft)}
+
+/* ==========================================================================
+   8 · MOBILE DRAWER (G13: id="mobile-drawer" + aria-hidden)
+   ========================================================================== */
+.drawer-backdrop{
+  position:fixed;inset:0;z-index:var(--ds-z-overlay);
+  background:var(--ds-scrim);
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+  opacity:0;visibility:hidden;
+  transition:opacity var(--ds-dur) var(--ds-ease),visibility 0s linear var(--ds-dur);
+}
+.drawer-backdrop.is-open{opacity:1;visibility:visible;transition-delay:0s}
+#mobile-drawer{
+  --drawer-foot-h:132px;
+  position:fixed;top:0;right:0;bottom:0;
+  width:min(420px,90vw);
+  z-index:var(--ds-z-drawer);
+  display:flex;flex-direction:column;
+  transform:translateX(102%);
+  transition:transform var(--ds-dur-slow) var(--ds-ease);
+  box-shadow:var(--ds-shadow-lift);
+  border-left:1px solid var(--ds-line);
+}
+#mobile-drawer.is-open{transform:translateX(0)}
+.drawer__head{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--ds-space-sm);
+  padding:var(--ds-space-sm) var(--ds-space-md);
+  border-bottom:1px solid var(--ds-line);flex:0 0 auto;
+}
+.drawer__close{
+  width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--ds-line-control);border-radius:var(--ds-r-control);color:var(--ds-ink);
+}
+.drawer__close svg{width:22px;height:22px}
+.drawer__scroll{
+  flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding:var(--ds-space-sm) var(--ds-space-md);
+  /* ★ T1 FIX: the scroll region is padded BY the sticky foot's height, so the
+     last item can always be scrolled clear of it. The list is never shortened. */
+  padding-bottom:calc(var(--drawer-foot-h) + var(--ds-space-lg));
+}
+.d-group{border-bottom:1px solid var(--ds-line)}
+.d-group > summary{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--ds-space-sm);
+  min-height:56px;padding:4px 0;cursor:pointer;list-style:none;
+  font-size:19px;font-weight:700;color:var(--ds-ink);
+}
+.d-group > summary::-webkit-details-marker{display:none}
+.d-group__chev{
+  width:11px;height:11px;flex:0 0 auto;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg) translate(-3px,-3px);opacity:.75;
+  transition:transform var(--ds-dur) var(--ds-ease);
+}
+.d-group[open] .d-group__chev{transform:rotate(-135deg) translate(-3px,-3px)}
+.d-sub{padding:0 0 var(--ds-space-sm) 2px}
+.d-sub a{
+  display:flex;align-items:center;gap:10px;min-height:48px;
+  font-size:18px;color:var(--ds-ink);text-decoration:none;
+}
+.d-sub a::before{
+  content:"";width:6px;height:6px;flex:0 0 auto;border-radius:var(--ds-r-pill);
+  background:var(--ds-accent);box-shadow:var(--ds-accent-keyline);
+}
+.d-sub a:hover{text-decoration:underline;text-underline-offset:4px}
+.d-sub__tel{
+  display:inline-flex;align-items:center;gap:8px;min-height:48px;
+  font-size:18px;font-weight:700;color:var(--ds-ink);text-decoration:none;
+}
+.d-sub__tel svg{width:18px;height:18px;color:var(--ds-signature)}
+.d-office{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid var(--ds-line)}
+.d-office:last-child{border-bottom:0}
+.d-flat{
+  display:flex;align-items:center;min-height:56px;
+  font-size:19px;font-weight:700;color:var(--ds-ink);text-decoration:none;
+  border-bottom:1px solid var(--ds-line);
+}
+.drawer__foot{
+  flex:0 0 auto;position:absolute;left:0;right:0;bottom:0;
+  height:var(--drawer-foot-h);
+  display:grid;gap:10px;align-content:center;
+  padding:var(--ds-space-sm) var(--ds-space-md);
+  border-top:1px solid var(--ds-line);
+  background:var(--ds-bg-band);
+}
+.drawer__foot .btn{width:100%}
+
+/* ---- sticky page CTA bar (mobile) ---------------------------------------
+   It is REVEALED past the hero and HIDDEN again the moment the real closing
+   CTA (.precta) or the .site-footer enters the viewport, so it can never
+   double up over the page's own bottom CTA. Driven by two
+   IntersectionObservers in the script below. */
+.sticky-cta{
+  display:none;
+  position:fixed;left:0;right:0;bottom:0;z-index:var(--ds-z-sticky);
+  padding:10px var(--ds-space-sm);
+  gap:10px;grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--ds-line);
+  box-shadow:var(--ds-shadow-lift);
+  transform:translateY(120%);
+  opacity:0;
+  pointer-events:none;
+  transition:transform var(--ds-dur) var(--ds-ease-out),opacity var(--ds-dur) var(--ds-ease);
+}
+.sticky-cta.is-revealed{transform:translateY(0);opacity:1;pointer-events:auto}
+.sticky-cta .btn{width:100%;padding-inline:var(--ds-space-xs);font-size:18px;text-align:center}
+
+/* ==========================================================================
+   9 · RESPONSIVE. ★ T2: COLLAPSE AT 1100px, NOT 768px.
+   Five items plus a phone affordance plus a Book CTA do not fit at ~900px.
+   ========================================================================== */
+@media (max-width:1100px){
+  .nav,.hdr__actions{display:none}
+  .site-header__hamburger{display:inline-flex}
+  .hdr{--pill-mt:14px;--pill-h:64px;--pill-inset:12px;--pill-maxw:100%}
+  .hdr[data-state="solid"]{--pill-mt:0px;--pill-h:60px;--pill-inset:0px}
+  .hdr__inner{gap:var(--ds-space-sm);padding-inline:var(--ds-space-sm)}
+  .sticky-cta{display:grid}
+  body{padding-bottom:86px}
+  .hero{min-height:480px;padding-top:150px}
+  .cell--brand{grid-column:1 / 13;grid-row:1}
+  .cell--offices{grid-column:1 / 13;grid-row:2}
+  .cell--services{grid-column:1 / 7;grid-row:3}
+  .cell--patients{grid-column:7 / 13;grid-row:3}
+  .cell--practice{grid-column:1 / 13;grid-row:4}
+  .cell--legal{grid-column:1 / 13;grid-row:5}
+}
+@media (max-width:760px){
+  .cell--services,.cell--patients{grid-column:1 / 13}
+  .cell--services{grid-row:3}
+  .cell--patients{grid-row:4}
+  .cell--practice{grid-row:5}
+  .cell--legal{grid-row:6}
+}
+@media (max-width:420px){
+  .brand__name{font-size:19px}
+  .brand__lock{font-size:14px;letter-spacing:.14em}
+  .hdr__inner{padding-inline:12px;gap:10px}
+  .f-office__tel{padding:0 10px}
+  /* the sticky bar keeps the 18px floor at 375; the grid columns are 1fr so a
+     long label wraps inside the button rather than pushing the bar wider. */
+  .sticky-cta{padding-inline:12px}
+}
+
+/* ==========================================================================
+   10 · REDUCED MOTION. Every non-essential move is killed, states are kept.
+   ========================================================================== */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important;
+  }
+  .btn--accent::after{animation:none;opacity:.28;transform:none}
+  .mm-card,.mm-office{transform:translateY(var(--stagger))}
+  .mm-card:hover,.mm-office:hover{transform:translateY(var(--stagger))}
+  .cell:hover,.btn-lift:hover{transform:none}
+  .mm-feat:hover .mm-feat__media img{transform:none}
+  .nav-glow{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- 1 · SKIP LINK, first focusable element -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ==========================================================================
+     2 · HEADER: NAV-PATTERNS.md #1 Floating pill, centered
+     data-state="top" (glass over the dark hero) becomes data-state="solid"
+     ========================================================================== -->
+<header class="hdr" id="site-header" data-state="top">
+  <div class="hdr__glow" aria-hidden="true"></div>
+
+  <div class="hdr__inner surface-dark" id="hdr-pill">
+
+    <!-- ★ TYPE wordmark, not the JPG. ⚠OWNER §G-7: a vector logo master is an
+         open owner request; the navy-and-yellow raster would be the only navy
+         object on teal chrome. Replace this block when the vector lands. -->
+    <a class="brand" href="/" aria-label="Radiant Smiles Dental Care, home">
+      <span class="brand__dot" aria-hidden="true"></span>
+      <span class="brand__type">
+        <span class="brand__name">Radiant Smiles</span>
+        <span class="brand__lock">Dental Care</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <span class="nav-glow" id="nav-glow" aria-hidden="true"></span>
+
+        <!-- ---------- SERVICES, mega ---------- -->
+        <li class="nav-item" data-panel="mega">
+          <button type="button" class="nav-trigger" id="trg-services"
+                  aria-haspopup="true" aria-expanded="false" aria-controls="mm-services">
+            Services <span class="caret" aria-hidden="true"></span>
+          </button>
+          <!-- hover-intent (b): invisible bridge across the float gap -->
+          <span class="hover-bridge" aria-hidden="true"></span>
+
+          <div class="mm-panel surface-dark" id="mm-services" role="group" aria-labelledby="trg-services">
+            <span class="mm-slabglow" aria-hidden="true"></span>
+            <div class="mm-inner">
+
+              <!-- FEATURED ZONE: real operatory photograph, teal-graded, bleeding
+                   past the slab's left and bottom edges (breaking the box). -->
+              <div class="mm-feat">
+                <div class="mm-feat__media">
+                  <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-2048x1365.jpg"
+                       width="2048" height="1365" loading="eager" decoding="async"
+                       alt="A Radiant Smiles treatment room, chair and equipment ready for a patient.">
+                  <span class="mm-feat__grade" aria-hidden="true"></span>
+                  <span class="mm-feat__wash" aria-hidden="true"></span>
+                  <span class="mm-feat__scrim" aria-hidden="true"></span>
+                  <div class="mm-feat__copy">
+                    <p class="eyebrow">Six specialties</p>
+                    <p class="mm-feat__line">General, cosmetic and surgical care on one chart, so nobody re-explains their history.</p>
+                    <a class="mm-feat__link" href="/services">See every service <span aria-hidden="true">&rarr;</span></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- staggered category cards -->
+              <div class="mm-cards">
+                <a class="mm-card" href="/general-dentistry">
+                  <span class="mm-card__dot" aria-hidden="true"></span>
+                  <span class="mm-card__top">
+                    <span class="mm-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-1.4 0-1.7-3.2-2.3-5.1C9.2 14.4 8.4 14 7.6 14c-1.6 0-2.6 1-2.6-4.4C5 6 7 3.6 9.4 3.6c1.1 0 1.9.5 2.6.5s1.5-.5 2.6-.5C17 3.6 19 6 19 9.6c0 5.4-1 4.4-2.6 4.4-.8 0-1.6.4-2.1 1.9C13.7 17.8 13.4 21 12 21Z"/></svg></span>
+                    <span class="mm-card__title">General Dentistry</span>
+                  </span>
+                  <span class="mm-card__desc">Exams, cleanings, digital x-rays, fluoride, sealants.</span>
+                </a>
+                <a class="mm-card" href="/cosmetic-dentistry">
+                  <span class="mm-card__dot" aria-hidden="true"></span>
+                  <span class="mm-card__top">
+                    <span class="mm-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.1 4.6L19 9.2l-3.5 3.5.8 5-4.3-2.4L7.7 17.7l.8-5L5 9.2l4.9-1.6Z"/></svg></span>
+                    <span class="mm-card__title">Cosmetic Dentistry</span>
+                  </span>
+                  <span class="mm-card__desc">Porcelain veneers and teeth whitening.</span>
+                </a>
+                <a class="mm-card" href="/restorations">
+                  <span class="mm-card__dot" aria-hidden="true"></span>
+                  <span class="mm-card__top">
+                    <span class="mm-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14l-1.4 10.2A2 2 0 0 1 15.6 21H8.4a2 2 0 0 1-2-1.8Z"/><path d="M8 9V6.5A4 4 0 0 1 16 6.5V9"/></svg></span>
+                    <span class="mm-card__title">Restorations</span>
+                  </span>
+                  <span class="mm-card__desc">Implants, crowns, bridges, dentures, root canals.</span>
+                </a>
+                <a class="mm-card" href="/oral-surgery">
+                  <span class="mm-card__dot" aria-hidden="true"></span>
+                  <span class="mm-card__top">
+                    <span class="mm-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 14.5 9.5"/><path d="m13 4 7 7-2.5 2.5-7-7Z"/><path d="M4 20h4"/></svg></span>
+                    <span class="mm-card__title">Oral Surgery</span>
+                  </span>
+                  <span class="mm-card__desc">Wisdom teeth removal and bone grafting.</span>
+                </a>
+                <a class="mm-card" href="/periodontics">
+                  <span class="mm-card__dot" aria-hidden="true"></span>
+                  <span class="mm-card__top">
+                    <span class="mm-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5S4.5 15.8 4.5 10.2A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.5 2.6c0 5.6-7.5 10.3-7.5 10.3Z"/></svg></span>
+                    <span class="mm-card__title">Periodontics</span>
+                  </span>
+                  <span class="mm-card__desc">Gum treatment, scaling and root planing, screenings.</span>
+                </a>
+                <a class="mm-card" href="/orthodontics">
+                  <span class="mm-card__dot" aria-hidden="true"></span>
+                  <span class="mm-card__top">
+                    <span class="mm-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M8 8v8M12 8v8M16 8v8"/></svg></span>
+                    <span class="mm-card__title">Orthodontics</span>
+                  </span>
+                  <span class="mm-card__desc">Invisalign and braces, for adults and children.</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ---------- LOCATIONS, mega, all 7 with real tel: links ---------- -->
+        <li class="nav-item" data-panel="mega">
+          <button type="button" class="nav-trigger" id="trg-locations"
+                  aria-haspopup="true" aria-expanded="false" aria-controls="mm-locations">
+            Locations <span class="caret" aria-hidden="true"></span>
+          </button>
+          <span class="hover-bridge" aria-hidden="true"></span>
+
+          <div class="mm-panel surface-dark" id="mm-locations" role="group" aria-labelledby="trg-locations">
+            <span class="mm-slabglow" aria-hidden="true"></span>
+            <div class="mm-inner">
+
+              <div class="mm-feat">
+                <div class="mm-feat__media">
+                  <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Blue-Diamond-Front-Desk-2048x1365.jpg"
+                       width="2048" height="1365" loading="eager" decoding="async"
+                       alt="The front desk at the Radiant Smiles Blue Diamond office.">
+                  <span class="mm-feat__grade" aria-hidden="true"></span>
+                  <span class="mm-feat__wash" aria-hidden="true"></span>
+                  <span class="mm-feat__scrim" aria-hidden="true"></span>
+                  <div class="mm-feat__copy">
+                    <p class="eyebrow">Seven offices</p>
+                    <p class="mm-feat__line">Blue Diamond, and six more across Las Vegas and Henderson. Same team, same chart.</p>
+                    <a class="mm-feat__link" href="/locations">Find your office <span aria-hidden="true">&rarr;</span></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mm-cards mm-cards--offices">
+                <div class="mm-office">
+                  <span class="mm-office__dot" aria-hidden="true"></span>
+                  <a class="mm-office__name" href="/lone-mountain">Lone Mountain</a>
+                  <p class="mm-office__meta">Las Vegas, NV 89128</p>
+                  <a class="mm-office__tel" href="tel:+17022894424"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 289-4424</a>
+                </div>
+                <div class="mm-office">
+                  <span class="mm-office__dot" aria-hidden="true"></span>
+                  <a class="mm-office__name" href="/sunrise-manor">Sunrise Manor</a>
+                  <p class="mm-office__meta">Las Vegas, NV 89107</p>
+                  <a class="mm-office__tel" href="tel:+17024523552"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 452-3552</a>
+                </div>
+                <div class="mm-office">
+                  <span class="mm-office__dot" aria-hidden="true"></span>
+                  <a class="mm-office__name" href="/summerlin">Summerlin</a>
+                  <p class="mm-office__meta">Las Vegas, NV 89117</p>
+                  <a class="mm-office__tel" href="tel:+17023604800"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 360-4800</a>
+                </div>
+                <div class="mm-office">
+                  <span class="mm-office__dot" aria-hidden="true"></span>
+                  <a class="mm-office__name" href="/north-las-vegas">North Las Vegas</a>
+                  <p class="mm-office__meta">North Las Vegas, NV 89031</p>
+                  <a class="mm-office__tel" href="tel:+17025091967"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 509-1967</a>
+                </div>
+                <div class="mm-office">
+                  <span class="mm-office__dot" aria-hidden="true"></span>
+                  <a class="mm-office__name" href="/henderson">Henderson</a>
+                  <p class="mm-office__meta">Henderson, NV 89052</p>
+                  <a class="mm-office__tel" href="tel:+17028977001"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 897-7001</a>
+                </div>
+                <div class="mm-office">
+                  <span class="mm-office__dot" aria-hidden="true"></span>
+                  <a class="mm-office__name" href="/north-decatur">North Decatur</a>
+                  <p class="mm-office__meta">Las Vegas, NV 89130</p>
+                  <a class="mm-office__tel" href="tel:+17025220119"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 522-0119</a>
+                </div>
+                <div class="mm-office">
+                  <span class="mm-office__dot" aria-hidden="true"></span>
+                  <a class="mm-office__name" href="/blue-diamond">Blue Diamond</a>
+                  <p class="mm-office__meta">Las Vegas, NV 89139</p>
+                  <a class="mm-office__tel" href="tel:+17023310010"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 331-0010</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ---------- OUR TEAM, direct link ---------- -->
+        <li class="nav-item">
+          <a class="nav-link" href="/team">Our Team</a>
+        </li>
+
+        <!-- ---------- NEW PATIENTS, caret dropdown ---------- -->
+        <li class="nav-item" data-panel="drop">
+          <button type="button" class="nav-trigger" id="trg-newpatients"
+                  aria-haspopup="true" aria-expanded="false" aria-controls="mm-newpatients">
+            New Patients <span class="caret" aria-hidden="true"></span>
+          </button>
+          <span class="hover-bridge" aria-hidden="true"></span>
+          <div class="mm-drop-panel surface-dark" id="mm-newpatients" role="group" aria-labelledby="trg-newpatients">
+            <a class="mm-droplink" href="/offer">New Patient Offer</a>
+            <a class="mm-droplink" href="/insurance-financing">Insurance &amp; Financing</a>
+            <a class="mm-droplink" href="/faq">FAQ</a>
+          </div>
+        </li>
+
+        <!-- ---------- ABOUT, caret dropdown with the real dentists portrait ---------- -->
+        <li class="nav-item" data-panel="drop">
+          <button type="button" class="nav-trigger" id="trg-about"
+                  aria-haspopup="true" aria-expanded="false" aria-controls="mm-about">
+            About <span class="caret" aria-hidden="true"></span>
+          </button>
+          <span class="hover-bridge" aria-hidden="true"></span>
+          <div class="mm-drop-panel mm-drop--wide surface-dark" id="mm-about" role="group" aria-labelledby="trg-about">
+            <div class="mm-dropfig">
+              <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Dentists-scaled.jpg"
+                   width="1707" height="2560" loading="eager" decoding="async"
+                   alt="The Radiant Smiles dentists, photographed together.">
+              <span class="mm-feat__grade" aria-hidden="true"></span>
+              <span class="mm-dropfig__cap">Ten dentists</span>
+            </div>
+            <div>
+              <a class="mm-droplink" href="/about">About Radiant Smiles</a>
+              <a class="mm-droplink" href="/team">Our Team</a>
+              <a class="mm-droplink" href="/reviews">Patient Reviews</a>
+              <a class="mm-droplink" href="/smile-gallery">Smile Gallery</a>
+              <a class="mm-droplink" href="/contact">Contact</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="hdr__actions">
+      <a class="hdr__phone" href="tel:+17022894424">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>
+        (702) 289-4424
+      </a>
+      <span class="btn-lift"><a class="btn btn--accent" href="/contact"><span>Book a visit</span></a></span>
+    </div>
+
+    <!-- ★ G13 CANONICAL INTERACTIVITY CONTRACT, verbatim selectors.
+         T4: margin-left:auto keeps this the RIGHTMOST element at 375px. -->
+    <button type="button" class="site-header__hamburger" id="hamburger"
+            aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open menu">
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ==========================================================================
+     3 · MAIN, SCAFFOLD ONLY (quiet on purpose; the chrome is the subject)
+     ========================================================================== -->
+<main id="main">
+
+  <section class="hero surface-dark" id="hero">
+    <span class="hero__tex" aria-hidden="true"></span>
+    <span class="hero__wash" aria-hidden="true"></span>
+    <span class="hero__grain" aria-hidden="true"></span>
+    <div class="container">
+      <p class="eyebrow">Las Vegas &amp; Henderson</p>
+      <h1>Seven offices. One team. One chart.</h1>
+      <p>Scroll and watch the pill morph: glass over this dark band at the top, a solid canvas bar past it. Hover Services or Locations to open the detached slab.</p>
+      <div class="hero__ctas">
+        <span class="btn-lift"><a class="btn btn--accent" href="/contact"><span>Book a visit</span></a></span>
+        <a class="btn btn--ghost" href="/locations">Find your office</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <p class="scaffold-note">Scaffold band 1</p>
+      <h2>Placeholder content so the header has something to scroll over.</h2>
+      <p>Real page composition is decided at P10 against composition-medical-health.md. These bands exist only to give the chrome a real fold and a real scroll distance.</p>
+      <div class="scaffold-grid">
+        <div class="scaffold-card"><h3>Placeholder</h3><p>Token-styled surface, hairline border, resting shadow.</p></div>
+        <div class="scaffold-card"><h3>Placeholder</h3><p>Token-styled surface, hairline border, resting shadow.</p></div>
+        <div class="scaffold-card"><h3>Placeholder</h3><p>Token-styled surface, hairline border, resting shadow.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--surface">
+    <div class="container">
+      <p class="scaffold-note">Scaffold band 2</p>
+      <h2>A second ground so the figure and ground steps read behind the bar.</h2>
+      <p>The solid-state pill grounds on --ds-canvas. Passing over this --ds-bg-band section is what proves the bar is opaque rather than merely tinted.</p>
+      <div class="scaffold-grid">
+        <div class="scaffold-card"><h3>Placeholder</h3><p>Token-styled surface, hairline border, resting shadow.</p></div>
+        <div class="scaffold-card"><h3>Placeholder</h3><p>Token-styled surface, hairline border, resting shadow.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4 · PRE-FOOTER / CLOSING CTA: designed moment. Spotlight, grain, grid,
+       oversized display headline, risk-reversal, primary CTA plus phone.
+       ⚠OWNER: the $45 exam and x-ray figure is sourced from C1 sitemap.yaml
+       ("New Patient Special: $45 Exam & X-Ray"). The second clause of the
+       risk-reversal is COPY-PENDING and must be confirmed against
+       client-rules.json before this ships to a live page.
+       ====================================================================== -->
+  <section class="precta surface-dark" id="precta" aria-labelledby="precta-h">
+    <span class="precta__tex" aria-hidden="true"></span>
+    <span class="precta__spot" aria-hidden="true"></span>
+    <span class="precta__grain" aria-hidden="true"></span>
+    <div class="container">
+      <p class="eyebrow">New patients</p>
+      <h2 id="precta-h">Pick the office closest to you and we will take it from there.</h2>
+      <p class="precta__sub">Seven offices across Las Vegas and Henderson, ten dentists, and one record that follows you between them.</p>
+
+      <div class="precta__guarantee">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5.5c0 4.3 2.9 7.7 7 9.5 4.1-1.8 7-5.2 7-9.5V6Z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg>
+        <p><strong>No surprise first visit.</strong> The new-patient exam and x-ray is a flat $45, and we go through your insurance with you before anything is scheduled.</p>
+      </div>
+
+      <div class="precta__ctas">
+        <span class="btn-lift"><a class="btn btn--accent" href="/offer"><span>Claim the $45 first visit</span></a></span>
+        <a class="btn btn--ghost" href="tel:+17022894424">Call (702) 289-4424</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==========================================================================
+     5 · FOOTER: FOOTER-STYLES.md #10 Bento-grid footer
+     Asymmetric spans: brand cell 7 cols, offices cell 5 cols by 3 rows,
+     services 4 cols by 2 rows, patients and practice 3 cols each, legal 12.
+     ========================================================================== -->
+<footer class="site-footer surface-dark" id="site-footer">
+  <span class="ftr__wash" aria-hidden="true"></span>
+  <div class="container">
+    <div class="bento">
+
+      <section class="cell cell--brand" aria-labelledby="f-brand-h">
+        <span class="cell--brand__glow" aria-hidden="true"></span>
+        <div class="brand">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span class="brand__type">
+            <span class="brand__name" id="f-brand-h">Radiant Smiles</span>
+            <span class="brand__lock">Dental Care</span>
+          </span>
+        </div>
+        <p class="cell--brand__line">A seven-office dental group in Las Vegas and Henderson. Book at whichever office is closest; your chart travels with you.</p>
+        <span class="btn-lift"><a class="btn btn--accent" href="/contact"><span>Book a visit</span></a></span>
+      </section>
+
+      <section class="cell cell--offices" aria-labelledby="f-offices-h">
+        <h3 id="f-offices-h">Call an office</h3>
+        <div class="f-office">
+          <a class="f-office__name" href="/lone-mountain">Lone Mountain</a>
+          <a class="f-office__tel" href="tel:+17022894424"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 289-4424</a>
+        </div>
+        <div class="f-office">
+          <a class="f-office__name" href="/sunrise-manor">Sunrise Manor</a>
+          <a class="f-office__tel" href="tel:+17024523552"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 452-3552</a>
+        </div>
+        <div class="f-office">
+          <a class="f-office__name" href="/summerlin">Summerlin</a>
+          <a class="f-office__tel" href="tel:+17023604800"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 360-4800</a>
+        </div>
+        <div class="f-office">
+          <a class="f-office__name" href="/north-las-vegas">North Las Vegas</a>
+          <a class="f-office__tel" href="tel:+17025091967"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 509-1967</a>
+        </div>
+        <div class="f-office">
+          <a class="f-office__name" href="/henderson">Henderson</a>
+          <a class="f-office__tel" href="tel:+17028977001"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 897-7001</a>
+        </div>
+        <div class="f-office">
+          <a class="f-office__name" href="/north-decatur">North Decatur</a>
+          <a class="f-office__tel" href="tel:+17025220119"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 522-0119</a>
+        </div>
+        <div class="f-office">
+          <a class="f-office__name" href="/blue-diamond">Blue Diamond</a>
+          <a class="f-office__tel" href="tel:+17023310010"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 331-0010</a>
+        </div>
+        <a class="f-more" href="/locations">Hours and directions <span aria-hidden="true">&rarr;</span></a>
+      </section>
+
+      <section class="cell cell--services" aria-labelledby="f-services-h">
+        <h3 id="f-services-h">Services</h3>
+        <a class="f-link" href="/general-dentistry">General Dentistry</a>
+        <a class="f-link" href="/cosmetic-dentistry">Cosmetic Dentistry</a>
+        <a class="f-link" href="/restorations">Restorations</a>
+        <a class="f-link" href="/oral-surgery">Oral Surgery</a>
+        <a class="f-link" href="/periodontics">Periodontics</a>
+        <a class="f-link" href="/orthodontics">Orthodontics</a>
+        <a class="f-more" href="/services">See all services <span aria-hidden="true">&rarr;</span></a>
+      </section>
+
+      <section class="cell cell--patients" aria-labelledby="f-patients-h">
+        <h3 id="f-patients-h">Patients</h3>
+        <a class="f-link" href="/offer">New Patient Offer</a>
+        <a class="f-link" href="/insurance-financing">Insurance &amp; Financing</a>
+        <a class="f-link" href="/faq">FAQ</a>
+      </section>
+
+      <section class="cell cell--practice" aria-labelledby="f-practice-h">
+        <h3 id="f-practice-h">Practice</h3>
+        <a class="f-link" href="/about">About Radiant Smiles</a>
+        <a class="f-link" href="/team">Our Team</a>
+        <a class="f-link" href="/reviews">Patient Reviews</a>
+        <a class="f-link" href="/smile-gallery">Smile Gallery</a>
+        <a class="f-link" href="/contact">Contact</a>
+      </section>
+
+      <div class="cell cell--legal">
+        <nav class="legal__links" aria-label="Legal">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/cookie-policy">Cookie Policy</a>
+          <a href="/cookie-settings">Cookie Settings</a>
+        </nav>
+        <p class="legal__copy">&copy; 2026 Radiant Smiles Dental Care. Las Vegas and Henderson, Nevada.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==========================================================================
+     6 · MOBILE DRAWER: same five top-level items, same order, same labels as
+     the desktop bar (T3). Accordion groups mirror the mega and dropdown
+     clusters. details/summary so the groups are keyboard-native.
+     ========================================================================== -->
+<div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+
+<aside id="mobile-drawer" class="surface-dark" aria-hidden="true" aria-label="Site menu">
+  <div class="drawer__head">
+    <span class="brand">
+      <span class="brand__dot" aria-hidden="true"></span>
+      <span class="brand__type">
+        <span class="brand__name">Radiant Smiles</span>
+        <span class="brand__lock">Dental Care</span>
+      </span>
+    </span>
+    <button type="button" class="drawer__close" id="drawer-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer__scroll">
+    <details class="d-group" open>
+      <summary>Services <span class="d-group__chev" aria-hidden="true"></span></summary>
+      <div class="d-sub">
+        <a href="/general-dentistry">General Dentistry</a>
+        <a href="/cosmetic-dentistry">Cosmetic Dentistry</a>
+        <a href="/restorations">Restorations</a>
+        <a href="/oral-surgery">Oral Surgery</a>
+        <a href="/periodontics">Periodontics</a>
+        <a href="/orthodontics">Orthodontics</a>
+      </div>
+    </details>
+
+    <details class="d-group">
+      <summary>Locations <span class="d-group__chev" aria-hidden="true"></span></summary>
+      <div class="d-sub">
+        <div class="d-office"><a href="/lone-mountain">Lone Mountain</a><a class="d-sub__tel" href="tel:+17022894424"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 289-4424</a></div>
+        <div class="d-office"><a href="/sunrise-manor">Sunrise Manor</a><a class="d-sub__tel" href="tel:+17024523552"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 452-3552</a></div>
+        <div class="d-office"><a href="/summerlin">Summerlin</a><a class="d-sub__tel" href="tel:+17023604800"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 360-4800</a></div>
+        <div class="d-office"><a href="/north-las-vegas">North Las Vegas</a><a class="d-sub__tel" href="tel:+17025091967"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 509-1967</a></div>
+        <div class="d-office"><a href="/henderson">Henderson</a><a class="d-sub__tel" href="tel:+17028977001"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 897-7001</a></div>
+        <div class="d-office"><a href="/north-decatur">North Decatur</a><a class="d-sub__tel" href="tel:+17025220119"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 522-0119</a></div>
+        <div class="d-office"><a href="/blue-diamond">Blue Diamond</a><a class="d-sub__tel" href="tel:+17023310010"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>(702) 331-0010</a></div>
+      </div>
+    </details>
+
+    <a class="d-flat" href="/team">Our Team</a>
+
+    <details class="d-group">
+      <summary>New Patients <span class="d-group__chev" aria-hidden="true"></span></summary>
+      <div class="d-sub">
+        <a href="/offer">New Patient Offer</a>
+        <a href="/insurance-financing">Insurance &amp; Financing</a>
+        <a href="/faq">FAQ</a>
+      </div>
+    </details>
+
+    <details class="d-group">
+      <summary>About <span class="d-group__chev" aria-hidden="true"></span></summary>
+      <div class="d-sub">
+        <a href="/about">About Radiant Smiles</a>
+        <a href="/team">Our Team</a>
+        <a href="/reviews">Patient Reviews</a>
+        <a href="/smile-gallery">Smile Gallery</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </details>
+  </div>
+
+  <div class="drawer__foot">
+    <span class="btn-lift" style="display:block"><a class="btn btn--accent" href="/contact"><span>Book a visit</span></a></span>
+    <a class="btn btn--ghost" href="/locations">Call an office</a>
+  </div>
+</aside>
+
+<!-- STICKY CTA BAR (mobile). NOTE: "nearest office" needs geolocation, which
+     this preview will not fabricate, so the call action routes to the office
+     picker where all seven real tel: links live. -->
+<div class="sticky-cta surface-dark" id="sticky-cta">
+  <span class="btn-lift" style="display:block"><a class="btn btn--accent" href="/contact"><span>Book a visit</span></a></span>
+  <a class="btn btn--ghost" href="/locations">Call an office</a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var hdr      = document.getElementById('site-header');
+  var pill     = document.getElementById('hdr-pill');
+  var navGlow  = document.getElementById('nav-glow');
+  var navList  = navGlow ? navGlow.parentNode : null;
+  var items    = Array.prototype.slice.call(hdr.querySelectorAll('.nav-item[data-panel]'));
+  var allItems = Array.prototype.slice.call(hdr.querySelectorAll('.nav-item'));
+  var CLOSE_DELAY = 240;                       /* hover-intent (c) */
+
+  /* ---------------------------------------------------------------------
+     FIGURE/GROUND FLIP. The ONLY thing that changes is which token set the
+     chrome resolves against: class="surface-dark" on or off. Text colour is
+     never hard-coded, so the flip cannot strand a run at low contrast.
+       top   : #E9F3F3 on #0B3D3A = 9.05:1 (worst stop), 10.66:1 (top stop)
+       solid : #09302D on #F7FAFA = 11.48:1
+     --------------------------------------------------------------------- */
+  var FLIP_AT = 380;
+  var darkNodes = [pill].concat(
+    Array.prototype.slice.call(hdr.querySelectorAll('.mm-panel, .mm-drop-panel'))
+  );
+  var state = 'top', ticking = false;
+
+  function applyState(next) {
+    if (next === state) return;
+    state = next;
+    hdr.setAttribute('data-state', next);
+    for (var i = 0; i < darkNodes.length; i++) {
+      if (next === 'top') darkNodes[i].classList.add('surface-dark');
+      else                darkNodes[i].classList.remove('surface-dark');
+    }
+  }
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      applyState(window.pageYOffset > FLIP_AT ? 'solid' : 'top');
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------------------------------------------------------------------
+     HOVER-INTENT, all three ways at once:
+       (a) group scope: trigger, bridge and panel share ONE <li>, and the CSS
+           open rule is .nav-item.is-open / .nav-item:focus-within, so
+           hovering the panel can never fall outside the trigger's scope.
+       (b) no dead band: .hover-bridge covers --pill-pad + --slab-gap + 12px
+           of overlap, i.e. every pixel between the pill's edge and the slab.
+       (c) close-delay: 240ms on mouseleave, cleared on re-enter.
+     --------------------------------------------------------------------- */
+  function trigOf(li) { return li.querySelector('.nav-trigger'); }
+
+  function closeItem(li) {
+    if (li._t) { clearTimeout(li._t); li._t = null; }
+    li.classList.remove('is-open');
+    var t = trigOf(li); if (t) t.setAttribute('aria-expanded', 'false');
+    li._openedBy = null;
+  }
+  function closeOthers(except) {
+    for (var i = 0; i < items.length; i++) if (items[i] !== except) closeItem(items[i]);
+  }
+  function openItem(li, by) {
+    closeOthers(li);
+    if (li._t) { clearTimeout(li._t); li._t = null; }
+    if (!li.classList.contains('is-open')) li._openedBy = by;
+    li.classList.add('is-open');
+    var t = trigOf(li); if (t) t.setAttribute('aria-expanded', 'true');
+    moveGlow(li);
+  }
+
+  items.forEach(function (li) {
+    li.addEventListener('mouseenter', function () { openItem(li, 'hover'); });
+    li.addEventListener('mouseleave', function () {
+      if (li._t) clearTimeout(li._t);
+      li._t = setTimeout(function () { closeItem(li); }, CLOSE_DELAY);
+    });
+    /* Click toggles, but a click landing on an already-hover-open item KEEPS
+       it open. Otherwise an automated hover-then-click would close it. */
+    trigOf(li).addEventListener('click', function (e) {
+      e.preventDefault();
+      if (li.classList.contains('is-open') && li._openedBy === 'click') closeItem(li);
+      else { openItem(li, 'click'); li._openedBy = 'click'; }
+    });
+    /* keyboard: focus opens, leaving the group closes */
+    li.addEventListener('focusin', function () { openItem(li, 'focus'); });
+    li.addEventListener('focusout', function (e) {
+      if (!li.contains(e.relatedTarget)) closeItem(li);
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!hdr.contains(e.target)) closeOthers(null);
+  });
+
+  /* ---- the accent glow that TRACKS the hovered nav item ---------------- */
+  function moveGlow(li) {
+    if (!navGlow || !navList) return;
+    var a = li.getBoundingClientRect(), b = navList.getBoundingClientRect();
+    navGlow.style.left    = (a.left - b.left + 10) + 'px';
+    navGlow.style.width   = (a.width - 20) + 'px';
+    navGlow.style.opacity = '1';
+  }
+  allItems.forEach(function (li) {
+    li.addEventListener('mouseenter', function () { moveGlow(li); });
+  });
+  if (navList) navList.addEventListener('mouseleave', function () {
+    if (navGlow) navGlow.style.opacity = '0';
+  });
+
+  /* ---------------------------------------------------------------------
+     STICKY CTA: reveal past the hero, HIDE at the real closing CTA / footer.
+     Two IntersectionObservers. Without the second one the sticky bar doubles
+     up over the page's own bottom CTA, which is the bug this guards.
+     --------------------------------------------------------------------- */
+  var stickyBar = document.getElementById('sticky-cta');
+  var heroEl    = document.getElementById('hero');
+  var endEls    = [document.getElementById('precta'), document.getElementById('site-footer')]
+                    .filter(function (el) { return !!el; });
+  var pastHero = false, atEnd = false;
+  var endSeen  = endEls.map(function () { return false; });
+
+  function syncSticky() {
+    if (!stickyBar) return;
+    stickyBar.classList.toggle('is-revealed', pastHero && !atEnd);
+    stickyBar.setAttribute('aria-hidden', (pastHero && !atEnd) ? 'false' : 'true');
+  }
+  if (stickyBar && 'IntersectionObserver' in window) {
+    if (heroEl) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { pastHero = !en.isIntersecting; });
+        syncSticky();
+      }, { threshold: 0 }).observe(heroEl);
+    } else { pastHero = true; }
+
+    var endObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var i = endEls.indexOf(en.target);
+        if (i > -1) endSeen[i] = en.isIntersecting;
+      });
+      atEnd = endSeen.some(function (v) { return v; });
+      syncSticky();
+    }, { threshold: 0 });
+    endEls.forEach(function (el) { endObserver.observe(el); });
+  }
+  syncSticky();
+
+  /* ---------------------------------------------------------------------
+     MOBILE DRAWER, G13 canonical contract:
+       toggle  .site-header__hamburger + aria-controls="mobile-drawer" + aria-expanded
+       drawer  id="mobile-drawer" + aria-hidden, flipped to "false" on OPEN
+     --------------------------------------------------------------------- */
+  var burger    = document.getElementById('hamburger');
+  var drawer    = document.getElementById('mobile-drawer');
+  var backdrop  = document.getElementById('drawer-backdrop');
+  var closeBtn  = document.getElementById('drawer-close');
+  var lastFocus = null;
+
+  function focusables() {
+    return Array.prototype.slice.call(drawer.querySelectorAll(
+      'a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])'
+    )).filter(function (el) { return el.offsetParent !== null || el === document.activeElement; });
+  }
+  function openDrawer() {
+    lastFocus = document.activeElement;
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');   /* flips to "false" on open */
+    drawer.removeAttribute('inert');
+    backdrop.hidden = false;
+    window.requestAnimationFrame(function () { backdrop.classList.add('is-open'); });
+    burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Close menu');
+    document.body.style.overflow = 'hidden';
+    var f = focusables(); if (f.length) f[0].focus();
+  }
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    drawer.setAttribute('inert', '');
+    backdrop.classList.remove('is-open');
+    setTimeout(function () {
+      if (!drawer.classList.contains('is-open')) backdrop.hidden = true;
+    }, 260);
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Open menu');
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  drawer.setAttribute('inert', '');
+
+  burger.addEventListener('click', function () {
+    if (drawer.classList.contains('is-open')) closeDrawer(); else openDrawer();
+  });
+  closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  /* focus trap plus Esc */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      closeOthers(null);
+      if (drawer.classList.contains('is-open')) closeDrawer();
+      return;
+    }
+    if (e.key !== 'Tab' || !drawer.classList.contains('is-open')) return;
+    var f = focusables(); if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  /* T2 safety: if the viewport grows past the collapse point while the drawer
+     is open, close it so the desktop bar is never behind an open overlay. */
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 1100 && drawer.classList.contains('is-open')) closeDrawer();
+  });
+})();
+</script>
+</body>
+</html>

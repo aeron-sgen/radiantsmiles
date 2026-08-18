@@ -1,0 +1,528 @@
+<!-- ============================================================================
+     T-HUB CONCEPT B, VARIANT: team.
+
+     This is NOT a fourth concept. It is concept B's own template rendered against
+     the page carrying the LONGEST field of the ten, built to answer the question
+     the restorations variant opened rather than closed.
+
+     THE RANGE, counted from the ten copy files on 2026-08-17 and not taken from
+     the exemplar's ledger, which is wrong at both ends:
+
+       page                copy §3   escape   RENDERED field rows
+       cosmetic-dentistry        2        0    2   (variant, the minimum)
+       oral-surgery              2        0    2
+       orthodontics              3        0    3
+       new-patients              4        1    3
+       general-dentistry         5        1    4
+       services                  7        1    6   (the exemplar)
+       locations                 8        1    7
+       restorations              8        0    8   (variant)
+       periodontics              9        0    9   (NOT BUILT, NOT MEASURED)
+       team                     11        1   10   (THIS FILE, the maximum)
+
+     On the five pages carrying an escape block this template MOVES that block into
+     the hero, so the field renders one fewer than the copy lists. That is the
+     cosmetic-dentistry variant's finding A, re-counted here and confirmed.
+
+     WHY THIS PAGE EXISTS AS A VARIANT. verify-section-density measured on the two
+     builds that existed:
+
+       2 rows  §1 = 0.62vh, density 241.5  PASS
+       6 rows  §1 = 1.53vh, density 388.5  PASS
+       8 rows  §1 = 1.82vh, density 296.2  FAIL, TALL+THIN
+
+     The field crosses the gate's 1.65 viewport TALL threshold somewhere around
+     seven rows, and above it the section survives only on TEXT DENSITY, which is
+     not a property of the template at all but of how wordy that page's copy
+     happens to be. This page is the tallest field the template will ever render
+     AND one of the wordiest, so it is the case that separates "the template breaks
+     above six rows" from "restorations' copy is too terse to carry a tall field".
+     It is built to be measured, not to be assumed.
+
+     WHAT IS IDENTICAL TO concept-b.content.html: every class is the same hb-* class,
+     the seven top-level sections are in the same order carrying the same seven picks,
+     and no rule, breakpoint or token is added, removed or changed.
+     *Reworded 2026-08-17. This used to open "the entire style block above is byte
+     identical". There is no style block above any more: at the T-HUB promote it moved,
+     byte identical, into radiantsmiles-structural.css section 8, exactly as concept C's
+     did into section 7. All six T-HUB fragments now inherit those rules from the linked
+     sheet, so they share them BY CONSTRUCTION rather than by duplication, which is a
+     stronger guarantee than the one this sentence used to make.*
+
+     WHAT DIFFERS, and only this:
+       1. the copy, which is this page's own locked copy;
+       2. the field, which renders ten rows instead of six;
+       3. the field's shots, which carry the foundation's OWN .rs-frame--face
+          modifier alongside .hb-route__shot, because these ten frames are the only
+          ones in this template that hold a FACE. The modifier is
+          radiantsmiles-structural.css:552, object-position 50% 26%, and it already
+          exists in the locked sheet: nothing is added here. Without it a 4:3
+          landscape crop of a square portrait cuts the head.
+
+     THE HERO TAKES CASE A, the escape block, like the exemplar and unlike the
+     cosmetic-dentistry and restorations variants: this page's section 3 ends in a
+     bolded block routed to Contact, so that block is MOVED into the hero and the
+     field renders ten rather than eleven.
+
+     THE WHY-BAND'S SPANNING PARAGRAPH SITS BELOW THE PAIR HERE, where the
+     exemplar puts it and where the other two variants do not. That is finding B
+     working in both directions rather than a third arrangement: the slot takes the
+     page's single UNPAIRED paragraph wherever the copy puts it, and on this page
+     the unpaired paragraph is the closing consequence, not an opening premise.
+
+     CARRIED FORWARD FROM THE T-FEATURE STAMP, because this page surfaces the
+     roster at full size and it recurs on every page that does: the ten portraits
+     are NOT a consistent photographic set. Seven are white-coat studio portraits;
+     Quizon, Andrade and Schaudt are filed under camera-generated names and differ
+     in attire, background and crop. At 176px in a row list this reads less badly
+     than in the T-FEATURE face row, because each portrait is separated by a
+     hairline and a body block rather than sitting shoulder to shoulder, but it is
+     the same PHOTOGRAPHY item and it is not fixed by any choice made here.
+
+     ⚠OWNER, carried from the copy rather than resolved: confirm the current roster
+     before this page ships. Three of these biographies are served on the live site
+     from URLs and page titles naming a different doctor. The ten names are carried
+     from the practice's own roster page, captured 30 July 2026.
+     ============================================================================ -->
+
+<!-- pick: HERO-COMPOSITIONS.md #3 Split-screen 50/50 different content blocks | considered: #9,#23,#28 | why: a hub is read by someone who does not yet know which of ten names is theirs, and this page's own opening sentence says exactly that, so the first move has to be a FORK rather than an answer. #3 is the only hero in the catalog whose whole shape is two content blocks carrying two different offers. The left door is for the reader who is ready to act, and holds the H1, the promise of ten named dentists on one roster, and the two actions. The right door is CASE A, the page's own escape block, promoted out of the foot of the directory and up to the top of the page, where the undecided reader actually is. Nothing in it is rewritten and section 3 no longer carries it, so it is MOVED and not duplicated. This page is the strongest case for that move in the whole template: the field below it is TEN rows, which is the longest elimination this concept asks anyone to perform, and a reader who does not know which clinician they want should not have to read ten biographies to discover that the page has a way out. ONE COST DECLARED rather than buried: the left door's primary action and the right door both resolve to contact.html, which is the exemplar's own behaviour and not something this page introduces. The two doors remain different reader states, one a booking and one a description of a problem. #9 Cinematic letterbox is rejected on fit: it spends half a viewport on one line of display type, which is a hero for a page stating a position, and this page has a question to ask and a second door to open. #23 Comparison hero is rejected because the only oppositional material this page owns is the unpublished-roster passage, and that is the argument for staying once you have chosen; spending it here would leave the why-band with nothing to say. #28 Embedded map hero is rejected because it is written for a single-location business and this practice has seven addresses. HERO-COMPOSITIONS.md #2 is deliberately NOT in play even though this is the one page in the template whose subject is people: there is no single portrait here and no mirrored split, because a hero portrait would have to pick ONE of the ten clinicians, and the page's whole argument is that the roster is ten named people rather than a figurehead. The media is the scene attached to the second door, not the subject. GROUND: the page's first non-light anchor, deliberately the hero, because the fork IS the concept. -->
+<section class="rs-sec rs-sec--lead surface-dark hb-band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-fork">
+
+          <div class="hb-fork__ask">
+            <h1 class="rs-h1">Meet Our Dentists</h1>
+            <p class="rs-lede">Ten named dentists on one roster, across seven offices. See who is on that roster, and what our own site records for each of them, before you book.</p>
+            <!-- CTA-PATTERNS.md #7 multi-CTA cluster, carried verbatim from section 1 of the
+                 copy. The secondary action routes to the offices page because the phone policy
+                 forbids a general line: every direct number is published there, per office. -->
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+          <div class="hb-fork__else">
+            <div class="rs-frame hb-fork__frame">
+              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-103-768x1152.jpg"
+                   width="768" height="1152" decoding="async"
+                   alt="Someone holding open the glass front door of one of our offices.">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+            <!-- THE SECOND DOOR, CASE A: this page's own section 3 escape block, heading and
+                 sentence and route together, moved from the foot of the directory to the top of
+                 the page. Same case as the services exemplar. -->
+            <div class="hb-invert hb-fork__panel">
+              <h2 class="hb-fork__t">Not sure who to ask for.</h2>
+              <p class="hb-fork__p">Describe the problem and we will book you with the clinician who treats it.</p>
+              <a class="hb-fork__go" href="contact.html">Contact</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #6 "Is this for me" qualifier | considered: #9,#27,#45 | why: this is the beat the whole concept is built around, and on this page its job is the hardest version of itself: let a reader eliminate nine of ten people. #6 is the only entry in the catalog whose stated role is self-selection rather than display, and its inline question-and-answer variant is what a person scanning a roster actually uses, one route per row with the plain-language line that says whether to stop here. THIS PAGE IS THE TOP OF THE RANGE for the rows-not-tiles argument the exemplar makes, and it is where that argument is tested rather than asserted: ten rows against the exemplar's six. Rank is carried by ORDER alone, and the order is the copy's, which is the practice's own roster order, so no clinician is scaled larger than another and no seniority claim is made in CSS. That matters more here than anywhere else in the template, because a card grid of people invites exactly the reading the copy refuses: a lead dentist and nine others. #9 Services 3-col is rejected because a three-up grid of ten faces leaves a two-thirds-empty fourth row, and because equal columns of PEOPLE read as a staff wall to be browsed rather than a roster to be chosen from. #27 Numbered process steps is rejected on honesty and it is the worst fit on this page of any in the template: numbering ten clinicians would assert a ranking of people, which is a claim about them and not about the page. #45 Category chips is rejected because a chip has room for a name and nothing else, and on this page the line under each name is the credential, which is the only material the reader can actually choose on. DEVIATION, deliberate and template-wide: the copy's anchor strip is NOT rendered as a separate chip row. Here the strip is the same ten names as the rows below it, so shipping both would print the roster twice. THE SHOTS CARRY .rs-frame--face, the foundation's own modifier at radiantsmiles-structural.css:552, because these are the only frames in this template holding a face and a centred 4:3 crop of a square portrait cuts the head. No new CSS. EVERY CREDENTIAL BELOW IS QUOTED, never inferred: the degree, the school, the year, the membership and the one award are carried from the copy, which carries them from a first-party capture of the practice's own roster page. Where a clinician's entry records no degree, none is supplied. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="hb-field">
+
+          <li>
+            <a class="hb-route" href="dr-adrian-ruiz.html">
+              <span class="rs-frame rs-frame--face hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Adrian-Ruiz.jpg"
+                     width="275" height="275" loading="lazy" decoding="async"
+                     alt="Dr. Adrian Ruiz, one of the clinicians on the practice roster.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Dr. Adrian Ruiz, DDS.</h2>
+                <p class="hb-route__p">A second generation dentist, DDS from the UCLA School of Dentistry in 1995, with over 22 years of practice experience.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="dr-norma-miranda.html">
+              <span class="rs-frame rs-frame--face hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Norma-Miranda.jpg"
+                     width="275" height="275" loading="lazy" decoding="async"
+                     alt="Dr. Norma Miranda, one of the clinicians on the practice roster.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Dr. Norma Miranda, DDS.</h2>
+                <p class="hb-route__p">DDS from the UCLA School of Dentistry in 1976, with over 41 years of experience, building long term relationships with her patients.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="dr-vivi-dang-roberts.html">
+              <span class="rs-frame rs-frame--face hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Vivi-Dang-Roberts.jpg"
+                     width="275" height="275" loading="lazy" decoding="async"
+                     alt="Dr. Vivi Dang-Roberts, one of the clinicians on the practice roster.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Dr. Vivi Dang-Roberts.</h2>
+                <p class="hb-route__p">A graduate of Loma Linda School of Dentistry in 1994, who is gentle, caring and compassionate.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="dr-max-torres.html">
+              <span class="rs-frame rs-frame--face hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_05_dr-max-torres-sm-300x280.jpg"
+                     width="300" height="280" loading="lazy" decoding="async"
+                     alt="Dr. Max Torres, one of the clinicians on the practice roster.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Dr. Max Torres.</h2>
+                <p class="hb-route__p">Born and raised in Las Vegas, and a UNLV graduate. He became interested in dentistry through the care he received from his dentists as a child.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="dr-victoria-quizon.html">
+              <span class="rs-frame rs-frame--face hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_IMG_9391-1-2-288x300.jpg"
+                     width="288" height="300" loading="lazy" decoding="async"
+                     alt="Dr. Victoria Quizon, one of the clinicians on the practice roster.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Dr. Victoria Quizon, DMD.</h2>
+                <p class="hb-route__p">Born and raised in Las Vegas, with a DMD from UNLV in 2023. An active member of the American Dental Association and the American Academy of Implant Dentistry.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="dr-stephanie-andrade.html">
+              <span class="rs-frame rs-frame--face hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_07_IMG_4337-208x300.jpg"
+                     width="208" height="300" loading="lazy" decoding="async"
+                     alt="Dr. Stephanie Andrade, one of the clinicians on the practice roster.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Dr. Stephanie Andrade, DMD.</h2>
+                <p class="hb-route__p">DMD from the UNLV School of Dental Medicine, fluent in Spanish, with a special interest in cosmetic and restorative dentistry.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="dr-chris-schaudt.html">
+              <span class="rs-frame rs-frame--face hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_IMG_1387-1-300x286.jpg"
+                     width="300" height="286" loading="lazy" decoding="async"
+                     alt="Dr. Chris Schaudt, one of the clinicians on the practice roster.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Dr. Chris Schaudt.</h2>
+                <p class="hb-route__p">Modern dentistry with a warm, personal approach, from routine cleanings through to smile makeovers.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="dr-karthikeyan-subramani.html">
+              <span class="rs-frame rs-frame--face hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_05_Dr.-Karthikeyan-Subramani-photo-sm-272x300.jpg"
+                     width="272" height="300" loading="lazy" decoding="async"
+                     alt="Dr. Karthikeyan Subramani, one of the clinicians on the practice roster.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Dr. Karthikeyan Subramani.</h2>
+                <p class="hb-route__p">MSc in Orthodontics and Dentofacial Orthopedics, and holder of the Milo Hellman Award from the American Association of Orthodontists in 2019.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="dr-omar-lavado.html">
+              <span class="rs-frame rs-frame--face hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_Dr.-Omar-Lavado-1-300x300.jpg"
+                     width="300" height="300" loading="lazy" decoding="async"
+                     alt="Dr. Omar Lavado, one of the clinicians on the practice roster.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Dr. Omar Lavado, DMD.</h2>
+                <p class="hb-route__p">Born in Lima, Peru and raised in Las Vegas, DMD from the UNLV School of Dental Medicine.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="hb-route" href="dr-andy-landaverde.html">
+              <span class="rs-frame rs-frame--face hb-route__shot">
+                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_11_Dr-Andy-Landaverde1-294x300.jpg"
+                     width="294" height="300" loading="lazy" decoding="async"
+                     alt="Dr. Andy Landaverde, one of the clinicians on the practice roster.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </span>
+              <span class="hb-route__body">
+                <h2 class="hb-route__t">Dr. Andy Landaverde.</h2>
+                <p class="hb-route__p">A first generation graduate, fluent in Spanish, whose goal is to build meaningful, trusting relationships with patients and staff.</p>
+              </span>
+              <span class="hb-route__lead" aria-hidden="true"></span>
+              <span class="hb-route__go" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+        <!-- IMAGE SLOTS, all ten FILLED with the clinician's OWN portrait, which is the one
+             place in this template where the copy's image-slot instruction is literal: "a real
+             portrait of that clinician. No stock image and no substituted face may stand in."
+             Each file is the one bound to that clinician on the practice's own roster page, and
+             each alt names the person it shows. This is the only section in the whole template
+             whose alt strings name a person, and that is correct here and nowhere else.
+             CARRIED FORWARD: the ten are not a consistent photographic set. See the header. -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #50 Topic columns | considered: #45,#36 | why: this is the escape hatch, and it is placed HERE, directly under the field and long before the closing ask, because on a page whose order is the order of the decision the reader who matched none of the ten should be released at the moment that becomes true. It matters more on this page than on any other in the template: ten rows is the longest elimination the concept asks anyone to perform, and the reader who reaches the bottom having matched nobody has spent the most to get there. #50 is the grouped-columns entry, and the copy supplies both group names and both memberships: the sibling hubs on one side, the offer and the reviews and the way to ask on the other. Rendering them as two headed columns of full-width rows keeps the grouping the copy asserts and gives every destination a 52px target. #45 Category chips is rejected because a chip row flattens both groups into one line of equal pills, and this rail's entire content is that the two groups are NOT the same kind of thing. #36 Sticky-sidebar topic nav is rejected because it is built to be returned to repeatedly across a long document, and this rail is read once, in passing. DEVIATION: #50's per-topic article cards are not built, because these are seven internal destinations and not articles. GROUND: the page's quietest beat, on the plain canvas between the two banded sections either side of it. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-more">
+
+          <div class="hb-more__grp">
+            <p class="hb-more__k">Other hubs:</p>
+            <a class="hb-more__l" href="services.html">All services</a>
+            <a class="hb-more__l" href="locations.html">All seven offices</a>
+            <a class="hb-more__l" href="new-patients.html">New patients</a>
+            <a class="hb-more__l" href="about.html">About the practice</a>
+          </div>
+
+          <div class="hb-more__grp">
+            <p class="hb-more__k">Also:</p>
+            <a class="hb-more__l" href="offer.html">the new patient offer</a>
+            <a class="hb-more__l" href="reviews.html">patient reviews</a>
+            <a class="hb-more__l" href="contact.html">contact</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: #8,#26 | why: the reader has just chosen a name, and the only question left about that choice is whether the name means anything, so this section has to name a cost the reader has already paid somewhere else before the named-roster claim means anything. #7 is the catalog's name-the-pain entry, and its problem-cards variant carries this passage correctly: the copy is two arrangements and a consequence, so it is set as two statement cells with the consequence spanning UNDERNEATH them, which is where this page's copy puts its unpaired paragraph. That is the same rule the cosmetic-dentistry and restorations variants follow to the opposite placement, and it is finding B stated as a rule rather than as a position: the spanning slot takes the page's single unpaired paragraph wherever the copy puts it. Here that paragraph is the consequence, one roster across seven offices, one practice rather than a franchise or a referral network, and it has to be read AFTER both arrangements because it is what follows from ours. The treatment does the comparing the words are forbidden to do: the unpublished-roster cell is flat, unlifted and hairline only, ours takes the card ground, the elevation and the keyed signature rule. No column label ships on either cell. #8 Manifesto is rejected because a manifesto states a belief and this passage states an arrangement. #26 Pull-quote section is rejected on a specific hazard: it exists to set one passage alone in the page's own voice, and the first paragraph describes a practice this one is NOT, so quoting it would attribute someone else's arrangement to this practice as a creed. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-why">
+
+          <div class="rs-frame hb-why__media">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-95-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="Someone walking through the front of one of our offices, past the reception desk.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+          <div class="hb-why__args">
+            <p class="hb-why__was">Where a practice does not publish its clinicians, you meet your dentist for the first time in the chair. The booking is a slot, not a person.</p>
+            <p class="hb-why__is">Every clinician here is named. Where a degree, a school, a year or an award is shown, it is quoted from the practice's own roster. Two of them speak Spanish.</p>
+            <p class="hb-why__cost">They are one clinical roster working across all seven offices. This is one practice, not a franchise and not a referral network.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: PRICING-SECTIONS.md #4 Quote-only cost-model split | considered: #5,#6 | why: by this point in the route the reader has picked a name, and the only thing left between them and a booking is not knowing what finding out will cost. #4 is the band written for an offer with NO published price: it argues the MODEL instead of printing a number, which is the only thing this page is permitted to do. Its split shape is used as specified, a copy column beside a capped portrait frame, and its rules list carries one WHOLE sentence per row. THIS PAGE'S SECTION 4 IS DIFFERENT FROM EVERY OTHER T-HUB PAGE'S and the difference is handled rather than flattened: it opens by declaring that two records sit behind it, and then states both, so the band carries a coverage figure AND a review rating rather than one figure. Both keep their source, their scope and their fetch date, and neither is atomised. The rules list is where the copy's own SCOPE sentences go, because on this page the scope is the argument: the coverage figures describe dental coverage across adults, not what a patient looks for in a clinician, and saying so is what stops a statistic about insurance from being read as a claim about these ten people. GROUND: the look-floor asks for a non-light beat inside the middle band, and of the two sections inside it only this one earns it on content. #5 Plain-deal honesty stance is rejected because it is built to state ONE clear number plainly, and this page publishes no price at all and two records that are not prices. #6 Quote-configurator ladder is rejected because it walks a reader towards a figure through a sequence of choices, every one of which would have to be written. DEVIATIONS, both declared: #4's KPI row of oversized numerals is NOT built. It is the one place in this template where that deviation is a close call, because this page owns two real figures and a KPI row is what a pair of figures asks for, but neither can be separated from its attribution, its scope and its date, and a numeral row is exactly that separation. #4's corner badge card is dropped for the same reason. -->
+<section class="rs-sec surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-cost">
+
+          <div class="hb-cost__copy">
+            <p class="hb-cost__lead">Two records sit behind this page. Both are stated with their source and their date.</p>
+            <p class="rs-copy"><span class="hb-fig">55%</span> of adults aged 65 and older have no dental benefits, per the ADA Health Policy Institute, fetched 30 July 2026.</p>
+            <ul class="hb-rules">
+              <li>Dental visits track coverage directly.</li>
+              <li>These figures describe dental coverage across adults, not what a patient looks for in a clinician.</li>
+            </ul>
+            <!-- OWNER: the rating below is the Lake Mead record only. It is not restated as a
+                 practice-wide figure anywhere on this page, it is not aggregated, and it keeps
+                 its platform, its office scope and its fetch date. Supply the practice-wide
+                 number and nominate the platform of record, per content-bible.md section 6. -->
+            <p class="rs-copy">Our Lake Mead office is rated 4.5 stars across 506 patient reviews on Birdeye, fetched 30 July 2026. That figure is for the Lake Mead office only.</p>
+          </div>
+
+          <div class="rs-frame hb-cost__media">
+            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-10-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="The reception desk at one of our offices, seen past the planting by the entrance.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #51 Locations grid | considered: #52,#53 | why: the route narrows one last time here, from ten clinicians to one address, and #51 is the catalog's multi-location entry, the only one built to hold a SET of named places. It is realised as a two-column ledger of seven hairline rows: every office name links to that office's own page, and every address is carried character for character from the copy, which is itself copied from the locked contact data. #51's per-tile photograph is DELIBERATELY NOT SHIPPED, for the exemplar's first reason, which is the one true of every page rather than only of services: a list of rows each carrying a thumbnail and an arrow is this concept's one signature object and it is already spent on section 2. On THIS page that argument is at its strongest in the whole template, because section 2 here is TEN rows, so a seven-tile band underneath would put seventeen thumbnails on one page. The exemplar's px measurements are NOT restated here, per the cosmetic-dentistry variant's finding C: they were measured on services and are not true of any other page. What survives unmeasured is the reason about the FILES: North Decatur's only file is 380 by 506 native, already an upscale at 1x, and Summerlin at 792 wide and Lone Mountain at 894 fail at 2x. ⚠OWNER, and it is the reason this band says nothing about who works where: per-clinician office assignments are not published on the live site, and no location page names a dentist, so this section states the seven addresses and stops. A reader who has just chosen a name will want to know which of the seven to drive to, and this build cannot tell them without inventing it. #52 Map embed is rejected because it is written for a single-location business and no map asset exists in assets/. #53 Hours table is rejected on evidence: per-office hours are not in the locked spec and three of the seven carry unresolved hour rows in the sibling copy. GROUND: the plain canvas, deliberately, between the middle anchor and the closing one. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-where">
+
+          <div class="hb-where__head">
+            <h2 class="rs-h2">Find the office nearest you.</h2>
+            <p class="rs-copy">Our clinicians work across all seven:</p>
+          </div>
+
+          <!-- OWNER: the Sunrise Manor ZIP conflicts on the live site. 89107 is carried here
+               from client-rules.json contactData, pending confirmation against 89104 in the
+               booking block. NAP consistency depends on resolving it. Not rendered as visible
+               copy, because a visitor is not the audience for it. -->
+          <!-- OWNER: per-clinician office assignments are not published on the live site. No
+               location page names a dentist, so no page here states which dentist sits at which
+               office until you confirm it. -->
+          <div class="hb-offices">
+            <div class="hb-office">
+              <a class="hb-office__n" href="lone-mountain.html">Lone Mountain</a>
+              <p class="hb-office__a">7469 W. Lake Mead Blvd., Suite 270, Las Vegas 89128</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="sunrise-manor.html">Sunrise Manor</a>
+              <p class="hb-office__a">1825 S. Nellis Blvd., Las Vegas 89107</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="summerlin.html">Summerlin</a>
+              <p class="hb-office__a">8961 W. Sahara Ave., Suite 108, Las Vegas 89117</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="north-las-vegas.html">North Las Vegas</a>
+              <p class="hb-office__a">5195 Camino Al Norte Rd., North Las Vegas 89031</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="henderson.html">Henderson</a>
+              <p class="hb-office__a">2633 W. Horizon Ridge Pkwy., Suite 130, Henderson 89052</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="north-decatur.html">North Decatur</a>
+              <p class="hb-office__a">6311 N. Decatur Blvd., Suite 140, Las Vegas 89130</p>
+            </div>
+            <div class="hb-office">
+              <a class="hb-office__n" href="blue-diamond.html">Blue Diamond</a>
+              <p class="hb-office__a">5095 S. Blue Diamond Rd., Suite 105, Las Vegas 89139</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #41 Closing CTA (final action) | considered: #40,#37 | why: the route ends where a route should end, on one instruction and the two actions that carry it out, with nothing else in the band to look at. #41 is the entry whose stated role is exactly the last thing before the footer, a single primary action, and its restraint is the point: every move on this page has removed something from the field, so the final beat is the narrowest object on it. The sentence is the copy's own closing line and it names both actions in the order the buttons appear. It is also the one closing line in the template that pays off the page's specific argument: a roster is only worth publishing if you can ask for someone on it by name, and that is what the sentence tells the reader to do. This is the ONLY dedicated closing conversion band in the whole fragment: the locked chrome carries no pre-footer CTA band of its own. #40 Pre-footer CTA band is rejected because each of its variants adds furniture that would need copy this page does not have. #37 CTA form split is rejected because it would put an intake form on a hub, a second and different conversion mechanism from the booking route the rest of the site uses. -->
+<section class="rs-sec rs-sec--close surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-book">
+
+          <p class="hb-book__line">Ask for a clinician by name when you book, or call the office and tell them what is wrong.</p>
+
+          <!-- The secondary action resolves to the offices page, never a general line, per
+               routeRules.phone_policy: a hub cannot know which of the seven offices the reader
+               wants, and every office's own direct number is published on that page. -->
+          <div class="rs-acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

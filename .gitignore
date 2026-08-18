@@ -1,0 +1,21 @@
+# radiantsmiles client-site build — repo-local ignores.
+#
+# NOTE ON SCOPE. The Ace workspace root's .gitignore deliberately excludes ALL of
+# Code/client-sites/ ("Real client/business data — NEVER ship, NEVER track"), because the
+# distribution manifest is built from `git ls-files` and client work must never enter that payload.
+# That exclusion is about the ACE payload, not about this client's own history — so this build keeps
+# its own repo here, the same pattern already used by Code/web-mockup/desert-paws and
+# alignwell-chiropractic. A repo at the workspace root would not capture this tree at all.
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# dependency trees (none committed; the gate scripts live in the skill, not here)
+node_modules/
+
+# never commit a real key or a local override
+.mcp.json
+.env
+.env.*
+*.pem

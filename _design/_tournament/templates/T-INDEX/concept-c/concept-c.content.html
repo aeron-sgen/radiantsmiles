@@ -1,0 +1,580 @@
+<style>
+/* ============================================================================
+   T-INDEX CONCEPT C - "THE WITHHELD INDEX"
+   Body fragment. Sits ON TOP of radiantsmiles-tokens.css, radiantsmiles-chrome.css
+   and radiantsmiles-structural.css. It adds only the shapes this template needs
+   that the foundation kit does not already ship.
+
+   NAMESPACE: every class invented here is ix-. The two prefixes already owned by
+   the promoted T-FEATURE and T-HUB templates are never used. No foundation
+   selector (.rs-sec, .container, .row, .col, .rs-h1, .rs-h2, .rs-lede, .rs-copy,
+   .rs-btn, .rs-acts, .rs-frame, .rs-grade, .surface-dark, .rs-strong) is
+   redefined anywhere below.
+
+   TOKEN PURITY: zero literal colour values of any notation. Every colour, radius,
+   shadow, duration, easing and spacing value is var(--ds-*) or a calc() over one.
+   Colour keywords are avoided as well.
+
+   RESPONSIVE: authored DESKTOP FIRST. Every breakpoint rule is an ADDITIVE
+   @media (max-width:N) override at 1023 / 767 / 479. No lower bound query exists.
+
+   THE THESIS: a T-INDEX is one index grammar shown in two states. This page
+   renders BOTH on the same screen. The category routing is the index POPULATED
+   with five real destinations. The gallery grid is the SAME index EMPTY, drawn
+   as its own schema rather than as a hole. Nothing photographic, and nothing
+   gradient-as-photo, stands in for the missing before and after work.
+
+   SECTION ORDER, deliberately not the copy's order:
+     1 hero-filter (copy 1)  2 category-routing (copy 4, DARK)
+     3 list-grid (copy 3)    4 featured-case (copy 2)   5 closing-cta (copy 5)
+   The copy itself says the routing carries the page while the grid is empty, so
+   the routing is promoted to the slot directly under the hero.
+   ============================================================================ */
+
+/* ---- 1. HERO: the paired slot ------------------------------------------- */
+.ix-open__head{display:flex;flex-direction:column;gap:var(--ds-space-sm);}
+
+.ix-pair{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr);
+  gap:var(--ds-space-lg);
+  margin-top:var(--ds-space-xl);
+}
+.ix-pair__seam{
+  background:linear-gradient(180deg,var(--ds-bg-surface),var(--ds-line-control),var(--ds-bg-surface));
+}
+/* THE FLAGGED PLACEHOLDER. Dashed control edge, token grid texture, inset
+   highlight. It is legible as unfinished on sight and carries no photographic
+   content, no implied room and no implied person, per imagery-system.md sec 4. */
+.ix-slot{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:calc(var(--ds-space-2xl) + var(--ds-space-lg));
+  padding:var(--ds-space-lg) var(--ds-space-md);
+  border:1px dashed var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  background-color:var(--ds-bg-band);
+  background-image:var(--ds-glow-wash),var(--ds-grid);
+  background-size:auto,var(--ds-grid-size);
+  box-shadow:var(--ds-inset-hi),var(--ds-shadow-rest);
+  transition:box-shadow var(--ds-dur) var(--ds-ease);
+}
+.ix-slot__label{
+  font-family:var(--ds-font-mono);
+  font-size:14px;
+  line-height:1.4;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+p.ix-note{
+  max-width:60ch;
+  margin-top:var(--ds-space-md);
+  font-size:18px;
+  line-height:1.70;
+  color:var(--ds-ink);
+}
+/* the descriptive field row. Typographic caption only: no chip chrome, no href,
+   no control affordance, because no filter control may ship while the grid is
+   empty. */
+p.ix-fields{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:var(--ds-space-2xs) var(--ds-space-sm);
+  max-width:60ch;
+  margin-top:var(--ds-space-sm);
+  font-size:16px;
+  line-height:1.55;
+  color:var(--ds-ink-soft);
+}
+.ix-fields__key{
+  font-family:var(--ds-font-mono);
+  font-size:14px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+
+/* ---- 2. THE INDEX GRAMMAR, used populated AND empty ---------------------- */
+.ix-index{
+  display:grid;
+  gap:0;
+  margin-top:var(--ds-space-lg);
+  border-top:1px solid var(--ds-line);
+  counter-reset:ix-row;
+}
+.ix-card{
+  position:relative;
+  counter-increment:ix-row;
+  border-bottom:1px solid var(--ds-line);
+}
+/* the accent tick. On light it only reads because of the deep keyline the token
+   sheet mandates; on dark that keyline resolves to none. */
+.ix-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:calc(var(--ds-space-md) + var(--ds-space-sm));
+  width:3px;
+  height:var(--ds-space-md);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-accent);
+  box-shadow:var(--ds-accent-keyline);
+  opacity:var(--ds-opacity-disabled);
+  transition:opacity var(--ds-dur) var(--ds-ease),height var(--ds-dur) var(--ds-ease);
+}
+.ix-card:hover::before,
+.ix-card:focus-within::before{
+  opacity:1;
+  height:calc(var(--ds-space-md) + var(--ds-space-sm));
+}
+.ix-card__hit{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:var(--ds-space-md);
+  align-items:baseline;
+  min-height:calc(var(--ds-space-lg) + var(--ds-space-xs));
+  padding:var(--ds-space-md) var(--ds-space-sm) var(--ds-space-md) var(--ds-space-md);
+  border-radius:var(--ds-r-surface);
+  text-decoration:none;
+  transition:background-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease);
+}
+.ix-card__hit:hover,
+.ix-card__hit:focus-visible{
+  background-color:var(--ds-bg-surface);
+  box-shadow:var(--ds-shadow-card);
+}
+.ix-card__hit:focus-visible{box-shadow:var(--ds-glow),var(--ds-shadow-card);}
+.ix-card__hit::before{
+  content:counter(ix-row,decimal-leading-zero);
+  font-family:var(--ds-font-mono);
+  font-size:14px;
+  line-height:1.4;
+  letter-spacing:.14em;
+  color:var(--ds-ink-soft);
+}
+.ix-card__body{display:block;}
+.ix-card__name{
+  display:block;
+  font-family:var(--ds-font-display);
+  font-size:clamp(21px,2.2vw,26px);
+  line-height:1.22;
+  letter-spacing:-.01em;
+  color:var(--ds-ink-heading);
+}
+/* the row description. It is a SPAN, because it lives inside the row's anchor
+   and a paragraph may not. So this rule is NOT type-qualified: a p.* selector
+   would never match it. It also carries its own measure, which is exactly why
+   .rs-copy is kept OFF this element rather than combined with it. */
+.ix-card__desc{
+  display:block;
+  max-width:52ch;
+  margin-top:var(--ds-space-2xs);
+  font-size:18px;
+  line-height:1.70;
+  color:var(--ds-ink-soft);
+}
+.ix-card__go{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--ds-space-xs);
+  min-height:calc(var(--ds-space-md) + var(--ds-space-md));
+  font-size:16px;
+  font-weight:700;
+  line-height:1.4;
+  color:var(--ds-ink-heading);
+}
+.ix-card__arrow{
+  display:inline-block;
+  transition:transform var(--ds-dur) var(--ds-ease-out);
+}
+.ix-card__hit:hover .ix-card__arrow,
+.ix-card__hit:focus-visible .ix-card__arrow{transform:translateX(var(--ds-space-2xs));}
+
+/* ---- 3. THE INDEX IN ITS EMPTY STATE ------------------------------------- */
+.ix-index--empty{border-bottom:1px solid var(--ds-line);}
+.ix-ghost{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:var(--ds-space-sm);
+  padding:var(--ds-space-lg) var(--ds-space-md);
+  border-radius:var(--ds-r-surface);
+  background-color:var(--ds-canvas);
+  background-image:var(--ds-glow-wash),var(--ds-grid);
+  background-size:auto,var(--ds-grid-size);
+  box-shadow:var(--ds-inset-hi),var(--ds-shadow-rest);
+}
+.ix-ghost__field{
+  display:inline-flex;
+  align-items:center;
+  min-height:calc(var(--ds-space-md) + var(--ds-space-xs));
+  padding:0 var(--ds-space-sm);
+  border:1px dashed var(--ds-line-control);
+  border-radius:var(--ds-r-pill);
+  font-size:16px;
+  line-height:1.4;
+  color:var(--ds-ink-soft);
+}
+ul.ix-needs{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--ds-space-xs) var(--ds-space-lg);
+  margin-top:var(--ds-space-md);
+  max-width:72ch;
+}
+ul.ix-needs li{
+  position:relative;
+  padding-left:calc(var(--ds-space-md) + var(--ds-space-2xs));
+  padding-block:var(--ds-space-2xs);
+  border-bottom:1px solid var(--ds-line);
+  font-size:18px;
+  line-height:1.70;
+  color:var(--ds-ink-soft);
+}
+ul.ix-needs li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:calc(var(--ds-space-sm) + var(--ds-space-2xs));
+  width:var(--ds-space-sm);
+  height:1px;
+  background:var(--ds-line-control);
+}
+.ix-code{
+  font-family:var(--ds-font-mono);
+  font-size:16px;
+  color:var(--ds-ink);
+}
+
+/* ---- 4. THE STANDING STATEMENT ------------------------------------------ */
+.ix-stand__pull{
+  position:relative;
+  margin-top:var(--ds-space-lg);
+  padding:var(--ds-space-lg) var(--ds-space-lg) var(--ds-space-lg) calc(var(--ds-space-lg) + var(--ds-space-sm));
+  border-radius:var(--ds-r-surface);
+  background:linear-gradient(180deg,var(--ds-canvas),var(--ds-bg-band));
+  box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+}
+.ix-stand__pull::before{
+  content:"";
+  position:absolute;
+  left:var(--ds-space-md);
+  top:var(--ds-space-lg);
+  bottom:var(--ds-space-lg);
+  width:3px;
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-signature);
+}
+p.ix-stand__line{
+  max-width:36ch;
+  font-family:var(--ds-font-display);
+  font-size:clamp(22px,2.6vw,30px);
+  line-height:1.28;
+  letter-spacing:-.01em;
+  color:var(--ds-ink-heading);
+}
+p.ix-body{
+  max-width:62ch;
+  margin-top:var(--ds-space-md);
+  font-size:18px;
+  line-height:1.70;
+  color:var(--ds-ink-soft);
+}
+p.ix-sub{
+  max-width:58ch;
+  font-size:19px;
+  line-height:1.65;
+  color:var(--ds-ink-soft);
+}
+.ix-eyebrow{
+  display:flex;
+  align-items:center;
+  gap:var(--ds-space-sm);
+  margin-bottom:var(--ds-space-sm);
+  font-family:var(--ds-font-mono);
+  font-size:14px;
+  line-height:1.4;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+.ix-eyebrow::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--ds-line);
+}
+
+/* ---- 5. THE CLOSING PANEL ----------------------------------------------- */
+.ix-close__panel{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+  gap:var(--ds-space-xl);
+  align-items:end;
+  padding:var(--ds-space-xl);
+  border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-surface);
+  background:linear-gradient(180deg,var(--ds-canvas),var(--ds-bg-surface));
+  box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);
+}
+.ix-close__ask{display:flex;flex-direction:column;gap:var(--ds-space-sm);}
+
+/* ---- 6. SECTION ROOTS. Each of the five is the scoping handle the two
+   inheriting pages target, and each earns its place by capping the one measure
+   its own section needs. The locked container runs to 1180px, which is wider
+   than any block on a type led page wants to be, so the cap is set here per
+   section rather than left to the container. ------------------------------- */
+.ix-open .ix-pair{max-width:calc(var(--ds-container-max) - var(--ds-space-2xl));}
+.ix-routes .ix-index,
+.ix-grid .ix-index--empty{
+  max-width:calc(var(--ds-container-max) - var(--ds-space-2xl) * 2);
+}
+/* the standing statement is deliberately the narrowest block on the page, so it
+   reads as a statement rather than as another full width band. */
+.ix-stand .ix-stand__pull{
+  max-width:calc(var(--ds-container-max) / 2 + var(--ds-space-2xl));
+}
+.ix-close .ix-close__panel{max-width:calc(var(--ds-container-max) - var(--ds-space-lg));}
+
+/* ---- 7. MOTION. MOTION-PATTERNS.md #26 Fade-in-on-view, CSS only. The
+   fallback deliberately leaves content VISIBLE, because a body fragment ships
+   no JS and content must never depend on a script that is not there. -------- */
+@keyframes ix-rise{
+  from{opacity:var(--ds-opacity-faint);transform:translateY(var(--ds-space-md));}
+  to{opacity:1;transform:translateY(0);}
+}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .ix-rise{
+      animation:ix-rise linear both;
+      animation-timeline:view();
+      animation-range:entry 0% cover 30%;
+    }
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .ix-card::before,
+  .ix-card__hit,
+  .ix-card__arrow,
+  .ix-slot{transition:none;}
+  .ix-card__hit:hover .ix-card__arrow{transform:none;}
+}
+
+/* ---- 8. BREAKPOINTS. Desktop first, additive max-width steps only. ------- */
+@media (max-width:1023px){
+  .ix-card__hit{
+    grid-template-columns:auto minmax(0,1fr);
+    gap:var(--ds-space-sm) var(--ds-space-md);
+  }
+  .ix-card__go{grid-column:2;margin-top:var(--ds-space-2xs);}
+  .ix-close__panel{
+    grid-template-columns:minmax(0,1fr);
+    gap:var(--ds-space-lg);
+    padding:var(--ds-space-lg);
+  }
+  .ix-pair{gap:var(--ds-space-md);}
+}
+@media (max-width:767px){
+  .ix-pair{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto 1px auto;
+    gap:var(--ds-space-md);
+    margin-top:var(--ds-space-lg);
+  }
+  .ix-pair__seam{
+    height:1px;
+    background:linear-gradient(90deg,var(--ds-bg-surface),var(--ds-line-control),var(--ds-bg-surface));
+  }
+  .ix-slot{min-height:calc(var(--ds-space-2xl) + var(--ds-space-2xs));}
+  ul.ix-needs{grid-template-columns:minmax(0,1fr);}
+  .ix-card__hit{
+    min-height:calc(var(--ds-space-lg) + var(--ds-space-xs));
+    padding:var(--ds-space-md) var(--ds-space-xs) var(--ds-space-md) var(--ds-space-md);
+  }
+  .ix-card__go{min-height:calc(var(--ds-space-lg) + var(--ds-space-xs));}
+  .ix-stand__pull{
+    padding:var(--ds-space-md) var(--ds-space-md) var(--ds-space-md) calc(var(--ds-space-md) + var(--ds-space-sm));
+  }
+  .ix-stand__pull::before{left:var(--ds-space-sm);top:var(--ds-space-md);bottom:var(--ds-space-md);}
+  .ix-ghost{padding:var(--ds-space-md) var(--ds-space-sm);}
+}
+@media (max-width:479px){
+  .ix-close__panel{padding:var(--ds-space-md);}
+  .ix-ghost{gap:var(--ds-space-xs);}
+  .ix-ghost__field{min-height:calc(var(--ds-space-md) + var(--ds-space-md));}
+  p.ix-note,p.ix-body,p.ix-card__desc,ul.ix-needs li{font-size:17px;}
+}
+</style>
+
+<!-- pick: HERO-COMPOSITIONS.md #23 Comparison hero (before/after, us/them) | considered: #21,#22,#24 | why: This concept is required to pick a hero from entry twenty one upward. #23 is the only entry in that band whose structure is already this page's subject. A smile gallery is a before slot beside an after slot. The two column seam is therefore the page's own grammar, not decoration. Both slots ship declared empty, because imagery-system.md records zero before and after photographs on disk. DELIBERATE DEVIATION: the catalog frames an old way against a new way, and that oppositional reading is dropped in full. competitorFraming bars framing against a practice, and no second party exists here to oppose. What survives from #23 is the paired slot and the hairline seam between them. #21 Mosaic was rejected because a collage needs five to eight images. Filling one with office interiors would put a room where a clinical result belongs. #22 Statistics was rejected because the copy carries no figure at all. proofPolicy names patient outcomes and clinical results as fabrication forbidden. #24 Awards was rejected because no award claim appears in the copy or in any captured source. -->
+<section class="rs-sec rs-sec--lead ix-open">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- ⚠FLAG: this page is live and empty on the current site. It carries an H1 and no gallery, on a practice selling veneers, whitening, implants and orthodontics. -->
+        <!-- ⚠FLAG: no filter control ships while the grid is empty. Each category switches on when a real entry sits behind it. A filter with nothing behind it is a promise the page cannot keep. -->
+        <div class="ix-open__head">
+          <h1 class="rs-h1">Smile Gallery</h1>
+          <p class="rs-lede">A gallery of before and after results from our own patients, sorted by treatment. None is published yet.</p>
+        </div>
+
+        <div class="ix-pair ix-rise">
+          <div class="ix-slot">
+            <span class="ix-slot__label">before image</span>
+          </div>
+          <div class="ix-pair__seam" aria-hidden="true"></div>
+          <div class="ix-slot">
+            <span class="ix-slot__label">after image</span>
+          </div>
+        </div>
+
+        <p class="ix-note">Nothing appears here unless it is a real patient result with written consent on file.</p>
+        <p class="ix-fields"><span class="ix-fields__key">Filters</span> by treatment category &middot; by tag</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #45 Category chips / nav | considered: #42,#9,#48 | why: #45 is the browse by category slot, and category routing is exactly what this section does. DELIBERATE DEVIATION: the chips are replaced by full width ruled rows. A chip row would read as a filter control, and the copy forbids shipping one while the grid is empty. Each destination also carries a sentence of its own, which a chip cannot hold. The row chrome follows SURFACE-PATTERNS.md entry 15 Underline only card, and the numbering follows its entry 32 Numbered step, so the section stays type led rather than card led. #42 Project grid filterable was rejected because there is no project to grid and no filter may ship. #9 Services 3-col was rejected because these five destinations are not five services. #48 Article cards 3-col was rejected because an image slot per card would be an empty slot per card. STRUCTURE: this band is promoted to position two and takes the page's dark ground, rather than the usual pre footer slot. The copy states that the routing carries the page while the grid is empty, so it sits directly under the hero. DIVIDER-PATTERNS.md entry 10 Hard color band step is the transition into it, since the contrast itself is the divider. -->
+<section class="rs-sec surface-dark ix-routes">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- ⚠FLAG: every destination above exists in `sitemap.yaml` and in `link-funnel-map.md` for this page. No category routes to a page that does not exist. -->
+        <!-- ⚠OWNER: once real cases arrive, each one links back to the treatment page it came from. That link is what makes the category filter worth having. -->
+        <h2 class="rs-h2">The grid is empty, so the routing carries this page.</h2>
+        <p class="ix-sub">Each destination below describes the work in words, with no invented result attached to it.</p>
+
+        <ol class="ix-index ix-rise">
+          <li class="ix-card">
+            <a class="ix-card__hit" href="cosmetic-dentistry.html">
+              <span class="ix-card__body">
+                <span class="ix-card__name">Cosmetic dentistry</span>
+                <span class="ix-card__desc">The hub for the work this gallery would show.</span>
+              </span>
+              <span class="ix-card__go">Cosmetic dentistry <span class="ix-card__arrow" aria-hidden="true">&rarr;</span></span>
+            </a>
+          </li>
+          <li class="ix-card">
+            <a class="ix-card__hit" href="porcelain-veneers.html">
+              <span class="ix-card__body">
+                <span class="ix-card__name">Porcelain veneers</span>
+                <span class="ix-card__desc">Shape, shade and spacing on the front teeth.</span>
+              </span>
+              <span class="ix-card__go">Porcelain veneers <span class="ix-card__arrow" aria-hidden="true">&rarr;</span></span>
+            </a>
+          </li>
+          <li class="ix-card">
+            <a class="ix-card__hit" href="services.html">
+              <span class="ix-card__body">
+                <span class="ix-card__name">All services</span>
+                <span class="ix-card__desc">General, cosmetic, restorative, surgical, periodontic and orthodontic care, in house.</span>
+              </span>
+              <span class="ix-card__go">Services <span class="ix-card__arrow" aria-hidden="true">&rarr;</span></span>
+            </a>
+          </li>
+          <li class="ix-card">
+            <a class="ix-card__hit" href="reviews.html">
+              <span class="ix-card__body">
+                <span class="ix-card__name">Patient reviews</span>
+                <span class="ix-card__desc">The Birdeye record, with its office scope attached to it.</span>
+              </span>
+              <span class="ix-card__go">Reviews <span class="ix-card__arrow" aria-hidden="true">&rarr;</span></span>
+            </a>
+          </li>
+          <li class="ix-card">
+            <a class="ix-card__hit" href="contact.html">
+              <span class="ix-card__body">
+                <span class="ix-card__name">Ask about your own case</span>
+                <span class="ix-card__desc">Tell us what you want changed and we will tell you what it involves.</span>
+              </span>
+              <span class="ix-card__go">Contact <span class="ix-card__arrow" aria-hidden="true">&rarr;</span></span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #42 Project grid filterable | considered: #30,#43,#21 | why: #42 is the slot this page type owns, and it ships here in its empty state rather than not at all. The filter chips are withheld, per the copy's own rule about a category with nothing behind it. What renders in the grid instead is the item schema, drawn as inert dashed field tokens. Those tokens carry field names and never category names, so nothing on screen reads as a live filter. SURFACE-PATTERNS.md entry 9 Hairline outline is the chrome for them, because a shadowed card would claim a substance that is absent. #30 Before/after grid was rejected because zero consented pairs exist to place in it. #43 Gallery grid was rejected for the same reason, and a masonry of nothing reads as breakage. #21 Case studies 3-col was rejected because each of its cards needs an image and an outcome line. Both of those are barred here by proofPolicy.real_only_for. -->
+<section class="rs-sec rs-sec--band ix-grid">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- ⚠OWNER PLACEHOLDER: no consented patient photograph has been captured to disk. This grid therefore ships empty, with every filter category withheld. -->
+        <!-- ⚠FLAG: do not populate this grid with sample, stock or representative results. A plausible invented result is worse than an empty grid, because it reads as evidence. -->
+        <!-- ⚠FLAG: sort is category first, then recency. Recency uses the date the case was supplied, which means every item carries a real date or it does not ship. -->
+        <p class="ix-eyebrow">Item template</p>
+        <h2 class="rs-h2">What each supplied case needs</h2>
+        <p class="ix-body">Per the brief, a filter category never ships with zero items. Categories switch on one at a time, as real entries arrive for each of them.</p>
+
+        <ul class="ix-needs">
+          <li>the before image</li>
+          <li>the after image</li>
+          <li>the treatment performed</li>
+          <li>the office</li>
+          <li>written patient consent on file</li>
+        </ul>
+
+        <div class="ix-index ix-index--empty ix-rise">
+          <div class="ix-ghost" data-cat="" data-tags="">
+            <span class="ix-ghost__field">before image</span>
+            <span class="ix-ghost__field">after image</span>
+            <span class="ix-ghost__field">treatment category</span>
+            <span class="ix-ghost__field">tags</span>
+            <span class="ix-ghost__field">the treatment page it links to</span>
+          </div>
+        </div>
+
+        <p class="ix-note">Per item fields carry <code class="ix-code">data-cat</code> and <code class="ix-code">data-tags</code>, so the filters in &sect;1 bind to real values.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #8 Manifesto / belief statement | considered: #22,#29,#26 | why: The copy says outright that what can be said today is structural, not visual. #8 is the only considered entry that carries a whole section on words alone. This section is deliberately given no placeholder plate of its own. The hero already states the missing before and after work once, and stating it twice would read as breakage rather than as honesty. #22 Case study featured was rejected because the featured slot ships empty by owner decision at G-9. #29 Before/after pair was rejected because that shape is already the hero's job on this page. #26 Pull-quote was rejected because a quote needs a speaker, and no patient quote may be invented. The closing line is therefore set as a large display statement and never as a quotation, so no attribution is implied. -->
+<section class="rs-sec ix-stand">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- ⚠OWNER PLACEHOLDER: §G-9 is BLOCKING for this page. No real, consented before and after photography exists in any captured source. -->
+        <!-- ⚠FLAG: no patient, quote, metric or clinical outcome is invented here. `proofPolicy.real_only_for` names patient outcomes and clinical results as fabrication forbidden. -->
+        <!-- ⚠FLAG: `proofPolicy` does permit illustrative imagery when it is flagged and noindexed. Inside a gallery an illustration still reads as a patient result, so it is declined here. -->
+        <p class="ix-eyebrow">Featured case</p>
+        <h2 class="rs-h2">What can be said today is structural, not visual.</h2>
+        <p class="ix-body">The featured slot ships empty, and the page ships with a noindex directive, per the decision at &sect;G-9. Both hold until real consented images arrive, with patient permission on file.</p>
+        <p class="ix-body">Cosmetic work here is planned and delivered in house, by the same named clinicians who treat what sits underneath the smile.</p>
+
+        <div class="ix-stand__pull ix-rise">
+          <p class="ix-stand__line">One practice, one roster, seven offices. A featured case is meant to show what that produces, and nothing stands in for it until a real one is consented.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md #7 Multi-CTA cluster (primary + secondary horizontal) | considered: #4,#8,#3 | why: The copy names one primary action and one secondary action, which is the pairing #7 describes. The catalog's own note says the secondary inherits the primary's family. So this is the accent button beside the ghost button the foundation already ships. #4 Phone-pill was rejected because no phone number may be stated on this page. The secondary therefore routes to the locations index, where each office's own number lives. #8 Stacked CTAs was rejected because the panel is wide enough at every desktop step to hold both side by side. Stacking is the mobile behaviour here, not the composition. #3 Arrow-circle was rejected because it carries no button chrome at all. Booking is the one commitment this page asks for, and it should look like a commitment. The panel takes a lift shadow and a band ground, so the ask is the last real object on the page. -->
+<section class="rs-sec rs-sec--band rs-sec--close ix-close">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- ⚠FLAG: the secondary CTA resolves to that office's own number, never a generic line, per `routeRules.phone_policy`. -->
+        <div class="ix-close__panel">
+          <div class="ix-close__ask">
+            <h2 class="rs-h2">You can still ask what a result would involve for your teeth.</h2>
+            <p class="ix-body">Book a consultation, or call the office nearest you.</p>
+          </div>
+          <div class="rs-acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

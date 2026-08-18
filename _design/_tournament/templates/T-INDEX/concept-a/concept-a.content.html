@@ -1,0 +1,590 @@
+<style>
+/* ============================================================================
+   T-INDEX CONCEPT A . "THE HONEST INDEX"
+   Body fragment scoped layer. Sits ON TOP of radiantsmiles-tokens.css,
+   radiantsmiles-chrome.css and radiantsmiles-structural.css. It adds only the
+   shapes this concept needs that the foundation kit does not already ship.
+
+   NAMESPACE: every invented class is ix- . The two prefixes already taken by
+   the promoted templates are never used here. No foundation class (.rs-sec .container
+   .row .col .rs-h1 .rs-h2 .rs-lede .rs-copy .rs-btn .rs-acts .rs-frame
+   .rs-grade .surface-dark .rs-strong) is redefined. Two scoped DESCENDANT
+   rules touch .rs-acts and .rs-btn inside .ix-close only, at the 479 step.
+
+   TOKEN PURITY: no hex literal, no channel function, no named colour. Every
+   colour, radius, shadow, duration, easing and spacing value is a var(--ds-*)
+   role token or a calc() over one.
+
+   RESPONSIVE POLICY: authored DESKTOP FIRST. Every breakpoint rule is an
+   ADDITIVE max-width override, never a min-width one. Steps at 1023 / 767 / 479.
+
+   MEASURE TRAP: the foundation declares p.rs-copy with a 64ch measure at
+   (0,1,1). Every paragraph here that needs its own measure carries a TYPE
+   QUALIFIED ix- rule (p.ix-sub, p.ix-state, p.ix-copy, p.ix-lede) and never
+   carries .rs-copy at the same time.
+
+   IMAGERY: this fragment ships ZERO photographs, deliberately. imagery-system
+   .md records 0 before and after files on disk, and copy section 4 states the
+   routing describes the work in words with no invented result attached to it.
+   ============================================================================ */
+
+/* ---------------------------------------------------------------------------
+   1 . HERO. Split screen, two different content blocks, hairline divider.
+   --------------------------------------------------------------------------- */
+.ix-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--ds-glow-wash);
+}
+.ix-split{
+  position:relative;
+  z-index:var(--ds-z-raised);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--ds-space-xl);
+  align-items:stretch;
+}
+.ix-split__a,
+.ix-split__b{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.ix-split__b{
+  padding-left:var(--ds-space-xl);
+  border-left:1px solid var(--ds-line-control);
+}
+/* the one place the accent is spent on this page besides the primary button.
+   On light the accent measures 1.36:1, so it carries the deep teal keyline the
+   token sheet supplies. On dark that same token resolves to none. */
+.ix-mark{
+  display:block;
+  width:var(--ds-space-lg);
+  height:var(--ds-space-2xs);
+  margin-bottom:var(--ds-space-md);
+  border-radius:var(--ds-r-pill);
+  background:var(--ds-accent);
+  box-shadow:var(--ds-accent-keyline);
+}
+p.ix-sub{
+  margin-top:var(--ds-space-md);
+  max-width:46ch;
+  font-size:clamp(19px,2vw,22px);
+  line-height:1.62;
+  color:var(--ds-ink-soft);
+}
+/* the state block. Display face, heading ink, short measure, so the empty
+   declaration reads as a statement and never as a caption. */
+p.ix-state{
+  max-width:32ch;
+  font-family:var(--ds-font-display);
+  font-size:clamp(21px,2.4vw,27px);
+  line-height:1.42;
+  color:var(--ds-ink-heading);
+}
+
+/* ---------------------------------------------------------------------------
+   2 . FEATURED SLOT. The mid page dark anchor and the flagged placeholder.
+   --------------------------------------------------------------------------- */
+.ix-say{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--ds-space-xl);
+  align-items:start;
+}
+p.ix-copy{
+  margin-top:var(--ds-space-md);
+  max-width:54ch;
+  font-size:18px;
+  line-height:1.70;
+  color:var(--ds-ink-soft);
+}
+p.ix-lede{
+  margin-top:var(--ds-space-md);
+  max-width:62ch;
+  font-size:clamp(19px,2vw,22px);
+  line-height:1.62;
+  color:var(--ds-ink-soft);
+}
+/* FIX, verify-section-rhythm check A on section 2 "What can be said today is
+   structural, not visual." .ix-slot is a FIGURE, and the foundation base reset
+   zeroes the margin on p, ul, ol and h1 through h4 but never on figure, so the
+   user agent default margin 1em 40px survived here. This rule already set
+   margin-top, which masked the top half of that default and left the bottom
+   half live: 1em at the 18px body size is 18px, and because .col carries no
+   bottom padding and no bottom border, the figure being the last child meant
+   that 18px collapsed straight out of .col and landed between the column and
+   the section padding box. It therefore inflated the TRAILING edge only, by a
+   constant 18px that no breakpoint changed, which is why the delta was
+   identical at all three widths. Neutralising the leaked margin is the fix.
+   Subtracting 18px from the section padding would have been wrong: the padding
+   is symmetric and correct, and it is shared foundation rhythm besides.
+   MEASURED, section 2 leading vs trailing, before then after:
+     1440   96 vs 114  ->  96 vs 96
+     768    64 vs 82   ->  64 vs 64
+     375    64 vs 82   ->  64 vs 64 */
+.ix-slot{margin-top:var(--ds-space-xl);margin-bottom:0;}
+/* THE PLACEHOLDER. A token built surface that is honest about being empty.
+   Dashed control boundary, sunk band ground, a faint hairline hatch, and a
+   text label. It carries no photographic content, implies no room and no
+   person, and cannot be mistaken for a gradient standing in for a photo. */
+.ix-plate{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:var(--ds-space-lg);
+  border:2px dashed var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  background-color:var(--ds-bg-band);
+  background-image:repeating-linear-gradient(
+    135deg,
+    var(--ds-hairline) 0 1px,
+    var(--ds-bg-band) 1px 14px
+  );
+  box-shadow:var(--ds-inset-hi);
+}
+.ix-plate--wide{min-height:calc(var(--ds-space-2xl) * 2.4);}
+.ix-plate--tile{
+  flex-direction:column;
+  gap:var(--ds-space-xs);
+  min-height:calc(var(--ds-space-2xl) * 1.15);
+  padding:var(--ds-space-md);
+}
+.ix-plate__label{
+  font-family:var(--ds-font-mono);
+  font-size:15px;
+  font-weight:500;
+  text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+.ix-plate__field{
+  font-family:var(--ds-font-mono);
+  font-size:13px;
+  color:var(--ds-ink-soft);
+}
+.ix-slot__cap{
+  margin-top:var(--ds-space-md);
+  max-width:80ch;
+  font-size:16px;
+  line-height:1.60;
+  color:var(--ds-ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
+   3 . THE ITEM GRAMMAR. What fills the grid, stated instead of sampled.
+   --------------------------------------------------------------------------- */
+.ix-cols{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:var(--ds-space-xl);
+  align-items:start;
+  margin-top:var(--ds-space-lg);
+}
+.ix-needs li{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:var(--ds-space-sm);
+  align-items:baseline;
+  padding-block:var(--ds-space-sm);
+  border-bottom:1px solid var(--ds-line);
+  font-size:18px;
+  line-height:1.60;
+  color:var(--ds-ink);
+}
+.ix-needs__n{
+  font-family:var(--ds-font-mono);
+  font-size:14px;
+  font-weight:700;
+  color:var(--ds-ink-soft);
+}
+.ix-spec{
+  padding:var(--ds-space-md);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  background-color:var(--ds-bg-band);
+  box-shadow:var(--ds-shadow-card);
+}
+.ix-spec__head{
+  padding-bottom:var(--ds-space-sm);
+  border-bottom:1px solid var(--ds-line);
+  font-family:var(--ds-font-mono);
+  font-size:14px;
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--ds-ink-soft);
+}
+.ix-spec__pair{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--ds-space-sm);
+  padding-block:var(--ds-space-md);
+}
+.ix-spec__row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:var(--ds-space-sm);
+  align-items:center;
+  padding-block:var(--ds-space-sm);
+  border-top:1px solid var(--ds-line);
+}
+.ix-spec__key{
+  font-family:var(--ds-font-mono);
+  font-size:15px;
+  color:var(--ds-ink);
+}
+.ix-spec__val{
+  padding:var(--ds-space-2xs) var(--ds-space-xs);
+  border:1px dashed var(--ds-line-control);
+  border-radius:var(--ds-r-control);
+  font-family:var(--ds-font-mono);
+  font-size:13px;
+  color:var(--ds-ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
+   4 . THE ROUTING RAIL. Type led rows, not a card grid. One rule under each
+   row plus generous vertical space is the whole chrome.
+   --------------------------------------------------------------------------- */
+.ix-rail{
+  margin-top:var(--ds-space-lg);
+  border-top:1px solid var(--ds-line-control);
+}
+.ix-rail__row{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,24ch) minmax(0,1fr) auto;
+  gap:var(--ds-space-md);
+  align-items:center;
+  min-height:calc(var(--ds-space-xl) + var(--ds-space-md));
+  padding:var(--ds-space-md) var(--ds-space-sm);
+  border-bottom:1px solid var(--ds-line-control);
+  text-decoration:none;
+  color:var(--ds-ink);
+  transition:background-color var(--ds-dur) var(--ds-ease),
+             box-shadow var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease);
+}
+.ix-rail__row:hover{
+  background-color:var(--ds-canvas);
+  border-color:var(--ds-signature);
+  box-shadow:var(--ds-shadow-lift);
+}
+.ix-rail__row:focus-visible{
+  outline:none;
+  background-color:var(--ds-canvas);
+  box-shadow:var(--ds-glow),var(--ds-shadow-lift);
+}
+.ix-rail__name{
+  position:relative;
+  display:inline;
+  font-family:var(--ds-font-display);
+  font-size:clamp(20px,2vw,24px);
+  font-weight:600;
+  line-height:1.24;
+  color:var(--ds-ink-heading);
+}
+.ix-rail__name::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:calc(var(--ds-space-2xs) * -0.5);
+  height:2px;
+  background:var(--ds-signature);
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform var(--ds-dur) var(--ds-ease-out);
+}
+.ix-rail__row:hover .ix-rail__name::after,
+.ix-rail__row:focus-visible .ix-rail__name::after{transform:scaleX(1);}
+.ix-rail__desc{
+  font-size:17px;
+  line-height:1.58;
+  color:var(--ds-ink-soft);
+}
+.ix-rail__go{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:var(--ds-space-lg);
+  height:var(--ds-space-lg);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-pill);
+  color:var(--ds-ink-heading);
+  transition:transform var(--ds-dur) var(--ds-ease-out),
+             background-color var(--ds-dur) var(--ds-ease),
+             border-color var(--ds-dur) var(--ds-ease);
+}
+.ix-rail__row:hover .ix-rail__go,
+.ix-rail__row:focus-visible .ix-rail__go{
+  transform:translateX(var(--ds-space-2xs));
+  background-color:var(--ds-primary-soft);
+  border-color:var(--ds-primary);
+}
+
+/* ---------------------------------------------------------------------------
+   5 . THE CLOSE. One panel, the ask beside the sentence. The panel steps DOWN
+   to the band ground and takes its lift from a shadow, never from a lighter
+   fill, which is the direction this token sheet specifies for raised surfaces.
+   --------------------------------------------------------------------------- */
+.ix-close{
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(0,auto);
+  gap:var(--ds-space-xl);
+  align-items:center;
+  padding:var(--ds-space-xl);
+  border:1px solid var(--ds-line-control);
+  border-radius:var(--ds-r-surface);
+  background-color:var(--ds-bg-band);
+  background-image:var(--ds-glow-wash);
+  box-shadow:var(--ds-shadow-card);
+}
+
+/* ---------------------------------------------------------------------------
+   6 . MOTION. Scroll driven entrance with no JS. If animation-timeline is not
+   supported the rule never applies and the content is simply visible.
+   --------------------------------------------------------------------------- */
+@keyframes ix-rise{
+  from{opacity:0;transform:translateY(var(--ds-space-md));}
+  to{opacity:1;transform:none;}
+}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .ix-rise{
+      animation:ix-rise linear both;
+      animation-timeline:view();
+      animation-range:entry 0% cover 22%;
+    }
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .ix-rail__row,
+  .ix-rail__go,
+  .ix-rail__name::after{transition:none;}
+  .ix-rail__row:hover .ix-rail__go,
+  .ix-rail__row:focus-visible .ix-rail__go{transform:none;}
+  .ix-rail__name::after{transform:scaleX(1);}
+}
+
+/* ---------------------------------------------------------------------------
+   7 . BREAKPOINTS. Additive max-width steps only.
+   --------------------------------------------------------------------------- */
+@media (max-width:1023px){
+  .ix-split{gap:var(--ds-space-lg);}
+  .ix-split__b{padding-left:var(--ds-space-lg);}
+  .ix-say{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+  .ix-cols{grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg);}
+  .ix-rail__row{
+    grid-template-columns:minmax(0,1fr) auto;
+    row-gap:var(--ds-space-xs);
+  }
+  .ix-rail__desc{grid-column:1;grid-row:2;}
+  .ix-rail__go{grid-column:2;grid-row:1 / span 2;}
+}
+@media (max-width:767px){
+  .ix-split{grid-template-columns:minmax(0,1fr);}
+  .ix-split__b{
+    padding-left:0;
+    padding-top:var(--ds-space-lg);
+    border-left:0;
+    border-top:1px solid var(--ds-line-control);
+  }
+  .ix-plate--wide{min-height:calc(var(--ds-space-2xl) * 1.6);}
+  .ix-spec__pair{grid-template-columns:minmax(0,1fr);}
+  .ix-close{
+    grid-template-columns:minmax(0,1fr);
+    gap:var(--ds-space-lg);
+    padding:var(--ds-space-lg);
+  }
+}
+@media (max-width:479px){
+  .ix-plate{padding:var(--ds-space-md);}
+  .ix-spec{padding:var(--ds-space-sm);}
+  .ix-rail__row{padding:var(--ds-space-md) var(--ds-space-xs);}
+  .ix-close{padding:var(--ds-space-md);}
+  /* scoped descendant, inside this template only. The foundation .rs-acts and
+     .rs-btn are not redefined anywhere in this sheet. */
+  .ix-close .rs-acts{width:100%;}
+  .ix-close .rs-acts .rs-btn{width:100%;}
+}
+</style>
+
+<!-- pick: HERO-COMPOSITIONS.md #3 Split-screen 50/50 different content blocks | considered: #2,#5,#9 | why: this index has two separate things to say above the fold and they are not the same kind of sentence. The left half names the index. The right half declares that the index is empty, and states the consent rule that governs entry. A 50/50 split with a vertical hairline gives that declaration equal billing instead of demoting it to a caption under the sub. That is the editorial argument of the whole page. The pick sits inside the required band, entries 1 through 10. Split-text-right plus photo-left, entry #2, is rejected twice over: it needs a photograph on the left, and imagery-system.md records zero before and after files on disk, so anything placed there would be a substitution inside a gallery. Its own mobile note also stacks the photo ABOVE the text, which the mobile rule here forbids. Full-bleed image plus overlay text, entry #5, fails harder, because the image would BE the message on a page whose message is that there is no image. Cinematic letterbox, entry #9, was the closest runner up and is honest, but it is a single band with nowhere for the empty state to sit as a peer, and its very large display type spends emphasis on a headline with nothing behind it. DELIBERATE DEVIATION from the catalog entry: it specifies a min-height near 80vh and a contrasting ground per half. Both are dropped. The section is sized by its content under rs-sec--lead padding, because an 80vh hero holding two short blocks is exactly the sparse tall section the rhythm gate rejects, and a second ground would read as two pages rather than one index. The divider is the entry's hairline option. TEMPLATE DUALITY: on the reviews page that inherits this template, the right half carries the Birdeye record with its office scope and fetch date. The empty variant and the populated variant are the same shape. -->
+<section class="rs-sec rs-sec--lead ix-hero">
+  <!-- FLAG (copy section 1): this page is live and empty on the current site. It carries an H1 and no gallery, on a practice selling veneers, whitening, implants and orthodontics. -->
+  <!-- FLAG (copy section 1): no filter control ships while the grid is empty. Each category switches on when a real entry sits behind it. A filter with nothing behind it is a promise the page cannot keep. -->
+  <!-- FILTER RAIL SLOT. Copy section 1 specifies filters by treatment category and by tag. NOTHING is rendered here and no control is emitted, per the flag above. This comment marks where the rail mounts when the first real entry lands. On the reviews variant the same slot holds by office and by treatment category, and it is equally withheld there while that list is empty. -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ix-split">
+          <div class="ix-split__a">
+            <h1 class="rs-h1">Smile Gallery</h1>
+            <p class="ix-sub">A gallery of before and after results from our own patients, sorted by treatment. None is published yet.</p>
+          </div>
+          <div class="ix-split__b">
+            <span class="ix-mark" aria-hidden="true"></span>
+            <p class="ix-state">Nothing appears here unless it is a real patient result with written consent on file.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #22 Case study featured plus 2 small | considered: #29,#23,#58 | why: copy section 2 is literally a featured case slot, so the catalog entry that names that slot is the honest pick even though the slot has nothing in it. This is where the page takes its dark ground, at position 2 of 5, so the non-light anchor is mid page rather than a bookend. The boundary into it and out of it is a plain ground change with no decorative shape, which is why no DIVIDER-PATTERNS entry is cited on this page. The placeholder inside is built to imagery-system.md section 4 rule 3: a token surface with a dashed control boundary, a sunk band ground, a faint hairline hatch and a text label. It is not a grey box, not a stock photo, not a generated image, and not a gradient pretending to be a photo. DELIBERATE DEVIATION from the catalog entry: the two small supporting cards are dropped entirely, because shipping two more empty tiles would triple the void without adding one fact. Before/after pair, entry #29, is the exact component this practice would eventually use, but a labelled before plate beside a labelled after plate at featured scale invites the eye to read a result that does not exist. Case study long form, entry #23, needs a challenge, an approach and a result, and proofPolicy.real_only_for names clinical results as fabrication forbidden. Image divider full-bleed, entry #58, requires a large photograph and there is none to spend. The section entrance uses MOTION-PATTERNS.md #26 Fade-in-on-view in its CSS only form, so nothing here depends on JS to become visible. -->
+<section class="rs-sec surface-dark">
+  <!-- OWNER PLACEHOLDER (copy section 2): §G-9 is BLOCKING for this page. No real, consented before and after photography exists in any captured source. -->
+  <!-- FLAG (copy section 2): no patient, quote, metric or clinical outcome is invented here. proofPolicy.real_only_for names patient outcomes and clinical results as fabrication forbidden. -->
+  <!-- FLAG (copy section 2): proofPolicy does permit illustrative imagery when it is flagged and noindexed. Inside a gallery an illustration still reads as a patient result, so it is declined here. -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ix-say ix-rise">
+          <div>
+            <h2 class="rs-h2">What can be said today is structural, not visual.</h2>
+          </div>
+          <div>
+            <p class="ix-copy">Cosmetic work here is planned and delivered in house, by the same named clinicians who treat what sits underneath the smile.</p>
+            <p class="ix-copy">One practice, one roster, seven offices. A featured case is meant to show what that produces, and nothing stands in for it until a real one is consented.</p>
+          </div>
+        </div>
+        <figure class="ix-slot ix-rise">
+          <div class="ix-plate ix-plate--wide">
+            <span class="ix-plate__label">featured case</span>
+          </div>
+          <figcaption class="ix-slot__cap">The featured slot ships empty, and the page ships with a noindex directive, per the decision at &sect;G-9. Both hold until real consented images arrive, with patient permission on file.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #42 Project grid filterable | considered: #30,#43,#45 | why: this is the list-grid slot, and #42 is the catalog entry for a browseable index with filter chips above it. It is picked, and then it is emptied. DELIBERATE DEVIATION, the largest on the page: no chips and no tiles are emitted, because copy section 3 forbids a filter category with zero items behind it. What renders instead is the ITEM GRAMMAR, set in the mono face so it reads as a specification and never as a sample entry. The two image fields render as the same token placeholder used in the section above, each labelled empty, and the three text fields render as named keys with empty values. The data-cat and data-tags hooks named in the copy are carried on the template element, so a future filter binds to real values rather than to invented ones. This is what stops the empty index from looking broken: the page shows the shape of the thing it does not yet have, beside the five things an owner must supply to fill it. Before/after grid, entry #30, is the populated end state and cannot ship with zero pairs. Gallery grid, entry #43, drops the category contract the brief sets. Category chips, entry #45, is a filter control under another name, which the flag forbids while the grid is empty. TEMPLATE DUALITY: on the reviews variant these same key and value rows carry review text, reviewer, platform, date and office, and the two image plates are simply absent. -->
+<section class="rs-sec">
+  <!-- OWNER PLACEHOLDER (copy section 3): no consented patient photograph has been captured to disk. This grid therefore ships empty, with every filter category withheld. -->
+  <!-- FLAG (copy section 3): do not populate this grid with sample, stock or representative results. A plausible invented result is worse than an empty grid, because it reads as evidence. -->
+  <!-- FLAG (copy section 3): sort is category first, then recency. Recency uses the date the case was supplied, which means every item carries a real date or it does not ship. -->
+  <!-- Copy section 3 field note, carried not rendered: per item fields carry data-cat and data-tags, so the filters in section 1 bind to real values. Both attributes are present and empty on the item template below. -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="rs-h2">What each supplied case needs</h2>
+        <p class="ix-lede">Per the brief, a filter category never ships with zero items. Categories switch on one at a time, as real entries arrive for each of them.</p>
+        <div class="ix-cols">
+          <div>
+            <ol class="ix-needs ix-rise">
+              <li><span class="ix-needs__n">01</span><span>the before image</span></li>
+              <li><span class="ix-needs__n">02</span><span>the after image</span></li>
+              <li><span class="ix-needs__n">03</span><span>the treatment performed</span></li>
+              <li><span class="ix-needs__n">04</span><span>the office</span></li>
+              <li><span class="ix-needs__n">05</span><span>written patient consent on file</span></li>
+            </ol>
+          </div>
+          <div>
+            <div class="ix-spec ix-rise" data-cat="" data-tags="">
+              <p class="ix-spec__head">Item template</p>
+              <div class="ix-spec__pair">
+                <div class="ix-plate ix-plate--tile">
+                  <span class="ix-plate__field">before image</span>
+                  <span class="ix-plate__label">empty</span>
+                </div>
+                <div class="ix-plate ix-plate--tile">
+                  <span class="ix-plate__field">after image</span>
+                  <span class="ix-plate__label">empty</span>
+                </div>
+              </div>
+              <div class="ix-spec__row">
+                <span class="ix-spec__key">treatment category</span>
+                <span class="ix-spec__val">empty</span>
+              </div>
+              <div class="ix-spec__row">
+                <span class="ix-spec__key">tags</span>
+                <span class="ix-spec__val">empty</span>
+              </div>
+              <div class="ix-spec__row">
+                <span class="ix-spec__key">the treatment page it links to</span>
+                <span class="ix-spec__val">empty</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #45 Category chips / nav | considered: #9,#48,#51 | why: copy section 4 says the routing carries this page, so browse-by-category is the correct component, and it is the only section here that is genuinely full. DELIBERATE DEVIATION from the catalog entry: chips and category cards are both dropped for a vertical rail of full width rows whose entire chrome is one rule under each row plus generous vertical space. Three reasons. A chip row implies filtering, and filtering is exactly what this page may not offer yet. A card grid wants a thumbnail per card, and copy section 4 says each destination describes the work in words with no invented result attached to it. And a rail keeps the page type led rather than card led, which is where this concept diverges from a card grid sibling. Hover changes weight and colour without moving the row, plus a growing rule under the destination name and a small arrow translate. Each row is 88px tall at rest, so the tap target clears 48px at every step. Services 3-col, entry #9, re-sells services this page does not own. Article cards 3-col, entry #48, needs a thumbnail and a date per card and this page has neither. Locations grid, entry #51, is the wrong axis entirely: these destinations are treatments and pages, not offices. -->
+<section class="rs-sec rs-sec--band">
+  <!-- FLAG (copy section 4): every destination above exists in sitemap.yaml and in link-funnel-map.md for this page. No category routes to a page that does not exist. -->
+  <!-- OWNER (copy section 4): once real cases arrive, each one links back to the treatment page it came from. That link is what makes the category filter worth having. -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="rs-h2" id="ix-routing-h">The grid is empty, so the routing carries this page.</h2>
+        <p class="ix-lede">Each destination below describes the work in words, with no invented result attached to it.</p>
+        <nav class="ix-rail" aria-labelledby="ix-routing-h">
+          <a class="ix-rail__row ix-rise" href="cosmetic-dentistry.html">
+            <span class="ix-rail__name">Cosmetic dentistry.</span>
+            <span class="ix-rail__desc">The hub for the work this gallery would show.</span>
+            <span class="ix-rail__go" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" focusable="false"><path d="M3 9h11M9.6 4.6 14 9l-4.4 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+          <a class="ix-rail__row ix-rise" href="porcelain-veneers.html">
+            <span class="ix-rail__name">Porcelain veneers.</span>
+            <span class="ix-rail__desc">Shape, shade and spacing on the front teeth.</span>
+            <span class="ix-rail__go" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" focusable="false"><path d="M3 9h11M9.6 4.6 14 9l-4.4 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+          <a class="ix-rail__row ix-rise" href="services.html">
+            <span class="ix-rail__name">All services.</span>
+            <span class="ix-rail__desc">General, cosmetic, restorative, surgical, periodontic and orthodontic care, in house.</span>
+            <span class="ix-rail__go" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" focusable="false"><path d="M3 9h11M9.6 4.6 14 9l-4.4 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+          <a class="ix-rail__row ix-rise" href="reviews.html">
+            <span class="ix-rail__name">Patient reviews.</span>
+            <span class="ix-rail__desc">The Birdeye record, with its office scope attached to it.</span>
+            <span class="ix-rail__go" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" focusable="false"><path d="M3 9h11M9.6 4.6 14 9l-4.4 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+          <a class="ix-rail__row ix-rise" href="contact.html">
+            <span class="ix-rail__name">Ask about your own case.</span>
+            <span class="ix-rail__desc">Tell us what you want changed and we will tell you what it involves.</span>
+            <span class="ix-rail__go" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" focusable="false"><path d="M3 9h11M9.6 4.6 14 9l-4.4 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CTA-PATTERNS.md #7 Multi-CTA cluster (primary beside secondary) | considered: #3,#4,#8 | why: copy section 5 supplies exactly two asks, a booking and a call, and #7 is the pattern for a hard ask sitting beside a softer alternative at the same height. It is placed inside one bordered panel rather than across a full bleed band, so the close reads as a quiet offer at the end of a page that has spent four sections explaining what it cannot yet show. Arrow-circle CTA, entry #3, is quiet and editorial, but the primary ask needs a filled target carrying the accent, and the arrow-circle grammar is already spent on the routing rail directly above. Phone-pill CTA, entry #4, puts the number itself in the button, which this page cannot do: it states no phone number anywhere and routeRules.phone_policy forbids a generic line. Stacked CTAs, entry #8, suit a narrow hero and waste the width of this panel, though stacking is exactly what the 479 step falls back to. The accent button here is the second and last place the accent is spent on this page. -->
+<section class="rs-sec rs-sec--close">
+  <!-- FLAG (copy section 5): the secondary CTA resolves to that office's own number, never a generic line, per routeRules.phone_policy. This page states no phone number anywhere, so the secondary routes to the locations page where each office carries its own number. It must never be wired to a single practice wide line. -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ix-close">
+          <div>
+            <h2 class="rs-h2">You can still ask what a result would involve for your teeth.</h2>
+            <p class="ix-copy">Book a consultation, or call the office nearest you.</p>
+          </div>
+          <div class="rs-acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

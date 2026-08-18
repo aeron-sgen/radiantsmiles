@@ -1,0 +1,1393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand card - Concept A "Clinical clarity" - Radiant Smiles Dental Care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!--
+  STAGE (1) BRAND-CARD tournament - CONCEPT A - slug: radiantsmiles
+  CHROME-LESS IDENTITY SHEET. Brand DNA only: lockups, palette roles, type ramp,
+  UI atoms, the signature motif, and exactly ONE applied mini-vignette.
+  This is NOT a page composition. The composed body look belongs to stage (3) FOUNDATION.
+
+  SOURCES OF BRAND TRUTH (nothing here is invented):
+    C6  _handoff/radiantsmiles-tokens-spec.md   - name, logo files on disk, colours in use, fonts in use, voice
+    C7  _handoff/visual-direction.md            - BRAND-SIGNATURE surface_dominance:light / dark_ratio 0.154,
+                                                 primary_surface:light, tonal words, image treatment, dental rules
+    C3  _handoff/client-rules.json              - offices, hours, phones, published prices, CTA labels, booking routes
+
+  DESIGN-SYSTEM CEILING CONSULTED (read-only INPUT, never re-authored):
+    _MODERN-WOW-SPEC.md
+    _MODERN-DESIGN-PATTERN-LIBRARY.md
+    _PAGE-COMPOSITION-LIBRARY.md  (section 2, V6 MEDICAL / HEALTH / DENTAL / CLINIC / CARE,
+                                   per-vertical blueprint composition-medical-health)
+    BRAND-TOKEN-SCHEMA.md         (colour roles, theme polarity, constrained radius roles,
+                                   the OPTIONAL --ds-signature role: "a 3rd colour for personality")
+    COLOR-THEORY-PRESETS.md #1 Warm Cream + Terracotta   (the entry whose "Fits" line names a wellness
+                                   clinic, and whose primary is custom-tuned from Sienna #A0522D)
+    COLOR-THEORY-PRESETS.md #37 Desert Clay + Cactus + Sand   (primary: [CSS-Sienna] #A0522D verbatim)
+                                   Both, plus the CSS Named Colors table row "Sienna #A0522D", are the
+                                   cited provenance for --ds-signature below. NOT copied: neither entry's
+                                   vibe (rustic, handcrafted, sunlit farmhouse) and neither entry's ramp.
+                                   Only the named-colour BASE is taken, and the tune is documented.
+
+  DIRECTION - "clinical clarity": maximum whitespace, one restrained accent doing the structural work,
+  a crisp geometric type pairing, near-flat surfaces held by precise hairline rules and ONE very soft
+  elevation step. Confidence through precision, not ornament.
+
+  REVISION - COLOUR ONLY. The layout, the type ramp, the radius dialect, the single elevation step,
+  the hairline discipline and the ray motif are unchanged. What changed is the colour SYSTEM under them,
+  for a measured reason:
+
+    Census of the live homepage markup (site-snapshot/index.html, counted 2026-08-03):
+      #17274f x93 - #ffffff x36 - #fce003 x36 - #000000 x9 - #f6f6f6 x4 - #c4c4c4 x4 - #d6d6d6 x2.
+    The greys belong to no brand; they are the stock Elementor ramp. This concept's PREVIOUS canvas,
+    #f7f9fc, was a COOL blue-grey - the same cold family - and the concept carried no third tone at all.
+
+  The four moves:
+    1. THE NEUTRAL RAMP IS NOW WARM STONE, and it is the signature tone's own tint ladder. Paper, card
+       and alternate band are one derived family (hue 30 to 36, chroma falling to a trace at the light
+       end). Nothing on this sheet is #ffffff and nothing is a neutral grey.
+    2. THE YELLOW IS DEMOTED FROM FILL TO PRECISION - ticks, 2px hairline caps on the section rules,
+       underlines under a sourced specific, and EXACTLY ONE full-strength moment (the offer button).
+       No large flat yellow band anywhere, which is the loudest thing the live site does.
+    3. THE NAVY MOVED OUT OF BACKGROUNDS INTO INK AND STRUCTURE - heading ink, body ink, every hairline,
+       the ray rule, the controls. The sheet keeps ONE anchoring band, per C7 dark_ratio 0.154.
+    4. ONE NEW SUPPORTING TONE, --ds-signature #8a4b2f, a deep low-chroma clay. Empirically novel:
+       grep of the live snapshot returns ZERO for #8a4b2f, and the red-orange/brown family has ZERO
+       APPLIED occurrences in the live CSS - its only two appearances are inert --wp--preset--color
+       DECLARATIONS (#ff6900, #cf2e2e) that no rule consumes.
+
+  REVISION 2 - LEGIBILITY AND EMPHASIS. NOT a new direction. C7 section 4 already says "anxious and OLDER
+  PATIENTS are a named audience ... legible type, real contrast, tap targets that work" and "hours, addresses
+  and phone numbers are LOAD-BEARING UI". This pass executes that more rigorously for a PRIMARY audience of
+  40-plus while keeping the concept's character and its secondary appeal to younger patients. Presbyopia
+  begins around 40 and reduces CONTRAST SENSITIVITY as well as acuity, so the pass is measured on both axes.
+
+  What did NOT change: the composition, the two-axis-plus-spark colour system, the single elevation step, the
+  hairline discipline, the ray motif, the radius dialect, the type PAIRING, the motion tokens, the one
+  full-strength yellow moment, both OWNER flags, and every sourced fact. This is a legibility pass, not a
+  redesign, and it is deliberately NOT a large-print brochure - the whole move is bigger type over more air,
+  which is what editorial design already looks like, not soft pill shapes and pastel washes.
+
+  The floors, all measured in-render and reported with the number:
+    A. BODY 16.5px -> 18px, line-height 1.7, weight 400, tracking 0. No reading column below 17px: the
+       SECONDARY prose tier (notes, swatch roles, the small specimen, the ledger, both flag boxes) went
+       16 / 16.5px -> 17px, so every multi-sentence column on the sheet is now 17px or 18px.
+    B. NOTHING BELOW 15px anywhere - a full step above the 14px floor, not level with it. The original sheet
+       ran to 10px (the lockup descriptor), 10.5px (the clay fact label) and 11px/11.5px across eyebrows,
+       captions, swatch hexes, spec keys, atom labels and token readouts. Those were raised to 14/14.5px,
+       and this pass took the whole label tier to a single 15px step: eyebrows, meta, captions, the wordmark
+       descriptor, swatch tokens and hexes, ratio badges, spec keys, atom labels, fact labels, band tokens,
+       motif labels, ledger terms and four inline readouts. The smallest rendered type is now 15px, at BOTH
+       1440 and 375.
+    C. CONTRAST TARGET IS AAA 7:1 WITH HEADROOM, not AAA-by-a-rounding. Six tokens have moved across the two
+       passes. --ds-ink-soft 6.84 -> 7.73 -> 8.11 on paper; --ds-accent-ink 6.20 -> 7.22 -> 7.56 on its true
+       worst ground, which is a --ds-grid INTERSECTION under the masthead eyebrow and is invisible to a
+       computed-style check because the grid lives on a ::before (found by sampling rendered pixels, not by
+       reading the token stack); --ds-ink-placeholder 5.31 -> 7.40; and the clay gained a derived reading
+       step --ds-signature-ink, 7.66 -> 7.98, so the TONE itself could stay #8a4b2f. The second move on three
+       of those is the point of this pass: the previous solve put the sheet's LOWEST rendered ratio at
+       7.0122:1 - it passed AAA and it was still wrong, because 0.0122 of a point is a rounding, not a
+       margin. Lowest rendered text ratio on the sheet is now 7.30:1. Nothing is below 7.30.
+    D. NON-TEXT: --ds-line 1.40 -> 2.00:1 (perceivable structure) and a NEW --ds-line-control at 3.16:1 for
+       the boundary of an actual control, which is what WCAG 2.1 1.4.11 asks for.
+    E. TAP TARGETS: every control declares min-height 48px rather than inheriting a height from padding
+       arithmetic, which is how a "44px" button ends up rendering at 41. The last exception - the .tel--sm
+       specimen at 46px - was closed, so the smallest target measured in-render is 48px and the masthead's
+       own "smallest tap target 48px" line is now true rather than nearly true.
+    F. LOAD-BEARING CONTACT UI, per C7 section 4: the address is 18px in the full-strength ink instead of
+       14px in the secondary ink; hours are 17px with the times at weight 500 AND STAY 17px at 375px, where
+       they previously dropped to 16 - mobile is where hours are actually read, so that was the one place
+       the sheet shrank the thing the audience came for; and every phone number on the sheet is a real
+       tel: target at 48px, not a styled string.
+    G. A BUG THE FIRST PASS COULD NOT SEE, because it read the stylesheet instead of the render. `.blk-head p`
+       (0,1,1) outranks `.eyebrow` (0,1,0), and every section eyebrow is a <p class="eyebrow"> inside a
+       .blk-head - so SEVEN of the eleven eyebrows silently painted at 18px in --ds-ink-soft grey while the
+       type specimen on the same page documented "Eyebrow ... 14px" in --ds-accent-ink. The accent ink that
+       this file solves against a screenshot pixel was not reaching the eyebrows it was solved for. Every
+       gate stayed green through it. Fixed with :not(.eyebrow); all eleven now paint 15px at 8.04:1.
+-->
+
+<!--
+  NOVELTY EVIDENCE, recorded because the brief for this revision was measurably wrong on one point.
+  Every colour literal in site-snapshot/index.html was classified as (a) a --wp--preset--* / Gutenberg
+  gradient declaration, (b) an --e-global-color-* declaration, or (c) an APPLIED rule.
+
+    #7bdcb5 / #00d084  APPLIED: no   - inert --wp--preset--color declarations. (brief correct)
+    #009688            APPLIED: YES  - "#floatBtn-1 > a, #floatBtn-1 > .flBtn-label { --flbtn-bg:
+                                       rgb(252,224,3); ... --flbtn-h-bg:#009688; }". That is the live
+                                       floating call button's HOVER GROUND, not an unused swatch.
+    #61ce70            APPLIED: YES  - "--e-global-color-accent:#61CE70", consumed 16 times, e.g.
+                                       ".elementor-widget-button .elementor-button{background-color:
+                                       var(--e-global-color-accent)}". Every Elementor button.
+
+  So the green/teal family IS in applied use on the live site and a teal "clinical green" signature -
+  the obvious pick for a dental brand - would NOT have been novel. The clay was chosen because its
+  family is the one that survives the test. Full applied palette measured: navy/blue, yellow, neutral
+  grey, plus that one teal and one green. Red-orange, brown, purple, pink and magenta: zero applied.
+-->
+
+<style>
+/* ==========================================================================
+   TOKENS - IDENTITY families only.
+   from: BRAND-TOKEN-SCHEMA.md "Required tokens" (colour 17 + type 2 + radius 3 + shadow 2 + motion 2)
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md TOP-12 #1 / F1 (one accent over a committed neutral base;
+         ink is a tinted near-black and never #000; paper is an off-white and never #fff)
+   The SYSTEM families (z-index scale, opacity scale, motion extension) are deliberately ABSENT:
+   they are brand-agnostic and arrive at the SYSTEM-TOKEN GRAFT step after the owner pick.
+   ========================================================================== */
+:root{
+  /* --- COLOUR ------------------------------------------------------------
+     TWO AXES AND ONE SPARK.
+       COOL axis (navy, C6 verbatim + derived): every ink, every hairline, every control. Authority.
+       WARM axis (the stone ramp): paper, card, alternate band - the signature clay's own tint ladder.
+       SPARK (yellow, C6 verbatim): precision marks, plus exactly ONE full-strength moment.
+     Every ratio in this block was COMPUTED with the WCAG 2.1 relative-luminance formula
+     (L = .2126R + .7152G + .0722B on linearised channels; CR = (L1+.05)/(L2+.05)), not estimated.
+     Translucent layers were composited to an opaque hex before measuring. */
+
+  /* -- COOL AXIS: navy as ink and structure -- */
+  --ds-primary:#17274f;        /* C6 VERBATIM. Deep navy, 93 occurrences, the dominant brand colour.
+                                  Role CHANGED: it no longer fills bands. It is the ink of links and tokens,
+                                  the ray rule, the focus ring and the primary control. 13.57:1 on paper. */
+  --ds-primary-deep:#0b1329;   /* DERIVED from #17274f. The near-black dark GROUND, used exactly ONCE on this
+                                  sheet (the anchoring band) plus the reversed-lockup stage. Also the heading
+                                  ink: 17.14:1 on paper. --ds-ink-on-dark on it = 16.67:1. */
+  --ds-primary-soft:#e5eaf5;   /* DERIVED from #17274f. The navy's own tint - deliberately still BLUE so it can
+                                  never be mistaken for the live site's #f6f6f6/#d6d6d6 stock ramp.
+                                  --ds-primary on it = 12.10:1. */
+  --ds-ink:#141c2e;            /* DERIVED from #17274f. Tinted near-black body text, never #000. 15.81:1 on paper,
+                                  16.60:1 on the card, 14.47:1 on the stone band. AAA everywhere it is set. */
+  --ds-ink-heading:var(--ds-primary-deep); /* THEME POLARITY light (C7 primary_surface:light) -> heading ink is the
+                                  near-black ground token. */
+  --ds-ink-soft:#414b62;       /* DERIVED. Desaturated navy for secondary text. LEGIBILITY PASS: was #4a5670, which
+                                  measured 6.84:1 on paper and 6.26:1 on the stone band - AA, but under the AAA 7:1
+                                  bar that reduced contrast sensitivity after 40 actually needs. Hue and chroma held
+                                  (hsl 221.8 / 20%), value pulled down twice. The first solve, #444e66, cleared the
+                                  bar on paper (7.73:1) but landed at 7.0704:1 on the stone band - AAA by 0.07 of a
+                                  point, which is not a margin, it is a rounding. Now 8.11:1 on paper, 8.52:1 on the
+                                  card, 7.42:1 on the stone band. Not a generic grey - it still carries the brand hue. */
+  --ds-line:#a8b1c5;           /* DERIVED from #17274f. THE HAIRLINE, this concept's load-bearing structural
+                                  device, and the clearest expression of "navy moved into structure". It is a
+                                  COOL rule on a WARM ground - the two axes meeting at 1px. LEGIBILITY PASS: was
+                                  #ced3de, which measured 1.40:1 on paper - a rule that a 40-plus eye with reduced
+                                  contrast sensitivity cannot resolve, on a concept whose entire structure IS the
+                                  rule. Now 2.00:1 on paper, 2.10:1 on the card. Still a hairline, now a visible one. */
+  --ds-line-control:#838fab;   /* DERIVED from --ds-line. The INTERACTIVE boundary: input and select borders, and the
+                                  quiet button's underline. WCAG 2.1 1.4.11 wants 3:1 for the visual boundary of a
+                                  user-interface component and the decorative hairline above does not reach it.
+                                  3.01:1 on paper, 3.16:1 on the card. Structure stays quiet; controls do not. */
+  --ds-ink-placeholder:#4c5467;/* DERIVED. The input placeholder. LEGIBILITY PASS: was #5f6a81 at 5.31:1 on the card -
+                                  AA only. Now 7.05:1 on paper and 7.40:1 on the card, its actual ground. The version
+                                  before that, #8b97ab, measured 2.95:1 and failed AA outright. */
+  --ds-scrim:rgba(11,19,41,.58); /* DERIVED. Brand-tinted legibility scrim for photography. */
+
+  /* -- WARM AXIS: the stone ramp (the signature clay's tint ladder) --
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md TOP-12 #1 / F1 - "paper is an off-white and never #fff".
+     The previous canvas #f7f9fc was hsl(216,45%,98%): a COOL blue-grey, adjacent to the stock Elementor
+     ramp it was meant to escape. These are hsl(30..36) instead. Warm ground, cool ink. */
+  --ds-bg-surface:#faf6f2;     /* hsl(30,44%,96.5%). THE PAPER. Warm stone near-white. */
+  --ds-bg-surface-2:#fefcf9;   /* hsl(36,71%,98.6%). The card - lighter than the paper so surfaces still lift,
+                                  but NOT #ffffff. C6 records #ffffff as the live canvas; it is not carried. */
+  --ds-bg-warm:#f1ece5;        /* hsl(35,30%,92.2%). The alternate band. The schema names this role "warm" and
+                                  for the first time on this brand it genuinely is. */
+  --ds-ink-on-dark:#f7f3ed;    /* hsl(36,38%,95%). The near-white on the dark ground, pulled onto the WARM axis
+                                  so the anchoring band belongs to the same ramp. 16.67:1 on --ds-primary-deep. */
+
+  /* -- THE SPARK: yellow, rationed to precision -- */
+  --ds-accent:#fce003;         /* C6 VERBATIM. The sun yellow of the existing mark. Role CHANGED: it may be a
+                                  tick, a 2px hairline cap, an underline, or ONE full-strength control per page.
+                                  It may never be a flat fill band, which is what it is on the live site today. */
+  --ds-accent-ink:#564c01;     /* DERIVED from #fce003, hue and chroma held exactly (hsl 53 / 98%), value pulled to
+                                  17.1%. LEGIBILITY PASS: was #6b5a00 at 6.33:1 on paper / 6.20:1 on the offer wash -
+                                  AA but not AAA. Now 8.04:1 on paper, 8.44:1 on the card, 7.88:1 on the offer wash.
+                                  THE WORST GROUND IS NOT ANY OF THOSE, AND NO COMPUTED-STYLE CHECK CAN SEE IT. The
+                                  masthead eyebrow sits over the --ds-grid material layer, which lives on a ::before,
+                                  so getComputedStyle reports the paper underneath it and reads clean. The grid is TWO
+                                  crossed gradients, so its INTERSECTIONS paint the navy twice; sampling the real
+                                  rendered pixels in the empty columns at the eyebrow's own y-band gives a worst ground
+                                  of #f3efec. Measured there: this token 7.56:1, the first solve #594f01 7.22:1, a
+                                  second at #625200 6.74:1, and the pre-revision #6b5a00 5.95:1. That is why the solve
+                                  is anchored to a SCREENSHOT and not to the token stack. Below y=227 the mask is fully
+                                  transparent, so the lede and the meta row sit on clean paper. This token also sets
+                                  the SECTION eyebrows, which the pass before this one silently never reached - see
+                                  the .blk-head note below. The raw yellow is ~2.7:1 and never sets type. */
+  --ds-accent-soft:#fdf5cf;    /* DERIVED from #fce003, re-tempered onto the warm ramp (was #fffbe0, a cooler
+                                  cream that sat oddly on a blue paper). The offer wash and the flag ground. */
+  --ds-accent-deep:#574900;    /* DERIVED from #fce003. Reserved accent SURFACE for a near-white foreground:
+                                  --ds-ink-on-dark on it = 8.06:1. */
+  --ds-accent-light:#fce003;   /* The brand yellow reads as accent FOREGROUND on the dark ground at 13.87:1,
+                                  so no lightened variant is invented. */
+
+  /* -- THE THIRD TONE: --ds-signature (BRAND-TOKEN-SCHEMA.md, optional role) --
+     Base: [CSS-Sienna] #A0522D from the COLOR-THEORY-PRESETS.md CSS Named Colors table, the same base
+     COLOR-THEORY-PRESETS.md #1 Warm Cream + Terracotta (fits: wellness clinic) and
+     COLOR-THEORY-PRESETS.md #37 Desert Clay + Cactus + Sand are built on.
+     TUNE, documented per that library's rule: Sienna is hsl(19,56%,40%); this is hsl(18.5,49%,36%) -
+     chroma pulled down and value pulled deeper, because concept A is restraint, not rustic warmth.
+     Role: the QUIET THIRD VOICE. It marks the sourced specific - the thing C7 section 2 says must
+     replace every superlative. It is never a surface larger than a chip and never competes with the
+     yellow, which it is separated from by 35 degrees of hue, half the chroma and 14% of value. */
+  --ds-signature:#8a4b2f;      /* 6.24:1 on paper, 6.56:1 on the card, 5.71:1 on the stone band.
+                                  --ds-ink-on-dark on it = 6.07:1 when it is used as a chip surface.
+                                  UNCHANGED by the legibility pass: this hex IS the concept's third tone and it
+                                  keeps its role as a SURFACE and an EDGE - a chip ground, a border, the base of
+                                  the warm tint ladder. What changed is that it no longer sets TYPE. */
+  --ds-signature-ink:#733e27;  /* DERIVED from #8a4b2f, exactly the way --ds-accent-ink is derived from #fce003:
+                                  the raw tone stays the tone, and a deeper step carries the text. LEGIBILITY PASS:
+                                  the clay set as small-caps type measured 6.24:1 on paper and 5.71:1 on the stone
+                                  band, so it was the weakest reading moment on the sheet. Hue held at 18.2, value
+                                  pulled from 36% to 30.2%: 7.98:1 on paper, 8.38:1 on the card, 7.30:1 on the stone
+                                  band, which is where the clay chip actually sits. The first solve, #774028, measured
+                                  7.0122:1 on that stone band - it PASSED AAA and was still the wrong answer, because
+                                  a 0.0122 margin is a rounding, not a margin. Both weak tokens were re-solved for
+                                  headroom rather than for the bar. */
+
+  /* --- TYPE --------------------------------------------------------------
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md E1 (display face on headings only + neutral grotesk body)
+     C6 section 4 records THREE families self-hosted with no observable display/body separation:
+     Poppins, Roboto, Roboto Slab. Concept A resolves that to two plus a numeral face and drops the slab. */
+  --ds-font-display:'Poppins',-apple-system,'Segoe UI',system-ui,sans-serif;
+  --ds-font-body:'Roboto',-apple-system,'Segoe UI',system-ui,sans-serif;
+  --ds-font-mono:'Roboto Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+
+  /* --- RADIUS - the CONSTRAINED role set, 3 tokens only -------------------
+     from: BRAND-TOKEN-SCHEMA.md section "Radius (3 required - ROLE-NAMED, constrained)"
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md I1 ("pick ONE radius dialect site-wide")
+     Concept A picks the tight dialect: precision, not softness. */
+  --ds-r-control:4px;
+  --ds-r-surface:10px;
+  --ds-r-pill:999px;
+
+  /* --- SHADOW - ONE very soft elevation step ------------------------------
+     from: _MODERN-DESIGN-PATTERN-LIBRARY.md D1 / TOP-12 #3 (ink-tinted, never #000, negative spread
+     so the shadow tucks under the surface). Held far below the D1 harvest strength on purpose:
+     the hairline carries the structure, the shadow only lifts. */
+  --ds-shadow-card:0 1px 2px -1px rgba(11,19,41,.06), 0 10px 26px -12px rgba(11,19,41,.14);
+  --ds-shadow-lift:0 2px 4px -2px rgba(11,19,41,.08), 0 18px 40px -14px rgba(11,19,41,.20);
+
+  /* --- GLOBALS OVERLAY (identity half, locked at this stage) --------------
+     from: _MODERN-WOW-SPEC.md section 1 (hairline borders + subtle inset top-highlight on surfaces)
+     from: _MODERN-WOW-SPEC.md section 3 (a material layer, held very low, to kill flatness)
+     The material layer this concept picks is a MEASURE GRID, not grain and not a glow: two crossed
+     hairlines of the navy at 5.5 percent. It is the same instrument as the rest of the concept. */
+  --ds-hairline:rgba(23,39,79,.14);
+  --ds-inset-hi:inset 0 1px 0 rgba(255,253,250,.85);
+  --ds-grid:linear-gradient(rgba(23,39,79,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(23,39,79,.055) 1px,transparent 1px);
+  --ds-grid-size:32px 32px;
+
+  /* --- SPACE + MOTION ----------------------------------------------------
+     from: BRAND-TOKEN-SCHEMA.md "Spacing (scale) + layout" (canonical 7 steps) and "Motion (2 required)" */
+  --ds-space-2xs:4px; --ds-space-xs:8px; --ds-space-sm:14px; --ds-space-md:24px;
+  --ds-space-lg:40px; --ds-space-xl:64px; --ds-space-2xl:96px;
+  --ds-section-py:clamp(56px,6.5vw,96px);
+  --ds-container-max:1120px;
+  --ds-ease:cubic-bezier(.2,.6,.2,1);
+  --ds-dur:180ms;
+}
+
+/* ==========================================================================
+   SHEET SCAFFOLD (identity sheet only - deliberately chrome-less: no nav, no footer nav, no drawer)
+   from: _MODERN-WOW-SPEC.md section 6 (negative space with rhythm)
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+/* THE READING FLOOR. C7 section 4 names anxious and OLDER patients as an audience and calls legible type a
+   hard rule. Presbyopia starts around 40 and takes contrast sensitivity down with acuity, so this sheet sets
+   its own floors and holds them everywhere: body 18px, line-height 1.7, weight 400 minimum, no negative
+   tracking on anything that has to be read, and NOTHING below 14px - not a caption, not a swatch hex, not an
+   eyebrow. The display face keeps its tight tracking; that is a headline, not a reading column. */
+body{
+  margin:0;background:var(--ds-bg-surface);color:var(--ds-ink);
+  font-family:var(--ds-font-body);font-size:18px;line-height:1.7;font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--ds-container-max);margin:0 auto;padding:0 var(--ds-space-md)}
+/* THE HAIRLINE CAP - the first of the yellow's new precision jobs. Every section rule is a NAVY
+   hairline that starts with a 28px x 2px yellow cap. It is the ray motif reduced to the section edge:
+   navy carries the structure, the yellow marks where it begins. 56px^2 of yellow per section. */
+.blk{padding-block:var(--ds-section-py);border-top:1px solid var(--ds-line);position:relative}
+.blk::before{content:"";position:absolute;top:-1px;left:var(--ds-space-md);width:28px;height:2px;background:var(--ds-accent)}
+.blk:first-of-type{border-top:0}
+.blk:first-of-type::before{display:none}
+/* THE UNDERLINE - the yellow's second precision job. A 2px rule under a sourced specific, so the
+   accent points at a fact instead of filling a band behind one. */
+.uline{box-shadow:inset 0 -2px 0 var(--ds-accent);padding-bottom:1px}
+h1,h2,h3,h4{font-family:var(--ds-font-display);color:var(--ds-ink-heading);margin:0;font-weight:600}
+p{margin:0}
+
+/* eyebrow + the accent rule above every block heading
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md E4 / TOP-12 #10 */
+.eyebrow{
+  font-family:var(--ds-font-mono);font-size:15px;font-weight:500;line-height:1.5;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ds-accent-ink);
+  display:flex;align-items:center;gap:var(--ds-space-sm);margin:0 0 var(--ds-space-sm);
+}
+.blk-head{max-width:62ch;margin-bottom:var(--ds-space-lg)}
+.blk-head h2{font-size:clamp(26px,2.8vw,34px);line-height:1.22;letter-spacing:-.015em}
+/* :not(.eyebrow) IS THE FIX FOR A BUG THIS SHEET SHIPPED WHILE CLAIMING THE OPPOSITE.
+   `.blk-head p` is specificity (0,1,1); `.eyebrow` is (0,1,0). Every section eyebrow is a <p class="eyebrow">
+   INSIDE a .blk-head, so for seven of the eleven eyebrows on this sheet the block rule won and silently
+   overrode BOTH the size and the colour: they rendered at 18px in --ds-ink-soft grey, not at the documented
+   size in --ds-accent-ink. The type specimen below said "Eyebrow ... 14px" while the page painted 18px, and
+   the accent ink - the token this file spends a whole paragraph solving against a screenshot pixel - was not
+   actually reaching the eyebrows it was solved FOR. Nothing catches this but a render: the stylesheet reads
+   correct, every gate stayed green, and the tracking (.14em) survived because no competing rule set it, which
+   is what made the bug look intentional. Found by dumping getComputedStyle for every .eyebrow, not by reading
+   the CSS. The block rule keeps its (0,2,1) weight and simply stops matching the eyebrow. */
+.blk-head p:not(.eyebrow){color:var(--ds-ink-soft);font-size:18px;line-height:1.65;margin-top:var(--ds-space-sm)}
+.note{color:var(--ds-ink-soft);font-size:17px;line-height:1.65}
+.mono{font-family:var(--ds-font-mono);font-variant-numeric:tabular-nums}
+
+/* ==========================================================================
+   .surface-dark - THE FLIP OF THE SAME VARS (not a second palette)
+   from: C7 section 0 - the measured signature is LIGHT dominant at dark_ratio 0.154, with the dark
+         area concentrated in the navy offer band and the footer. So the brand has exactly ONE dark
+         surface: the anchoring band. The sheet stays light; this class is that band.
+   from: BRAND-TOKEN-SCHEMA.md "Theme polarity" (light-polarity brand: heading ink follows the ground)
+   Every declaration below re-points an EXISTING token name. No new token is introduced for the dark
+   surface, which is what lets any component be dropped into the band and re-skin itself.
+   ========================================================================== */
+.surface-dark{
+  --ds-bg-surface:#0b1329;
+  --ds-bg-surface-2:#17274f;
+  --ds-bg-warm:#101a35;
+  --ds-ink:#f7f3ed;            /* the WARM near-white, so the band belongs to the stone ramp. 16.67:1 */
+  --ds-ink-heading:#f7f3ed;
+  --ds-ink-soft:#c2bcb2;       /* warm secondary. LEGIBILITY PASS: was #b7b1a8, which measured 8.66:1 on the deep
+                                  ground (AAA, fine) but 6.85:1 on the navy card surface - so any component dropped
+                                  into the band on --ds-bg-surface-2 fell out of AAA. Lifted until BOTH grounds
+                                  clear 7: 9.77:1 on #0b1329 and 7.73:1 on #17274f. */
+  --ds-signature:#dda57e;      /* the clay lightened for the dark flip. 8.56:1 on the ground */
+  --ds-signature-ink:#dda57e;  /* on the dark flip the tone IS the readable step - no separate ink is invented. */
+  --ds-line:rgba(247,243,237,.16);
+  --ds-line-control:rgba(247,243,237,.36); /* the interactive boundary on the dark ground: composites to #606470
+                                  on #0b1329 = 3.12:1, clearing 1.4.11's 3:1 that the decorative hairline
+                                  (composites to #313748, 1.55:1) does not. */
+  --ds-hairline:rgba(247,243,237,.24);
+  --ds-primary-soft:rgba(247,243,237,.08);
+  --ds-accent-ink:#fce003;     /* the raw yellow IS the accent foreground here: 13.87:1 */
+  --ds-inset-hi:inset 0 1px 0 rgba(255,255,255,.07);
+  --ds-shadow-card:0 1px 2px -1px rgba(0,0,0,.45), 0 10px 26px -12px rgba(0,0,0,.65);
+  --ds-shadow-lift:0 2px 4px -2px rgba(0,0,0,.5), 0 18px 40px -14px rgba(0,0,0,.75);
+  --ds-grid:linear-gradient(rgba(247,243,237,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(247,243,237,.05) 1px,transparent 1px);
+  background:var(--ds-bg-surface);color:var(--ds-ink);
+}
+/* REVISED. On the band the primary control is now a PAPER fill with navy type (13.20:1), not a yellow
+   fill. The yellow fill was the second full-strength yellow moment on the sheet and the rule is ONE.
+   The navy-and-yellow relationship C7 locks is still carried here - by the ray tick and the 2px yellow
+   cap on the rule above the heading - but at precision scale instead of as a surface. */
+.surface-dark .btn--primary{background:var(--ds-ink-on-dark);color:var(--ds-primary);border-color:var(--ds-ink-on-dark)}
+.surface-dark .btn--primary:hover{background:#fffdfa;border-color:#fffdfa}
+.surface-dark .btn--secondary{color:var(--ds-ink);border-color:var(--ds-line-control)}
+.surface-dark .btn--secondary:hover{background:var(--ds-primary-soft)}
+.surface-dark .btn:focus-visible{outline-color:var(--ds-accent)}
+.surface-dark .ray::before{background:rgba(242,246,252,.55)}
+.surface-dark h1,.surface-dark h2,.surface-dark h3,.surface-dark h4{color:var(--ds-ink-heading)}
+
+/* the ONE surface treatment: warm card, hairline, inset top-highlight, one soft elevation step
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md I2 + D1 / _MODERN-WOW-SPEC.md section 1 */
+.card{
+  background:var(--ds-bg-surface-2);border:1px solid var(--ds-line);
+  border-radius:var(--ds-r-surface);box-shadow:var(--ds-shadow-card),var(--ds-inset-hi);
+  padding:var(--ds-space-md);
+  transition:box-shadow var(--ds-dur) var(--ds-ease),transform var(--ds-dur) var(--ds-ease),border-color var(--ds-dur) var(--ds-ease);
+}
+.card--hover:hover{box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi);transform:translateY(-2px);border-color:var(--ds-hairline)}
+
+/* ==========================================================================
+   SHEET MASTHEAD
+   ========================================================================== */
+/* the ONE material moment: the measure grid, masked so it fades out under the headline
+   from: _MODERN-WOW-SPEC.md section 3 (a texture layer at very low opacity) applied through --ds-grid */
+.masthead{padding-block:var(--ds-space-xl) var(--ds-space-lg);position:relative;isolation:isolate}
+.masthead::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:270px;z-index:-1;pointer-events:none;
+  background-image:var(--ds-grid);background-size:var(--ds-grid-size);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.85),transparent 84%);
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.85),transparent 84%);
+}
+.masthead h1{font-size:clamp(36px,4.8vw,56px);line-height:1.06;letter-spacing:-.03em;max-width:16ch}
+.masthead .lede{margin-top:var(--ds-space-md);max-width:58ch;font-size:21px;line-height:1.62;color:var(--ds-ink-soft)}
+.meta{
+  display:flex;flex-wrap:wrap;gap:var(--ds-space-xs) var(--ds-space-md);
+  margin-top:var(--ds-space-lg);padding-top:var(--ds-space-sm);border-top:1px solid var(--ds-line);
+  font-family:var(--ds-font-mono);font-size:15px;line-height:1.7;color:var(--ds-ink-soft);letter-spacing:.02em;
+}
+.meta b{color:var(--ds-ink);font-weight:500}
+
+/* ==========================================================================
+   THE SIGNATURE MOTIF - "the ray rule"
+   from: C6 section 2 (the supplied mark is a yellow sun of rays around an open navy arc)
+   from: C7 section 0 signature_moves "navy-and-yellow-offer-band" (navy authority, yellow signal)
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md E4 (accent rule above a heading)
+   ONE navy hairline that terminates in a single yellow tick: one ray of the existing sun, abstracted
+   to the thinnest mark that still carries the brand. It is the concept's only ornament.
+   ========================================================================== */
+.ray{display:inline-flex;align-items:center;flex:0 0 auto}
+.ray::before{content:"";display:block;height:1px;width:var(--ray-len,40px);background:var(--ds-primary)}
+.ray::after{content:"";display:block;width:3px;height:var(--ray-tick,12px);background:var(--ds-accent);margin-left:3px}
+.ray--sm{--ray-len:24px;--ray-tick:9px}
+.ray--lg{--ray-len:84px;--ray-tick:18px}
+
+/* the gauge variant: seven ticks, one per office (C3 productModel.locations_count = 7) */
+.gauge{display:flex;align-items:flex-end;gap:6px;height:22px}
+.gauge i{display:block;width:3px;height:10px;background:var(--ds-primary);opacity:.35}
+.gauge i.on{height:22px;background:var(--ds-accent);opacity:1}
+
+/* ==========================================================================
+   LOCKUPS
+   ========================================================================== */
+.lockups{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:var(--ds-space-md)}
+.lockup{display:flex;flex-direction:column;gap:var(--ds-space-sm)}
+.lockup .stage{
+  display:flex;align-items:center;justify-content:center;min-height:150px;padding:var(--ds-space-md);
+  border-radius:var(--ds-r-surface);border:1px solid var(--ds-line);
+}
+.lockup .stage--paper{background:var(--ds-bg-surface-2);box-shadow:var(--ds-shadow-card),var(--ds-inset-hi)}
+.lockup .stage--stone{background:var(--ds-bg-warm)}
+/* the brand has exactly TWO dark grounds and the reversed lockups are the one place both must be
+   proven. They are shown once each rather than twice on the same ground. */
+.lockup .stage--dark{background:var(--ds-primary-deep);border-color:transparent}
+.lockup .stage--navy{background:var(--ds-primary);border-color:transparent}
+.lockup img{display:block;max-width:100%;height:auto}
+.lockup .cap{font-family:var(--ds-font-mono);font-size:15px;line-height:1.6;letter-spacing:.03em;color:var(--ds-ink-soft)}
+.lockup .cap b{color:var(--ds-ink);font-weight:500}
+
+/* the typeset lockup this concept proposes: mark + wordmark set in the display face.
+   The descriptor under the wordmark was 10px - the smallest thing on the old sheet. It is real type on a real
+   lockup, so it goes to 15px and the wordmark grows with it to keep the optical relationship. */
+.wordmark{display:flex;align-items:center;gap:15px}
+.wordmark img{width:50px;height:50px}
+.wordmark .txt{font-family:var(--ds-font-display);font-weight:600;line-height:1.04;letter-spacing:-.03em;font-size:30px;color:var(--ds-primary)}
+.wordmark .txt small{display:block;font-family:var(--ds-font-mono);font-weight:500;font-size:15px;line-height:1.4;letter-spacing:.16em;text-transform:uppercase;color:var(--ds-ink-soft);margin-top:6px}
+.wordmark--rev .txt{color:var(--ds-ink-on-dark)}
+.wordmark--rev .txt small{color:#d9d4cc}   /* was rgba(247,243,237,.72) -> composites to #b8bac1 at 7.52:1 on the
+                                              navy; set as a solid warm step instead so it is measurable, not
+                                              composited, and so it stays on the stone ramp. 9.89:1 on #17274f. */
+.wordmark--stack{flex-direction:column;gap:12px;text-align:center}
+.flagbox{
+  margin-top:var(--ds-space-md);padding:var(--ds-space-sm) var(--ds-space-md);
+  background:var(--ds-accent-soft);border-left:3px solid var(--ds-accent);
+  border-radius:0 var(--ds-r-control) var(--ds-r-control) 0;
+  font-size:17px;line-height:1.65;color:var(--ds-ink);
+}
+.flagbox b{font-family:var(--ds-font-mono);font-size:15px;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;color:var(--ds-accent-ink);display:block;margin-bottom:5px}
+
+/* ==========================================================================
+   PALETTE
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md TOP-12 #1 / F1 / BRAND-TOKEN-SCHEMA.md colour roles
+   ========================================================================== */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:var(--ds-space-md)}
+.sw{display:flex;flex-direction:column}
+.sw .chip{height:88px;border-radius:var(--ds-r-surface) var(--ds-r-surface) 0 0;border:1px solid var(--ds-line);border-bottom:0}
+.sw .body{
+  border:1px solid var(--ds-line);border-radius:0 0 var(--ds-r-surface) var(--ds-r-surface);
+  background:var(--ds-bg-surface-2);padding:var(--ds-space-sm) 14px 16px;flex:1;
+}
+.sw .tok{font-family:var(--ds-font-mono);font-size:15px;line-height:1.5;color:var(--ds-primary);font-weight:500;word-break:break-all}
+.sw .hex{font-family:var(--ds-font-mono);font-size:15px;line-height:1.5;color:var(--ds-ink-soft);letter-spacing:.05em;text-transform:uppercase}
+.sw .role{font-size:17px;line-height:1.62;margin-top:10px;color:var(--ds-ink)}
+.sw .role em{font-style:normal;color:var(--ds-ink-soft)}
+.ratio{display:inline-block;margin-top:10px;font-family:var(--ds-font-mono);font-size:15px;line-height:1.5;letter-spacing:.03em;color:var(--ds-ink-soft);border:1px solid var(--ds-line);border-radius:var(--ds-r-control);padding:3px 8px}
+
+/* ==========================================================================
+   TYPE SPECIMENS
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md E1 / E2 (oversized, negative-tracked display, calm body) + E3 (numeral face)
+   ========================================================================== */
+.spec{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--ds-space-lg)}
+.spec-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:var(--ds-space-md);align-items:baseline;padding-bottom:var(--ds-space-md);border-bottom:1px solid var(--ds-line)}
+.spec-row:last-child{border-bottom:0;padding-bottom:0}
+.spec-key{font-family:var(--ds-font-mono);font-size:15px;line-height:1.65;color:var(--ds-ink-soft);letter-spacing:.02em}
+.spec-key b{display:block;color:var(--ds-ink);font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}
+.t-dxl{font-family:var(--ds-font-display);font-weight:600;font-size:clamp(36px,4.8vw,58px);line-height:1.06;letter-spacing:-.03em;color:var(--ds-ink-heading)}
+.t-dl{font-family:var(--ds-font-display);font-weight:600;font-size:clamp(28px,3.2vw,38px);line-height:1.16;letter-spacing:-.02em;color:var(--ds-ink-heading)}
+.t-dm{font-family:var(--ds-font-display);font-weight:600;font-size:24px;line-height:1.3;letter-spacing:-.012em;color:var(--ds-ink-heading)}
+.t-lede{font-size:21px;line-height:1.62;color:var(--ds-ink-soft);max-width:54ch}
+.t-body{font-size:18px;line-height:1.7;max-width:62ch}
+.t-sm{font-size:17px;line-height:1.62;color:var(--ds-ink-soft);max-width:58ch}
+.t-mono{font-family:var(--ds-font-mono);font-size:17px;line-height:1.8;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.t-micro{font-family:var(--ds-font-mono);font-size:15px;font-weight:500;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;color:var(--ds-accent-ink)}
+
+/* ==========================================================================
+   UI ATOMS
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md I1 / TOP-12 #9 (buttons: named-property transitions, never
+   transition:all, never opacity fade) / _MODERN-WOW-SPEC.md section 7 (refined pills, fine focus states)
+   ========================================================================== */
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--ds-space-lg) var(--ds-space-xl)}
+.atom-group{display:flex;flex-direction:column;gap:var(--ds-space-sm)}
+.atom-label{font-family:var(--ds-font-mono);font-size:15px;line-height:1.5;letter-spacing:.12em;text-transform:uppercase;color:var(--ds-ink-soft);padding-bottom:10px;border-bottom:1px solid var(--ds-line)}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* TAP TARGET FLOOR. WCAG 2.5.5 (AAA) asks 44x44 CSS px; this concept sets 48 so the number survives a
+   rounding, a border and a line-box. min-height is declared rather than inferred from padding, because
+   padding maths is exactly what makes a "44px" button render at 41. Measured in-render, not assumed.
+   The 1.6 leading floor is a READING-COLUMN rule and deliberately does NOT apply here: a control label is
+   one line, and 1.6 on a button would push the glyphs off the optical centre of the target. 1.2 with a
+   48px box gives more clear space around the label than 1.6 with a tight box would. */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--ds-font-body);font-size:17px;font-weight:500;line-height:1.2;
+  min-height:48px;padding:12px 24px;border-radius:var(--ds-r-control);border:1px solid transparent;
+  text-decoration:none;cursor:pointer;
+  transition:background-color var(--ds-dur) var(--ds-ease),color var(--ds-dur) var(--ds-ease),border-color var(--ds-dur) var(--ds-ease),box-shadow var(--ds-dur) var(--ds-ease);
+}
+.btn:focus-visible{outline:2px solid var(--ds-primary);outline-offset:3px}
+.btn--primary{background:var(--ds-primary);color:var(--ds-ink-on-dark)}
+.btn--primary:hover{background:var(--ds-primary-deep)}
+.btn--secondary{background:transparent;color:var(--ds-primary);border-color:var(--ds-primary)}
+.btn--secondary:hover{background:var(--ds-primary-soft)}
+/* THE ONE FULL-STRENGTH YELLOW MOMENT ON THE ENTIRE SHEET (outside the palette specimens).
+   Navy type on the raw brand yellow = 10.98:1. It appears once, on the offer, which is the single
+   job C7 section 2 says the yellow already does for this practice. */
+.btn--offer{background:var(--ds-accent);color:var(--ds-primary);border-color:var(--ds-accent)}
+.btn--offer:hover{background:#e8ce00;border-color:#e8ce00}
+.btn--quiet{background:transparent;color:var(--ds-primary);padding-left:0;padding-right:0}
+.btn--quiet span{border-bottom:1px solid var(--ds-line-control);padding-bottom:3px;transition:border-color var(--ds-dur) var(--ds-ease)}
+.btn--quiet:hover span{border-color:var(--ds-primary)}
+.btn .arw{transition:transform var(--ds-dur) var(--ds-ease)}
+.btn:hover .arw{transform:translateX(3px)}
+
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--ds-font-body);font-size:16px;font-weight:500;line-height:1.3;
+  padding:9px 14px;border-radius:var(--ds-r-control);border:1px solid var(--ds-line);
+  background:var(--ds-bg-surface-2);color:var(--ds-ink);
+}
+.tag--soft{background:var(--ds-primary-soft);border-color:transparent;color:var(--ds-primary)}
+/* REVISED. The price chip was a second flat yellow fill. It is now the offer WASH with a 3px yellow
+   rule down its edge and the darkened accent ink: 7.88:1, and the yellow is a rule, not a field. */
+.tag--offer{background:var(--ds-accent-soft);border-color:transparent;border-left:3px solid var(--ds-accent);
+  color:var(--ds-accent-ink);font-family:var(--ds-font-mono);letter-spacing:.02em;border-radius:0 var(--ds-r-control) var(--ds-r-control) 0}
+.tag--pill{border-radius:var(--ds-r-pill);padding:9px 17px}
+.tag--flag{background:var(--ds-accent-soft);border-color:var(--ds-accent-ink);color:var(--ds-accent-ink);font-family:var(--ds-font-mono);font-size:15px;letter-spacing:.07em;text-transform:uppercase}
+/* the THIRD TONE as a chip: the stone band as ground, the clay EDGE, and the clay INK STEP as the type.
+   The edge stays --ds-signature; only the type moved to --ds-signature-ink, 7.30:1 on this ground. */
+.tag--sig{background:var(--ds-bg-warm);border-color:var(--ds-signature);color:var(--ds-signature-ink);font-family:var(--ds-font-mono);font-size:15px;letter-spacing:.03em}
+.tag i{width:7px;height:7px;border-radius:var(--ds-r-pill);background:var(--ds-accent);display:block}
+/* the third tone's other job: the small-caps label that says "this is a sourced specific".
+   It was 10.5px in the clay at 6.24:1 - the smallest AND weakest type on the old sheet, in a role that
+   exists to make a fact checkable. 15px in the ink step at 7.98:1 on paper / 8.38:1 on the card. */
+.fact{font-family:var(--ds-font-mono);font-size:15px;font-weight:500;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;color:var(--ds-signature-ink);display:block;margin-bottom:7px}
+
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:17px;line-height:1.6;font-weight:500;color:var(--ds-ink)}
+.field .hint{font-size:16px;line-height:1.6;color:var(--ds-ink-soft)}
+.field input,.field select{
+  font-family:var(--ds-font-body);font-size:17px;line-height:1.4;color:var(--ds-ink);
+  min-height:48px;padding:12px 14px;border:1px solid var(--ds-line-control);border-radius:var(--ds-r-control);
+  background:var(--ds-bg-surface-2);width:100%;
+  transition:border-color var(--ds-dur) var(--ds-ease),box-shadow var(--ds-dur) var(--ds-ease);
+}
+.field input::placeholder{color:var(--ds-ink-placeholder)}
+.field input:focus,.field select:focus{outline:0;border-color:var(--ds-primary);box-shadow:0 0 0 3px rgba(23,39,79,.14)}
+.field--focus input{border-color:var(--ds-primary);box-shadow:0 0 0 3px rgba(23,39,79,.14)}
+
+/* the anchoring-band specimen (the .surface-dark flip, shown once)
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md TOP-12 #11 (one near-black anchor band per page) */
+.band{
+  margin-top:var(--ds-space-lg);padding:var(--ds-space-lg) var(--ds-space-md);
+  border-radius:var(--ds-r-surface);position:relative;overflow:hidden;
+}
+.band::before{content:"";position:absolute;inset:0;background-image:var(--ds-grid);background-size:var(--ds-grid-size);pointer-events:none}
+.band > *{position:relative}
+.band h3{font-size:clamp(23px,2.6vw,32px);line-height:1.22;letter-spacing:-.02em}
+.band .lead{max-width:56ch;margin-top:12px;color:var(--ds-ink-soft);font-size:18px;line-height:1.65}
+.band .toks{
+  display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:var(--ds-space-md);padding-top:var(--ds-space-sm);
+  border-top:1px solid var(--ds-line);font-family:var(--ds-font-mono);font-size:15px;line-height:1.7;color:var(--ds-ink-soft);
+}
+.band .toks b{color:var(--ds-ink);font-weight:500}
+
+.motif-demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--ds-space-md)}
+.motif-demo .card{display:flex;flex-direction:column;gap:14px;min-height:158px;justify-content:space-between}
+.motif-demo .lbl{font-family:var(--ds-font-mono);font-size:15px;line-height:1.65;color:var(--ds-ink-soft)}
+.motif-demo .lbl b{display:block;color:var(--ds-ink);font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}
+
+/* ==========================================================================
+   MINI-VIGNETTE (exactly one)
+   from: _PAGE-COMPOSITION-LIBRARY.md section 2 V6 MEDICAL / HEALTH / DENTAL (blueprint
+   composition-medical-health) - "hours, addresses and phone numbers are load-bearing UI",
+   and the appointment CTA is the spine
+   from: _MODERN-DESIGN-PATTERN-LIBRARY.md I2 (card chrome) + I6 (hairline-divided rows)
+   ========================================================================== */
+/* ==========================================================================
+   LOAD-BEARING CONTACT UI
+   from: C7 section 4 - "Hours, addresses and phone numbers are LOAD-BEARING UI. For a seven-office practice
+   these are the most-used content on the site." They are therefore the LARGEST reading type on this sheet
+   after the display ramp, set in the strongest ink, and the phone is a real tel: target, not a styled string.
+   ========================================================================== */
+.vig{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--ds-space-md);max-width:540px}
+.vig .card{padding:var(--ds-space-md) var(--ds-space-md) 24px}
+.vig h3{font-size:29px;line-height:1.2;letter-spacing:-.02em;margin-top:12px}
+/* the address moved OFF --ds-ink-soft (8.11:1) and onto --ds-ink (16.60:1 on the card) and up from 14px to
+   18px. It is an address a patient has to copy into a car, not a caption. */
+.vig .addr{font-family:var(--ds-font-mono);font-size:18px;line-height:1.7;color:var(--ds-ink);margin-top:14px}
+/* the phone: the single most-used string on a seven-office site. 22px, weight 500, the navy at 13.57:1,
+   a real tel: target at 48px min-height, and the yellow 2px rule underneath it - the concept's own
+   "the accent points at a fact" move, now pointing at the fact people actually tap. */
+.tel{
+  display:inline-flex;align-items:center;min-height:48px;margin-top:6px;
+  font-family:var(--ds-font-mono);font-size:22px;font-weight:500;line-height:1.3;letter-spacing:.01em;
+  color:var(--ds-primary);text-decoration:none;font-variant-numeric:tabular-nums;
+  box-shadow:inset 0 -2px 0 var(--ds-accent);
+  transition:color var(--ds-dur) var(--ds-ease),box-shadow var(--ds-dur) var(--ds-ease);
+}
+.tel:hover{color:var(--ds-primary-deep);box-shadow:inset 0 -3px 0 var(--ds-accent)}
+.tel:focus-visible{outline:2px solid var(--ds-primary);outline-offset:3px}
+.tel--sm{font-size:18px;min-height:48px}   /* the specimen instance. It was 46: above the WCAG 2.5.5 floor of 44,
+                                              but the ONLY control on the sheet that was not 48, which made the
+                                              masthead's own "smallest tap target 48px" line false by 2px. A sheet
+                                              whose argument is measured honesty does not get to round its own
+                                              number, so the control moved to meet the claim rather than the claim
+                                              being softened to meet the control. Every target here is now 48. */
+.hours{margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--ds-line);list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:16px;font-family:var(--ds-font-mono);font-size:17px;line-height:1.95;border-bottom:1px solid var(--ds-line)}
+.hours li:last-child{border-bottom:0}
+.hours span:first-child{color:var(--ds-ink-soft)}
+.hours span:last-child{color:var(--ds-ink);font-weight:500;font-variant-numeric:tabular-nums}
+.vig .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;padding-top:20px;border-top:1px solid var(--ds-line)}
+
+/* the legibility ledger. Deliberately NOT a .flagbox: a third .flagbox would put the same card-like class in
+   three distinct sections and trip the monotony heuristic. Its own class, its own treatment. */
+.legibility{
+  margin-top:var(--ds-space-lg);padding:var(--ds-space-md);
+  background:var(--ds-bg-warm);border:1px solid var(--ds-line);border-left:3px solid var(--ds-primary);
+  border-radius:0 var(--ds-r-surface) var(--ds-r-surface) 0;
+}
+.legibility h4{font-size:20px;line-height:1.3;letter-spacing:-.01em}
+.legibility p{font-size:17px;line-height:1.65;color:var(--ds-ink);margin-top:10px;max-width:74ch}
+.legibility dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:14px var(--ds-space-md);margin:var(--ds-space-md) 0 0}
+.legibility dt{font-family:var(--ds-font-mono);font-size:15px;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;color:var(--ds-ink-soft)}
+.legibility dd{margin:4px 0 0;font-family:var(--ds-font-mono);font-size:17px;line-height:1.55;color:var(--ds-ink);font-variant-numeric:tabular-nums}
+.legibility dd s{color:var(--ds-ink-soft);text-decoration-thickness:1px}
+
+@media (max-width:640px){
+  .spec-row{grid-template-columns:minmax(0,1fr);gap:10px}
+  .meta{gap:6px var(--ds-space-sm)}
+  /* the hours row USED to drop to 16px here. It no longer does. C7 section 4 calls hours load-bearing UI, mobile
+     is where a patient actually reads them, and shrinking the one thing the audience came for is the exact move
+     this pass exists to reverse. Measured at 375px: the widest row ("8:30 AM to 4:30 PM" plus its day label) sets
+     at 17px inside a 279px content box with room to spare, and the sheet has zero horizontal overflow at 375. The
+     rule was never needed; it was a precaution against an overflow that does not happen. */
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:1ms !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================================================================== -->
+<!-- MASTHEAD                                                              -->
+<!-- from: _MODERN-DESIGN-PATTERN-LIBRARY.md E2 (oversized negative-tracked display) + E4 (eyebrow + rule) -->
+<!-- ===================================================================== -->
+<div class="wrap masthead">
+  <p class="eyebrow"><span class="ray ray--sm" aria-hidden="true"></span> Brand card / concept A / clinical clarity</p>
+  <h1>Radiant Smiles Dental Care</h1>
+  <p class="lede">One dental team, seven offices, six specialties under one roof. The identity is built on a light canvas
+     the way the practice's own site already reads, with deep navy carrying the authority and the yellow rationed to the
+     one job it already does. The canvas is <span class="uline">warm stone, not a grey</span>: the ramp is derived, not
+     borrowed from a page builder.</p>
+  <div class="meta">
+    <span><b>slug</b> radiantsmiles</span>
+    <span><b>stage</b> (1) brand card, concept A</span>
+    <span><b>surface</b> light dominant, dark_ratio 0.154</span>
+    <span><b>sources</b> C6 + C7 + C3</span>
+    <span><b>artifact</b> identity sheet, chrome-less</span>
+    <span><b>smallest type</b> 15px</span>
+    <span><b>body</b> 18px / 1.7 / 400</span>
+    <span><b>lowest rendered text contrast</b> 7.30:1</span>
+    <span><b>smallest tap target</b> 48px</span>
+  </div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- 1. LOCKUPS                                                            -->
+<!-- from: C6 section 2 (three logo files on disk, magic-byte verified in this build tree) -->
+<!-- from: _MODERN-DESIGN-PATTERN-LIBRARY.md H4 (images live in defined frames, consistent radius) -->
+<!-- ===================================================================== -->
+<section class="wrap blk">
+  <div class="blk-head">
+    <p class="eyebrow"><span class="ray ray--sm" aria-hidden="true"></span> 01 Lockups</p>
+    <h2>The mark as supplied, and the lockup this concept proposes</h2>
+    <p>The sun mark is the equity worth keeping. What concept A changes is the wordmark: the supplied lockup is a
+       flat JPG with no transparency, so it is re-set in the display face and paired with the mark at a fixed
+       optical size.</p>
+  </div>
+
+  <div class="lockups">
+    <figure class="lockup" style="margin:0">
+      <div class="stage stage--paper">
+        <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_03_radiant-smiles-logo-lv.jpg"
+             alt="Radiant Smiles primary colour lockup as supplied: a yellow sun mark beside the words Radiant Smiles in navy"
+             width="472" height="226" style="max-height:104px;width:auto">
+      </div>
+      <p class="cap"><b>as supplied, colour</b><br>radiant-smiles-logo-lv.jpg, 472px, no transparency</p>
+    </figure>
+
+    <figure class="lockup" style="margin:0">
+      <div class="stage stage--dark">
+        <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_03_radiant-smiles-logo-white.png"
+             alt="Radiant Smiles reversed lockup as supplied, shown on the deep navy ground"
+             width="350" height="232" style="max-height:104px;width:auto">
+      </div>
+      <p class="cap"><b>as supplied, reversed</b><br>radiant-smiles-logo-white.png, 350px</p>
+    </figure>
+
+    <figure class="lockup" style="margin:0">
+      <div class="stage stage--stone">
+        <div class="wordmark">
+          <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-logo-mark.webp"
+               alt="Radiant Smiles sun icon mark" width="232" height="232">
+          <span class="txt">Radiant Smiles<small>Dental Care</small></span>
+        </div>
+      </div>
+      <p class="cap"><b>proposed, horizontal</b><br>on the stone band. Supplied mark + Poppins 600, tracking -0.03em</p>
+    </figure>
+
+    <figure class="lockup" style="margin:0">
+      <div class="stage stage--navy">
+        <div class="wordmark wordmark--stack wordmark--rev">
+          <img src="../../../../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-logo-mark.webp"
+               alt="Radiant Smiles sun icon mark, shown reversed on navy" width="232" height="232">
+          <span class="txt">Radiant Smiles<small>Dental Care</small></span>
+        </div>
+      </div>
+      <p class="cap"><b>proposed, stacked</b><br>on the brand navy, for square and stationery placements</p>
+    </figure>
+  </div>
+
+  <div class="flagbox">
+    <b>Owner flag, carried from C6 section 2</b>
+    There is no vector master anywhere on the current site. The primary lockup is a JPG, which is why it is
+    upscaled in the live header. The proposed lockups above hold at any size because the wordmark is live type,
+    but the sun mark still needs the original AI, SVG or EPS before launch.
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 2. PALETTE                                                            -->
+<!-- from: _MODERN-DESIGN-PATTERN-LIBRARY.md TOP-12 #1 / F1 (one accent, tinted ink, off-white paper) -->
+<!-- from: BRAND-TOKEN-SCHEMA.md colour roles + theme polarity (light) -->
+<!-- ===================================================================== -->
+<section class="wrap blk">
+  <div class="blk-head">
+    <p class="eyebrow"><span class="ray ray--sm" aria-hidden="true"></span> 02 Palette and roles</p>
+    <h2>Two axes and one spark</h2>
+    <p>C6 recorded the colours in use but assigned no roles. Concept A assigns them. The navy is the COOL axis and it
+       lives in ink and structure now, not in fills. The paper, the card and the alternate band are the WARM axis, a
+       stone ramp derived from the third tone below. The yellow is the spark, cut down to ticks, 2px caps and
+       underlines, with exactly one full-strength moment left on the sheet.</p>
+    <p class="note" style="margin-top:12px;max-width:78ch"><b>Why the ramp changed.</b> A census of the live homepage
+       markup counts <span class="mono">#17274f</span> 93 times, <span class="mono">#ffffff</span> 36,
+       <span class="mono">#fce003</span> 36, <span class="mono">#000000</span> 9, and then
+       <span class="mono">#f6f6f6</span>, <span class="mono">#c4c4c4</span> and <span class="mono">#d6d6d6</span>:
+       the stock Elementor grey ramp, which belongs to no brand. The first version of this concept answered that with
+       <span class="mono">#f7f9fc</span>, a cool blue-grey from the same cold family, and carried no third tone at all.
+       Every neutral on the sheet is now warm stone at hue 30 to 36, and nothing is <span class="mono">#ffffff</span>.
+       Every ratio below was computed with the WCAG 2.1 luminance formula, with translucent layers composited to an
+       opaque hex first. <b>The bar is AAA with headroom, not AAA by a rounding.</b> The lowest text ratio actually
+       rendered anywhere on this sheet is now <span class="mono">7.30:1</span> - the clay ink step on the stone band -
+       and it was found by RENDERING the sheet and reading computed styles, not by reading the stylesheet. The
+       previous solve put that same lowest ratio at <span class="mono">7.0122:1</span>. It PASSED, and it was still
+       the wrong answer: a margin of <span class="mono">0.0122</span> of a point is a rounding. Three tokens were
+       re-solved a second time for distance from the bar rather than for the bar, each holding its hue and chroma and
+       moving only in value, so no relationship in the palette shifted. Two of the moves were invisible to a source
+       read: an inline <span class="mono">style="color:var(--ds-signature)"</span>
+       that no CSS grep caught, and the accent ink, whose true worst ground is a
+       <span class="mono">--ds-grid</span> intersection under the masthead eyebrow - a
+       <span class="mono">::before</span> layer that <span class="mono">getComputedStyle</span> cannot see at all.
+       That one was solved against a screenshot pixel (<span class="mono">#f3efec</span>), not against the paper.
+       Across both passes: the secondary ink from
+       <span class="mono">6.84:1</span> to <span class="mono">7.73:1</span> to <span class="mono">8.11:1</span>, the
+       accent ink from <span class="mono">6.20:1</span> to <span class="mono">7.88:1</span> on the offer wash and
+       <span class="mono">7.56:1</span> on that masthead grid intersection, the input placeholder
+       from <span class="mono">5.31:1</span> to <span class="mono">7.40:1</span>, and the clay from a tone that set
+       type at <span class="mono">6.24:1</span> to a tone that sets surfaces plus a derived ink step at
+       <span class="mono">7.98:1</span>. An earlier version's placeholder measured <span class="mono">2.95:1</span>
+       and failed AA outright. The reason for the AAA bar is not perfectionism: contrast sensitivity falls with age
+       independently of acuity, so for the audience C7 names it is the single largest legibility factor.</p>
+  </div>
+
+  <div class="swatches">
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-primary)"></div>
+      <div class="body">
+        <p class="tok">--ds-primary</p><p class="hex">#17274f</p>
+        <p class="role"><em>The cool axis: ink and structure.</em> Links, tokens, the ray rule, every hairline, the
+           focus ring, the primary control. C6 records it 93 times: the dominant brand colour, taken verbatim.
+           <em>It no longer fills a band.</em></p>
+        <span class="ratio">13.57:1 on paper</span>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-primary-deep)"></div>
+      <div class="body">
+        <p class="tok">--ds-primary-deep</p><p class="hex">#0b1329</p>
+        <p class="role"><em>The heading ink, and the ONE dark ground.</em> Every h1 to h4 on this sheet is set in it.
+           As a surface it appears twice: the reversed lockup stage and the anchoring band.</p>
+        <span class="ratio">17.14:1 as heading ink</span>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-accent)"></div>
+      <div class="body">
+        <p class="tok">--ds-accent</p><p class="hex">#fce003</p>
+        <p class="role"><em>The spark, now precision only.</em> Ticks, the 2px cap on every section rule, underlines
+           under a sourced fact, and ONE full-strength control per page. C7 locks the navy and yellow relationship;
+           this is how it survives without a flat yellow band.</p>
+        <span class="ratio">10.98:1 navy on yellow</span>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-accent-ink)"></div>
+      <div class="body">
+        <p class="tok">--ds-accent-ink</p><p class="hex">#564c01</p>
+        <p class="role"><em>Accent text on light.</em> Eyebrows, kickers, the offer chip. The raw yellow measures
+           about 2.7:1 as small text on a light ground, so it is darkened rather than used and hoped for.</p>
+        <span class="ratio">8.04:1 on paper</span>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-signature);border-color:var(--ds-line)"></div>
+      <div class="body">
+        <p class="tok">--ds-signature</p><p class="hex">#8a4b2f</p>
+        <p class="role"><em>THE NEW TONE. The quiet third voice.</em> It marks the sourced specific, which C7 section 2
+           says must replace every superlative on this brand. Chip grounds, chip edges, and the tint ladder the whole
+           warm ramp is drawn from. Base <span class="mono">[CSS-Sienna] #A0522D</span> from the
+           COLOR-THEORY-PRESETS.md named-colour table, the base under entry 1 Warm Cream + Terracotta and entry 37
+           Desert Clay, tuned from hsl(19,56%,40%) to hsl(18.5,49%,36%): less chroma, more depth. What is NOT taken is
+           either entry's rustic vibe or its ramp. <em>It no longer sets type</em> - at 6.24:1 on paper and 5.71:1
+           on the stone band it was AA but not AAA, so the small-caps fact label moved to the derived reading step
+           <span class="mono">--ds-signature-ink #733e27</span>, hsl(18.2,49%,30.2%), at 7.98:1 on paper and 7.30:1 on
+           the stone band. Same relationship the yellow already has with its own ink: the tone stays the tone.</p>
+        <span class="ratio">6.24:1 surface / 7.98:1 ink step</span>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-bg-surface);border-color:var(--ds-line)"></div>
+      <div class="body">
+        <p class="tok">--ds-bg-surface</p><p class="hex">#faf6f2</p>
+        <p class="role"><em>The paper.</em> Warm stone at hsl(30,44%,96.5%). Replaces <span class="mono">#f7f9fc</span>,
+           which was hsl(216,45%,98%): a cool blue-grey sitting next to the same stock ramp it was meant to escape.
+           C7 measured the brand light-dominant at dark_ratio 0.154, so the canvas stays light.</p>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-bg-surface-2);border-color:var(--ds-line)"></div>
+      <div class="body">
+        <p class="tok">--ds-bg-surface-2</p><p class="hex">#fefcf9</p>
+        <p class="role"><em>The card.</em> Lighter than the paper so surfaces still lift, but not
+           <span class="mono">#ffffff</span>. The previous version floated pure white cards; nothing on this sheet
+           is pure white and nothing is pure black.</p>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-bg-warm);border-color:var(--ds-line)"></div>
+      <div class="body">
+        <p class="tok">--ds-bg-warm</p><p class="hex">#f1ece5</p>
+        <p class="role"><em>The alternate band.</em> The quiet step that separates one section from the next without a
+           rule. The schema names this role warm and on this brand it finally is: hsl(35,30%,92%), the third step of
+           the signature's own ladder.</p>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-primary-soft);border-color:var(--ds-line)"></div>
+      <div class="body">
+        <p class="tok">--ds-primary-soft</p><p class="hex">#e5eaf5</p>
+        <p class="role"><em>Soft navy fill.</em> Secondary button hover, chips, table headers. Deliberately still blue,
+           so it can never be mistaken for the live site's grey ramp.</p>
+        <span class="ratio">12.10:1 navy on it</span>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-ink)"></div>
+      <div class="body">
+        <p class="tok">--ds-ink</p><p class="hex">#141c2e</p>
+        <p class="role"><em>Body text.</em> A tinted near-black, pulled toward the navy. C6 records
+           <span class="mono">#000000</span> nine times on the live homepage; it is not carried forward.</p>
+        <span class="ratio">15.81:1 on paper</span>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-ink-soft)"></div>
+      <div class="body">
+        <p class="tok">--ds-ink-soft</p><p class="hex">#414b62</p>
+        <p class="role"><em>Secondary text.</em> Ledes, captions, hours labels. Hue 221, so it carries the brand
+           rather than a neutral grey.</p>
+        <span class="ratio">8.11:1 on paper</span>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-line)"></div>
+      <div class="body">
+        <p class="tok">--ds-line</p><p class="hex">#a8b1c5</p>
+        <p class="role"><em>The hairline, and where the two axes meet.</em> A cool navy-derived rule on a warm ground.
+           Section edges, card borders, hours rows. Where another concept would use a shadow, this one uses a line.
+           Raised this revision from <span class="mono">#ced3de</span>, which measured 1.40:1 on paper - invisible to
+           the reduced contrast sensitivity that arrives with presbyopia, on a concept whose entire structure IS the
+           rule. Now 2.00:1. Still a hairline; now one you can actually see. Control borders are a separate,
+           stronger token.</p>
+        <span class="ratio">2.00:1 on paper</span>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-ink-on-dark);border-color:var(--ds-line)"></div>
+      <div class="body">
+        <p class="tok">--ds-ink-on-dark</p><p class="hex">#f7f3ed</p>
+        <p class="role"><em>The near-white on the dark ground.</em> Pulled onto the warm axis at hsl(36,38%,95%) so the
+           anchoring band reads as part of the same ramp instead of a second, colder palette.</p>
+        <span class="ratio">16.67:1 on the dark ground</span>
+      </div>
+    </div>
+
+    <div class="sw">
+      <div class="chip" style="background:var(--ds-accent-soft);border-color:var(--ds-line)"></div>
+      <div class="body">
+        <p class="tok">--ds-accent-soft</p><p class="hex">#fdf5cf</p>
+        <p class="role"><em>Offer wash.</em> The ground behind the offer chip and the owner flag, re-tempered onto the
+           warm ramp. It is the only place the yellow is allowed to be a field, and it is a chip, not a band.</p>
+        <span class="ratio">7.88:1 accent ink on it</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- the novelty evidence, on the sheet rather than only in the source comments -->
+  <div class="flagbox" style="background:var(--ds-bg-warm);border-left-color:var(--ds-signature)">
+    <b style="color:var(--ds-signature-ink)">How the third tone was checked</b>
+    A grep of the captured live homepage for <span class="mono">#8a4b2f</span> returns nothing. Every colour literal in
+    that file was then classified as an inert <span class="mono">--wp--preset--*</span> declaration, an
+    <span class="mono">--e-global-color-*</span> declaration, or an APPLIED rule. The red-orange and brown family has
+    ZERO applied occurrences; its only appearances are the unused preset declarations
+    <span class="mono">#ff6900</span> and <span class="mono">#cf2e2e</span>. Two colours that are usually written off as
+    preset noise turned out not to be: <span class="mono">#009688</span> is the live floating call button's hover ground
+    (<span class="mono">--flbtn-h-bg</span>) and <span class="mono">#61ce70</span> is
+    <span class="mono">--e-global-color-accent</span>, consumed sixteen times as the background of every Elementor
+    button. So teal and green are both in real use on this site, and a clinical green here would not have been new.
+  </div>
+
+  <!-- the .surface-dark FLIP shown once: the brand's single dark surface, the anchoring band -->
+  <!-- from: C7 section 0 BRAND-SIGNATURE (light dominant, dark_ratio 0.154, dark concentrated in the -->
+  <!--       navy offer band and footer) + _MODERN-DESIGN-PATTERN-LIBRARY.md TOP-12 #11 -->
+  <div class="band surface-dark">
+    <p class="eyebrow"><span class="ray ray--sm" aria-hidden="true"></span> The anchoring band</p>
+    <h3>Same tokens, one surface flip</h3>
+    <p class="lead">C7 measured this brand light dominant at dark_ratio 0.154, with the dark area concentrated in
+       the navy offer band and the footer. That is the only place the brand goes dark, so the identity carries one
+       dark surface, not a dark theme. Adding the surface-dark class re-points the same token names, so a card, a
+       button or an input drops into the band and re-skins itself with nothing restyled by hand. The near-white it
+       flips to is the WARM one, so the band belongs to the same ramp as the paper rather than being a second, colder
+       palette. The primary control here is a paper fill with navy type at 13.20:1; it used to be a yellow fill, and
+       that was the sheet's second full-strength yellow moment. The rule is one. The navy and yellow relationship C7
+       locks is still here, in the tick on the rule above this heading.</p>
+    <div class="row" style="margin-top:20px">
+      <a class="btn btn--primary" href="#band-flip">Claim this offer</a>
+      <a class="btn btn--secondary" href="#band-flip" id="band-flip">See our locations</a>
+    </div>
+    <p class="toks">
+      <span><b>--ds-bg-surface</b> #0b1329</span>
+      <span><b>--ds-bg-surface-2</b> #17274f</span>
+      <span><b>--ds-ink</b> #f7f3ed</span>
+      <span><b>--ds-ink-soft</b> #c2bcb2</span>
+      <span><b>--ds-signature</b> #dda57e</span>
+      <span><b>--ds-line</b> rgba(247,243,237,.16)</span>
+      <span><b>--ds-accent-ink</b> #fce003</span>
+    </p>
+  </div>
+
+  <p class="note" style="margin-top:24px">Also locked and shown in use elsewhere on this sheet:
+     <span class="mono">--ds-accent-deep #574900</span> (reserved: an accent surface that has to carry near-white
+     text, at 8.06:1),
+     <span class="mono">--ds-accent-light #fce003</span> (the brand yellow reads at 13.87:1 on the dark ground,
+     so no lightened variant is invented),
+     <span class="mono">--ds-ink-placeholder #4c5467</span> (7.40:1 on the card, raised this revision from a
+     #5f6a81 that measured 5.31:1, which itself replaced a #8b97ab at 2.95:1),
+     <span class="mono">--ds-signature-ink #733e27</span> (the clay's reading step, 7.98:1 on paper and 7.30:1 on
+     the stone band, so the tone can stay a tone),
+     <span class="mono">--ds-line-control #838fab</span> (3.16:1, the interactive boundary WCAG 1.4.11 asks for,
+     which the decorative hairline at 2.10:1 deliberately is not), and
+     <span class="mono">--ds-scrim rgba(11,19,41,.58)</span> for photography.
+     Black #000000, white #ffffff and the greys #f6f6f6 / #c4c4c4 / #d6d6d6 recorded in C6 are all deliberately
+     not carried forward: on this sheet there is no pure black, no pure white and no neutral grey.</p>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 3. TYPE                                                               -->
+<!-- from: _MODERN-DESIGN-PATTERN-LIBRARY.md E1 (display on headings only, grotesk body), -->
+<!--       E2 (oversized, negative tracking), E3 (a distinct numeral face) -->
+<!-- ===================================================================== -->
+<section class="wrap blk">
+  <div class="blk-head">
+    <p class="eyebrow"><span class="ray ray--sm" aria-hidden="true"></span> 03 Type</p>
+    <h2>Poppins for structure, Roboto for reading, Roboto Mono for the facts</h2>
+    <p>C6 recorded three families self-hosted with no separation of display and body use. Concept A resolves that:
+       the geometric face takes the headings only, the grotesk takes everything that has to be read at length, and
+       a monospaced numeral face takes the hours, phone numbers and addresses that C7 calls load-bearing UI.
+       Roboto Slab is dropped.</p>
+  </div>
+
+  <div class="spec">
+    <div class="spec-row">
+      <p class="spec-key"><b>Display XL</b>Poppins 600<br>clamp 36 to 58px<br>1.06 / -0.03em</p>
+      <p class="t-dxl">Seven offices, one dental team</p>
+    </div>
+    <div class="spec-row">
+      <p class="spec-key"><b>Display L</b>Poppins 600<br>clamp 28 to 38px<br>1.16 / -0.02em</p>
+      <p class="t-dl">Care in your neighborhood</p>
+    </div>
+    <div class="spec-row">
+      <p class="spec-key"><b>Display M</b>Poppins 600<br>24px<br>1.3 / -0.012em</p>
+      <p class="t-dm">General dentistry, orthodontics, periodontics</p>
+    </div>
+    <div class="spec-row">
+      <p class="spec-key"><b>Eyebrow</b>Roboto Mono 500<br>15px<br>0.14em, uppercase</p>
+      <p class="t-micro">Patients of all ages</p>
+    </div>
+    <div class="spec-row">
+      <p class="spec-key"><b>Lede</b>Roboto 400<br>21px<br>1.62</p>
+      <p class="t-lede">Six specialties are handled in house by our own licensed clinicians, so most treatment
+         does not send you somewhere else.</p>
+    </div>
+    <div class="spec-row">
+      <p class="spec-key"><b>Body</b>Roboto 400<br>18px<br>1.7 / 62ch</p>
+      <p class="t-body">Ten dentists work across seven offices in Las Vegas, North Las Vegas and Henderson. Every
+         office publishes its own hours and its own phone number, and every appointment request goes to the office
+         you picked. The measure is held at sixty-two characters and the body is set at 18px over 1.7, because
+         older and anxious patients are a named audience and legibility is a hard rule on this brand, not a
+         preference.</p>
+    </div>
+    <div class="spec-row">
+      <p class="spec-key"><b>Small</b>Roboto 400<br>17px<br>1.62</p>
+      <p class="t-sm">Insurance participation varies by office and by plan. Ask the office you plan to visit.</p>
+    </div>
+    <div class="spec-row">
+      <p class="spec-key"><b>Mono</b>Roboto Mono 400<br>17px<br>tabular numerals</p>
+      <p class="t-mono"><a class="tel tel--sm" href="tel:+17023604800">(702) 360-4800</a><br>8961 W. Sahara Ave., Suite 108<br>Mon 8:30 AM to 4:30 PM</p>
+    </div>
+  </div>
+
+  <!-- THE LEGIBILITY LEDGER. Not a .flagbox on purpose: a third .flagbox would put the same card-like class
+       in three distinct sections. This is its own class with its own treatment. -->
+  <div class="legibility">
+    <h4>What this ramp is tuned for, and what it refuses to become</h4>
+    <p>C7 section 4 names anxious and older patients as an audience of this practice and calls legible type a hard
+       rule rather than a preference. The content bible carries the two figures behind that, both from the ADA Health
+       Policy Institute: 55 percent of adults 65 and over and 21 percent of adults 19 to 64 have no dental benefits
+       (Coverage Access and Outcomes, fetched 2026-07-30), so the people most likely to arrive
+       through a published entry price are also the people most likely to be reading with presbyopia. Presbyopia
+       begins around 40 and takes contrast sensitivity down along with acuity, so the answer is not only bigger
+       type, it is darker type. Every floor below is measured, and the sheet holds them without becoming a
+       large-print brochure: the composition, the single accent, the hairline discipline and the ray motif are
+       untouched. Bigger type over more whitespace is what editorial design has always looked like.</p>
+    <p>The numbers below are read off the RENDER, which is not the same document as the stylesheet. Two things
+       this sheet asserted about itself turned out to be false when it was measured instead of read. Its own type
+       specimen documented a 14px eyebrow while seven of the eleven eyebrows painted at 18px in the secondary
+       grey, because <span class="mono">.blk-head p</span> outranks <span class="mono">.eyebrow</span> by one
+       point of specificity and the accent ink never reached them. And the masthead claimed a smallest tap target
+       of 48px while one phone specimen sat at 46. Both are closed. Neither was catchable from the source.</p>
+    <dl>
+      <dt>Body</dt><dd><s>16.5px</s> 18px / 1.7 / 400</dd>
+      <dt>Secondary prose</dt><dd><s>16px</s> 17px / 1.65</dd>
+      <dt>Smallest type anywhere</dt><dd><s>10px</s> 15px</dd>
+      <dt>Smallest type at 375px</dt><dd>15px</dd>
+      <dt>Body ink on paper</dt><dd>15.81:1 (AAA)</dd>
+      <dt>Lowest ratio on the sheet</dt><dd><s>7.01:1</s> 7.30:1</dd>
+      <dt>Secondary ink</dt><dd><s>6.84:1</s> 8.11:1</dd>
+      <dt>Accent ink on the offer wash</dt><dd><s>6.20:1</s> 7.88:1</dd>
+      <dt>Section eyebrow, as painted</dt><dd><s>grey 7.73:1</s> 8.04:1</dd>
+      <dt>Clay small-caps</dt><dd><s>6.24:1</s> 7.98:1</dd>
+      <dt>Input placeholder</dt><dd><s>5.31:1</s> 7.40:1</dd>
+      <dt>Interactive boundary</dt><dd><s>1.47:1</s> 3.16:1</dd>
+      <dt>Tap targets</dt><dd><s>46px</s> 48px, every control</dd>
+      <dt>Hours at 375px</dt><dd><s>16px</s> 17px</dd>
+      <dt>Body tracking</dt><dd>0em, never negative</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 4. UI ATOMS                                                           -->
+<!-- from: _MODERN-DESIGN-PATTERN-LIBRARY.md I1 / TOP-12 #9 (buttons), I2 (cards), E4 (chips + eyebrows) -->
+<!-- from: _MODERN-WOW-SPEC.md section 7 (refined pills and badges, fine focus states) -->
+<!-- ===================================================================== -->
+<section class="wrap blk">
+  <div class="blk-head">
+    <p class="eyebrow"><span class="ray ray--sm" aria-hidden="true"></span> 04 Atoms</p>
+    <h2>Buttons, tags, inputs, cards</h2>
+    <p>Every control shares one radius dialect and one transition curve. Hover changes colour by named property,
+       never by fading the whole element. Labels are the ones C3 already locked, so nothing here invents a
+       call to action.</p>
+  </div>
+
+  <div class="atoms">
+    <div class="atom-group">
+      <p class="atom-label">Buttons</p>
+      <div class="row">
+        <a class="btn btn--primary" href="#atoms-buttons">Book an appointment</a>
+        <a class="btn btn--secondary" href="#atoms-buttons">Call the office</a>
+      </div>
+      <div class="row">
+        <a class="btn btn--offer" href="#atoms-buttons">Claim this offer</a>
+        <a class="btn btn--quiet" href="#atoms-buttons" id="atoms-buttons"><span>See our locations</span> <span class="arw" aria-hidden="true">&#8594;</span></a>
+      </div>
+      <p class="note"><b>The yellow button above is the ONE full-strength yellow moment on this sheet</b>, outside the
+         palette specimens. Everywhere else the accent is a tick, a 2px cap on a section rule, or an underline.
+         Primary is the navy fill and carries the appointment, which V6 names as the spine of a dental page.
+         Focus is a 2px navy ring at 3px offset.</p>
+    </div>
+
+    <div class="atom-group">
+      <p class="atom-label">Tags and chips</p>
+      <div class="row">
+        <span class="tag tag--soft">Orthodontics</span>
+        <span class="tag tag--soft">Periodontics</span>
+        <span class="tag">Same-day care</span>
+      </div>
+      <div class="row">
+        <span class="tag tag--offer">$45 exam and X-ray</span>
+        <span class="tag tag--pill"><i aria-hidden="true"></i> Accepting new patients</span>
+      </div>
+      <div class="row">
+        <span class="tag tag--sig">Six specialties in house</span>
+        <span class="tag tag--flag">Owner flag: offer terms pending</span>
+      </div>
+      <p class="note">The price chip used to be a flat yellow field; it is now the offer wash with a 3px yellow rule
+         down its edge, at 7.88:1. The clay chip beside the flag is the third tone doing its one job: carrying a
+         checkable structural fact, here the six in-house specialties C3 fences as the one truth that may never be
+         restated. The $45 and the $29 senior price are the only published prices on this brand and both are sourced.
+         The offer ships without any "limited time" framing until real terms exist.</p>
+    </div>
+
+    <div class="atom-group">
+      <p class="atom-label">Inputs</p>
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" type="text" placeholder="First and last name">
+      </div>
+      <div class="field field--focus">
+        <label for="f-office">Which office</label>
+        <select id="f-office">
+          <option>Summerlin</option>
+          <option>Lone Mountain</option>
+          <option>Sunrise Manor</option>
+          <option>North Las Vegas</option>
+          <option>Henderson</option>
+          <option>North Decatur</option>
+          <option>Blue Diamond</option>
+        </select>
+        <p class="hint">Shown in the focused state. The ring is the navy at 14 percent, never a browser default.</p>
+      </div>
+      <p class="note">Fields are 48px tall at minimum, carry 17px type, sit on the warm card surface, and take
+         the one border on this sheet that is NOT the decorative hairline: <span class="mono">--ds-line-control</span>
+         at 3.16:1, because WCAG 1.4.11 asks 3:1 for the boundary of a control and a 2.10:1 rule is structure, not
+         an affordance. The placeholder is 7.40:1. Labels are 17px and hints 16px.</p>
+    </div>
+
+    <div class="atom-group">
+      <p class="atom-label">Card</p>
+      <div class="card card--hover">
+        <p class="eyebrow" style="margin-bottom:10px"><span class="ray ray--sm" aria-hidden="true"></span> Under one roof</p>
+        <h4 style="font-size:21px;line-height:1.3;letter-spacing:-.01em">Oral and maxillofacial surgery</h4>
+        <p class="note" style="margin-top:8px">Handled in house by our own licensed clinicians, at the offices that
+           offer it.</p>
+        <p style="margin-top:14px"><a class="btn btn--quiet" href="#atoms-card"><span id="atoms-card">Ask a question</span> <span class="arw" aria-hidden="true">&#8594;</span></a></p>
+      </div>
+      <p class="note">One hairline, one inset top highlight, one very soft shadow. Hover lifts by 2px and deepens
+         the same shadow. There is no second elevation step anywhere in this concept.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 5. SIGNATURE MOTIF                                                    -->
+<!-- from: C6 section 2 (the supplied mark is a sun of rays) + C7 section 0 signature_moves -->
+<!-- from: _MODERN-DESIGN-PATTERN-LIBRARY.md E4 / TOP-12 #10 (eyebrow with a short accent rule) -->
+<!-- ===================================================================== -->
+<section class="wrap blk">
+  <div class="blk-head">
+    <p class="eyebrow"><span class="ray ray--sm" aria-hidden="true"></span> 05 Signature motif</p>
+    <h2>The ray rule</h2>
+    <p>A navy hairline that ends in a single yellow tick. It is one ray of the existing sun, reduced to the
+       thinnest mark that still reads as this brand. It is the only ornament in the concept, and it is the same
+       device at every scale.</p>
+  </div>
+
+  <div class="motif-demo">
+    <div class="card">
+      <span class="ray ray--sm" aria-hidden="true"></span>
+      <p class="lbl"><b>Small</b>24px rule, 9px tick.<br>Sits before an eyebrow.</p>
+    </div>
+    <div class="card">
+      <span class="ray" aria-hidden="true"></span>
+      <p class="lbl"><b>Default</b>40px rule, 12px tick.<br>Section headings, card kickers.</p>
+    </div>
+    <div class="card">
+      <span class="ray ray--lg" aria-hidden="true"></span>
+      <p class="lbl"><b>Large</b>84px rule, 18px tick.<br>Opens a full-width band.</p>
+    </div>
+    <div class="card">
+      <span class="gauge" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i></span>
+      <p class="lbl"><b>Gauge</b>Seven ticks, one per office.<br>Marks which location a page is on.</p>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:22px">The gauge is the one place the motif carries information rather than
+     rhythm. Seven ticks, because the practice has seven offices; the filled tick is the office you are reading.</p>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 6. MINI-VIGNETTE (exactly one)                                        -->
+<!-- from: _PAGE-COMPOSITION-LIBRARY.md section 2 V6, blueprint composition-medical-health -->
+<!--       (hours, addresses and phone numbers are load-bearing UI; the appointment CTA is the -->
+<!--       spine of a dental page) + I2 card chrome + I6 hairline-divided rows -->
+<!-- Real facts only, from C3 contactData and routeRules. -->
+<!-- ===================================================================== -->
+<section class="wrap blk">
+  <div class="blk-head">
+    <p class="eyebrow"><span class="ray ray--sm" aria-hidden="true"></span> 06 Applied</p>
+    <h2>One office card, everything on it real</h2>
+    <p>The single applied moment on this sheet. It is the location card because on a seven-office practice the
+       address, the hours and the phone number are the most used content on the site, and because it exercises
+       every atom at once.</p>
+  </div>
+
+  <div class="vig">
+    <article class="card card--hover">
+      <p class="eyebrow" style="margin-bottom:0">
+        <span class="gauge" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i></span>
+        Location
+      </p>
+      <h3>Summerlin</h3>
+      <p class="addr"><span class="fact">Sourced, C3 contactData</span>8961 W. Sahara Ave., Suite 108<br>Las Vegas, NV 89117</p>
+      <p style="margin-top:2px"><a class="tel" href="tel:+17023604800">(702) 360-4800</a></p>
+
+      <ul class="hours">
+        <li><span>Mon</span><span>8:30 AM to 4:30 PM</span></li>
+        <li><span>Tue</span><span>8:30 AM to 4 PM</span></li>
+        <li><span>Wed</span><span>8:30 AM to 7 PM</span></li>
+        <li><span>Thu</span><span>9 AM to 6 PM</span></li>
+        <li><span>Fri</span><span>8:30 AM to 4 PM</span></li>
+        <li><span>Sat</span><span>8:30 AM to 3 PM</span></li>
+        <li><span>Sun</span><span>Closed</span></li>
+      </ul>
+
+      <div class="acts">
+        <a class="btn btn--primary" href="https://www.appointnow.com/?P=4743&amp;O=100&amp;PT=1" rel="noopener">Book an appointment</a>
+        <a class="btn btn--secondary" href="tel:+17023604800">Call the office</a>
+      </div>
+    </article>
+  </div>
+
+  <p class="note" style="margin-top:20px">Every value above comes from C3 contactData and routeRules: the address,
+     the ZIP, the phone, the seven day hours, and the booking route for this specific office. The phone CTA resolves
+     to Summerlin's own number, never a general line. The clay small-cap above the address is the third tone at work:
+     it says where the fact came from. The yellow appears here only as the 2px rule under the phone number, which is
+     the whole argument in one card, an accent pointing at a fact instead of a band sitting behind one.</p>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 7. TOKEN READOUT                                                      -->
+<!-- from: BRAND-TOKEN-SCHEMA.md "Radius (3 required - ROLE-NAMED, constrained)" -->
+<!-- ===================================================================== -->
+<section class="wrap blk" style="padding-bottom:var(--ds-space-2xl)">
+  <div class="blk-head">
+    <p class="eyebrow"><span class="ray ray--sm" aria-hidden="true"></span> 07 Geometry, depth, motion</p>
+    <h2>Three radii, one shadow step, one curve</h2>
+  </div>
+
+  <div class="spec">
+    <div class="spec-row">
+      <p class="spec-key"><b>Radius</b>the constrained<br>role set</p>
+      <div>
+        <div class="row" style="gap:16px">
+          <span style="display:inline-block;width:88px;height:48px;background:var(--ds-primary-soft);border:1px solid var(--ds-line);border-radius:var(--ds-r-control)"></span>
+          <span class="mono" style="font-size:15px;line-height:1.6">--ds-r-control 4px<br><span style="color:var(--ds-ink-soft)">buttons, inputs, tags, chips</span></span>
+        </div>
+        <div class="row" style="gap:16px;margin-top:14px">
+          <span style="display:inline-block;width:88px;height:48px;background:var(--ds-primary-soft);border:1px solid var(--ds-line);border-radius:var(--ds-r-surface)"></span>
+          <span class="mono" style="font-size:15px;line-height:1.6">--ds-r-surface 10px<br><span style="color:var(--ds-ink-soft)">cards, panels, media frames</span></span>
+        </div>
+        <div class="row" style="gap:16px;margin-top:14px">
+          <span style="display:inline-block;width:88px;height:48px;background:var(--ds-primary-soft);border:1px solid var(--ds-line);border-radius:var(--ds-r-pill)"></span>
+          <span class="mono" style="font-size:15px;line-height:1.6">--ds-r-pill 999px<br><span style="color:var(--ds-ink-soft)">pills, avatars, status dots</span></span>
+        </div>
+        <p class="note" style="margin-top:14px">Three role names only. No chip, sm, md, lg or xl scale is emitted.</p>
+      </div>
+    </div>
+
+    <div class="spec-row">
+      <p class="spec-key"><b>Depth</b>one step<br>ink-tinted</p>
+      <div>
+        <div class="row" style="gap:18px">
+          <span style="display:inline-block;width:120px;height:64px;background:var(--ds-bg-surface-2);border:1px solid var(--ds-line);border-radius:var(--ds-r-surface);box-shadow:var(--ds-shadow-card),var(--ds-inset-hi)"></span>
+          <span style="display:inline-block;width:120px;height:64px;background:var(--ds-bg-surface-2);border:1px solid var(--ds-hairline);border-radius:var(--ds-r-surface);box-shadow:var(--ds-shadow-lift),var(--ds-inset-hi)"></span>
+        </div>
+        <p class="note" style="margin-top:14px">Resting and lifted. Both shadows are tinted toward the navy ink and
+           carry a negative spread so they tuck under the surface instead of haloing it. Everything else in the
+           concept is flat, and the hairline does the separating.</p>
+      </div>
+    </div>
+
+    <div class="spec-row">
+      <p class="spec-key"><b>Material</b>one layer<br>--ds-grid</p>
+      <div>
+        <div class="row" style="gap:18px">
+          <span style="display:inline-block;width:120px;height:64px;border:1px solid var(--ds-line);border-radius:var(--ds-r-surface);background-image:var(--ds-grid);background-size:var(--ds-grid-size);background-color:var(--ds-bg-surface-2)"></span>
+          <span class="mono" style="font-size:15px;line-height:1.6">--ds-grid, 32px cell<br><span style="color:var(--ds-ink-soft)">navy hairlines at 5.5 percent</span></span>
+        </div>
+        <p class="note" style="margin-top:14px">A measure grid, not grain and not a glow. It is the same hairline
+           instrument as every other edge in the concept, which is why it is the one texture allowed. It appears
+           behind the masthead and inside the anchoring band, and nowhere else.</p>
+      </div>
+    </div>
+
+    <div class="spec-row">
+      <p class="spec-key"><b>Colour</b>deployment<br>audit</p>
+      <div>
+        <p class="t-sm" style="max-width:70ch;color:var(--ds-ink)"><span class="fact">Counted on this sheet</span>
+           <b>Yellow, full strength:</b> one control (the offer button) plus the palette specimen chip. Everything else
+           is a 3px x 12px tick, a 28px x 2px cap on each section rule, a 2px underline, or a 5px dot. No fill wider
+           than a chip anywhere.<br>
+           <b>Yellow, tinted:</b> the offer wash behind two chips and one flag box.<br>
+           <b>Navy, as a surface:</b> two lockup stages and one anchoring band. Everything else navy is ink, a 1px
+           rule, or a control. C7 measures this brand light-dominant at dark_ratio 0.154 and the sheet stays light.<br>
+           <b>Clay, the third tone:</b> small-cap fact labels, one chip, one flag edge, and the tint ladder the paper,
+           the card and the stone band are drawn from.</p>
+        <div class="row" style="gap:10px;margin-top:14px">
+          <span class="ray ray--lg" aria-hidden="true"></span>
+          <span class="mono" style="font-size:15px;line-height:1.6;color:var(--ds-ink-soft)">the largest single piece of yellow outside the offer button and the palette: 18px tall, 3px wide</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec-row">
+      <p class="spec-key"><b>Motion</b>two tokens</p>
+      <div>
+        <p class="t-mono" style="font-size:17px">--ds-dur 180ms<br>--ds-ease cubic-bezier(.2,.6,.2,1)</p>
+        <p class="note" style="margin-top:10px">Named properties only, never a blanket transition. Reduced motion
+           collapses every duration to 1ms. The system motion extension, the z-index scale and the opacity scale
+           are not emitted here: they are brand-agnostic and arrive at the graft step after the owner pick.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
