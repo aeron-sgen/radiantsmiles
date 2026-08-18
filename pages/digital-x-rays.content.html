@@ -1,0 +1,356 @@
+<!--META {"title":"Digital Dental X-Rays in Las Vegas","desc":"Digital dental radiography at every Radiant Smiles office, included in the $45 new patient exam."}-->
+<!-- pick: HERO-COMPOSITIONS.md # 1 Split-text-left + photo-right | considered: #2,#5,#28 | why: this page is an informational-intent entry, so the plain name of the treatment with its geo modifier has to be the first thing read at every width, not the second. Text LEFT with the room RIGHT puts the H1, the one-line benefit and both actions at the top of the DOM, which is also the stacking order a phone gets, so nothing is read out of sequence at 375. It mirrors rather than repeats the photo-left arrangement the implants page already ships, so the two feature pages share a kit without sharing a shape. #2 Split-text-right with photo-left is rejected for that reason alone: it is the arrangement already spent on the sibling feature page. #5 Full-bleed image with overlay text is rejected because the only first-party frame this page owns is a prepared operatory, and scrimming it into atmosphere would sell a mood the copy never claims. #28 Embedded map hero is rejected because this is a treatment page, not an office page, and the seven addresses belong on the locations hub the rail links to. IMAGE SLOT, partly met and named as such: the copy asks for the operatory screen with an image on it, or the sensor in its sleeve. Neither is photographed anywhere in assets/. What ships is a real first-party photograph of one of our own treatment rooms with its wall-mounted screen in place, and the alt text asserts only that. -->
+<section class="rs-sec rs-sec--lead rs-sec--band cc-tex">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="cc-hero">
+
+          <div class="cc-hero__copy">
+            <h1 class="rs-h1">Digital X-Rays in Las Vegas</h1>
+            <p class="rs-lede">Images that show what an examination alone cannot, taken when they will change what we do next.</p>
+            <!-- CTA-PATTERNS.md #7 multi-CTA cluster, carried verbatim from section 1 of the copy.
+                 The secondary action routes to the offices page rather than dialling a number,
+                 because routeRules.phone_policy resolves every phone CTA to a SPECIFIC office. -->
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+          <div class="cc-hero__art">
+            <div class="rs-frame rs-frame--hero cc-hero__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-22-4-768x1152.jpg"
+                   width="768" height="1152" decoding="async" fetchpriority="high"
+                   alt="A treatment room at one of our offices, with the chair prepared, the overhead light in position and a wall-mounted screen above it.">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: #6,#3 | why: the whole page turns on one claim, that an examination reads surfaces while an image reads what sits under them, so the section carrying it has to state the pain before any benefit is believed. #7 gives that argument its own column at display scale and quarantines the third-party coverage figure in a keyed panel beside it, so a reader can tell at a glance which sentence is ours and which belongs to the ADA Health Policy Institute. The three outcome pillars then CLOSE this same section as a 2-then-1 card grid, because they are the answer to the problem stated directly above them and would read as an unrelated row if they were given a band of their own. No media is paired with those cards, so the media-and-cards LAW does not apply to them; the one photograph in this section belongs to the argument block, where it carries the right column's height rather than leaving a void under the panel. #6 Is-this-for-me qualifier is rejected because it sorts readers into groups, and nothing in this copy says some patients need imaging and others do not. #3 Stat strip is rejected because atomising 55% into a tile would strip the source and the fetch date off a figure that means nothing without them. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- the heading is hoisted OUT of the split so it sits above both columns. At 1023 and
+             below .cc-problem collapses to one column, and this keeps the section's own title
+             above the argument, the panel and the photograph rather than after them. -->
+        <h2 class="rs-h2">An examination reads surfaces.</h2>
+
+        <div class="cc-problem">
+
+          <div class="cc-arg">
+            <p class="cc-arg__lead">It cannot see between two teeth that touch each other, under an old filling, or below the gumline.</p>
+            <p class="rs-copy">That is exactly where decay tends to start. It is also where a hairline crack sits, quietly, until the day the tooth gives way.</p>
+            <p class="rs-copy">So a mouth can look fine and still be losing a tooth. An image is how that gets settled rather than guessed at.</p>
+          </div>
+
+          <div class="cc-problem__side">
+
+            <div class="cc-panel cc-evidence">
+              <p class="rs-copy">Coverage is the other half of the delay. The ADA Health Policy Institute reports that <span class="cc-fig">55%</span> of adults aged 65 and older have no dental benefits, fetched 30 July 2026. Dental visits track coverage directly.</p>
+            </div>
+
+            <!-- NOT a copy image slot. Section 2 of the copy asks for no photograph, and this
+                 one makes no claim the copy does not: it is our own treatment-room corridor,
+                 described as our own treatment-room corridor. It is here to carry the right
+                 column's height beside a three-block argument. -->
+            <div class="rs-frame cc-problem__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-19-2-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="A corridor between treatment rooms in one of our offices, empty, with a lit panel beside each doorway.">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- CARD-VARIATIONS.md #4 circle-icon service card, arranged in the 2-then-1 shape the
+             menu prescribes for three items. The lead pillar takes the full width at display
+             size and the two supporting pillars sit under it at card scale, so the three are
+             ranked by type rather than by chrome. DEVIATION: no arrow link ships on these
+             cards. A pillar is a statement, not a destination, and every link on this page
+             lives in the rail at section 4. -->
+        <div class="cc-pillars__cards">
+
+          <article class="rs-card cc-wide">
+            <div class="rs-card__body rs-card__body--roomy">
+              <span class="rs-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                  <rect x="2.6" y="4.4" width="20.8" height="13.6" rx="2.4" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M13 18v3.6M9.4 21.6h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <h2 class="cc-pillar__t">See the reason, not only the recommendation.</h2>
+              <p class="rs-card__text">The image goes up on the screen and we point at the thing we are describing.</p>
+            </div>
+          </article>
+
+          <article class="rs-card">
+            <div class="rs-card__body">
+              <span class="rs-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                  <circle cx="10.2" cy="13" r="6.6" stroke="currentColor" stroke-width="1.7"/>
+                  <circle cx="19.6" cy="13" r="2.6" stroke="currentColor" stroke-width="1.7"/>
+                </svg>
+              </span>
+              <h2 class="rs-card__title">Treat the smaller version of the problem.</h2>
+              <p class="rs-card__text">Decay found on an image can still be small enough for a filling rather than a crown or a root canal.</p>
+            </div>
+          </article>
+
+          <article class="rs-card">
+            <div class="rs-card__body">
+              <span class="rs-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                  <path d="M3.4 11.6 13 4.2l9.6 7.4" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                  <path d="M5.8 11.4v10h14.4v-10" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                  <path d="M10.6 21.4v-5.6h4.8v5.6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <h2 class="rs-card__title">Get the image without a referral out.</h2>
+              <p class="rs-card__text">The X-ray is taken in our own operatory and read by the clinician treating you. Nothing waits on an outside imaging appointment.</p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #27 Numbered process steps | considered: #28,#36 | why: four things happen in a fixed order and a comparing reader wants to skim them, so ORDER has to be the hierarchy rather than decoration. #27 makes the numeral the focal object and lets every step stay a hairline row instead of a card, which keeps a four-step block compact and stops it reading as four equal boxes. One row is lifted onto the panel chrome, and it is the step a nervous reader actually shops on, that the screen is turned towards them. GROUND: this is the page's first dark anchor, chosen here because this is the one beat with no photograph and none coming. All four of its named visuals are unshot, so the flatness is answered with a surface rather than with an approximation, and the locked sheet re-points the numeral role to the accent on dark so 01 to 04 become the loudest objects on the page. #28 Process timeline horizontal is rejected because four paragraphs of this length crush into unreadable columns and its connector line is ornament this page has no budget for. #36 Sticky-sidebar topic nav is rejected because it exists for a long document a reader navigates repeatedly, and four steps read once in order do not earn a persistent index. -->
+<section class="rs-sec surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- IMAGE SLOTS NOT FILLED, left empty rather than approximated. Copy section 4 names a
+             distinct real photograph for each of the four steps and none of the four exists in
+             assets/. Required, per step:
+               01  one of our own operatories set up for imaging, before the appointment starts
+               02  the sensor in its sleeve, held by one of our own clinicians
+               03  the operatory screen turned towards the patient in one of our offices
+               04  two images of the same tooth side by side on our own screen
+             OWNER ITEM: commission these four. Until then the ladder is type-led, which is also
+             its strongest reading, so nothing is lost by waiting for real photography. -->
+
+        <!-- FLAG, carried verbatim in substance from copy section 4: the sensor manufacturer and
+             the imaging software are not named in any first-party source. The live site does
+             publish a lead apron shielding precaution and a dose comparison against film, both
+             with no citation behind them. Neither is repeated in the copy above until the owner
+             supplies the source. Only digital X-rays and the SIROlaser are verified technology
+             names for this practice. -->
+
+        <ol class="cc-ladder">
+
+          <li class="cc-ladder__row">
+            <p class="cc-ladder__n" aria-hidden="true">01</p>
+            <div class="cc-ladder__c">
+              <h2 class="rs-h4">We take an image when there is a reason to.</h2>
+              <p class="rs-copy">A new patient exam, a symptom, a tooth we cannot read by eye, or a change we want to compare.</p>
+            </div>
+          </li>
+
+          <li class="cc-ladder__row">
+            <p class="cc-ladder__n" aria-hidden="true">02</p>
+            <div class="cc-ladder__c">
+              <h2 class="rs-h4">The sensor goes in and the image appears in seconds.</h2>
+              <p class="rs-copy">There is no film and no waiting for it to develop, so the appointment keeps moving.</p>
+            </div>
+          </li>
+
+          <!-- the one step lifted onto the panel chrome. Being shown the tooth on the screen is
+               what a nervous reader is actually shopping on, so it gets the focal treatment and
+               the ladder stops being a row of equals. -->
+          <li class="cc-ladder__row cc-ladder__row--mark cc-panel">
+            <p class="cc-ladder__n" aria-hidden="true">03</p>
+            <div class="cc-ladder__c">
+              <h2 class="rs-h4">We look at it with you, not at you.</h2>
+              <p class="rs-copy">The screen is turned so you can see the tooth being discussed and ask about it.</p>
+            </div>
+          </li>
+
+          <li class="cc-ladder__row">
+            <p class="cc-ladder__n" aria-hidden="true">04</p>
+            <div class="cc-ladder__c">
+              <h2 class="rs-h4">We keep them and compare them.</h2>
+              <p class="rs-copy">Two images of the same tooth a year apart show whether something is changing or holding steady.</p>
+            </div>
+          </li>
+
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: PROOF-SECTIONS.md #5 Showcase, image and result split | considered: #4,#2 | why: this beat has two jobs at once, to assert that nothing about the image leaves the building and to back the practice with the only sourced record this page is permitted to state. #5 is the pattern whose shape is exactly that, a claim column beside the evidence and the room, so the positioning argument sits left while the review record and the photograph of the actual imaging setup stack on the right. The heading is hoisted out of the split, so when the two columns collapse at 1023 the section title still arrives before the photograph rather than after it. The cross-link rail is folded in underneath rather than given a band of its own, because seven short internal links are a tail on this argument and not a beat, and giving them a whole section would have spent a fifth of the page on navigation. #4 Case-study metric-led card is rejected because a metric card implies an outcome we measured, and the only figure here is a third-party review average scoped to a single office. #2 Single big pull-quote is rejected because dressing a platform statistic in quote chrome would read as a patient voice, which is the exact misrepresentation the content rules forbid. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <h2 class="rs-h2">The image is taken here, read here and kept here.</h2>
+
+        <!-- OWNER, carried from copy section 6: whether patient records and images are held in
+             one system shared by all seven offices is not verified in any first-party capture.
+             No cross-office record or image claim ships on this page until the owner confirms
+             it. The heading above is a claim about ONE visit at ONE office, which is what the
+             copy states, and nothing here extends it across the group. -->
+
+        <div class="cc-inhouse">
+
+          <div class="cc-arg">
+            <p class="cc-arg__lead">We are one dental group running seven offices across Las Vegas, North Las Vegas and Henderson, with one clinical roster.</p>
+            <p class="rs-copy">We are not a referral network, and our offices are not separately owned or separately branded. One practice, one clinical roster, one brand and one domain, across seven offices.</p>
+          </div>
+
+          <div class="cc-problem__side">
+
+            <!-- CHROME, decided rather than defaulted: this evidence block carries the keyed
+                 3px signature rule and its padding, and NOT the panel ground the section 2
+                 evidence block carries. Two reasons. The record here is display-scale type and
+                 does not need an edge to be found, and the page had four consecutive sections
+                 of the same hairline-card chrome, which verify-section-visual-rhythm reads as
+                 monotony and which it is. Dropping the card ground on this ONE block is the
+                 variation, and it leaves the third-party keying that actually matters intact. -->
+            <div class="cc-evidence">
+              <p class="cc-proof__record">Birdeye records <span class="cc-fig">4.5</span> stars from <span class="cc-fig">506</span> patient reviews for our Lake Mead office, fetched 30 July 2026.</p>
+            </div>
+
+            <!-- OWNER, carried from copy section 5: confirm whether this figure is practice-wide
+                 or Lake Mead only, and which platform is the system of record. Per
+                 content-bible.md section 6 the scope travels with the number, so it must not be
+                 aggregated or restated as a practice-wide rating. It is rendered here with its
+                 platform, its office and its fetch date attached, and nowhere else on the page. -->
+
+            <!-- IMAGE SLOT, met. Copy section 5 asks for a photograph of the actual imaging
+                 setup in one of our offices, no stock clinic imagery and no manufacturer stock
+                 renders. This is a first-party photograph of our own digital X-ray unit. -->
+            <div class="rs-frame cc-proof__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-80-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="Digital X-ray equipment in one of our offices, a white imaging unit with a hand on its touch screen.">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SECTION-COMPONENTS.md #45 category chips, folded in as the tail of this argument.
+             The foundation kit already ships a 48px pill, which is the only shape on this page
+             that guarantees a real tap target for links this short, and the two lead-in words
+             stay in place from the copy so the rail reads as a sentence that happens to be
+             navigable. -->
+        <div class="cc-rail">
+
+          <div class="cc-rail__grp">
+            <p class="cc-rail__k">Related care:</p>
+            <a class="rs-chip" href="general-dentistry.html">General dentistry</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="dental-exams-cleanings.html">Dental exams and cleanings</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="fluoride-treatment.html">Fluoride treatment</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="sealants.html">Sealants</a>
+          </div>
+
+          <div class="cc-rail__grp">
+            <p class="cc-rail__k">Also:</p>
+            <a class="rs-chip" href="locations.html">all seven offices</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="offer.html">new patient offer</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="contact.html">contact</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: FAQ-ACCORDION.md #2 Plus-icon rounded card | considered: #4,#7 | why: three objections decide whether a comparing reader books, and two of them carry the fine print about price and about network status, so the disclosure has to do real work rather than decorate. #2 makes each question its own tappable object built on the page's existing panel chrome, ships as native details and summary so it opens with no script, survives in-page search, and gives every row a 68px target. The entry offer is stated underneath in the SAME band on purpose: the first answer sends the reader to the offer below, so the offer has to be the next thing they meet, and folding it in here keeps the body to a single closing beat instead of two stacked asks. GROUND: this is the page's second dark anchor and its closing figure and ground inversion, which is where the accent stops being a decorative mark and becomes a genuine foreground on the two prices. #4 Numbered list FAQ is rejected because it expands nothing, so both long fine-print answers would sit open and bury the offer beneath them. #7 Category-grouped is rejected because three questions do not earn categories, and the category headings would have to be written, which this page has no licence to do. -->
+<section class="rs-sec rs-sec--close surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <div class="cc-faq">
+
+          <details class="cc-panel cc-faq__item">
+            <summary class="cc-faq__q">
+              <h2 class="cc-faq__qt">What do X-rays cost?</h2>
+              <span class="cc-faq__ind" aria-hidden="true"></span>
+            </summary>
+            <p class="rs-copy cc-faq__a">For a new patient, the X-ray is part of the entry offer below. Beyond that we quote after an examination, because it depends on how many images are needed. We do not publish treatment prices.</p>
+          </details>
+
+          <!-- OWNER, carried from copy section 8: the answer below names carriers without stating
+               any relationship with them, per client-rules.json OVERCLAIM.global[5], which records
+               the site-wide network claim as unconfirmed. It offers no coverage check made on your
+               behalf, because that activity is undefined and blocked under content-bible.md
+               section 2, per intake-brief.md section G-6. Confirm the per-office network status
+               before this answer ships. -->
+          <details class="cc-panel cc-faq__item">
+            <summary class="cc-faq__q">
+              <h2 class="cc-faq__qt">Does insurance cover them?</h2>
+              <span class="cc-faq__ind" aria-hidden="true"></span>
+            </summary>
+            <p class="rs-copy cc-faq__a">Coverage depends on your plan. Delta Dental, Cigna, MetLife and the Culinary Health Fund are among the <span class="cc-fig">41</span> carriers listed on our insurance and financing page. Network status varies by office and by plan. Contact the office you want with your plan details before you book.</p>
+          </details>
+
+          <details class="cc-panel cc-faq__item">
+            <summary class="cc-faq__q">
+              <h2 class="cc-faq__qt">Does it hurt, and how often do I need one?</h2>
+              <span class="cc-faq__ind" aria-hidden="true"></span>
+            </summary>
+            <p class="rs-copy cc-faq__a">We will not describe it as painless. There is no needle and nothing goes under the gum, though the sensor can feel bulky. How often depends on your history, so we take one when it will change what we do.</p>
+          </details>
+
+        </div>
+
+        <!-- PRICING-SECTIONS.md #5 plain-deal honesty stance, folded into this band rather than
+             given a section of its own. One clear number stated plainly on the shifted ground,
+             centred, with no cards, no media and no table. It is the only place the accent is
+             spent deliberately on this page. -->
+
+        <!-- OWNER PLACEHOLDER, not rendered by design. No expiry, no exclusions and no senior-age
+             threshold is published anywhere on the live site, and none is invented here. One is
+             required before this offer ships. -->
+
+        <div class="cc-offer">
+
+          <p class="cc-offer__deal">The new patient exam and X-ray is <span class="cc-offer__price">$45</span>, or <span class="cc-offer__price">$29</span> for seniors.</p>
+          <span class="cc-offer__rule" aria-hidden="true"></span>
+          <p class="rs-source">Both prices are published on our own site and were current on 30 July 2026.</p>
+
+          <!-- The four lenders are named in TEXT ONLY. Two of the four carry lender terms baked
+               into their mark, so a logo row could not discharge the disclosure obligation. -->
+          <p class="rs-copy cc-offer__terms">Payment plans are available through Care Credit, Cherry, Sunbit and Lending Club. Terms are set by the lender and are subject to credit approval. They are not terms offered by this practice.</p>
+
+          <div class="rs-acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

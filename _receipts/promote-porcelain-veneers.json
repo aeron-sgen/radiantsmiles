@@ -1,0 +1,18 @@
+{
+  "slug": "radiantsmiles",
+  "page": "porcelain-veneers",
+  "concept": "_design/_tournament/templates/T-FEATURE/_bulk/porcelain-veneers",
+  "gates": [
+    {
+      "name": "verify-section-visual-rhythm",
+      "pass": false
+    }
+  ],
+  "failCount": 1,
+  "gateCount": 1,
+  "noGates": false,
+  "filtered": [
+    "section-visual-rhythm"
+  ],
+  "ts": 1787042366702
+}

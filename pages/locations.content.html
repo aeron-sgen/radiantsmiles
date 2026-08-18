@@ -1,0 +1,376 @@
+<!--META {"title":"7 Dental Offices in Las Vegas & Henderson","desc":"Seven Radiant Smiles offices across Las Vegas, North Las Vegas and Henderson. Find addresses, hours and direct phone numbers for each.","darkHero":true}-->
+<!-- ============================================================================
+     PAGE COMPOSITION NOTE - locations, T-HUB, five sections.
+     The copy ships SEVEN numbered blocks and this page renders FIVE sections. The
+     two merges are declared here rather than left to be discovered:
+       - copy section 6, the routing band, is FOLDED INTO section 2 below. Its whole
+         content is seven road names paired with the seven offices, and every one of
+         those roads is already the first line of that office's address in copy
+         section 3. Shipping both prints the same seven streets twice on one page. So
+         section 6's own instruction, "Start from the road you already know.", becomes
+         the heading of the directory, and the directory is ORDERED by the road list.
+       - copy section 5, the cross-link rail, rides at the foot of section 4 rather
+         than taking a section of its own. See that section's ledger for why it must
+         not sit on a dark ground.
+     The copy section 1 anchor strip is NOT rendered as a separate chip row. It
+     enumerates exactly the seven destinations the directory already carries, and the
+     T-HUB template made that deviation once, template-wide, for all ten hub pages.
+     ============================================================================ -->
+
+<!-- pick: HERO-COMPOSITIONS.md #3 Split-screen 50/50 different content blocks | considered: #28,#22,#24 | why: this page is reached by two different readers and they need two different first moves, which is the exact condition #3 is written for. Reader one already knows which office they want and needs the practice to stop talking and let them book, so the left door carries the H1, the one line that says seven addresses are one practice, and the two actions. Reader two knows the neighbourhood they are in and not the office name, and the copy answers that reader with a bolded block of its own, "Not sure which office.", routed to Contact. That block is the page's second offer, and the T-HUB template specifies for this page that it is PROMOTED out of the foot of the directory and into the hero's right door, which is where an undecided reader actually is. Both doors are therefore real content blocks, which is what #3 requires and what a hero with one block beside a photograph is not. The secondary action does not route offsite: this page IS the place every direct number is published, so it scrolls to the directory below, which satisfies the phone policy without inventing a general line. #28 Embedded map or location hero is the obvious rival for a locations hub and is rejected on inventory rather than taste: it is written for a business with ONE address, this practice has seven, and there is no map asset of any kind in assets/, so the slot would have to be filled with a picked favourite office or a fabricated map. #22 Statistics-heavy hero is rejected because the only figures this page owns are a third-party coverage percentage and a single-office review rating, both of which are inseparable from their source and their fetch date, and neither survives being set as a bare oversized numeral. #24 Awards-led hero is rejected outright: no award, ranking or recognition claim exists anywhere in this build, and the badge row would have to be fabricated. GROUND: the page's first non-light anchor is the hero, because the claim that seven addresses are one practice is the whole argument and it should be stated on the deepest ground the page owns. -->
+<section class="rs-sec rs-sec--lead surface-dark hb-band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-fork">
+
+          <div class="hb-fork__ask">
+            <h1 class="rs-h1">Dental Offices in Las Vegas and Henderson</h1>
+            <p class="rs-lede">Seven offices across Las Vegas, North Las Vegas and Henderson. One practice, one clinical team, at every location.</p>
+            <!-- CTA-PATTERNS.md #7 multi-CTA cluster, carried verbatim from section 1 of the
+                 copy. FLAG, carried from copy section 7: the secondary CTA resolves to the
+                 specific office's own number, never a general line, per routeRules.phone_policy.
+                 On every other page that action leaves for this one. Here it cannot, so it
+                 scrolls to the directory below, where all seven numbers are published per
+                 office. -->
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="#loc-offices">Call the office</a>
+            </div>
+          </div>
+
+          <div class="hb-fork__else">
+            <div class="rs-frame hb-fork__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-103-768x1152.jpg"
+                   width="768" height="1152" decoding="async"
+                   alt="Someone stepping out through the glass entrance door of one of our offices.">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+            <!-- THE SECOND DOOR. This is copy section 3's final block, heading and sentence and
+                 route together, MOVED here and not duplicated: the directory below no longer
+                 carries it. The photograph is a smile-gallery interior and its alt says "one of
+                 our offices", never a named one, per imagery-system.md section 4 rule 5. -->
+            <div class="hb-invert hb-fork__panel">
+              <h2 class="hb-fork__t">Not sure which office.</h2>
+              <p class="hb-fork__p">Tell us where you are and we will point you at the nearest one.</p>
+              <a class="hb-fork__go" href="contact.html">Contact</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #51 Locations grid | considered: #53,#52,#45 | why: this section is the page. Everything else on it is an argument for coming in, and this is the part that tells a person where to drive, what to dial and which day they can be seen. #51 is the catalog's only multi-location entry and the only one whose stated tile content is name plus address plus photo, which is precisely the three things copy section 3 supplies for each of the seven. It is realised as the kit's index ROWS rather than as a tile grid, for a reason measured on this template: a row list reads identically at any count, and the ten hub pages that share this kit run from two rows to ten, so a three-up grid that looks composed at six looks like a wall at ten. The DELIBERATE difference from the sibling hub, which built the same kit object with its photograph slot empty, is that this page FILLS all seven, and that is not a preference. imagery-system.md section 2 records one photograph per office for all seven, and its section 4 rule 4 says each of those files belongs to the office it depicts and may only appear in a context that names it. This page is the one context on the whole site that names all seven, so it is the page those files exist for, and every alt below names its office. The head above the rows is copy section 6's own instruction, and the row ORDER is copy section 6's road order, so the routing band is discharged here instead of reprinting seven street names a second time further down. #53 Hours table is the closest rival, because hours are the one thing a person checks before driving, and it is rejected on evidence: three of the seven offices carry unresolved hour rows in the locked contact data, and a seven-by-seven grid would have to publish blanks or fill them. Each row instead carries the ONE hours sentence its copy actually supports. #52 Map embed is rejected for the same reason the hero rejected #28: no map asset exists in this build. #45 Category chips is rejected because a chip holds a name and nothing else, and a name without its address, its number and its hours is not a location, it is a label. GROUND: the plain canvas. This is the densest block on the page and it sits between two dark anchors, so it takes the lightest ground the build owns. -->
+<!-- FLAG, carried from copy section 3: every block below routes to a page that exists in
+     sitemap.yaml. No block ships without a live destination. All seven office slugs and
+     contact are declared there under parent: locations.
+     FLAG, carried from copy section 6: this router is derived only from the street names in
+     client-rules.json contactData. No neighbourhood or catchment area is invented for it.
+     FLAG, carried from copy section 3: no blanket weekend or late-evening claim ships on this
+     site. Three offices publish Saturday hours and one is Saturday by appointment. Two publish
+     Sunday hours, four are closed Sunday, and one does not publish a Sunday row. Each row below
+     states only its own office's case, and no sentence generalises across the seven.
+     OWNER, carried from copy section 3: the Sunrise Manor ZIP conflicts on the live site. 89107
+     is carried here from client-rules.json contactData, pending confirmation against 89104 in
+     the booking block. NAP consistency depends on resolving it.
+     OWNER, carried from copy section 3: Blue Diamond publishes no Tuesday, Friday or Sunday
+     hours anywhere on the live site. Those three rows ship blank until you supply them. No hours
+     grid is rendered here, so nothing is guessed to fill them.
+     OWNER, carried from copy section 3: North Decatur's seven published hour rows are byte
+     identical to Lone Mountain's. Confirm they are genuinely this office's before any hours
+     table ships. This page publishes no hours table for that reason.
+     NOTE on the two reception photographs, recorded rather than papered over: the Sunrise Manor
+     and North Las Vegas files show a visually similar front desk. The office attribution is
+     imagery-system.md section 2's page-by-page trace of the captured site, not an independent
+     identification made here.
+     NOTE on the phone numbers: each row is ONE link to that office's page, so a nested dialable
+     anchor is not possible inside it. Every number is published in full beside its own office,
+     which is what routeRules.phone_policy asks for, and the locked chrome carries the dialable
+     tel link for all seven. -->
+<section class="rs-sec" id="loc-offices">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-where">
+
+          <div class="hb-where__head">
+            <h2 class="rs-h2">Start from the road you already know.</h2>
+          </div>
+
+          <ul class="hb-field">
+
+            <li>
+              <a class="hb-route" href="lone-mountain.html">
+                <span class="rs-frame hb-route__shot">
+                  <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-lone-mountain-e1713902629576-768x489.png"
+                       width="768" height="489" loading="lazy" decoding="async"
+                       alt="The front of the building that houses our Lone Mountain office, with the street number on the wall.">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </span>
+                <span class="hb-route__body">
+                  <h2 class="hb-route__t">Lone Mountain.</h2>
+                  <p class="hb-route__p">7469 W. Lake Mead Blvd., Suite 270, Las Vegas 89128. Phone (702) 289-4424.</p>
+                  <p class="hb-route__p">One of two offices publishing Sunday hours.</p>
+                </span>
+                <span class="hb-route__lead" aria-hidden="true"></span>
+                <span class="hb-route__go" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hb-route" href="sunrise-manor.html">
+                <span class="rs-frame hb-route__shot">
+                  <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-768x512.jpg"
+                       width="768" height="512" loading="lazy" decoding="async"
+                       alt="The reception desk at our Sunrise Manor office, under the practice sign.">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </span>
+                <span class="hb-route__body">
+                  <h2 class="hb-route__t">Sunrise Manor.</h2>
+                  <p class="hb-route__p">1825 S. Nellis Blvd., Las Vegas 89107. Phone (702) 452-3552.</p>
+                  <p class="hb-route__p">Later start and a 7 PM finish on Tuesday and Thursday.</p>
+                </span>
+                <span class="hb-route__lead" aria-hidden="true"></span>
+                <span class="hb-route__go" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hb-route" href="summerlin.html">
+                <span class="rs-frame hb-route__shot">
+                  <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-summerlin-e1713903157892-768x509.png"
+                       width="768" height="509" loading="lazy" decoding="async"
+                       alt="The entrance to our Summerlin office, under the practice sign on the storefront.">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </span>
+                <span class="hb-route__body">
+                  <h2 class="hb-route__t">Summerlin.</h2>
+                  <p class="hb-route__p">8961 W. Sahara Ave., Suite 108, Las Vegas 89117. Phone (702) 360-4800.</p>
+                  <p class="hb-route__p">Open Saturday, and open to 7 PM on Wednesday.</p>
+                </span>
+                <span class="hb-route__lead" aria-hidden="true"></span>
+                <span class="hb-route__go" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hb-route" href="north-las-vegas.html">
+                <span class="rs-frame hb-route__shot">
+                  <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-24-2-768x1152.jpg"
+                       width="768" height="1152" loading="lazy" decoding="async"
+                       alt="Someone at the front counter of our North Las Vegas office, speaking with the person behind the desk.">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </span>
+                <span class="hb-route__body">
+                  <h2 class="hb-route__t">North Las Vegas.</h2>
+                  <p class="hb-route__p">5195 Camino Al Norte Rd., North Las Vegas 89031. Phone (702) 509-1967.</p>
+                  <p class="hb-route__p">Open Saturday, with 7 PM finishes midweek.</p>
+                </span>
+                <span class="hb-route__lead" aria-hidden="true"></span>
+                <span class="hb-route__go" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hb-route" href="henderson.html">
+                <span class="rs-frame hb-route__shot">
+                  <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-12-1-scaled-e1737569347672-768x1028.jpg"
+                       width="768" height="1028" loading="lazy" decoding="async"
+                       alt="Someone standing in front of the reception counter at our Henderson office.">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </span>
+                <span class="hb-route__body">
+                  <h2 class="hb-route__t">Henderson.</h2>
+                  <p class="hb-route__p">2633 W. Horizon Ridge Pkwy., Suite 130, Henderson 89052. Phone (702) 897-7001.</p>
+                  <p class="hb-route__p">The Henderson office, open Saturday and until 7 PM on Tuesday and Thursday.</p>
+                </span>
+                <span class="hb-route__lead" aria-hidden="true"></span>
+                <span class="hb-route__go" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hb-route" href="north-decatur.html">
+                <span class="rs-frame hb-route__shot">
+                  <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Decatur-Photo.png"
+                       width="380" height="506" loading="lazy" decoding="async"
+                       alt="A treatment room at our North Decatur office, with the chair and the overhead light in position.">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </span>
+                <span class="hb-route__body">
+                  <h2 class="hb-route__t">North Decatur.</h2>
+                  <p class="hb-route__p">6311 N. Decatur Blvd., Suite 140, Las Vegas 89130. Phone (702) 522-0119.</p>
+                  <p class="hb-route__p">Books online from its own page, and publishes Sunday hours.</p>
+                </span>
+                <span class="hb-route__lead" aria-hidden="true"></span>
+                <span class="hb-route__go" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hb-route" href="blue-diamond.html">
+                <span class="rs-frame hb-route__shot">
+                  <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Blue-Diamond-Front-Desk-768x512.jpg"
+                       width="768" height="512" loading="lazy" decoding="async"
+                       alt="The front desk at our Blue Diamond office, under the practice sign.">
+                  <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+                </span>
+                <span class="hb-route__body">
+                  <h2 class="hb-route__t">Blue Diamond.</h2>
+                  <p class="hb-route__p">5095 S. Blue Diamond Rd., Suite 105, Las Vegas 89139. Phone (702) 331-0010.</p>
+                  <p class="hb-route__p">Saturday here is by appointment only.</p>
+                </span>
+                <span class="hb-route__lead" aria-hidden="true"></span>
+                <span class="hb-route__go" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: # 15,#8,#26 | why: the reader has just been handed seven addresses, and seven addresses is the exact fact that makes a practice look like a chain of separate businesses, so the objection this section answers is one the directory above CREATED. #7 is the catalog's name-the-status-quo entry, and its problem-cards variant is the only shape that holds this passage without distorting it: the copy is two arrangements and one consequence, so it is set as two statement cells with the consequence spanning under them, rather than as a running column that would flatten a comparison into an assertion. The treatment does the comparing the words are forbidden to do, since no competitor may be named: the separately-owned arrangement is flat, unlifted and hairline only, ours takes the card ground, the elevation and the keyed top rule. Neither cell is labelled, because a label would have to be written and because naming a "them" column would turn the copy's conditional, "can mean", into an accusation. The photograph beside the pair is a check-in counter that looks nothing like the two receptions above it, which is the section's argument in one frame: different rooms, same practice. GROUND: this is the page's middle anchor and the second of its three non-light beats. It earns the deep ground over any other candidate because it is the only section on the page carrying a claim rather than a fact, and a claim shown against the same tone as the offices it describes would read as a caption on the directory instead of an answer to it. # 15 Comparison table is the strongest rival and is rejected on what it would force: a table needs column headers, headers need names, and the only honest name for the left column is a competitor, which competitorFraming forbids outright. #8 Manifesto is rejected because a manifesto states a belief and this passage states an ownership arrangement, and belief register on a page whose job is addresses and phone numbers is the substitution this build exists to remove. #26 Pull-quote is rejected on a specific hazard: two of these three paragraphs describe a model this practice does NOT use, and setting them in the page's own voice would attribute someone else's arrangement to this practice as a creed. -->
+<section class="rs-sec surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-why">
+
+          <div class="rs-frame hb-why__media">
+            <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-92-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="Someone standing at the check in counter at one of our offices.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+          <div class="hb-why__args">
+            <p class="hb-why__was">Seven addresses can mean seven separate businesses. In that model each office is separately owned, with its own front desk and its own answer.</p>
+            <p class="hb-why__is">Ours is one practice. The same clinical team works across all seven, so the practice you booked with does not change when the address does.</p>
+            <p class="hb-why__cost">That matters when the office nearest your home keeps different days from the office nearest your work. You can pick by what suits the week.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #3 Stat strip / metric band | considered: #24,#5,#33 | why: the page has argued that seven addresses are one practice, and this is where it says what the seven are FOR, which it does with the only two third-party numbers this build owns. #3 is the quantified-credibility entry and it is the right role: a coverage percentage from a named institute and a rating counted across a stated number of reviews are exactly the evidence a reader weighs against the effort of driving somewhere. DEVIATION, declared and load bearing: #3's row of three to five oversized numerals is NOT built. Every figure here is inseparable from its attribution, its scope and its 30 July 2026 fetch date, and a numeral lifted out of its sentence into a stat tile leaves all three behind, which content-bible.md section 6 forbids. So the percentage is promoted typographically INSIDE its own sentence, and the remaining figures take one whole sentence per row, never a fragment. The rating keeps its platform and stays scoped to the one office it belongs to. THE RAIL AT THE FOOT: the copy's cross-link rail rides here rather than taking a section of its own, and its placement was decided by a measured hazard rather than by taste. This build's structural sheet records a rail authored for a light ground rendering at 1.40:1 once its section flipped to dark, with all 52 gates green, because contrast is not in that battery. The two grounds still available to this page are both dark, so the rail ships on the last light ground instead. It also belongs here on content: this is the last argument before the ask, so a reader who wants a different part of the site should be released at the point the arguing stops, not in the middle of the directory that is this page's whole reason to exist. #24 Testimonials grid is rejected because this site publishes no testimonial text at all, only an aggregate rating, so every card would need a quote that would have to be written. #5 Awards band is rejected because a review average is not an award and no awarding body exists to name. #33 Custom-quote driver is rejected because it drives to a price conversation, and no treatment price is published anywhere on this site. -->
+<!-- OWNER, carried from copy section 4: supply the practice wide figure and nominate the platform
+     of record, or this rating stays scoped to one office. Per content-bible.md section 6 the scope
+     is never dropped and figures are never aggregated across offices. The rating below is
+     therefore rendered with its office named in the same sentence. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-cost">
+
+          <div class="hb-cost__copy">
+            <p class="hb-cost__lead">Distance is one reason people put off a visit. Cost is another.</p>
+            <p class="rs-copy">The ADA Health Policy Institute, fetched 30 July 2026, puts adults aged 65 and older with no dental benefits at <span class="hb-fig">55%</span>. The same source finds that dental visits track coverage directly.</p>
+            <ul class="hb-rules">
+              <li>Travel is the part of that we can do something about, which is what seven addresses are for.</li>
+              <li>Our Lake Mead office is rated 4.5 stars across 506 patient reviews on Birdeye, fetched 30 July 2026.</li>
+              <li>That figure is for the Lake Mead office only.</li>
+            </ul>
+          </div>
+
+          <div class="rs-frame hb-cost__media">
+            <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-109-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="Someone seated on the bench in the waiting area at one of our offices, holding a clipboard.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+        </div>
+
+        <!-- The cross-link rail, copy section 5. SECTION-COMPONENTS.md #50's grouped-column shape
+             is what is borrowed for it, because the copy supplies both group names and both
+             memberships and the whole point of the rail is that the two groups are not the same
+             kind of destination. #50's per-topic article cards are not built: these are seven
+             internal pages, not articles, so each row is a link with a rule rather than a card. -->
+        <div class="hb-more">
+
+          <div class="hb-more__grp">
+            <p class="hb-more__k">Other hubs:</p>
+            <a class="hb-more__l" href="services.html">All services</a>
+            <a class="hb-more__l" href="team.html">Meet our dentists</a>
+            <a class="hb-more__l" href="new-patients.html">New patients</a>
+            <a class="hb-more__l" href="about.html">About the practice</a>
+          </div>
+
+          <div class="hb-more__grp">
+            <p class="hb-more__k">Also:</p>
+            <a class="hb-more__l" href="offer.html">the new patient offer</a>
+            <a class="hb-more__l" href="insurance-financing.html">insurance and financing</a>
+            <a class="hb-more__l" href="contact.html">contact</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #41 Closing CTA (final action) | considered: #40,#50,#37 | why: the page ends on one instruction and the two actions that carry it out, with nothing else in the band to look at. #41 is the entry whose stated role is exactly the last thing before the footer, and its restraint is what suits this page: every beat above it added addresses, hours and numbers, so the closing beat is the narrowest object on the page, one centred sentence on the deepest ground with the two buttons under it. The sentence is the copy's own closing line and it names both actions in the order the buttons appear, so the band reads as one instruction and not as a heading with buttons bolted underneath. This is the ONLY dedicated closing conversion band in the body: the locked chrome carries no pre-footer band of its own, so the single site-wide closing ask lives here and nowhere else. #40 Pre-footer CTA band is rejected because each of its variants adds furniture, a large claim, an image or a form, and every one of those would need copy this page does not have. #50 Topic columns is rejected as the closer for a plain ordering reason: it is already spent at the foot of the section above, and repeating it here would end the page on a list of ways to leave rather than on the ask. #37 CTA form split is rejected because it would put an intake form on a hub, which is a second and different conversion mechanism from the booking route the rest of the site uses, and because this practice's real intake lives on the contact page. -->
+<!-- OWNER, carried from copy section 7: North Decatur books online from its own page but is
+     absent from the site wide office selector. Confirm whether it should be added there.
+     FLAG, carried from copy section 7: the secondary CTA resolves to the specific office's own
+     number, never a general line, per routeRules.phone_policy. It returns to the directory
+     above, which publishes all seven direct numbers, one per office. -->
+<section class="rs-sec rs-sec--close surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="hb-book">
+
+          <p class="hb-book__line">Book at whichever office suits your week, or call that office directly and ask.</p>
+
+          <div class="rs-acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="#loc-offices">Call the office</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

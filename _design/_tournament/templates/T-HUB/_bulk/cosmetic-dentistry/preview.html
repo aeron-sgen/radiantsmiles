@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>cosmetic-dentistry</title>
-<meta name="description" content="Tournament preview. Not a shipped page.">
+<meta name="description" content="Bulk composition preview. Not a shipped page.">
 <meta name="robots" content="noindex,nofollow">
 <!-- FAVICON: brand-neutral default so every build satisfies the publish launch-floor (P-Q). Each site
-     ships its own assets/favicon.svg; pages emit from pages/ so the ref is ../../../../../assets/ (rewritten to
+     ships its own assets/favicon.svg; pages emit from pages/ so the ref is ../../../../../../assets/ (rewritten to
      assets/ at publish). derive-shell preserves this line verbatim as part of the tokenized head. -->
-<link rel="icon" type="image/svg+xml" href="../../../../../assets/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="../../../../../../assets/favicon.svg">
 <!-- FONTS: hardcoded in the head (SSOT model — the chrome head carries NO font TOKEN; only the head
      slots TITLE/META_DESC/NOINDEX/DESIGN_CSS_LINKS/SIGNATURE_LINKS + CONTENT are dynamic; see the
      derive-shell ALLOWED set). A per-site shell (the locked _build/_template.html from the CHROME
@@ -19,9 +19,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../../../../radiantsmiles-tokens.css">
-<link rel="stylesheet" href="../../../../radiantsmiles-structural.css">
-<link rel="stylesheet" href="../../../../radiantsmiles-chrome.css">
+<link rel="stylesheet" href="../../../../../radiantsmiles-tokens.css">
+<link rel="stylesheet" href="../../../../../radiantsmiles-structural.css">
+<link rel="stylesheet" href="../../../../../radiantsmiles-chrome.css">
 
 </head>
 <body>
@@ -161,7 +161,7 @@
                 <div class="feat">
                   <p class="eyebrow">Our practice</p>
                   <div class="feat__frame">
-                    <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-2048x1365.jpg"
+                    <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-2048x1365.jpg"
                          alt="A treatment room at a Radiant Smiles office, chair and operatory light ready for a patient."
                          width="2048" height="1365" loading="eager" decoding="sync">
                     <span class="grade grade--multiply" aria-hidden="true"></span>
@@ -273,7 +273,7 @@
                 <div class="feat">
                   <p class="eyebrow">Our practice</p>
                   <div class="feat__frame">
-                    <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Blue-Diamond-Front-Desk-2048x1365.jpg"
+                    <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Blue-Diamond-Front-Desk-2048x1365.jpg"
                          alt="The front desk at the Radiant Smiles Blue Diamond office."
                          width="2048" height="1365" loading="eager" decoding="sync">
                     <span class="grade grade--multiply" aria-hidden="true"></span>
@@ -329,7 +329,7 @@
             <div>
               <p class="eyebrow">Our dentists</p>
               <div class="drop-feat__frame">
-                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Dentists-scaled.jpg"
+                <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Dentists-scaled.jpg"
                      alt="The Radiant Smiles dentists photographed together."
                      width="1707" height="2560" loading="eager" decoding="sync">
                 <span class="grade grade--multiply" aria-hidden="true"></span>
@@ -352,157 +352,106 @@
      transition is demonstrable and the footer sits below a real fold.
      ============================================================================ -->
 <main id="main">
-<!-- ============================================================================
-     T-HUB CONCEPT B, VARIANT: cosmetic-dentistry.
+<!--META {"title":"Cosmetic Dentistry in Las Vegas | Radiant Smiles","desc":"Porcelain veneers and teeth whitening from a practice that also handles the restorative work behind a cosmetic result.","darkHero":true}-->
+<!-- COMPOSITION NOTE for this page, recorded once at the head rather than repeated in
+     every ledger below. This hub routes to TWO leaves, the same count as the surgical
+     hub, and the seven copy beats are composed into SIX body sections. What makes the
+     composition this page's own is not the count, it is WHERE the argument sits.
+       . THE ARGUMENT IS HOISTED INTO THE HERO, and that is this page's one merge.
+         Copy section 2 opens "A cosmetic result rests on the tooth beneath it", which
+         is not a reason to stay after choosing, it is the reason the two doors are
+         worth opening at all. Every sibling hub argues its in house case AFTER the
+         routes, because on those pages the argument is about who finishes the work.
+         Here it is about what has to happen BEFORE any of it, so it is stated at the
+         top and the doors follow from it. Copy sections 1 and 2 are therefore one
+         section, and the page opens on a comparison rather than on an offer.
+       . THE RAIL IS PROMOTED, and that is the second thing this page does its own
+         way. It runs at position 3, directly under the doors and BEFORE the evidence
+         band, because on a hub with only two doors the reader who matched neither is
+         not an edge case, and carrying them through a coverage statistic written for
+         somebody who stayed is the wrong order. It still keeps a SECTION of its own
+         rather than being folded under the routes, and it takes the band ground to
+         say so: it closes the routing half of the page, and the argument half starts
+         after it.
+       . The rest of the order is the copy's own: evidence, the seven addresses, the
+         close.
+       . The anchor strip is NOT rendered as its own object. Copy section 1's strip
+         names "Porcelain veneers" and "Teeth whitening", which is exactly the pair
+         copy section 3 ships as routing blocks, so rendering both would print one
+         list twice. The two rows in section 2 ARE the strip, and both link to a page
+         that exists in sitemap.yaml.
+       . Ground plan: dark, light, band, dark, light, dark. Three surface-dark anchors
+         plus one band, longest light run one, real photography on three of the six.
+       . PHOTOGRAPHY. All four frames are files no other page in this build uses, and
+         each was opened and looked at before its alt was written. None is an office
+         own file, so none is spent out of the office it belongs to, per
+         imagery-system.md section 4 rule 4. All four come from the smile gallery pool,
+         which carries no office attribution in the source, so each is described as one
+         of our offices and never as a named office, per rule 5.
+     -->
 
-     This is NOT a fourth concept. It is concept B's own template rendered against
-     the page that stresses it hardest, built to answer one question: does the
-     shape hold on a T-HUB page that has NO second offer in its section 3 and only
-     TWO sub-area rows, when the exemplar was composed against services, which has
-     both.
-
-     WHAT IS IDENTICAL TO concept-b.content.html: every class is the same hb-* class,
-     the seven top-level sections are in the same order carrying the same seven picks,
-     and no rule, breakpoint or token is added, removed or changed.
-     *Reworded 2026-08-17. This used to open "the entire style block above is byte
-     identical". There is no style block above any more: at the T-HUB promote it moved,
-     byte identical, into radiantsmiles-structural.css section 8, exactly as concept C's
-     did into section 7. All six T-HUB fragments now inherit those rules from the linked
-     sheet, so they share them BY CONSTRUCTION rather than by duplication, which is a
-     stronger guarantee than the one this sentence used to make.*
-
-     WHAT DIFFERS, and only this:
-       1. the copy, which is this page's own locked copy;
-       2. the hero's second door, which takes the fallback case the exemplar
-          specifies but cannot render, because this page carries no escape block;
-       3. the field, which renders two rows instead of six;
-       4. the why-band's spanning paragraph, which sits ABOVE the pair rather than
-          below it, because this page's unpaired paragraph is a premise and not a
-          consequence. No CSS changes: the cell is already grid-column 1 / -1 and
-          auto-placement puts it in whichever row its DOM position asks for.
-
-     THREE THINGS THIS VARIANT FOUND that belong back in concept-b.content.html,
-     recorded here so the two files do not drift silently. Each is stated again in
-     the ledger of the section it belongs to:
-       A. the section 3 ledger's row-count range, "four on new patients to eleven
-          on the clinician roster", is wrong at BOTH ends. Counted from the copy of
-          all ten pages, the rendered field runs from TWO, here and on oral surgery,
-          to TEN on the clinician roster, because on the five pages that carry an
-          escape block that block is MOVED into the hero and the field renders one
-          fewer than the copy lists.
-       B. the why-band's spanning slot must be described as the page's single
-          unpaired paragraph placed where the copy puts it, not as "the consequence"
-          fixed underneath the pair.
-       C. the section 6 ledger's px measurements are the services page's and are
-          not true of any other page. They need naming as such, or re-measuring per
-          page. The numbers in this file's section 6 ledger were measured on THIS
-          page, from a prototype I built rather than estimated.
-       D. the section 6 ledger's "fourth cost" counts ONE office photograph spent as
-          unnamed scenery, the hero's North Las Vegas file. There are two: the
-          why-band spends the Sunrise Manor file the same way. Both are correctly
-          described as one of our offices rather than named, so neither is a defect,
-          but the count in that ledger is wrong.
-
-     AND ONE CORRECTION TO THE PRIOR AGENT'S REPORT, which I reproduced rather than
-     took on trust. They wrote that the 375px text overlap "involves the element the
-     fallback removes, so that specific pair does not occur on the five fallback
-     pages". It does still occur. Removing p.hb-fork__p does not clear the chrome's
-     sticky CTA bar, it just moves the collision down to the next element: measured
-     on this page, a.hb-fork__go "All seven offices" overlaps the sticky bar at 375px.
-     The overlap is smaller than the exemplar's, 36 percent of the smaller element
-     against 84, but verify-no-text-overlap still exits 2. The fallback does not fix
-     it and was never going to.
-
-     *** THE PARAGRAPH ABOVE IS WRONG. Left standing rather than deleted, because it
-     is the reasoning that has to be corrected, not just the conclusion. Re-measured
-     2026-08-17 at 375x812 by sweeping scroll 0 to 900 in 25px steps and recording,
-     at every step, both rects AND whether #cta-bar carried .is-revealed:
-
-       scroll 0..75    rects INTERSECT, but the bar is NOT revealed. It is parked at
-                       826..903 by transform translateY(90.86px), entirely below an
-                       812px viewport. Nothing is painted, so nothing overlaps.
-       scroll 100..500 no intersection. go has climbed above the parked band.
-       scroll 550+     the bar reveals and pins at 735..812; by then go is at
-                       290..338 and climbing. No intersection.
-
-     THERE IS NO SCROLL POSITION AT WHICH BOTH ARE VISIBLE AND THEIR RECTS INTERSECT.
-     verify-no-text-overlap exits 0 on this page and it is RIGHT to.
-
-     What the earlier measurement almost certainly did is read the rect intersection
-     at scroll 0 without checking that the bar was parked off-viewport, which is the
-     precise confusion that gate's parked-fixed-bar exemption exists to resolve, and
-     which its own smoke suite pins as parked-fixed-bar PASS versus revealed-fixed-bar
-     FAIL. That is an inference about how the number was produced, not a fact: the
-     original run was not reproduced and the cause is UNDETERMINED.
-
-     A rect intersection is not an overlap. The bar's visibility state is part of the
-     measurement, and any future claim about this pair has to report it. Separately
-     confirmed while checking this: the sticky bar is NOT dead. It parks at load,
-     reveals from scroll ~550, and hides again over the closing CTA, which is
-     observer #2 doing its job. An earlier scroll-to-bottom test of mine read that
-     final hidden state as "never reveals" and was wrong for the same class of
-     reason. ***
-     ============================================================================ -->
-
-<!-- pick: HERO-COMPOSITIONS.md #3 Split-screen 50/50 different content blocks | considered: #9,#23,#28 | why: this is the T-HUB hero on the page it was never tested against, and the whole point of rendering it here is that #3 demands a real content block on BOTH sides while this page supplies only one. The left door is unchanged in kind: the H1, the page's own opening promise, and the two actions. The right door is the FALLBACK the template specifies, and this page is the first place it is actually built. It is needed because this page has no second offer of its own: I counted the routing markers in section 3 of all ten T-HUB copy files, and cosmetic-dentistry ends its section 3 with two sub-area blocks and nothing after them, against one bolded block routed to Contact on services, locations, team, new-patients and general-dentistry. Without the fallback this hero ships either an empty panel over a photograph or no panel at all, and one content block beside a photograph is not #3 any more, it is the hero menu's first entry, split text left plus photo right, the single entry in that menu carrying an explicit overused warning. WHERE THE FALLBACK COPY COMES FROM, since none of it may be written: the heading is this page's OWN section 6 routing offer, carried verbatim. I hashed the section 6 body of all ten pages rather than trusting that they match. They do not all match: there are five distinct texts, and locations, team, new-patients and general-dentistry each carry their own. What is true and sufficient is narrower and it holds here, which is that cosmetic-dentistry's section 6 body is byte identical to the services exemplar's, so this page is quoting ITSELF and importing nothing from a sibling. The link label is the locked chrome's own label for locations.html, which appears in the header mega panel foot and again in the footer accordion, because section 6 ships no routing marker for a label to be taken from. The panel drops its sentence deliberately: section 6's remaining line introduces a list with a colon, and the hero has no list for that colon to point at, so two real elements ship rather than three with one invented. PREVIEW, NOT REPETITION, and checked rather than assumed: the phrase "office nearest you" occurs on this page in section 6 ONLY, so the hero door makes it two sections and the repetition gate passes, where on services the same phrase is in section 6 AND the section 7 closing line and a hero door would have made three. That is not luck about this page, it is the same property that gives this page no escape block. ONE COST DECLARED rather than buried: the fallback door and the left door's secondary action both resolve to locations.html, because the phone policy publishes every number per office and forbids a general line. The two doors remain different reader states, one a call and one a geographic route, and the exemplar already ships contact.html on both its primary action and its second door, so a shared destination is this hero's normal behaviour and not something the fallback introduced. #9 Cinematic letterbox is rejected on fit: it spends half a viewport on one line of display type, which is a hero for a page stating a position, and this page opens by telling the reader to start from what they see in the mirror, which is a question and a second door. #23 Comparison hero is rejected because the only oppositional material this page owns is the separately branded studio passage, and that is the argument for staying once you have chosen; spending it here would answer a question the reader has not asked and leave the why-band with nothing to say. #28 Embedded map hero is rejected because it is written for a single-location business, this practice has seven addresses, and no map asset exists in this build. HERO-COMPOSITIONS.md #2 is not in play: no portrait, no mirrored split, and the media is the scene attached to the second door rather than the subject. GROUND: the page's first non-light anchor, deliberately the hero, because the fork IS the concept and a fork stated on the deepest ground cannot be mistaken for a masthead. -->
+<!-- pick: HERO-COMPOSITIONS.md #23 Comparison hero (before/after, us/them) | considered: #3,# 10,# 1 | why: this page's own opening sentence is a comparison, so the hero is the honest place for it. The sub line reads "handled by the same team that treats what sits underneath it", and the only way that sentence carries any weight is if the reader can see the arrangement it is being set against, which copy section 2 supplies in the next breath: a separately branded studio doing the visible part while another practice treats the rest. #23 is the catalogue's only hero built as two columns under one headline, which is exactly that shape, and putting it first solves a problem the sibling hubs do not have. On a hub about surgery or restorations the in house argument answers "who finishes this", and it belongs after the reader has chosen a door. On a cosmetic hub it answers "why is a cosmetic page asking about the tooth underneath", and a reader who has not been told that reads the two doors as a menu of finishes. So the argument is hoisted, and the doors follow from it rather than the other way round. The treatment does the comparing that the words are forbidden to do: no column carries a label, because a label would have to be written and because naming a "them" column would break the conditional framing copy section 2 is built on, so the split arrangement is flat, unlifted and hairline only, and ours takes the card ground, the elevation and the keyed top rule. The premise sentence sits ABOVE both cells with the headline, not below them, because it is the condition the whole page rests on and a reader who meets it after the comparison has already read the comparison without it. #3 Split-screen 50/50 is rejected on evidence rather than taste: it needs a real and DIFFERENT offer on both sides, and the only second offer this page owns is its anchor strip, which is a restatement of section 2 rather than a different offer, so the right hand door would be section 2 announced early. # 10 Centered headline only is rejected because a type only opener would have to spend the whole band on one sentence and then start the argument again underneath it, which is the shape this composition exists to avoid. # 1 Split text plus photo carries the menu's explicit overused warning, and it would also give the photograph the whole right hand column at the one moment the right hand column has two statements to hold. GROUND: the page's first non light anchor. The comparison is the deepest claim on the page and it sits on the deepest ground, and the close answers it later from the same ground. -->
 <section class="rs-sec rs-sec--lead surface-dark hb-band">
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="hb-fork">
 
-          <div class="hb-fork__ask">
-            <h1 class="rs-h1">Cosmetic Dentistry in Las Vegas</h1>
-            <p class="rs-lede">Work on how your smile looks, handled by the same team that treats what sits underneath it. Start with what you see in the mirror.</p>
-            <!-- CTA-PATTERNS.md #7 multi-CTA cluster, carried verbatim from section 1 of the
-                 copy. The secondary action routes to the offices page because the phone policy
-                 forbids a general line: every direct number is published there, per office. -->
-            <div class="rs-acts">
-              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
-              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
-            </div>
+        <h1 class="rs-h1">Cosmetic Dentistry in Las Vegas</h1>
+        <p class="rs-lede">Work on how your smile looks, handled by the same team that treats what sits underneath it. Start with what you see in the mirror.</p>
+        <p class="rs-copy">A cosmetic result rests on the tooth beneath it. Shade, shape and spacing all depend on what the exam finds first.</p>
+
+        <!-- CTA-PATTERNS.md #7 multi-CTA cluster, carried verbatim from section 1 of the
+             copy. The secondary action routes to the offices page rather than to a
+             number, because routeRules.phone_policy publishes every direct line per
+             office and forbids a generic one, and a hub cannot know which of the seven
+             offices the reader would visit. -->
+        <div class="rs-acts">
+          <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+          <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+        </div>
+
+        <!-- The heading block above is HOISTED out of the pair below rather than set
+             inside its left hand cell. Below 1024px the pair collapses to one column in
+             DOM order, so a photograph placed above the h1 would render before the
+             heading it belongs to. Hoisting keeps the reading order h1, sub, premise,
+             actions, photograph at every width, and leaves the desktop columns as the
+             pattern asks for them. -->
+        <div class="hb-why">
+
+          <div class="rs-frame hb-why__media">
+            <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-103-768x1152.jpg"
+                 width="768" height="1152" decoding="async" fetchpriority="high"
+                 alt="Someone stepping in through the glass entrance door of one of our offices, with palm trees reflected in the glazing.">
+            <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+            <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
           </div>
 
-          <div class="hb-fork__else">
-            <div class="rs-frame hb-fork__frame">
-              <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-24-2-768x1152.jpg"
-                   width="768" height="1152" decoding="async"
-                   alt="Someone standing at the front counter of one of our offices, speaking with the person behind the desk.">
-              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
-              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
-            </div>
-            <!-- THE SECOND DOOR, CASE B, built. concept-b.content.html specifies this panel in a
-                 comment and renders CASE A, the escape block, because its exemplar page has one.
-                 This page does not, so the panel below is the fallback, and this is the first time
-                 it exists as markup rather than as a specification. It is the literal replacement
-                 the exemplar names, unchanged: the page's own section 6 heading, and the locked
-                 chrome's own label for locations.html. Nothing else in the hero differs from the
-                 exemplar's, which is the claim this whole variant exists to test. -->
-            <div class="hb-invert hb-fork__panel">
-              <h2 class="hb-fork__t">Find the office nearest you.</h2>
-              <a class="hb-fork__go" href="locations.html">All seven offices</a>
-            </div>
+          <div class="hb-why__args">
+            <p class="hb-why__was">Where cosmetic work is split out, a separately branded studio does the visible part and another practice treats the rest.</p>
+            <p class="hb-why__is">We do both in house, at our own offices, with named clinicians. One roster covers both, so the person planning veneers works in the same practice as the rest.</p>
           </div>
 
         </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- pick: SECTION-COMPONENTS.md #6 "Is this for me" qualifier | considered: #9,#27,#45 | why: the beat the concept is built around, and its job is not to display an area of care but to let a reader ELIMINATE the one that is not theirs. #6 is the only entry in the catalog whose stated role is self-selection rather than display, and its inline question-and-answer variant is what a person scanning for their own problem uses: one route per row, read top to bottom, each row carrying the plain-language line that says whether to stop here. This page is the reason it is built as ROWS and not tiles, and it is also where the exemplar's own justification needs correcting. The exemplar states the row counts as running "from four on new patients to eleven on the clinician roster". I counted the routing markers in section 3 of all ten copy files: services 7, locations 8, team 11, new-patients 4, general-dentistry 5, cosmetic-dentistry 2, restorations 8, oral-surgery 2, periodontics 9, orthodontics 3. On the five pages that carry an escape block, this template MOVES that block into the hero, so the field renders one fewer than the copy lists. The true RENDERED range is therefore TWO, here and on oral surgery, to TEN on the clinician roster, and the exemplar's stated range is wrong at both ends. That correction belongs back in concept-b.content.html. The argument it was supporting does not just survive the correction, it gets stronger: a three-up tile grid at eleven is a wall, at four it is a mistake, and at TWO it is a broken grid with a visible hole where the third column should be, while a row list at two is simply a short list that reads exactly like the long ones. Rank is carried by ORDER alone, and the order is the copy's, so neither area is scaled larger than the other. #9 Services 3-col is rejected because a row of equal columns is the shop window this concept avoids, and at two entries it would also leave a third of the band empty. #27 Numbered process steps is rejected on honesty: numbering veneers and whitening would assert a sequence of treatment that does not exist, since a reader arrives at exactly one of them. #45 Category chips is rejected because a chip has room for a name and nothing else, and the line under each name is the part that does the eliminating. DEVIATION, deliberate and template-wide: the copy's anchor strip is NOT rendered as a separate chip row. On this page the strip reads "Porcelain veneers, Teeth whitening", which is exactly the two destinations below it, so shipping both would print one list twice. The rows below ARE the strip, and both link to a page that exists in the sitemap. The optional field note is omitted here, because unlike services this page's copy carries no one-level-down line for it. -->
-<section class="rs-sec rs-sec--band">
+<!-- pick: SECTION-COMPONENTS.md # 11 Service pillars 2-col with image | considered: #29,#45,#6 | why: the brief for this beat asks for four things per block and nothing else, a benefit headline, one line of plain language capability, a real visual and the link, and # 11 is the only entry in the menu whose row is literally those four. It is written for a SMALL set of pillars rather than for a catalogue, which is the condition a two door hub is in. The kit's index row realises it, and rows rather than tiles is the right call at two: a two item tile grid reads as a grid that lost its other tiles, while two full width rows read as a complete list of two. Rank is carried by the copy's order alone, so neither procedure is scaled larger than the other and no claim is made about which one a reader should want. #29 Before/after pair is the entry a cosmetic page is expected to reach for, and rejecting it is the most important decision on this page, so it is recorded here rather than left silent. The practice has zero before and after files on disk, the smile gallery photographs carry no consent record, and proofPolicy forbids inventing one or substituting an illustrative result, so the only honest before and after section is no before and after section. The photographs in the rows below are rooms and people, and neither alt describes a result. #45 Category chips is rejected because a chip holds a name and nothing else, and the plain language line under each name is the part that tells a reader whether veneers or whitening is the thing they came for. #6 Is this for me is rejected because self selection needs enough options to eliminate, and eliminating one of two is a coin toss rather than a qualification step. DEVIATION, declared: # 11's alternating image side is not built, because the kit's row fixes the shot in a left hand track and alternating it would need CSS this build does not carry. GROUND: the plain canvas. The doors follow the page's deepest band, and a reader choosing between two things needs the lightest ground on the page to do it against. -->
+<section class="rs-sec">
   <div class="container">
     <div class="row">
       <div class="col">
+
         <ul class="hb-field">
 
           <li>
             <a class="hb-route" href="porcelain-veneers.html">
               <span class="rs-frame hb-route__shot">
-                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-72-1-768x1152.jpg"
+                <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-95-768x1152.jpg"
                      width="768" height="1152" loading="lazy" decoding="async"
-                     alt="A member of the practice team in scrubs and a mask, seated beside someone in a treatment chair at one of our offices.">
+                     alt="Someone walking past the slatted wood reception counter of one of our offices, towards an open doorway.">
                 <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
               </span>
               <span class="hb-route__body">
@@ -521,9 +470,9 @@
           <li>
             <a class="hb-route" href="teeth-whitening.html">
               <span class="rs-frame hb-route__shot">
-                <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-30-3-768x1152.jpg"
+                <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-98-768x1152.jpg"
                      width="768" height="1152" loading="lazy" decoding="async"
-                     alt="A hand setting an instrument into a tooth-shaped holder on the counter at one of our offices.">
+                     alt="Someone walking past the glazed entrance of one of our offices, under a ring pendant light, with the waiting area behind.">
                 <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
               </span>
               <span class="hb-route__body">
@@ -541,26 +490,33 @@
 
         </ul>
 
-        <!-- IMAGE SLOTS, both FILLED with real first-party photographs, and the caveat that
-             matters MOST on this page is recorded rather than hidden. The practice has no
-             specialty-specific photography, so these frames are our own rooms, counters and
-             people, assigned for VARIETY and not as depictions of veneers or whitening. On a
-             cosmetic hub that rule is not a nicety: OWNER, the smile gallery page carries
-             photographs captured 30 July 2026, none labelled as a before and after pair and none
-             carrying a consent record, so this hub does not route to it and no sample or
-             illustrative result is shown in its place, per proofPolicy. Neither frame below shows
-             a treatment, a result or anyone's teeth, and I looked at both files rather than
-             trusting a filename. No alt string names a specialty, a device or a person. Neither
-             of the two Henderson office photographs is used anywhere on this page, per
-             imagery-system.md section 4. -->
+        <!-- FLAG, carried from copy section 3: each block above routes to a page that
+             exists in the sitemap. No block ships without a live destination. Checked
+             against sitemap.yaml: porcelain-veneers and teeth-whitening are both live
+             nodes with cosmetic-dentistry as their parent. -->
+
+        <!-- OWNER PLACEHOLDER, carried from copy section 3: our smile gallery page
+             carries photographs, captured 30 July 2026. None is labelled as a before
+             and after pair, and none carries a consent record. This hub does not route
+             to it until consented patient images arrive, per proofPolicy. No sample or
+             illustrative result is shown in its place. That is why the rail further
+             down names five sibling areas of care and never the gallery, and why the
+             two frames above are rooms rather than teeth. -->
+
+        <!-- IMAGE SLOTS, both FILLED with real first-party photographs, and the honest
+             caveat is recorded rather than hidden: the practice has no cosmetic
+             specific photography, so these two frames are our own rooms and our own
+             people, assigned for VARIETY between the rows and not as depictions of
+             either procedure. Neither alt string names a specialty, a device or a
+             person, and neither file is used on any other page in this build. -->
 
       </div>
     </div>
   </div>
 </section>
 
-<!-- pick: SECTION-COMPONENTS.md #50 Topic columns | considered: #45,#36 | why: this is the release valve, and it is placed HERE, directly under the field and long before the closing ask, because on a page whose order is the order of the decision the reader who wanted neither veneers nor whitening should be let go at the moment that becomes true, rather than carried through three more sections of argument written for somebody who stayed. On this page it does more work than it does on the exemplar and the reason is worth stating: the field above offers only two routes, so a reader arriving from a general search is much likelier to match neither, and this rail is where the other five areas of care actually live. That is also what makes the group names different here. The exemplar's first group is "Other hubs", four site-level destinations; this page's is the copy's own "Other areas of care", which is the six-way field the hero implied, minus the one you are standing on. The second group is the copy's own "Also", three non-clinical destinations. Eight in total, in two headed columns of full-width rows, which keeps the grouping the copy asserts, gives every destination a 52px target instead of a text-sized one, and lets the section be taken in at a glance. #45 Category chips is rejected even though it is the obvious rail pattern: a chip row flattens both groups into one line of equal pills, and this rail's entire content is that the two groups are NOT the same kind of thing. #36 Sticky-sidebar topic nav is rejected because it is built to be returned to across a long document, and this rail is read once, in passing. DEVIATION: #50's per-topic article cards are not built, because these are eight internal destinations and not articles. The column shape is what is borrowed; each row is a link with a rule rather than a card. DECLARED: "all seven offices" here resolves to locations.html, the same destination as the hero's fallback door. That is the copy's own routing on both counts and neither is invented, but it does mean locations.html is reached from three places on this page, which is one more than on the exemplar and is recorded rather than left to be discovered. GROUND: the page's quietest beat, on the plain canvas between the two banded sections either side of it. -->
-<section class="rs-sec">
+<!-- pick: SECTION-COMPONENTS.md #50 Topic columns | considered: #45,#36,#49 | why: this is the escape hatch, and it runs HERE, directly under the doors and before the argument, because a hub with two doors releases more readers than it keeps. A six route hub can afford to hold everyone through one more beat, since five of the six routes have already been eliminated by the time the reader reaches it. Two routes eliminate almost nothing, so the reader who wanted crowns or a sore gum is still in the room, and carrying them into a coverage statistic written for the person who stayed is the wrong order. #50 is the grouped columns entry, and the copy supplies both group names and both memberships already: five sibling areas of care on one side, the offer and the offices and the way to ask on the other. Rendered as two headed columns of full width rows it keeps the grouping the copy asserts, gives every destination a real target rather than a text sized one, and can be taken in at a glance at the one point where a reader is either leaving or committing to read on. It stays a SECTION of its own rather than being folded under the routes, which is what the surgical hub does with its rail, because the two beats do different jobs here: the doors are the last thing the routing half of this page says, and the rail is the boundary after it. Folding the two together would hide that boundary inside a list. #45 Category chips is rejected because a chip row flattens both groups into one line of equal pills, and the whole content of this rail is that the two groups are not the same kind of thing. #36 Sticky-sidebar topic nav is rejected because it is built to be returned to repeatedly across a long document, and this rail is read once, in passing. #49 Article cards 4-col compact is rejected because these are eight internal destinations and not articles, and a card would need a summary line per destination that nobody has written. DEVIATION: #50's per topic article cards are not built for that same reason. The column shape is what is borrowed, and each row is a link with a rule rather than a card. GROUND: the band, one step under the plain canvas the doors are chosen against. The change of ground is what marks the boundary, and it is a step rather than a drop, because a reader on their way out should not be handed the page's heaviest surface on the way. -->
+<section class="rs-sec rs-sec--band">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -588,33 +544,7 @@
   </div>
 </section>
 
-<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: #8,#26 | why: the reader has just chosen a route, and the only question left about that choice is whether it stays here or gets handed on, so this section names a cost the reader has already paid somewhere else before the in-house claim means anything. #7 is the catalog's name-the-pain entry, and its problem-cards variant carries this passage correctly: two statement cells for the two arrangements, with the page's remaining paragraph spanning the full width. The treatment does the comparing the words are forbidden to do, since no competitor may be named and no share of the market claimed: the split-out cell is flat, unlifted and hairline only, ours takes the card ground, the elevation and the keyed signature rule. No column label ships on either cell, because a label would have to be written and because naming a "them" column would break the conditional framing. The photograph sits BESIDE the pair as a capped column rather than as a full-width band above it, per the compact feature-row law, so the section stays inside one viewport. THE ONE STRUCTURAL DIFFERENCE FROM THE EXEMPLAR, and it is a template finding rather than a local choice: on services the three paragraphs are two arrangements and a CONSEQUENCE, so the spanning cell sits UNDER the pair, where a consequence belongs. On this page they are a PREMISE and two arrangements. "A cosmetic result rests on the tooth beneath it" is not something the split-out model causes, it is the reason the split matters at all, so it takes the spanning row ABOVE the pair and the section opens on the reader's own situation rather than on somebody else's business model, which matters here because this section ships no heading of its own. No CSS changed and none needed: the spanning cell is already grid-column 1 / -1, and grid auto-placement puts it in whichever row its DOM position asks for. What must change in concept-b.content.html is the DESCRIPTION of the slot, from "the consequence, underneath" to "the page's single unpaired paragraph, placed where the copy puts it". #8 Manifesto is rejected because a manifesto states a belief and this passage states an arrangement, and belief register on a page routing patients into clinical care is exactly the substitution this build removes. #26 Pull-quote section is rejected on a specific hazard rather than on taste: it sets one passage alone in the page's own voice, and one of these three paragraphs describes a model this practice does NOT use, so quoting it would attribute someone else's arrangement to this practice as a creed. That hazard is smaller here than on the exemplar, where two of the three do, and it is still disqualifying. GROUND: the band, one step deeper than the plain canvas of the rail above it, so the two arrangements read against a single tone belonging to neither. -->
-<section class="rs-sec rs-sec--band">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="hb-why">
-
-          <div class="rs-frame hb-why__media">
-            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-1024x683.jpg"
-                 width="1024" height="683" loading="lazy" decoding="async"
-                 alt="The reception desk at one of our offices, under the practice sign.">
-            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
-          </div>
-
-          <div class="hb-why__args">
-            <p class="hb-why__cost">A cosmetic result rests on the tooth beneath it. Shade, shape and spacing all depend on what the exam finds first.</p>
-            <p class="hb-why__was">Where cosmetic work is split out, a separately branded studio does the visible part and another practice treats the rest.</p>
-            <p class="hb-why__is">We do both in house, at our own offices, with named clinicians. One roster covers both, so the person planning veneers works in the same practice as the rest.</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- pick: PRICING-SECTIONS.md #4 Quote-only cost-model split | considered: #5,#6 | why: by this point the reader has picked veneers or whitening and accepted that it stays in house, and the only thing left between them and a booking is not knowing what finding out will cost. #4 is the band written for an offer with NO published price: it argues the MODEL instead of printing a number, which is the only thing this page may do, because veneers and whitening are quote only and no treatment price appears anywhere on this site. Its split shape is used as specified, a copy column beside a capped portrait frame, and its rules list carries the copy's two closing sentences one WHOLE sentence per row, so the senior pricing reason and the look-before-quote rule read as the two rules of the model rather than as the tail of a paragraph. TWO DIFFERENCES FROM THE EXEMPLAR, both forced by this page's copy rather than chosen. FIRST, this page supplies no standalone opening line the way services does, so the display lead takes the section's own shortest whole sentence, "Dental visits track coverage directly.", MOVED out of the citation paragraph and not reworded; the ADA sentence keeps its source and its fetch date intact, and the two 2023 visit rates stay in the same paragraph as the sentence they qualify, so nothing is atomised away from its attribution. SECOND, this page carries a cited figure the exemplar does not, the Birdeye rating, and it ships as its own paragraph at the foot of the copy column with its platform, its office scope and its date attached. It is deliberately NOT given the figure treatment: hb-fig is this page's one scannable number and it is spent on the coverage percentage, and a rating scoped to a single office must never be scaled up until it looks like a practice-wide headline. OWNER items are recorded as comments in the markup rather than rendered, because writing them out would be writing copy. #5 Plain-deal honesty stance is rejected because it is deliberately empty-handed, no cards, no media, no list, and it is built to state ONE clear number plainly; this page publishes no price at all, so that band would be a creed with nothing in its hands. #6 Quote-configurator ladder is rejected from the other direction: it walks a reader towards a figure through a sequence of choices, and every choice would have to be written. DEVIATIONS, both declared, and the first now stands on two grounds rather than one: #4's KPI row of oversized numerals is NOT built, because the coverage percentages cannot be separated from their attribution and their date, AND because the only other figure on the page is a per-office review rating that the copy's own owner note forbids restating as a practice-wide number, which is precisely what a KPI row would make it look like. #4's corner badge card is dropped because its caption would have to be invented. GROUND, and this is why the anchor sits here: the look-floor asks for a non-light beat inside the middle band, and of the two sections inside that band only this one earns it on content. The why-band is a comparison needing both cells legible against one ground. Section 6 is a seven-address ledger where a deep ground would make a dense block heavier and would run the two darkest beats straight into the close. This is the single moment on the page carrying a third-party figure and a pricing stance, which is what a change of ground exists for. -->
+<!-- pick: SECTION-COMPONENTS.md #3 Stat strip / metric band | considered: #24,#33,#2 | why: this is the only beat on the page carrying evidence from outside the practice, and #3 is the menu's quantified credibility entry, the one band whose job is to let figures carry the argument instead of adjectives. It earns a band of its own here for a reason particular to this page: everyone still reading has chosen to stay past the exit above, and what they have been shown is two elective procedures with no price on either, so the question in the room is not whether the work is good, it is whether coming in is worth doing at all. The answer this copy gives is a coverage figure and an exam price rather than a promise. The three national figures stay inside their own sentences with the ADA Health Policy Institute named and the fetch date attached, so a number can never be read apart from its source. The two cost model rules take one WHOLE sentence per row, so the senior pricing reason and the refusal to use the figure as a scare read as two rules rather than as the tail of a paragraph. The review line is kept as a separate paragraph BELOW the rules, and that placement is deliberate: it is first party, it is scoped to one office, and setting it beside the national figures would invite the two to be read as one body of evidence. #24 Testimonials grid is the obvious rival on a cosmetic page and is rejected on evidence: the build holds a rating and a review count and not one quotable review, so the grid could only be filled by writing quotes, and content-bible.md section 6 forbids aggregating the rating into anything wider than the office it belongs to. #33 Custom-quote driver is rejected because it drives at a number, and veneers and whitening are quote only under pricing.treatment_prices_published false, so the band would point at a figure that does not exist. #2 Trust strip is rejected because no superlative, ranking or award is verifiable for this practice, so a logo or badge row would have to be invented. DEVIATIONS, both declared: #3's three to five figure row of oversized numerals is NOT built, because every figure here travels with an attribution and a date that an isolated numeral would strip; and no count up animation ships, because a coverage gap is not a score to watch climb. GROUND: the page's middle anchor and its second surface-dark band. This is the single beat that carries third party evidence and a pricing stance, which is precisely what a change of ground exists for. -->
 <section class="rs-sec surface-dark">
   <div class="container">
     <div class="row">
@@ -623,26 +553,32 @@
 
           <div class="hb-cost__copy">
             <p class="hb-cost__lead">Dental visits track coverage directly.</p>
-            <p class="rs-copy">The ADA Health Policy Institute reports that <span class="hb-fig">55%</span> of adults aged 65 and older have no dental benefits, fetched 30 July 2026. In 2023, 53% of privately insured adults had a dental visit, against 16% of those with no dental insurance.</p>
+            <p class="rs-copy">The ADA Health Policy Institute reports that <span class="hb-fig">55%</span> of adults aged 65 and older have no dental benefits, fetched 30 July 2026.</p>
+            <p class="rs-copy">In 2023, 53% of privately insured adults had a dental visit, against 16% of those with no dental insurance.</p>
+
+            <!-- OWNER PLACEHOLDER, carried from copy section 4: no expiry, exclusions or
+                 senior age threshold is published for the entry offer. The terms line
+                 stays a placeholder until the owner supplies them, and no urgency
+                 framing ships. That is why the two rows below name the REASONING for
+                 the entry price and never a figure, a deadline or a condition. -->
             <ul class="hb-rules">
               <li>That is the reasoning behind our entry exam price and its lower senior rate.</li>
               <li>It is a reason to come in, not a scare statistic.</li>
             </ul>
-            <!-- OWNER: no expiry, exclusions or senior age threshold is published for the entry
-                 offer. The terms line stays a placeholder until the owner supplies them, and no
-                 urgency framing ships. It is held here as a comment rather than rendered as a
-                 visible line, because inventing the terms would be writing copy. -->
-            <!-- OWNER: the rating below is the Lake Mead record only. It is not restated as a
-                 practice-wide figure anywhere on this page, it is not aggregated, and it keeps its
-                 platform, its office scope and its fetch date. Supply the practice-wide number and
-                 nominate the platform of record. -->
-            <p class="rs-copy">Our Lake Mead office is rated 4.5 stars across 506 patient reviews on Birdeye, fetched 30 July 2026.</p>
+
+            <p class="rs-copy">Our Lake Mead office is rated <span class="hb-fig">4.5</span> stars across 506 patient reviews on Birdeye, fetched 30 July 2026.</p>
+
+            <!-- OWNER, carried from copy section 4: that rating is the Lake Mead record
+                 only. It is not restated as a practice wide figure anywhere on this
+                 page. Supply the practice wide number and nominate the platform of
+                 record. Not rendered as visible copy, because a visitor is not the
+                 audience for an open owner question. -->
           </div>
 
           <div class="rs-frame hb-cost__media">
-            <img src="../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-108-768x1152.jpg"
+            <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-109-768x1152.jpg"
                  width="768" height="1152" loading="lazy" decoding="async"
-                 alt="Someone seated on the waiting room bench at one of our offices, filling in a form on a clipboard.">
+                 alt="Someone sitting on the waiting room bench of one of our offices, writing on a clipboard, with the front desk behind.">
             <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
           </div>
 
@@ -652,7 +588,7 @@
   </div>
 </section>
 
-<!-- pick: SECTION-COMPONENTS.md #51 Locations grid | considered: #52,#53 | why: the route narrows one last time, from an area of care to one address, and #51 is the catalog's multi-location entry, the only one built to hold a SET of named places rather than a single one. It is realised as a two-column ledger of seven hairline rows: every office name links to that office's own page, and every address is carried character for character from the copy, which is itself copied from the locked contact data. #51's per-tile photograph is DELIBERATELY NOT SHIPPED, and on this page the decision is easier to defend than on the exemplar, not harder. All seven offices DO have their own photograph in assets, each traced to the office page that publishes it, so a seven-tile band could be built today with no substitution. It is still not built, for three reasons, and the numbers below were measured on THIS page rather than carried over from services, which is a correction the exemplar's own ledger needs: its px figures are true of services and of no other page. FIRST, and decisive, and stronger here than anywhere: a list of rows each carrying a thumbnail and an arrow is this concept's one signature object, and it is already spent on the field. On services the field is six rows at 1576px and this ledger is seven, so the two lists are comparable. On this page the field is TWO rows at 621px, so photographing the offices would hand the page's spine to the addresses on the one page where the areas of care are hardest to find. I built the prototype rather than estimating it: as thumbnail rows this band goes from 741px to 2359px, which is 3.2 times its own current height and 3.8 times the field it would be competing with, and it makes the page's quietest beat its loudest. SECOND, the whole page goes from 5943px to 7561px, a 27 percent increase, on a concept whose case rests on being the shortest and least insistent of the three. What that buys is real photography on five of seven sections instead of four, 71 percent against a floor that asks for 50 and was already clear at 57. THIRD, the band's geometry is two columns of about 518px inside an 1180px container, and the seven files cannot fill that tile. I measured them: North Decatur's only file is 380 by 506 native, already an upscale at 1x, and Summerlin at 792 by 525 and Lone Mountain at 894 by 569 fail at 2x. The band would ship a soft tile on the one beat where a reader is choosing a real place to drive to. A fourth cost is recorded rather than hidden, and this page carries MORE of it than the exemplar's ledger accounts for. The exemplar names one collision, the hero's North Las Vegas file used as an unnamed scene. On this page there are TWO: the hero carries North Las Vegas, and the why-band carries the Sunrise Manor file, both correctly described as one of our offices rather than named. Naming either in a tile here would describe one photograph two ways on one page, so the collision the exemplar treats as a single footnote is really a property of how many office photographs this template spends as unnamed scenery. #52 Map embed is rejected because it is written for a single-location business and needs either an external embed this build does not carry or a static map asset that does not exist in assets. #53 Hours table is rejected on evidence: per-office hours are not in the locked spec, three of the seven offices carry unresolved hour rows in the sibling copy, and the chrome footer already states in plain words that hours vary by office. A table here would have to be filled with something, and there is nothing to fill it with. GROUND: the plain canvas, deliberately. This is the densest text block on the page, it follows the middle anchor and precedes the closing anchor, so it is the light relief between the two and takes the lightest ground the page owns. -->
+<!-- pick: SECTION-COMPONENTS.md #51 Locations grid | considered: #52,#53,#45 | why: the page narrows one last time, from two procedures to one address, and #51 is the menu's multi location entry, the only one built to hold a SET of named places rather than a single one. It is realised as a two column ledger of hairline rows, every office name a real link to that office's own page and every address carried character for character from the locked contact data. It keeps a section of its own here instead of being folded into the close, because this page's closing line is about what veneers or whitening would involve for one person's teeth, and hanging seven addresses off that sentence would answer a question it does not ask. Kept separate, the ledger is the last narrowing and the close is the last instruction, and each is allowed to be one thing. #51's per tile photograph is deliberately NOT built. All seven offices do have their own file on disk, so this is a composition decision and not a shortage: the one signature object this page owns is a row carrying a thumbnail and an arrow, it is already spent on the two doors, and printing it again with seven more thumbnails would leave the page with no spine. Three of the seven office files are also too small for this band's tile width and would ship soft on the beat where a reader is choosing somewhere to drive to. #52 Map embed is rejected because it is written for a single location business and this practice has seven addresses, with no map asset in the build to pick one with. #53 Hours table is rejected on evidence: per office hours are not in the locked spec and the chrome footer already says in plain words that hours vary by office, so the table could only be filled with something invented. #45 Category chips is rejected because an address is not a category and a pill cannot hold a street. GROUND: the plain canvas, deliberately. This is the densest text block on the page, seven names and seven streets, it follows the page's middle anchor and it precedes the closing one, so it is the light relief between the two and it takes the lightest ground the page owns. -->
 <section class="rs-sec">
   <div class="container">
     <div class="row">
@@ -664,10 +600,11 @@
             <p class="rs-copy">Seven offices across the valley:</p>
           </div>
 
-          <!-- OWNER: the Sunrise Manor ZIP conflicts on the live site. 89107 is carried here
-               from client-rules.json contactData, pending confirmation against 89104 in the
-               booking block. NAP consistency depends on resolving it. Not rendered as visible
-               copy, because a visitor is not the audience for it. -->
+          <!-- OWNER, carried from copy section 6: the Sunrise Manor ZIP conflicts on the
+               live site. 89107 is carried here from client-rules.json contactData,
+               pending confirmation against 89104 in the booking block. NAP consistency
+               depends on resolving it. Not rendered as visible copy, because a visitor
+               is not the audience for it. -->
           <div class="hb-offices">
             <div class="hb-office">
               <a class="hb-office__n" href="lone-mountain.html">Lone Mountain</a>
@@ -705,18 +642,20 @@
   </div>
 </section>
 
-<!-- pick: SECTION-COMPONENTS.md #41 Closing CTA (final action) | considered: #40,#37 | why: the route ends where a route should end, on one instruction and the two actions that carry it out, with nothing else in the band to look at. #41 is the entry whose stated role is exactly the last thing before the footer, a single primary action, and its restraint is the point: every move on this page has removed something from the field, so the final beat is the narrowest object on it, centred on the deepest ground with the primary and secondary buttons beneath. THE DIFFERENCE FROM THE EXEMPLAR is that this page's closing copy is TWO sentences, a reason and then an instruction, where services has one. Both ship as the single display line rather than being split into a heading and a caption underneath, because splitting them would demote the reason to a subtitle and #41's whole restraint is that the band holds one object. The instruction names both actions in the order the buttons appear, so the band still reads as one instruction rather than as a heading with buttons bolted on. Worth recording, because it is the same property twice: services closes on "the office nearest you", which is why a hero door on THAT page would have made the phrase three sections and tripped the repetition gate, while this page closes on "the office you would visit" and leaves the hero door free. The pages that need the fallback are the pages whose closing line makes room for it. This is the ONLY dedicated closing conversion band in the fragment: the locked chrome carries no pre-footer CTA band, so the single site-wide closing ask lives here and nowhere else. #40 Pre-footer CTA band is rejected because each of its variants adds furniture, a large claim, an image or a form, and every one would need copy this page does not have. #37 CTA form split is rejected because it would put an intake form on a hub, a second and different conversion mechanism from the booking route the rest of the site uses, and because the contact page is where this practice's intake actually lives. -->
+<!-- pick: SECTION-COMPONENTS.md #41 Closing CTA (final action) | considered: #40,#37,#32 | why: the page ends on one instruction and the two actions that carry it out, with nothing else in the band to look at. #41 is the entry whose stated role is exactly the last thing before the footer, and its restraint is the point here: every beat above has narrowed the field, from an argument to two doors to one reason to come in to one address, so the final object is the narrowest on the page. The sentence is the copy's own closing line, and it is the right one to end on because it promises a finding out rather than a result, which is the only thing this page is permitted to promise about elective work with no published price. This is the ONLY dedicated closing conversion band in the fragment: the locked chrome carries no pre footer band of its own, so the single site wide closing ask lives here and nowhere else. #40 Pre-footer CTA band is rejected because each of its variants adds furniture, a large claim, an image or a form, and every one of those would need copy this page does not have. #37 CTA form is rejected because it would put a second and different conversion mechanism on a hub, and this practice's intake already lives on the contact page. #32 Pricing single product is rejected outright: it exists to publish one price, and no treatment price ships anywhere on this site. GROUND: the page's third surface-dark anchor, the same ground the opening comparison was made on, so the two ends of the page answer each other. -->
 <section class="rs-sec rs-sec--close surface-dark">
   <div class="container">
     <div class="row">
       <div class="col">
         <div class="hb-book">
 
-          <p class="hb-book__line">Find out what veneers or whitening would actually involve for your teeth. Book an appointment, or call the office you would visit.</p>
+          <p class="hb-book__line">Find out what veneers or whitening would actually involve for your teeth.</p>
 
-          <!-- The secondary action resolves to the offices page, never a general line, per
-               routeRules.phone_policy: a hub cannot know which of the seven offices the reader
-               wants, and every office's own direct number is published on that page. -->
+          <!-- FLAG, carried from copy section 7: the secondary CTA resolves to that
+               office's own number, never a generic line, per routeRules.phone_policy.
+               Every direct number is published per office on the offices page, and the
+               ledger above names the seven, so the button routes there rather than
+               dialling one of them. -->
           <div class="rs-acts">
             <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
             <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
@@ -727,7 +666,6 @@
     </div>
   </div>
 </section>
-
 </main>
 
 <!-- ============================================================================
