@@ -1,0 +1,322 @@
+<!--META {"title":"New Patient Special: $45 Exam & X-Ray","desc":"Your first exam and X-ray for $45, or $29 if you are a senior. See exactly what is included and the terms that apply."}-->
+<!-- pick: HERO-COMPOSITIONS.md # 1 Split-text-left + photo-right | considered: #2,#25 | why: this is the one page on the site that publishes a number, so the first band has to do three jobs at once and in this order: state the price, say who gets the lower one, and admit that the offer terms are not published anywhere. # 1 is the only arrangement in the family that leaves the reading column intact for all three: the H1, the one qualifying line and both actions run down the copy cell, the photograph takes the second cell, and the band then continues under the split with the flagged hold and the audience beat. #2, the mirror with the photo first, is rejected on this page for a mechanical reason rather than a taste one: .cc-hero collapses to one column at 1023, DOM order decides what stacks, and putting the frame first would land a reception desk above the headline that carries the price. #25 Embedded lead-capture form hero is the tempting wrong answer here, because an offer page is where a form feels natural. It is rejected because the terms of this offer are unresolved: a form would collect a claim against an offer whose expiry, exclusions and senior threshold nobody can state, and the honest move is to route to the booking page rather than to take a commitment the practice has not defined. The audience beat from section 4 of the copy is folded into this band rather than given its own, because who the lower price is for is part of reading the price, not a separate argument. The band is LIGHT and carries no card chrome at all, which is what keeps the page clear of a four-deep bordered run further down. -->
+<section class="rs-sec rs-sec--lead">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-stack">
+
+          <div class="cc-hero">
+
+            <div class="cc-hero__copy">
+              <h1 class="rs-h1">New Patient Special: <span class="cc-fig cc-fig--phrase">$45</span> Exam and X-ray in Las Vegas</h1>
+              <p class="rs-lede"><span class="cc-fig">$29</span> if you are a senior.</p>
+              <!-- CTA-PATTERNS.md #7 multi-CTA cluster, both labels carried verbatim from section 1
+                   of the copy. The primary resolves to the booking page and the secondary to the
+                   offices index, because client-rules.json phone_policy binds every phone CTA to a
+                   SPECIFIC office number and a page that serves all seven cannot pick one. -->
+              <div class="rs-acts">
+                <a class="rs-btn rs-btn--accent" href="contact.html">Claim this offer</a>
+                <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+              </div>
+            </div>
+
+            <div class="cc-hero__art">
+              <!-- IMAGE SLOT MET, first-party. Section 1 of the copy asks for a real photograph of
+                   an operatory or a reception desk at one of our offices, and rules out stock and
+                   a grey box. This is a reception desk in one of our own offices. Per
+                   imagery-system.md section 4 rule 5 it is described as one of our offices and
+                   never as a named one, because the source carries no office attribution. -->
+              <div class="rs-frame rs-frame--hero cc-hero__frame">
+                <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-13-768x1152.jpg"
+                     width="768" height="1152" decoding="async"
+                     alt="The reception desk at one of our offices, with the Radiant Smiles sun mark on a slatted wood wall and planters either side.">
+                <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+                <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ⚠OWNER PLACEHOLDER, carried verbatim from section 3 of the copy: no expiry, no
+               exclusions and no senior-age threshold is published anywhere for this offer. Real
+               terms are required before this page ships, per `intake-brief.md` §G-3.
+               This one is RENDERED, not only commented. Every other page in this build carries its
+               holds as comments for the reviewer; on the offer page the withheld terms ARE the
+               offer, so a reader who sees a price and two buttons has to see the hold in the same
+               band. Nothing is invented to fill it: no date, no exclusion list, no age. -->
+          <div class="rs-note">
+            <p class="rs-copy">No expiry, no exclusions and no senior-age threshold is published anywhere for this offer.</p>
+          </div>
+
+          <!-- SECTION-COMPONENTS.md #6 "Is this for me" qualifier, folded into this band rather
+               than given a band of its own. The section-4 copy answers one question, who the lower
+               price is for, and it answers it with a cited coverage figure rather than with a
+               promotion. No consequence is appended to the ADA finding: only the two things the
+               source records are stated, the 55% share and that visits track coverage. -->
+          <div class="cc-arg">
+            <h2 class="rs-h2">This is for new patients.</h2>
+            <p class="rs-copy">The lower price is the same visit for seniors, at <span class="cc-fig">$29</span> rather than <span class="cc-fig">$45</span>.</p>
+            <p class="rs-copy">The reason the senior price exists is a coverage gap, not a promotion. The ADA Health Policy Institute reports that <span class="cc-fig">55%</span> of adults aged 65 and older have no dental benefits, fetched 30 July 2026.</p>
+            <p class="rs-copy">Dental visits track coverage directly, which is the second finding that same ADA source records.</p>
+            <p class="rs-copy">A stated price on the first visit means the cost of that visit is known before you book it.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 11 Service pillars 2-col with image | considered: #27,#9 | why: the reader has just been given a number and the only question that follows it is what the number buys. Three things are bought, they are not sequential, and one of them outranks the other two, so the pattern has to hold three unequal items beside one photograph without pretending they are steps. # 11 does exactly that: the cards form the two-column grid the media-and-cards law prescribes for three items, the lead card takes the full width and the display face, and the media column STRETCHES to the grid rather than sitting capped beside it, which is the arm of the law that keeps a photograph from opening a void next to a card stack. #27 Numbered process steps is the pattern a sibling page uses for its four-beat procedure, and it is rejected here because numbering these three would assert an order the copy does not carry: the examination, the X-rays and the conversation are one visit, not a queue. #9 Services 3-col is rejected because a row of three equals gives the examination the same weight as the conversation, and the examination is the thing being paid for. The section heading is hoisted clear of the split so it precedes both the cards and the photograph at every width, and the boundary of the offer, what it does NOT include, closes the band in running prose under the grid where a reader who is checking the small print will actually read it. GROUND: the first of two dark anchors, spent on the band that carries the offer's substance. -->
+<section class="rs-sec surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-stack">
+
+          <h2 class="rs-h2">One price, stated before you book, covering the examination and the X-rays.</h2>
+
+          <div class="cc-pillars">
+
+            <div class="cc-pillars__cards">
+
+              <article class="rs-card cc-wide">
+                <div class="rs-card__body rs-card__body--roomy">
+                  <span class="rs-icon" aria-hidden="true">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                      <circle cx="11.4" cy="11.4" r="7.2" stroke="currentColor" stroke-width="1.7"/>
+                      <path d="M16.6 16.6 22 22" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <h2 class="cc-pillar__t">The examination.</h2>
+                  <p class="rs-card__text">A dentist looks at your teeth, your gums and your bite, and records what is there today.</p>
+                </div>
+              </article>
+
+              <article class="rs-card">
+                <div class="rs-card__body">
+                  <span class="rs-icon" aria-hidden="true">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                      <rect x="3.2" y="4.6" width="19.6" height="16.8" rx="2.4" stroke="currentColor" stroke-width="1.7"/>
+                      <path d="M8.2 4.6v16.8M17.8 4.6v16.8M3.2 13h19.6" stroke="currentColor" stroke-width="1.7"/>
+                    </svg>
+                  </span>
+                  <h2 class="rs-card__title">The X-rays.</h2>
+                  <p class="rs-card__text">Digital X-rays are taken to show what an examination on its own cannot see.</p>
+                </div>
+              </article>
+
+              <article class="rs-card">
+                <div class="rs-card__body">
+                  <span class="rs-icon" aria-hidden="true">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                      <path d="M4 6.6h18v11.2H12.6L8 21.4v-3.6H4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                      <path d="M8.4 12.2h9.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <h2 class="rs-card__title">The conversation.</h2>
+                  <p class="rs-card__text">You are told what was found and what we suggest, in plain terms, before anything is booked.</p>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="cc-pillars__media">
+              <!-- NOT a copy image slot. Section 2 of the copy names no photograph. This one
+                   asserts nothing the copy does not: it is a prepared treatment room in one of our
+                   own offices, described as one of our own offices, with nobody in it. It is here
+                   because the media-and-cards law requires a stretched media column for this
+                   arrangement, and because the room is where the examination in the lead card
+                   happens. -->
+              <div class="rs-frame">
+                <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-22-4-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A treatment room at one of our offices, with the chair prepared under its overhead light and a screen on the wall above.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="rs-copy">What the price does not include is treatment. Cleanings, fillings, extractions and everything else are separate, and none of them are decided before the exam.</p>
+          <p class="rs-copy">Treatment here runs on quote-only pricing. No treatment price is published on this site, because the number depends on what the examination actually finds.</p>
+          <p class="rs-copy">At the end of the visit you can request a quote for the work we suggest.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #34 FAQ accordion | considered: #35,#33 | why: four of this page's five owner holds are QUESTIONS a reader asks about the terms, and three of the four have no answer yet. #34 is the only pattern in the menu that can ship an unanswered question without hiding it: the question stays a visible, keyboard-reachable summary line and the hold sits inside it as the answer, so a reviewer reads the gap in the same object a patient would read the answer in. Native details and summary do it with no script. The four terms that CAN be stated run above the accordion as plain prose rather than as a table, deliberately: no linked sheet in this build carries a single table, thead, tbody or td rule, so a table here would ship unstyled and squash at 375. #35 FAQ grouped is rejected because four questions do not need category headers, and grouping them would imply a taxonomy the copy has not written. #33 Custom-quote driver is rejected outright on this page: it exists to convert a reader into a quote request, and the one thing this section must not do is convert against terms nobody has supplied. This is the page's only band with no photograph, which is the right place for the absence, because the reader here is checking small print rather than looking at a room. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-stack">
+
+          <div class="cc-arg">
+            <h2 class="rs-h2">What can be stated today is narrow and true.</h2>
+            <p class="rs-copy">Both prices, <span class="cc-fig">$45</span> and <span class="cc-fig">$29</span>, are published on our own site and were current on 30 July 2026.</p>
+            <!-- The urgency framing the live site carries is WITHHELD, not reworded, per
+                 client-rules.json pricing.limited_time_framing_allowed false. The copy states the
+                 withholding out loud and that statement ships, so the omission is visible rather
+                 than silent. -->
+            <p class="rs-copy">The urgency framing carried on the live site does not ship here. Without a real end date it would be a promise this practice has not made.</p>
+            <p class="rs-copy">Treatment beyond the exam stays on quote-only pricing, so nothing else on this page carries a number.</p>
+            <!-- The four lenders are named in TEXT ONLY. Their marks are not laid out as a logo
+                 row: imagery-system.md section 2 records that Cherry's file bakes promotional copy
+                 into the pixels and Sunbit has no standalone logo file, so a mark row could not
+                 discharge the disclosure this sentence carries. -->
+            <p class="rs-copy">Payment plans are available through Care Credit, Cherry, Sunbit and Lending Club. Terms are set by the lender and are subject to credit approval. They are not terms offered by this practice.</p>
+          </div>
+
+          <div class="cc-faq">
+
+            <!-- ⚠OWNER PLACEHOLDER, carried verbatim from section 8 of the copy: whether the offer
+                 can be combined with a dental plan is not stated anywhere on the live site. That
+                 answer is required before this question ships. Rendered as the visible answer. -->
+            <details class="cc-panel cc-faq__item" open>
+              <summary class="cc-faq__q">
+                <h2 class="cc-faq__qt">Can I use my insurance with this offer?</h2>
+                <span class="cc-faq__ind" aria-hidden="true"></span>
+              </summary>
+              <p class="rs-copy cc-faq__a">Whether the offer can be combined with a dental plan is not stated anywhere on the live site.</p>
+            </details>
+
+            <details class="cc-panel cc-faq__item">
+              <summary class="cc-faq__q">
+                <h2 class="cc-faq__qt">What happens if I need treatment afterwards?</h2>
+                <span class="cc-faq__ind" aria-hidden="true"></span>
+              </summary>
+              <p class="rs-copy cc-faq__a">You are told what we found and what we suggest. Treatment is on quote-only pricing, so you request a quote and decide with the number in front of you.</p>
+            </details>
+
+            <!-- ⚠OWNER, carried verbatim from section 8 of the copy: confirm that all seven
+                 offices honour it, since no exclusion is published anywhere. Rendered inside the
+                 answer, so the unconfirmed half cannot be read as settled. -->
+            <details class="cc-panel cc-faq__item">
+              <summary class="cc-faq__q">
+                <h2 class="cc-faq__qt">Which offices honour it?</h2>
+                <span class="cc-faq__ind" aria-hidden="true"></span>
+              </summary>
+              <p class="rs-copy cc-faq__a">It is published across our site rather than at one address.</p>
+              <div class="rs-note">
+                <p class="rs-copy">No exclusion is published anywhere.</p>
+              </div>
+            </details>
+
+            <!-- ⚠OWNER PLACEHOLDER, carried verbatim from section 8 of the copy: no senior-age
+                 threshold is published, so no age can be stated here. Supply the threshold and this
+                 answer becomes a straight yes or no. No age is invented anywhere on this page. -->
+            <details class="cc-panel cc-faq__item">
+              <summary class="cc-faq__q">
+                <h2 class="cc-faq__qt">Is the senior price automatic?</h2>
+                <span class="cc-faq__ind" aria-hidden="true"></span>
+              </summary>
+              <p class="rs-copy cc-faq__a">No senior-age threshold is published, so no age can be stated here.</p>
+            </details>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #8 Manifesto / belief statement | considered: # 15,#41 | why: the brief makes one content rule binding on this page and it is a REFUSAL: the page must not claim a price advantage, because the captured market runs from a free exam upward and this practice is undercut by two larger groups. A refusal is a belief statement, so #8 is the honest shape for it: the argument runs as one continuous claim in the reading column, opening on the display line that says no comparison is being made, and the sourced review record sits at the foot of that same column so the warrant travels with the argument instead of being staged as a separate proof block. The room opposite is the one photograph the closing band needs. # 15 Comparison table, us versus them, is the pattern this section exists to REJECT: it would name competitors and imply their prices, which competitorFraming and content-bible.md section 3b both forbid, and it would lose the argument anyway. #41 Closing CTA on its own is rejected as the band's spine because a bare final action after a refusal gives the reader nothing to convert ON. Instead the close is composed INSIDE this band in three descending moves: the argument, then the routing rail for the reader whose question is somewhere else, then the single offer band with both actions. That rail placement is the deliberate difference from the one sibling page at this section count, which lifts its rail to the top under the hero to catch a general-search reader. This page has the opposite reader: someone who arrived on a price and has to be routed onward only after the price has been explained, so the rail earns the tail here and would waste a screen at the top. GROUND: the second dark anchor and the page's closing figure and ground inversion, where the accent is spent on the two prices. -->
+<section class="rs-sec rs-sec--close surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-stack">
+
+          <!-- ⚠FLAG, carried verbatim from section 6 of the copy: no competitor is named and no
+               competitor price is stated or implied, per `competitorFraming` and
+               `content-bible.md` §3b. Honoured literally below: the band names no other practice,
+               quotes no other number, and makes no claim of being cheaper. -->
+          <h2 class="rs-h2">Price is not the argument.</h2>
+
+          <div class="cc-inhouse">
+
+            <div class="cc-arg">
+              <p class="cc-arg__lead">No claim is made here that this offer beats anyone else's.</p>
+              <p class="rs-copy">Other practices in this market publish their own entry offers, and this page does not measure itself against them.</p>
+              <p class="rs-copy">What the <span class="cc-fig">$45</span> visit buys you is a look at the whole mouth by a practice that can treat what it finds.</p>
+              <p class="rs-copy">Seven offices, six specialties delivered in-house, one roster of named clinicians. If the exam turns up something that needs a specialist, that specialist already works here.</p>
+              <p class="rs-copy">That is the difference worth converting on: what happens after the exam, not the number on the way in.</p>
+
+              <!-- ⚠OWNER, carried verbatim from section 5 of the copy: confirm whether a
+                   practice-wide figure exists and which platform is the system of record. Per
+                   `content-bible.md` §6 this rating belongs to one office and is never restated as
+                   practice wide.
+                   ⚠FLAG, carried verbatim from section 5 of the copy: no review, quote or star
+                   rating is composed for this page. The one verified record is cited with its
+                   platform, its scope and its date, or nothing is cited.
+                   Honoured by keeping the office, the platform and the date INSIDE the sentence,
+                   so the scope cannot be separated from the number, and by shipping exactly one
+                   record and no testimonial anywhere on the page. -->
+              <div class="cc-panel cc-evidence">
+                <p class="rs-copy">Our Lake Mead office is rated <span class="cc-fig">4.5</span> stars across <span class="cc-fig">506</span> patient reviews on Birdeye, fetched 30 July 2026.</p>
+              </div>
+            </div>
+
+            <!-- NOT a copy image slot. Section 6 of the copy names no photograph. This is our own
+                 waiting area with someone filling in a form on a clipboard, described as one of our
+                 offices, which is the first thing a new patient claiming this offer actually does.
+                 No outcome, no treatment and no patient result is depicted or implied. -->
+            <div class="rs-frame cc-proof__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-108-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="Someone seated on the waiting room bench at one of our offices, filling in a form on a clipboard.">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+            </div>
+
+          </div>
+
+          <!-- SECTION-COMPONENTS.md #45 category chips, carrying section 7 of the copy verbatim in
+               its two groups. Two chips resolve to the same destination because the copy names that
+               destination twice, in two registers, and neither line is dropped. -->
+          <div class="cc-rail">
+
+            <div class="cc-rail__grp">
+              <p class="cc-rail__k">Next:</p>
+              <a class="rs-chip" href="insurance-financing.html">insurance and financing</a>
+              <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+              <a class="rs-chip" href="locations.html">all seven locations</a>
+              <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+              <a class="rs-chip" href="new-patients.html">what a first visit involves</a>
+            </div>
+
+            <div class="cc-rail__grp">
+              <p class="cc-rail__k">Also:</p>
+              <a class="rs-chip" href="dental-exams-cleanings.html">exams and cleanings</a>
+              <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+              <a class="rs-chip" href="new-patients.html">new patients</a>
+              <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+              <a class="rs-chip" href="contact.html">contact</a>
+            </div>
+
+          </div>
+
+          <!-- CTA-PATTERNS.md #7 multi-CTA cluster again, and this is the page's ONE closing
+               conversion band. The derived shell carries no pre-footer conversion band of its own,
+               so the body owns the single site-wide ask and this is it. Both labels are the ones
+               section 9 of the copy names. -->
+          <div class="cc-offer">
+            <p class="cc-offer__deal">Claim the <span class="cc-offer__price">$45</span> exam and X-ray, or <span class="cc-offer__price">$29</span> if you are a senior.</p>
+            <span class="cc-offer__rule" aria-hidden="true"></span>
+            <p class="rs-copy cc-offer__terms">You can also call the office nearest you and book by phone.</p>
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Claim this offer</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

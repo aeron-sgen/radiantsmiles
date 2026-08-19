@@ -1,0 +1,373 @@
+<!--META {"title":"Dentist in Lone Mountain, Las Vegas NV 89128","desc":"Radiant Smiles on W Lake Mead Blvd. Open Sunday. Address, hours and direct phone for our Lone Mountain dental office.","darkHero":true}-->
+<!-- ============================================================================
+     COMPOSITION NOTE, recorded once at the head rather than repeated per section.
+     lone-mountain, T-FEATURE, SIX body sections built from NINE numbered copy blocks.
+     The three folds are declared here, and every one of them is forced by the
+     intra-page repetition rule rather than chosen for tidiness.
+
+     FOLD ONE, copy block 2 into copy block 1. The street address is printed twice in
+     the copy, once in the hero and once in the at-this-office block, and the phrase
+     Lake Mead Blvd a third time inside the hero sub. Shipping the address in two
+     separate sections prints the same eight token clause twice on one page. So the
+     address and the direct line are rendered ONCE, in the hero, which is where a
+     navigational reader looks first and where the brief puts them, and the second
+     section keeps only what the hero cannot carry: the seven day pattern.
+
+     FOLD TWO, copy block 4 into copy block 3. The team block asserts nobody in
+     particular, because the per office clinician assignment is unpublished. That is
+     a coda to what is delivered here, not a section of its own, and giving it one
+     would have shipped a heading over an owner hold.
+
+     FOLD THREE, copy block 5 into copy block 6. Both carry the clause fetched 30 July
+     2026, and both are records about the practice rather than about the treatment.
+     Rendering them in two sections would put that clause in two of six sections and
+     leave no headroom; rendering them in one keeps it to a single section and lets
+     the review record and the seven office argument read as one paragraph of proof.
+
+     Copy block 7, the cross link rail, rides at the head of the closing section, and
+     copy block 9 closes under it. That pairing is deliberate: the rail is the six
+     other addresses, and the close is the reason to stay at this one.
+
+     WHAT DOES NOT SHIP. The parking answer in copy block 8 has no first party source
+     and its own copy says it does not ship. It is carried below as a comment and the
+     accordion runs three questions rather than four.
+     ============================================================================ -->
+
+<!-- pick: HERO-COMPOSITIONS.md #28 Embedded map / location hero (for local businesses) | considered: # 1,#20,#22 | why: the query this page answers is navigational, so the first job is not to argue anything, it is to put the building, the street, the ZIP and the number to dial in front of a reader who already decided. That is the exact left column #28 specifies, headline plus address plus CTA, and it is the only hero in the menu that treats an ADDRESS as hero payload rather than as footer data. The map half of #28 is substituted, and the substitution is on the record rather than silent: there is no map asset of any kind in assets/, the locations hub established that on the same build, and a fabricated map would be a drawn claim about a place. What fills the media cell instead is the one photograph this office actually owns, the cream stucco building with 7469 on its upper wall, which is a truer answer to here is where we are than a tile render would be. Split-text-left with a photo on the right is the obvious rival and is rejected because it is the generic service page opener already spent across the T-FEATURE siblings, and because it carries no slot for a street address at all. #20 Three-column hero is rejected on inventory: the third column would have to be a statistic, and the only figure this office owns is a review rating that cannot be separated from its platform and its fetch date. #22 Statistics-heavy hero is rejected for the same reason at greater cost, since it would make that one unseparable figure the whole opening. GROUND: dark. This is the page's deepest ground and the address belongs on it, because everything below is an argument for driving to it. -->
+<section class="rs-sec rs-sec--lead surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="cc-hero">
+
+          <div class="cc-hero__copy">
+            <h1 class="rs-h1">Dentist in Lone Mountain, Las Vegas NV 89128</h1>
+            <p class="rs-lede">Our office on W. Lake Mead Blvd., open Sunday, with its own direct phone line and online booking.</p>
+            <!-- The address and the direct line are rendered HERE and nowhere else on the
+                 page. Both values are copied character for character from client-rules.json
+                 contactData, which is the only permitted source for them. -->
+            <address class="rs-office__addr">7469 W. Lake Mead Blvd., Suite 270, Las Vegas, NV 89128</address>
+            <a class="rs-tel" href="tel:+17022894424">(702) 289-4424</a>
+            <!-- CTA-PATTERNS.md #7 Multi-CTA cluster (primary + secondary horizontal), both
+                 labels carried verbatim from copy block 1. The secondary resolves to this
+                 office's own number, never a general line. -->
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="tel:+17022894424">Call Lone Mountain</a>
+            </div>
+          </div>
+
+          <div class="cc-hero__art">
+            <div class="rs-frame rs-frame--hero cc-hero__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_radiant-smiles-lone-mountain-e1713902629576-768x489.png"
+                   width="768" height="489" fetchpriority="high" decoding="async"
+                   alt="The two storey cream stucco building that houses the Lone Mountain office, with the street number 7469 on its upper wall.">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #53 Hours table | considered: #52,#51,#45 | why: this is the block a person checks before they get in the car, and #53 is the menu's only entry whose stated role is day by day opening. It is realised as the kit's labelled ROWS, not as a table element, and that is a measured decision rather than a stylistic one: there is not one table, thead, tbody or td rule in any of the three linked stylesheets, so a table element ships unstyled and squishes at 375. The row component already carries the day on one side, the time on the other, tabular numerals and a hairline between, which is every visual job the table would have done. The day names and the time strings are the source's own column words and they are unchanged. The heading is hoisted out of the split so it sits directly in the column above both halves, because the split collapses to one column below 1060 and a frame placed first would otherwise render the photograph above the word it belongs under. #52 Map embed and contact is rejected because it asks for a map this build does not hold and it would reprint the address a second time. #51 Locations grid is rejected because this page is ONE location; a grid of one is a card. #45 Category chips is rejected because a chip holds a label and a day without its hours is not an answer. GROUND: the raised band, one step off the dark hero, so the week reads as the page's first plain fact. -->
+<!-- WARNING carried verbatim from copy block 2, per the copy lock:
+     FLAG: every value above is copied from client-rules.json contactData and from nowhere
+     else. Hours are stored there with en dashes and are written here as the word "to", so
+     the range survives G-NODASH. -->
+<!-- WARNING carried verbatim from copy block 2, per the copy lock:
+     FLAG: the North Decatur office publishes hours that are identical to these on all seven
+     days. The owner must confirm which record is correct before both pages ship. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <h2 class="rs-h2">Hours</h2>
+
+        <div class="rs-split rs-split--flip">
+
+          <div class="rs-stack">
+            <div class="rs-rows">
+              <div class="rs-row"><span class="rs-row__k">Monday</span><span class="rs-row__v">10 AM to 6 PM</span></div>
+              <div class="rs-row"><span class="rs-row__k">Tuesday</span><span class="rs-row__v">8:30 AM to 7 PM</span></div>
+              <div class="rs-row"><span class="rs-row__k">Wednesday</span><span class="rs-row__v">10 AM to 5 PM</span></div>
+              <div class="rs-row"><span class="rs-row__k">Thursday</span><span class="rs-row__v">8:45 AM to 4 PM</span></div>
+              <div class="rs-row"><span class="rs-row__k">Friday</span><span class="rs-row__v">8:45 AM to 4 PM</span></div>
+              <div class="rs-row"><span class="rs-row__k">Saturday</span><span class="rs-row__v">Closed</span></div>
+              <div class="rs-row"><span class="rs-row__k">Sunday</span><span class="rs-row__v">8:30 AM to 3 PM</span></div>
+            </div>
+            <p class="rs-copy">Sunday is the only weekend day at this office. Saturday is closed, so a Sunday morning here is the weekend option.</p>
+            <p class="rs-copy">Tuesday runs to 7 PM if you need an appointment after work. Online booking is available at this office.</p>
+          </div>
+
+          <div class="rs-frame cc-problem__frame">
+            <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-10-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="The front desk in one of our offices, a slatted wood counter under the Radiant Smiles sign, with a planter in the foreground.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 11 Service pillars 2-col with image | considered: #9,# 10,# 13 | why: copy block 3 is three named groups of care with one photograph asked of the whole block, which is the shape # 11 is written for: a feature column beside a small set of pillars, each pillar routing onward. The kit's pillar object already encodes the media and cards law, a two column card grid with the media column stretched level beside it, so the three groups sit as one lead pillar and two supporting ones instead of three equal tiles that would flatten the difference between everyday care and the specialty groups. The route lines in the copy are instructions, not prose, so each is discharged as a real link on the hub it names rather than printed as a sentence about routing. #9 Services 3-col is the near rival and is rejected because a flat three column row gives the general dentistry group, which is the one most readers came for, exactly the weight of the other two. # 10 Services 4-col compact is rejected on arithmetic: there are three groups, not four, and the fourth column would be padding. # 13 Bento feature grid is rejected because a bento wants items of genuinely different size and these three are peers with one leader. The team lines close the section rather than opening one of their own, because they assert nobody in particular and a heading over an owner hold would read as an answer. GROUND: the plain canvas, the lightest surface on the page, because this is its densest reading block. -->
+<section class="rs-sec">
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+        <div class="cc-pillars">
+
+          <div class="cc-pillars__cards">
+
+            <article class="rs-card cc-wide">
+              <div class="rs-card__body rs-card__body--roomy">
+                <span class="rs-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <path d="M13 6.2c2.6 0 4.4 1.4 4.4 4 0 3.4-1.2 5.2-1.7 8.4-.2 1.4-.9 2.2-1.7 2.2-1 0-1-1.4-1-3s-.6-2.2-1-2.2-1 .6-1 2.2 0 3-1 3c-.8 0-1.5-.8-1.7-2.2-.5-3.2-1.7-5-1.7-8.4 0-2.6 1.8-4 4.4-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <h2 class="cc-pillar__t">Everyday care.</h2>
+                <p class="rs-card__text">General dentistry at this office covers exams, cleanings, preventative care, digital X-rays, fluoride and sealants.</p>
+                <div class="rs-card__foot">
+                  <a class="rs-card__link" href="general-dentistry.html">General dentistry</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="rs-card">
+              <div class="rs-card__body">
+                <span class="rs-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <path d="M6.4 19.6V10a2 2 0 0 1 2-2h9.2a2 2 0 0 1 2 2v9.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <path d="M10.2 13.4h5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <h2 class="rs-card__title">Repair and replace.</h2>
+                <p class="rs-card__text">Restorations, cosmetic dentistry and oral and maxillofacial surgery are all delivered here.</p>
+                <div class="rs-card__foot">
+                  <a class="rs-card__link" href="restorations.html">Restorations</a>
+                  <a class="rs-card__link" href="cosmetic-dentistry.html">Cosmetic dentistry</a>
+                  <a class="rs-card__link" href="oral-surgery.html">Oral surgery</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="rs-card">
+              <div class="rs-card__body">
+                <span class="rs-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <path d="M5.4 15.4c1.8 3.4 4.6 5 7.6 5s5.8-1.6 7.6-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <path d="M9.6 9.4v2.2M16.4 9.4v2.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <h2 class="rs-card__title">Gums and alignment.</h2>
+                <p class="rs-card__text">Periodontics and orthodontics are provided at this office too.</p>
+                <div class="rs-card__foot">
+                  <a class="rs-card__link" href="periodontics.html">Periodontics</a>
+                  <a class="rs-card__link" href="orthodontics.html">Orthodontics</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="cc-pillars__media">
+            <div class="rs-frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-19-2-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="The treatment room corridor at one of our offices, with the bays open along both sides.">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- WARNING carried verbatim from copy block 4, per the copy lock:
+         OWNER G-11: which clinicians practise at this office is not published anywhere on
+         the live site. Until that assignment is supplied, this section links to the full
+         team and asserts nobody in particular. -->
+    <div class="row">
+      <div class="col">
+        <p class="rs-copy">All six specialty groups are delivered at this office. Same-day and emergency appointments are available.</p>
+        <p class="rs-copy">Ten dentists are named on our team page, each with their credentials stated. Two of them are fluent in Spanish. <a class="rs-qlink" href="team.html">meet the team</a></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #26 Pull-quote section | considered: #3,#24,#57 | why: the review record is one sentence that has to survive being read alone, because it carries a platform, a scope and a fetch date that cannot be separated from the figure. #26 is the menu entry for exactly that, a single line set at display weight with the room around it doing the emphasis, and the kit's proof object is that pattern with a photograph in the second cell. Setting it as a pull quote rather than as a tile is what keeps the four numbers inside their own sentence: a tile would lift 4.5 and 506 out of the clause that names Birdeye and the date, and that separation is the exact failure the honesty rules were written against. The seven office argument then runs UNDER it in the same section rather than in one of its own, because both blocks end in the same sourcing clause and splitting them would print that clause in two of six sections. #3 Stat strip is rejected for the separation reason above. #24 Testimonials grid is rejected outright: no consented individual testimonial exists in this build and a grid would have to be filled. #57 Quote standalone is rejected because it wants an attributed human voice and this is an aggregate platform record. GROUND: dark, the page's second anchor, because a claim about the practice as a whole should not sit on the same surface as the office's own facts. -->
+<!-- WARNING carried verbatim from copy block 5, per the copy lock:
+     OWNER: confirm that the Birdeye listing carrying this record is the office at 7469 W.
+     Lake Mead Blvd., Suite 270. The address matches, but the listing itself is not labelled
+     by office. If it is not this one, this section stays empty until a per office record is
+     supplied. -->
+<!-- WARNING carried verbatim from copy block 5, per the copy lock:
+     FLAG: the figure is scoped to one office and is never restated as practice wide, per
+     content-bible.md section 6. Offices are never totalled together. -->
+<!-- IMAGE SLOT, met with a stated substitution rather than silently. Copy block 5 asks for a
+     photograph of this office or its equipment. This office owns exactly ONE photograph and
+     copy block 1 spends it above the fold, where the copy requires it. The file below is
+     equipment, which is the slot's own second option, and its alt names no office, per
+     imagery-system.md section 4 rule 5. -->
+<section class="rs-sec surface-dark">
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+        <div class="cc-proof">
+
+          <div>
+            <p class="cc-proof__record">Our Lake Mead office is rated <span class="cc-fig">4.5</span> stars across <span class="cc-fig">506</span> patient reviews on Birdeye, fetched 30 July 2026.</p>
+          </div>
+
+          <div>
+            <div class="rs-frame cc-proof__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-80-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="Digital X-ray equipment in one of our offices, a white imaging unit with a hand on its touch screen.">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- WARNING carried verbatim from copy block 6, per the copy lock:
+         FLAG: the 23 year figure is BBB reported, not first-party. The owner is asked to
+         confirm the founding year, per content-bible.md section 2. The practice is NOT BBB
+         accredited, and no BBB rating is cited on this page. -->
+    <div class="row">
+      <div class="col">
+        <div class="cc-inhouse">
+
+          <div class="cc-arg">
+            <p class="cc-arg__lead">This is not a branch of something else.</p>
+            <p class="rs-copy">One brand, one roster of clinicians, one domain. Choose the office that suits your week rather than the one nearest the first appointment you made.</p>
+            <p class="rs-copy">The market alternative is a group of separately owned or separately branded practices sharing a name. Under that model nobody can promise you the same standard at each address.</p>
+          </div>
+
+          <div class="cc-panel cc-evidence">
+            <p class="rs-copy">Radiant Smiles runs <a class="rs-qlink" href="locations.html">seven of its own offices</a> across Las Vegas, North Las Vegas and Henderson.</p>
+            <p class="rs-source">Its BBB business profile records the practice as in business 23 years, fetched 30 July 2026.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #34 FAQ accordion | considered: #35,#36,#6 | why: three questions, each with a self contained answer, and two of the three carry an owner qualification that has to travel with the answer and not float beside it. A disclosure list is the only shape that keeps a qualification welded to the question it qualifies, and the kit's accordion is real disclosure built on details and summary with no script, so it survives with JavaScript off. The parking question is the reason this section runs three and not four: its own copy says the answer does not ship without a first party source, so it is carried below as a comment and no empty row is drawn. Rendering an unanswered heading would have been the softening the copy lock forbids. #35 FAQ grouped is rejected because grouping wants enough questions to need categories and three do not. #36 Sticky sidebar topic nav is rejected because it is a docs pattern for a long scroll and this is one screen. #6 Is this for me qualifier is rejected because it reframes questions as a self assessment and the insurance answer is not something a reader can assess for themselves. GROUND: the raised band, which puts a light surface between the two dark anchors so the close still lands as a change of ground. -->
+<!-- WARNING carried verbatim from copy block 8, per the copy lock. THIS ANSWER DOES NOT SHIP:
+     Where do I park?
+     OWNER PLACEHOLDER: parking at this office is not described in any first-party source held
+     by this build. Supply the real arrangement, including suite access, or this answer does
+     not ship. -->
+<!-- WARNING carried verbatim from copy block 8, per the copy lock:
+     OWNER G-12: network status varies by office and by plan, so no blanket guarantee is made
+     here. Call this office with your plan details before you come in. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="cc-faq">
+
+          <details class="cc-panel cc-faq__item">
+            <summary class="cc-faq__q">
+              <h2 class="cc-faq__qt">What happens at a first visit?</h2>
+              <span class="cc-faq__ind" aria-hidden="true"></span>
+            </summary>
+            <p class="rs-copy cc-faq__a">An examination and X-rays where they are needed, then what we found and what we suggest. New patients can use the <a class="rs-qlink" href="offer.html">published entry offer</a> for that visit.</p>
+          </details>
+
+          <details class="cc-panel cc-faq__item">
+            <summary class="cc-faq__q">
+              <h2 class="cc-faq__qt">Do you take my insurance at this office?</h2>
+              <span class="cc-faq__ind" aria-hidden="true"></span>
+            </summary>
+            <p class="rs-copy cc-faq__a">Our <a class="rs-qlink" href="insurance-financing.html">insurance and financing page</a> lists 41 named plans, including Culinary Health Fund, Teachers Health Trust and Nevada Medicaid. Network status varies by office and by plan. Call this office with your plan details before you come in.</p>
+          </details>
+
+          <details class="cc-panel cc-faq__item">
+            <summary class="cc-faq__q">
+              <h2 class="cc-faq__qt">What if it is an emergency?</h2>
+              <span class="cc-faq__ind" aria-hidden="true"></span>
+            </summary>
+            <p class="rs-copy cc-faq__a">Same-day and emergency appointments are available. Call <a class="rs-tel" href="tel:+17022894424">(702) 289-4424</a> and say it is urgent.</p>
+          </details>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #45 Category chips / nav | considered: #51,#50,#41 | why: copy block 7 is nine destinations and nothing else, six sibling offices and three site level routes, and a chip is the one object in the menu that holds a destination at its true weight, which is a name and a route. The two groups keep the source's own labels, Other offices and Also, so the rail says what kind of thing each row is before a reader reads any of it. #51 Locations grid is rejected deliberately and it is the interesting rejection: this build HAS a photograph for each of the six siblings, so a tile grid is buildable, and it is still wrong here, because six photographed tiles at the foot of an office page compete with the office the reader is already standing on. The locations hub is the page that owns that grid and it already ships it. #50 Topic columns is rejected because six offices and three routes are not two topics. #41 Closing CTA is rejected as a SECTION shape, on the gate as much as on taste: the chrome already carries the site wide conversion band and a second dedicated one is forbidden, so the close below is folded UNDER the rail as the last line of a content section rather than raised into a band of its own. GROUND: dark, the closing anchor, matching the hero it answers. -->
+<section class="rs-sec rs-sec--close surface-dark">
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+        <div class="cc-rail">
+
+          <div class="cc-rail__grp">
+            <p class="cc-rail__k">Other offices:</p>
+            <a class="rs-chip" href="sunrise-manor.html">Sunrise Manor</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="summerlin.html">Summerlin</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="north-las-vegas.html">North Las Vegas</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="henderson.html">Henderson</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="north-decatur.html">North Decatur</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="blue-diamond.html">Blue Diamond</a>
+          </div>
+
+          <div class="cc-rail__grp">
+            <p class="cc-rail__k">Also:</p>
+            <a class="rs-chip" href="services.html">all services</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="offer.html">new patient offer</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="locations.html">all seven locations</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA-PATTERNS.md #7 Multi-CTA cluster, the same pair the hero opened with, carried
+         verbatim from copy block 9. It closes a content section rather than standing as a
+         band of its own, because the chrome already carries the one site wide conversion
+         band this build allows. -->
+    <div class="row">
+      <div class="col">
+        <div class="cc-offer">
+          <p class="cc-offer__deal">Book at the Lone Mountain office, or call <a class="rs-tel" href="tel:+17022894424">(702) 289-4424</a> and speak to this office directly.</p>
+          <span class="cc-offer__rule" aria-hidden="true"></span>
+          <div class="rs-acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="tel:+17022894424">Call Lone Mountain</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

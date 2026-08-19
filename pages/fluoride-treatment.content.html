@@ -1,0 +1,351 @@
+<!--META {"title":"Fluoride Treatment in Las Vegas | Radiant Smiles","desc":"Professional fluoride application to strengthen enamel and help prevent decay, for children and adults.","darkHero":true}-->
+<!-- pick: HERO-COMPOSITIONS.md # 1 Split-text-left + photo-right | considered: #2,#5,#21 | why: the copy gives this hero four objects and no fifth, an H1, a one line benefit and two actions, so the only real decision left is which of them a reader meets first and on what ground. Copy left with the room right puts the treatment name and its geo modifier at the top of the DOM, which is also the stacking order a phone gets, so nothing arrives out of sequence at 375. The entry carries an OVERUSED warning and it is earned, so the divergence is spent on GROUND rather than on geometry: this is the only T-FEATURE page in the build that opens on .surface-dark, and it is the first of this page's two deep tone anchors. That inversion is what separates this opener from the two feature pages already shipped, both of which open on a pale band, one of them with the grid texture. No .cc-tex ships here, deliberately: .surface-dark paints its ground as a background-image gradient and a later background-image rule would erase it. #2 Split-text-right with photo-left is rejected on a hard rule rather than on taste, because the menu's own mobile note puts the photo ABOVE the text when the split stacks, which is the media-before-heading defect verify-mobile-quality blocks. #5 Full-bleed image with overlay text is rejected because the only frame this page owns is a prepared treatment room, and scrimming it into atmosphere would sell a mood the locked copy never claims. #21 Mosaic collage is rejected because it needs three to five first-party photographs for one beat and this page spends its whole photographic budget on the three step cards further down. IMAGE SLOT, partly met and named as such: the copy asks for a hygiene room or the tray set up for an application. Neither is photographed in assets/. What ships is a real first-party photograph of one of our own treatment rooms with the chair prepared, and the alt text asserts only that. -->
+<section class="rs-sec rs-sec--lead surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <div class="cc-hero">
+
+          <div class="cc-hero__copy">
+            <h1 class="rs-h1">Fluoride Treatment in Las Vegas</h1>
+            <p class="rs-lede">A professional fluoride application that helps strengthen enamel, for children and for adults.</p>
+            <!-- CTA-PATTERNS.md #7 multi-CTA cluster, carried verbatim from section 1 of the copy.
+                 The secondary action routes to the offices page rather than dialling a number,
+                 because routeRules.phone_policy resolves every phone CTA to a SPECIFIC office. -->
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+          <div class="cc-hero__art">
+            <div class="rs-frame rs-frame--hero cc-hero__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-22-4-768x1152.jpg"
+                   width="768" height="1152" decoding="async" fetchpriority="high"
+                   alt="A treatment room at one of our offices, with the chair prepared under its overhead light and a screen on the wall above the counter.">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: #3,#26 | why: this page sells a treatment aimed at a stage the patient cannot detect, so the argument has to name that stage before any benefit is credible, and the entry's own big-type statement variant is exactly that shape. The treatment here is STACKED rather than split: the statement runs at display scale across the full measure, the two supporting sentences sit under it, and the cited panel closes the section beneath them. That is the deliberate divergence from the argument-left evidence-right split the sibling feature page uses for its equivalent beat, and the reason is honest rather than cosmetic. Section 2 of this copy names NO photograph, and every real photograph this page owns is spoken for by the three step cards and the counter frame further down. A two column split with a panel alone in the right column would have opened a void beside a three block argument, so the panel takes the full measure instead and the section stays short and dense. The third-party figures are quarantined inside that panel, keyed by the signature top rule, so a reader can tell at a glance which sentence is ours and which belongs to the ADA Health Policy Institute. #3 Stat strip is rejected because atomising 55% into a tile would strip the source and the fetch date off a figure that means nothing without them, and this page is barred from claiming any prevention outcome. #26 Pull-quote section is rejected because dressing our own description of decay in quote chrome would read as a patient voice, which is the exact misrepresentation the content rules forbid. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- the heading and the display statement are hoisted into the section header block so
+             they arrive before the argument and before the cited panel at every width. Nothing
+             in this section is a split, so there is no column to flip. -->
+        <div class="rs-head">
+          <h2 class="rs-h2">Enamel weakens long before a cavity is visible.</h2>
+          <p class="cc-arg__lead">The surface loses minerals first, and nothing about that stage looks or feels like a problem.</p>
+        </div>
+
+        <div class="rs-stack">
+
+          <div class="cc-arg">
+            <p class="rs-copy">You cannot see it in a mirror. It is the quiet part of decay, the months or years before there is a hole to fill.</p>
+            <p class="rs-copy">Fluoride is aimed at that window. It is not a cure for a cavity, and we will not describe it as one. It is help for a surface that is losing ground.</p>
+          </div>
+
+          <!-- the cited panel. The copy's own instruction line, that the published coverage
+               numbers belong here stated plainly, is a direction to the builder rather than
+               prose, so it is carried out rather than rendered. Nothing is appended to the ADA
+               figures beyond what the source records, and no cause is inferred from them. -->
+          <div class="cc-panel cc-evidence">
+            <!-- the two figures sit in a 2-up inside the panel rather than stacked down its left
+                 edge. Stacked, each sentence measured 64ch against a full-width panel and left
+                 the right two fifths of the keyed block empty, which read as an unfinished box
+                 rather than as calm space. Side by side, the coverage figure and the visit-rate
+                 comparison fill the panel and can be read against each other, which is what the
+                 source records them as. At 639 and below the pair returns to one column. -->
+            <div class="rs-grid rs-grid--2">
+              <p class="rs-copy">The ADA Health Policy Institute reports that <span class="cc-fig">55%</span> of adults aged 65 and older have no dental benefits, fetched 30 July 2026. Dental visits track coverage directly in that same source.</p>
+              <p class="rs-copy">In 2023, <span class="cc-fig">53%</span> of privately insured adults had a visit, against <span class="cc-fig">16%</span> of those with no dental insurance.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #8 Manifesto / belief statement | considered: #57,#26 | why: the wedge for this page is not a feature, it is WHO applies the fluoride and when, and the copy states it as a position rather than as a benefit, which is the one to three sentence belief statement the entry describes in its left-aligned variant. Putting it at the head of this section and the three step cards under it makes the section read as one argument: the same practice that examined you does this, at the same visit, and here is what that visit actually is. That ordering is the deliberate divergence from the sibling feature page, which gives its process beat a photograph-free dark ladder of its own and puts its in-house claim four sections later beside the review record. WHAT IS NOT HERE and why: only the VISIT half of copy section 6 heads this band. Its practice half, the seven offices on one clinical roster and the not-a-referral-network line, sits under the third pillar in the next band, which is where the claim it supports actually is. That split also holds this section under the 1.65 viewport ceiling the density gate enforces: with all four paragraphs plus three portrait plates it measured 1.7vh at density 364, which is the sprawling band the gate exists to catch, and it was right. #57 Quote standalone is rejected because attributing the practice's own description of itself to the practice would read as a testimonial. #26 Pull-quote section is rejected for the same reason and because a display statement over three photographic cards is a header, not a quote. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <!-- OWNER, carried from copy section 6 and stated no wider than the source: one clinical
+             roster across seven offices is the verified claim and this section stops there. No
+             cross-office records claim appears anywhere on this page. -->
+
+        <div class="rs-head">
+          <h2 class="rs-h2">Prevention only counts if somebody keeps looking for the change.</h2>
+          <p class="cc-arg__lead">Fluoride is applied by the same practice that examined you, at the same visit where the need was found.</p>
+        </div>
+
+          <!-- pick: CARD-VARIATIONS.md #2 Light feature card with embedded mini-visual | considered: # 17,#4 | why: this is the one beat where the copy names a distinct real photograph for EVERY item, three of them, so the card that fits is the one whose defining move is a visual embedded in the card rather than a card that merely links out. The entry puts that visual at the BOTTOM of the card, under the heading and the body, and that placement is doing structural work here rather than following a menu: a photograph stacked above its own title is the media-before-heading defect, and text-then-photograph makes the correct reading order true by construction at 375, 768 and 1024 with no order utility and no flipped desktop columns. DEVIATIONS, both named: the grid runs 3-up rather than the entry's 2-up because there are exactly three steps and a 2-then-1 grid would rank one of them above the others when the copy ranks none; and the embedded visual is a photograph of our own rooms rather than the chart or product mockup the entry illustrates, because this is a clinic and the only honest visual is the room. # 17 Article preview card is rejected because its stacked variant puts the image at the TOP of the card, which is the exact defect above, and its horizontal variant needs a category, a date and a byline this copy does not have. #4 Circle-icon service card with arrow link is rejected twice over: it carries an icon where the copy demands a real photograph, and it is the card the sibling feature page already spent on its pillars. -->
+          <!-- IMAGE SLOTS, all three PARTLY MET, and named rather than approximated:
+                 card 1  asked for the chairside conversation with the clinician and the patient
+                         looking at the screen together. What exists is a first-party photograph
+                         of a clinician seated beside a patient with the screen on the wall
+                         behind them. They are not shown looking at it together.
+                 card 2  asked for the application being carried out at the chair. What exists
+                         is a first-party photograph of a clinician working at the chair. No
+                         photograph of a fluoride application exists in assets/.
+                 card 3  asked for the after-care sheet being handed over at a front desk. What
+                         exists is a first-party photograph of our own reception counter with
+                         paperwork on it. The sheet itself is not photographed.
+               Each alt text asserts only what its photograph shows. OWNER ITEM: commission the
+               three named photographs. -->
+          <!-- OWNER FLAG, carried from copy section 4: our own fluoride page states that varnish,
+               foam or gel can be applied, captured 30 July 2026. What it does not state is which
+               form we use, its concentration, or how long the application takes. It describes no
+               preparation step before the application. The after-care wait before eating or
+               drinking is not stated either. Owner to confirm before this section ships. None of
+               those five gaps is filled in the prose above or below. -->
+
+          <div class="rs-grid rs-grid--3">
+
+            <article class="rs-card rs-card--media">
+              <div class="rs-card__body rs-card__body--roomy">
+                <h3 class="rs-card__title">We check whether you need it.</h3>
+                <p class="rs-card__text">Your history of decay, your sensitivity, your medications and a dry mouth all change the answer.</p>
+              </div>
+              <div class="rs-frame rs-frame--tall">
+                <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-72-1-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A masked clinician in scrubs seated beside a patient in the chair at one of our offices, with a screen on the cabinet wall behind them.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </article>
+
+            <article class="rs-card rs-card--media">
+              <div class="rs-card__body rs-card__body--roomy">
+                <h3 class="rs-card__title">The fluoride is applied to the teeth.</h3>
+                <p class="rs-card__text">There is no drilling, no injection and no numbing involved.</p>
+              </div>
+              <div class="rs-frame rs-frame--tall">
+                <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-58-3-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="A masked clinician in scrubs and gloves standing beside a patient reclined in the chair at one of our offices.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </article>
+
+            <article class="rs-card rs-card--media">
+              <div class="rs-card__body rs-card__body--roomy">
+                <h3 class="rs-card__title">You get after-care instructions before you leave.</h3>
+                <p class="rs-card__text">If there is a wait before eating or drinking, we tell you what it is at the chair.</p>
+              </div>
+              <div class="rs-frame rs-frame--tall">
+                <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-36-1-768x1152.jpg"
+                     width="768" height="1152" loading="lazy" decoding="async"
+                     alt="Someone seated at the reception counter of one of our offices under the practice sign, with paperwork on the desk.">
+                <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+              </div>
+            </article>
+
+          </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: CARD-VARIATIONS.md #3 Minimal 3-up icon-top feature | considered: #4,#2 | why: the three pillars are outcome statements, not destinations and not products, so the right object is the one the entry describes as having NO card chrome at all: spacing, a small icon, a heading under it and three lines of body, three across with generous gaps. That is also the answer to a real page-level problem rather than a preference. The section directly above this one is a row of three photographic cards on the panel chrome; stamping a second row of three cards on the same chrome immediately underneath is the monotony verify-section-visual-rhythm exists to catch, and it would be right. Dropping the ground on THIS row is the variation, and it leaves the ranking intact where it belongs: the lead pillar outranks its two siblings by TYPE SIZE, on the promoted display face, which is this template's stated thesis and not a decoration. #4 Circle-icon service card with arrow link is rejected because a pillar is a statement rather than a link, and every link on this page lives in the rail at the foot of this same section. #2 Light feature card with embedded mini-visual is rejected here because it was spent one section earlier on the step cards, where the copy actually names a photograph per item, and there is no photograph for a pillar. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <div class="rs-stack">
+
+          <div class="rs-grid rs-grid--3">
+
+            <div class="rs-stack">
+              <span class="rs-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                  <path d="M13 3.2 21.4 6v7.4c0 5-3.5 8-8.4 9.4-4.9-1.4-8.4-4.4-8.4-9.4V6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                  <path d="M9.6 13.2 12 15.6l4.6-4.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <h3 class="cc-pillar__t">Give a weak spot a chance to hold.</h3>
+              <p class="rs-copy">Early enamel loss is the stage where a small step is still worth taking.</p>
+            </div>
+
+            <div class="rs-stack">
+              <span class="rs-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                  <path d="M13 3.6c3.4 0 5.8 2.2 5.8 5.4 0 3.4-1.2 5-1.8 8-.5 2.6-1 4.6-2.4 4.6-1.3 0-1.2-2.8-1.6-2.8s-.3 2.8-1.6 2.8c-1.4 0-1.9-2-2.4-4.6-.6-3-1.8-4.6-1.8-8 0-3.2 2.4-5.4 5.8-5.4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <h3 class="rs-h4">Do something for sensitivity you already have.</h3>
+              <p class="rs-copy">Exposed and sensitive tooth roots are one of the reasons a dentist may recommend fluoride. Our own fluoride page states that remineralizing the root can reduce sensitivity.</p>
+            </div>
+
+            <div class="rs-stack">
+              <span class="rs-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                  <circle cx="9" cy="8.4" r="3.4" stroke="currentColor" stroke-width="1.7"/>
+                  <circle cx="18" cy="10" r="2.4" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M3.4 21.4c0-3.4 2.5-5.8 5.6-5.8s5.6 2.4 5.6 5.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M17 15.8c2.8 0 5 2 5 5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <h3 class="rs-h4">Cover the whole family in one place.</h3>
+              <p class="rs-copy">Children and adults are both seen at all seven of our offices, so nobody gets sent elsewhere for this.</p>
+            </div>
+
+          </div>
+
+          <!-- the rest of copy section 6, landed HERE rather than beside the step cards. Section
+               6 makes two separate claims and they answer two different questions. The one about
+               the VISIT, that the practice which examined you applies the fluoride at that same
+               visit, heads the step band above. The one about the PRACTICE, that the seven
+               offices are one group on one clinical roster and not a referral network, belongs
+               under the third pillar directly above it, which is the pillar that promises the
+               whole family is seen at all seven offices. Splitting section 6 by SUBJECT rather
+               than running it as one block is what lets each half stand next to the thing it
+               actually supports. No cross-office records claim is made in either half. -->
+          <div class="cc-arg">
+            <p class="rs-copy">We run seven offices across Las Vegas, North Las Vegas and Henderson as one group.</p>
+            <p class="rs-copy">One clinical roster covers all seven offices, so the next visit is with the same clinical team.</p>
+            <p class="rs-copy">We are not a referral network, and our offices are not separately owned or separately branded.</p>
+          </div>
+
+          <!-- pick: PROOF-SECTIONS.md #5 Showcase, image and result split | considered: #4,#2 | why: the only sourced record this page is permitted to state is a third-party review average, and the only honest way to show it is beside the place it describes, which is the claim column plus room shape this entry names. It is folded in UNDER the pillars rather than given a band of its own because one sentence and one photograph cannot hold a section at this page's rhythm, and because the record is evidence FOR the three statements directly above it rather than a separate argument. The scope, the platform and the fetch date travel with the number in the same sentence, so the figure can never be quoted back as a practice-wide rating. #4 Case-study metric-led card is rejected because a metric card implies an outcome we measured, and this figure is a third-party average scoped to a single office. #2 Testimonials single big pull-quote is rejected because quote chrome around a platform statistic would read as a patient voice, which the content rules forbid. -->
+          <!-- OWNER, carried from copy section 5: confirm whether this figure is practice-wide or
+               Lake Mead only, and which platform is the system of record. Per content-bible.md
+               section 6 the scope travels with the number and may not be aggregated across
+               offices. It is rendered here with its office, its platform and its fetch date
+               attached, and nowhere else on the page. -->
+          <!-- IMAGE SLOT, PARTLY MET: copy section 5 asks for a photograph of the actual room and
+               the actual tray, no stock clinic imagery and no product packaging shots. No tray set
+               for a fluoride application is photographed in assets/. What ships is a first-party
+               photograph of instruments on the counter at one of our own offices, and the alt text
+               asserts only that. -->
+
+          <div class="cc-proof">
+
+            <p class="cc-proof__record">Our Lake Mead office holds <span class="cc-fig">4.5</span> stars across <span class="cc-fig">506</span> patient reviews on Birdeye, fetched 30 July 2026.</p>
+
+            <div class="rs-frame cc-proof__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-30-3-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="A hand setting an instrument into a tooth-shaped holder on the counter at one of our offices.">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+            </div>
+
+          </div>
+
+          <!-- pick: SECTION-COMPONENTS.md #45 Category chips / nav | considered: #50,#36 | why: seven short internal links are a tail on the argument above them, not a beat, and the foundation already ships a 48px pill, which is the only shape in this kit that guarantees a real tap target for labels this short. The two lead-in words stay in place from the copy, so the rail reads as a sentence that happens to be navigable rather than as a nav bar dropped into the body. Placing it at the foot of the pillars-and-record band rather than under the in-house argument is the deliberate difference from the sibling feature page, and it is the better place here because the pillars name the family and the seven offices that two of these links go to. #50 Topic columns is rejected because seven links do not fill columns and the copy supplies no column headings, which this page has no licence to write. #36 Sticky-sidebar topic nav is rejected because it exists for a long document a reader navigates repeatedly, and this is a short page read once. -->
+          <div class="cc-rail">
+
+            <div class="cc-rail__grp">
+              <p class="cc-rail__k">Related care:</p>
+              <a class="rs-chip" href="general-dentistry.html">General dentistry</a>
+              <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+              <a class="rs-chip" href="dental-exams-cleanings.html">Dental exams and cleanings</a>
+              <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+              <a class="rs-chip" href="digital-x-rays.html">Digital X-rays</a>
+              <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+              <a class="rs-chip" href="sealants.html">Sealants</a>
+            </div>
+
+            <div class="cc-rail__grp">
+              <p class="cc-rail__k">Also:</p>
+              <a class="rs-chip" href="locations.html">all seven offices</a>
+              <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+              <a class="rs-chip" href="offer.html">new patient offer</a>
+              <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+              <a class="rs-chip" href="contact.html">contact</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: FAQ-ACCORDION.md #2 Plus-icon rounded card | considered: #3,#4 | why: three objections decide whether a comparing reader books, and two of them carry fine print about price and about network status, so the disclosure has to do real work rather than sit as decoration. This entry makes each question its own tappable object on the page's existing panel chrome, ships as native details and summary so it opens with no script, survives in-page search, and gives every row a 68px target. The entry offer is stated underneath in the SAME band on purpose: the first answer sends the reader to a quote and the third confirms there is no needle, so the price they CAN see has to be the next thing they meet, and folding it in here keeps the body to a single closing ask instead of two stacked ones. GROUND: this is the page's second deep tone anchor and its closing figure and ground inversion, which is where the accent stops being a decorative mark and becomes a genuine foreground on the two prices. #3 Two-column split FAQ is rejected because it swaps one answer into a panel at a time, which hides the fine print this page is required to show, and it needs a script. #4 Numbered list FAQ is rejected because it expands nothing, so both long fine-print answers would sit open and bury the offer beneath them. -->
+<section class="rs-sec rs-sec--close surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <div class="rs-stack">
+
+          <div class="cc-faq">
+
+            <details class="cc-panel cc-faq__item">
+              <summary class="cc-faq__q">
+                <h2 class="cc-faq__qt">What does fluoride treatment cost?</h2>
+                <span class="cc-faq__ind" aria-hidden="true"></span>
+              </summary>
+              <p class="rs-copy cc-faq__a">We quote after an examination, because whether you need it at all depends on what we find. We do not publish treatment prices.</p>
+            </details>
+
+            <!-- OWNER, carried from copy section 8: the answer below names carriers without stating
+                 any relationship with them, per client-rules.json OVERCLAIM.global[5], which records
+                 the site-wide network claim as unconfirmed. It offers no coverage check made on your
+                 behalf, because that activity is undefined and blocked under content-bible.md
+                 section 2, per intake-brief.md section G-6. Confirm the per-office network status
+                 before this answer ships. -->
+            <details class="cc-panel cc-faq__item">
+              <summary class="cc-faq__q">
+                <h2 class="cc-faq__qt">Does insurance cover it?</h2>
+                <span class="cc-faq__ind" aria-hidden="true"></span>
+              </summary>
+              <p class="rs-copy cc-faq__a">Coverage depends on your plan. Delta Dental, Cigna, MetLife and the Culinary Health Fund are among the <span class="cc-fig">41</span> carriers listed on our insurance and financing page. Network status varies by office and by plan. Contact the office you want with your plan details before you book.</p>
+            </details>
+
+            <details class="cc-panel cc-faq__item">
+              <summary class="cc-faq__q">
+                <h2 class="cc-faq__qt">Does it hurt, and is it only for children?</h2>
+                <span class="cc-faq__ind" aria-hidden="true"></span>
+              </summary>
+              <p class="rs-copy cc-faq__a">There is no needle and nothing is drilled, and it is not only for children. Our own fluoride page publishes that dentists may recommend it for children and for adult patients, captured 30 July 2026.</p>
+            </details>
+
+          </div>
+
+          <!-- pick: PRICING-SECTIONS.md #5 Plain-deal honesty stance | considered: #4,#2 | why: no treatment price exists on this page and none may be invented, so the entry offer is the ONLY number the reader can be given, and the pattern built for exactly that situation is the one that states a single plain deal with its source and stops. It ships centred on the shifted ground with no tier cards, no media and no table, which is also the only treatment that does not imply the fluoride application itself has a published price. The four lenders are named in text only. #4 Quote-only cost-model split is rejected because it is already discharged by the first FAQ answer directly above, and repeating it as a section would say the same thing twice. #2 Comparison table is rejected outright: nothing in this build styles a table, so one would ship unstyled and squash at 375, and there are no tiers to compare in the first place. -->
+          <!-- OWNER PLACEHOLDER, not rendered by design and not softened: no expiry, no exclusions
+               and no senior-age threshold is stated anywhere on the live site. One is required
+               before this offer ships. -->
+          <div class="cc-offer">
+
+            <p class="cc-offer__deal">If you are new to us, the exam and X-ray are <span class="cc-offer__price">$45</span>, and <span class="cc-offer__price">$29</span> for seniors.</p>
+            <span class="cc-offer__rule" aria-hidden="true"></span>
+            <p class="rs-source">Both prices are published on our own site and were current on 30 July 2026.</p>
+            <p class="rs-copy">Payment plans are available through Care Credit, Cherry, Sunbit and Lending Club. Terms are set by the lender and are subject to credit approval. They are not terms offered by this practice.</p>
+
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

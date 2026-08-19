@@ -1,7 +1,7 @@
 {
   "slug": "radiantsmiles",
-  "page": "prophylaxis-teeth-cleaning",
-  "concept": "_design/_tournament/templates/T-FEATURE/_bulk/prophylaxis-teeth-cleaning",
+  "page": "bruxism",
+  "concept": "_design/_tournament/templates/T-FEATURE/_bulk/bruxism",
   "gates": [
     {
       "name": "block-banned-content",
@@ -216,5 +216,5 @@
   "gateCount": 52,
   "noGates": false,
   "filtered": [],
-  "ts": 1787095554907
+  "ts": 1787096314933
 }
