@@ -1,7 +1,7 @@
 {
   "slug": "radiantsmiles",
-  "page": "offer",
-  "concept": "_design/_tournament/templates/T-FEATURE/_bulk/offer",
+  "page": "antibiotic-treatment",
+  "concept": "_design/_tournament/templates/T-FEATURE/_bulk/antibiotic-treatment",
   "gates": [
     {
       "name": "block-banned-content",
@@ -216,5 +216,5 @@
   "gateCount": 52,
   "noGates": false,
   "filtered": [],
-  "ts": 1787183359911
+  "ts": 1787181293764
 }

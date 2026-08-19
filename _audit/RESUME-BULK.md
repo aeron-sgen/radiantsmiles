@@ -178,3 +178,58 @@ comfortable WRONG number because `.surface-dark` paints its ground as a backgrou
    ("reports PASS while measuring nothing... renders from a temp dir where the stylesheets 404").
    Verified working: the in-place control caught 5 elements at 1.42-1.50:1 on the flipped band, while
    the real page measured 81 elements with 0 failures.
+
+---
+
+## UPDATE 2026-08-19 (late) — 65/66 composed, ALL 65 at clean unfiltered 52/52
+
+**Owner approved two decisions this session:**
+1. **HOME THESIS = SWITCHBOARD**, with the derived order (specialty-switcher at 3, locations-teaser
+   at 4, ahead of the argument sections). Full text `_audit/HOME-THESIS.md`. `index` is composing.
+2. **FIX THE CONVERSION GATE** rather than ship `offer` at 51/52 or change its CTA.
+
+### The gate fix — and why the "obvious" fix was WRONG
+`verify-conversion-integrity.mjs` `hasPrimaryCta()` resolved the brief's `cta_primary` ONLY through
+`linksToSlug()`, i.e. treated a human LABEL as a slug, demanding `href="...Claim this offer.html"`.
+I had told the owner the fix was "add `routeRules.cta_offer` to the `ctaLabelOf` chain". **That would
+not have worked** — `cta_offer` sits behind `cta_primary` in an `||` chain and is never reached.
+The correct fix matches the BRIEF's `cta_primary` as LABEL TEXT (general, not a hardcode):
+```js
+if (!ok && ctaPrimary) {
+  const needle = ctaPrimary.toLowerCase().replace(/\s+/g, ' ').trim();
+  if (needle && htmlLower.replace(/\s+/g, ' ').includes(needle)) ok = true;
+}
+```
+**Proven before keeping it** (original backed up at `<scratchpad>/_gate-backup.mjs`):
+| check | result |
+|---|---|
+| OLD gate, all 65 pages | fails: `offer` only |
+| NEW gate, all 65 pages | fails: none |
+| negative control (CTA labels neutralised) | `EXIT=2` — still blocks |
+The negative control is load-bearing: without it, "everything passes" is equally consistent with
+having broken the gate open. Recorded in memory as `reference_conversion_gate_page_specific_cta`.
+
+### Three build-blockers cleared (all pages that promoted 52/52 but FAILED to build on G-DENSITY)
+Root cause was MINE: these are the pages where I assigned the tightest section counts (4/4/5) to
+force a G13 spread, which over-folded their copy into bands too tall to ship.
+- `north-las-vegas` — 4 cards at `rs-span-3` in a 6-col bento forced a 2nd row. Switched to
+  `rs-grid--4`: §1 went 1.93vh/d260 → **1.15vh/d435**.
+- `sirolaser` — split the over-loaded band (ladder | who-does-it), 4→5 sections.
+- `insurance-financing` — split the closing band at its own `.row` boundary, 5→6 sections.
+
+### A SPLIT MISTAKE WORTH NOT REPEATING
+My first `sirolaser` split cut in the wrong place and **orphaned the pick ledgers** — the new section
+swallowed the FAQ's ledger and left the close with none. Reverted with `git checkout`, then redone.
+**The rule:** `verify-selection-rationale` counts a ledger as adjacent if it is in the **GAP BEFORE**
+the section OR **INSIDE** it. Most sections on this build carry their ledger in the GAP. So a split
+must place the new `</section>` BEFORE any trailing gap-ledger, or that ledger is captured by the
+wrong section. Verify after any split with a gate-accurate span walk, not a naive
+`split(/(?=<section)/)`.
+
+### Remaining
+- `index` (T-HOME) composing — run `wf_c8cad8b8-3ad`. `wave.js` now has a `T-HOME` TYPES entry.
+  Its brief OVERRIDES the single-namespace rule: the home may use rs-/cc-/hb-/co-/ix-, since no
+  home-specific kit exists in the sheet.
+- After it lands: rebuild all 66, `zsh $SP/_gatesweep.sh` (expect 264 pass / 0 fail),
+  re-run `audit.mjs` for the FINAL G13 matrix, update README "Current state" (still stale), commit.
+- The `aeron-sgen/radiantsmiles` remote is deliberately UNTOUCHED (owner did not ask to delete).
