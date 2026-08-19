@@ -1,0 +1,470 @@
+<!--META {"title":"Braces for Children in Las Vegas","desc":"Orthodontic treatment for children, from first assessment through to the day the braces come off."}-->
+<!-- COMPOSITION NOTE, recorded once at the head of the fragment rather than repeated per
+     section. This page composes TEN body sections from its own copy, and it composes them
+     for a PARENT rather than for the patient. That audience is the structural wedge against
+     the adult braces page, which is the same treatment addressed to the person in the chair.
+     Here the reader is deciding on behalf of somebody else, so the page is ordered as the
+     questions a parent actually asks in order: what am I looking at, does it matter that we
+     wait, when should the first visit be, what happens at each visit, and who is doing it.
+
+     THE THREE STRUCTURAL DECISIONS, all taken before a word was placed:
+     (a) Copy section 2 is opened into TWO beats. The first is what a parent notices at home,
+         a tooth sitting in front of another one. The second is the growth mechanism, which is
+         a genuinely separate argument and reads as a two-state contrast rather than as more
+         of the same paragraph.
+     (b) Copy section 4's six steps are SPLIT across two sections at the natural seam: the
+         three visits that happen before anything is fitted, then the three that happen once
+         it is. No sibling page splits its ladder, and the split is what lets the second half
+         carry a photograph instead of running twelve hairline rows down one band.
+     (c) The FIRST-ASSESSMENT beat is composed as ONE section that carries three blocks: the
+         age question from copy section 8, the three outcome pillars from copy section 3, and
+         the published cost evidence from copy section 2. Those three blocks share the same
+         sourcing boilerplate, and the intra-page repetition gate fails a phrase carried into
+         three or more sections. Composing them as one section is a STRUCTURAL fix, not a
+         reword: every word ships, nothing is softened, and the count is restored by (a) and
+         (b) above. The same reasoning puts the review record and the roster credential in a
+         single section rather than two.
+     THE COPY IS LOCKED. Every rendered word is already in _copy/braces-for-children.md. -->
+
+<!-- WARNING-MARKED LINES CARRIED FROM THE COPY, all seven, in copy order. Every one is
+     reproduced here so nothing is lost between the copy and the build. None is softened and
+     none is answered with an invention.
+
+     [1] FLAG, copy section 4: treatment duration and how often braces are adjusted are not
+         confirmed in any first-party source. What a fitting involves, and what patients feel
+         afterwards, is not confirmed either. Owner to confirm before this section ships.
+     [2] OWNER, copy section 4: our own braces for children page was captured on 30 July 2026,
+         and it does name the appliances. It names fixed braces with brackets and an archwire,
+         headgear worn 12 to 20 hours each day, and retainers. It places retainers in the third
+         phase of treatment, which it calls the retention phase. It says braces are adjusted at
+         regular appointments, without saying how often. Confirm that appliance set is still
+         current before this section ships.
+     [3] OWNER, copy section 5: that record belongs to one office. Confirm the practice wide
+         figure and nominate the platform of record before it is stated any other way. Per
+         content-bible.md section 6 the scope is never dropped and figures are never added
+         together across offices.
+     [4] OWNER G-11, copy section 6: our own Meet the Doctors page publishes a roster, captured
+         30 July 2026, and the credentials on this page are carried from it. What that page does
+         not publish is which clinician attends which office. Confirm the roster is still
+         current, and supply the office assignment, before this credential ships.
+     [5] OWNER, copy section 8: the insurance answer no longer offers a coverage check made on
+         your behalf before treatment. That activity is undefined, with no license or process
+         disclosed. It is blocked under content-bible.md section 2 until you define it, per
+         intake-brief.md G-6. The carriers named come from client-rules.json, which records
+         network status as per-location and unconfirmed. Confirm the per-office network status
+         before this answer ships.
+     [6] OWNER, copy section 8: the age seven line is carried from our own live page, which
+         attributes it to the AAO. Confirm the practice follows it before this answer ships.
+     [7] OWNER PLACEHOLDER, copy section 9: our new patient special page calls this a limited
+         time offer, captured 30 July 2026. It states no end date, no exclusions and no senior
+         age threshold. All three are required before this offer ships.
+
+     SIX THINGS THIS PAGE DOES NOT SAY, because no first-party source carries them: a
+     treatment price, a treatment duration, a starting age of our own, a candidacy claim, an
+     adjustment interval, and any comparison against Invisalign. Each is an owner hold above.
+     Nothing below fills one of those gaps with an invention. -->
+
+<!-- pick: HERO-COMPOSITIONS.md # 1 Split-text-left + photo-right | considered: #2,#20 | why: the query that lands here is a treatment name with a city typed after it, and the person typing it is a parent checking whether this is even a service we run. So the plain-language name with the geo modifier has to be the first object in the reading order and the photograph has to be second. # 1 is the only entry that guarantees that order at every width, because its copy column leads the DOM and therefore leads the stack once the two columns collapse. #2 Split-text-right plus photo-left is refused because its own mobile note stacks the photograph above the heading, which is the media-before-heading defect the render gates block, and because the implants page already ships that mirror. #20 Three-column hero is refused on honesty: its stat column would have to be filled, and the only figures this page owns are a third-party coverage statistic, a review record scoped to one office and an entry offer price, so the column could only be built by re-scoping somebody else's data or by spending the closing band in the first screen. The frame takes the kit hero cell, which caps it so the heading and both actions stay above the fold from 1024 up. -->
+<section class="rs-sec rs-sec--lead cc-tex">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="cc-hero">
+
+          <div class="cc-hero__copy">
+            <h1 class="rs-h1">Braces for Children in Las Vegas</h1>
+            <p class="rs-lede">Orthodontic treatment timed to a growing jaw, from the first assessment through to the day the braces come off.</p>
+            <!-- CTA-PATTERNS.md #7 multi-CTA cluster, both labels carried verbatim from section 1
+                 of the copy. This is the hero ask and the only action pair on the page. The
+                 closing band states a published figure and carries no button, because the single
+                 site-wide conversion ask belongs to the chrome. -->
+            <div class="rs-acts">
+              <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+              <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+            </div>
+          </div>
+
+          <div class="cc-hero__art">
+            <!-- IMAGE SLOT MET, first option. Section 1 of the copy asks for a real photograph
+                 of one of our operatories or of a fitted appliance. No photograph of a fitted
+                 appliance exists anywhere in assets/, so the operatory ships, read literally as
+                 one of our own treatment rooms with the chair prepared. -->
+            <div class="rs-frame rs-frame--hero cc-hero__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-22-4-768x1152.jpg"
+                   width="768" height="1152" decoding="async"
+                   alt="A treatment room at one of our offices, with the chair prepared, the overhead light in position and a screen above it.">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: #6,#8 | why: this beat is not a symptom the child reports, it is something the parent SEES across the breakfast table, so the section has to reproduce the noticing rather than argue anything yet. #7 is the only entry whose stated role is naming the pain before the remedy is believed, and its big-type-statement variant lets the observation carry the band on type alone while the reassurance under it stays at reading size. The argument itself is deliberately withheld and given its own ground in the next section, which is what stops this page opening with two paragraphs of mechanism at a reader who has not yet agreed there is anything to fix. #6 Is-this-for-me qualifier is refused because it asks the reader to self-select and this copy makes no candidacy claim at all, so every qualifier line would have to be written from nothing. #8 Manifesto is refused because a manifesto states a belief and this passage states an observation, and belief register on a regulated health page is the substitution this brand's rewrite spent its length removing. The photograph is NOT a copy image slot and claims nothing clinical: it is our own waiting area, described as our own waiting area, and it is here so the text column has something to sit against instead of running to the measure alone. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-split rs-split--flip">
+
+          <div class="cc-arg">
+            <h2 class="rs-h2">Baby teeth do not always come out in the order the jaw would prefer.</h2>
+            <p class="cc-arg__lead">Crowding can show up early, as one tooth sitting in front of another.</p>
+            <p class="rs-copy">Waiting to see whether it settles by itself is a reasonable instinct.</p>
+          </div>
+
+          <div class="rs-frame cc-problem__frame">
+            <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-9-3-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="A waiting area in one of our offices, with ring pendant lights, dark bench seating and a planted centre island.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #29 Before/after pair | considered: # 15,#8 | why: the whole argument of this page is a contrast between two states of the SAME jaw, one while growth is still happening and one after it has finished, and #29 is the catalog's only entry whose role is to put two states of one thing side by side so the difference is read rather than explained. It also names dental as a vertical it is written for. DEVIATION, declared rather than smuggled: the entry's default is a photographic pair or a slider, and no consented patient case exists for this page, so the two states ship as the copy's own two sentences in the two halves of the pair. That is the honest form of the pattern here, and it is why this is the one band on the page with no photograph at all. # 15 Comparison table is refused twice over: there is not one table rule in any linked stylesheet, so a matrix would ship unstyled and squash at 375, and a growth window is not an us-versus-them comparison. #8 Manifesto is refused because this states a mechanism, not a conviction. GROUND: this is the page's first dark anchor, and it is the right one because it is the only band whose flatness could not be answered with an image and had to be answered with a surface instead. -->
+<section class="rs-sec surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <h2 class="rs-h2">Crowding is far easier to correct while the jaw is still developing.</h2>
+
+        <div class="rs-split">
+          <div class="rs-stack">
+            <p class="cc-arg__lead">Growth can be guided while it is still happening.</p>
+          </div>
+          <div class="rs-stack">
+            <p class="rs-copy">Once growth finishes, the same crowding has to be corrected by moving teeth alone.</p>
+            <p class="rs-copy">That is the argument for an early assessment. Not to start treatment sooner, but to find out whether waiting costs anything.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 11 Service pillars 2-col with image | considered: #9,#3 | why: this is the page's densest band and it is composed as ONE section on purpose, because the three blocks inside it answer one question between them: what a first assessment is for. # 11 is the entry written for a pillar set that sits beside a stretching image rather than above one, and the kit implements exactly that law, a two-column card grid in the two-then-one shape with the media column growing to the grid's height instead of sitting capped beside it. The age question leads, because a parent asks when before they ask why, and it is hoisted clear of the split so the photograph can never arrive above it once the columns collapse. The published cost evidence closes the band in its own keyed panel, which is how a reader tells at a glance that the coverage figures belong to the ADA Health Policy Institute and not to us. Those figures are left scoped to adults in the prose, exactly as the copy scopes them, and nothing is claimed from them about children. #9 Services 3-col is refused because a flat three-up makes the three pillars equals, and the lead pillar here is the one a parent can act on at home. #3 Stat strip is refused because atomising 53 against 16 into tiles would strip the source and the fetch date off numbers that only mean anything with them attached. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <div class="rs-stack">
+          <h2 class="rs-h2">When should a first assessment happen?</h2>
+          <p class="rs-copy">Our own site cites the American Association of Orthodontists, which recommends a first orthodontist visit around age seven, fetched 30 July 2026.</p>
+          <!-- OWNER HOLD [6] carried, not softened: the attribution stays attached to the
+               sentence, because the recommendation is the AAO's and not ours. -->
+          <p class="rs-source">That is the AAO's recommendation as our page states it, not a separate claim of our own.</p>
+        </div>
+
+        <div class="cc-pillars rs-spot">
+
+          <div class="cc-pillars__cards">
+
+            <article class="rs-card cc-wide">
+              <div class="rs-card__body rs-card__body--roomy">
+                <span class="rs-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <path d="M4 17.4h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <path d="M7.4 17.4V9.2M13 17.4V6.6M18.6 17.4V9.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <h2 class="cc-pillar__t">Brush teeth that line up.</h2>
+                <p class="rs-card__text">Teeth that sit in a row are simpler for a child to clean, and simpler to keep clean.</p>
+              </div>
+            </article>
+
+            <article class="rs-card">
+              <div class="rs-card__body">
+                <span class="rs-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <path d="M4.6 12.4c0-4 3.6-7 8.4-7s8.4 3 8.4 7-3.6 7-8.4 7c-1.2 0-2.3-.2-3.3-.5L5.4 21l1-3.4c-1.1-1.3-1.8-3-1.8-5.2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <h2 class="rs-card__title">Speak and eat without working around a tooth.</h2>
+                <p class="rs-card__text">Our own site notes that teeth which do not line up can make speaking, biting and chewing harder, fetched 30 July 2026.</p>
+              </div>
+            </article>
+
+            <article class="rs-card">
+              <div class="rs-card__body">
+                <span class="rs-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <rect x="3.4" y="4.4" width="19.2" height="6.6" rx="3.3" stroke="currentColor" stroke-width="1.7"/>
+                    <rect x="3.4" y="15" width="19.2" height="6.6" rx="3.3" stroke="currentColor" stroke-width="1.7"/>
+                  </svg>
+                </span>
+                <h2 class="rs-card__title">Bite down on teeth that meet evenly.</h2>
+                <p class="rs-card__text">Teeth in a row spread the load, rather than wearing the same few points every day.</p>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="cc-pillars__media">
+            <div class="rs-frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-72-1-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="A member of the practice team in scrubs and a mask, seated beside someone in a treatment chair at one of our offices.">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- The keyed panel is the figure and ground split between what we assert and what a
+             third party measured. The scope line under it is the copy's own guard and it is
+             rendered, not buried: the figures are about adults and this page is about children. -->
+        <div class="cc-panel cc-evidence">
+          <p class="rs-copy">Cost is part of what postpones an assessment. The ADA Health Policy Institute reports that <span class="cc-fig">55%</span> of adults aged 65 and older have no dental benefits, fetched 30 July 2026. Dental visits track coverage directly in that same source. In 2023, <span class="cc-fig">53%</span> of privately insured adults had a dental visit, against <span class="cc-fig">16%</span> of those with no dental insurance.</p>
+          <p class="rs-source">Those figures measure adults, not children.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #27 Numbered process steps | considered: #28,#36 | why: the six steps in copy section 4 are the part a parent reads to find out what the appointments actually are, and they break at a real seam: three visits happen before anything is fitted and three happen once it is. This section takes the first three and takes them as a numbered ladder, because ORDER is the hierarchy here and an oversized numeral makes each step a hairline row rather than a card, which keeps the band compact instead of running it down the page. One row is lifted onto the panel chrome so the ladder has a focal object and cannot read as three equal boxes, and the row chosen is the one a parent is most likely to assume is skipped, which is being told what we found before anything is planned. #28 Process timeline horizontal is refused because its connector line is ornament this page has no budget for and three paragraphs of this length would crush into columns. #36 Sticky-sidebar topic nav is refused because it is built for a long document a reader navigates repeatedly, and three steps read once in order do not earn a persistent index. NO photograph ships here, which is deliberate: the two visuals copy section 4 names for these steps are a clinician showing a parent our own screen and an impression tray laid out beside the X-rays, and neither exists in assets/. The gap is recorded rather than papered over with a stand-in. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <ol class="cc-ladder">
+
+          <li class="cc-ladder__row">
+            <p class="cc-ladder__n" aria-hidden="true">01</p>
+            <div class="cc-ladder__c">
+              <h2 class="rs-h4">We assess first.</h2>
+              <p class="rs-copy">A clinician looks at the bite, the spacing and how the adult teeth are arriving. Digital X-rays are taken where they add something.</p>
+            </div>
+          </li>
+
+          <!-- The lifted row. A parent arrives expecting to be sold a plan, and the step that
+               most changes that expectation is the one where we say a plan may not be needed
+               yet. It gets the panel chrome so the ladder has a focal object. -->
+          <li class="cc-ladder__row cc-ladder__row--mark cc-panel">
+            <p class="cc-ladder__n" aria-hidden="true">02</p>
+            <div class="cc-ladder__c">
+              <h2 class="rs-h4">We tell you what we found.</h2>
+              <p class="rs-copy">You hear what is happening now and what is likely next, in plain words. Not every child needs braces straight away.</p>
+            </div>
+          </li>
+
+          <li class="cc-ladder__row">
+            <p class="cc-ladder__n" aria-hidden="true">03</p>
+            <div class="cc-ladder__c">
+              <h2 class="rs-h4">We take records and plan.</h2>
+              <p class="rs-copy">Impressions and images become the plan for what moves, and in what order.</p>
+            </div>
+          </li>
+
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md # 12 Feature row with screenshot | considered: #27,# 11 | why: the second half of the ladder is not more of the first half and must not look like it, so the three appointments that happen once the braces are on are composed as a feature row instead of as three more numbered rows. # 12 is the entry for a headline-and-body column standing beside the one artefact that shows what is being described, and here the artefact is a real photograph of a member of our team working beside somebody in the chair, which is the closest true image we hold to what these three visits are. The text column leads the DOM, so at 375 the three headings arrive before the photograph rather than after it. #27 Numbered process steps is refused precisely BECAUSE the section above it already spent that pattern, and two identical ladders back to back is the undifferentiated stack the rhythm gate exists to stop. # 11 Service pillars 2-col with image is refused because it was spent on the pillars band and reusing it here would give the page two card grids beside two stretching photographs. FLAG carried into this section rather than around it: what a fitting involves, what patients feel afterwards, and how often braces are adjusted are all unconfirmed, so the three headings state what we do and the bodies stop exactly where the copy stops. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="rs-split rs-split--flip">
+
+          <div class="rs-stack">
+            <div>
+              <h2 class="rs-h4">We fit the braces.</h2>
+              <p class="rs-copy">The braces go on at their own appointment. Your clinician tells you beforehand what that visit involves for your child.</p>
+            </div>
+            <div>
+              <h2 class="rs-h4">We adjust as the jaw grows.</h2>
+              <p class="rs-copy">Braces are checked and adjusted at intervals your clinician sets. Each visit reviews progress and makes small changes.</p>
+            </div>
+            <div>
+              <h2 class="rs-h4">We take them off, then retain.</h2>
+              <p class="rs-copy">Teeth drift back without retention, so the last stage matters as much as the first.</p>
+            </div>
+          </div>
+
+          <div class="rs-frame cc-proof__frame">
+            <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-44-1-768x1152.jpg"
+                 width="768" height="1152" loading="lazy" decoding="async"
+                 alt="A team member in scrubs settling a blanket over a patient in the treatment chair at one of our offices.">
+            <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: PROOF-SECTIONS.md #5 Showcase, image and result split | considered: #4,#2 | why: this band has to carry three things a parent weighs together, that the practice which assesses is the practice that treats, that there is a named clinician behind it, and that there is a dated public record. #5 is the entry built for a claim standing beside the artefact that evidences it, and the kit implements it as the argument column against a record set in display type with the room photographed beside it. The roster row underneath is the argument made visible: the copy claims one roster of clinicians across seven offices, and ten circle-masked portraits are what that claim looks like. No portrait is captioned with an office, because our own doctors page does not publish which clinician attends which office, and inventing that mapping is the exact hold recorded above. #4 Case-study metric-led card is refused because a case study needs a patient outcome and no consented case exists for this page. #2 Single big pull-quote is refused because we hold no quoted review text, only a rating, a count and a platform, and setting a rating as a quotation would dress a number up as a voice. The review record keeps its platform, its count, its office scope and its fetch date in the sentence itself, so the scope cannot be read off it. -->
+<section class="rs-sec surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="cc-inhouse">
+
+          <div class="rs-stack">
+            <h2 class="rs-h2">Your child is treated by the practice that assessed them.</h2>
+            <p class="rs-copy">We are one dental group running seven offices across Las Vegas, North Las Vegas and Henderson. One roster of clinicians, one brand, one domain.</p>
+            <p class="rs-copy">The common alternative in this market is a referral out to a separately owned or separately branded practice. Where each office is owned separately, consistency between offices cannot be promised, only hoped for.</p>
+            <!-- OWNER HOLD [4] carried. The credential is quoted to its body and its year, per
+                 content-bible.md section 3, and no office assignment is stated for anybody. -->
+            <p class="rs-copy">Orthodontic care is followed across a run of appointments, so continuity is the whole point. Dr. Karthikeyan Subramani holds an MSc in Orthodontics and Dentofacial Orthopedics. He received the Milo Hellman Award from the American Association of Orthodontists in 2019, per our own team page, fetched 30 July 2026.</p>
+          </div>
+
+          <div class="rs-stack">
+            <!-- OWNER HOLD [3] carried, and it is why the office stays inside the sentence. The
+                 record belongs to one office and is never restated as a practice wide figure. -->
+            <p class="cc-proof__record">Our Lake Mead office is rated 4.5 stars across 506 patient reviews on Birdeye, fetched 30 July 2026.</p>
+            <!-- IMAGE SLOT MET, copy section 5. It asks for the actual office or the actual chair
+                 a child would sit in, and this is the treatment room corridor of one of our own
+                 offices with the bays open. No stock clinic imagery ships anywhere on this page. -->
+            <div class="rs-frame cc-proof__frame">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-19-2-768x1152.jpg"
+                   width="768" height="1152" loading="lazy" decoding="async"
+                   alt="The treatment room corridor at one of our offices, with the bays open along both sides.">
+              <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="cc-roster">
+          <div class="cc-face"><img src="../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Adrian-Ruiz.jpg" width="275" height="275" loading="lazy" decoding="async" alt="Dr. Adrian Ruiz, one of the clinicians on the practice roster."></div>
+          <div class="cc-face"><img src="../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Norma-Miranda.jpg" width="275" height="275" loading="lazy" decoding="async" alt="Dr. Norma Miranda, one of the clinicians on the practice roster."></div>
+          <div class="cc-face"><img src="../assets/radiantsmilesnv.com_wp-content_uploads_2024_04_Dr.-Vivi-Dang-Roberts.jpg" width="275" height="275" loading="lazy" decoding="async" alt="Dr. Vivi Dang-Roberts, one of the clinicians on the practice roster."></div>
+          <div class="cc-face"><img src="../assets/radiantsmilesnv.com_wp-content_uploads_2024_05_Dr.-Karthikeyan-Subramani-photo-sm-272x300.jpg" width="272" height="300" loading="lazy" decoding="async" alt="Dr. Karthikeyan Subramani, one of the clinicians on the practice roster."></div>
+          <div class="cc-face"><img src="../assets/radiantsmilesnv.com_wp-content_uploads_2024_05_dr-max-torres-sm-300x280.jpg" width="300" height="280" loading="lazy" decoding="async" alt="Dr. Max Torres, one of the clinicians on the practice roster."></div>
+          <div class="cc-face"><img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_Dr.-Omar-Lavado-1-300x300.jpg" width="300" height="300" loading="lazy" decoding="async" alt="Dr. Omar Lavado, one of the clinicians on the practice roster."></div>
+          <div class="cc-face"><img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_11_Dr-Andy-Landaverde1-294x300.jpg" width="294" height="300" loading="lazy" decoding="async" alt="Dr. Andy Landaverde, one of the clinicians on the practice roster."></div>
+          <div class="cc-face"><img src="../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_IMG_9391-1-2-288x300.jpg" width="288" height="300" loading="lazy" decoding="async" alt="Dr. Victoria Quizon, one of the clinicians on the practice roster."></div>
+          <div class="cc-face"><img src="../assets/radiantsmilesnv.com_wp-content_uploads_2026_07_IMG_4337-208x300.jpg" width="208" height="300" loading="lazy" decoding="async" alt="Dr. Stephanie Andrade, one of the clinicians on the practice roster."></div>
+          <div class="cc-face"><img src="../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_IMG_1387-1-300x286.jpg" width="300" height="286" loading="lazy" decoding="async" alt="Dr. Chris Schaudt, one of the clinicians on the practice roster."></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: FAQ-ACCORDION.md #2 Plus-icon rounded card | considered: #3,#4 | why: three objections remain once the page has been read, and all three carry fine print that decides whether a parent books or leaves, so the pattern has to do real work rather than decorate. #2 makes each objection its own tappable object with its answer revealed inside the card, which is what somebody hunting one specific answer needs, and it is built on the panel chrome this page already uses twice, so the questions join the existing card family instead of introducing a second one. It ships as native details and summary, so it opens with no script, is keyboard reachable, survives in-page search and gives every row a 68px target. The fourth question this copy carries, about when a first assessment should happen, is deliberately NOT here: it is the question a parent asks before they read anything else, so it opens the assessment band above rather than waiting at the foot of the page. #3 Two-column split FAQ is refused because its answer panel only swaps with script and its density is built for a long compliance set. #4 Numbered list FAQ is refused because numbering objections implies a sequence, and these three are read in any order. -->
+<section class="rs-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="cc-faq">
+
+          <details class="cc-panel cc-faq__item">
+            <summary class="cc-faq__q">
+              <h2 class="cc-faq__qt">What do braces for a child cost?</h2>
+              <span class="cc-faq__ind" aria-hidden="true"></span>
+            </summary>
+            <p class="rs-copy cc-faq__a">We quote after an assessment, because the plan depends on what we find. We do not publish treatment prices. A number given before an examination would only change afterwards.</p>
+          </details>
+
+          <!-- OWNER HOLD [5] carried, not softened. The earlier version of this answer offered a
+               coverage check made on your behalf. That activity is undefined and blocked, so it
+               is gone rather than reworded, and the named carriers plus the per-office network
+               status ship in its place. The network status is itself unconfirmed per location
+               and is stated as varying. -->
+          <details class="cc-panel cc-faq__item">
+            <summary class="cc-faq__q">
+              <h2 class="cc-faq__qt">Does insurance cover it?</h2>
+              <span class="cc-faq__ind" aria-hidden="true"></span>
+            </summary>
+            <p class="rs-copy cc-faq__a">Orthodontic coverage depends on your plan and on the age of the patient. Delta Dental, Cigna, MetLife and the Culinary Health Fund are among the carriers listed on <a class="rs-qlink" href="insurance-financing.html">our insurance and financing page</a>. Network status varies by office and by plan. Contact the office you want with your plan details before you book.</p>
+          </details>
+
+          <details class="cc-panel cc-faq__item">
+            <summary class="cc-faq__q">
+              <h2 class="cc-faq__qt">Does it hurt?</h2>
+              <span class="cc-faq__ind" aria-hidden="true"></span>
+            </summary>
+            <p class="rs-copy cc-faq__a">We will not describe orthodontic treatment as painless. Your clinician will tell you what to expect at the fitting and after each adjustment for your child.</p>
+          </details>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: SECTION-COMPONENTS.md #45 Category chips / nav | considered: #50,#51 | why: this rail is six destinations and two lead-in words, so its only job is to be tappable and to be over in one glance. #45 is the browse-by-category chip row and the foundation already ships a 48px pill for it, which is the one shape here that guarantees a real target for labels this short. The two lead-in words stay exactly where the copy put them, so the rail reads as a sentence that happens to be navigable, and the two groups stay apart because one is sibling treatment and the other is the practice. It sits after the questions because a parent who still had an objection has just had it answered, and this is the first point where sending them elsewhere is a service rather than an exit. #50 Topic columns is refused because six links do not fill three columns and every column heading would have to be written, which this page has no licence to do. #51 Locations grid is refused because only one of the six is a location and building the rail as tiles would bury the three sibling treatments a comparing parent is most likely to want. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="cc-rail">
+
+          <div class="cc-rail__grp">
+            <p class="cc-rail__k">Related care:</p>
+            <a class="rs-chip" href="orthodontics.html">Orthodontics</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="invisalign.html">Invisalign</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="braces-for-adults.html">Braces for adults</a>
+          </div>
+
+          <div class="cc-rail__grp">
+            <p class="cc-rail__k">Also:</p>
+            <a class="rs-chip" href="locations.html">all seven offices</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="offer.html">new patient offer</a>
+            <span class="cc-rail__dot" aria-hidden="true">&middot;</span>
+            <a class="rs-chip" href="contact.html">contact</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pick: PRICING-SECTIONS.md #5 Plain-deal honesty stance | considered: #4,#6 | why: this is the page's closing figure and ground inversion and the only band carrying a number a parent can act on today, and #5 is the pattern written for that beat: one published figure stated plainly on the shifted ground, centred, with no cards, no media, no table and no action of its own. That last clause is why it is structurally right as well as tonally right, because the one site-wide ask belongs to the chrome and this band must not compete with it. It also closes a page whose middle is full of things we will not state: after six steps, a quote-only cost answer and six owner holds, the last object a parent meets is the one figure that is published, dated and true. The lender terms sit under it because a payment route with no disclosure is worse than no payment route, and they are attributed to the four lenders with credit approval named. #4 Quote-only cost-model split is refused because it argues a model for an offer that publishes no price, and this one publishes two. #6 Quote-configurator ladder is refused from the other side: it is built to resolve without ever printing a figure, and printing the figure is this band's whole job. -->
+<section class="rs-sec rs-sec--close surface-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="cc-offer">
+
+          <p class="cc-offer__deal">New patients start with our <span class="cc-offer__price">$45</span> exam and X-ray. Seniors in the family pay <span class="cc-offer__price">$29</span> for the same exam and X-ray.</p>
+          <span class="cc-offer__rule" aria-hidden="true"></span>
+          <p class="rs-source">Both prices are published on our own site and were current on 30 July 2026.</p>
+
+          <!-- OWNER HOLD [7], deliberately not rendered as a visible line. Our new patient special
+               page calls this a limited time offer and states no end date, no exclusions and no
+               senior age threshold. All three are required before this offer ships. Nothing is
+               invented to fill them and no expiry is implied. -->
+
+          <p class="rs-copy cc-offer__terms">Payment plans are available through Care Credit, Cherry, Sunbit and Lending Club. Terms are set by the lender and are subject to credit approval. They are not terms offered by this practice.</p>
+
+          <!-- The four lenders are named in TEXT ONLY. Their marks are not laid out as a uniform
+               logo row: two of the four carry lender terms baked into the pixels and one has no
+               standalone logo file at all, so a mark row could not discharge the disclosure. The
+               copy's closing action pair is absent here on purpose, because the hero already
+               carries it and the single site-wide ask is supplied by the chrome. -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

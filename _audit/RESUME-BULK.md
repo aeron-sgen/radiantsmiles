@@ -1,9 +1,17 @@
-# RESUME — radiantsmiles BULK (checkpoint 2026-08-19 14:00)
+# RESUME — radiantsmiles BULK (checkpoint 2026-08-19, updated 14:30)
 
-## State (verified on disk, not from memory)
-- **51/66 composed.** 50 at clean UNFILTERED 52/52. 50 built. G13 worst pairwise **0.750**
-  (cookie-policy vs privacy-policy — both T-LEGAL, EXEMPT). No non-exempt pair near the 0.80 block.
-- `offer` is **51/52** — see OWNER DECISION below. Not a page defect.
+## SESSION-LIMIT EVENT — all 3 waves cut off at once (resets 4:40pm Asia/Manila)
+14 agents hit the limit. **11 of the 14 had SAVED COMPLETE DRAFTS** because "SAVE YOUR WORK EARLY"
+is now in every brief — that instruction is the single highest-value change made this session.
+Those 11 were salvaged by ME (no agents, my own tokens) via `$SP/_salvage2.sh`.
+**3 pages have NO draft and must be re-run by agents when the limit resets:**
+`antibiotic-treatment` (6 sections), `periodontal-scaling-root-planing` (8), `blue-diamond` (9).
+
+## State
+- Build verified: `Done: 50/50`, **zero "fail" strings in the whole log**. (The job reported exit 1;
+  that was MY bug — `grep -c` exits 1 on zero matches. Same class as the sweep script bug. Both fixed.)
+- G13 worst pairwise **0.750** (cookie-policy vs privacy-policy — both T-LEGAL, EXEMPT).
+- `offer` is **51/52** — OWNER DECISION, see below. Not a page defect.
 
 ## FIRST COMMANDS ON RESUME
 ```sh
@@ -98,3 +106,37 @@ left untouched, same precedent as the unanchored `#1` bannedVocab regex. **Owner
 ## Untouched / intact (verified this session)
 `_handoff/`, `_approvals.json`, `_build/`, `assets/`, `_design/*.css` — all clean.
 All three handoff checksums MATCH. Every `_design/` change is inside `_tournament/.../_bulk/` previews.
+
+---
+
+## KNOWN OPEN PAGE DEFECTS AT THIS CHECKPOINT
+
+### 1. `sirolaser` — promotes 52/52 but FAILS `verify-section-density`
+This is the "52/52 does not prove it builds" case again. Measured on the preview:
+```
+§0:1.15vh/d394/Δ0.22  §1:1.26vh/d479.1/Δ0.65  §2:1.67vh/d713.9/Δ0.87  §3:1.38vh/d409.7/Δ0.76
+FAIL — §2 "Here it is the same practice t" TALL+THIN: 1.67vh, density 713.9, colΔ 0.87 [97,767,399]
+```
+**Note this is NOT the prophylaxis failure mode.** Density is HIGH (713.9, well over the 400 floor).
+The trigger is the OTHER arm of the rule: section is tall (1.67vh > 1.65) **AND** column delta 0.87
+exceeds 0.50. Its stack children measure `[97, 767, 399]` — a 767px column beside a 399px column.
+**Remedy: rebalance §2's two columns** (move content between them, or split the tall column), do NOT
+add copy and do NOT shorten by deleting facts. Re-check with:
+```sh
+node <SKILL>/scripts/verify-section-density.mjs --page <ROOT>/_design/_tournament/templates/T-FEATURE/_bulk/sirolaser/preview.html
+```
+sirolaser is 1708 words in 4 sections — the tightest page on the site — so its bands run naturally
+tall. If rebalancing cannot clear it, the honest fix is to ship 5 sections and record the deviation.
+
+### 2. `offer` — 51/52, OWNER DECISION (see above, unchanged)
+
+### 3. Three pages have NO draft and need real agents when the limit resets (4:40pm Asia/Manila)
+`antibiotic-treatment` (6 sections), `periodontal-scaling-root-planing` (8), `blue-diamond` (9).
+Their full `extra` briefs are recoverable from the session transcript — search run IDs
+`wdzcydnqy` / `wf_269e49c8-667` and `wmpap3twg` / `wf_c641a66c-39d`.
+
+## SHELL BUG TO STOP REPEATING
+`grep -c` **exits 1 when it finds zero matches**. Putting it last in a verification chain makes a
+PASSING check report failure. This produced two false "job failed" signals today (the gate sweep and
+the 50-page build, both of which had actually SUCCEEDED). End such chains with an explicit
+`if ...; then ...; exit 1; fi; exit 0` instead.
