@@ -140,3 +140,41 @@ Their full `extra` briefs are recoverable from the session transcript — search
 PASSING check report failure. This produced two false "job failed" signals today (the gate sweep and
 the 50-page build, both of which had actually SUCCEEDED). End such chains with an explicit
 `if ...; then ...; exit 1; fi; exit 0` instead.
+
+---
+
+## UPDATE — 62/66 composed, 61 clean at unfiltered 52/52
+
+**Only 4 pages remain: `antibiotic-treatment` (6 sections), `periodontal-scaling-root-planing` (8),
+`blue-diamond` (9), then `index` (T-HOME) LAST.** All three T-FEATURE ones need real agents; they
+never saved a draft.
+
+RESOLVED since the last checkpoint:
+- `henderson` + `north-decatur` — drafts were lost to a THIRD scratchpad wipe, then recovered from the
+  SUBAGENT transcripts (`subagents/workflows/wf_c641a66c-39d/agent-*.jsonl`) using the same
+  Write-then-replay-Edits technique as the tool recovery. Both promoted 52/52, render gates 4/4.
+  **Subagent transcripts are a second recovery source — the main session jsonl does NOT contain
+  what a subagent wrote.**
+- `dentures-partial-dentures` 51/52 -> **52/52**. `verify-section-visual-rhythm` Rule 3: four
+  consecutive light sections at positions 7-10. Fixed by grounding the `cc-inhouse` band
+  (position 8, the "one group, seven offices, not a franchise" beat) on `.surface-dark` — the
+  dominant treatment on this site (18 pages ground `cc-inhouse` dark vs 9 light), not an invention.
+
+## NEW TOOL: `contrast.mjs` — painted-pixel WCAG probe (USE AFTER ANY GROUND FLIP)
+`node $SP/contrast.mjs <page.html>` → `examined N text elements | contrast failures: M`, exit 2 on fail.
+**Why it exists:** contrast is NOT in the 52-gate battery, so a ground flip can ship unreadable text at
+a clean 52/52 (this happened on `dr-adrian-ruiz`: `.ar-rail__l` at 1.40:1). A DOM-walk probe reports a
+comfortable WRONG number because `.surface-dark` paints its ground as a background-IMAGE, so
+`backgroundColor` is transparent and the walk climbs to a light ancestor. This one samples the
+**screenshot**, and reports elements EXAMINED so a green can never mean "measured nothing".
+
+**TWO TRAPS, both hit while building it — do not repeat:**
+1. It imports playwright by ABSOLUTE path
+   (`Code/os-workstation/node_modules/playwright-core/index.mjs`); a bare `from 'playwright'` fails
+   with ERR_MODULE_NOT_FOUND.
+2. **A positive control MUST be written INTO the page's own directory.** Put the control copy in the
+   scratchpad and its relative `<link>` hrefs 404, the page renders UNSTYLED, and the control silently
+   passes — which is the same defect the approvals record for `verify-chrome-parity`
+   ("reports PASS while measuring nothing... renders from a temp dir where the stylesheets 404").
+   Verified working: the in-place control caught 5 elements at 1.42-1.50:1 on the flipped band, while
+   the real page measured 81 elements with 0 failures.
