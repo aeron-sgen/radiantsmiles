@@ -1,7 +1,7 @@
 {
   "slug": "radiantsmiles",
   "page": "dr-adrian-ruiz",
-  "concept": "_design/_tournament/templates/T-ARTICLE/concept-a",
+  "concept": "_design/_tournament/templates/T-ARTICLE/_bulk/dr-adrian-ruiz",
   "gates": [
     {
       "name": "block-banned-content",
@@ -216,5 +216,5 @@
   "gateCount": 52,
   "noGates": false,
   "filtered": [],
-  "ts": 1786947956725
+  "ts": 1787203713286
 }

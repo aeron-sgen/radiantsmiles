@@ -3,32 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About Radiant Smiles | Las Vegas Dental Group</title>
-<meta name="description" content="One dental practice running seven Las Vegas area offices with one clinical team. Caring for Las Vegas families for 23 years.">
-
-
-<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-
+<title>about</title>
+<meta name="description" content="Bulk composition preview. Not a shipped page.">
+<meta name="robots" content="noindex,nofollow">
+<!-- FAVICON: brand-neutral default so every build satisfies the publish launch-floor (P-Q). Each site
+     ships its own assets/favicon.svg; pages emit from pages/ so the ref is ../../../../../../assets/ (rewritten to
+     assets/ at publish). derive-shell preserves this line verbatim as part of the tokenized head. -->
+<link rel="icon" type="image/svg+xml" href="../../../../../../assets/favicon.svg">
+<!-- FONTS: hardcoded in the head (SSOT model — the chrome head carries NO font TOKEN; only the head
+     slots TITLE/META_DESC/NOINDEX/DESIGN_CSS_LINKS/SIGNATURE_LINKS + CONTENT are dynamic; see the
+     derive-shell ALLOWED set). A per-site shell (the locked _build/_template.html from the CHROME
+     stage) SWAPS these three lines for the brand's chosen families — exactly as the passing builds do
+     (batchworks: Oswald/Poppins/Space Grotesk; harborline-proof: Roboto Slab/Inter/IBM Plex Mono).
+     These canonical defaults are slug-/brand-NEUTRAL placeholders; never a brand literal. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../_design/radiantsmiles-tokens.css?v=b6a47ef0">
-  <link rel="stylesheet" href="../_design/radiantsmiles-chrome.css?v=7a83c029">
-  <link rel="stylesheet" href="../_design/radiantsmiles-structural.css?v=ff720f4a">
+<link rel="stylesheet" href="../../../../../radiantsmiles-tokens.css">
+<link rel="stylesheet" href="../../../../../radiantsmiles-structural.css">
+<link rel="stylesheet" href="../../../../../radiantsmiles-chrome.css">
 
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-
+<!-- ============================================================================
+     HEADER: NAV-PATTERNS.md #7 Centered logo + below-it mega-nav with dropdowns
+     Row 1: quiet utility left  ·  wordmark centred and alone  ·  utility + CTA right
+     Row 2: the grouped mega-nav, beneath the ledger hairline
+     ============================================================================ -->
 <header class="site-header" id="site-header">
   <div class="container">
 
     <div class="hdr-row hdr-row--identity">
       <p class="hdr-utility hdr-utility--left">Seven offices &middot; Las&nbsp;Vegas &amp; Henderson</p>
 
-      
+      <!-- OWNER FLAG G-7: wordmark set in --ds-font-display, NOT the navy-and-yellow JPG.
+           Swap to the vector master the moment one exists. -->
       <a class="wordmark" href="index.html" aria-label="Radiant Smiles Dental Care, home">
         <span class="wordmark__name">Radiant Smiles</span>
         <span class="wordmark__lockup">Dental Care</span>
@@ -39,7 +51,7 @@
         <a class="btn btn--accent" href="contact.html">Book Appointment</a>
       </div>
 
-      
+      <!-- G13 CANONICAL INTERACTIVITY CONTRACT: exact selectors, emitted verbatim -->
       <button class="site-header__hamburger" type="button"
               aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open menu">
         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
@@ -51,7 +63,7 @@
     <nav class="hdr-row hdr-row--nav" aria-label="Primary">
       <ul class="nav">
 
-        
+        <!-- ---------- SERVICES : mega ---------- -->
         <li class="nav__group" data-nav-group>
           <button class="nav__trigger" type="button"
                   aria-haspopup="true" aria-expanded="false" aria-controls="mega-services">Services
@@ -136,7 +148,7 @@
 
                   </div>
 
-                  
+                  <!-- the ledger's closing rule, PINNED to the foot of the panel -->
                   <div class="mega__foot">
                     <a href="services.html">All services</a>
                     <a href="offer.html">New Patient Offer</a>
@@ -144,11 +156,11 @@
                   </div>
                 </div>
 
-                
+                <!-- FEATURED ZONE: right, portrait crop, accent keyline frame -->
                 <div class="feat">
                   <p class="eyebrow">Our practice</p>
                   <div class="feat__frame">
-                    <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-2048x1365.jpg"
+                    <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-6-1-2048x1365.jpg"
                          alt="A treatment room at a Radiant Smiles office, chair and operatory light ready for a patient."
                          width="2048" height="1365" loading="eager" decoding="sync">
                     <span class="grade grade--multiply" aria-hidden="true"></span>
@@ -164,7 +176,7 @@
           </div>
         </li>
 
-        
+        <!-- ---------- LOCATIONS : mega, all seven offices, real tel: links ---------- -->
         <li class="nav__group" data-nav-group>
           <button class="nav__trigger" type="button"
                   aria-haspopup="true" aria-expanded="false" aria-controls="mega-locations">Locations
@@ -248,7 +260,7 @@
 
                   </div>
 
-                  
+                  <!-- the ledger's closing rule, PINNED to the foot of the panel -->
                   <div class="mega__foot">
                     <a href="locations.html">All seven offices</a>
                     <a href="contact.html">Contact</a>
@@ -256,11 +268,11 @@
                   </div>
                 </div>
 
-                
+                <!-- FEATURED ZONE: right, portrait crop, accent keyline frame -->
                 <div class="feat">
                   <p class="eyebrow">Our practice</p>
                   <div class="feat__frame">
-                    <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Blue-Diamond-Front-Desk-2048x1365.jpg"
+                    <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Blue-Diamond-Front-Desk-2048x1365.jpg"
                          alt="The front desk at the Radiant Smiles Blue Diamond office."
                          width="2048" height="1365" loading="eager" decoding="sync">
                     <span class="grade grade--multiply" aria-hidden="true"></span>
@@ -276,12 +288,12 @@
           </div>
         </li>
 
-        
+        <!-- ---------- OUR TEAM : direct link ---------- -->
         <li class="nav__group">
           <a class="nav__link" href="team.html">Our Team</a>
         </li>
 
-        
+        <!-- ---------- NEW PATIENTS : caret dropdown ---------- -->
         <li class="nav__group nav__group--drop" data-nav-group>
           <button class="nav__trigger" type="button"
                   aria-haspopup="true" aria-expanded="false" aria-controls="drop-new-patients">New Patients
@@ -297,7 +309,7 @@
           </div>
         </li>
 
-        
+        <!-- ---------- ABOUT : caret dropdown, with the real dentists ---------- -->
         <li class="nav__group nav__group--drop" data-nav-group>
           <button class="nav__trigger" type="button"
                   aria-haspopup="true" aria-expanded="false" aria-controls="drop-about">About
@@ -316,7 +328,7 @@
             <div>
               <p class="eyebrow">Our dentists</p>
               <div class="drop-feat__frame">
-                <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Dentists-scaled.jpg"
+                <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2026_05_Radiant-Smiles-Dentists-scaled.jpg"
                      alt="The Radiant Smiles dentists photographed together."
                      width="1707" height="2560" loading="eager" decoding="sync">
                 <span class="grade grade--multiply" aria-hidden="true"></span>
@@ -334,15 +346,23 @@
   </div>
 </header>
 
-
+<!-- ============================================================================
+     FILLER MAIN: scaffold, not design. Present only so the header's condense
+     transition is demonstrable and the footer sits below a real fold.
+     ============================================================================ -->
 <main id="main">
-
+<!--META {"title":"About Radiant Smiles | Las Vegas Dental Group","desc":"One dental practice running seven Las Vegas area offices with one clinical team. Caring for Las Vegas families for 23 years.","darkHero":true}-->
+<!-- pick: HERO-COMPOSITIONS.md #21 Mosaic / collage hero | considered: #22,#23,#28 | why: this page's first claim is a seven office practice, and a collage of real first party photographs is the only hero shape where the plurality is carried by the composition instead of by an adjective. The divergence band for concept C is entry twenty one and above, and twenty one is the one entry in that band this copy can honestly fill. #22 Statistics heavy was the strongest rival and is rejected on evidence grounds: the only figures this page owns are a BBB reported 23 years, a single office rating and a B plus with an unresolved complaint, so a wall of oversized numerals would either promote third party figures to first party claims or drag the proof section's copy into a hero that the locked copy gives only an H1, a sub and two CTAs. #23 Comparison is rejected because the copy itself says the alternative model is not being framed as a fault, and a two column us against them hero would contradict the page's own sentence before the reader ever reaches it. #28 Embedded map is rejected because the locked copy carries no address, no hours and no single practice number, so a map hero could only be filled by inventing location data. DELIBERATE DEVIATION from the catalog entry: twenty one is described as maximalist and gallery coded with five to eight images, and this build ships THREE at generous gaps with the headline off to the side. imagery-system.md section 1 requires calm and uncrowded with generous whitespace around every image for an anxious healthcare audience, and a maximalist wall would break a governing rule to satisfy a vibe note. The stagger, the unequal column weights and the three different aspect ratios carry the collage read; density does not. Tile chrome is SURFACE-PATTERNS.md #34 Soft rounded, and the hover is MOTION-PATTERNS.md entry twelve, Image zoom, chosen over entry ten, Lift, so the photograph moves inside its mask while the tile itself stays put. GROUND, decided 2026-08-17 and recorded here because this entry previously stated no ground at all: the hero ships on .surface-dark and is the FIRST of the page's two deep tone anchors, the second being the why band. The already stamped T-HUB template opens on exactly this shape, .rs-sec--lead surface-dark, so this is the site's own lead band convention rather than a new one. The reason it is right HERE is figure and ground: three light photographs standing on the same pale tone as the page read as panels, and on the deep tone they read as objects. Nothing in the collage argument changes. Ground tone is not density, so the generous gaps, the unequal column weights and the three aspect ratios that carry the collage read are untouched, and the imagery spec's calm and uncrowded rule is untouched with them. Each tile now carries the foundation's own .rs-grade--lift, a screen blend of --ds-signature at --ds-opacity-faint, stacked over the multiply grade it already had. That is the same two grade stack the T-HUB lead band uses on its own media, and on this ground it is load bearing rather than decorative: without it the shadow end of each photograph closes up against the deep teal behind it. -->
 <section class="rs-sec rs-sec--lead surface-dark">
   <div class="container">
     <div class="row">
       <div class="col">
 
-        
+        <!-- OWNER/FLAG carried verbatim from _copy/about.md section 1, rendered nowhere on the page:
+             ⚠OWNER §G-5: the live mission statement is held as the captured positioning, but its
+             phrase describing a premium experience does NOT ship. At a $45 entry offer, against a
+             market whose upper pole charges far more, that framing is not supportable and
+             `OVERCLAIM` forbids it. -->
 
         <div class="co-hero">
           <div class="co-hero__copy">
@@ -358,19 +378,19 @@
             <div class="co-mosaic">
               <div class="co-mosaic__l">
                 <figure class="rs-frame co-tile co-tile--lead">
-                  <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-13-768x1152.jpg" width="768" height="1152" decoding="async" fetchpriority="high" alt="The reception desk at one of our offices, with the Radiant Smiles sun mark on a slatted wood wall and planters either side.">
+                  <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-13-768x1152.jpg" width="768" height="1152" decoding="async" fetchpriority="high" alt="The reception desk at one of our offices, with the Radiant Smiles sun mark on a slatted wood wall and planters either side.">
                   <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
                   <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
                 </figure>
               </div>
               <div class="co-mosaic__r">
                 <figure class="rs-frame co-tile co-tile--a">
-                  <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-92-768x1152.jpg" width="768" height="1152" loading="lazy" decoding="async" alt="A team member standing at the front desk of one of our offices, with monitors on the counter behind her.">
+                  <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-92-768x1152.jpg" width="768" height="1152" loading="lazy" decoding="async" alt="A team member standing at the front desk of one of our offices, with monitors on the counter behind her.">
                   <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
                   <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
                 </figure>
                 <figure class="rs-frame co-tile co-tile--b">
-                  <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-53-768x1152.jpg" width="768" height="1152" loading="lazy" decoding="async" alt="A gloved hand loading a milling machine in one of our offices, with its lit chamber standing open.">
+                  <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-53-768x1152.jpg" width="768" height="1152" loading="lazy" decoding="async" alt="A gloved hand loading a milling machine in one of our offices, with its lit chamber standing open.">
                   <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
                   <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
                 </figure>
@@ -384,20 +404,27 @@
   </div>
 </section>
 
-
+<!-- pick: SECTION-COMPONENTS.md #8 Manifesto / belief statement | considered: #3,#2,#5 | why: the locked copy for this section is three sentences, and the first two are a plain statement of what the practice is, in its own voice, with no supporting apparatus. That is the belief statement shape exactly: one to three sentences staking a position, set left aligned with a rule above, which is the variant the entry names. The third sentence is a BBB figure with a fetch date, so it is split into its own sourced panel beside the statement rather than run on inside it. The reader can then see at a glance which line is the practice speaking and which line is a registry being quoted, and that separation is the governing move for this whole page type. #3 Stat strip is rejected because this section owns exactly ONE figure and it is not first party, and a metric band built around a single borrowed number dresses an attribution up as scale. #2 Trust strip is rejected because the only logo wall available is the insurance carrier set, whose rights imagery-system.md section 2 records as unconfirmed, and because a carrier row answers a question this section is not asking. #5 Awards band is rejected outright: no award exists in any captured source, and the client banned vocabulary bars the register even if one did. DEVIATION: the entry offers a quote formatted variant with attribution, and that is not used, because attributing the practice's own description of itself to the practice would read as a testimonial. The panel top edge is --ds-signature at 3px, a legal 3:1 boundary graphic that carries no text. SECOND DELIBERATE DEVIATION, added 2026-08-17: one photograph ships under the statement, where entry eight describes a statement standing alone. Three things made it right rather than tolerated. The claim being made is "one clinical roster", and the roster is people, so a photograph of a clinician working IS first party evidence for the sentence directly above it, in the same way section four's waiting area photograph is evidence for its line. imagery-system.md section 1 puts people before teeth and names clinician and interior photography as what carries the trust argument, and this page had spent its entire photographic budget on rooms and machines with no one delivering care in any of them. And it gives this section a shape of its own: before it, this section and the why band below it were the same object, one heading over prose, stamped twice in a row. The file is `1-44-1`, previously unused anywhere in the build, and it is described only as one of our offices per section 4 rule 5, because the smile gallery interiors carry no office attribution and naming one would be inventing it. The statement still comes FIRST in source order, so on a phone the photograph can never arrive above the line it supports. The plate is the FOUNDATION's own .rs-frame--wide at 16/10, not a new co- ratio, which is both the correct use of the locked vocabulary and the reason this section adds ZERO rules to the promoted sheet. It is also the page's only landscape crop at desktop: the hero tiles run 3/4, 4/3 and 1/1 and the values plate is 4/3, so nothing here restates either of them. Elevation, the hover lift and the in mask zoom come from .co-tile, which this figure already rides on. -->
 <section class="rs-sec rs-sec--band">
   <div class="container">
     <div class="row">
       <div class="col">
 
-        
+        <!-- OWNER/FLAG carried verbatim from _copy/about.md section 2, rendered nowhere on the page:
+             ⚠FLAG: the 23 year figure is BBB reported, not first party. It ships attributed to the
+             BBB with its date, exactly as written above. Otherwise the owner confirms the founding
+             year and it is restated as our own.
+             ⚠OWNER §G-1: the legal entity name needs confirming. The site brand reads Radiant Smiles
+             Dental Care; third party registries carry a different entity string. The site brand is
+             used in copy, and the legal footer and schema carry a ⚠OWNER PLACEHOLDER until it is
+             resolved. -->
 
         <div class="co-story">
           <div class="co-story__head">
             <p class="co-lead-in">We are Radiant Smiles Dental Care.</p>
             <h2 class="co-say">One practice, seven offices, one clinical roster.</h2>
             <figure class="rs-frame rs-frame--wide co-tile">
-              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-44-1-768x1152.jpg" width="768" height="1152" loading="lazy" decoding="async" alt="A team member in scrubs settling a blanket over a patient in the treatment chair at one of our offices.">
+              <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-44-1-768x1152.jpg" width="768" height="1152" loading="lazy" decoding="async" alt="A team member in scrubs settling a blanket over a patient in the treatment chair at one of our offices.">
               <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
               <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
             </figure>
@@ -412,7 +439,7 @@
   </div>
 </section>
 
-
+<!-- pick: SECTION-COMPONENTS.md #7 Problem framing | considered: #6,#27,#24 | why: the copy here does the problem framing job in the entry's own terms, naming the thing the reader had not thought to worry about and then naming why the status quo cannot promise it. The entry lists a big type statement as its first variant, and that is what ships: the opening line becomes the section heading and the three following paragraphs run down a hairline ladder beneath it, in the order the copy wrote them. #6 Is this for me qualifier is rejected because the copy sorts business MODELS, not readers, and rewriting it into buyer profiles would put words in the practice's mouth. #27 Numbered process steps is rejected because nothing here is sequential, and numbering a three part argument would imply a procedure the copy does not describe. #24 Testimonials grid is rejected because this copy contains no patient quote anywhere, and a structural claim about ownership is not a thing a patient could witness. The comparison table entry in the same catalog, entry fifteen, was the sharpest temptation and is refused for cause: a checkmark matrix would turn a structural observation into a scorecard against unnamed practices, which contradicts the copy's own sentence that it is not framing that as a fault, and breaks `competitorFraming`. GROUND, and the deliberate structural divergence: the page carries TWO .surface-dark anchors, the hero and this band, and this is the one that is not a masthead. It sits in the MIDDLE of the page, so the deep tone lands a second time on the one claim a visitor cannot check for themselves, and the page still never ENDS on a dark band. *Corrected 2026-08-17. This sentence read "the page's single .surface-dark anchor" until the hero took the second one. The correction is recorded rather than quietly rewritten because the reasoning it supports is unchanged: what was load bearing was that the deep tone lands on THIS claim and that the close stays light, never that no other section was allowed one.* It carries NO photograph on purpose. There is no honest photograph of an ownership structure, and an office interior dropped in here would be decoration standing in for evidence. -->
 <section class="rs-sec surface-dark">
   <div class="container">
     <div class="row">
@@ -440,20 +467,30 @@
   </div>
 </section>
 
-
+<!-- pick: SECTION-COMPONENTS.md #26 Pull-quote section | considered: #8,#57,#20 | why: the locked copy gives this section exactly one publishable sentence, and it is explicitly the practice's own words about its offices rather than a values statement. A pull quote section is the only shape in the catalog designed around a single held line with nothing propping it up, which is what honesty requires here. Any component with slots would create empty slots, and empty slots are what get filled with invented values. #8 Manifesto is rejected because a manifesto shape ASSERTS a stated belief, and the flag on this section says in terms that no values statement exists in any captured source; dressing one line as a creed would imply the practice had authored one. #57 Quote standalone is the near duplicate of the pick and is rejected only because the deviation below makes the pull quote entry the more honest citation. #20 Team mosaic is rejected because this section is not about people, and because the only group portrait on disk, `1-16`, is Henderson's own file and is bound by imagery-system.md section 4 rule 4 to Henderson pages. DELIBERATE DEVIATION: entry twenty six says no other content in the section, and one photograph ships beside the line. The line describes calm and comfortable offices, a real photograph of a waiting area is first party evidence for exactly that clause, and imagery-system.md licenses describing it only as one of our offices. Source order is statement then media, so on a phone the photograph can never arrive above the line it supports. -->
 <section class="rs-sec">
   <div class="container">
     <div class="row">
       <div class="col">
 
-        
+        <!-- OWNER/FLAG carried verbatim from _copy/about.md section 4, rendered nowhere on the page:
+             ⚠OWNER PLACEHOLDER: no values statement exists in any captured source. What is missing
+             is a stated set of values in the practice's own words. Rather than invent one, this
+             section ships as a placeholder until the owner supplies it. The line below is the
+             register this rebuild holds, as the practice's words rather than a patient's.
+             ⚠FLAG: do not generate a values statement here. A fabricated one would be
+             indistinguishable from a real one to a reader, which is precisely why it is barred.
+             BUILD NOTE: no dashed pending block ships in this slot. A visible placeholder has to
+             carry a label, and every honest label for it is a restatement of the OWNER note above,
+             which may not be rendered as page copy. The gap is therefore held OPEN in the layout
+             and recorded here, not decorated. -->
 
         <div class="co-values">
           <div class="co-values__copy">
             <p class="co-values__say">The practice's own site describes calm and comfortable offices and warm interactions with patients.</p>
           </div>
           <figure class="rs-frame co-tile co-values__frame">
-            <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-9-3-768x1152.jpg" width="768" height="1152" loading="lazy" decoding="async" alt="A waiting area in one of our offices, with ring pendant lights, dark bench seating and a planted centre island.">
+            <img src="../../../../../../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-9-3-768x1152.jpg" width="768" height="1152" loading="lazy" decoding="async" alt="A waiting area in one of our offices, with ring pendant lights, dark bench seating and a planted centre island.">
             <span class="rs-grade rs-grade--soft" aria-hidden="true"></span>
             <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
           </figure>
@@ -464,13 +501,15 @@
   </div>
 </section>
 
-
+<!-- pick: CARD-VARIATIONS.md #5 Stat tile 4-up | considered: #6,#9,#2 | why: this section carries two independently sourced records, and the stat tile family is the catalog's answer to quiet proof where a brand wants numbers to do the work without a logo wall. The tile is the right container because each record is a genuinely discrete object with its own platform, its own scope and its own fetch date, and running them together as prose would let a skimming reader carry the rating away without the scope line still attached to it. #6 Stat row on dark band is rejected for a specific reason: the page's two dark anchors are already spent on the hero and on the why section, and a THIRD dark band here would make the non accreditation line read as a design flourish rather than a disclosure. *Amended 2026-08-17 from "the page's single dark anchor is already spent on the why section" and "a second dark band here". The count moved when the hero took a deep ground; the refusal did not, and it is the refusal that is load bearing.* #9 Testimonial cards are rejected because this copy contains no patient quote at all, only aggregate ratings, and a testimonial shaped container with no testimonial in it is an invitation to write one. #2 Light feature card with an embedded mini visual is rejected because the mini visual would have to be a chart, and there is no time series, no distribution and no comparison set behind either figure to chart honestly. The promo banner entry, number eighteen, was considered and refused on judgment: a promo treatment applied to a B plus rating with an unresolved complaint would be grotesque. DELIBERATE DEVIATIONS, two. First, TWO tiles rather than four, because there are two records and padding the row out would require inventing two more. Second, the tile content is a full sourced SENTENCE with the figure promoted inside it, not a bare numeral over a caption, because a bare rating detached from its platform, its office and its fetch date is precisely the selective proof the closing line of this copy says the rebuild exists to remove. -->
 <section class="rs-sec rs-sec--band">
   <div class="container">
     <div class="row">
       <div class="col">
 
-        
+        <!-- OWNER/FLAG carried verbatim from _copy/about.md section 5, rendered nowhere on the page:
+             ⚠OWNER: supply the practice wide review figure and nominate the platform of record, or
+             the Birdeye number stays scoped to one office. -->
 
         <div class="co-proof">
           <div class="co-rec">
@@ -489,7 +528,39 @@
   </div>
 </section>
 
+<!-- pick: CTA-PATTERNS.md #7 Multi-CTA cluster | considered: #4,#8,#3 | why: the locked copy hands this section a primary and a secondary that are genuinely two paths to one destination, book an appointment and call the office, which is the pairing this entry exists for. The primary takes the accent fill, whose label the foundation pins to --ds-primary-deep at 8.46:1 and whose keyline is carried as a border so it cannot collapse, and the secondary takes the ghost outline, so the two read as one family at one height. Call the office routes to the locations page rather than to a tel: link, because the locked chrome carries seven direct lines and no single practice number, so hard coding one would silently nominate an office this copy never names. #4 Phone pill is rejected for exactly that reason: a number as the button label needs one number to be the right one, and here none of the seven is. #8 Stacked CTAs is rejected because the closing card is wide, and stacking two full width buttons across it reads as a mobile layout stranded on a desktop. #3 Arrow circle is rejected because it strips the button chrome down to a label plus an icon, and the audience law in the locked structural sheet sets 18px labels and a 48px floor on every target for a primary audience aged 40 and over. The full width band entry, number eleven, was refused because a saturated band would be the third loud ground on a six section page and would out shout the disclosure directly above it. The sticky bottom entry, number twelve, was refused as already owned: the locked chrome ships its own mobile sticky bar, which reveals past this page's hero accent button and hides at .rs-sec--close, so a second one would double the bar exactly where the chrome comment records that bug. DELIBERATE DIVERGENCE from the obvious close: this section is a LIFTED LIGHT CARD on the surface ground, not a dark band. The dark anchors were spent on the hero and mid page on the claim that needed one, and closing quietly after a section that admits a complaint and a missing accreditation is the tonally honest ending. *Amended 2026-08-17 from "the dark anchor was spent mid page", for the count only. The refusal of a dark close is unchanged and is the reason the page's second anchor went to the hero rather than to here.* Depth comes from --ds-shadow-lift, the inset highlight and the deep keyline the token sheet mandates. Meet the team is left as copy rather than linked inline, because an inline link inside a running sentence cannot clear the 44px tap floor without breaking the paragraph, and the team page is one tap away in the locked chrome nav.
 
+     THE CONVERSION AFFORDANCE, added 2026-08-17. `about` is typed T-COMPANY at funnel_role F3, which
+     makes it a TERMINAL page: the funnel does not route onward from here, so a page that only POINTS
+     at booking is a dead end wearing a button. This closing card therefore carries a REAL form, not a
+     link dressed as one. Two fields, name and contact details, then the submit. Its `action` and
+     `method` are the same pair the T-CONTACT template's own booking form ships, so the two forms post
+     to one endpoint rather than this page inventing a second.
+     WHY TWO FIELDS AND NOT THE CONTACT PAGE'S FIVE. The contact form asks preferred office, preferred
+     days and times and reason for visit as well, and it should: that page IS the booking desk. Copying
+     it here would put the same form on the site twice and make an about page a second booking desk,
+     which is a worse page and a worse site. Two fields is the smallest thing that is genuinely a
+     conversion rather than a gesture, and everything else can be asked back.
+     WHY NO OFFICE PICKER AND NO NUMBER. `routeRules.phone_policy` publishes every direct line PER
+     OFFICE and forbids one general line, so a tel: link here would have to nominate one of seven
+     offices this copy never names. Call the office therefore keeps routing to locations.html, where
+     all seven numbers are published, exactly as the hero's secondary does. The office picker belongs
+     with it, on the pages that name the offices, and this form deliberately does not ask a visitor to
+     choose one before it will take their name.
+     WHY NO SMS CONSENT BLOCK. The contact form carries a captured Contact Form 7 acceptance notice
+     because it offers appointment reminder texts. This form offers no text signup at all, so it
+     collects no consent, claims none, and ships no notice. Adding the notice under a form that does
+     not sign anyone up would be the opposite of the disclosure discipline the section above it holds.
+     ⚠OWNER: the action inherited from the contact form posts to `contact.html`, which is a static
+     page. Point BOTH forms at the real handler before launch, and confirm whether an about page lead
+     should reach the same inbox as a contact page lead or be tagged separately.
+     ⚠BUILD/COPY NOTE, stated rather than buried. The two field labels, Name and Contact details, are
+     the ONLY rendered strings on this page that are not in `_copy/about.md`. They are control chrome,
+     not page copy, and this is the site's own established convention: none of the T-CONTACT form's
+     labels appear in `_copy/contact.md` either, while its office names do. They assert nothing, and
+     no fact, figure, service level promise or testimonial is introduced by them. Both strings are
+     carried verbatim from the already shipped contact form so the site has one vocabulary for the
+     same two questions. -->
 
 <section class="rs-sec rs-sec--close">
   <div class="container">
@@ -509,10 +580,37 @@
   </div>
 </section>
 
+<!-- COMPLIANCE NOTES carried verbatim from the tail of _copy/about.md. These are page wide
+     restatements rather than section directives, so they are carried here rather than at any one
+     section. Rendered nowhere on the page:
 
+     - Every proof figure carries its platform, its scope and its fetch date. The BBB non
+       accreditation is stated, not omitted.
+     - The premium experience phrasing is held out per ⚠OWNER §G-5 and `OVERCLAIM`.
+     - The 23 year figure is attributed to the BBB because it is not first party, per the brief's
+       ⚠FLAG.
+     - No values statement is invented. `proofPolicy.real_only_for` covers years in business and
+       awards.
+     - No treatment price is stated. Only the published $45 entry offer is referenced, and only as
+       context in §1.
+     - No competitor is named. §3 frames against a structural model, not a practice, per
+       `competitorFraming`.
+     - No exclamation points and no emoji, per `bannedPunctuation`.
+     - No em or en dashes, per G-NODASH.
+     - Every sentence is 24 words or fewer, per `content-bible.md` §1.
+
+     BUILD NOTE on the last three. This fragment renders zero exclamation points and zero emoji in
+     visible copy; the only exclamation characters in the file are the HTML comment openers, and the
+     only ⚠ glyphs are inside comments carrying the owner flags. Zero em or en dashes appear
+     anywhere in the file. Every rendered sentence was measured at 24 words or fewer, and every one
+     of them was string matched back to _copy/about.md before this file was considered done. -->
 </main>
 
-
+<!-- ============================================================================
+     FOOTER: FOOTER-STYLES.md #14 Hours-and-contact prominent.
+     Contact / hours / act across the top, then the seven-office ledger. This is a
+     seven-office practice: the footer's real job is "which office, what number".
+     ============================================================================ -->
 <footer class="site-footer">
   <div class="container">
 
@@ -527,7 +625,8 @@
 
       <div>
         <h2 class="foot-h">Hours &amp; contact</h2>
-        
+        <!-- OWNER FLAG: per-office opening hours are NOT in the locked spec and are NOT
+             invented here. Supply them and each one drops into its ledger row below. -->
         <p class="foot-hours"><strong>Hours vary by office.</strong> Call the office nearest you and its front desk will book you directly. Every direct line is in the ledger below.</p>
       </div>
 
@@ -626,7 +725,10 @@
   </div>
 </footer>
 
-
+<!-- ============================================================================
+     MOBILE DRAWER. G13 contract: id="mobile-drawer", aria-hidden flips to "false".
+     T3: the SAME five top-level items as desktop, same order, same labels.
+     ============================================================================ -->
 <div class="drawer-scrim" id="drawer-scrim" hidden></div>
 
 <div class="drawer" id="mobile-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Site menu">
@@ -645,7 +747,7 @@
   <div class="drawer__scroll">
     <nav aria-label="Mobile primary">
 
-      
+      <!-- 1 · SERVICES -->
       <div class="acc">
         <button class="acc__trigger" type="button" aria-expanded="false">Services
           <svg class="caret" width="14" height="9" viewBox="0 0 13 8" fill="none" aria-hidden="true"><path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -661,7 +763,7 @@
         </div>
       </div>
 
-      
+      <!-- 2 · LOCATIONS -->
       <div class="acc">
         <button class="acc__trigger" type="button" aria-expanded="false">Locations
           <svg class="caret" width="14" height="9" viewBox="0 0 13 8" fill="none" aria-hidden="true"><path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -685,12 +787,12 @@
         </div>
       </div>
 
-      
+      <!-- 3 · OUR TEAM (direct, mirrors the desktop bar) -->
       <div class="acc">
         <a class="nav__link" href="team.html">Our Team</a>
       </div>
 
-      
+      <!-- 4 · NEW PATIENTS -->
       <div class="acc">
         <button class="acc__trigger" type="button" aria-expanded="false">New Patients
           <svg class="caret" width="14" height="9" viewBox="0 0 13 8" fill="none" aria-hidden="true"><path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -703,7 +805,7 @@
         </div>
       </div>
 
-      
+      <!-- 5 · ABOUT -->
       <div class="acc">
         <button class="acc__trigger" type="button" aria-expanded="false">About
           <svg class="caret" width="14" height="9" viewBox="0 0 13 8" fill="none" aria-hidden="true"><path d="M1 1.5 6.5 6.5 12 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -733,7 +835,7 @@
   </div>
 </div>
 
-
+<!-- STICKY CTA BAR (mobile): "Book" + "Call nearest office" -->
 <div class="sticky-cta" id="cta-bar" aria-label="Quick actions">
   <a class="btn btn--accent" href="contact.html"><span class="lbl-full">Book Appointment</span><span class="lbl-short">Book</span></a>
   <a class="btn btn--ghost" href="locations.html">
