@@ -105,8 +105,8 @@ These are decisions and config, not build defects. They are recorded rather than
   scope and platform of record, and insurance network status. Every one ships as an HTML comment on
   its page; **zero render as visible text.** Where a fact is withheld the page states that in the
   locked copy's own words rather than inventing one.
-- **Sunrise Manor ZIP conflict** — 89107 vs 89104, affecting 13 pages.
-- **North Decatur publishes hours identical to Lone Mountain** on all seven days. One record is wrong.
+- **Sunrise Manor ZIP conflict** — 89107 vs 89104, affecting 13 pages. The build ships 89107 (site-wide footer, 70 occurrences) but the street address suggests 89104 may be correct; frequency here measures footer inheritance, not independent agreement. See `_audit/OPEN-DATA-CONFLICTS.md`.
+- **North Decatur publishes hours identical to Lone Mountain** on all seven days. Investigated 2026-08-20: duplication is NOT a one-off — north-las-vegas and henderson share a block too, so "one record is wrong" is not established. Evidence in `_audit/OPEN-DATA-CONFLICTS.md`.
 - **`#1` in `client-rules.json` bannedVocab compiles unanchored**, so it also matches inside
   `#10`–`#19`. Since `verify-selection-rationale` requires literal `<MENU>.md #N` citations, catalog
   items 1 and 10–19 were uncitable and so effectively unpickable. Worked around in the authoring
