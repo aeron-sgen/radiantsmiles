@@ -19,3 +19,8 @@ node_modules/
 .env
 .env.*
 *.pem
+
+# The publish pipeline's own progress log. It is written AFTER `git add -A`, so it
+# always lands one commit behind and shows the tree as dirty after every run. It is
+# a transient run artifact -- nothing in the site or the gate stack reads it.
+_audit/final-progress.txt
