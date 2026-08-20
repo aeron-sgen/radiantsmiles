@@ -1,0 +1,70 @@
+{
+  "slug": "gum-recession",
+  "ts": 1787269529317,
+  "verdict": "pass",
+  "breakpoints": [
+    {
+      "bp": "desktop",
+      "w": 1440,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 62,
+      "heroVar": "",
+      "scrollHeight": 7661
+    },
+    {
+      "bp": "laptop",
+      "w": 1280,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 62,
+      "heroVar": "",
+      "scrollHeight": 7582
+    },
+    {
+      "bp": "tablet",
+      "w": 834,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 50.04,
+      "heroVar": "",
+      "scrollHeight": 10090
+    },
+    {
+      "bp": "mobile",
+      "w": 390,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 38,
+      "heroVar": "",
+      "scrollHeight": 10620
+    }
+  ],
+  "screenshots": [
+    "_audit/_renders/gum-recession-desktop.png",
+    "_audit/_renders/gum-recession-laptop.png",
+    "_audit/_renders/gum-recession-tablet.png",
+    "_audit/_renders/gum-recession-mobile.png"
+  ],
+  "sheetsLoaded": true,
+  "h1px": 62,
+  "scrollHeight": 7661,
+  "expectedSheets": [
+    "radiantsmiles-tokens.css",
+    "radiantsmiles-chrome.css",
+    "radiantsmiles-structural.css"
+  ],
+  "unstyled": null
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "dr-victoria-quizon",
+  "ts": 1787269511587,
+  "verdict": "pass",
+  "breakpoints": [
+    {
+      "bp": "desktop",
+      "w": 1440,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 62,
+      "heroVar": "",
+      "scrollHeight": 6092
+    },
+    {
+      "bp": "laptop",
+      "w": 1280,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 62,
+      "heroVar": "",
+      "scrollHeight": 6092
+    },
+    {
+      "bp": "tablet",
+      "w": 834,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 50.04,
+      "heroVar": "",
+      "scrollHeight": 8560
+    },
+    {
+      "bp": "mobile",
+      "w": 390,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 38,
+      "heroVar": "",
+      "scrollHeight": 7623
+    }
+  ],
+  "screenshots": [
+    "_audit/_renders/dr-victoria-quizon-desktop.png",
+    "_audit/_renders/dr-victoria-quizon-laptop.png",
+    "_audit/_renders/dr-victoria-quizon-tablet.png",
+    "_audit/_renders/dr-victoria-quizon-mobile.png"
+  ],
+  "sheetsLoaded": true,
+  "h1px": 62,
+  "scrollHeight": 6092,
+  "expectedSheets": [
+    "radiantsmiles-tokens.css",
+    "radiantsmiles-chrome.css",
+    "radiantsmiles-structural.css"
+  ],
+  "unstyled": null
+}

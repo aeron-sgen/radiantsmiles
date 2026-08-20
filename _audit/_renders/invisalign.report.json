@@ -1,0 +1,70 @@
+{
+  "slug": "invisalign",
+  "ts": 1787269544577,
+  "verdict": "pass",
+  "breakpoints": [
+    {
+      "bp": "desktop",
+      "w": 1440,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 62,
+      "heroVar": "",
+      "scrollHeight": 8296
+    },
+    {
+      "bp": "laptop",
+      "w": 1280,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 62,
+      "heroVar": "",
+      "scrollHeight": 8217
+    },
+    {
+      "bp": "tablet",
+      "w": 834,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 50.04,
+      "heroVar": "",
+      "scrollHeight": 11114
+    },
+    {
+      "bp": "mobile",
+      "w": 390,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 38,
+      "heroVar": "",
+      "scrollHeight": 11683
+    }
+  ],
+  "screenshots": [
+    "_audit/_renders/invisalign-desktop.png",
+    "_audit/_renders/invisalign-laptop.png",
+    "_audit/_renders/invisalign-tablet.png",
+    "_audit/_renders/invisalign-mobile.png"
+  ],
+  "sheetsLoaded": true,
+  "h1px": 62,
+  "scrollHeight": 8296,
+  "expectedSheets": [
+    "radiantsmiles-tokens.css",
+    "radiantsmiles-chrome.css",
+    "radiantsmiles-structural.css"
+  ],
+  "unstyled": null
+}

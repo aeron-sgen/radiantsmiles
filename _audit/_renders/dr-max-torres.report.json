@@ -1,0 +1,70 @@
+{
+  "slug": "dr-max-torres",
+  "ts": 1787269500603,
+  "verdict": "pass",
+  "breakpoints": [
+    {
+      "bp": "desktop",
+      "w": 1440,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 84,
+      "heroVar": "",
+      "scrollHeight": 6033
+    },
+    {
+      "bp": "laptop",
+      "w": 1280,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 84,
+      "heroVar": "",
+      "scrollHeight": 5998
+    },
+    {
+      "bp": "tablet",
+      "w": 834,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 58.38,
+      "heroVar": "",
+      "scrollHeight": 7686
+    },
+    {
+      "bp": "mobile",
+      "w": 390,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 42,
+      "heroVar": "",
+      "scrollHeight": 7399
+    }
+  ],
+  "screenshots": [
+    "_audit/_renders/dr-max-torres-desktop.png",
+    "_audit/_renders/dr-max-torres-laptop.png",
+    "_audit/_renders/dr-max-torres-tablet.png",
+    "_audit/_renders/dr-max-torres-mobile.png"
+  ],
+  "sheetsLoaded": true,
+  "h1px": 84,
+  "scrollHeight": 6033,
+  "expectedSheets": [
+    "radiantsmiles-tokens.css",
+    "radiantsmiles-chrome.css",
+    "radiantsmiles-structural.css"
+  ],
+  "unstyled": null
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "orthodontics",
+  "ts": 1787269572777,
+  "verdict": "pass",
+  "breakpoints": [
+    {
+      "bp": "desktop",
+      "w": 1440,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 62,
+      "heroVar": "",
+      "scrollHeight": 5835
+    },
+    {
+      "bp": "laptop",
+      "w": 1280,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 62,
+      "heroVar": "",
+      "scrollHeight": 5812
+    },
+    {
+      "bp": "tablet",
+      "w": 834,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 50.04,
+      "heroVar": "",
+      "scrollHeight": 7454
+    },
+    {
+      "bp": "mobile",
+      "w": 390,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 38,
+      "heroVar": "",
+      "scrollHeight": 8651
+    }
+  ],
+  "screenshots": [
+    "_audit/_renders/orthodontics-desktop.png",
+    "_audit/_renders/orthodontics-laptop.png",
+    "_audit/_renders/orthodontics-tablet.png",
+    "_audit/_renders/orthodontics-mobile.png"
+  ],
+  "sheetsLoaded": true,
+  "h1px": 62,
+  "scrollHeight": 5835,
+  "expectedSheets": [
+    "radiantsmiles-tokens.css",
+    "radiantsmiles-chrome.css",
+    "radiantsmiles-structural.css"
+  ],
+  "unstyled": null
+}

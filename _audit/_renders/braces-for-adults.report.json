@@ -1,0 +1,70 @@
+{
+  "slug": "braces-for-adults",
+  "ts": 1787269445455,
+  "verdict": "pass",
+  "breakpoints": [
+    {
+      "bp": "desktop",
+      "w": 1440,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 62,
+      "heroVar": "",
+      "scrollHeight": 9533
+    },
+    {
+      "bp": "laptop",
+      "w": 1280,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 62,
+      "heroVar": "",
+      "scrollHeight": 9454
+    },
+    {
+      "bp": "tablet",
+      "w": 834,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 50.04,
+      "heroVar": "",
+      "scrollHeight": 11513
+    },
+    {
+      "bp": "mobile",
+      "w": 390,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 38,
+      "heroVar": "",
+      "scrollHeight": 12595
+    }
+  ],
+  "screenshots": [
+    "_audit/_renders/braces-for-adults-desktop.png",
+    "_audit/_renders/braces-for-adults-laptop.png",
+    "_audit/_renders/braces-for-adults-tablet.png",
+    "_audit/_renders/braces-for-adults-mobile.png"
+  ],
+  "sheetsLoaded": true,
+  "h1px": 62,
+  "scrollHeight": 9533,
+  "expectedSheets": [
+    "radiantsmiles-tokens.css",
+    "radiantsmiles-chrome.css",
+    "radiantsmiles-structural.css"
+  ],
+  "unstyled": null
+}

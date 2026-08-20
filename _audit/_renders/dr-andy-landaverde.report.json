@@ -1,0 +1,70 @@
+{
+  "slug": "dr-andy-landaverde",
+  "ts": 1787269492135,
+  "verdict": "pass",
+  "breakpoints": [
+    {
+      "bp": "desktop",
+      "w": 1440,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 84,
+      "heroVar": "",
+      "scrollHeight": 5851
+    },
+    {
+      "bp": "laptop",
+      "w": 1280,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 84,
+      "heroVar": "",
+      "scrollHeight": 5851
+    },
+    {
+      "bp": "tablet",
+      "w": 834,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 58.38,
+      "heroVar": "",
+      "scrollHeight": 8294
+    },
+    {
+      "bp": "mobile",
+      "w": 390,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 42,
+      "heroVar": "",
+      "scrollHeight": 7453
+    }
+  ],
+  "screenshots": [
+    "_audit/_renders/dr-andy-landaverde-desktop.png",
+    "_audit/_renders/dr-andy-landaverde-laptop.png",
+    "_audit/_renders/dr-andy-landaverde-tablet.png",
+    "_audit/_renders/dr-andy-landaverde-mobile.png"
+  ],
+  "sheetsLoaded": true,
+  "h1px": 84,
+  "scrollHeight": 5851,
+  "expectedSheets": [
+    "radiantsmiles-tokens.css",
+    "radiantsmiles-chrome.css",
+    "radiantsmiles-structural.css"
+  ],
+  "unstyled": null
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "dr-adrian-ruiz",
+  "ts": 1787269489400,
+  "verdict": "pass",
+  "breakpoints": [
+    {
+      "bp": "desktop",
+      "w": 1440,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 84,
+      "heroVar": "",
+      "scrollHeight": 4540
+    },
+    {
+      "bp": "laptop",
+      "w": 1280,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 84,
+      "heroVar": "",
+      "scrollHeight": 4536
+    },
+    {
+      "bp": "tablet",
+      "w": 834,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 58.38,
+      "heroVar": "",
+      "scrollHeight": 6314
+    },
+    {
+      "bp": "mobile",
+      "w": 390,
+      "contrastFlags": 0,
+      "hardInvisible": 0,
+      "worst": [],
+      "overflowPx": 0,
+      "sheetsLoaded": true,
+      "h1px": 42,
+      "heroVar": "",
+      "scrollHeight": 6339
+    }
+  ],
+  "screenshots": [
+    "_audit/_renders/dr-adrian-ruiz-desktop.png",
+    "_audit/_renders/dr-adrian-ruiz-laptop.png",
+    "_audit/_renders/dr-adrian-ruiz-tablet.png",
+    "_audit/_renders/dr-adrian-ruiz-mobile.png"
+  ],
+  "sheetsLoaded": true,
+  "h1px": 84,
+  "scrollHeight": 4540,
+  "expectedSheets": [
+    "radiantsmiles-tokens.css",
+    "radiantsmiles-chrome.css",
+    "radiantsmiles-structural.css"
+  ],
+  "unstyled": null
+}

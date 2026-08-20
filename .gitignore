@@ -24,3 +24,14 @@ node_modules/
 # always lands one commit behind and shows the tree as dirty after every run. It is
 # a transient run artifact -- nothing in the site or the gate stack reads it.
 _audit/final-progress.txt
+
+# rverify's per-page breakpoint captures. It writes <slug>-{desktop,laptop,tablet,mobile}.png
+# for all 66 pages on every run -- ~290MB against a 110MB repo, regenerated from scratch each
+# time and read by nothing downstream. The DETERMINISTIC evidence is the sibling
+# <slug>.report.json (264KB total), which stays tracked. The P9 chrome-tournament captures in
+# _audit/_renders/chrome/ and the two *-preview.png are real phase artifacts and stay tracked --
+# these four suffixes match only rverify's output naming, so they cannot catch one by accident.
+_audit/_renders/*-desktop.png
+_audit/_renders/*-laptop.png
+_audit/_renders/*-tablet.png
+_audit/_renders/*-mobile.png
