@@ -1,0 +1,12 @@
+[blue-diamond] 52/52 gate(s) PASS (all green) 
+[faq] 52/52 gate(s) PASS (all green) 
+[henderson] 52/52 gate(s) PASS (all green) 
+[insurance-financing] 52/52 gate(s) PASS (all green) 
+[lone-mountain] 52/52 gate(s) PASS (all green) 
+[north-decatur] 52/52 gate(s) PASS (all green) 
+[north-las-vegas] 52/52 gate(s) PASS (all green) 
+[summerlin] 52/52 gate(s) PASS (all green) 
+[sunrise-manor] 52/52 gate(s) PASS (all green) 
+
+promoted clean: 9   problems: 0
+remaining cc-offer__rule across the site: 30
