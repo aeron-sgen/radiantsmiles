@@ -1,0 +1,23 @@
+--- /Users/aeroncloydc.malinab/.claude-osoft/projects/-Users-aeroncloydc-malinab-Oso/07edbc58-9a34-43b4-a530-a285e33fbe21/build-tools/gate-patches/verify-conversion-integrity.ORIGINAL.mjs	2026-08-20 08:19:48
++++ /Users/aeroncloydc.malinab/.claude-osoft/projects/-Users-aeroncloydc-malinab-Oso/07edbc58-9a34-43b4-a530-a285e33fbe21/build-tools/gate-patches/verify-conversion-integrity.PATCHED.mjs	2026-08-20 08:19:48
+@@ -211,6 +211,20 @@
+ function hasPrimaryCta() {
+   let ok = false;
+   if (ctaPrimary && linksToSlug(ctaPrimary)) ok = true;
++  // The BRIEF's own cta_primary, matched as LABEL TEXT. Added 2026-08-19 (owner-authorised).
++  // It was previously consumed ONLY by linksToSlug() above, i.e. treated as a SLUG - which builds a
++  // regex demanding href="...Claim this offer.html" and can never match an honest page. That is the
++  // same class of bug this file already documents for routeRules.cta_primary. It made the gate
++  // UNSATISFIABLE for any page whose brief sets a page-specific CTA: radiantsmiles/offer is briefed
++  // cta_primary "Claim this offer" (F4 offer-led, which the locked funnel map defines as terminating
++  // at "claim the offer"), its locked copy states that label twice, and client-rules carries a
++  // dedicated routeRules.cta_offer for exactly this case. The only way to satisfy the old gate was to
++  // render a CTA contradicting the brief, the copy AND the locked rules.
++  if (!ok && ctaPrimary) {
++    const needle = ctaPrimary.toLowerCase().replace(/\s+/g, ' ').trim();
++    const hay = htmlLower.replace(/\s+/g, ' ');
++    if (needle && hay.includes(needle)) ok = true;
++  }
+   if (!ok && ctaLabel) {
+     // collapse whitespace for a forgiving label match
+     const needle = ctaLabel.toLowerCase().replace(/\s+/g, ' ').trim();
