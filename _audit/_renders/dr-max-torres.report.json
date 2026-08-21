@@ -1,6 +1,6 @@
 {
   "slug": "dr-max-torres",
-  "ts": 1787269500603,
+  "ts": 1787274222342,
   "verdict": "pass",
   "breakpoints": [
     {
@@ -13,7 +13,7 @@
       "sheetsLoaded": true,
       "h1px": 84,
       "heroVar": "",
-      "scrollHeight": 6033
+      "scrollHeight": 5933
     },
     {
       "bp": "laptop",
@@ -25,7 +25,7 @@
       "sheetsLoaded": true,
       "h1px": 84,
       "heroVar": "",
-      "scrollHeight": 5998
+      "scrollHeight": 5898
     },
     {
       "bp": "tablet",
@@ -37,7 +37,7 @@
       "sheetsLoaded": true,
       "h1px": 58.38,
       "heroVar": "",
-      "scrollHeight": 7686
+      "scrollHeight": 7547
     },
     {
       "bp": "mobile",
@@ -49,7 +49,7 @@
       "sheetsLoaded": true,
       "h1px": 42,
       "heroVar": "",
-      "scrollHeight": 7399
+      "scrollHeight": 7344
     }
   ],
   "screenshots": [
@@ -60,7 +60,7 @@
   ],
   "sheetsLoaded": true,
   "h1px": 84,
-  "scrollHeight": 6033,
+  "scrollHeight": 5933,
   "expectedSheets": [
     "radiantsmiles-tokens.css",
     "radiantsmiles-chrome.css",

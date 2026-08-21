@@ -1,6 +1,6 @@
 {
   "slug": "dr-norma-miranda",
-  "ts": 1787269503379,
+  "ts": 1787274225422,
   "verdict": "pass",
   "breakpoints": [
     {
@@ -13,7 +13,7 @@
       "sheetsLoaded": true,
       "h1px": 84,
       "heroVar": "",
-      "scrollHeight": 5584
+      "scrollHeight": 5380
     },
     {
       "bp": "laptop",
@@ -25,7 +25,7 @@
       "sheetsLoaded": true,
       "h1px": 84,
       "heroVar": "",
-      "scrollHeight": 5584
+      "scrollHeight": 5380
     },
     {
       "bp": "tablet",
@@ -37,7 +37,7 @@
       "sheetsLoaded": true,
       "h1px": 58.38,
       "heroVar": "",
-      "scrollHeight": 7704
+      "scrollHeight": 7490
     },
     {
       "bp": "mobile",
@@ -49,7 +49,7 @@
       "sheetsLoaded": true,
       "h1px": 42,
       "heroVar": "",
-      "scrollHeight": 7231
+      "scrollHeight": 7129
     }
   ],
   "screenshots": [
@@ -60,7 +60,7 @@
   ],
   "sheetsLoaded": true,
   "h1px": 84,
-  "scrollHeight": 5584,
+  "scrollHeight": 5380,
   "expectedSheets": [
     "radiantsmiles-tokens.css",
     "radiantsmiles-chrome.css",

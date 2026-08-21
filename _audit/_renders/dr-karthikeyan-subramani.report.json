@@ -1,6 +1,6 @@
 {
   "slug": "dr-karthikeyan-subramani",
-  "ts": 1787269497846,
+  "ts": 1787274219574,
   "verdict": "pass",
   "breakpoints": [
     {
@@ -13,7 +13,7 @@
       "sheetsLoaded": true,
       "h1px": 84,
       "heroVar": "",
-      "scrollHeight": 5961
+      "scrollHeight": 5843
     },
     {
       "bp": "laptop",
@@ -25,7 +25,7 @@
       "sheetsLoaded": true,
       "h1px": 84,
       "heroVar": "",
-      "scrollHeight": 5958
+      "scrollHeight": 5840
     },
     {
       "bp": "tablet",
@@ -37,7 +37,7 @@
       "sheetsLoaded": true,
       "h1px": 58.38,
       "heroVar": "",
-      "scrollHeight": 6882
+      "scrollHeight": 6780
     },
     {
       "bp": "mobile",
@@ -49,7 +49,7 @@
       "sheetsLoaded": true,
       "h1px": 42,
       "heroVar": "",
-      "scrollHeight": 7180
+      "scrollHeight": 7159
     }
   ],
   "screenshots": [
@@ -60,7 +60,7 @@
   ],
   "sheetsLoaded": true,
   "h1px": 84,
-  "scrollHeight": 5961,
+  "scrollHeight": 5843,
   "expectedSheets": [
     "radiantsmiles-tokens.css",
     "radiantsmiles-chrome.css",

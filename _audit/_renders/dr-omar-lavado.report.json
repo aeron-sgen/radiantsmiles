@@ -1,6 +1,6 @@
 {
   "slug": "dr-omar-lavado",
-  "ts": 1787269506178,
+  "ts": 1787274228253,
   "verdict": "pass",
   "breakpoints": [
     {
@@ -13,7 +13,7 @@
       "sheetsLoaded": true,
       "h1px": 84,
       "heroVar": "",
-      "scrollHeight": 6292
+      "scrollHeight": 6179
     },
     {
       "bp": "laptop",
@@ -25,7 +25,7 @@
       "sheetsLoaded": true,
       "h1px": 84,
       "heroVar": "",
-      "scrollHeight": 6263
+      "scrollHeight": 6150
     },
     {
       "bp": "tablet",
@@ -37,7 +37,7 @@
       "sheetsLoaded": true,
       "h1px": 58.38,
       "heroVar": "",
-      "scrollHeight": 8163
+      "scrollHeight": 7992
     },
     {
       "bp": "mobile",
@@ -49,7 +49,7 @@
       "sheetsLoaded": true,
       "h1px": 42,
       "heroVar": "",
-      "scrollHeight": 7941
+      "scrollHeight": 7851
     }
   ],
   "screenshots": [
@@ -60,7 +60,7 @@
   ],
   "sheetsLoaded": true,
   "h1px": 84,
-  "scrollHeight": 6292,
+  "scrollHeight": 6179,
   "expectedSheets": [
     "radiantsmiles-tokens.css",
     "radiantsmiles-chrome.css",
