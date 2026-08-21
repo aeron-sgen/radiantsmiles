@@ -1,6 +1,6 @@
 {
   "slug": "new-patients",
-  "ts": 1787290465259,
+  "ts": 1787294017742,
   "verdict": "pass",
   "breakpoints": [
     {
@@ -13,7 +13,7 @@
       "sheetsLoaded": true,
       "h1px": 62,
       "heroVar": "",
-      "scrollHeight": 6509
+      "scrollHeight": 6322
     },
     {
       "bp": "laptop",
@@ -25,7 +25,7 @@
       "sheetsLoaded": true,
       "h1px": 62,
       "heroVar": "",
-      "scrollHeight": 6464
+      "scrollHeight": 6278
     },
     {
       "bp": "tablet",
@@ -37,7 +37,7 @@
       "sheetsLoaded": true,
       "h1px": 50.04,
       "heroVar": "",
-      "scrollHeight": 7615
+      "scrollHeight": 7468
     },
     {
       "bp": "mobile",
@@ -49,7 +49,7 @@
       "sheetsLoaded": true,
       "h1px": 38,
       "heroVar": "",
-      "scrollHeight": 8896
+      "scrollHeight": 8750
     }
   ],
   "screenshots": [
@@ -60,7 +60,7 @@
   ],
   "sheetsLoaded": true,
   "h1px": 62,
-  "scrollHeight": 6509,
+  "scrollHeight": 6322,
   "expectedSheets": [
     "radiantsmiles-tokens.css",
     "radiantsmiles-chrome.css",

@@ -42,18 +42,19 @@
     <div class="row">
       <div class="col">
 
-        <h1 class="rs-h1">Cosmetic Dentistry in Las Vegas</h1>
-        <p class="rs-lede">Work on how your smile looks, handled by the same team that treats what sits underneath it. Start with what you see in the mirror.</p>
-        <p class="rs-copy">A cosmetic result rests on the tooth beneath it. Shade, shape and spacing all depend on what the exam finds first.</p>
+        <div class="hb-book">
+          <h1 class="rs-h1">Cosmetic Dentistry in Las Vegas</h1>
+          <p class="rs-lede">Work on how your smile looks, handled by the same team that treats what sits underneath it. Start with what you see in the mirror.</p>
 
-        <!-- CTA-PATTERNS.md #7 multi-CTA cluster, carried verbatim from section 1 of the
-             copy. The secondary action routes to the offices page rather than to a
-             number, because routeRules.phone_policy publishes every direct line per
-             office and forbids a generic one, and a hub cannot know which of the seven
-             offices the reader would visit. -->
-        <div class="rs-acts">
-          <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
-          <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+          <!-- CTA-PATTERNS.md #7 multi-CTA cluster, carried verbatim from section 1 of the
+               copy. The secondary action routes to the offices page rather than to a
+               number, because routeRules.phone_policy publishes every direct line per
+               office and forbids a generic one, and a hub cannot know which of the seven
+               offices the reader would visit. -->
+          <div class="rs-acts">
+            <a class="rs-btn rs-btn--accent" href="contact.html">Book an appointment</a>
+            <a class="rs-btn rs-btn--ghost" href="locations.html">Call the office</a>
+          </div>
         </div>
 
         <!-- The heading block above is HOISTED out of the pair below rather than set
@@ -62,27 +63,45 @@
              heading it belongs to. Hoisting keeps the reading order h1, sub, premise,
              actions, photograph at every width, and leaves the desktop columns as the
              pattern asks for them. -->
-        <div class="hb-why">
-
-          <div class="rs-frame hb-why__media">
-            <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-103-768x1152.jpg"
-                 width="768" height="1152" decoding="async" fetchpriority="high"
-                 alt="Someone stepping in through the glass entrance door of one of our offices, with palm trees reflected in the glazing.">
-            <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
-            <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
-          </div>
-
-          <div class="hb-why__args">
-            <p class="hb-why__was">Where cosmetic work is split out, a separately branded studio does the visible part and another practice treats the rest.</p>
-            <p class="hb-why__is">We do both in house, at our own offices, with named clinicians. One roster covers both, so the person planning veneers works in the same practice as the rest.</p>
-          </div>
-
-        </div>
 
       </div>
     </div>
   </div>
 </section>
+
+<!-- The why-block was moved OUT of the hero (owner request 2026-08-21): every other service hub
+     carries .hb-why in a BODY section (oral-surgery §2, orthodontics §2, periodontics §4,
+     general-dentistry §4, restorations §5) and cosmetic-dentistry was the only page holding it in
+     §0, which is why its hero did not match. Nothing is dropped -- the media, the was/is argument
+     and the supporting paragraph all ship here instead. rs-sec--band matches oral-surgery's own
+     placement for this component. -->
+<section class="rs-sec rs-sec--band">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="rs-copy">A cosmetic result rests on the tooth beneath it. Shade, shape and spacing all depend on what the exam finds first.</p>
+
+  <div class="hb-why">
+
+            <div class="rs-frame hb-why__media">
+              <img src="../assets/radiantsmilesnv.com_wp-content_uploads_2025_01_1-103-768x1152.jpg"
+                   width="768" height="1152" decoding="async" fetchpriority="high"
+                   alt="Someone stepping in through the glass entrance door of one of our offices, with palm trees reflected in the glazing.">
+              <span class="rs-grade rs-grade--tint" aria-hidden="true"></span>
+              <span class="rs-grade rs-grade--lift" aria-hidden="true"></span>
+            </div>
+
+            <div class="hb-why__args">
+              <p class="hb-why__was">Where cosmetic work is split out, a separately branded studio does the visible part and another practice treats the rest.</p>
+              <p class="hb-why__is">We do both in house, at our own offices, with named clinicians. One roster covers both, so the person planning veneers works in the same practice as the rest.</p>
+            </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- pick: SECTION-COMPONENTS.md # 11 Service pillars 2-col with image | considered: #29,#45,#6 | why: the brief for this beat asks for four things per block and nothing else, a benefit headline, one line of plain language capability, a real visual and the link, and # 11 is the only entry in the menu whose row is literally those four. It is written for a SMALL set of pillars rather than for a catalogue, which is the condition a two door hub is in. The kit's index row realises it, and rows rather than tiles is the right call at two: a two item tile grid reads as a grid that lost its other tiles, while two full width rows read as a complete list of two. Rank is carried by the copy's order alone, so neither procedure is scaled larger than the other and no claim is made about which one a reader should want. #29 Before/after pair is the entry a cosmetic page is expected to reach for, and rejecting it is the most important decision on this page, so it is recorded here rather than left silent. The practice has zero before and after files on disk, the smile gallery photographs carry no consent record, and proofPolicy forbids inventing one or substituting an illustrative result, so the only honest before and after section is no before and after section. The photographs in the rows below are rooms and people, and neither alt describes a result. #45 Category chips is rejected because a chip holds a name and nothing else, and the plain language line under each name is the part that tells a reader whether veneers or whitening is the thing they came for. #6 Is this for me is rejected because self selection needs enough options to eliminate, and eliminating one of two is a coin toss rather than a qualification step. DEVIATION, declared: # 11's alternating image side is not built, because the kit's row fixes the shot in a left hand track and alternating it would need CSS this build does not carry. GROUND: the plain canvas. The doors follow the page's deepest band, and a reader choosing between two things needs the lightest ground on the page to do it against. -->
 <section class="rs-sec">

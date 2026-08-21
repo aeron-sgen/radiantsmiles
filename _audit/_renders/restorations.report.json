@@ -1,6 +1,6 @@
 {
   "slug": "restorations",
-  "ts": 1787290505662,
+  "ts": 1787294060557,
   "verdict": "pass",
   "breakpoints": [
     {
@@ -13,7 +13,7 @@
       "sheetsLoaded": true,
       "h1px": 62,
       "heroVar": "",
-      "scrollHeight": 7141
+      "scrollHeight": 7013
     },
     {
       "bp": "laptop",
@@ -25,7 +25,7 @@
       "sheetsLoaded": true,
       "h1px": 62,
       "heroVar": "",
-      "scrollHeight": 7095
+      "scrollHeight": 6969
     },
     {
       "bp": "tablet",
@@ -37,7 +37,7 @@
       "sheetsLoaded": true,
       "h1px": 50.04,
       "heroVar": "",
-      "scrollHeight": 8424
+      "scrollHeight": 7852
     },
     {
       "bp": "mobile",
@@ -49,7 +49,7 @@
       "sheetsLoaded": true,
       "h1px": 38,
       "heroVar": "",
-      "scrollHeight": 9941
+      "scrollHeight": 9636
     }
   ],
   "screenshots": [
@@ -60,7 +60,7 @@
   ],
   "sheetsLoaded": true,
   "h1px": 62,
-  "scrollHeight": 7141,
+  "scrollHeight": 7013,
   "expectedSheets": [
     "radiantsmiles-tokens.css",
     "radiantsmiles-chrome.css",
