@@ -1,6 +1,6 @@
 {
   "slug": "index",
-  "ts": 1787276523512,
+  "ts": 1787287120040,
   "verdict": "pass",
   "breakpoints": [
     {
@@ -13,7 +13,7 @@
       "sheetsLoaded": true,
       "h1px": 62,
       "heroVar": "",
-      "scrollHeight": 12802
+      "scrollHeight": 12627
     },
     {
       "bp": "laptop",
@@ -25,7 +25,7 @@
       "sheetsLoaded": true,
       "h1px": 62,
       "heroVar": "",
-      "scrollHeight": 12738
+      "scrollHeight": 12563
     },
     {
       "bp": "tablet",
@@ -37,7 +37,7 @@
       "sheetsLoaded": true,
       "h1px": 50.04,
       "heroVar": "",
-      "scrollHeight": 16199
+      "scrollHeight": 16024
     },
     {
       "bp": "mobile",
@@ -49,7 +49,7 @@
       "sheetsLoaded": true,
       "h1px": 38,
       "heroVar": "",
-      "scrollHeight": 18164
+      "scrollHeight": 17887
     }
   ],
   "screenshots": [
@@ -60,7 +60,7 @@
   ],
   "sheetsLoaded": true,
   "h1px": 62,
-  "scrollHeight": 12802,
+  "scrollHeight": 12627,
   "expectedSheets": [
     "radiantsmiles-tokens.css",
     "radiantsmiles-chrome.css",

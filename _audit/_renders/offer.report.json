@@ -1,6 +1,6 @@
 {
   "slug": "offer",
-  "ts": 1787276550706,
+  "ts": 1787287147240,
   "verdict": "pass",
   "breakpoints": [
     {
@@ -13,7 +13,7 @@
       "sheetsLoaded": true,
       "h1px": 62,
       "heroVar": "",
-      "scrollHeight": 6782
+      "scrollHeight": 6651
     },
     {
       "bp": "laptop",
@@ -25,7 +25,7 @@
       "sheetsLoaded": true,
       "h1px": 62,
       "heroVar": "",
-      "scrollHeight": 6782
+      "scrollHeight": 6651
     },
     {
       "bp": "tablet",
@@ -37,7 +37,7 @@
       "sheetsLoaded": true,
       "h1px": 50.04,
       "heroVar": "",
-      "scrollHeight": 8401
+      "scrollHeight": 8269
     },
     {
       "bp": "mobile",
@@ -49,7 +49,7 @@
       "sheetsLoaded": true,
       "h1px": 38,
       "heroVar": "",
-      "scrollHeight": 9570
+      "scrollHeight": 9408
     }
   ],
   "screenshots": [
@@ -60,7 +60,7 @@
   ],
   "sheetsLoaded": true,
   "h1px": 62,
-  "scrollHeight": 6782,
+  "scrollHeight": 6651,
   "expectedSheets": [
     "radiantsmiles-tokens.css",
     "radiantsmiles-chrome.css",
