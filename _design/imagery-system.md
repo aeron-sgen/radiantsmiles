@@ -4,7 +4,12 @@ Governing spec for every photograph this build ships. Required on disk by G-IMG-
 (`verify-imagery-spec-present`): a page that renders real imagery without this file is an ungoverned
 gallery. Derived from C7 `_handoff/visual-direction.md` §2, §3 and §6. Nothing here is invented.
 
-Status: **imagery generation NOT exercised.** Owner decision, 2026-08-10. See §3.
+Status: **imagery generation REOPENED for FLAGGED PLACEHOLDERS ONLY.** Owner decision, 2026-08-21,
+superseding the 2026-08-10 decision recorded in §3. One synthetic image ships (the index hero); it is
+tracked in `_fabrication-manifest.json`, carries an in-file ⚠OWNER PLACEHOLDER marker, sets the page
+`noindex`, and declares itself a placeholder in its own `alt`. §1's "Real over stock, always" is
+UNCHANGED — this is that rule's flagged-placeholder branch, not an exception to it. No synthetic image
+depicts a person, a patient, a clinician, teeth or any clinical outcome. See §3.
 
 ---
 
@@ -92,10 +97,21 @@ into the pixels. Sunbit has no standalone logo file at all.
 
 ---
 
-## §3 - Fal-extend allowance (NOT exercised)
+## §3 - Fal-extend allowance (REOPENED 2026-08-21 — FLAGGED PLACEHOLDERS ONLY)
 
-The skill's IMAGERY stage offers on-brand generation via `generate-images.mjs`. **This build does not
-use it.** Owner decision, 2026-08-10, taken with the evidence below in front of them.
+The skill's IMAGERY stage offers on-brand generation via `generate-images.mjs`.
+
+> **AMENDED 2026-08-21.** The owner reopened this allowance for FLAGGED PLACEHOLDERS ONLY, after being
+> shown the reasoning below and the three `proofPolicy.fabrication_requirements` that bind it. One image
+> now ships: `assets/GENERATED-PLACEHOLDER-hero-reception.jpg` on the index hero. It depicts an EMPTY
+> reception — no people, no teeth, no instruments, no signage — so it cannot be read as a patient, a
+> clinician or a clinical outcome, which is what C7 §4 forbids illustrating. The paragraph below still
+> states the reason the allowance was closed, and that reason still stands for shipping synthetic imagery
+> AS REAL. It is preserved verbatim rather than rewritten, because it is the argument the placeholder
+> conditions exist to answer.
+
+**The original decision, preserved.** Owner decision, 2026-08-10, taken with the evidence below in front
+of them.
 
 **Why the allowance is closed here.** The one real gap is the smile gallery: consented before-and-after
 photography, of which there is none on disk (§2 records 0 files). *Corrected 2026-08-14: this read "the

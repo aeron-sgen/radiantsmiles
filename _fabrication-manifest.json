@@ -1,0 +1,25 @@
+{
+  "schema": "fabrication-manifest/1",
+  "slug": "radiantsmiles",
+  "note": "Every synthetic asset this build ships. proofPolicy.fabrication_allowed_for permits illustrative office/team imagery ONLY as a flagged placeholder, and requires an in-file marker, noindex until swapped, and an entry here.",
+  "entries": [
+    {
+      "id": "hero-reception-placeholder",
+      "file": "assets/GENERATED-PLACEHOLDER-hero-reception.jpg",
+      "used_on": [
+        "pages/index.content.html"
+      ],
+      "generator": "fal flux/dev via scripts/generate-images.mjs",
+      "generated_at": "2026-08-21",
+      "authorised_by": "owner, 2026-08-21 (chose 'flagged placeholders' over shipping-as-real)",
+      "class": "illustrative office imagery",
+      "depicts_people": false,
+      "depicts_clinical_outcome": false,
+      "in_file_marker": true,
+      "noindex_set": true,
+      "alt_declares_placeholder": true,
+      "resolves_when": "real photography of a Radiant Smiles reception is supplied; then restore real alt, set noindex false, delete this entry",
+      "supersedes_note": "imagery-system.md §3 recorded the fal-extend allowance as NOT exercised (owner decision 2026-08-10). Reopened by the owner on 2026-08-21 for placeholders only."
+    }
+  ]
+}
